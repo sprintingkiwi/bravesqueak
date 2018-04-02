@@ -1,0 +1,251 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Reflection;
+using System.Linq;
+
+public class Strategy : Jrpg
+{
+    [Header("System")]
+    public BattleController bc;
+    public Battler user;
+    //public List<EnemyBattler> instEnemies;
+    //public List<HeroBattler> instParty;
+    public AIAction selectedAction;
+    public bool conditionCheck;
+
+    [Header("Skills")]
+    public AIAction[] actions;
+
+    public virtual void Start()
+    {
+
+    }
+
+    public virtual void Execute(Battler user)
+    {
+        Debug.Log("Processing " + name + " strategy");
+
+        bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
+
+        this.user = user;
+        //instEnemies = bc.instEnemies;
+        //instParty = bc.instParty;
+
+        ActDefault();
+    }
+
+    public virtual AIAction ChooseAction()
+    {
+        List<ActionCondition> andConds = new List<ActionCondition>();
+        List<ActionCondition> orConds = new List<ActionCondition>();
+        List<AIAction> legalActions = new List<AIAction>();
+
+        // For each action, analyze conditions
+        foreach (AIAction act in actions)
+        {
+            if (act.conditions.Length > 0)
+            {
+                // Separate and/or type conditions
+                foreach (ActionCondition cond in act.conditions)
+                {
+                    Debug.Log("Separating and or type conditions");
+
+                    if (cond.conditionType == "and")
+                        andConds.Add(cond);
+                    else
+                        orConds.Add(cond);
+                }
+
+                // and-type conditions
+                Debug.Log("Looping thround andConditions");
+                int andCount = 0;
+                foreach (ActionCondition ac in andConds)
+                {
+                    Debug.Log("Evaluating condition: " + ac.conditionFunction);
+
+                    // Evaluate condition
+                    EvaluateActionCondition(ac);
+                    if (conditionCheck)
+                        andCount += 1;
+                    conditionCheck = false;
+                }
+                // Only if all the and conditions are true then add this action to the legal actions list
+                if (andCount >= andConds.Count)
+                {
+                    legalActions.Add(act);
+                    foreach (ActionCondition ac in andConds)
+                        act.weight += ac.weightInfluence;
+                }
+
+                // or-type conditions
+                foreach (ActionCondition oc in orConds)
+                {
+                    Debug.Log("Looping thround orConditions");
+
+                    // Evaluate condition
+                    EvaluateActionCondition(oc);
+                    // If the condition results true and this action is not in the legal actions list then add it
+                    if (conditionCheck)
+                    {
+                        act.weight += oc.weightInfluence;
+                        if (!legalActions.Contains(act))
+                            legalActions.Add(act);
+                    }                        
+                    conditionCheck = false;
+                }
+            }
+            else
+                legalActions.Add(act);
+        }
+
+
+        // Filter legal actions for their requirements
+        for (int i = 0; i < legalActions.Count; i++)
+        {
+            if (!legalActions[i].skill.ProcessRequirements(user))
+                legalActions.Remove(legalActions[i]);
+        }
+
+        // Weighted random selection of a legal action
+        if (legalActions.Count > 0)
+        {
+            selectedAction = WeightedRandom(legalActions);
+            Debug.Log(user.name + " selected action " + selectedAction.skill.name);
+            return selectedAction;
+        }
+        // If there are no legal actions avaiable, just wait
+        else
+        {
+            AIAction waitAction = new AIAction()
+            {
+                skill = new Skill()
+            };
+            return waitAction;
+        }
+    }
+
+    void EvaluateActionCondition(ActionCondition condition)
+    {
+        System.Type thisType = this.GetType();
+        MethodInfo condFunc = thisType.GetMethod(condition.conditionFunction);
+        Debug.Log("Trying to invoke " + condFunc.Name);
+
+        // Collect parameters from action condition
+        List<object> paramList = new List<object>();
+        foreach (int p in condition.condParameters)
+            paramList.Add(p);
+        object[] parameters = paramList.ToArray();
+
+        // Invoke condition function passing condition parameters
+        condFunc.Invoke(this, parameters);
+        Debug.Log("Condition check: " + conditionCheck);
+    }
+
+    AIAction WeightedRandom(List<AIAction> legalActions)
+    {
+        Debug.Log("Weighted random selection of a legal action");
+
+        // Calculate sum of weigths
+        int sumOfWeights = 0;
+        foreach (AIAction a in legalActions)
+            sumOfWeights += a.weight;
+
+        // Take random number greater than 0 and less than sum of weights
+        int rnd = Random.Range(0, sumOfWeights);
+
+        // Log
+        foreach (AIAction a in legalActions)
+            Debug.Log(a.skill.name);
+
+        // Algorithm
+        foreach (AIAction a in legalActions)
+        {
+            if (rnd < a.weight)
+                return a;
+            rnd -= a.weight;
+        }
+        Debug.Log("Should never execute this");
+        return null;
+    }
+
+    public static List<Battler> ChooseRandomTarget(Battler user, Skill selectedSkill, Battler[] enemies, Battler[] party)
+    {
+        // Correct skill target type for enemies strategies, otherwise enemies could often choose to attack their mates
+        if (selectedSkill.scope == Skill.Scope.All || selectedSkill.scope == Skill.Scope.Others)
+            selectedSkill.scope = Skill.Scope.Enemies;
+
+        List<Battler> legalTargets = selectedSkill.FindLegalTargets(user, selectedSkill, enemies, party);
+        List<Battler> selectedTargets = new List<Battler>();
+
+        foreach (Battler lt in legalTargets)
+            Debug.Log("Legal target: " + lt.name);
+
+        if (selectedSkill.scope == Skill.Scope.Area)
+        {
+            if (selectedSkill.GetComponent<SupportSkill>() != null)
+            {
+                selectedSkill.targetedArea = Battler.Faction.Enemies;
+                foreach (Battler b in enemies.Concat(party))
+                    if (b.faction == user.faction)
+                        selectedTargets.Add(b);
+            }
+            else
+            {
+                selectedSkill.targetedArea = Battler.Faction.Heroes;
+                foreach (Battler b in enemies.Concat(party))
+                    if (b.faction != user.faction)
+                        selectedTargets.Add(b);
+            }
+
+            Debug.Log(user.name + " selected " + selectedSkill.targetedArea.ToString() + " Area as target");
+        }
+        else
+        {
+            for (int i = 0; i < selectedSkill.targetsNumber; i++)
+            {
+                selectedTargets.Add(legalTargets[Random.Range(0, legalTargets.Count)]);
+
+                Debug.Log(user.name + " selected " + selectedTargets[i].name + " as target");
+
+                legalTargets.Remove(selectedTargets[i]);
+            }
+        }
+
+        return selectedTargets;
+    }
+
+    public virtual void ActDefault()
+    {
+        Skill selectedSkill = ChooseAction().skill;
+
+        //user.UseSkill(selectedSkill, ChooseRandomTarget(selectedSkill));
+        bc.actionsQueue.Add(new BattleAction { user = this.user, skill = selectedSkill, targets = ChooseRandomTarget(user, selectedSkill, bc.enemies.ToArray(), bc.party.ToArray()) });
+
+        Destroy(gameObject, 2f);
+    }
+
+    // Actions Conditions
+    public void AlwaysTrue()
+    {
+        conditionCheck = true;
+
+        Debug.Log("Finished to evaluate condition");
+    }
+
+    public void HitPoints(int percentage)
+    {
+        if (user.hitPoints < ((user.maxHP.value * percentage) / 100))
+            conditionCheck = true;
+
+        Debug.Log("Finished to evaluate condition");
+    }
+
+    public void TestCondition()
+    {
+        if (bc.turnNumber < 3)
+            conditionCheck = true;
+
+        Debug.Log("Finished to evaluate condition");
+    }
+}

@@ -1,0 +1,274 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using System.Linq;
+
+public class AttackSkill : Skill
+{
+    // Temporary modifiers for attack attempt. Could be influenced by perks or ongoing skills.
+    public int attackMod;
+    public int defenseMod;
+    public int specialAttackMod;
+    public int specialDefenseMod;
+    public int dodgeMod;
+    public int criticalMod;
+
+    public override IEnumerator Fighting()
+    {
+        Debug.Log("Started Fighting Phase");
+
+        // Trigger user animation
+        Jrpg.PlayAnimation(user, userAnimation);
+        yield return new WaitForSeconds(0.2f);        
+
+        // Wait for the animation to finish
+        if (pauseBeforeEffect == 0f)
+        {
+            pauseBeforeEffect = user.anim.GetCurrentAnimatorStateInfo(0).length;
+            if (targetEffect.projectile)
+                pauseBeforeEffect *= 0.5f;
+            if (moveToTarget)
+                pauseBeforeEffect *= 0.5f;
+        }
+        Debug.Log("Waiting " + pauseBeforeEffect.ToString() + " for the animation to end, before playing target effect");
+        yield return new WaitForSeconds(pauseBeforeEffect);
+
+        // If the skill is directed to self play the effect without any attack calculation (otherwise the skill would need to call DefaultAttack method)
+        if (scope == Scope.Self || gameObject.GetComponent<AttackSkill>() == null)
+            Jrpg.PlayEffect(targets[0], targetEffect);
+
+        // Trigger effect on user:
+        // Process first execution effect
+        yield return StartCoroutine(ProcessEffects(Effect));
+    }
+
+    public override IEnumerator ProcessEffects(Func<Battler, IEnumerator> effectFunction)
+    {
+        List<Coroutine> fightCoroutines = new List<Coroutine>();
+
+        foreach (Battler target in targets.ToArray())
+        {
+            yield return StartCoroutine(effectFunction(target));
+
+            fightCoroutines.Add(StartCoroutine(ProcessFightOutcome(target)));
+        }
+
+        foreach (Coroutine c in fightCoroutines.ToArray())
+            yield return c;
+
+        yield return new WaitForSeconds(0.5f);
+        foreach (Battler target in targets.ToArray())
+            LogOutcomes(target);
+        yield return new WaitForSeconds(0.5f);
+    }
+
+    public override IEnumerator Effect(Battler target)
+    {
+        base.Effect(target);
+
+        DefaultAttack(target);
+
+        yield return null;
+    }
+
+    public override IEnumerator OngoingEffect(Battler target)
+    {
+        base.OngoingEffect(target);
+
+        DefaultAttack(target);
+
+        yield return null;
+    }    
+
+    public virtual void DefaultAttack(Battler target)
+    {
+        if (scope == Scope.Area)
+            fightOutcomes[target] = "Success";
+        else if (fightOutcomes[target] == "")
+            fightOutcomes[target] = AttackAttempt(target);
+
+        if (fightOutcomes[target] == "Success")
+        {
+            // Calculate skill damage
+            Debug.Log("calculating " + gameObject.name + " damage");
+            damageOutcomes[target] = Damage(target);
+
+            // Status chance
+            foreach (StatusChance sc in statusChances)
+            {
+                int chance = UnityEngine.Random.Range(1, 100);
+                if (chance > sc.chance)
+                    target.AddStatus(sc.status);
+            }
+        }
+    }
+
+    // should be modified to use dodge OR parry
+    // This version is only if the target holds the UNTOUCHABLE perk
+    public virtual string AttackAttempt(Battler target)
+    {
+        Debug.Log("Processing attack attempt between " + user.name + " and " + target.name);
+        
+        int attackRoll = Jrpg.RollDice(1, 20);
+        int dodgeRoll = 0;
+        int defenseRoll = 10;
+
+        // Select right modifier based on attack type
+        if (gameObject.GetComponent<MeleeAttack>() != null)
+        {
+            attackRoll += Jrpg.Roll(user.attack, modifier: accuracy + attackMod);
+            defenseRoll += Jrpg.Roll(target.defense);
+        }
+        else
+        {
+            attackRoll += Jrpg.Roll(user.specialAttack, modifier: accuracy + specialAttackMod);
+            defenseRoll += Jrpg.Roll(target.specialDefense);
+        }
+        dodgeRoll += Jrpg.Roll(target.speed);
+
+        Debug.LogError(user.name + " rolled " + attackRoll + " vs " + target.name + " dodge: " + dodgeRoll + " and defense: " + defenseRoll);
+        
+        if (attackRoll <= dodgeRoll)
+        {
+            Debug.Log(target.name + " dodged the attack");
+            return "Dodge";
+        }
+        else if (attackRoll <= defenseRoll)
+        {
+            Debug.Log(target.name + " parried the attack");
+            return "Parry";
+        }
+        else
+        {
+            Debug.Log(user.name + " attack succeed");
+            return "Success";
+        }
+    }   
+
+    public virtual int Damage(Battler target)
+    {
+        return 0;
+    }
+
+    //public virtual int WeaponDamage(Battler target)
+    //{
+    //    Debug.Log("Calculating base " + user.primaryWeapon.name + " damage");
+
+    //    // Primary weapon damage
+    //    int damage = user.primaryWeapon.Damage(user.level);
+    //    Weapon.WeaponType wt = user.primaryWeapon.weaponType;
+    //    if (wt == Weapon.WeaponType.Melee || (wt == Weapon.WeaponType.Ranged && user.primaryWeapon.thrown))
+    //    {
+    //        damage += Jrpg.Modifier(user.attack.value);
+    //        if (user.primaryWeapon.twoHanded)
+    //            damage += Jrpg.Modifier(user.attack.value) / 2;
+    //    }
+
+    //    // Secondary weapon damage
+    //    if (user.secondaryWeapon != null)
+    //    {
+    //        wt = user.secondaryWeapon.weaponType;
+    //        if (wt == Weapon.WeaponType.Melee || (wt == Weapon.WeaponType.Ranged && user.secondaryWeapon.thrown))
+    //            damage += Jrpg.Modifier(user.attack.value) / 2;
+    //    }
+
+    //    // Damage cannot be less than 1
+    //    if (damage < 1)
+    //        damage = 1;
+
+    //    return damage;
+    //}
+
+    //public virtual int Formula()
+    //{
+    //    return 0;
+    //}
+
+    public virtual IEnumerator ProcessFightOutcome(Battler target)
+    {
+        if (targetEffect.projectile)
+            yield return StartCoroutine(ShootProjectile(target));
+
+        // Cases for target hit reaction
+        switch (fightOutcomes[target])
+        {
+            case "Success":
+                // Shake Camera
+                if (cameraShake)
+                    bc.cameraCoroutines.Add(StartCoroutine(bc.mainCamera.Shake()));
+                // If the effect was projectile then play the after effect, otherwise play the normal effect
+                if (targetEffect.projectile)
+                {
+                    Debug.Log("Playing " + name + " after effect");
+                    Jrpg.PlayEffect(target, targetEffect.AfterEffect);
+                }
+                else
+                    Jrpg.PlayEffect(target, targetEffect);
+
+                // Waiting a little
+                yield return new WaitForSeconds(0.1f);
+                // Trigger target hit animation
+                if (scope != Scope.Self)
+                {
+                    Jrpg.PlayAnimation(target, targetAnimation);
+                    target.PlaySoundEffect(target.hitSound);
+                }
+
+                // Modify target hit points
+                Jrpg.Damage(target, damageOutcomes[target], element);
+                break;
+
+            case "Parry":
+                // Parry target effect and animation
+                Jrpg.PlayAnimation(target, "parry");
+                Jrpg.PlayEffect(target, target.parryEffect);
+
+                // Modify target hit points
+                if (!target.perfectParry)
+                    Jrpg.Damage(target, damageOutcomes[target], element);
+                break;
+
+            case "Dodge":
+                // Dodge target movement
+                target.PlaySoundEffect(target.dodgeSound);
+                // Dodge Movement
+                target.targetPos = new Vector3(target.transform.position.x + 5f * (float)target.faction, target.transform.position.y, target.transform.position.z);
+                Debug.Log(target.name + " dodge go");
+                while (target.transform.position != target.targetPos)
+                {
+                    target.transform.position = Vector3.MoveTowards(target.transform.position, target.targetPos, 50 * Time.deltaTime);
+                    yield return null;
+                }
+                Debug.Log(target.name + " dodge back");
+                while (target.transform.position != target.originalPos)
+                {
+                    target.transform.position = Vector3.MoveTowards(target.transform.position, target.originalPos, 50 * Time.deltaTime);
+                    yield return null;
+                }
+                break;
+        }
+    }
+
+    public virtual void LogOutcomes(Battler target)
+    {
+        string log = "";
+        switch (fightOutcomes[target])
+        {
+            case "Success":
+                log = target.name + " received " + damageOutcomes[target].ToString() + "  " + element.ToString() + " damage";
+                Jrpg.Log(log);
+                break;
+
+            case "Parry":
+                log = target.name + " parried the attack";
+                Jrpg.Log(log);
+                break;
+
+            case "Dodge":
+                log = target.name + " dodged the attack";
+                Jrpg.Log(log);
+                break;
+        }
+    }
+}

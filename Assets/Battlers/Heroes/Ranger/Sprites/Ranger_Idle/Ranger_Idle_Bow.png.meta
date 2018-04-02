@@ -1,0 +1,362 @@
+fileFormatVersion: 2
+guid: c47ccac1dda65914d9a950b8e99a2725
+timeCreated: 1522655217
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RangerIdle_Bow_0
+    21300002: RangerIdle_Bow_1
+    21300004: RangerIdle_Bow_2
+    21300006: RangerIdle_Bow_3
+    21300008: RangerIdle_Bow_4
+    21300010: RangerIdle_Bow_5
+    21300012: RangerIdle_Bow_6
+    21300014: RangerIdle_Bow_7
+    21300016: RangerIdle_Bow_8
+    21300018: RangerIdle_Bow_9
+    21300020: RangerIdle_Bow_10
+    21300022: RangerIdle_Bow_11
+    21300024: RangerIdle_Bow_12
+    21300026: RangerIdle_Bow_13
+    21300028: RangerIdle_Bow_14
+    21300030: RangerIdle_Bow_15
+    21300032: Ranger_Idle_Bow_0
+    21300034: Ranger_Idle_Bow_1
+    21300036: Ranger_Idle_Bow_2
+    21300038: Ranger_Idle_Bow_3
+    21300040: Ranger_Idle_Bow_4
+    21300042: Ranger_Idle_Bow_5
+    21300044: Ranger_Idle_Bow_6
+    21300046: Ranger_Idle_Bow_7
+    21300048: Ranger_Idle_Bow_8
+    21300050: Ranger_Idle_Bow_9
+    21300052: Ranger_Idle_Bow_10
+    21300054: Ranger_Idle_Bow_11
+    21300056: Ranger_Idle_Bow_12
+    21300058: Ranger_Idle_Bow_13
+    21300060: Ranger_Idle_Bow_14
+    21300062: Ranger_Idle_Bow_15
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 499
+        width: 279
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_1
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 499
+        width: 276
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_2
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 499
+        width: 278
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_3
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 499
+        width: 277
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_4
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 499
+        width: 278
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_5
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 499
+        width: 278
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_6
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 499
+        width: 276
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_7
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 499
+        width: 278
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_8
+      rect:
+        serializedVersion: 2
+        x: 2554
+        y: 499
+        width: 277
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_9
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 68
+        width: 278
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_10
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 68
+        width: 278
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_11
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 69
+        width: 277
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_12
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 68
+        width: 278
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_13
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 68
+        width: 278
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_14
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 68
+        width: 278
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ranger_Idle_Bow_15
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 68
+        width: 279
+        height: 399
+      alignment: 9
+      pivot: {x: 398, y: 379}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,294 @@
+fileFormatVersion: 2
+guid: 5f4461d1eab46054ebff2f3b3b6bf458
+timeCreated: 1474135605
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Fireball 3_0
+    21300002: Fireball 3_1
+    21300004: Fireball 3_2
+    21300006: Fireball 3_3
+    21300008: Fireball 3_4
+    21300010: Fireball 3_5
+    21300012: Fireball 3_6
+    21300014: Fireball 3_8
+    21300016: Fireball 3_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Fireball 3_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 202
+        width: 185
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.821117, y: 77.1502}
+        - {x: -28.178883, y: 77.1502}
+        - {x: -43.178883, y: 54.1502}
+        - {x: -43.178883, y: -69.8498}
+        - {x: -42.178883, y: -76.8498}
+        - {x: 36.821117, y: -76.8498}
+        - {x: 41.821117, y: -75.8498}
+        - {x: 44.821117, y: -64.8498}
+        - {x: 44.821117, y: 45.1502}
+        - {x: 37.821117, y: 68.1502}
+    - name: Fireball 3_1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 201
+        width: 305
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.259216, y: 54.684113}
+        - {x: -17.740784, y: 31.684113}
+        - {x: -65.74078, y: -0.31588745}
+        - {x: -70.74078, y: -17.315887}
+        - {x: -70.74078, y: -51.315887}
+        - {x: -52.740784, y: -53.315887}
+        - {x: 31.259216, y: -53.315887}
+        - {x: 72.25922, y: -0.31588745}
+        - {x: 72.25922, y: 54.684113}
+      - - {x: 69.25922, y: -34.315887}
+        - {x: 71.25922, y: -36.315887}
+        - {x: 72.25922, y: -36.315887}
+        - {x: 72.25922, y: -21.315887}
+        - {x: 69.25922, y: -22.315887}
+    - name: Fireball 3_2
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 208
+        width: 389
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 51.484528, y: 70.94675}
+        - {x: -72.51547, y: 20.946747}
+        - {x: -90.51547, y: -27.053253}
+        - {x: -90.51547, y: -66.05325}
+        - {x: -89.51547, y: -68.05325}
+        - {x: -88.51547, y: -69.05325}
+        - {x: 78.48453, y: -69.05325}
+        - {x: 92.48453, y: -49.053253}
+        - {x: 92.48453, y: 70.94675}
+      - - {x: -90.51547, y: 32.946747}
+        - {x: -90.51547, y: 12.946747}
+        - {x: -87.51547, y: 13.946747}
+        - {x: -86.51547, y: 15.946747}
+        - {x: -86.51547, y: 30.946747}
+        - {x: -87.51547, y: 32.946747}
+    - name: Fireball 3_3
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 220
+        width: 453
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.622009, y: 87.039825}
+        - {x: -69.62201, y: 68.039825}
+        - {x: -105.62201, y: 2.0398254}
+        - {x: -105.62201, y: -58.960175}
+        - {x: -49.62201, y: -85.960175}
+        - {x: 51.37799, y: -85.960175}
+        - {x: 107.37799, y: -4.9601746}
+        - {x: 107.37799, y: 60.039825}
+        - {x: 21.37799, y: 87.039825}
+    - name: Fireball 3_4
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 141
+        width: 612
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.509094, y: 130.2187}
+        - {x: -86.509094, y: 72.218704}
+        - {x: -88.509094, y: 50.218704}
+        - {x: -80.509094, y: 43.218704}
+        - {x: -77.509094, y: 42.218704}
+        - {x: -80.509094, y: 42.218704}
+        - {x: -83.509094, y: 45.218704}
+        - {x: -88.509094, y: 47.218704}
+        - {x: -92.509094, y: 62.218704}
+        - {x: -110.509094, y: 77.218704}
+        - {x: -126.509094, y: 69.218704}
+        - {x: -142.5091, y: 51.218704}
+        - {x: -142.5091, y: -21.781296}
+        - {x: -107.509094, y: -111.781296}
+        - {x: -9.509094, y: -128.7813}
+        - {x: 136.4909, y: -128.7813}
+        - {x: 144.4909, y: -65.781296}
+        - {x: 144.4909, y: 130.2187}
+    - name: Fireball 3_5
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 152
+        width: 512
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.745972, y: 99.345695}
+        - {x: -44.25403, y: 99.345695}
+        - {x: -49.25403, y: 98.345695}
+        - {x: -82.25403, y: 56.345695}
+        - {x: -86.25403, y: 24.345695}
+        - {x: -116.25403, y: 10.3456955}
+        - {x: -119.25403, y: 8.3456955}
+        - {x: -119.25403, y: -36.654305}
+        - {x: -63.25403, y: -97.654305}
+        - {x: 57.74597, y: -97.654305}
+        - {x: 120.74597, y: -19.654305}
+        - {x: 120.74597, y: 25.345695}
+        - {x: 77.74597, y: 68.345695}
+    - name: Fireball 3_6
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 108
+        width: 565
+        height: 433
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 88.28967, y: 101.83773}
+        - {x: -106.71033, y: 101.83773}
+        - {x: -131.71033, y: 61.83773}
+        - {x: -131.71033, y: 10.83773}
+        - {x: -128.71033, y: 7.8377304}
+        - {x: -85.71033, y: -48.16227}
+        - {x: -47.710327, y: -84.16227}
+        - {x: 67.28967, y: -84.16227}
+        - {x: 98.28967, y: -37.16227}
+        - {x: 98.28967, y: 85.83773}
+        - {x: 97.28967, y: 100.83773}
+      - - {x: 96.28967, y: 29.83773}
+        - {x: 89.28967, y: 27.83773}
+        - {x: 89.28967, y: 4.8377304}
+        - {x: 97.28967, y: -6.1622696}
+        - {x: 126.28967, y: -6.1622696}
+        - {x: 129.28967, y: -5.1622696}
+        - {x: 133.28967, y: -4.1622696}
+        - {x: 133.28967, y: 29.83773}
+    - name: Fireball 3_8
+      rect:
+        serializedVersion: 2
+        x: 3404
+        y: 182
+        width: 426
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100.5708, y: 63.8284}
+        - {x: 92.5708, y: 85.8284}
+        - {x: -41.4292, y: 85.8284}
+        - {x: -99.4292, y: 24.8284}
+        - {x: -99.4292, y: -39.1716}
+        - {x: -89.4292, y: -55.1716}
+        - {x: -41.4292, y: -84.1716}
+        - {x: 49.5708, y: -84.1716}
+        - {x: 59.5708, y: -80.1716}
+        - {x: 96.5708, y: -51.1716}
+        - {x: 100.5708, y: -44.1716}
+    - name: Fireball 3_9
+      rect:
+        serializedVersion: 2
+        x: 3924
+        y: 190
+        width: 341
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65.06238, y: 89.55712}
+        - {x: -79.06238, y: 85.55712}
+        - {x: -79.06238, y: -6.4428787}
+        - {x: -22.062378, y: 3.5571213}
+        - {x: -4.062378, y: -47.44288}
+        - {x: 0.9376221, y: -51.44288}
+        - {x: 5.937622, y: -53.44288}
+        - {x: 7.937622, y: -53.44288}
+        - {x: 8.937622, y: -54.44288}
+        - {x: 5.937622, y: -53.44288}
+        - {x: 2.937622, y: -53.44288}
+        - {x: -9.062378, y: -47.44288}
+        - {x: -33.062378, y: -19.442879}
+        - {x: -57.062378, y: -12.442879}
+        - {x: -68.06238, y: -56.44288}
+        - {x: -57.062378, y: -88.44288}
+        - {x: 66.93762, y: -88.44288}
+        - {x: 80.93762, y: -18.442879}
+        - {x: 80.93762, y: 80.55712}
+        - {x: 69.93762, y: 89.55712}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

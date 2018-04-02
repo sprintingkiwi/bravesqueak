@@ -1,0 +1,286 @@
+fileFormatVersion: 2
+guid: 2ed0bbdf86b62f64ba1143b0351f8292
+timeCreated: 1474109979
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Fulmine_0
+    21300002: Fulmine_1
+    21300004: Fulmine_2
+    21300006: Fulmine_3
+    21300008: Fulmine_4
+    21300010: Fulmine_5
+    21300012: Fulmine_6
+    21300014: Fulmine_7
+    21300016: Fulmine_8
+    21300018: Fulmine_9
+    21300020: Fulmine_10
+    21300022: Fulmine_11
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 30
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fulmine_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 12
+        width: 253
+        height: 750
+      alignment: 9
+      pivot: {x: 0.4545589, y: 0.49925935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_1
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 59
+        width: 260
+        height: 690
+      alignment: 9
+      pivot: {x: 0.48526084, y: 0.46127063}
+      border: {x: 0, y: 0, z: 0, w: 12}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_2
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 51
+        width: 280
+        height: 666
+      alignment: 9
+      pivot: {x: 0.41788155, y: 0.48849195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_3
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 51
+        width: 345
+        height: 670
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_4
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 59
+        width: 295
+        height: 612
+      alignment: 9
+      pivot: {x: 0.40906632, y: 0.51252365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_5
+      rect:
+        serializedVersion: 2
+        x: 2974
+        y: 90
+        width: 262
+        height: 585
+      alignment: 9
+      pivot: {x: 0.29522565, y: 0.50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_6
+      rect:
+        serializedVersion: 2
+        x: 3429
+        y: 64
+        width: 351
+        height: 630
+      alignment: 9
+      pivot: {x: 0.3460196, y: 0.5278345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_7
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 62
+        width: 354
+        height: 659
+      alignment: 9
+      pivot: {x: 0.3700951, y: 0.46521404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_8
+      rect:
+        serializedVersion: 2
+        x: 1913
+        y: 70
+        width: 158
+        height: 605
+      alignment: 9
+      pivot: {x: 0.3302195, y: 0.50673735}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_9
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 54
+        width: 166
+        height: 621
+      alignment: 9
+      pivot: {x: 0.31531498, y: 0.49985218}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_10
+      rect:
+        serializedVersion: 2
+        x: 2676
+        y: 77
+        width: 222
+        height: 591
+      alignment: 9
+      pivot: {x: 0.3446408, y: 0.5122568}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Fulmine_11
+      rect:
+        serializedVersion: 2
+        x: 3918
+        y: 70
+        width: 254
+        height: 452
+      alignment: 9
+      pivot: {x: 0.27368933, y: 0.66108805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
