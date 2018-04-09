@@ -116,7 +116,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.58, y: 0.35}
     oldSize: {x: 18, y: 18}
     newSize: {x: 14.4, y: 14.4}
     adaptiveTilingThreshold: 0.5
@@ -290,7 +290,7 @@ MonoBehaviour:
   faction: 1
   firewalls: []
   skillCustomizers: []
-  job: 1
+  job: 4
   availableJobs: 01000000020000000300000004000000
   unlockedSkills: []
   skills:

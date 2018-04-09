@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StoreSkill : MonoBehaviour
+public class SkillItem : MonoBehaviour
 {
     SpriteRenderer spr;
     public Skill linkedSkill;

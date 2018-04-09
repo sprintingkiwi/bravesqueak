@@ -22,7 +22,7 @@ public class WallSkill : Skill
     {
         if (scope != Scope.Area)
         {
-            instWallEffect = Instantiate(targetEffect, target.transform.Find("HOOKS").Find("Near").position, Quaternion.identity) as SortedEffect;
+            instWallEffect = Instantiate(targetEffect, target.transform.Find("HOOKS").Find("Near").position, Quaternion.identity, target.transform) as SortedEffect;
         }
         target.firewalls.Add(this);
 

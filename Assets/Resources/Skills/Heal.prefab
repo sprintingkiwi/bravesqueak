@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114115067928026556}
   - component: {fileID: 212225656126719098}
   m_Layer: 0
-  m_Name: Heal_Cleric
+  m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,10 +55,8 @@ MonoBehaviour:
   description: 
   speed: 7
   accuracy: 0
-  roll:
-    dices:
-    - faces: 4
-    - faces: 4
+  powerRoll:
+    dices: []
   buffs: []
   statusChances: []
   scope: 3
@@ -69,7 +67,6 @@ MonoBehaviour:
   inField: 0
   element: 0
   requiredSP: 1
-  requiredHP: 0
   shopRequirement:
     job: 8
     exp: 10
