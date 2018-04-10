@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
-  speed: 20
-  accuracy: 0
+  speed: 150
+  accuracy: 100
   powerRoll:
     dices:
     - faces: 8
@@ -80,12 +80,9 @@ MonoBehaviour:
   coins: 0
   storeNameImg: {fileID: 0}
   userAnimation: special
-  userEffect: {fileID: 0}
   targetAnimation: idle
-  pauseBeforeEffect: 0
-  areaEffect: {fileID: 114695505113783832, guid: 724f4caa38b62c0409229f12ec705d4d,
+  targetEffect: {fileID: 114695505113783832, guid: 724f4caa38b62c0409229f12ec705d4d,
     type: 2}
-  targetEffect: {fileID: 0}
   moveToTarget: 0
   cameraFocus: 0
   cameraShake: 0

@@ -61,10 +61,10 @@ public class Skill : Customizer
     //public string userMoveAnimation;
     //public Effect userMoveEffect;
     public string userAnimation = "attack";
-    public Effect userEffect;
+    //public Effect userEffect;
     public string targetAnimation = "hit";
-    public float pauseBeforeEffect;
-    public Effect areaEffect;
+    //public float pauseBeforeEffect;
+    //public Effect areaEffect;
     public Effect targetEffect;
     //public Effect targetAfterEffect;
     //public string userEndAnimation;

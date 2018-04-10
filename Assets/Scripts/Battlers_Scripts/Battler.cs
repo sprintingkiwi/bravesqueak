@@ -369,6 +369,12 @@ public class Battler : MonoBehaviour
             if (ed.animation == anim)
                 return ed.lenghtPercentage;
         }
+
+        if (anim == "attack")
+            return 0.6f;
+        else if (anim == "special")
+            return 0.8f;
+
         return 0f;
     }
 }

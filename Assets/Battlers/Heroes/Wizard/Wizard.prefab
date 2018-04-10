@@ -298,6 +298,7 @@ MonoBehaviour:
   perks:
   - {fileID: 114516546974924926, guid: a39df019c9139944084d2180563f620f, type: 2}
   - {fileID: 0}
+  effectsDelay: []
   hitSound: {fileID: 8300000, guid: 128fbe42ec1ccbd448040e5e133fa1ad, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
@@ -322,7 +323,7 @@ MonoBehaviour:
   availableJobs: 05000000060000000700000008000000
   unlockedSkills: []
   skills:
-  - {fileID: 114836736652321672, guid: a1d5de150b0b50e4a89ebf5630e1c1e5, type: 2}
+  - {fileID: 114863936190228534, guid: adcda2522d74f0d409adf712847989d2, type: 2}
   - {fileID: 114755667126410738, guid: 0631581c998af6f4babec1a0f8df0426, type: 2}
   - {fileID: 114238026829365552, guid: 9b9eb11db93e47e4f964065e87eddd31, type: 2}
   - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}

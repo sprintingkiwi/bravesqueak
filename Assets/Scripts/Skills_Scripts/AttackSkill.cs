@@ -191,7 +191,7 @@ public class AttackSkill : Skill
                 // Trigger target hit animation
                 if (scope != Scope.Self)
                 {
-                    yield return StartCoroutine(Jrpg.PlayAnimation(target, targetAnimation, true));
+                    yield return StartCoroutine(Jrpg.PlayAnimation(target, targetAnimation, false));
                     target.PlaySoundEffect(target.hitSound);
                 }
 
@@ -201,7 +201,7 @@ public class AttackSkill : Skill
 
             case "Parry":
                 // Parry target effect and animation
-                yield return StartCoroutine(Jrpg.PlayAnimation(target, "parry", true));
+                yield return StartCoroutine(Jrpg.PlayAnimation(target, "parry", false));
                 Jrpg.PlayEffect(target, target.parryEffect);
 
                 // Modify target hit points
