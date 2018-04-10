@@ -6,7 +6,7 @@ public class BodyWheel : MeleeAttack
 {
     public override IEnumerator MoveToTarget(Battler target)
     {
-        Jrpg.PlayAnimation(user, "attack");
+        yield return StartCoroutine(Jrpg.PlayAnimation(user, "attack", false));
         StartCoroutine(AsyncMovement());
 
         Vector3 triggerDamagePos = new Vector3(-12.5f * (float)user.faction, user.transform.position.y, 0);

@@ -241,7 +241,7 @@ public class Jrpg : MonoBehaviour
         Destroy(audio, audioSource.clip.length);
     }
 
-    public static void PlayAnimation(Battler actor, string name)
+    public static IEnumerator PlayAnimation(Battler actor, string name, bool wait)
     {
         Debug.Log("Playing animation " + name);
         if (name != "")
@@ -254,6 +254,20 @@ public class Jrpg : MonoBehaviour
         }
         else
             Debug.LogError(name + " animation not assigned!");
+
+        if (wait)
+        {
+            // Wait for the animation to finish
+            yield return new WaitForSeconds(0.1f);
+
+            float percentage = actor.GetEffectDelay(name);
+            if (percentage != 0f)
+                yield return new WaitForSeconds(actor.anim.GetCurrentAnimatorStateInfo(0).length * percentage);
+            else
+                yield return new WaitForSeconds(actor.anim.GetCurrentAnimatorStateInfo(0).length);
+        }
+
+        yield return null;
     }
 
     public static void PlayEffect(Battler actor, Effect effect)

@@ -9,8 +9,7 @@ public class WallSkill : Skill
 
     public override IEnumerator Fighting()
     {
-        Jrpg.PlayAnimation(user, userAnimation);
-        yield return new WaitForSeconds(pauseBeforeEffect);
+        yield return StartCoroutine(Jrpg.PlayAnimation(user, userAnimation, true));
 
         foreach (Battler target in targets)
         {

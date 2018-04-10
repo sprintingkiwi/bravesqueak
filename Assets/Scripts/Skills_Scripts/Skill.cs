@@ -297,15 +297,11 @@ public class Skill : Customizer
     public virtual IEnumerator Fighting()
     {
         // Trigger user animation
-        Jrpg.PlayAnimation(user, userAnimation);
-
-        // Wait for the animation to finish
-        yield return new WaitForSeconds(0.1f);
-        yield return new WaitForSeconds(user.anim.GetCurrentAnimatorStateInfo(0).length);
-
-        // Trigger effect on user
+        yield return StartCoroutine(Jrpg.PlayAnimation(user, userAnimation, true));
+       
+        // Trigger effect on target
         if (scope == Scope.Area)
-            Jrpg.PlayEffect(new Vector3(10f * (float)user.faction, -7f, 0), targetEffect);
+            Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), targetEffect);
         else
             Jrpg.PlayEffect(targets[0], targetEffect);
 

@@ -42,6 +42,14 @@ public class Battler : MonoBehaviour
     public Species species;
     public Perk[] perks = new Perk[2];
 
+    [System.Serializable]
+    public class EffectDelay
+    {
+        public string animation;
+        public float lenghtPercentage;
+    }
+    public EffectDelay[] effectsDelay;
+
     // Equipment
     //[Header("Equipment")]
     //public Weapon primaryWeapon;
@@ -352,5 +360,15 @@ public class Battler : MonoBehaviour
                 Instantiate(p, transform.Find("PERKS")).Setup(this);
             }
         }
+    }
+
+    public float GetEffectDelay(string anim)
+    {
+        foreach(EffectDelay ed in effectsDelay)
+        {
+            if (ed.animation == anim)
+                return ed.lenghtPercentage;
+        }
+        return 0f;
     }
 }

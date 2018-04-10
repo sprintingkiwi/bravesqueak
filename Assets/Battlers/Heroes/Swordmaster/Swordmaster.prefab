@@ -116,9 +116,9 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4, y: 0.55}
-    oldSize: {x: 14.4, y: 14.4}
-    newSize: {x: 14.4, y: 14.4}
+    pivot: {x: 0.52, y: 0.44}
+    oldSize: {x: 18, y: 18}
+    newSize: {x: 18, y: 18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -270,6 +270,11 @@ MonoBehaviour:
   perks:
   - {fileID: 114932445801373410, guid: 0eb19a7aebb667a47827881ac39b23c5, type: 2}
   - {fileID: 114346464545605932, guid: 8b2585ca28297b64ba9e359f909636ad, type: 2}
+  effectsDelay:
+  - animation: attack
+    lenghtPercentage: 0.5
+  - animation: special
+    lenghtPercentage: 0.8
   hitSound: {fileID: 8300000, guid: 128fbe42ec1ccbd448040e5e133fa1ad, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
@@ -332,12 +337,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: a927c5d451e394d40b7848a534b749aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41e7797f600670343bfa94e3db9c0b48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.4, y: 14.4}
+  m_Size: {x: 18, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

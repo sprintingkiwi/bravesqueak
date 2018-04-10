@@ -16,29 +16,9 @@ public class AttackSkill : Skill
 
     public override IEnumerator Fighting()
     {
-        Debug.Log("Started Fighting Phase");
-
         // Trigger user animation
-        Jrpg.PlayAnimation(user, userAnimation);
-        yield return new WaitForSeconds(0.2f);        
+        yield return StartCoroutine(Jrpg.PlayAnimation(user, userAnimation, true));
 
-        // Wait for the animation to finish
-        if (pauseBeforeEffect == 0f)
-        {
-            pauseBeforeEffect = user.anim.GetCurrentAnimatorStateInfo(0).length;
-            if (targetEffect.projectile)
-                pauseBeforeEffect *= 0.5f;
-            if (moveToTarget)
-                pauseBeforeEffect *= 0.5f;
-        }
-        Debug.Log("Waiting " + pauseBeforeEffect.ToString() + " for the animation to end, before playing target effect");
-        yield return new WaitForSeconds(pauseBeforeEffect);
-
-        // If the skill is directed to self play the effect without any attack calculation (otherwise the skill would need to call DefaultAttack method)
-        if (scope == Scope.Self || gameObject.GetComponent<AttackSkill>() == null)
-            Jrpg.PlayEffect(targets[0], targetEffect);
-
-        // Trigger effect on user:
         // Process first execution effect
         yield return StartCoroutine(ProcessEffects(Effect));
     }
@@ -211,7 +191,7 @@ public class AttackSkill : Skill
                 // Trigger target hit animation
                 if (scope != Scope.Self)
                 {
-                    Jrpg.PlayAnimation(target, targetAnimation);
+                    yield return StartCoroutine(Jrpg.PlayAnimation(target, targetAnimation, true));
                     target.PlaySoundEffect(target.hitSound);
                 }
 
@@ -221,7 +201,7 @@ public class AttackSkill : Skill
 
             case "Parry":
                 // Parry target effect and animation
-                Jrpg.PlayAnimation(target, "parry");
+                yield return StartCoroutine(Jrpg.PlayAnimation(target, "parry", true));
                 Jrpg.PlayEffect(target, target.parryEffect);
 
                 // Modify target hit points

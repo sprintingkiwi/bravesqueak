@@ -116,7 +116,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.537, y: 0.375}
     oldSize: {x: 18, y: 18}
     newSize: {x: 14.4, y: 14.4}
     adaptiveTilingThreshold: 0.5
@@ -357,6 +357,9 @@ MonoBehaviour:
   perks:
   - {fileID: 114932445801373410, guid: 0eb19a7aebb667a47827881ac39b23c5, type: 2}
   - {fileID: 114346464545605932, guid: 8b2585ca28297b64ba9e359f909636ad, type: 2}
+  effectsDelay:
+  - animation: special
+    lenghtPercentage: 0.8
   hitSound: {fileID: 8300000, guid: 128fbe42ec1ccbd448040e5e133fa1ad, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
