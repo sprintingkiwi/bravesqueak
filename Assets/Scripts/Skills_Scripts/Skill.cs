@@ -301,7 +301,7 @@ public class Skill : Customizer
        
         // Trigger effect on target
         if (scope == Scope.Area)
-            Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), targetEffect);
+            Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), targetEffect, targets[0].faction);
         else
             Jrpg.PlayEffect(targets[0], targetEffect);
 

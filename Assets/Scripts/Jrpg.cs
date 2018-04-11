@@ -273,16 +273,26 @@ public class Jrpg : MonoBehaviour
     public static void PlayEffect(Battler actor, Effect effect)
     {
         // Instantiate effect. Effect GameObject pos is added to target pos in order to manage effect offset.
+        Effect e;
         if (effect != null)
-            Instantiate(effect, (actor.transform.position + (effect.transform.position * -(float)actor.faction)), Quaternion.identity);
+        {
+            e = Instantiate(effect, (actor.transform.position + (effect.transform.position * -(float)actor.faction)), Quaternion.identity);
+            if (actor.faction == Battler.Faction.Heroes)
+                e.GetComponent<SpriteRenderer>().flipX = true;
+        }
         else
             Debug.LogError(effect.name + " effect not assigned!");
     }
-    public static void PlayEffect(Vector3 position, Effect effect)
+    public static void PlayEffect(Vector3 position, Effect effect, Battler.Faction targetFaction)
     {
         // Instantiate effect. Effect GameObject pos is added to target pos in order to manage effect offset.
+        Effect e;
         if (effect != null)
-            Instantiate(effect, position, Quaternion.identity, GameObject.Find("BATTLE STUFF").transform);
+        {
+            e = Instantiate(effect, position, Quaternion.identity, GameObject.Find("BATTLE STUFF").transform);
+            if (targetFaction == Battler.Faction.Heroes)
+                e.GetComponent<SpriteRenderer>().flipX = true;
+        }
         else
             Debug.LogError(effect.name + " effect not assigned!");
     }
