@@ -27,12 +27,15 @@ public class WorldMap : MonoBehaviour
         gc = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
-    // Use this for initialization
-    public void Setup()
+    public virtual void BuildMap()
     {
         foreach (MapLayer ml in mapLayers)
             DisposeMapTiles(ml.folderName, ml.sortingOrder, ml.zLevel);
+    }
 
+    // Use this for initialization
+    public virtual void Setup()
+    {      
         // DO SOME STUFF RIGHT AFTER THE MAP LOADS:        
         // Init music
         if (soundtrack != gc.music.clip)
@@ -65,6 +68,13 @@ public class WorldMap : MonoBehaviour
         // Get container object
         Transform container = transform.Find(layerName.ToUpper());
         container.transform.position = new Vector3(container.transform.position.x, container.transform.position.y, zLevel);
+
+        // Delete old stuff
+        List<GameObject> children = new List<GameObject>();
+        foreach (Transform child in container)
+            children.Add(child.gameObject);
+        foreach (GameObject c in children)
+            DestroyImmediate(c);
 
         // Finding start position
         SpriteRenderer boundary = container.GetComponent<SpriteRenderer>();
