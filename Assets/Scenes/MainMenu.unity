@@ -1021,3 +1021,49 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224037465259941504, guid: 4756bc12eb3f2d04cac55a889c737fbc,
     type: 2}
   m_PrefabInternal: {fileID: 676750850}
+--- !u!1001 &2019263333
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4663982025325308, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 55.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663982025325308, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.1350437
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663982025325308, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663982025325308, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663982025325308, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663982025325308, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663982025325308, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663982025325308, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600082716665270, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
+  m_IsPrefabParent: 0
