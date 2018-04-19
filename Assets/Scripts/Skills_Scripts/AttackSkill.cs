@@ -107,7 +107,7 @@ public class AttackSkill : Skill
         }
         dodgeRoll += Jrpg.Roll(target.speed);
 
-        Debug.LogError(user.name + " rolled " + attackRoll + " vs " + target.name + " dodge: " + dodgeRoll + " and defense: " + defenseRoll);
+        Jrpg.Log(user.name + " rolled " + attackRoll + " vs " + target.name + " dodge: " + dodgeRoll + " and defense: " + defenseRoll, "Visible");
         
         if (attackRoll <= dodgeRoll)
         {

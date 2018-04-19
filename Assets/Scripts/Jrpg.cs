@@ -29,28 +29,37 @@ public class Jrpg : MonoBehaviour
         public string[] equippedPerks;
     }
 
-    public static void Log(string text, bool push=false)
+    public static void Log(string text, string type = "")
     {
-        // Destroy old log if exists
-        foreach (Transform t in GameObject.Find("LOGS").transform)
-            Destroy(t.gameObject);
+        if (Debug.isDebugBuild)
+            Debug.Log(text);
 
-        // Instantiate new log
-        GameObject jrpgLog = Instantiate(Resources.Load("JrpgLog"), GameObject.Find("LOGS").transform) as GameObject;
-        jrpgLog.name = "JrpgLog";
+        if (Debug.isDebugBuild && type == "Visible")
+        {
+            // Destroy old log if exists
+            GameObject logs = GameObject.Find("LOGS");
+            int oldLogs = logs.transform.childCount;
+            for (int i = 0; i < oldLogs - 1; i++)
+            {
+                Transform t = logs.transform.GetChild(i);
+                t.Translate(Vector3.up * 2);
 
-        // Visible only with spacebar pressed
-        if (Debug.isDebugBuild || push)
-            jrpgLog.SetActive(true);
+                Destroy(logs.transform.GetChild(i).gameObject);
+            }
 
-        Text log = jrpgLog.transform.Find("Log").GetComponent<Text>();
+            // Instantiate new log
+            GameObject log = Instantiate(Resources.Load("JrpgLog"), GameObject.Find("LOGS").transform) as GameObject;
+            log.name = "Log " + log.transform.GetSiblingIndex().ToString();
 
-        // Write text
-        log.text = text;
-        Debug.Log(text);
+            Text logText = log.transform.Find("Log").GetComponent<Text>();
 
-        // Destroy anyway after a while
-        Destroy(jrpgLog, 3f);
+            // Write text
+            logText.text = text;
+            Debug.Log(text);
+
+            // Destroy anyway after a while
+            Destroy(log, 3f);
+        }
     }
 
     public static int RollDice(int dice, int faces)

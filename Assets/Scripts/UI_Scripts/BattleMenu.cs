@@ -95,7 +95,7 @@ public class BattleMenu : MonoBehaviour
             if (playerBattler.skills[skillIndex + 1] == null)
                 return;
             skillIndex += 1;            
-            Jrpg.Log(playerBattler.skills[skillIndex].name, true);
+            Jrpg.Log(playerBattler.skills[skillIndex].name, "Visible");
             rotation = "Right";
             targetAngle = new Vector3(0, 0, transform.eulerAngles.z + 15);
             rotationStartTime = Time.time;
@@ -113,7 +113,7 @@ public class BattleMenu : MonoBehaviour
             if (playerBattler.skills[skillIndex - 1] == null)
                 return;
             skillIndex -= 1;            
-            Jrpg.Log(playerBattler.skills[skillIndex].name, true);
+            Jrpg.Log(playerBattler.skills[skillIndex].name, "Visible");
             rotation = "Left";
             targetAngle = new Vector3(0, 0, transform.eulerAngles.z - 15);
             rotationStartTime = Time.time;
@@ -227,7 +227,7 @@ public class BattleMenu : MonoBehaviour
                 break;
         }
 
-        Jrpg.Log(playerBattler.skills[skillIndex].name, true);
+        Jrpg.Log(playerBattler.skills[skillIndex].name, "Visible");
     }
 
     IEnumerator ProcessChoice()
