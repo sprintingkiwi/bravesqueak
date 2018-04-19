@@ -73,10 +73,7 @@ MonoBehaviour:
   coins: 0
   storeNameImg: {fileID: 0}
   userAnimation: special
-  userEffect: {fileID: 0}
   targetAnimation: idle
-  pauseBeforeEffect: 0
-  areaEffect: {fileID: 0}
   targetEffect: {fileID: 114308449136090854, guid: ef5e008a7ec3d844ea6f5034cf8e4b54,
     type: 2}
   moveToTarget: 0

@@ -55,7 +55,7 @@ MonoBehaviour:
   description: Wait.
   speed: 0
   accuracy: 0
-  roll:
+  powerRoll:
     dices: []
   buffs: []
   statusChances: []
@@ -67,17 +67,13 @@ MonoBehaviour:
   inField: 0
   element: 0
   requiredSP: 0
-  requiredHP: 0
   shopRequirement:
     job: 0
     exp: 0
   coins: 0
   storeNameImg: {fileID: 0}
   userAnimation: attack
-  userEffect: {fileID: 0}
   targetAnimation: hit
-  pauseBeforeEffect: 0
-  areaEffect: {fileID: 0}
   targetEffect: {fileID: 0}
   moveToTarget: 0
   cameraFocus: 0
@@ -121,7 +117,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300018, guid: 760e299498eb4d54f9b4837698015da2, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 760e299498eb4d54f9b4837698015da2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

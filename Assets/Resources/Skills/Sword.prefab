@@ -74,10 +74,7 @@ MonoBehaviour:
   coins: 0
   storeNameImg: {fileID: 0}
   userAnimation: attack
-  userEffect: {fileID: 0}
   targetAnimation: hit
-  pauseBeforeEffect: 0.3
-  areaEffect: {fileID: 0}
   targetEffect: {fileID: 114979775389643346, guid: b7d3c157b7a60bc4aa477c12df5c82bb,
     type: 2}
   moveToTarget: 1

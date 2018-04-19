@@ -74,10 +74,7 @@ MonoBehaviour:
   coins: 0
   storeNameImg: {fileID: 0}
   userAnimation: special
-  userEffect: {fileID: 0}
   targetAnimation: hit
-  pauseBeforeEffect: 0.5
-  areaEffect: {fileID: 0}
   targetEffect: {fileID: 114497562577361482, guid: 1beea3f47d4a8344d8e09eb303f728a6,
     type: 2}
   moveToTarget: 0
@@ -128,7 +125,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 760e299498eb4d54f9b4837698015da2, type: 3}
+  m_Sprite: {fileID: 21300016, guid: 760e299498eb4d54f9b4837698015da2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
