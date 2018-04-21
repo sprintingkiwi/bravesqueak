@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class BattleMenu : MonoBehaviour
@@ -46,6 +47,7 @@ public class BattleMenu : MonoBehaviour
     public int wheelActualPlace;
     public int skillIndex;
     public SkillWheelIcon skillWheelIconPrefab;
+    public GameObject skillScroll;
 
     // Use this for initialization
     public void Start ()
@@ -94,8 +96,10 @@ public class BattleMenu : MonoBehaviour
             //UpdateWheel("Right");
             if (playerBattler.skills[skillIndex + 1] == null)
                 return;
-            skillIndex += 1;            
-            Jrpg.Log(playerBattler.skills[skillIndex].name, "Visible");
+            skillIndex += 1;
+
+            SetSkillScroll();
+
             rotation = "Right";
             targetAngle = new Vector3(0, 0, transform.eulerAngles.z + 15);
             rotationStartTime = Time.time;
@@ -112,8 +116,10 @@ public class BattleMenu : MonoBehaviour
             //UpdateWheel("Left");
             if (playerBattler.skills[skillIndex - 1] == null)
                 return;
-            skillIndex -= 1;            
-            Jrpg.Log(playerBattler.skills[skillIndex].name, "Visible");
+            skillIndex -= 1;
+
+            SetSkillScroll();
+
             rotation = "Left";
             targetAngle = new Vector3(0, 0, transform.eulerAngles.z - 15);
             rotationStartTime = Time.time;
@@ -125,8 +131,25 @@ public class BattleMenu : MonoBehaviour
         }
 
         // Check if rotation finished
-        if (Time.time - rotationStartTime > 0.8f)
-            rotation = "None";      
+        if (rotation != "None" && Time.time - rotationStartTime > 0.8f)
+        {            
+            rotation = "None";
+        }
+    }
+
+    void SetSkillScroll()
+    {
+        // Skill name scrolls
+        Skill focusedSkill = playerBattler.skills[skillIndex];
+        Jrpg.Log(focusedSkill.name);
+
+        if (skillScroll != null)
+            Destroy(skillScroll);
+        skillScroll = Instantiate(Resources.Load("SkillScrolls/Scroll_" + focusedSkill.element.ToString()) as GameObject);
+
+        Text skillScrollName = GameObject.Find("Canvas").transform.Find("Skill Scroll Name").GetComponent<Text>();
+        skillScrollName.text = focusedSkill.name;
+        skillScrollName.transform.position = Camera.main.WorldToScreenPoint(skillScroll.transform.position);
     }
 
     void SetupWheelIcons()
@@ -144,6 +167,9 @@ public class BattleMenu : MonoBehaviour
                 wi.Setup();
             }            
         }
+
+        skillIndex = 2;
+        SetSkillScroll();
 
         //// Instance icons on the left side of the wheel
         //if (playerBattler.skills.Count > 3)
@@ -173,6 +199,7 @@ public class BattleMenu : MonoBehaviour
 
     }
 
+    // Deprecated
     void UpdateWheel(string direction)
     {
         int nextRightPlace = 0;
@@ -226,8 +253,6 @@ public class BattleMenu : MonoBehaviour
 
                 break;
         }
-
-        Jrpg.Log(playerBattler.skills[skillIndex].name, "Visible");
     }
 
     IEnumerator ProcessChoice()

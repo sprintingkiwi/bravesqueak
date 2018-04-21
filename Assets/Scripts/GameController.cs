@@ -183,6 +183,9 @@ public class GameController : MonoBehaviour
         battleStuff.transform.Find("Battle Controller").GetComponent<BattleController>().Setup(encounter);
         situation = "Battle";
 
+        // GUI Elements
+        GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(true);
+
         // Visual and music fade in
         foreach (Coroutine c in new Coroutine[] { Jrpg.Fade(GameObject.Find("Intro"), 0), StartCoroutine(SetVolume(1)) })
             yield return c;
@@ -191,7 +194,7 @@ public class GameController : MonoBehaviour
     public IEnumerator EndBattle(string outcome, Encounter encounter)
     {
         if (Debug.isDebugBuild)
-            Debug.Log("Ending battle");
+            Debug.Log("Ending battle");        
 
         if (outcome == "Win")
         {
@@ -222,6 +225,9 @@ public class GameController : MonoBehaviour
 
             situation = "Map";
             canSave = true;
+
+            // GUI Elements
+            GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(false);
 
             // Visual and music fade in
             foreach (Coroutine c in new Coroutine[] { Jrpg.Fade(GameObject.Find("Intro"), 0), StartCoroutine(SetVolume(1)) })
