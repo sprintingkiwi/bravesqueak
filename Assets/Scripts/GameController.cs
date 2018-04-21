@@ -184,7 +184,7 @@ public class GameController : MonoBehaviour
         situation = "Battle";
 
         // GUI Elements
-        GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(true);
+
 
         // Visual and music fade in
         foreach (Coroutine c in new Coroutine[] { Jrpg.Fade(GameObject.Find("Intro"), 0), StartCoroutine(SetVolume(1)) })
@@ -227,7 +227,7 @@ public class GameController : MonoBehaviour
             canSave = true;
 
             // GUI Elements
-            GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(false);
+
 
             // Visual and music fade in
             foreach (Coroutine c in new Coroutine[] { Jrpg.Fade(GameObject.Find("Intro"), 0), StartCoroutine(SetVolume(1)) })

@@ -44,7 +44,7 @@ public class Jrpg : MonoBehaviour
                 Transform t = logs.transform.GetChild(i);
                 t.Translate(Vector3.up * 2);
 
-                Destroy(logs.transform.GetChild(i).gameObject);
+                //Destroy(logs.transform.GetChild(i).gameObject);
             }
 
             // Instantiate new log

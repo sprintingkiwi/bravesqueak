@@ -79,11 +79,14 @@ public class BattleMenu : MonoBehaviour
         // Setup Active-Battler effect
         Instantiate(activeBattler, playerBattler.transform.Find("Highlighter Hook").position, Quaternion.identity, playerBattler.transform).name = "Highlighter";
 
+        // GUI Elements
+        GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(true);
+
         return StartCoroutine(ProcessChoice());
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
         
     }
@@ -587,5 +590,13 @@ public class BattleMenu : MonoBehaviour
             areaSelection.transform.position = Vector3.MoveTowards(areaSelection.transform.position, targetAreaPos, 50f * Time.deltaTime);
             yield return null;
         }
+    }
+
+    public void OnDestroy()
+    {
+        // Remove skill scrolls stuff
+        GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(false);
+        if (skillScroll != null)
+            Destroy(skillScroll);
     }
 }
