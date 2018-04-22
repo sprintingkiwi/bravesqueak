@@ -13,10 +13,6 @@ public class HeroBattler : Battler
     public List<Skill> unlockedSkills = new List<Skill>();
     public Skill[] skills = new Skill[5];    
 
-    [Header("System")]
-    public BattlerHUD hud;
-    //public SpriteRenderer sprForCollider;
-
     // Use this for initialization
     public override void Setup()
     {
@@ -42,12 +38,6 @@ public class HeroBattler : Battler
         //baseAttackBonus.value = baseAttackBonusTable[level];
         // Calculate Base Shield Bonus        
 
-        // HUD
-        hud = (Instantiate(Resources.Load("BattlerHUD"), GameObject.Find("Canvas").transform.Find("BATTLE HUD")) as GameObject).GetComponent<BattlerHUD>();
-        hud.name = name + "_HUD";
-        hud.Start();
-        RefreshHUD();
-
         //col = gameObject.GetComponent<PolygonCollider2D>();
         //UpdateAnimator();
 
@@ -68,15 +58,7 @@ public class HeroBattler : Battler
     public override void Update ()
     {
         base.Update();
-
-        hud.transform.position = Camera.main.WorldToScreenPoint(transform.Find("HUD Hook").position);
-    }
-
-    public void RefreshHUD()
-    {
-        hud.HP.value = (float)hitPoints / maxHP.value;
-        hud.SP.value = (float)skillPoints / 10;
-    }
+    }    
 
     // Choose the right animator based on the active job
     public void UpdateAnimator()

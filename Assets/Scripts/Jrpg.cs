@@ -206,9 +206,9 @@ public class Jrpg : MonoBehaviour
         Vector3 dmgPos = Camera.main.WorldToScreenPoint(target.transform.position);
         Instantiate(dmgText, dmgPos, Quaternion.identity, GameObject.Find("Canvas").transform).Setup(value.ToString(), lifeTime);
 
-        // Update Heroes HUD
-        if (target.GetComponent<HeroBattler>() != null)
-            target.GetComponent<HeroBattler>().RefreshHUD();
+        // Update HUD
+        //if (target.GetComponent<HeroBattler>() != null)
+        target.RefreshHUD();
     }
 
     public static void Heal(Battler target, int value, float lifeTime = 0.5f)
@@ -224,8 +224,8 @@ public class Jrpg : MonoBehaviour
         Vector3 dmgPos = Camera.main.WorldToScreenPoint(target.transform.position);
         Instantiate(healTxt, dmgPos, Quaternion.identity, GameObject.Find("Canvas").transform).Setup(value.ToString(), lifeTime);
 
-        if (target.GetComponent<HeroBattler>() != null)
-            target.GetComponent<HeroBattler>().RefreshHUD();
+        //if (target.GetComponent<HeroBattler>() != null)
+        target.RefreshHUD();
     }
 
     public static void PlaySound(string clipName, bool loop = false, float volume = 1)

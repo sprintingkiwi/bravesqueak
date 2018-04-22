@@ -92,6 +92,7 @@ public class Battler : MonoBehaviour
     public Faction faction;
     public List<WallSkill> firewalls = new List<WallSkill>();
     public List<Customizer> skillCustomizers = new List<Customizer>();
+    public BattlerHUD hud;
 
     // Use this for initialization
     public virtual void Start ()
@@ -188,6 +189,13 @@ public class Battler : MonoBehaviour
         spr = gameObject.GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
         UpdateSortingOrder();
+
+        // HUD
+        hud = (Instantiate(Resources.Load("BattlerHUD"), GameObject.Find("Canvas").transform.Find("BATTLE HUD")) as GameObject).GetComponent<BattlerHUD>();
+        hud.name = name + "_HUD";
+        hud.Start();
+        //hud.transform.position = 
+        RefreshHUD();
     }
 
     // Update is called once per frame
@@ -195,6 +203,13 @@ public class Battler : MonoBehaviour
     {
         // Adjust layer sorting order based on y position
         //spr.sortingOrder = -(int)(gameObject.transform.position.y * 10);
+
+        Transform hudHook = transform.Find("HUD Hook");
+        if (hudHook != null)
+            hud.transform.position = Camera.main.WorldToScreenPoint(hudHook.position);
+        else
+            hud.transform.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + spr.bounds.size.y / 2, transform.position.z));
+
     }
 
     public virtual void SaveOriginalStats()
@@ -376,5 +391,11 @@ public class Battler : MonoBehaviour
             return 0.8f;
 
         return 0f;
+    }
+
+    public void RefreshHUD()
+    {
+        hud.HP.value = (float)hitPoints / maxHP.value;
+        hud.SP.value = (float)skillPoints / 10;
     }
 }

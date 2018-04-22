@@ -257,8 +257,8 @@ public class Skill : Customizer
     public virtual IEnumerator ApplyCosts()
     {
         user.skillPoints -= requiredSP;
-        if (user.GetComponent<HeroBattler>() != null)
-            user.GetComponent<HeroBattler>().RefreshHUD();
+        //if (user.GetComponent<HeroBattler>() != null)
+        user.RefreshHUD();
 
         yield return null;
     }
