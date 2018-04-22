@@ -39,10 +39,10 @@ public class Jrpg : MonoBehaviour
             // Destroy old log if exists
             GameObject logs = GameObject.Find("LOGS");
             int oldLogs = logs.transform.childCount;
-            for (int i = 0; i < oldLogs - 1; i++)
+            for (int i = 0; i < oldLogs; i++)
             {
                 Transform t = logs.transform.GetChild(i);
-                t.Translate(Vector3.up * 2);
+                t.GetComponent<RectTransform>().Translate(Vector3.up * 40);
 
                 //Destroy(logs.transform.GetChild(i).gameObject);
             }
@@ -55,10 +55,9 @@ public class Jrpg : MonoBehaviour
 
             // Write text
             logText.text = text;
-            Debug.Log(text);
 
             // Destroy anyway after a while
-            Destroy(log, 3f);
+            Destroy(log, 10f);
         }
     }
 

@@ -171,8 +171,7 @@ public class BattleMenu : MonoBehaviour
             }            
         }
 
-        skillIndex = 2;
-        SetSkillScroll();
+        skillIndex = 2;        
 
         //// Instance icons on the left side of the wheel
         //if (playerBattler.skills.Count > 3)
@@ -282,6 +281,8 @@ public class BattleMenu : MonoBehaviour
             MobileSelection:
             Debug.Log("Skill and Target(s) selection on touchscreen");
 
+            SetSkillScroll();
+
             // Destroy old UI if exist
             if (targetCursor != null)
                 Destroy(targetCursor);
@@ -383,10 +384,13 @@ public class BattleMenu : MonoBehaviour
             foreach (Coroutine c in cc)
                 yield return c;
         }
+
         // Keyboard-Controller Flow
         else
         {
             OtherPlatformSelection:
+
+            SetSkillScroll();
 
             // Wait until a skill is selected
             while (selectedSkill == null)
@@ -411,6 +415,10 @@ public class BattleMenu : MonoBehaviour
 
             // Target Selection
             Debug.Log("Finding legal targets based on selected skill targetType");
+
+            if (skillScroll != null)
+                Destroy(skillScroll);
+
             legalTargets = selectedSkill.FindLegalTargets(playerBattler, selectedSkill, bc.enemies.ToArray(), bc.party.ToArray());
 
             // Only for non-Area skills
@@ -596,6 +604,7 @@ public class BattleMenu : MonoBehaviour
     {
         // Remove skill scrolls stuff
         GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(false);
+
         if (skillScroll != null)
             Destroy(skillScroll);
     }
