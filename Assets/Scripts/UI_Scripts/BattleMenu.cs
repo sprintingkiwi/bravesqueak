@@ -603,8 +603,9 @@ public class BattleMenu : MonoBehaviour
     public void OnDestroy()
     {
         // Remove skill scrolls stuff
-        GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(false);
-
+        GameObject l = GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject;
+        if (l != null)
+            GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(false);
         if (skillScroll != null)
             Destroy(skillScroll);
     }
