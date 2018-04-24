@@ -411,4 +411,9 @@ public class Battler : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
     }
+
+    public virtual void OnDestroy()
+    {
+        Destroy(hud.gameObject);
+    }
 }
