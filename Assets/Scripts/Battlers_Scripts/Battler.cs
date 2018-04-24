@@ -398,4 +398,17 @@ public class Battler : MonoBehaviour
         hud.HP.value = (float)hitPoints / maxHP.value;
         hud.SP.value = (float)skillPoints / 10;
     }
+
+    public virtual IEnumerator Blink ()
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        for (int i = 0; i < 2; i++)
+        {
+            spr.color = new Color(1, 1, 1, 0.3f);
+            yield return new WaitForSeconds(0.2f);
+            spr.color = Color.white;
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
 }

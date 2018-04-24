@@ -177,6 +177,9 @@ public class AttackSkill : Skill
                 // Shake Camera
                 if (cameraShake)
                     bc.cameraCoroutines.Add(StartCoroutine(bc.mainCamera.Shake()));
+                //else // Little camera shake also after normal attacks?
+                    //bc.cameraCoroutines.Add(StartCoroutine(bc.mainCamera.Shake(0.2f, 0.1f, 1)));
+                    
                 // If the effect was projectile then play the after effect, otherwise play the normal effect
                 if (targetEffect.projectile)
                 {

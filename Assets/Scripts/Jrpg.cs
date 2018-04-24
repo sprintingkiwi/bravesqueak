@@ -190,6 +190,9 @@ public class Jrpg : MonoBehaviour
 
         Debug.Log(target.name + " takes " + value.ToString() + " damage");
 
+        if (value > 0)
+            target.StartCoroutine(target.Blink());
+
         // Apply element multipler
         if (Skill.elementsMultipliers.ContainsKey(target.elementAffinity) && Skill.elementsMultipliers[target.elementAffinity].ContainsKey(element))
         {
