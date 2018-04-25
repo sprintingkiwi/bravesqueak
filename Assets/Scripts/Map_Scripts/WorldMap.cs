@@ -59,8 +59,12 @@ public class WorldMap : MonoBehaviour
             Destroy(GameObject.Find(de));
         }
 
-        AstarPath astar = GameObject.Find("A_Star").GetComponent<AstarPath>();
-        astar.Scan();
+        // A Star Pathfinding
+        if (GameObject.Find("A_Star") != null)
+        {
+            AstarPath astar = GameObject.Find("A_Star").GetComponent<AstarPath>();
+            astar.Scan();
+        }
     }
 
     public void DisposeMapTiles(string layerName, int sortingOrder, float zLevel)

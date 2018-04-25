@@ -401,7 +401,7 @@ public class Battler : MonoBehaviour
 
     public virtual IEnumerator Blink ()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
 
         for (int i = 0; i < 2; i++)
         {

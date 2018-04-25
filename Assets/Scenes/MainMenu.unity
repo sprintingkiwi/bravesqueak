@@ -747,10 +747,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 1534918163028692, guid: d70f772dcd4238644a9aa01679d24019, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d70f772dcd4238644a9aa01679d24019, type: 2}
   m_IsPrefabParent: 0
@@ -984,10 +980,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1600082716665270, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebc7fe3dd5b598f48880637562dab642, type: 2}
   m_IsPrefabParent: 0
@@ -1127,8 +1119,8 @@ MonoBehaviour:
   player: {fileID: 0}
   lastScene: 
   currentMap: {fileID: 0}
-  savedCurrentMapName: MainMap_1
-  playerStartPosition: {x: -10, y: 5, z: 0}
+  savedCurrentMapName: HollowTree
+  playerStartPosition: {x: 3, y: -13, z: 0}
   defeatedBosses: []
   inTransfer: 0
   battleStuffPrefab: {fileID: 1597195924503714, guid: 0bdea93e2da94854b93ec6c0b35c3a45,
