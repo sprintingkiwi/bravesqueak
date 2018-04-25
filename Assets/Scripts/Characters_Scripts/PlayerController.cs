@@ -6,6 +6,7 @@ public class PlayerController : Character
 {
     InputManager inputManager;
     Joystick joy;
+    public Vector3 lastCheckedPos4RandEncounters;
 
     float hor;
     float ver;
@@ -57,6 +58,9 @@ public class PlayerController : Character
                 Stop();
         }
 
+        if (gc.currentMap.randomEncounters.Length > 0)
+            CheckRandomEncounter();
+
         //// Keydown
         //if (inputManager.DownArrow())
         //{
@@ -92,5 +96,18 @@ public class PlayerController : Character
         //{
         //    Stop();
         //}
+    }
+
+    public void CheckRandomEncounter()
+    {
+        if ((transform.position - lastCheckedPos4RandEncounters).magnitude > 3)
+        {
+            if (Random.Range(0, 100) < gc.currentMap.randomEncountersRate)
+            {
+                Jrpg.Log("Triggering random battle");
+                gc.StartCoroutine(gc.TriggerBattle(gc.currentMap.ChooseRandomEncounter(), "Random"));
+            }
+            lastCheckedPos4RandEncounters = transform.position;
+        }
     }
 }

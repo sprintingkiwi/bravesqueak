@@ -10,8 +10,17 @@ public class WorldMap : MonoBehaviour
     public AudioClip defaultBattleMusic;
     public AudioClip preBattleSound;
     public GameObject defaultBattleback;
-    public GameObject[] encounters;
-    public SpriteRenderer cameraBoundary;
+    [Range(1, 100)]
+    public int randomEncountersRate;
+
+    [System.Serializable]
+    public class RandomEncounter
+    {
+        [Range(1, 10)]
+        public int weight;
+        public Encounter encounter;
+    }
+    public RandomEncounter[] randomEncounters;    
 
     [System.Serializable]
     public class MapLayer
@@ -20,7 +29,10 @@ public class WorldMap : MonoBehaviour
         public int sortingOrder;
         public float zLevel;
     }
-    public MapLayer[] mapLayers;
+    public MapLayer[] mapLayers;    
+
+    [Header("System")]
+    public SpriteRenderer cameraBoundary;
 
     void Awake()
     {
@@ -106,5 +118,32 @@ public class WorldMap : MonoBehaviour
                 tileCount += 1;
             }
         }
+    }
+
+    public virtual Encounter ChooseRandomEncounter()
+    {
+        Jrpg.Log("Weighted random selection of a random encounter");
+
+        // Calculate sum of weigths
+        int sumOfWeights = 0;
+        foreach (RandomEncounter re in randomEncounters)
+            sumOfWeights += re.weight;
+
+        // Take random number greater than 0 and less than sum of weights
+        int rnd = Random.Range(0, sumOfWeights);
+
+        // Log
+        foreach (RandomEncounter re in randomEncounters)
+            Jrpg.Log(re.encounter.name);
+
+        // Algorithm
+        foreach (RandomEncounter re in randomEncounters)
+        {
+            if (rnd < re.weight)
+                return re.encounter;
+            rnd -= re.weight;
+        }
+        Debug.Log("Should never execute this");
+        return null;
     }
 }

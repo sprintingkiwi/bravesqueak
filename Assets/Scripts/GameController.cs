@@ -212,11 +212,15 @@ public class GameController : MonoBehaviour
                 Destroy(t.gameObject);
 
             // Destroy enemies
-            if (Debug.isDebugBuild)
-                Debug.Log("Destroying " + currentEnemy);
-            Destroy(currentMap.transform.Find("ENEMIES").Find(currentEnemy).gameObject);
-            if (encounter.boss)
-                defeatedBosses.Add(currentEnemy);
+            if (currentEnemy != "Random")
+            {
+                Jrpg.Log("Destroying " + currentEnemy);
+                Destroy(currentMap.transform.Find("ENEMIES").Find(currentEnemy).gameObject);
+                if (encounter.boss)
+                    defeatedBosses.Add(currentEnemy);
+            }
+            else
+                Jrpg.Log("Not destroying enemies on map because it is a random encounter");
 
             areaStuff.SetActive(true);
             //currentMap.gameObject.SetActive(true);
@@ -536,7 +540,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Transfering player " + name);
         
         Debug.Log("Freezing player");
-        collision.gameObject.GetComponent<PlayerController>().canMove = false;
+        player.canMove = false;
 
         Debug.Log("Check music change");
         if (transfer.destinationMap.soundtrack != music.clip)
@@ -564,12 +568,13 @@ public class GameController : MonoBehaviour
         //defeatedNormalEnemies.Clear();
 
         Debug.Log("Move player");
-        collision.transform.position = instDestPlace.transform.position;
+        player.transform.position = instDestPlace.transform.position;
+        player.lastCheckedPos4RandEncounters = player.transform.position;
 
         Debug.Log("Fading in");
         yield return Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
 
         Debug.Log("Unfreezing player");
-        collision.gameObject.GetComponent<PlayerController>().canMove = true;
+        player.canMove = true;
     }
 }
