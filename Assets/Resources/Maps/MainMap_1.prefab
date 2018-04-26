@@ -4317,11 +4317,10 @@ MonoBehaviour:
   soundtrack: {fileID: 8300000, guid: 09b5ecaf0756b7c41a8ddc7e8ef9eaa1, type: 3}
   defaultBattleMusic: {fileID: 8300000, guid: 74c63c61a6d29a2418d2040ba67dcf32, type: 3}
   preBattleSound: {fileID: 8300000, guid: 2f0b9a5956ba39e4c9c6a72f54312dda, type: 3}
-  defaultBattleback: {fileID: 1985013537597252, guid: b708fdf733f3fe846926c132e0926e50,
+  defaultBattleback: {fileID: 1756757468031732, guid: 5d9db7c48218b1a4990c159d88836f8a,
     type: 2}
-  enableRandomEncounters: 0
-  encounters: []
-  cameraBoundary: {fileID: 212003245639849284}
+  randomEncountersRate: 0
+  randomEncounters: []
   mapLayers:
   - folderName: Ground
     sortingOrder: -1000
@@ -4329,6 +4328,7 @@ MonoBehaviour:
   - folderName: Overlay
     sortingOrder: 1000
     zLevel: -0.5
+  cameraBoundary: {fileID: 212003245639849284}
 --- !u!114 &114102597101257580
 MonoBehaviour:
   m_ObjectHideFlags: 1
