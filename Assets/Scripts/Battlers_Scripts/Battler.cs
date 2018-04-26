@@ -412,6 +412,18 @@ public class Battler : MonoBehaviour
         }
     }
 
+    public virtual IEnumerator MoveTo (Vector3 position, float speed = 100)
+    {
+        Jrpg.Log(name + " started to move towards position " + position.ToString());
+        while (transform.position != position)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, position, speed * Time.deltaTime);
+            UpdateSortingOrder();
+            yield return null;
+        }
+        Jrpg.Log(name + " reached target position " + position.ToString());
+    }
+
     public virtual void OnDestroy()
     {
         Destroy(hud.gameObject);
