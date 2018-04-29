@@ -546,15 +546,17 @@ public class GameController : MonoBehaviour
         if (transfer.destinationMap.soundtrack != music.clip)
             StartCoroutine(SetVolume(0, speed));
 
-        Debug.Log("Fading out and destroy old map");
+        Debug.Log("Fading out and pointing old map");
         // This will also wait for the music to fade out, if needed (the speed is the same)
         yield return Jrpg.Fade(GameObject.Find("Intro"), 1, speed);
-        Destroy(currentMap.gameObject);
+        WorldMap destinationMap = transfer.destinationMap;
+        GameObject oldMap = currentMap.gameObject;
+        yield return null;
 
         Debug.Log("Instance new map");
         inTransfer = true;
         transfer.transfering = true;
-        currentMap = Instantiate(transfer.destinationMap, Vector3.zero, Quaternion.identity, areaStuff.transform);
+        currentMap = Instantiate(destinationMap, Vector3.zero, Quaternion.identity, areaStuff.transform);
         currentMap.name = transfer.destinationMap.name;
         currentMap.Setup();
 
@@ -570,6 +572,9 @@ public class GameController : MonoBehaviour
         Debug.Log("Move player");
         player.transform.position = instDestPlace.transform.position;
         player.lastCheckedPos4RandEncounters = player.transform.position;
+
+        Debug.Log("Destroying old map");
+        Destroy(oldMap);
 
         Debug.Log("Fading in");
         yield return Jrpg.Fade(GameObject.Find("Intro"), 0, 1);

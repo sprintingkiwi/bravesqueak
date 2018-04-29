@@ -7,6 +7,7 @@ public class PlayerController : Character
     InputManager inputManager;
     Joystick joy;
     public Vector3 lastCheckedPos4RandEncounters;
+    public bool randomEncounters;
 
     float hor;
     float ver;
@@ -58,7 +59,7 @@ public class PlayerController : Character
                 Stop();
         }
 
-        if (gc.currentMap.randomEncounters.Length > 0)
+        if (randomEncounters && gc.currentMap.randomEncounters.Length > 0)
             CheckRandomEncounter();
 
         //// Keydown

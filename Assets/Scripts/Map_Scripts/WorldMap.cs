@@ -39,6 +39,15 @@ public class WorldMap : MonoBehaviour
         gc = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
+    void Update()
+    {
+        if (transform.Find("Passability").GetComponent<PolygonCollider2D>().enabled == false)
+        {
+            Debug.LogWarning(name + " map passability collider is not enabled. Enabling it now...");
+            transform.Find("Passability").GetComponent<PolygonCollider2D>().enabled = true;
+        }
+    }
+
     public virtual void BuildMap()
     {
         foreach (MapLayer ml in mapLayers)
