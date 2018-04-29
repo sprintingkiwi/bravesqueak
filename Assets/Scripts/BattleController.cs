@@ -188,7 +188,13 @@ public class BattleController : MonoBehaviour
             // Player Actions
             foreach (Battler b in party.Where(s => s != null && s.GetComponent<HeroBattler>() != null))
             {
-                StartCoroutine(b.MoveTo(new Vector3(6f, -5f, 0f), speed: 150f));
+                Vector3 activeBattlerPos;
+                if (encounter.transform.Find("Active Battler Hook") != null)
+                    activeBattlerPos = encounter.transform.Find("Active Battler Hook").position;
+                else
+                    activeBattlerPos = new Vector3(6f, -5f, 0f);
+
+                StartCoroutine(b.MoveTo(activeBattlerPos, speed: 150f));
                 yield return SetupBattleMenu(b.GetComponent<HeroBattler>());
                 StartCoroutine(b.MoveTo(b.originalPos, speed: 150f));
                 yield return new WaitForSeconds(0.1f);
