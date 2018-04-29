@@ -90,7 +90,7 @@ MonoBehaviour:
     value: 30
   maxHP:
     ID: maxHP
-    value: 60
+    value: 200
   hitPoints: 0
   skillPoints: 0
   level: 2
@@ -98,10 +98,11 @@ MonoBehaviour:
   size: 0
   sizeModifier: 0
   elementAffinity: 1
-  species: 5
+  species: 4
   perks:
   - {fileID: 0}
   - {fileID: 0}
+  effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
@@ -122,6 +123,7 @@ MonoBehaviour:
   faction: -1
   firewalls: []
   skillCustomizers: []
+  hud: {fileID: 0}
   prefabName: 
   strategy: {fileID: 114109042552807282, guid: 84778b92ad2da8c4cba7b6a812ae5692, type: 2}
 --- !u!212 &212813837508701844
