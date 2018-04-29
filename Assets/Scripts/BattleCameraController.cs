@@ -71,7 +71,7 @@ public class BattleCameraController : Jrpg
         //StartCoroutine(Return());
     }
 
-    public IEnumerator Move(Vector3 delta, float speed=2f)
+    public IEnumerator Move(Vector3 delta, float speed=2f, bool setAsOriginalPosition = false)
     {
         Vector3 targetPos = transform.position + delta;
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
@@ -80,5 +80,8 @@ public class BattleCameraController : Jrpg
             yield return null;
         }
         //StartCoroutine(Return());
+
+        if (setAsOriginalPosition)
+            originalPos = transform.position;
     }
 }

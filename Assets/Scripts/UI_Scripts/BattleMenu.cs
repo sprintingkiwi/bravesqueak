@@ -148,7 +148,8 @@ public class BattleMenu : MonoBehaviour
 
         if (skillScroll != null)
             Destroy(skillScroll);
-        skillScroll = Instantiate(Resources.Load("SkillScrolls/Scroll_" + focusedSkill.element.ToString()) as GameObject);
+        skillScroll = Instantiate(Resources.Load("SkillScrolls/Scroll_" + focusedSkill.element.ToString()) as GameObject, transform.parent);
+        //skillScroll.transform.Translate(Vector3.up * 16);
 
         Text skillScrollName = GameObject.Find("Canvas").transform.Find("Skill Scroll Name").GetComponent<Text>();
         skillScrollName.text = focusedSkill.name;

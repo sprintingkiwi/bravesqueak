@@ -75,7 +75,7 @@ public class BattleController : MonoBehaviour
 
         // Populate turns
         turnNumber = 0;
-        StartCoroutine(mainCamera.Move(encounter.cameraAdjust.delta, encounter.cameraAdjust.speed));
+        StartCoroutine(mainCamera.Move(encounter.cameraAdjust.delta, encounter.cameraAdjust.speed, setAsOriginalPosition: true));
         StartCoroutine(ManageTurns());
         Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
     }
