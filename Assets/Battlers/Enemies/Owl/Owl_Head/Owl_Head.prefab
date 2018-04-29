@@ -125,7 +125,7 @@ MonoBehaviour:
   skillCustomizers: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: 27480f7d3238dfe4e8690241aaddf6fc, type: 2}
+  strategy: {fileID: 114109042552807282, guid: 48bec04e185d2d04484daa51cb25e879, type: 2}
 --- !u!212 &212813837508701844
 SpriteRenderer:
   m_ObjectHideFlags: 1

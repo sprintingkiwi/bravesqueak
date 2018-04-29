@@ -41,11 +41,11 @@ public class WorldMap : MonoBehaviour
 
     void Update()
     {
-        if (transform.Find("Passability").GetComponent<PolygonCollider2D>().enabled == false)
-        {
-            Debug.LogWarning(name + " map passability collider is not enabled. Enabling it now...");
-            transform.Find("Passability").GetComponent<PolygonCollider2D>().enabled = true;
-        }
+        //if (transform.Find("Passability").GetComponent<PolygonCollider2D>().enabled == false)
+        //{
+        //    Debug.LogWarning(name + " map passability collider is not enabled. Enabling it now...");
+        //    transform.Find("Passability").GetComponent<PolygonCollider2D>().enabled = true;
+        //}
     }
 
     public virtual void BuildMap()
