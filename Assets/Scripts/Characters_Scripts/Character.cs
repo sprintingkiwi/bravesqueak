@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : JrpgBehaviour
+public class Character : MapElement
 {
     public float speed;
     public bool mirrorHorizontal = true;
@@ -21,8 +21,10 @@ public class Character : JrpgBehaviour
     public GameController gc;
 
     // Use this for initialization
-    public virtual void Start ()
+    public override void Start ()
     {
+        base.Start();
+
         gc = GameObject.Find("Game Controller").GetComponent<GameController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
@@ -41,9 +43,9 @@ public class Character : JrpgBehaviour
     }
 	
 	// Update is called once per frame
-	public virtual void Update ()
+	public override void Update ()
     {
-        Jrpg.AdjustSortingOrder(gameObject);
+        base.Update();
 
         if (status == "Idle" && rb.velocity.magnitude > 0)
             rb.velocity = Vector3.zero;
