@@ -45,6 +45,7 @@ public class GameController : MonoBehaviour
     public GameObject areaStuffPrefab;
     public GameObject battleStuff;
     public GameObject areaStuff;
+    public MapCameraController mapCamera;
 
     [Header("Music")]
     public AudioSource music;
@@ -111,6 +112,7 @@ public class GameController : MonoBehaviour
     {
         areaStuff = Instantiate(areaStuffPrefab);
         situation = "Map";
+        mapCamera = areaStuff.transform.Find("Map Camera").GetComponent<MapCameraController>();
 
         GameObject intro = GameObject.Find("Intro");
         intro.GetComponent<Image>().enabled = true;

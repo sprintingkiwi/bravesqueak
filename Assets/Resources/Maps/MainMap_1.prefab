@@ -4325,9 +4325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: {fileID: 114142631811641686, guid: d70f772dcd4238644a9aa01679d24019,
+  destinationMap: {fileID: 114769304090041922, guid: ebc7fe3dd5b598f48880637562dab642,
     type: 2}
-  destinationPlace: To MainMap_1
+  destinationPlace: To HollowTree_1
   active: 1
   transfering: 0
 --- !u!114 &114475499714299532

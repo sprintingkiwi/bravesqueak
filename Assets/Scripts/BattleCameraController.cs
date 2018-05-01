@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleCameraController : Jrpg
+public class BattleCameraController : MonoBehaviour
 {
     public Vector3 originalPos;
 
 	// Use this for initialization
-	void Start ()
+	public virtual void Start ()
     {
         originalPos = transform.position;
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    public virtual void Update ()
     {
 		
 	}
 
-    public IEnumerator DefaultFollow (Battler actor, float speed=1f, float width=2.5f)
+    public virtual IEnumerator DefaultFollow (Battler actor, float speed=1f, float width=2.5f)
     {
         Debug.Log("Camera is following " + actor.name);
 
@@ -33,7 +33,7 @@ public class BattleCameraController : Jrpg
         Debug.Log("Camera reached follow position for " + actor.name);
     }
 
-    public IEnumerator Return(float speed=1)
+    public virtual IEnumerator Return(float speed=1)
     {
         Debug.Log("Camera is returning to original position");
 
@@ -47,7 +47,7 @@ public class BattleCameraController : Jrpg
         Debug.Log("Camera returned to original position");
     }
 
-    public IEnumerator Shake(float shakeDuration=1f, float shakeAmount=0.3f, float decreaseFactor=1.0f)
+    public virtual IEnumerator Shake(float shakeDuration=1f, float shakeAmount=0.3f, float decreaseFactor=1.0f)
     {
         while (shakeDuration > 0)
         {
@@ -60,7 +60,7 @@ public class BattleCameraController : Jrpg
         transform.localPosition = originalPos;
     }
 
-    public IEnumerator Focus(Battler target, float speed=2f, float distance=20f)
+    public virtual IEnumerator Focus(Battler target, float speed=2f, float distance=20f)
     {
         Vector3 targetPos = new Vector3(target.transform.position.x, target.transform.position.y, -distance);
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
@@ -71,17 +71,26 @@ public class BattleCameraController : Jrpg
         //StartCoroutine(Return());
     }
 
-    public IEnumerator Move(Vector3 delta, float speed=2f, bool setAsOriginalPosition = false)
-    {
+    public virtual IEnumerator Move(Vector3 delta, float speed=2f, bool setAsOriginalPosition = false)
+    {       
         Vector3 targetPos = transform.position + delta;
+
+        Jrpg.Log("Moving camera to " + targetPos);
+
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPos, speed * Time.deltaTime);
+            transform.position = Vector3.Slerp(transform.position, targetPos, speed * Time.deltaTime);
             yield return null;
         }
+        //transform.position = targetPos;
         //StartCoroutine(Return());
 
         if (setAsOriginalPosition)
             originalPos = transform.position;
+    }
+
+    public virtual IEnumerator MoveTo(Vector3 targetPos, float speed = 2f, bool setAsOriginalPosition = false)
+    {
+        yield return StartCoroutine(Move(targetPos - transform.position, speed, setAsOriginalPosition));
     }
 }

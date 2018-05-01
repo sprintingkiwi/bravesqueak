@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skit : MonoBehaviour
+public class Skit : AnimatedMapElement
 {
     public Encounter encounter;
-    GameController gc;
-    Animator anim;
 
-    void Start()
+    public override void Start()
     {
-        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
-        anim = gameObject.GetComponent<Animator>();
+        base.Start();
     }
 
-    private void Update()
+    public override void Update()
     {
+        base.Update();
+
         Jrpg.AdjustSortingOrder(gameObject);
     }
 
@@ -32,6 +31,13 @@ public class Skit : MonoBehaviour
 
     IEnumerator TriggerBattle()
     {
+        gc.player.canMove = false;
+
+        // Focus camera to skit
+        gc.mapCamera.followPlayer = false;
+        //yield return StartCoroutine(mapCam.Move(Vector3.up * 5));
+        yield return StartCoroutine(gc.mapCamera.MoveTo(new Vector3(spr.bounds.center.x, spr.bounds.center.y - 1.3f, gc.mapCamera.transform.position.z), speed: 0.5f));
+
         // If the skit has a prebattle animation, then play it
         foreach (AnimatorControllerParameter acp in anim.parameters)
             if (acp.name == "prebattle")
@@ -39,8 +45,8 @@ public class Skit : MonoBehaviour
                 anim.SetTrigger("prebattle");
                 break;
             }
-
-        yield return new WaitForSeconds(0.1f);
+        
+        yield return new WaitForSeconds(5f);
         yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
 
         // Trigger battle

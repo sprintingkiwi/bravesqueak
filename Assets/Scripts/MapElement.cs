@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class MapElement : JrpgBehaviour
 {
+    public SpriteRenderer spr;
+    public GameController gc;
 
-	// Use this for initialization
-	public virtual void Start ()
+    // Use this for initialization
+    public virtual void Start ()
     {
-		
-	}
-	
-	// Update is called once per frame
-	public virtual void Update ()
+        spr = gameObject.GetComponent<SpriteRenderer>();
+        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+    }
+
+    // Update is called once per frame
+    public virtual void Update ()
     {
         Jrpg.AdjustSortingOrder(gameObject);
     }

@@ -987,6 +987,7 @@ MonoBehaviour:
     type: 2}
   battleStuff: {fileID: 0}
   areaStuff: {fileID: 0}
+  mapCamera: {fileID: 0}
   music: {fileID: 1734181798}
 --- !u!4 &1734181800
 Transform:

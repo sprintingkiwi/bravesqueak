@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MapElement
+public class Character : AnimatedMapElement
 {
     public float speed;
     public bool mirrorHorizontal = true;
@@ -10,25 +10,19 @@ public class Character : MapElement
 
     [Header("System")]
     public Rigidbody2D rb;
-    public Animator anim;
-    public SpriteRenderer spr;
     public bool canMove = true;
     //public string direction = "Down";
     public string status = "Idle";
     public Vector2 direction = Vector2.down;
     //public Vector2 heading;
     public Dictionary<Vector2, int> directions = new Dictionary<Vector2, int>();
-    public GameController gc;
 
     // Use this for initialization
     public override void Start ()
     {
         base.Start();
 
-        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
-        anim = gameObject.GetComponent<Animator>();
-        spr = gameObject.GetComponent<SpriteRenderer>();
 
         // Setting correspondence between movement vectors and animations
         directions.Add(Vector2.down, 0);
