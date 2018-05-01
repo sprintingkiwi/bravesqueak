@@ -3852,16 +3852,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114050992893974920
 MonoBehaviour:
@@ -3874,16 +3874,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114068704343215850
 MonoBehaviour:
@@ -3912,16 +3912,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114083106263764316
 MonoBehaviour:
@@ -3934,16 +3934,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114090145181186690
 MonoBehaviour:
@@ -3956,16 +3956,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93af3eb0e1bdfde46a1eb98f93bae33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: -1}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114091726864809636
 MonoBehaviour:
@@ -3978,7 +3978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de327edb4afb2d42a9083cb8903b322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtrack: {fileID: 8300000, guid: 09b5ecaf0756b7c41a8ddc7e8ef9eaa1, type: 3}
+  soundtrack: {fileID: 8300000, guid: 762afbe8da01d624c9e194e3e6547f86, type: 3}
   defaultBattleMusic: {fileID: 8300000, guid: 74c63c61a6d29a2418d2040ba67dcf32, type: 3}
   preBattleSound: {fileID: 8300000, guid: 2f0b9a5956ba39e4c9c6a72f54312dda, type: 3}
   defaultBattleback: {fileID: 1985013537597252, guid: b708fdf733f3fe846926c132e0926e50,
@@ -4004,16 +4004,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12327632d1685f4a82bfcd2ddaa53a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 2
   mirrorHorizontal: 0
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: -1}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 0}
   nextWaypointDistance: 0.1
@@ -4034,16 +4034,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114119618229505460
 MonoBehaviour:
@@ -4056,16 +4056,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93af3eb0e1bdfde46a1eb98f93bae33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: -1}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114121591288572698
 MonoBehaviour:
@@ -4078,16 +4078,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114145226246769002
 MonoBehaviour:
@@ -4128,16 +4128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12327632d1685f4a82bfcd2ddaa53a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 1
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 0}
   nextWaypointDistance: 0.1
@@ -4158,16 +4158,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114258385094706280
 MonoBehaviour:
@@ -4180,16 +4180,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114309704885844426
 MonoBehaviour:
@@ -4202,16 +4202,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08a537993324f543a2842d994387dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 114158055192404530, guid: 443f29211312ddb4e972301cd240869b,
     type: 2}
@@ -4226,16 +4226,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08a537993324f543a2842d994387dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 114182225423817548, guid: 561f44b030876d9428c727565bd6bed8,
     type: 2}
@@ -4250,6 +4250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38f9c6fbf6e6c34ab128fb5081090e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   encounter: {fileID: 114158055192404530, guid: b2c6ed21f3418394d89093ff0b6fb62d,
     type: 2}
 --- !u!114 &114362793632366184
@@ -4263,16 +4266,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccdfedb06e0bfc4182bf4b57d5e4ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 1
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 114182225423817548, guid: 561f44b030876d9428c727565bd6bed8,
     type: 2}
@@ -4290,6 +4293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38f9c6fbf6e6c34ab128fb5081090e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   encounter: {fileID: 114158055192404530, guid: b2c6ed21f3418394d89093ff0b6fb62d,
     type: 2}
 --- !u!114 &114411729383667906
@@ -4303,16 +4309,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93af3eb0e1bdfde46a1eb98f93bae33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114456056114888002
 MonoBehaviour:
@@ -4341,16 +4347,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93af3eb0e1bdfde46a1eb98f93bae33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114479865548240142
 MonoBehaviour:
@@ -4363,16 +4369,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114512776979239366
 MonoBehaviour:
@@ -4385,16 +4391,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08a537993324f543a2842d994387dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 114158055192404530, guid: 3cdc2105dcf688144b2b1f549d9a66b2,
     type: 2}
@@ -4409,16 +4415,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08a537993324f543a2842d994387dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 114780441065387980, guid: 38ad90b7547be6f469f7a9c7a8c1e3ae,
     type: 2}
@@ -4433,16 +4439,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08a537993324f543a2842d994387dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 0
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 114809916583162938, guid: e7b7208756760364091e2386eb5f321f,
     type: 2}
@@ -4473,16 +4479,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08a537993324f543a2842d994387dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 0
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 114158055192404530, guid: b2c6ed21f3418394d89093ff0b6fb62d,
     type: 2}
@@ -4497,16 +4503,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccdfedb06e0bfc4182bf4b57d5e4ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 1
   mirrorHorizontal: 0
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
   encounter: {fileID: 114158055192404530, guid: b2c6ed21f3418394d89093ff0b6fb62d,
     type: 2}
@@ -4524,16 +4530,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114828170117183670
 MonoBehaviour:
@@ -4557,16 +4563,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114846716359270970
 MonoBehaviour:
@@ -4579,16 +4585,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc07bb88de89f246a64b8ccd4f9753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114864125278725026
 MonoBehaviour:
@@ -4601,16 +4607,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93af3eb0e1bdfde46a1eb98f93bae33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   speed: 0
   mirrorHorizontal: 1
   level: 0
   rb: {fileID: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
   canMove: 1
   status: Idle
   direction: {x: 0, y: 0}
-  gc: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &114964141393947476
 MonoBehaviour:
@@ -4651,6 +4657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38f9c6fbf6e6c34ab128fb5081090e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   encounter: {fileID: 114809916583162938, guid: 15f07ebca0254964e8c72e3f70bdd0e6,
     type: 2}
 --- !u!212 &212002128610666112

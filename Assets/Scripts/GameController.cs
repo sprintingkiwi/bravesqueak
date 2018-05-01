@@ -230,6 +230,7 @@ public class GameController : MonoBehaviour
             //player.transform.position = playerStartPosition;
 
             situation = "Map";
+            mapCamera.followPlayer = true;
             canSave = true;
 
             // GUI Elements
