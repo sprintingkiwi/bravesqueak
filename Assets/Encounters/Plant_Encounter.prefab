@@ -170,10 +170,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleback: {fileID: 0}
+  partyPosAdjust: {fileID: 0}
   cameraAdjust:
     delta: {x: 0, y: 0, z: 0}
     speed: 0.2
-  battleMusic: {fileID: 8300000, guid: bedab15216f20d6459c184f6bc7a9554, type: 3}
+  battleMusic: {fileID: 0}
   enemies:
   - recipe: {fileID: 114386406591785424, guid: 2ee72115cfcb30a448849e8b810a4bc3, type: 2}
     place: {fileID: 4139802192237392}
@@ -218,7 +219,7 @@ SpriteRenderer:
   m_Size: {x: 8.2, y: 9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!212 &212761777717276890
 SpriteRenderer:
@@ -260,5 +261,5 @@ SpriteRenderer:
   m_Size: {x: 14.400001, y: 14.400001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
