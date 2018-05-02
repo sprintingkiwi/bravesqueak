@@ -5,6 +5,7 @@ using UnityEngine;
 public class BattleCameraController : MonoBehaviour
 {
     public Vector3 originalPos;
+    public List<Coroutine> activeCoroutines = new List<Coroutine>();
 
 	// Use this for initialization
 	public virtual void Start ()
@@ -17,6 +18,12 @@ public class BattleCameraController : MonoBehaviour
     {
 		
 	}
+
+    public virtual void OnDisable()
+    {
+        foreach (Coroutine c in activeCoroutines)
+            StopCoroutine(c);
+    }
 
     public virtual IEnumerator DefaultFollow (Battler actor, float speed=1f, float width=2.5f)
     {
@@ -79,7 +86,7 @@ public class BattleCameraController : MonoBehaviour
 
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
-            transform.position = Vector3.Slerp(transform.position, targetPos, speed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, targetPos, speed * Time.deltaTime);
             yield return null;
         }
         //transform.position = targetPos;
@@ -92,5 +99,27 @@ public class BattleCameraController : MonoBehaviour
     public virtual IEnumerator MoveTo(Vector3 targetPos, float speed = 2f, bool setAsOriginalPosition = false)
     {
         yield return StartCoroutine(Move(targetPos - transform.position, speed, setAsOriginalPosition));
+    }
+
+    public virtual IEnumerator SlideTo(Vector3 targetPos, float threshold = 0.5f, float speed = 2f, bool setAsOriginalPosition = false, IEnumerator callback = null)
+    {
+        Jrpg.Log("Sliding camera to " + targetPos);
+
+        while (Vector3.Distance(transform.position, targetPos) > threshold)
+        {
+            transform.position = Vector3.Lerp(transform.position, targetPos, speed * Time.deltaTime);
+            yield return null;
+        }
+
+        StartCoroutine(callback);
+
+        while (Vector3.Distance(transform.position, targetPos) > 0.1f)
+        {
+            transform.position = Vector3.Lerp(transform.position, targetPos, speed * Time.deltaTime);
+            yield return null;
+        }
+
+        if (setAsOriginalPosition)
+            originalPos = transform.position;
     }
 }

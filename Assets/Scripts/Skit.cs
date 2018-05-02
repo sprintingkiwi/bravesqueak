@@ -6,6 +6,9 @@ public class Skit : AnimatedMapElement
 {
     public Encounter encounter;
 
+    [Header("Camera Shift")]
+    public float shiftThresold = 1f;
+
     public override void Start()
     {
         base.Start();
@@ -25,31 +28,37 @@ public class Skit : AnimatedMapElement
         // Trigger battle when player is in range
         if (other.gameObject.name == "Player")
         {
-            StartCoroutine(TriggerBattle());
+            StartCoroutine(ProcessSkitEncounter());
         }
     }
 
-    IEnumerator TriggerBattle()
+    IEnumerator ProcessSkitEncounter()
     {
         gc.player.canMove = false;
 
         // Focus camera to skit
         gc.mapCamera.followPlayer = false;
         //yield return StartCoroutine(mapCam.Move(Vector3.up * 5));
-        yield return StartCoroutine(gc.mapCamera.MoveTo(new Vector3(spr.bounds.center.x, spr.bounds.center.y - 1.3f, gc.mapCamera.transform.position.z), speed: 0.5f));
+        gc.mapCamera.activeCoroutines.Add(StartCoroutine(gc.mapCamera.SlideTo(new Vector3(spr.bounds.center.x, spr.bounds.center.y - 1.3f, gc.mapCamera.transform.position.z), threshold: shiftThresold, speed: 0.5f, callback: TriggerBattle())));
 
+        yield return null;
+    }
+
+    IEnumerator TriggerBattle()
+    {
         // If the skit has a prebattle animation, then play it
         foreach (AnimatorControllerParameter acp in anim.parameters)
             if (acp.name == "prebattle")
             {
                 anim.SetTrigger("prebattle");
+
+                // Wait for pre-battle animation
+                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
                 break;
             }
-        
-        yield return new WaitForSeconds(5f);
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
 
-        // Trigger battle
-        gc.StartCoroutine(gc.TriggerBattle(encounter, name));
+        // Trigger Battle
+        yield return StartCoroutine(gc.TriggerBattle(encounter, name));
     }
 }
