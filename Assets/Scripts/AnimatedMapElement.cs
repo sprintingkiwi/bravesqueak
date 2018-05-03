@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimatedMapElement : MapElement
 {
+    [Header("Animated Map Element")]
     public Animator anim;
 
     // Use this for initialization

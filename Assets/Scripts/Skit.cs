@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Skit : AnimatedMapElement
 {
+    [Header("Skit")]
     public Encounter encounter;
+    public AnimationClip preBattleClip;
 
     [Header("Camera Shift")]
     public float shiftThresold = 1f;
@@ -53,8 +55,15 @@ public class Skit : AnimatedMapElement
                 anim.SetTrigger("prebattle");
 
                 // Wait for pre-battle animation
-                yield return new WaitForSeconds(0.1f);
-                yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+                //TODO: it should be improved by automatically check clip lenght from mecanim
+                if (preBattleClip != null)
+                    yield return new WaitForSeconds(preBattleClip.length);
+                else
+                {
+                    yield return new WaitForSeconds(0.1f);
+                    yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+                }
+
                 break;
             }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapElement : JrpgBehaviour
 {
+    [Header("Map Element")]
     public SpriteRenderer spr;
     public GameController gc;
 
