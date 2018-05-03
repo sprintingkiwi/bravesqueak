@@ -266,10 +266,10 @@ public class Jrpg : MonoBehaviour
         else
             Debug.LogError(name + " animation not assigned!");
 
-        if (wait)
+        if (wait) // Wait for the animation to finish
         {
-            // Wait for the animation to finish
-            yield return new WaitForSeconds(0.1f);
+            //yield return new WaitForSeconds(0.1f);
+            yield return new WaitForEndOfFrame();
 
             float percentage = actor.GetEffectDelay(name);
             if (percentage != 0f)
@@ -306,5 +306,18 @@ public class Jrpg : MonoBehaviour
         }
         else
             Debug.LogError(effect.name + " effect not assigned!");
+    }
+
+    public static float GetClipLenght(Animator anim, string clipName)
+    {
+        RuntimeAnimatorController ac = anim.runtimeAnimatorController;    //Get Animator controller
+        for (int i = 0; i < ac.animationClips.Length; i++)                 //For all animations
+        {
+            if (ac.animationClips[i].name == clipName)        //If it has the same name as your clip
+            {
+                return ac.animationClips[i].length;
+            }
+        }
+        return 0;
     }
 }

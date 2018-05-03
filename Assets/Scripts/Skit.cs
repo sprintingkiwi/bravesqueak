@@ -60,7 +60,7 @@ public class Skit : AnimatedMapElement
                     yield return new WaitForSeconds(preBattleClip.length);
                 else
                 {
-                    yield return new WaitForSeconds(0.1f);
+                    yield return new WaitForEndOfFrame();
                     yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
                 }
 
