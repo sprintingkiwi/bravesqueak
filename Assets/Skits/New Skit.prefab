@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 58979162650714526}
   - component: {fileID: 114856843550331240}
   m_Layer: 0
-  m_Name: PatrolAnt
+  m_Name: New Skit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,8 +133,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38f9c6fbf6e6c34ab128fb5081090e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
   encounter: {fileID: 114809916583162938, guid: 15f07ebca0254964e8c72e3f70bdd0e6,
     type: 2}
+  preBattleClip: {fileID: 0}
+  shiftThresold: 1
 --- !u!212 &212758348280840920
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -167,7 +172,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a83e605c040cbe041bef373ccb7f4a9b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,5 +180,5 @@ SpriteRenderer:
   m_Size: {x: 4.166667, y: 2.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
