@@ -242,11 +242,10 @@ public class GameController : MonoBehaviour
 
             player.canMove = true;
         }
-        else
+        else // Defeat
         {
             yield return Jrpg.Fade(GameObject.Find("Intro"), 1);
-            if (Debug.isDebugBuild)
-                Debug.Log("You lose");
+            Jrpg.Log("You lose");
             yield return Jrpg.LoadScene("MainMenu");
         }        
     }
