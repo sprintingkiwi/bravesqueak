@@ -7,12 +7,42 @@ using System.Linq;
 public class AttackSkill : Skill
 {
     // Temporary modifiers for attack attempt. Could be influenced by perks or ongoing skills.
-    public int attackMod;
-    public int defenseMod;
-    public int specialAttackMod;
-    public int specialDefenseMod;
-    public int dodgeMod;
-    public int criticalMod;
+    //public int attackMod;
+    //public int defenseMod;
+    //public int specialAttackMod;
+    //public int specialDefenseMod;
+    //public int dodgeMod;
+    //public int criticalMod;
+    //public float damageMod;
+    [System.Serializable]
+    public class Modifier
+    {
+        public string name;
+        public float value;
+    }
+    public Modifier[] mods = new Modifier[]
+    {
+        new Modifier { name = "ATK" },
+        new Modifier { name = "SAT" },
+        new Modifier { name = "DEF" },
+        new Modifier { name = "SDF" },
+        new Modifier { name = "EVA" },
+        new Modifier { name = "CRT" },
+        new Modifier { name = "DMG" }
+    };
+    public float GetMod(string name)
+    {
+        foreach (Modifier mod in mods)
+            if (mod.name == name)
+                return mod.value;
+        return 0;
+    }
+    public void SetMod(string name, float value)
+    {
+        foreach (Modifier mod in mods)
+            if (mod.name == name)
+                mod.value = value;
+    }
 
     public override IEnumerator Fighting()
     {
@@ -70,9 +100,17 @@ public class AttackSkill : Skill
 
         if (fightOutcomes[target] == "Success")
         {
-            // Calculate skill damage
+            // Calculate skill damage with multiplier
             Debug.Log("calculating " + gameObject.name + " damage");
-            damageOutcomes[target] = Damage(target);
+            float dmg = Damage(target);
+            float dmgMod = (int)GetMod("DMG");
+            if (dmgMod != 0)
+            {
+                dmg *= dmgMod;
+                cameraShake = true;
+            }
+                Jrpg.Log("Damage multiplied by " + dmgMod.ToString());
+            damageOutcomes[target] = (int)dmg;
 
             // Status chance
             foreach (StatusChance sc in statusChances)
@@ -88,8 +126,9 @@ public class AttackSkill : Skill
     // This version is only if the target holds the UNTOUCHABLE perk
     public virtual string AttackAttempt(Battler target)
     {
-        Debug.Log("Processing attack attempt between " + user.name + " and " + target.name);
+        Jrpg.Log("Processing attack attempt between " + user.name + " and " + target.name);
         
+
         int attackRoll = Jrpg.RollDice(1, 20);
         int dodgeRoll = 0;
         int defenseRoll = 10;
@@ -97,12 +136,12 @@ public class AttackSkill : Skill
         // Select right modifier based on attack type
         if (gameObject.GetComponent<MeleeAttack>() != null)
         {
-            attackRoll += Jrpg.Roll(user.attack, modifier: accuracy + attackMod);
+            attackRoll += Jrpg.Roll(user.attack, modifier: accuracy + (int)GetMod("ATK"));
             defenseRoll += Jrpg.Roll(target.defense);
         }
         else
         {
-            attackRoll += Jrpg.Roll(user.specialAttack, modifier: accuracy + specialAttackMod);
+            attackRoll += Jrpg.Roll(user.specialAttack, modifier: accuracy + (int)GetMod("SAT"));
             defenseRoll += Jrpg.Roll(target.specialDefense);
         }
         dodgeRoll += Jrpg.Roll(target.speed);
@@ -127,7 +166,7 @@ public class AttackSkill : Skill
     }   
 
     public virtual int Damage(Battler target)
-    {
+    {       
         return 0;
     }
 

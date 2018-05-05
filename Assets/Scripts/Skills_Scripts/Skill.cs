@@ -248,7 +248,7 @@ public class Skill : Customizer
     {
         foreach (Customizer c in user.skillCustomizers)
         {
-            yield return c.CustomBehaviour(this);
+            yield return StartCoroutine(c.CustomBehaviour(this));
         }
 
         yield return null;

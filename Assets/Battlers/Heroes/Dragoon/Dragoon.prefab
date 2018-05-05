@@ -330,7 +330,7 @@ MonoBehaviour:
     value: 50
   defense:
     ID: DEF
-    value: 20
+    value: 70
   specialAttack:
     ID: SAT
     value: 50
@@ -355,8 +355,8 @@ MonoBehaviour:
   elementAffinity: 0
   species: 0
   perks:
-  - {fileID: 114932445801373410, guid: 0eb19a7aebb667a47827881ac39b23c5, type: 2}
-  - {fileID: 114346464545605932, guid: 8b2585ca28297b64ba9e359f909636ad, type: 2}
+  - {fileID: 114311948303067148, guid: d00339fedb7f58e4993807114adfd188, type: 2}
+  - {fileID: 114516546974924926, guid: a39df019c9139944084d2180563f620f, type: 2}
   effectsDelay:
   - animation: special
     lenghtPercentage: 0.8

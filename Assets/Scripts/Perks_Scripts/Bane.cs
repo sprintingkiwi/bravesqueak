@@ -22,9 +22,9 @@ public class Bane : Perk
         {
             if (skill.scope != Skill.Scope.Area && skill.targets[0].species == banedSpecies)
             {
+                Jrpg.Log("Activating " + name + " effect");
                 AttackSkill atkSkill = skill.GetComponent<AttackSkill>();
-                atkSkill.attackMod += 50;
-                atkSkill.attackMod += 50;                    
+                atkSkill.SetMod("DMG", 2f);                    
             }            
         }
     }
