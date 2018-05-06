@@ -38,8 +38,23 @@ public class BattleController : MonoBehaviour
     public int executedOngoingSkills;
     public List<Coroutine> cameraCoroutines = new List<Coroutine>();
     public int turnNumber;
-    public List<Func<BattleController, IEnumerator>> turnStartupBehaviours = new List<Func<BattleController, IEnumerator>>();
-    public List<Func<BattleController, IEnumerator>> actionStartupBehaviours = new List<Func<BattleController, IEnumerator>>();
+    
+    [System.Serializable]
+    public class Customizer
+    {
+        public enum When { TurnStart, ActionStart }
+        public When when;
+        public Func<BattleController, IEnumerator> function;
+    }
+    [Header("Customizers")]
+    public List<Customizer> customizers = new List<Customizer>();
+    public IEnumerator RunCustomizers(Customizer.When when)
+    {
+        foreach (Customizer c in customizers)
+            if (c.when == when)
+                yield return StartCoroutine(c.function(this));
+        yield return null;
+    }
 
     [Header("System")]
     //public AudioSource audioSource;
@@ -204,8 +219,7 @@ public class BattleController : MonoBehaviour
             SetupActionsQueue();
 
             // Turn Startup Custom Functions
-            foreach (Func<BattleController, IEnumerator> tsb in turnStartupBehaviours)
-                yield return StartCoroutine(tsb(this));
+            yield return RunCustomizers(Customizer.When.TurnStart);
 
             for (int i = 0; i < actionsQueue.Count; i++)
             {
@@ -213,8 +227,7 @@ public class BattleController : MonoBehaviour
                 actualAction = actionsQueue[i];
 
                 // Action Startup Custom Functions
-                foreach (Func<BattleController, IEnumerator> asb in actionStartupBehaviours)
-                    yield return StartCoroutine(asb(this));
+                yield return RunCustomizers(Customizer.When.ActionStart);
 
                 // Check if the user is still alive
                 if (actionsQueue[i].user != null)

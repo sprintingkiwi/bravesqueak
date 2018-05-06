@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class IncreaseAccuracy : Perk
 {
@@ -9,15 +8,16 @@ public class IncreaseAccuracy : Perk
     {
         base.Setup(holder);
 
-        //holder.accuracy.value = (int)(holder.accuracy.value * 1.5f);
-
-        bc.actionStartupBehaviours.Add(BuffSkillAccuracy);
+        bc.customizers.Add(new BattleController.Customizer()
+        {
+            when = BattleController.Customizer.When.ActionStart,
+            function = Effect
+        });
     }
 
     // Just a test... can be removed...
-    public IEnumerator BuffSkillAccuracy(BattleController bc)
-    {
-        Debug.Log("CUSTOM FUNCTION COROUTINE TEST");           
+    public override IEnumerator Effect(BattleController bc)
+    {           
 
         yield return null;
     }

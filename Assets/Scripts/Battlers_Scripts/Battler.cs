@@ -91,7 +91,6 @@ public class Battler : MonoBehaviour
     public enum Faction { Enemies = -1, Heroes = 1 };
     public Faction faction;
     public List<WallSkill> firewalls = new List<WallSkill>();
-    public List<Customizer> skillCustomizers = new List<Customizer>();
     public BattlerHUD hud;
 
     // Use this for initialization

@@ -4,7 +4,7 @@ using UnityEngine;
 
 // Perks are like passive skills. A battler may choose up to 2 (to be tested) perks to equip (just like the max of 4 skills)
 // Perks-giving items are dropped by bosses or mini-bosses.
-public class Perk : Customizer
+public class Perk : MonoBehaviour
 {   
     [TextArea(5, 10)]
     public string description;
@@ -21,4 +21,11 @@ public class Perk : Customizer
 
         Debug.Log(name + " perk activated for " + holder.name);
 	}
+
+    // Customizer effect. I pass the battle controller as parameter so I can access the actual state of battle and actions
+    public virtual IEnumerator Effect(BattleController bc)
+    {
+        Jrpg.Log("Activated custom effect: " + name);
+        yield return null;
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-public class Skill : Customizer
+public class Skill : MonoBehaviour
 {  
     [TextArea(5, 10)]
     public string description;
@@ -135,8 +135,6 @@ public class Skill : Customizer
     {
         CheckDeprecatedTargets();
 
-        yield return StartCoroutine(CustomSetup());
-
         // Initial Log
         if (Debug.isDebugBuild)
         {
@@ -241,17 +239,6 @@ public class Skill : Customizer
         foreach (Battler target in targets.ToArray())
             if (target == null)
                 targets.Remove(target);
-    }
-
-    // To be eventually overwritten to make something custom at the beginning of the skill execution
-    public virtual IEnumerator CustomSetup()
-    {
-        foreach (Customizer c in user.skillCustomizers)
-        {
-            yield return StartCoroutine(c.CustomBehaviour(this));
-        }
-
-        yield return null;
     }
 
     public virtual IEnumerator ApplyCosts()
