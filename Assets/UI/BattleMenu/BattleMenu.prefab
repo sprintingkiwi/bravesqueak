@@ -325,7 +325,7 @@ MonoBehaviour:
     type: 2}
   skillSelectorPrefab: {fileID: 1634134195999518, guid: ab24408adad3dcf48b462f4bfa1e7074,
     type: 2}
-  activeBattlerPrefab: {fileID: 1016555131041646, guid: b97f18b994bdbb6459f1bc3c162cff0d,
+  activeBattlerPrefab: {fileID: 1016555131041646, guid: 72cba0fcf3fc2344a9c7bc4f42ecca40,
     type: 2}
   rotation: None
   targetAngle: {x: 0, y: 0, z: 0}
