@@ -325,7 +325,7 @@ MonoBehaviour:
     type: 2}
   skillSelectorPrefab: {fileID: 1634134195999518, guid: ab24408adad3dcf48b462f4bfa1e7074,
     type: 2}
-  activeBattler: {fileID: 114798201781313204, guid: b93d877b271a8a345a85f806aab1554e,
+  activeBattlerPrefab: {fileID: 1016555131041646, guid: b97f18b994bdbb6459f1bc3c162cff0d,
     type: 2}
   rotation: None
   targetAngle: {x: 0, y: 0, z: 0}
@@ -339,6 +339,7 @@ MonoBehaviour:
   skillIndex: 0
   skillWheelIconPrefab: {fileID: 114630372369213730, guid: 6e06826b3301e2d45933724db690a564,
     type: 2}
+  skillScroll: {fileID: 0}
 --- !u!212 &212431781980598578
 SpriteRenderer:
   m_ObjectHideFlags: 1

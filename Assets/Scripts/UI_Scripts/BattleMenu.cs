@@ -28,9 +28,10 @@ public class BattleMenu : MonoBehaviour
     public GameObject targetCursorPrefab;
     public GameObject areaSelectionPrefab;
     public GameObject skillSelectorPrefab;
-    public Effect activeBattler;
+    public GameObject activeBattlerPrefab;
     GameObject targetCursor;
     GameObject areaSelection;
+    GameObject activeBattler;
 
     [Header("Wheel")]
     public string rotation;
@@ -77,7 +78,9 @@ public class BattleMenu : MonoBehaviour
         skillIndex = 2;
 
         // Setup Active-Battler effect
-        Instantiate(activeBattler, playerBattler.transform.Find("Highlighter Hook").position, Quaternion.identity, playerBattler.transform).name = "Highlighter";
+        activeBattler = Instantiate(activeBattlerPrefab, playerBattler.transform.position + Vector3.up * 5f, Quaternion.identity, playerBattler.transform);
+        activeBattler.name = "Highlighter";
+        //Instantiate(activeBattler, playerBattler.transform.Find("Highlighter Hook").position, Quaternion.identity, playerBattler.transform).name = "Highlighter";
 
         // GUI Elements
         GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(true);
