@@ -40,7 +40,7 @@ public class Battler : MonoBehaviour
     public Skill.Element elementAffinity;
     public enum Species { Slime, Undead, Beast, Plant, Insect, Lizard };
     public Species species;
-    public Perk[] perks = new Perk[2];
+    public Perk[] perksPrefabs = new Perk[2];
 
     [System.Serializable]
     public class EffectDelay
@@ -229,8 +229,8 @@ public class Battler : MonoBehaviour
 
     public virtual Coroutine UseSkill(Skill skill, List<Battler> targets)
     {
-        Skill s = Instantiate(skill, gc.battleStuff.transform) as Skill;
-        return s.Execute(this, targets);
+        bc.actualSkill = Instantiate(skill, gc.battleStuff.transform) as Skill;
+        return bc.actualSkill.Execute(this, targets);
     }
 
     public virtual void LevelUp()
@@ -367,13 +367,21 @@ public class Battler : MonoBehaviour
     {
         new GameObject("PERKS").transform.parent = transform;
 
-        foreach (Perk p in perks)
+        foreach (Perk p in perksPrefabs)
         {
             if (p != null)
             {
                 Instantiate(p, transform.Find("PERKS")).Setup(this);
             }
         }
+    }
+
+    public bool HasPerk(Perk perkToCheck)
+    {
+        foreach (Transform t in transform.Find("PERKS"))
+            if (t.GetComponent<Perk>() == perkToCheck)
+                return true;
+        return false;
     }
 
     public float GetEffectDelay(string anim)

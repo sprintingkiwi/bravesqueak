@@ -25,19 +25,17 @@ public class Bane : Perk
         yield return StartCoroutine(base.Effect(bc));
 
         // The user must behold this perk
-        if (!bc.actualAction.user.perks.Contains(this))
+        if (!bc.actualSkill.user.HasPerk(this))
             yield break;
-
-        Skill skill = bc.actualAction.skill;
 
         // The skill must be an attack
-        if (skill.GetComponent<AttackSkill>() == null)
+        if (bc.actualSkill.GetComponent<AttackSkill>() == null)
             yield break;
 
-        if (skill.scope != Skill.Scope.Area && skill.targets[0].species == banedSpecies)
+        if (bc.actualSkill.scope != Skill.Scope.Area && bc.actualSkill.targets[0].species == banedSpecies)
         {
             Jrpg.Log("Activating " + name + " effect");
-            AttackSkill atkSkill = skill.GetComponent<AttackSkill>();
+            AttackSkill atkSkill = bc.actualSkill.GetComponent<AttackSkill>();
             atkSkill.SetMod("DMG", 2f);
         }
 

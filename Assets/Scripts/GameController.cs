@@ -290,10 +290,10 @@ public class GameController : MonoBehaviour
             }
 
             // Save each hero's equipped perks
-            for (int s = 0; s < partyPrefabs[i].perks.Length; s++)
+            for (int s = 0; s < partyPrefabs[i].perksPrefabs.Length; s++)
             {
-                if (partyPrefabs[i].perks[s] != null)
-                    saveData.heroesData[i].equippedPerks[s] = partyPrefabs[i].perks[s].name;
+                if (partyPrefabs[i].perksPrefabs[s] != null)
+                    saveData.heroesData[i].equippedPerks[s] = partyPrefabs[i].perksPrefabs[s].name;
                 else
                     saveData.heroesData[i].equippedPerks[s] = "Empty";
             }
@@ -351,9 +351,9 @@ public class GameController : MonoBehaviour
             for (int p = 0; p < saveData.heroesData[i].equippedPerks.Length; p++)
             {
                 if (saveData.heroesData[i].equippedPerks[p] != "Empty")
-                    partyPrefabs[i].perks[p] = Resources.Load("Skills/" + saveData.heroesData[i].equippedPerks[p], typeof(Perk)) as Perk;
+                    partyPrefabs[i].perksPrefabs[p] = Resources.Load("Skills/" + saveData.heroesData[i].equippedPerks[p], typeof(Perk)) as Perk;
                 else
-                    partyPrefabs[i].perks[p] = null;
+                    partyPrefabs[i].perksPrefabs[p] = null;
             }
         }
 

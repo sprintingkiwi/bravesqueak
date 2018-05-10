@@ -354,9 +354,9 @@ MonoBehaviour:
   sizeModifier: 0
   elementAffinity: 0
   species: 0
-  perks:
+  perksPrefabs:
   - {fileID: 114311948303067148, guid: d00339fedb7f58e4993807114adfd188, type: 2}
-  - {fileID: 114516546974924926, guid: a39df019c9139944084d2180563f620f, type: 2}
+  - {fileID: 0}
   effectsDelay:
   - animation: special
     lenghtPercentage: 0.8
@@ -379,7 +379,6 @@ MonoBehaviour:
   bc: {fileID: 0}
   faction: 1
   firewalls: []
-  skillCustomizers: []
   hud: {fileID: 0}
   job: 3
   availableJobs: 01000000020000000300000004000000

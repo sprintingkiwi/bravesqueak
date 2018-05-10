@@ -133,6 +133,9 @@ public class Skill : MonoBehaviour
 
     public virtual IEnumerator ExecuteFlow()
     {
+        // Startup
+        yield return StartCoroutine(StartupBehaviours());
+
         CheckDeprecatedTargets();
 
         // Initial Log
@@ -232,6 +235,12 @@ public class Skill : MonoBehaviour
             PostEffect(target);
 
         yield return null;
+    }
+
+    public virtual IEnumerator StartupBehaviours()
+    {
+        // Action Startup Custom Functions
+        yield return bc.RunCustomizers(BattleController.Customizer.When.ActionStart);
     }
 
     public virtual void CheckDeprecatedTargets()

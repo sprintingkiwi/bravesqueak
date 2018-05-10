@@ -9,8 +9,14 @@ public class Strategy : Jrpg
     [Header("System")]
     public BattleController bc;
     public Battler user;
-    //public List<EnemyBattler> instEnemies;
-    //public List<HeroBattler> instParty;
+
+    [System.Serializable]
+    public class AIAction : System.Object
+    {
+        public Skill skill;
+        public int weight;
+        public ActionCondition[] conditions;
+    }
     public AIAction selectedAction;
     public bool conditionCheck;
 
@@ -220,7 +226,7 @@ public class Strategy : Jrpg
         Skill selectedSkill = ChooseAction().skill;
 
         //user.UseSkill(selectedSkill, ChooseRandomTarget(selectedSkill));
-        bc.actionsQueue.Add(new BattleAction { user = this.user, skill = selectedSkill, targets = ChooseRandomTarget(user, selectedSkill, bc.enemies.ToArray(), bc.party.ToArray()) });
+        bc.actionsQueue.Add(new BattleController.BattleAction { user = this.user, skillPrefab = selectedSkill, targets = ChooseRandomTarget(user, selectedSkill, bc.enemies.ToArray(), bc.party.ToArray()) });
 
         Destroy(gameObject, 2f);
     }

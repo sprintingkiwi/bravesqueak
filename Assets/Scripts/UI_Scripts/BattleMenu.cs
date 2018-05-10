@@ -531,7 +531,7 @@ public class BattleMenu : MonoBehaviour
 
         // Skill Execution
         //playerBattler.UseSkill(selectedSkill, selectedTargets);
-        bc.actionsQueue.Add(new BattleAction { user = playerBattler, skill = selectedSkill, targets = selectedTargets });
+        bc.actionsQueue.Add(new BattleController.BattleAction { user = playerBattler, skillPrefab = selectedSkill, targets = selectedTargets });
 
         // End turn
         //Jrpg.Fade(playerBattler.transform.Find("Highlighter").gameObject, 0, 0.5f, true);

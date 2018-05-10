@@ -270,9 +270,9 @@ MonoBehaviour:
   sizeModifier: 0
   elementAffinity: 0
   species: 0
-  perks:
+  perksPrefabs:
   - {fileID: 114932445801373410, guid: 0eb19a7aebb667a47827881ac39b23c5, type: 2}
-  - {fileID: 114346464545605932, guid: 8b2585ca28297b64ba9e359f909636ad, type: 2}
+  - {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: 128fbe42ec1ccbd448040e5e133fa1ad, type: 3}
   dodgeSound: {fileID: 0}
@@ -293,7 +293,6 @@ MonoBehaviour:
   bc: {fileID: 0}
   faction: 1
   firewalls: []
-  skillCustomizers: []
   hud: {fileID: 0}
   job: 4
   availableJobs: 01000000020000000300000004000000

@@ -29,11 +29,19 @@ public class BattleController : MonoBehaviour
     public List<Battler> enemies = new List<Battler>();
     //public List<AIBattler> summons = new List<AIBattler>();
 
+    [System.Serializable]
+    public class BattleAction
+    {
+        public Battler user;
+        public Skill skillPrefab;
+        public List<Battler> targets = new List<Battler>();
+    }
     [Header("Turn Management")]
     public List<BattleAction> actionsQueue = new List<BattleAction>();
     //public int actualTurn;
     //public bool actualActionEnded = true;
     public BattleAction actualAction;
+    public Skill actualSkill;
     public List<Skill> ongoingSkills = new List<Skill>();
     public int executedOngoingSkills;
     public List<Coroutine> cameraCoroutines = new List<Coroutine>();
@@ -175,7 +183,7 @@ public class BattleController : MonoBehaviour
 
     static int SortBySpeed(BattleAction b1, BattleAction b2)
     {
-        return (Jrpg.Roll(b1.user.speed, modifier: b1.skill.speed).CompareTo(Jrpg.Roll(b2.user.speed, modifier: b2.skill.speed)));
+        return (Jrpg.Roll(b1.user.speed, modifier: b1.skillPrefab.speed).CompareTo(Jrpg.Roll(b2.user.speed, modifier: b2.skillPrefab.speed)));
     }
 
     public void SetupActionsQueue()
@@ -224,10 +232,7 @@ public class BattleController : MonoBehaviour
             for (int i = 0; i < actionsQueue.Count; i++)
             {
                 // Update public actual action ref
-                actualAction = actionsQueue[i];
-
-                // Action Startup Custom Functions
-                yield return RunCustomizers(Customizer.When.ActionStart);
+                actualAction = actionsQueue[i];                
 
                 // Check if the user is still alive
                 if (actionsQueue[i].user != null)
@@ -290,12 +295,12 @@ public class BattleController : MonoBehaviour
                     {
                         if (t == null)
                         {
-                            Debug.Log("Detected deprecated target for " + actionsQueue[i].user.name + " " + actionsQueue[i].skill.name);
-                            actionsQueue[i].targets = Strategy.ChooseRandomTarget(actionsQueue[i].user, actionsQueue[i].skill, enemies.ToArray(), party.ToArray());
+                            Debug.Log("Detected deprecated target for " + actionsQueue[i].user.name + " " + actionsQueue[i].skillPrefab.name);
+                            actionsQueue[i].targets = Strategy.ChooseRandomTarget(actionsQueue[i].user, actionsQueue[i].skillPrefab, enemies.ToArray(), party.ToArray());
                         }
                     }
                     // Execute action
-                    yield return actionsQueue[i].user.UseSkill(actionsQueue[i].skill, actionsQueue[i].targets);
+                    yield return actionsQueue[i].user.UseSkill(actionsQueue[i].skillPrefab, actionsQueue[i].targets);
                 }
 
                 outcome = EvaluateBattleOutcome();
