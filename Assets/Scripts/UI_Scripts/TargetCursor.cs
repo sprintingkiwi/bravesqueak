@@ -9,7 +9,7 @@ public class TargetCursor : MonoBehaviour
     public float minimum = -1.0F;
     public float maximum = 1.0F;
     // Starting value for the Lerp
-    static float t = 0.0f;
+    float t = 0.0f;
     // Lerp options
     public Vector3 lerpMultiplier;
     public float speed;
