@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eafa23c274b3f04ab4d229a9a3b251d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: {fileID: 21300002, guid: 18abb9b027c6ea34095601805422d069, type: 3}
-  down: {fileID: 21300000, guid: 18abb9b027c6ea34095601805422d069, type: 3}
+  up: {fileID: 21300000, guid: a0df971020253f34fb5bedf80fcdcbca, type: 3}
+  down: {fileID: 21300002, guid: a0df971020253f34fb5bedf80fcdcbca, type: 3}
   fadeSpeed: 0.5
   alpha: 1
 --- !u!212 &212954226770424710
