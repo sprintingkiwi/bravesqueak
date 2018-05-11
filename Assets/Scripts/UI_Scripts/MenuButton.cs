@@ -45,6 +45,8 @@ public class MenuButton : MonoBehaviour
 
     public void StartNewGame()
     {
+        StartCoroutine(Jrpg.JumpAway(GameObject.Find("Title"), Vector3.up));
+        StartCoroutine(Jrpg.JumpAway(gameObject, Vector3.down, power: 20f));
         StartCoroutine(Jrpg.LoadScene("World"));
     }
 

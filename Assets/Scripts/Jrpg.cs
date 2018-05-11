@@ -325,4 +325,23 @@ public class Jrpg : MonoBehaviour
         }
         return 0;
     }
+    public static IEnumerator JumpAway(GameObject go, Vector3 direction, float power = 200f)
+    {
+        if (go.GetComponent<Rigidbody2D>() != null)
+        {
+            Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
+            while (true)
+            {
+                rb.AddForce(direction * power);
+                yield return null;
+                //yield return new WaitForSeconds(0.1f);
+            }
+        }
+        else
+        {
+            Debug.LogWarning(go.name + " has no rigidbody and cannot jump away!");
+            yield break;
+        }
+    }
+
 }
