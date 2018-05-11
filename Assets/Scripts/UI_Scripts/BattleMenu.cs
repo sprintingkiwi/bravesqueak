@@ -75,12 +75,7 @@ public class BattleMenu : MonoBehaviour
 
         // Setup wheel skills and icons
         SetupWheelIcons();
-        skillIndex = 2;
-
-        // Setup Active-Battler effect
-        activeBattler = Instantiate(activeBattlerPrefab, playerBattler.transform.position + Vector3.up * 5f, Quaternion.identity, playerBattler.transform);
-        activeBattler.name = "Highlighter";
-        //Instantiate(activeBattler, playerBattler.transform.Find("Highlighter Hook").position, Quaternion.identity, playerBattler.transform).name = "Highlighter";
+        skillIndex = 2;        
 
         // GUI Elements
         GameObject.Find("Canvas").transform.Find("Skill Scroll Name").gameObject.SetActive(true);
@@ -394,6 +389,11 @@ public class BattleMenu : MonoBehaviour
         {
             OtherPlatformSelection:
 
+            // Setup Active-Battler effect
+            activeBattler = Instantiate(activeBattlerPrefab, playerBattler.transform.position + Vector3.up * 5f, Quaternion.identity, playerBattler.transform);
+            activeBattler.name = "Highlighter";
+            //Instantiate(activeBattler, playerBattler.transform.Find("Highlighter Hook").position, Quaternion.identity, playerBattler.transform).name = "Highlighter";
+
             SetSkillScroll();
 
             // Wait until a skill is selected
@@ -412,7 +412,12 @@ public class BattleMenu : MonoBehaviour
             }
             Debug.Log("Skill " + selectedSkill.name + " selected");
 
-            yield return Jrpg.Fade(gameObject, 0, 0.5f);
+            // Fade out some stuff
+            yield return new Coroutine[]
+            {
+                Jrpg.Fade(gameObject, 0, 0.5f),
+                Jrpg.Fade(activeBattler, 0, 0.5f)
+            };
 
             GameObject undoButton = Instantiate(undoBtnPrefab, bc.mainCamera.transform) as GameObject;
             undoButton.name = "Undo Button";
@@ -519,6 +524,20 @@ public class BattleMenu : MonoBehaviour
                         //    areaSelection.transform.position = Vector3.MoveTowards(areaSelection.transform.position, targetAreaPos, 50f * Time.deltaTime);
                         //    yield return null;
                         //}
+                    }
+
+                    // Button B
+                    if (inputManager.ButtonBUp())
+                    {
+                        Debug.Log("Aborting");
+                        phase = "Skill Selection";
+
+                        Destroy(areaSelection);
+                        Destroy(undoButton);
+                        selectedSkill = null;
+                        selectedTargets.Clear();
+                        yield return Jrpg.Fade(gameObject, 1, 0.5f);
+                        goto OtherPlatformSelection;
                     }
 
                     yield return null;

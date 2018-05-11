@@ -16,13 +16,14 @@ public class Bane : Perk
         bc.customizers.Add(new BattleController.Customizer()
         {
             when = BattleController.Customizer.When.ActionStart,
-            function = Effect
+            function = CustomEffect,
+            source = this
         });
     }
 
-    public override IEnumerator Effect(BattleController bc)
+    public override IEnumerator CustomEffect(BattleController bc)
     {
-        yield return StartCoroutine(base.Effect(bc));
+        yield return StartCoroutine(base.CustomEffect(bc));
 
         // The user must behold this perk
         if (!bc.actualSkill.user.HasPerk(this))

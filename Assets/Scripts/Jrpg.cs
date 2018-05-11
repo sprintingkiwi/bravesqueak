@@ -32,33 +32,38 @@ public class Jrpg : MonoBehaviour
     public static void Log(string text, string type = "")
     {
         if (Debug.isDebugBuild)
-            Debug.Log(text);
-
-        if (Debug.isDebugBuild && type == "Visible")
         {
-            // Destroy old log if exists
-            GameObject logs = GameObject.Find("LOGS");
-            int oldLogs = logs.transform.childCount;
-            for (int i = 0; i < oldLogs; i++)
+            if (type == "Warning")
+                Debug.LogWarning(text);
+            else
+                Debug.Log(text);
+
+            if (type == "Visible")
             {
-                Transform t = logs.transform.GetChild(i);
-                t.GetComponent<RectTransform>().Translate(Vector3.up * 40);
+                // Destroy old log if exists
+                GameObject logs = GameObject.Find("LOGS");
+                int oldLogs = logs.transform.childCount;
+                for (int i = 0; i < oldLogs; i++)
+                {
+                    Transform t = logs.transform.GetChild(i);
+                    t.GetComponent<RectTransform>().Translate(Vector3.up * 40);
 
-                //Destroy(logs.transform.GetChild(i).gameObject);
+                    //Destroy(logs.transform.GetChild(i).gameObject);
+                }
+
+                // Instantiate new log
+                GameObject log = Instantiate(Resources.Load("JrpgLog"), GameObject.Find("LOGS").transform) as GameObject;
+                log.name = "Log " + log.transform.GetSiblingIndex().ToString();
+
+                Text logText = log.transform.Find("Log").GetComponent<Text>();
+
+                // Write text
+                logText.text = text;
+
+                // Destroy anyway after a while
+                Destroy(log, 10f);
             }
-
-            // Instantiate new log
-            GameObject log = Instantiate(Resources.Load("JrpgLog"), GameObject.Find("LOGS").transform) as GameObject;
-            log.name = "Log " + log.transform.GetSiblingIndex().ToString();
-
-            Text logText = log.transform.Find("Log").GetComponent<Text>();
-
-            // Write text
-            logText.text = text;
-
-            // Destroy anyway after a while
-            Destroy(log, 10f);
-        }
+        }        
     }
 
     public static int RollDice(int dice, int faces)

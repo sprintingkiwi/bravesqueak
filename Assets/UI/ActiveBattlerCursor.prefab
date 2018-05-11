@@ -156,10 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce50ea0c9726354eb71e4dda1ec1bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimum: -0.5
-  maximum: 0.5
-  lerpMultiplier: {x: 0, y: 0.2, z: 0}
-  speed: 4
+  minimum: -0.35
+  maximum: 0.35
+  lerpMultiplier: {x: 0, y: 0.1, z: 0}
+  speed: 3
 --- !u!212 &212156304777885204
 SpriteRenderer:
   m_ObjectHideFlags: 1

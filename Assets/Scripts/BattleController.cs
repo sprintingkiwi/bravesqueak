@@ -53,14 +53,24 @@ public class BattleController : MonoBehaviour
         public enum When { TurnStart, ActionStart }
         public When when;
         public Func<BattleController, IEnumerator> function;
+        public MonoBehaviour source;
     }
     [Header("Customizers")]
     public List<Customizer> customizers = new List<Customizer>();
     public IEnumerator RunCustomizers(Customizer.When when)
     {
         foreach (Customizer c in customizers)
-            if (c.when == when)
-                yield return StartCoroutine(c.function(this));
+            if (c.source != null)
+            {
+                if (c.when == when)
+                    yield return StartCoroutine(c.function(this));
+            }
+            else
+            {
+                Jrpg.Log("Removing Customizer of: ", "Visible");
+                customizers.Remove(c);
+            }
+                
         yield return null;
     }
 

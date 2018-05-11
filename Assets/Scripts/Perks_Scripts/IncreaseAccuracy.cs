@@ -11,12 +11,12 @@ public class IncreaseAccuracy : Perk
         bc.customizers.Add(new BattleController.Customizer()
         {
             when = BattleController.Customizer.When.ActionStart,
-            function = Effect
+            function = CustomEffect
         });
     }
 
     // Just a test... can be removed...
-    public override IEnumerator Effect(BattleController bc)
+    public override IEnumerator CustomEffect(BattleController bc)
     {           
 
         yield return null;

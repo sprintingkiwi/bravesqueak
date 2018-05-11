@@ -388,6 +388,8 @@ public class GameController : MonoBehaviour
 
         if (target.GetComponent<SpriteRenderer>() != null)
         {
+            string targetName = target.name;
+
             SpriteRenderer spr = target.GetComponent<SpriteRenderer>();
             float min = spr.color.a;
 
@@ -407,7 +409,13 @@ public class GameController : MonoBehaviour
             while (t < 1)
             {
                 t = (Time.time - startTime) / speed;
-                spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, Mathf.SmoothStep(min, alpha, t));
+                if (spr != null)
+                    spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, Mathf.SmoothStep(min, alpha, t));
+                else
+                {
+                    Jrpg.Log("TRYING TO FADE A NULL OBJECT: " + targetName, "Warning");
+                    yield break;
+                }
                 yield return null;
             }
         }

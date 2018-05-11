@@ -23,7 +23,7 @@ public class Perk : MonoBehaviour
 	}
 
     // Customizer effect. I pass the battle controller as parameter so I can access the actual state of battle and actions
-    public virtual IEnumerator Effect(BattleController bc)
+    public virtual IEnumerator CustomEffect(BattleController bc)
     {
         Jrpg.Log("Activated custom effect: " + name);
         yield return null;
