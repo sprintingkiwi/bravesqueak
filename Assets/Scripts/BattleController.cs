@@ -59,7 +59,7 @@ public class BattleController : MonoBehaviour
     public List<Customizer> customizers = new List<Customizer>();
     public IEnumerator RunCustomizers(Customizer.When when)
     {
-        foreach (Customizer c in customizers)
+        foreach (Customizer c in customizers.ToArray())
             if (c.source != null)
             {
                 if (c.when == when)

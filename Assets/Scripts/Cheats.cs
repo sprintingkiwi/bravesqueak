@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Cheats : MonoBehaviour
 {
-    GameController ps;
-
+    GameController gc;
+    public Encounter testEncounter;
     public string targetScene;
 
     // Shaking
@@ -23,7 +23,7 @@ public class Cheats : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        ps = GameObject.Find("Game Controller").GetComponent<GameController>();
+        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
 
         // Shaking
         lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
@@ -41,19 +41,22 @@ public class Cheats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
             StartCoroutine(Jrpg.LoadScene(targetScene));
 
-        if (Input.GetKeyDown(KeyCode.N))
-            StartCoroutine(Jrpg.LoadScene("SkillStore"));
+        if (Input.GetKeyDown(KeyCode.T))
+            StartCoroutine(gc.TriggerBattle(testEncounter, "Random"));
+
+        //if (Input.GetKeyDown(KeyCode.N))
+        //StartCoroutine(Jrpg.LoadScene("SkillStore"));
 
         // Save & load
-        if (ps.canSave)
+        if (gc.canSave)
         {
             if (Input.GetKeyDown(KeyCode.F5))
             {
-                ps.Save(ps.actualSlot);
+                gc.Save(gc.actualSlot);
             }
             else if (Input.GetKeyDown(KeyCode.F9))
             {
-                ps.Load(ps.actualSlot);
+                gc.Load(gc.actualSlot);
             }
         }
 
@@ -73,7 +76,7 @@ public class Cheats : MonoBehaviour
                 // Perform your "shaking actions" here. If necessary, add suitable
                 // guards in the if check above to avoid redundant handling during
                 // the same shake (e.g. a minimum refractory period).
-                ps.Load(ps.actualSlot);
+                gc.Load(gc.actualSlot);
             }
         }        
     }

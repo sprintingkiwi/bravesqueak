@@ -64,7 +64,7 @@ public class Skill : MonoBehaviour
     //public Effect userEffect;
     public string targetAnimation = "hit";
     //public float pauseBeforeEffect;
-    //public Effect areaEffect;
+    public Effect areaEffect;
     public Effect targetEffect;
     //public Effect targetAfterEffect;
     //public string userEndAnimation;
@@ -297,7 +297,9 @@ public class Skill : MonoBehaviour
        
         // Trigger effect on target
         if (scope == Scope.Area)
-            Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), targetEffect, targets[0].faction);
+        {
+            Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), areaEffect, targets[0].faction);
+        }
         else
             Jrpg.PlayEffect(targets[0], targetEffect);
 

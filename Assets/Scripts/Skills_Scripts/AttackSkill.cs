@@ -49,6 +49,10 @@ public class AttackSkill : Skill
         // Trigger user animation
         yield return StartCoroutine(Jrpg.PlayAnimation(user, userAnimation, true));
 
+        if (scope == Scope.Area)
+            Jrpg.PlayEffect(user, areaEffect);
+            //Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), areaEffect, targets[0].faction);
+
         // Process first execution effect
         yield return StartCoroutine(ProcessEffects(Effect));
     }
@@ -207,7 +211,7 @@ public class AttackSkill : Skill
     public virtual IEnumerator ProcessFightOutcome(Battler target)
     {
         if (targetEffect.projectile)
-            yield return StartCoroutine(ShootProjectile(target));
+            yield return StartCoroutine(ShootProjectile(target));        
 
         // Cases for target hit reaction
         switch (fightOutcomes[target])

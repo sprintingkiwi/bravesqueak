@@ -297,7 +297,7 @@ public class Jrpg : MonoBehaviour
                 e.GetComponent<SpriteRenderer>().flipX = true;
         }
         else
-            Debug.LogError(effect.name + " effect not assigned!");
+            Debug.LogWarning("Effect not assigned!");
     }
     public static void PlayEffect(Vector3 position, Effect effect, Battler.Faction targetFaction)
     {
@@ -310,7 +310,7 @@ public class Jrpg : MonoBehaviour
                 e.GetComponent<SpriteRenderer>().flipX = true;
         }
         else
-            Debug.LogError(effect.name + " effect not assigned!");
+            Debug.LogWarning("Effect not assigned!");
     }
 
     public static float GetClipLenght(Animator anim, string clipName)
