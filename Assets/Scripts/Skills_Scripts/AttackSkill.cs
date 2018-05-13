@@ -50,8 +50,8 @@ public class AttackSkill : Skill
         yield return StartCoroutine(Jrpg.PlayAnimation(user, userAnimation, true));
 
         if (scope == Scope.Area)
-            Jrpg.PlayEffect(user, areaEffect);
-            //Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), areaEffect, targets[0].faction);
+            //Jrpg.PlayEffect(Vector3.zero, areaEffect, Battler.Faction.Heroes);
+            Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), areaEffect, user.faction);
 
         // Process first execution effect
         yield return StartCoroutine(ProcessEffects(Effect));
