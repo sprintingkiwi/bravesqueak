@@ -239,6 +239,45 @@ public class BattleController : MonoBehaviour
             // Turn Startup Custom Functions
             yield return RunCustomizers(Customizer.When.TurnStart);
 
+            // Apply status effects
+            for (int i = 0; i < actionsQueue.Count; i++)
+            {                
+                actionsQueue[i].user.ProcessStatusEffects();
+            }
+
+            // Process ongoing skills
+            Debug.Log("Processing ongoing skills effects");
+            foreach (Skill s in ongoingSkills.ToArray())
+            {
+                // Update targets for Area Ongoing skills (in case a new battler join the battle in the middle of it, following a summon for example)
+                if (s.scope == Skill.Scope.Area)
+                {
+                    s.targets.Clear();
+                    foreach (Battler b in enemies.Cast<Battler>().Concat(party.Cast<Battler>()))
+                        if (b.faction == s.targetedArea)
+                            s.targets.Add(b);
+                }
+
+                // Process skills Ongoing-Effects and Post-Effects
+                yield return new WaitForSeconds(0.1f);
+                s.effectStillActive = true;
+                if (s.duration >= 1)
+                {
+                    yield return StartCoroutine(s.OngoingFlow());
+                    //while (!actualActionEnded)
+                    //yield return null;
+                    //actualActionEnded = false;
+                    s.duration -= 1;
+                }
+                else
+                {
+                    yield return StartCoroutine(s.PostFlow());
+                    ongoingSkills.Remove(s);
+                    Destroy(s.gameObject);
+                }
+            }
+
+            // Execute Actions
             for (int i = 0; i < actionsQueue.Count; i++)
             {
                 // Update public actual action ref
@@ -259,42 +298,7 @@ public class BattleController : MonoBehaviour
                             StopCoroutine(c);
                     }
                     cameraCoroutines.Add(StartCoroutine(mainCamera.DefaultFollow(actionsQueue[i].user)));
-
-                    // Apply status effects
-                    actionsQueue[i].user.ProcessStatusEffects();
-
-                    // Process ongoing skills
-                    Debug.Log("Processing ongoing skills effects");
-                    foreach (Skill s in ongoingSkills.ToArray())
-                    {
-                        // Update targets for Area Ongoing skills (in case a new battler join the battle in the middle of it, following a summon for example)
-                        if (s.scope == Skill.Scope.Area)
-                        {
-                            s.targets.Clear();
-                            foreach (Battler b in enemies.Cast<Battler>().Concat(party.Cast<Battler>()))
-                                if (b.faction == s.targetedArea)
-                                    s.targets.Add(b);
-                        }
-
-                        // Process skills Ongoing-Effects and Post-Effects
-                        yield return new WaitForSeconds(0.1f);
-                        s.effectStillActive = true;
-                        if (s.duration >= 1)
-                        {
-                            yield return StartCoroutine(s.OngoingFlow());
-                            //while (!actualActionEnded)
-                            //yield return null;
-                            //actualActionEnded = false;
-                            s.duration -= 1;
-                        }
-                        else
-                        {
-                            yield return StartCoroutine(s.PostFlow());
-                            ongoingSkills.Remove(s);
-                            Destroy(s.gameObject);
-                        }
-                    }
-
+                    
                     // Update battlers stats adding delta stats
                     Debug.Log("Updating battlers STATS");
                     actionsQueue[i].user.UpdateStats();
