@@ -93,20 +93,6 @@ public class BattleMenu : MonoBehaviour
         // Wait until a skill is selected
         while (selectedSkill == null)
         {
-            // Confirm for Keyboard / Controllers
-            if (inputManager.ButtonADown())
-            {
-                if (playerBattler.skills[skillIndex] != null)
-                {
-                    if (playerBattler.skills[skillIndex].ProcessRequirements(playerBattler))
-                        selectedSkill = playerBattler.skills[skillIndex];
-                    else
-                        Jrpg.PlaySound("Forbidden");
-                }
-                else
-                    Jrpg.PlaySound("Forbidden");
-            }
-
             // Right wheel rotation
             if (inputManager.RightArrowDown() && skillIndex < 4)
             {
@@ -121,6 +107,13 @@ public class BattleMenu : MonoBehaviour
                     currentAngle = new Vector3(0, 0, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime * wheelSpeed));
                     transform.eulerAngles = currentAngle;
                     yield return null;
+
+                    // Manage multi-input
+                    if (inputManager.RightArrowDown() || inputManager.ButtonADown())
+                    {
+                        transform.eulerAngles = targetAngle;
+                        break;
+                    }
                 }
             }
 
@@ -138,7 +131,28 @@ public class BattleMenu : MonoBehaviour
                     currentAngle = new Vector3(0, 0, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime * wheelSpeed));
                     transform.eulerAngles = currentAngle;
                     yield return null;
+
+                    // Manage multi-input
+                    if (inputManager.LeftArrowDown() || inputManager.ButtonADown())
+                    {
+                        transform.eulerAngles = targetAngle;
+                        break;
+                    }
                 }
+            }
+
+            // Confirm for Keyboard / Controllers
+            if (inputManager.ButtonADown())
+            {
+                if (playerBattler.skills[skillIndex] != null)
+                {
+                    if (playerBattler.skills[skillIndex].ProcessRequirements(playerBattler))
+                        selectedSkill = playerBattler.skills[skillIndex];
+                    else
+                        Jrpg.PlaySound("Forbidden");
+                }
+                else
+                    Jrpg.PlaySound("Forbidden");
             }
 
             yield return null;
