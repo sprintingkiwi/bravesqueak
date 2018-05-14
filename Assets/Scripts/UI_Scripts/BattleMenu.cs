@@ -34,7 +34,6 @@ public class BattleMenu : MonoBehaviour
     GameObject activeBattler;
 
     [Header("Wheel")]
-    public string rotation;
     public Vector3 targetAngle;
     public Vector3 currentAngle;
     public float wheelSpeed = 2f;
@@ -49,6 +48,7 @@ public class BattleMenu : MonoBehaviour
     public int skillIndex;
     public SkillWheelIcon skillWheelIconPrefab;
     public GameObject skillScroll;
+    public Text skillScrollName;
 
     // Use this for initialization
     public void Start ()
@@ -60,7 +60,6 @@ public class BattleMenu : MonoBehaviour
     {
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
         inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
-        rotation = "None";
         audioSource = gameObject.GetComponent<AudioSource>();
 
         // Populate wheel places list
@@ -89,57 +88,72 @@ public class BattleMenu : MonoBehaviour
         
     }
 
-    void RotateWheel()
+    IEnumerator RotateWheel()
     {
-        // Right wheel rotation
-        if (inputManager.RightArrowDown() && rotation == "None" && skillIndex < 4)
+        // Wait until a skill is selected
+        while (selectedSkill == null)
         {
-            //UpdateWheel("Right");
-            if (playerBattler.skills[skillIndex + 1] == null)
-                return;
-            skillIndex += 1;
+            // Confirm for Keyboard / Controllers
+            if (inputManager.ButtonADown())
+            {
+                if (playerBattler.skills[skillIndex] != null)
+                {
+                    if (playerBattler.skills[skillIndex].ProcessRequirements(playerBattler))
+                        selectedSkill = playerBattler.skills[skillIndex];
+                    else
+                        Jrpg.PlaySound("Forbidden");
+                }
+                else
+                    Jrpg.PlaySound("Forbidden");
+            }
 
-            SetSkillScroll();
+            // Right wheel rotation
+            if (inputManager.RightArrowDown() && skillIndex < 4)
+            {
+                skillIndex += 1;
 
-            rotation = "Right";
-            targetAngle = new Vector3(0, 0, transform.eulerAngles.z + 15);
-            rotationStartTime = Time.time;
-        }
-        if (rotation == "Right")
-        {
-            currentAngle = new Vector3(0, 0, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime * wheelSpeed));
-            transform.eulerAngles = currentAngle;
-        }
+                SetSkillScroll();
 
-        // Left wheel rotation
-        if (inputManager.LeftArrowDown() && rotation == "None" && skillIndex > 0)
-        {
-            //UpdateWheel("Left");
-            if (playerBattler.skills[skillIndex - 1] == null)
-                return;
-            skillIndex -= 1;
+                targetAngle = new Vector3(0, 0, transform.eulerAngles.z + 15);
+                rotationStartTime = Time.time;
+                while (Time.time - rotationStartTime < 0.8f)
+                {
+                    currentAngle = new Vector3(0, 0, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime * wheelSpeed));
+                    transform.eulerAngles = currentAngle;
+                    yield return null;
+                }
+            }
 
-            SetSkillScroll();
+            // Left wheel rotation
+            if (inputManager.LeftArrowDown() && skillIndex > 0)
+            {
+                skillIndex -= 1;
 
-            rotation = "Left";
-            targetAngle = new Vector3(0, 0, transform.eulerAngles.z - 15);
-            rotationStartTime = Time.time;
-        }
-        if (rotation == "Left")
-        {
-            currentAngle = new Vector3(0, 0, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime * wheelSpeed));
-            transform.eulerAngles = currentAngle;
-        }
+                SetSkillScroll();
 
-        // Check if rotation finished
-        if (rotation != "None" && Time.time - rotationStartTime > 0.8f)
-        {            
-            rotation = "None";
+                targetAngle = new Vector3(0, 0, transform.eulerAngles.z - 15);
+                rotationStartTime = Time.time;
+                while (Time.time - rotationStartTime < 0.8f)
+                {
+                    currentAngle = new Vector3(0, 0, Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime * wheelSpeed));
+                    transform.eulerAngles = currentAngle;
+                    yield return null;
+                }
+            }
+
+            yield return null;
         }
     }
 
     void SetSkillScroll()
     {
+        if (playerBattler.skills[skillIndex] == null)
+        {
+            Destroy(skillScroll);
+            skillScrollName.text = "";
+            return;
+        }
+
         // Skill name scrolls
         Skill focusedSkill = playerBattler.skills[skillIndex];
         Jrpg.Log(focusedSkill.name);
@@ -149,7 +163,7 @@ public class BattleMenu : MonoBehaviour
         skillScroll = Instantiate(Resources.Load("SkillScrolls/Scroll_" + focusedSkill.element.ToString()) as GameObject, transform.parent);
         //skillScroll.transform.Translate(Vector3.up * 16);
 
-        Text skillScrollName = GameObject.Find("Canvas").transform.Find("Skill Scroll Name").GetComponent<Text>();
+        skillScrollName = GameObject.Find("Canvas").transform.Find("Skill Scroll Name").GetComponent<Text>();
         skillScrollName.text = focusedSkill.name;
         skillScrollName.transform.position = Camera.main.WorldToScreenPoint(skillScroll.transform.position);
     }
@@ -396,20 +410,7 @@ public class BattleMenu : MonoBehaviour
 
             SetSkillScroll();
 
-            // Wait until a skill is selected
-            while (selectedSkill == null)
-            {
-                RotateWheel();
-                // Confirm for Keyboard / Controllers
-                if (inputManager.ButtonADown() && Jrpg.CheckPlatform() == "Other")
-                {
-                    if (playerBattler.skills[skillIndex].ProcessRequirements(playerBattler))
-                        selectedSkill = playerBattler.skills[skillIndex];
-                    else
-                        Jrpg.PlaySound("Forbidden");
-                }
-                yield return null;
-            }
+            yield return StartCoroutine(RotateWheel());            
             Debug.Log("Skill " + selectedSkill.name + " selected");
 
             // Fade out some stuff
@@ -426,7 +427,10 @@ public class BattleMenu : MonoBehaviour
             Debug.Log("Finding legal targets based on selected skill targetType");
 
             if (skillScroll != null)
+            {
                 Destroy(skillScroll);
+                skillScrollName.text = "";
+            }
 
             legalTargets = selectedSkill.FindLegalTargets(playerBattler, selectedSkill, bc.enemies.ToArray(), bc.party.ToArray());
 
