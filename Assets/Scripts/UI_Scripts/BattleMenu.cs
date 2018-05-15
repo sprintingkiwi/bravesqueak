@@ -34,6 +34,7 @@ public class BattleMenu : MonoBehaviour
     GameObject activeBattler;
 
     [Header("Wheel")]
+    public Vector3 lastAngle;
     public Vector3 targetAngle;
     public Vector3 currentAngle;
     public float wheelSpeed = 2f;
@@ -93,13 +94,17 @@ public class BattleMenu : MonoBehaviour
         // Wait until a skill is selected
         while (selectedSkill == null)
         {
-            // Right wheel rotation
+            lastAngle = transform.eulerAngles;
+
+            // Right wheel rotation            
             if (inputManager.RightArrowDown() && skillIndex < 4)
             {
+                rightWheelRotation:
+
                 skillIndex += 1;
 
                 SetSkillScroll();
-
+                
                 targetAngle = new Vector3(0, 0, transform.eulerAngles.z + 15);
                 rotationStartTime = Time.time;
                 while (Time.time - rotationStartTime < 0.8f)
@@ -109,17 +114,30 @@ public class BattleMenu : MonoBehaviour
                     yield return null;
 
                     // Manage multi-input
-                    if (inputManager.RightArrowDown() || inputManager.ButtonADown())
+                    if (inputManager.RightArrowDown())
                     {
                         transform.eulerAngles = targetAngle;
-                        break;
+                        if (skillIndex < 4)
+                            goto rightWheelRotation;
+                        else
+                            break;
                     }
+                    //else if (inputManager.LeftArrowDown())
+                    //{
+                    //    transform.eulerAngles = lastAngle;
+                    //    currentAngle = transform.eulerAngles;
+                    //    break;
+                    //}
+                    else if (inputManager.ButtonADown())
+                        break;
                 }
             }
 
             // Left wheel rotation
             if (inputManager.LeftArrowDown() && skillIndex > 0)
             {
+                leftWheelRotation:
+
                 skillIndex -= 1;
 
                 SetSkillScroll();
@@ -133,11 +151,16 @@ public class BattleMenu : MonoBehaviour
                     yield return null;
 
                     // Manage multi-input
-                    if (inputManager.LeftArrowDown() || inputManager.ButtonADown())
+                    if (inputManager.LeftArrowDown())
                     {
                         transform.eulerAngles = targetAngle;
-                        break;
+                        if (skillIndex > 0)
+                            goto leftWheelRotation;
+                        else
+                            break;
                     }
+                    else if (inputManager.ButtonADown())
+                        break;
                 }
             }
 
