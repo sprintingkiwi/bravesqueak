@@ -31,14 +31,14 @@ public class Jrpg : MonoBehaviour
 
     public static void Log(string text, string type = "")
     {
-        if (Debug.isDebugBuild)
+        if (Debug.isDebugBuild || type == "Build")
         {
             if (type == "Warning")
                 Debug.LogWarning(text);
             else
                 Debug.Log(text);
 
-            if (type == "Visible")
+            if (type == "Visible" || type == "Build")
             {
                 // Destroy old log if exists
                 GameObject logs = GameObject.Find("LOGS");

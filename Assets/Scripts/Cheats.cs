@@ -7,7 +7,14 @@ public class Cheats : MonoBehaviour
 {
     GameController gc;
     public Encounter testEncounter;
-    public string targetScene;
+
+    [System.Serializable]
+    public class Team
+    {
+        public Battler[] memebrs = new Battler[3];
+    }
+    public Team[] teams;
+    public int actualTeam = 0;
 
     // Shaking
     float accelerometerUpdateInterval = 1.0f / 60.0f;
@@ -42,7 +49,7 @@ public class Cheats : MonoBehaviour
     {
         gc = GameObject.Find("Game Controller").GetComponent<GameController>();
 
-        // Shaking
+        // Shaking for mobile
         lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
         shakeDetectionThreshold *= shakeDetectionThreshold;
         lowPassValue = Input.acceleration;
@@ -53,19 +60,17 @@ public class Cheats : MonoBehaviour
     {
         //Debug.Log(GameObject.FindObjectOfType<AudioListener>().name);
 
-
-        // Return to Target Scene
-        if (Input.GetKeyDown(KeyCode.R))
-            StartCoroutine(Jrpg.LoadScene(targetScene));
-
         if (Input.GetKeyDown(KeyCode.T))
             StartCoroutine(gc.TriggerBattle(testEncounter, "Random"));
+
+        if (Input.GetKeyDown(KeyCode.Y))
+            ChangeTeam();
 
         //if (Input.GetKeyDown(KeyCode.N))
         //StartCoroutine(Jrpg.LoadScene("SkillStore"));
 
-        // Save & load
-        if (gc.canSave)
+            // Save & load
+            if (gc.canSave)
         {
             if (Input.GetKeyDown(KeyCode.F5))
             {
@@ -98,12 +103,18 @@ public class Cheats : MonoBehaviour
         }        
     }
 
-    void LoadTargetScene()
+    void ChangeTeam()
     {
-        Debug.Log("Loading cheats target scene: " + targetScene);
+        Jrpg.Log("Changing heroes team", type: "Build");
 
-        //LoadingStance();
-        //SceneManager.LoadScene(targetScene);
-        StartCoroutine(Jrpg.LoadScene(targetScene));
+        if (actualTeam < teams.Length - 1)
+            actualTeam += 1;
+        else
+            actualTeam = 0;
+
+        for (int i = 0; i < 3; i++)
+        {
+            gc.partyPrefabs[i] = (HeroBattler)teams[actualTeam].memebrs[i];
+        }
     }
 }
