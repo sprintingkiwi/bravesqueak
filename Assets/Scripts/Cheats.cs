@@ -18,7 +18,24 @@ public class Cheats : MonoBehaviour
     // or at least according to Brady! ;)
     public float shakeDetectionThreshold;
     float lowPassFilterFactor;
-    Vector3 lowPassValue;    
+    Vector3 lowPassValue;
+
+    // Persistence
+    public static Cheats cGInstance;
+    void Awake()
+    {
+        // Persistence
+        if (cGInstance == null)
+        {
+            cGInstance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Use this for initialization
     void Start()
