@@ -96,10 +96,13 @@ public class BattleMenu : MonoBehaviour
         {
             lastAngle = transform.eulerAngles;
 
+            wheelRotation:
+
             // Right wheel rotation            
             if (inputManager.RightArrowDown() && skillIndex < 4)
             {
                 rightWheelRotation:
+                Jrpg.Log("Rotating wheel right", "Visible");
 
                 skillIndex += 1;
 
@@ -124,8 +127,12 @@ public class BattleMenu : MonoBehaviour
                     }
                     //else if (inputManager.LeftArrowDown())
                     //{
+                    //    yield return new WaitForEndOfFrame();
+                    //    skillIndex -= 1;
+                    //    SetSkillScroll();
+                    //    currentAngle = lastAngle;
                     //    transform.eulerAngles = lastAngle;
-                    //    currentAngle = transform.eulerAngles;
+                    //    yield return null;
                     //    break;
                     //}
                     else if (inputManager.ButtonADown())
@@ -137,6 +144,7 @@ public class BattleMenu : MonoBehaviour
             if (inputManager.LeftArrowDown() && skillIndex > 0)
             {
                 leftWheelRotation:
+                Jrpg.Log("Rotating wheel left", "Visible");
 
                 skillIndex -= 1;
 

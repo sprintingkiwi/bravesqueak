@@ -4916,8 +4916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de327edb4afb2d42a9083cb8903b322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtrack: {fileID: 8300000, guid: dd6f3203cd18cb244a16524ca554a342, type: 3}
-  defaultBattleMusic: {fileID: 8300000, guid: 74c63c61a6d29a2418d2040ba67dcf32, type: 3}
+  soundtrack: {fileID: 8300000, guid: 9579431a8bd2a3543a28b5afaa0e1d52, type: 3}
+  defaultBattleMusic: {fileID: 8300000, guid: 0065e1f7e74545644aa8437cde0ba07b, type: 3}
   preBattleSound: {fileID: 8300000, guid: 2f0b9a5956ba39e4c9c6a72f54312dda, type: 3}
   defaultBattleback: {fileID: 1751974990724546, guid: 2fb87cc40828ad54ea2c381a2c060660,
     type: 2}

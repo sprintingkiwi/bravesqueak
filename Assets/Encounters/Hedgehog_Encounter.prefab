@@ -144,7 +144,7 @@ MonoBehaviour:
   cameraAdjust:
     delta: {x: 0, y: 0, z: 0}
     speed: 0.2
-  battleMusic: {fileID: 8300000, guid: 74c63c61a6d29a2418d2040ba67dcf32, type: 3}
+  battleMusic: {fileID: 8300000, guid: 0065e1f7e74545644aa8437cde0ba07b, type: 3}
   enemies:
   - recipe: {fileID: 114069915646428382, guid: feda8348509482543ab8a31e9f5ff804, type: 2}
     place: {fileID: 4922312702444724}
