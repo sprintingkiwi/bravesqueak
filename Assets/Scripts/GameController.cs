@@ -140,11 +140,12 @@ public class GameController : MonoBehaviour
         player = areaStuff.transform.Find("Player").GetComponent<PlayerController>();
         player.transform.position = playerStartPosition;
 
+        // TODO
         // If just ended a battle or loaded a new map-scene, save the game
-        if (!justLoadedGameSlot) // But not right after a game-slot loading
-            Save(actualSlot);
-        else
-            justLoadedGameSlot = false;
+        //if (!justLoadedGameSlot) // But not right after a game-slot loading
+        //    Save(actualSlot);
+        //else
+        //    justLoadedGameSlot = false;
 
         Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
     }
@@ -246,7 +247,7 @@ public class GameController : MonoBehaviour
         {
             yield return Jrpg.Fade(GameObject.Find("Intro"), 1);
             Jrpg.Log("You lose");
-            yield return Jrpg.LoadScene("MainMenu");
+            yield return StartCoroutine(Jrpg.LoadScene("MainMenu"));
         }        
     }
 

@@ -288,6 +288,9 @@ public class Jrpg : MonoBehaviour
 
     public static void PlayEffect(Battler actor, Effect effect)
     {
+        if (actor == null)
+            return;
+
         // Instantiate effect. Effect GameObject pos is added to target pos in order to manage effect offset.
         Effect e;
         if (effect != null)

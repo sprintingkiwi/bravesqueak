@@ -160,7 +160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1046199632114476
 GameObject:
   m_ObjectHideFlags: 1
@@ -399,6 +399,23 @@ GameObject:
   - component: {fileID: 212656444014510486}
   m_Layer: 0
   m_Name: tile_35
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1140781153162292
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4768304981117202}
+  - component: {fileID: 58695028836820356}
+  - component: {fileID: 114967584534930232}
+  m_Layer: 0
+  m_Name: To AntHill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1369,7 +1386,7 @@ GameObject:
   - component: {fileID: 58984921173110278}
   - component: {fileID: 114747973809352474}
   m_Layer: 0
-  m_Name: To AntHill
+  m_Name: To BramblesMaze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3167,8 +3184,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4372429871963406}
-  - {fileID: 4894907179089158}
+  - {fileID: 4768304981117202}
   - {fileID: 4418902926986962}
+  - {fileID: 4894907179089158}
   m_Father: {fileID: 4616614443002140}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3328,6 +3346,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4953748148564040}
   m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4768304981117202
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140781153162292}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.84, y: -8.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4693749190838468}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4777929056113508
 Transform:
@@ -3534,11 +3565,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1677447447767598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.84, y: -8.62, z: 0}
+  m_LocalPosition: {x: -30.62, y: -5.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4693749190838468}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4901138027413940
 Transform:
@@ -4556,6 +4587,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.48}
   serializedVersion: 2
   m_Radius: 0.89
+--- !u!58 &58695028836820356
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140781153162292}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.175
 --- !u!58 &58886895608173546
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -7241,7 +7287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: {fileID: 114618980357317238, guid: 13186551c1fabb54f80108e447960bc5,
+  destinationMap: {fileID: 114720446303504176, guid: 6dead14f382c2a846adda15f5201f8ad,
     type: 2}
   destinationPlace: To MainMap_1
   active: 1
@@ -7460,6 +7506,22 @@ MonoBehaviour:
     tagsChange: -1
     tagsSet: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &114967584534930232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140781153162292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationMap: {fileID: 114618980357317238, guid: 13186551c1fabb54f80108e447960bc5,
+    type: 2}
+  destinationPlace: To MainMap_1
+  active: 1
+  transfering: 0
 --- !u!114 &114988371021042566
 MonoBehaviour:
   m_ObjectHideFlags: 1

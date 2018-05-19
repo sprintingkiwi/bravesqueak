@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114120809954854510}
-  - component: {fileID: 212491082284038920}
+  - component: {fileID: 114487366432352720}
+  - component: {fileID: 212258056524800154}
   m_Layer: 0
   m_Name: Fire Bash
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114120809954854510
+--- !u!114 &114487366432352720
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,19 +49,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c8f540e5044514598f0a310c4395bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Powerful Fire attack using the equipped weapon. Fire damage is added
-    to default weapons damage.
-  speed: 100
-  accuracy: 100
+  description: 
+  speed: 70
+  accuracy: 80
   powerRoll:
     dices:
-    - faces: 8
+    - faces: 6
+    - faces: 6
   buffs: []
   statusChances: []
-  scope: 0
+  scope: 2
   targetsNumber: 1
   duration: 0
   active: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
   element: 4
   requiredSP: 2
   shopRequirement:
-    job: 0
+    job: 2
     exp: 0
   coins: 0
   storeNameImg: {fileID: 0}
@@ -89,7 +89,22 @@ MonoBehaviour:
   bc: {fileID: 0}
   ps: {fileID: 0}
   userMovementSpeed: 0
---- !u!212 &212491082284038920
+  mods:
+  - name: ATK
+    value: 0
+  - name: SAT
+    value: 0
+  - name: DEF
+    value: 0
+  - name: SDF
+    value: 0
+  - name: EVA
+    value: 0
+  - name: CRT
+    value: 0
+  - name: DMG
+    value: 0
+--- !u!212 &212258056524800154
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -126,7 +141,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.8933333, y: 1.8933333}
+  m_Size: {x: 1.8933333, y: 1.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

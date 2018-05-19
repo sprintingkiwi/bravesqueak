@@ -66,11 +66,14 @@ public class Cheats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y))
             ChangeTeam();
 
+        if (Input.GetKeyDown(KeyCode.O))
+            StartCoroutine(Jrpg.LoadScene("MainMenu"));
+
         //if (Input.GetKeyDown(KeyCode.N))
         //StartCoroutine(Jrpg.LoadScene("SkillStore"));
 
-            // Save & load
-            if (gc.canSave)
+        // Save & load
+        if (gc.canSave)
         {
             if (Input.GetKeyDown(KeyCode.F5))
             {

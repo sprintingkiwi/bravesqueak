@@ -526,6 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24b498b03edf0d489f21773ea4a8240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originalPos: {x: 0, y: 0, z: 0}
   rightBound: 21.110184
   leftBound: -21.110184
   topBound: 15
@@ -534,6 +535,7 @@ MonoBehaviour:
   target: {fileID: 4716650653340722}
   spriteBounds: {fileID: 0}
   gc: {fileID: 0}
+  followPlayer: 0
 --- !u!114 &114584208002604998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -576,16 +578,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d89a377463182940b6c5fdea87a03c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spr: {fileID: 212806437035842314}
+  gc: {fileID: 0}
+  anim: {fileID: 95183945411389414}
   speed: 3
   mirrorHorizontal: 1
   level: 3
   rb: {fileID: 50445198967079674}
-  anim: {fileID: 95183945411389414}
-  spr: {fileID: 212806437035842314}
   canMove: 1
   status: Idle
   direction: {x: 0, y: -1}
-  gc: {fileID: 0}
+  lastCheckedPos4RandEncounters: {x: 0, y: 0, z: 0}
+  randomEncounters: 1
 --- !u!114 &114865104632930772
 MonoBehaviour:
   m_ObjectHideFlags: 1

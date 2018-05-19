@@ -450,8 +450,11 @@ public class Skill : MonoBehaviour
     public virtual bool ProcessRequirements(Battler user)
     {
         if (user.skillPoints < requiredSP)
-        {
-            Jrpg.Log(name + " cannot be used: not enough SP");
+        {            
+            if (user.faction == Battler.Faction.Heroes)
+                Jrpg.Log(name + " cannot be used: not enough SP", "Build");
+            else
+                Jrpg.Log(name + " cannot be used: not enough SP");
             return false;
         }
         else
