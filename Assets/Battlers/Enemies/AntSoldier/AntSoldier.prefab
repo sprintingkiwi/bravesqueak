@@ -72,34 +72,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 12
+    value: 25
   defense:
     ID: DEF
-    value: 10
+    value: 15
   specialAttack:
     ID: SAT
     value: 8
   specialDefense:
     ID: SDF
-    value: 8
+    value: 10
   support:
     ID: SUP
     value: 8
-  dexterity:
-    ID: DEX
-    value: 10
   speed:
     ID: SPD
-    value: 10
+    value: 40
   maxHP:
     ID: maxHP
-    value: 20
+    value: 60
   hitPoints: 0
   skillPoints: 0
+  level: 1
   characterName: Ant Soldier
   size: 5
   sizeModifier: 0
   elementAffinity: 1
+  species: 4
+  perksPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
@@ -108,16 +111,20 @@ MonoBehaviour:
   targetPos: {x: 17.5, y: -10, z: 0}
   anim: {fileID: 0}
   spr: {fileID: 0}
+  col: {fileID: 0}
   targets: []
   currentlyActiveSkills: []
   currentSkill: {fileID: 0}
   canAct: 0
+  perfectParry: 0
   audioSource: {fileID: 0}
+  gc: {fileID: 0}
+  bc: {fileID: 0}
   faction: -1
-  species: 4
+  firewalls: []
+  hud: {fileID: 0}
   prefabName: 
   strategy: {fileID: 114109042552807282, guid: 3007f5465e99c9744aacc1362083ac48, type: 2}
-  level: 1
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1

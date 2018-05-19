@@ -72,34 +72,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 10
+    value: 30
   defense:
     ID: DEF
-    value: 8
+    value: 15
   specialAttack:
     ID: SAT
-    value: 14
+    value: 40
   specialDefense:
     ID: SDF
-    value: 12
+    value: 30
   support:
     ID: SUP
-    value: 8
-  dexterity:
-    ID: DEX
-    value: 12
+    value: 20
   speed:
     ID: SPD
-    value: 10
+    value: 30
   maxHP:
     ID: maxHP
-    value: 20
+    value: 80
   hitPoints: 0
   skillPoints: 0
+  level: 2
   characterName: Fire Ant
   size: 5
   sizeModifier: 0
   elementAffinity: 4
+  species: 4
+  perksPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
@@ -108,16 +111,20 @@ MonoBehaviour:
   targetPos: {x: 17.5, y: -10, z: 0}
   anim: {fileID: 0}
   spr: {fileID: 0}
+  col: {fileID: 0}
   targets: []
   currentlyActiveSkills: []
   currentSkill: {fileID: 0}
   canAct: 0
+  perfectParry: 0
   audioSource: {fileID: 0}
+  gc: {fileID: 0}
+  bc: {fileID: 0}
   faction: -1
-  species: 4
+  firewalls: []
+  hud: {fileID: 0}
   prefabName: 
   strategy: {fileID: 114109042552807282, guid: 705f813b76085514b9b68fd2bc48cfde, type: 2}
-  level: 2
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -78,7 +78,7 @@ MonoBehaviour:
     value: 30
   specialAttack:
     ID: SAT
-    value: 10
+    value: 50
   specialDefense:
     ID: SDF
     value: 15
@@ -90,7 +90,7 @@ MonoBehaviour:
     value: 30
   maxHP:
     ID: maxHP
-    value: 60
+    value: 250
   hitPoints: 0
   skillPoints: 0
   level: 2
@@ -99,9 +99,10 @@ MonoBehaviour:
   sizeModifier: 0
   elementAffinity: 1
   species: 5
-  perks:
+  perksPrefabs:
   - {fileID: 0}
   - {fileID: 0}
+  effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
@@ -121,7 +122,7 @@ MonoBehaviour:
   bc: {fileID: 0}
   faction: -1
   firewalls: []
-  skillCustomizers: []
+  hud: {fileID: 0}
   prefabName: 
   strategy: {fileID: 114109042552807282, guid: ea4dd53d74fca1545a80c090abe2c0d1, type: 2}
 --- !u!212 &212813837508701844
