@@ -275,7 +275,9 @@ MonoBehaviour:
   perksPrefabs:
   - {fileID: 0}
   - {fileID: 0}
-  effectsDelay: []
+  effectsDelay:
+  - animation: attack
+    lenghtPercentage: 1
   hitSound: {fileID: 8300000, guid: 128fbe42ec1ccbd448040e5e133fa1ad, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
@@ -300,11 +302,11 @@ MonoBehaviour:
   availableJobs: 090000000a0000000b000000
   unlockedSkills: []
   skills:
-  - {fileID: 0}
+  - {fileID: 114607521043220432, guid: e110c3cefd812604b91ff4fb98da96ca, type: 2}
   - {fileID: 114791456912984680, guid: f720cbfd65f4e4943a09604325f86798, type: 2}
   - {fileID: 114607521043220432, guid: 0a5fe8e448ef532458ca66c0c713ca79, type: 2}
-  - {fileID: 114798076592822612, guid: ec6434e5e3c0b8448a3d600adbfcf84b, type: 2}
-  - {fileID: 0}
+  - {fileID: 114836736652321672, guid: a1d5de150b0b50e4a89ebf5630e1c1e5, type: 2}
+  - {fileID: 114607521043220432, guid: 396fee5440661ba41b47bb20229b23eb, type: 2}
 --- !u!212 &212922865670699482
 SpriteRenderer:
   m_ObjectHideFlags: 1

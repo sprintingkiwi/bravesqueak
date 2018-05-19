@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 212018761748290012}
-  - component: {fileID: 114338331553455674}
+  - component: {fileID: 114120809954854510}
+  - component: {fileID: 212491082284038920}
   m_Layer: 0
-  m_Name: Ignite
+  m_Name: Thunder Bash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114338331553455674
+--- !u!114 &114120809954854510
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,39 +49,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
+  m_Script: {fileID: 11500000, guid: 82c8f540e5044514598f0a310c4395bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: Powerful Fire attack using the equipped weapon. Fire damage is added
+    to default weapons damage.
   speed: 100
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 3
-    - faces: 3
+    - faces: 8
   buffs: []
   statusChances: []
-  scope: 2
+  scope: 0
   targetsNumber: 1
-  duration: 3
+  duration: 0
   active: 1
   inBattle: 1
   inField: 0
-  element: 4
+  element: 5
   requiredSP: 2
   shopRequirement:
     job: 0
     exp: 0
   coins: 0
   storeNameImg: {fileID: 0}
-  userAnimation: special
+  userAnimation: attack
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114280663374910852, guid: e9b19b6920789ab4fadb2fa9ebb334cd,
+  targetEffect: {fileID: 114614065750280804, guid: 64eb38151b1f9fd428d6400476a728b9,
     type: 2}
-  moveToTarget: 0
+  moveToTarget: 1
   cameraFocus: 0
-  cameraShake: 0
+  cameraShake: 1
   user: {fileID: 0}
   targets: []
   targetedArea: 0
@@ -89,22 +89,7 @@ MonoBehaviour:
   bc: {fileID: 0}
   ps: {fileID: 0}
   userMovementSpeed: 0
-  mods:
-  - name: ATK
-    value: 0
-  - name: SAT
-    value: 0
-  - name: DEF
-    value: 0
-  - name: SDF
-    value: 0
-  - name: EVA
-    value: 0
-  - name: CRT
-    value: 0
-  - name: DMG
-    value: 0
---- !u!212 &212018761748290012
+--- !u!212 &212491082284038920
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -136,7 +121,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

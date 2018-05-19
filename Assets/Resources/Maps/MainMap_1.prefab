@@ -6944,7 +6944,7 @@ MonoBehaviour:
   gc: {fileID: 0}
   anim: {fileID: 0}
   speed: 0
-  mirrorHorizontal: 1
+  mirrorHorizontal: 0
   level: 0
   rb: {fileID: 0}
   canMove: 1
@@ -8646,7 +8646,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 3d3038d6beb5da34186ad1b1244b4fed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 9, y: 9}
@@ -10830,7 +10830,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a83e605c040cbe041bef373ccb7f4a9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 4.166667, y: 2.6666667}
@@ -10914,7 +10914,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 08d8ab6d4d1b05d4593aaf2d751a2ab0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 18, y: 12}
@@ -12048,7 +12048,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 08d8ab6d4d1b05d4593aaf2d751a2ab0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 18, y: 12}

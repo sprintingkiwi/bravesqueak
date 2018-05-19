@@ -59,7 +59,7 @@ MonoBehaviour:
     dices: []
   buffs: []
   statusChances: []
-  scope: 0
+  scope: 3
   targetsNumber: 1
   duration: 0
   active: 1
@@ -74,6 +74,7 @@ MonoBehaviour:
   storeNameImg: {fileID: 0}
   userAnimation: attack
   targetAnimation: hit
+  areaEffect: {fileID: 0}
   targetEffect: {fileID: 0}
   moveToTarget: 0
   cameraFocus: 0

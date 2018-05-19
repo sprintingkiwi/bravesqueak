@@ -56,7 +56,8 @@ MonoBehaviour:
   speed: 7
   accuracy: 0
   powerRoll:
-    dices: []
+    dices:
+    - faces: 8
   buffs: []
   statusChances: []
   scope: 3
@@ -74,6 +75,7 @@ MonoBehaviour:
   storeNameImg: {fileID: 0}
   userAnimation: special
   targetAnimation: idle
+  areaEffect: {fileID: 0}
   targetEffect: {fileID: 114308449136090854, guid: ef5e008a7ec3d844ea6f5034cf8e4b54,
     type: 2}
   moveToTarget: 0

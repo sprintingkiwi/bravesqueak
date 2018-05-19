@@ -295,8 +295,8 @@ MonoBehaviour:
   sizeModifier: 0
   elementAffinity: 0
   species: 0
-  perks:
-  - {fileID: 114516546974924926, guid: a39df019c9139944084d2180563f620f, type: 2}
+  perksPrefabs:
+  - {fileID: 0}
   - {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: 128fbe42ec1ccbd448040e5e133fa1ad, type: 3}
@@ -318,17 +318,16 @@ MonoBehaviour:
   bc: {fileID: 0}
   faction: 1
   firewalls: []
-  skillCustomizers: []
+  hud: {fileID: 0}
   job: 5
   availableJobs: 05000000060000000700000008000000
   unlockedSkills: []
   skills:
-  - {fileID: 114863936190228534, guid: adcda2522d74f0d409adf712847989d2, type: 2}
-  - {fileID: 114755667126410738, guid: 0631581c998af6f4babec1a0f8df0426, type: 2}
+  - {fileID: 114836736652321672, guid: af9448afaed6ba343b121385b7304857, type: 2}
+  - {fileID: 114115067928026556, guid: 01c9b776ffd00d6469648059fdc76d0e, type: 2}
   - {fileID: 114238026829365552, guid: 9b9eb11db93e47e4f964065e87eddd31, type: 2}
   - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}
   - {fileID: 114255436312251458, guid: 1977606b12460224cb4b91b7d54351ee, type: 2}
-  hud: {fileID: 0}
 --- !u!212 &212314776096107348
 SpriteRenderer:
   m_ObjectHideFlags: 1
