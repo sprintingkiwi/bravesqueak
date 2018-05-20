@@ -72,52 +72,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 18
+    value: 35
   defense:
     ID: DEF
-    value: 14
+    value: 40
   specialAttack:
     ID: SAT
-    value: 18
+    value: 50
   specialDefense:
     ID: SDF
-    value: 18
+    value: 80
   support:
     ID: SUP
-    value: 16
-  dexterity:
-    ID: DEX
-    value: 14
+    value: 40
   speed:
     ID: SPD
     value: 10
   maxHP:
     ID: maxHP
-    value: 200
+    value: 60
   hitPoints: 0
   skillPoints: 0
+  level: 5
   characterName: Plant
   size: 3
   sizeModifier: 0
   elementAffinity: 1
+  species: 3
+  perksPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
+  anim: {fileID: 0}
+  spr: {fileID: 0}
+  col: {fileID: 0}
   targets: []
   currentlyActiveSkills: []
   currentSkill: {fileID: 0}
   canAct: 0
+  perfectParry: 0
   audioSource: {fileID: 0}
+  gc: {fileID: 0}
+  bc: {fileID: 0}
   faction: -1
-  status: {fileID: 0}
-  species: 3
+  firewalls: []
+  hud: {fileID: 0}
   prefabName: 
   strategy: {fileID: 114429996944679292, guid: a26303c4c945b45498e7c374d2785dad, type: 2}
-  level: 5
 --- !u!212 &212683479717685656
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -150,12 +157,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d0c3cfa5494853438d0f841b31b9425, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63f949f0cc8efde49925714c361fca62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.400001, y: 14.400001}
+  m_Size: {x: 32, y: 32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

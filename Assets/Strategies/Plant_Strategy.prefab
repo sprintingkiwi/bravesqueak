@@ -53,12 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc: {fileID: 0}
   user: {fileID: 0}
-  instEnemies:
-  - {fileID: 0}
-  instParty:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   selectedAction:
     skill: {fileID: 114510658932947970, guid: 5b210aa628e3aa048ad1b04c5c13be95, type: 2}
     weight: 10
@@ -69,7 +63,7 @@ MonoBehaviour:
       condParameters: 
   conditionCheck: 0
   actions:
-  - skill: {fileID: 114565653520574382, guid: 22a6a4b1576b85146b9ce5522beee75a, type: 2}
+  - skill: {fileID: 114448939315776632, guid: b176d75bb31efc1458f9d295745dd192, type: 2}
     weight: 4
     conditions: []
   - skill: {fileID: 114510658932947970, guid: 5b210aa628e3aa048ad1b04c5c13be95, type: 2}
@@ -79,7 +73,7 @@ MonoBehaviour:
       conditionType: and
       weightInfluence: 0
       condParameters: 
-  - skill: {fileID: 114243098337780958, guid: 9916d7eecc2371240996692895cd010b, type: 2}
+  - skill: {fileID: 114836736652321672, guid: a1d5de150b0b50e4a89ebf5630e1c1e5, type: 2}
     weight: 15
     conditions:
     - conditionFunction: TestCondition

@@ -58,9 +58,9 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.3, y: 0.38}
-    oldSize: {x: 47.5, y: 37.5}
-    newSize: {x: 47.5, y: 37.5}
+    pivot: {x: 0.5, y: 0.15}
+    oldSize: {x: 4.5, y: 4.5}
+    newSize: {x: 4.5, y: 4.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -400,21 +400,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 18
+    value: 30
   defense:
     ID: DEF
-    value: 24
+    value: 80
   specialAttack:
     ID: SAT
-    value: 6
+    value: 15
   specialDefense:
     ID: SDF
-    value: 12
+    value: 40
   support:
     ID: SUP
-    value: 6
-  dexterity:
-    ID: DEX
     value: 6
   speed:
     ID: SPD
@@ -424,28 +421,38 @@ MonoBehaviour:
     value: 200
   hitPoints: 0
   skillPoints: 0
+  level: 5
   characterName: Hedgehog
   size: 3
   sizeModifier: 0
   elementAffinity: 1
+  species: 2
+  perksPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  effectsDelay: []
   hitSound: {fileID: 0}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 17.5, y: -10, z: 0}
-  animator: {fileID: 0}
+  anim: {fileID: 0}
+  spr: {fileID: 0}
+  col: {fileID: 0}
   targets: []
   currentlyActiveSkills: []
   currentSkill: {fileID: 0}
   canAct: 0
+  perfectParry: 0
   audioSource: {fileID: 0}
+  gc: {fileID: 0}
+  bc: {fileID: 0}
   faction: -1
-  status: {fileID: 0}
-  species: 2
+  firewalls: []
+  hud: {fileID: 0}
   prefabName: 
   strategy: {fileID: 114429996944679292, guid: 8d475f97aa6760e4498fd5020fd01b54, type: 2}
-  level: 5
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -478,12 +485,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a8bc745bfc5c90342b7bd8a129790d83, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ff839e4fcae8fd4e95741980d4939e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 47.5, y: 37.5}
+  m_Size: {x: 4.5, y: 4.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

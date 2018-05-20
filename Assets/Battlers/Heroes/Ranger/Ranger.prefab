@@ -251,7 +251,7 @@ MonoBehaviour:
     value: 20
   specialAttack:
     ID: SAT
-    value: 25
+    value: 30
   specialDefense:
     ID: SDF
     value: 20
@@ -263,7 +263,7 @@ MonoBehaviour:
     value: 40
   maxHP:
     ID: maxHP
-    value: 80
+    value: 100
   hitPoints: 0
   skillPoints: 0
   level: 0
