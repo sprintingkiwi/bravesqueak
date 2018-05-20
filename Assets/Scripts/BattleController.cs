@@ -354,10 +354,10 @@ public class BattleController : MonoBehaviour
 
     public string EvaluateBattleOutcome()
     {
-        if (enemies.Count > 0)
-            return "Continue";
-        else if (party.Count < 1)
+        if (party.Count < 1)
             return "Lose";
+        else if (enemies.Count > 0)
+            return "Continue";
         else
             return "Win";
     }
