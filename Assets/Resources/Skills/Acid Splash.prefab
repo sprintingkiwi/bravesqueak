@@ -78,7 +78,8 @@ MonoBehaviour:
   storeNameImg: {fileID: 0}
   userAnimation: special
   targetAnimation: hit
-  targetEffect: {fileID: 114696480298692704, guid: 205823002e85dfd44bd367d1ec3bbe2f,
+  areaEffect: {fileID: 0}
+  targetEffect: {fileID: 114847223870776074, guid: 19f359dbed1398f4c8850e7c18a953c0,
     type: 2}
   moveToTarget: 0
   cameraFocus: 0
@@ -90,12 +91,21 @@ MonoBehaviour:
   bc: {fileID: 0}
   ps: {fileID: 0}
   userMovementSpeed: 0
-  attackMod: 100
-  defenseMod: 100
-  specialAttackMod: 100
-  specialDefenseMod: 100
-  dodgeMod: 100
-  criticalMod: 100
+  mods:
+  - name: ATK
+    value: 0
+  - name: SAT
+    value: 0
+  - name: DEF
+    value: 0
+  - name: SDF
+    value: 0
+  - name: EVA
+    value: 0
+  - name: CRT
+    value: 0
+  - name: DMG
+    value: 0
 --- !u!212 &212461386023369356
 SpriteRenderer:
   m_ObjectHideFlags: 1

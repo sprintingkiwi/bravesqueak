@@ -140,7 +140,7 @@ public class GameController : MonoBehaviour
         player = areaStuff.transform.Find("Player").GetComponent<PlayerController>();
         player.transform.position = playerStartPosition;
 
-        // TODO
+        // TODO: uncomment when saves are fixed
         // If just ended a battle or loaded a new map-scene, save the game
         //if (!justLoadedGameSlot) // But not right after a game-slot loading
         //    Save(actualSlot);
@@ -246,7 +246,7 @@ public class GameController : MonoBehaviour
         else // Defeat
         {
             yield return Jrpg.Fade(GameObject.Find("Intro"), 1);
-            Jrpg.Log("You lose");
+            Jrpg.Log("You lose", "Build");
             yield return StartCoroutine(Jrpg.LoadScene("MainMenu"));
         }        
     }

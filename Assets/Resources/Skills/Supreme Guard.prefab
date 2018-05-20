@@ -72,7 +72,7 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 0
-  requiredSP: -1
+  requiredSP: 3
   shopRequirement:
     job: 4
     exp: 10
