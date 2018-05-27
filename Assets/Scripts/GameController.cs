@@ -201,16 +201,25 @@ public class GameController : MonoBehaviour
 
         if (outcome == "Win")
         {
-            // Battle Tips
-            BattleTip tip = Instantiate(Resources.Load("BattleTip") as GameObject, battleStuff.transform.Find("Battle Camera")).GetComponent<BattleTip>();
-            tip.GetComponent<SpriteRenderer>().sprite = tip.battleTips[UnityEngine.Random.Range(0, tip.battleTips.Length)];
-            while (!Input.GetButtonDown("ButtonA"))
-                yield return null;
-            Destroy(tip.gameObject);
-
             // Visual and music fade out
             foreach (Coroutine c in new Coroutine[] { Jrpg.Fade(GameObject.Find("Intro"), 1), StartCoroutine(SetVolume(0)) })
                 yield return c;
+
+            // Battle Tips
+            BattleTip tip = Instantiate(Resources.Load("BattleTip") as GameObject, battleStuff.transform.Find("Battle Camera")).GetComponent<BattleTip>();
+            tip.GetComponent<SpriteRenderer>().sprite = tip.battleTips[UnityEngine.Random.Range(0, tip.battleTips.Length)];
+            //while (tip.transform.localPosition.z > 6)
+            //{
+            //    tip.transform.Translate(Vector3.back);
+            //    if (Input.GetButtonDown("ButtonA"))
+            //        break;
+            //    yield return null;
+            //}
+            yield return Jrpg.Fade(GameObject.Find("Intro"), 0, speed: 0.2f);
+            while (!Input.GetButtonDown("ButtonA"))
+                yield return null;
+            yield return Jrpg.Fade(GameObject.Find("Intro"), 1, speed: 0.2f);
+            Destroy(tip.gameObject);
 
             // Music Change
             music.clip = currentMap.soundtrack;
