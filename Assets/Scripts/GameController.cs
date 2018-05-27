@@ -201,6 +201,13 @@ public class GameController : MonoBehaviour
 
         if (outcome == "Win")
         {
+            // Battle Tips
+            BattleTip tip = Instantiate(Resources.Load("BattleTip") as GameObject, battleStuff.transform.Find("Battle Camera")).GetComponent<BattleTip>();
+            tip.GetComponent<SpriteRenderer>().sprite = tip.battleTips[UnityEngine.Random.Range(0, tip.battleTips.Length)];
+            while (!Input.GetButtonDown("ButtonA"))
+                yield return null;
+            Destroy(tip.gameObject);
+
             // Visual and music fade out
             foreach (Coroutine c in new Coroutine[] { Jrpg.Fade(GameObject.Find("Intro"), 1), StartCoroutine(SetVolume(0)) })
                 yield return c;
@@ -211,6 +218,7 @@ public class GameController : MonoBehaviour
 
             // Clear battle stuff
             Destroy(battleStuff);
+            // Destroy HUD
             foreach (Transform t in GameObject.Find("BATTLE HUD").transform)
                 Destroy(t.gameObject);
 
@@ -235,7 +243,7 @@ public class GameController : MonoBehaviour
             canSave = true;
 
             // GUI Elements
-
+            
 
             // Visual and music fade in
             foreach (Coroutine c in new Coroutine[] { Jrpg.Fade(GameObject.Find("Intro"), 0), StartCoroutine(SetVolume(1)) })
