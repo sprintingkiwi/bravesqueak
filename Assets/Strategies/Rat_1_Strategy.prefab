@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4393621171321538}
   - component: {fileID: 114109042552807282}
   m_Layer: 0
-  m_Name: Rat_1
+  m_Name: Rat_1_Strategy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

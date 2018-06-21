@@ -124,11 +124,11 @@ MonoBehaviour:
   skillPoints: 0
   level: 1
   characterName: Ant Soldier
-  size: 5
+  size: 0
   sizeModifier: 0
   elementAffinity: 1
-  species: 4
-  perks:
+  species: 2
+  perksPrefabs:
   - {fileID: 0}
   - {fileID: 0}
   effectsDelay: []
@@ -151,7 +151,6 @@ MonoBehaviour:
   bc: {fileID: 0}
   faction: -1
   firewalls: []
-  skillCustomizers: []
   hud: {fileID: 0}
   prefabName: 
   strategy: {fileID: 114109042552807282, guid: 3c11b8f2b9263624ba4ba2fa4f06b1c4, type: 2}
