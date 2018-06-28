@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class HeroBattler : Battler
 {
-    public enum Job { None, Swordmaster, Barbarian, Dragoon, Paladin, Wizard, Countermage, Warlock, Cleric, Ranger, Gunslinger, Ninja };
+    public enum Job { None, Swordmaster, Druid, Dragoon, Paladin, Wizard, Monk, Zombie, Ranger };
 
     [Header("Hero battler specific")]
     public Job job;
-    public Job[] availableJobs;
+    // public Job[] availableJobs;
     public List<Skill> unlockedSkills = new List<Skill>();
     public Skill[] skills = new Skill[5];    
 

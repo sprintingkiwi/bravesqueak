@@ -91,7 +91,7 @@ public class StoreController : MonoBehaviour
 
         // Create available skills for the selected hero
         Vector3 startPos = new Vector3(-3f, 2f, 0);
-        foreach (Skill s in skillCollection.Where(s => s != null && hero.availableJobs.Contains(s.shopRequirement.job)))
+        foreach (Skill s in skillCollection.Where(s => s != null)) // && hero.availableJobs.Contains(s.shopRequirement.job)))
         {
             SkillItem ss = Instantiate(storeSkillPrefab, startPos, Quaternion.identity, panel.transform).GetComponent<SkillItem>();
             ss.linkedSkill = s;

@@ -174,7 +174,7 @@ public class Skill : MonoBehaviour
         yield return StartCoroutine(Ending());
         yield return new WaitForSeconds(0.1f);
 
-        AssignExperience();
+        // AssignExperience();
 
         // Death check and animation
         yield return StartCoroutine(ProcessDeath());
