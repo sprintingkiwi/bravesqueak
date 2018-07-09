@@ -153,7 +153,7 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: 8855d7a34386bc14bbf783e6ead8165f, type: 2}
+  strategy: {fileID: 114109042552807282, guid: 0f35dcc24179ceb488db91a069a40bdf, type: 2}
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1
