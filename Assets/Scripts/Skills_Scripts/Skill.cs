@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-public class Skill : MonoBehaviour
+public class Skill : Item
 {  
     [TextArea(5, 10)]
     public string description;
@@ -94,15 +94,16 @@ public class Skill : MonoBehaviour
     }
 
     // Use this for initialization
-    public virtual void Start ()
+    public override void Start ()
     {
+        base.Start();
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
-    public virtual void Update()
+    public override void Update()
     {
-
+        base.Update();
     }
 
     public virtual Coroutine Execute(Battler user, List<Battler> targets)

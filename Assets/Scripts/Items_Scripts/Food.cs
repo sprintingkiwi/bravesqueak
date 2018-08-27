@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Food : MonoBehaviour {
+public class Food : Item
+{
 
 	// Use this for initialization
-	void Start () {
-		
+	public override void Start ()
+    {
+        base.Start();
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+    // Update is called once per frame
+    public override void Update ()
+    {
+        base.Update();
+
 	}
 }

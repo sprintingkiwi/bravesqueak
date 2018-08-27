@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour {
+public class Item : MonoBehaviour
+{
 
 	// Use this for initialization
-	void Start () {
+	public virtual void Start ()
+    {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    public virtual void Update()
+    {
 		
 	}
 }
