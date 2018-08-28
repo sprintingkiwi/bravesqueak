@@ -141,12 +141,18 @@ public class AttackSkill : Skill
         if (gameObject.GetComponent<MeleeAttack>() != null)
         {
             attackRoll += Jrpg.Roll(user.attack, modifier: accuracy + (int)GetMod("ATK"));
-            defenseRoll += Jrpg.Roll(target.defense);
+            
+            // Parry only if target has a melee parry type
+            if (user.parryType == Battler.ParryType.Melee)
+                defenseRoll += Jrpg.Roll(target.defense);
         }
         else
         {
             attackRoll += Jrpg.Roll(user.specialAttack, modifier: accuracy + (int)GetMod("SAT"));
-            defenseRoll += Jrpg.Roll(target.specialDefense);
+            
+            // Parry only if target has a special parry type
+            if (user.parryType == Battler.ParryType.Special)
+                defenseRoll += Jrpg.Roll(target.specialDefense);
         }
         dodgeRoll += Jrpg.Roll(target.speed);
 

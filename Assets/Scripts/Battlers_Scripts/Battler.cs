@@ -31,6 +31,8 @@ public class Battler : MonoBehaviour
     [Header("Other parameters")]
     public int hitPoints;
     public int skillPoints;
+    public enum ParryType { Melee, Special };
+    public ParryType parryType;
     public int level;
     //public Stat baseAttackBonus;
     public string characterName;     
