@@ -123,6 +123,7 @@ MonoBehaviour:
     value: 20
   hitPoints: 0
   skillPoints: 0
+  parryType: 0
   level: 0
   characterName: 
   size: 0
@@ -164,6 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62539cb01284efa4882105feee066d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonuses:
+  - ID: DEF
+    value: 5
 --- !u!212 &212470266133150214
 SpriteRenderer:
   m_ObjectHideFlags: 1

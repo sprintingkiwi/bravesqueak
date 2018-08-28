@@ -208,7 +208,7 @@ public class BattleController : MonoBehaviour
         Jrpg.Log("Dropping food: " + food.name);
 
         // Instantiating food object and adding a battler component
-        currentFood = Instantiate(food);
+        currentFood = Instantiate(food, gc.battleStuff.transform);
         Battler fb = (currentFood.gameObject.GetComponent<Battler>());
         fb.Setup();
         yield return StartCoroutine(currentFood.Fall());

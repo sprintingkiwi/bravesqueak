@@ -435,6 +435,18 @@ public class Battler : MonoBehaviour
         Jrpg.Log(name + " reached target position " + position.ToString());
     }
 
+    public virtual IEnumerator Eat(Food food)
+    {
+        foreach (Stat s in food.bonuses)
+        {
+            stats[s.ID].value += s.value;
+            Jrpg.Log("Increased " + name + "'s " + s.ID + " by " + s.value.ToString(), "Visible");
+            yield return new WaitForSeconds(1);
+        }
+
+        yield return null;
+    }
+
     public virtual void OnDestroy()
     {
         Destroy(hud.gameObject);

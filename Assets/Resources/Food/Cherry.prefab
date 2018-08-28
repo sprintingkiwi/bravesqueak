@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62539cb01284efa4882105feee066d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonuses:
+  - ID: ATK
+    value: 5
 --- !u!114 &114868114312553028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +137,7 @@ MonoBehaviour:
     value: 20
   hitPoints: 0
   skillPoints: 0
+  parryType: 0
   level: 0
   characterName: 
   size: 0

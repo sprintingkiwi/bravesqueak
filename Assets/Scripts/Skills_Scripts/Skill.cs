@@ -399,10 +399,14 @@ public class Skill : Item
                     bc.enemies.Remove(target.gameObject.GetComponent<EnemyBattler>());
                 else if (target.gameObject.GetComponent<Food>() != null)
                 {
-                    bc.gc.foods.Add(target.gameObject.GetComponent<Food>());
-                    Jrpg.Log("Added " + target.name + " food to inventory", "Visible");
-                    Destroy(target.GetComponent<Battler>());
-                    yield break;
+                    Jrpg.Log(user.name + " is eating " + target.name, "Visible");
+                    yield return StartCoroutine(user.Eat(target.gameObject.GetComponent<Food>()));
+
+                    // ALTERNATIVE
+                    //bc.gc.foods.Add(target.gameObject.GetComponent<Food>());
+                    //Jrpg.Log("Added " + target.name + " food to inventory", "Visible");
+                    //Destroy(target.GetComponent<Battler>());
+                    //yield break;
                 }
                 else
                     Jrpg.Log("Destroyed battler was not inside any list", "Warning");

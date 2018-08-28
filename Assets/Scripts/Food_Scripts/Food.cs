@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Food : Item
 {
+    public Stat[] bonuses;
 
 	// Use this for initialization
 	public override void Start ()
