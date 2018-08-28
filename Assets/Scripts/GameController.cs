@@ -22,7 +22,9 @@ public class GameController : MonoBehaviour
     public int actualSlot;
     public Dictionary<string, int> experience = new Dictionary<string, int>();
     public int partyLevel;
+    //Inventory
     public List<Perk> unlockedPerks = new List<Perk>();
+    public List<Food> foods = new List<Food>();
 
     [Header("Battle")]
     public List<HeroBattler> partyPrefabs = new List<HeroBattler>();

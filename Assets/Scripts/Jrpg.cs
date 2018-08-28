@@ -259,18 +259,25 @@ public class Jrpg : MonoBehaviour
 
     public static IEnumerator PlayAnimation(Battler actor, string name, bool wait)
     {
-        Debug.Log("Playing animation " + name);
-        if (name != "")
+        if (actor.GetComponent<Animator>() == null)
         {
-            if (actor.anim.parameters.Select(o => o.name).ToArray().Contains(name))
-                actor.anim.SetTrigger(name);
-            else
-                if (Debug.isDebugBuild)
-                Debug.LogWarning(actor.name + " does not have a " + name + " animation");
+            Log("Trying to play an animation on a Battler without Animator Component", "Warning");
+            yield break;
         }
-        else
-            Debug.LogError(name + " animation not assigned!");
+        if (name == "")
+        {
+            Log(name + " animation not assigned!", "Warning");
+            yield break;
+        }
 
+        Log("Playing animation " + name);
+
+        if (actor.anim.parameters.Select(o => o.name).ToArray().Contains(name))
+            actor.anim.SetTrigger(name);
+        else
+            if (Debug.isDebugBuild)
+            Debug.LogWarning(actor.name + " does not have a " + name + " animation");
+        
         if (wait) // Wait for the animation to finish
         {
             //yield return new WaitForSeconds(0.1f);

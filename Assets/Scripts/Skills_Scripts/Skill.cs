@@ -360,17 +360,17 @@ public class Skill : Item
         yield return null;
     }
 
-    public virtual void AssignExperience()
-    {
-        // Assign Experience (always for now...)
-        if (user.GetComponent<HeroBattler>() != null)
-        {
-            // Take experience based on the active job of the user during this battle
-            ps.experience[user.GetComponent<HeroBattler>().job.ToString()] += 5;
-            foreach (KeyValuePair<string, int> exp in ps.experience)
-                Debug.Log(exp.Key + ": " + exp.Value.ToString());
-        }
-    }
+    //public virtual void AssignExperience()
+    //{
+    //    // Assign Experience (always for now...)
+    //    if (user.GetComponent<HeroBattler>() != null)
+    //    {
+    //        // Take experience based on the active job of the user during this battle
+    //        ps.experience[user.GetComponent<HeroBattler>().job.ToString()] += 5;
+    //        foreach (KeyValuePair<string, int> exp in ps.experience)
+    //            Debug.Log(exp.Key + ": " + exp.Value.ToString());
+    //    }
+    //}
 
     public virtual IEnumerator ProcessDeath()
     {
@@ -391,13 +391,23 @@ public class Skill : Item
                 // Remove dead from lists
                 //bc.actionQueue.Remove(target);
                 targets.Remove(target);
+                yield return Jrpg.Fade(target.gameObject, 0, 1);
+
                 if (target.gameObject.GetComponent<HeroBattler>() != null)
                     bc.party.Remove(target.gameObject.GetComponent<HeroBattler>());
-                else
+                else if (target.gameObject.GetComponent<EnemyBattler>() != null)
                     bc.enemies.Remove(target.gameObject.GetComponent<EnemyBattler>());
+                else if (target.gameObject.GetComponent<Food>() != null)
+                {
+                    bc.gc.foods.Add(target.gameObject.GetComponent<Food>());
+                    Jrpg.Log("Added " + target.name + " food to inventory", "Visible");
+                    Destroy(target.GetComponent<Battler>());
+                    yield break;
+                }
+                else
+                    Jrpg.Log("Destroyed battler was not inside any list", "Warning");
 
                 // Destroy dead target
-                yield return Jrpg.Fade(target.gameObject, 0, 1);
                 Destroy(target.gameObject);
 
                 // Death effect on target

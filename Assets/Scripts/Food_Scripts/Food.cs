@@ -18,4 +18,12 @@ public class Food : Item
         base.Update();
 
 	}
+
+    public virtual IEnumerator Fall()
+    {
+        // Food fall down code
+
+
+        yield return null;
+    }
 }

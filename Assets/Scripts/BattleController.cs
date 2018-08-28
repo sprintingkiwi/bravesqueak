@@ -28,7 +28,7 @@ public class BattleController : MonoBehaviour
     public List<Battler> party = new List<Battler>();
     public List<Battler> enemies = new List<Battler>();
     //public List<AIBattler> summons = new List<AIBattler>();
-    public Food food = null;
+    public Food currentFood = null;
 
     [System.Serializable]
     public class BattleAction
@@ -205,16 +205,15 @@ public class BattleController : MonoBehaviour
 
     public IEnumerator DropFood(Food food)
     {
-        if (Debug.isDebugBuild)
-            Debug.Log("Dropping Food");
+        Jrpg.Log("Dropping food: " + food.name);
 
         // Instantiating food object and adding a battler component
-        Battler fb = (Instantiate(food).gameObject.AddComponent<Battler>());
+        currentFood = Instantiate(food);
+        Battler fb = (currentFood.gameObject.GetComponent<Battler>());
         fb.Setup();
+        yield return StartCoroutine(currentFood.Fall());
 
-        if (Debug.isDebugBuild)
-            Debug.Log("Food dropped at " + fb.transform.position);
-
+        Jrpg.Log("Dropped food: " + food.name);
 
         yield return null;
     }
@@ -340,13 +339,13 @@ public class BattleController : MonoBehaviour
             }
 
             // Food drop
-            if (food == null)
+            if (currentFood == null)
             {
                 if(UnityEngine.Random.Range(1, 100) > 0)
                 {
                     Food[] foodCollection = Resources.LoadAll<Food>("Food");
-                    food = foodCollection[UnityEngine.Random.Range(0, foodCollection.Length - 1)];
-                    yield return StartCoroutine(DropFood(food));
+                    Food selectedFood = foodCollection[UnityEngine.Random.Range(0, foodCollection.Length - 1)];
+                    yield return StartCoroutine(DropFood(selectedFood));
                 }
             }
         }

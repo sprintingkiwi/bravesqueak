@@ -352,9 +352,13 @@ public class BattleMenu : MonoBehaviour
 
             lastSelectedSkill = selectedSkill;
 
+            // FIND LEGAL TARGETS
             Debug.Log("Finding legal targets based on selected skill targetType");
             legalTargets.Clear();
             legalTargets = selectedSkill.FindLegalTargets(playerBattler, selectedSkill, bc.enemies.ToArray(), bc.party.ToArray());
+            // Add food battler to legal targets if exists
+            if (bc.currentFood != null)
+                legalTargets.Add(bc.currentFood.GetComponent<Battler>());
 
             if (selectedSkill.scope != Skill.Scope.Area)
             {
@@ -477,7 +481,11 @@ public class BattleMenu : MonoBehaviour
                 skillScrollName.text = "";
             }
 
+            // FIND LEGAL TARGETS
             legalTargets = selectedSkill.FindLegalTargets(playerBattler, selectedSkill, bc.enemies.ToArray(), bc.party.ToArray());
+            // Add food battler to legal targets if exists
+            if (bc.currentFood != null)
+                legalTargets.Add(bc.currentFood.GetComponent<Battler>());
 
             // Only for non-Area skills
             if (selectedSkill.scope != Skill.Scope.Area)

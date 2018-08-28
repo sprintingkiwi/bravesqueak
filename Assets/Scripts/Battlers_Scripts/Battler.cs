@@ -193,7 +193,6 @@ public class Battler : MonoBehaviour
         hud = (Instantiate(Resources.Load("BattlerHUD"), GameObject.Find("Canvas").transform.Find("BATTLE HUD")) as GameObject).GetComponent<BattlerHUD>();
         hud.name = name + "_HUD";
         hud.Start();
-        //hud.transform.position = 
         RefreshHUD();
     }
 
@@ -203,9 +202,12 @@ public class Battler : MonoBehaviour
         // Adjust layer sorting order based on y position
         //spr.sortingOrder = -(int)(gameObject.transform.position.y * 10);
 
-        Transform hudHook = transform.Find("HUD Hook");
-        if (hudHook != null)
+        
+        if (transform.Find("HUD Hook") != null)
+        {
+            Transform hudHook = transform.Find("HUD Hook");
             hud.transform.position = Camera.main.WorldToScreenPoint(hudHook.position);
+        }
         else
             hud.transform.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + spr.bounds.size.y / 2, transform.position.z));
 

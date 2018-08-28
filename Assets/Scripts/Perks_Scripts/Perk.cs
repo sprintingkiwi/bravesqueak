@@ -4,7 +4,7 @@ using UnityEngine;
 
 // Perks are like passive skills. A battler may choose up to 2 (to be tested) perks to equip (just like the max of 4 skills)
 // Perks-giving items are dropped by bosses or mini-bosses.
-public class Perk : MonoBehaviour
+public class Perk : Item
 {   
     [TextArea(5, 10)]
     public string description;
