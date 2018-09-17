@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour
     public GameObject battleStuff;
     public GameObject areaStuff;
     public MapCameraController mapCamera;
+    public Battler[] heroes;
 
     [Header("Music")]
     public AudioSource music;
