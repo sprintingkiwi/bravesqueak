@@ -59,6 +59,15 @@ public class PlayerController : Character
                 Stop();
         }
 
+        // Hero Menu
+        if (Input.GetButton("Submit"))
+            if (gc.heroMenu == null)
+            {
+                gc.heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, gc.mapCamera.transform);
+                canMove = false;
+            }
+
+        // Random Encounters
         if (randomEncounters && gc.currentMap.randomEncounters.Length > 0)
             CheckRandomEncounter();
 

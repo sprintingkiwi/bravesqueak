@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class HeroMenu : Menu
 {
+    HeroBattler activeHero;
+
 	// Use this for initialization
-	public override void Start()
+	public void Setup()
     {
 
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    public virtual void ChangeItem(ItemSelector selector, string pool)
     {
-		
-	}
+        Jrpg.Log("Intantiating Item Selection Menu");
+        ItemSelectionMenu selMenu = Instantiate(Resources.Load("Menu/ItemSelectionMenu") as GameObject).GetComponent<ItemSelectionMenu>();
+        selMenu.Setup(activeHero, selector.transform.GetSiblingIndex() + 1, pool);
+    }
 }

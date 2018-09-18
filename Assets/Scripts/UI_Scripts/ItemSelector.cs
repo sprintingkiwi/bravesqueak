@@ -5,11 +5,15 @@ using UnityEngine;
 public class ItemSelector : MonoBehaviour
 {
     Item selectedItem;
+    string pool;
 
-	// Use this for initialization
-	void Start ()
+    [Header("System")]
+    HeroMenu hm;
+
+    // Use this for initialization
+    void Start ()
     {
-		
+        hm = transform.parent.parent.GetComponent<HeroMenu>();
 	}
 	
 	// Update is called once per frame
@@ -20,8 +24,6 @@ public class ItemSelector : MonoBehaviour
 
     void OnMouseDown()
     {
-        Jrpg.Log("Intantiating Item Selection Menu");
-        GameObject selMenu = Instantiate(Resources.Load("Menu/ItemSelectionMenu") as GameObject);
-
+        hm.ChangeItem(this, pool);
     }
 }

@@ -417,6 +417,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1592901283046966, guid: 1ca39d41344f3274fb6383b134b6ede5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ca39d41344f3274fb6383b134b6ede5, type: 2}
   m_IsPrefabParent: 0
@@ -617,9 +621,9 @@ GameObject:
   m_Component:
   - component: {fileID: 931036892}
   - component: {fileID: 931036891}
-  - component: {fileID: 931036893}
   - component: {fileID: 931036894}
   - component: {fileID: 931036895}
+  - component: {fileID: 931036893}
   m_Layer: 0
   m_Name: Play
   m_TagString: Untagged
@@ -690,7 +694,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 931036890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc2ac66253b13864e8fa11124138972a, type: 3}
+  m_Script: {fileID: 11500000, guid: c3590955fe233254780de37b4005f35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonEvent:
@@ -710,9 +714,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   alternativeButton: Submit
+  pulse: 1
   minimum: 1
-  maximum: 1.05
-  speed: 3
+  maximum: -1
+  t: 0
+  speed: 1
 --- !u!61 &931036894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1348,6 +1354,7 @@ MonoBehaviour:
   - {fileID: 114120886363940634, guid: ae7d15ce42a50c14da9e6820b70b5f56, type: 2}
   - {fileID: 114120886363940634, guid: eb1922b45a3084b4aaee91180783aba1, type: 2}
   - {fileID: 114120886363940634, guid: af3429c4043c12048a5b607ee902027c, type: 2}
+  heroMenu: {fileID: 0}
   music: {fileID: 1734181798}
 --- !u!4 &1734181800
 Transform:
@@ -1379,7 +1386,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4012053332687158, guid: 2b9e4f2e908e82749923119d1b83e532, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4012053332687158, guid: 2b9e4f2e908e82749923119d1b83e532, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1400,6 +1407,10 @@ Prefab:
     - target: {fileID: 4012053332687158, guid: 2b9e4f2e908e82749923119d1b83e532, type: 2}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612631443453830, guid: 2b9e4f2e908e82749923119d1b83e532, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b9e4f2e908e82749923119d1b83e532, type: 2}

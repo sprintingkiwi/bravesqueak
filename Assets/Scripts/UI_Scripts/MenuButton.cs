@@ -8,49 +8,44 @@ public class MenuButton : MonoBehaviour
 {
     public UnityEvent buttonEvent;
     public string alternativeButton;
+    public bool pulse;
 
     [Header("Pulse")]
     // Animate the game object from -1 to +1 and back
     public float minimum = -1.0F;
     public float maximum = 1.0F;
     // Starting value for the Lerp
-    static float t = 0.0f;
+    public float t = 0.0f;
     // Lerp options
     public float speed;
 
     // Use this for initialization
-    void Start ()
+    public virtual void Start ()
     {
 		
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	public virtual void Update ()
     {
-        Pulse();
+        if (pulse)
+            Pulse();
 
         if (alternativeButton != "")
         {
             if (Input.GetButtonDown(alternativeButton))
             {
-                StartNewGame();
+                buttonEvent.Invoke();
             }
         }
 	}
 
-    void OnMouseDown()
-    {        
-        StartNewGame();
-    }
-
-    public void StartNewGame()
+    public virtual void OnMouseDown()
     {
-        StartCoroutine(Jrpg.JumpAway(GameObject.Find("Title"), Vector3.up));
-        StartCoroutine(Jrpg.JumpAway(gameObject, Vector3.down, power: 20f));
-        StartCoroutine(Jrpg.LoadScene("World"));
+        buttonEvent.Invoke();
     }
 
-    void Pulse()
+    public virtual void Pulse()
     {
         // animate the position of the game object...
         transform.localScale = Mathf.Lerp(minimum, maximum, t) * Vector3.one;
