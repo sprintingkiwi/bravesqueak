@@ -5,6 +5,7 @@ using System.Linq;
 
 public class ItemSelectionMenu : Menu
 {
+    List<Item> availableItems = new List<Item>();
     public Item activeItem;
     int index = 0;
     int maxItems;
@@ -18,43 +19,38 @@ public class ItemSelectionMenu : Menu
             case "Skill":
 
                 // Creating a list of available skills
-                List<Skill> availableSkills = new List<Skill>();
                 Jrpg.Log("Available Skills: ");
                 foreach (Skill s in hero.unlockedSkills)
                     if (!hero.skills.Contains(s))
                     {
                         Jrpg.Log(s.name);
-                        availableSkills.Add(s);
+                        availableItems.Add(s);
                     }
-
-                // Setting the first selected element
-                activeItem = availableSkills[index];
-                maxItems = availableSkills.Count;
-
                 break;
 
             case "Perk":
                 // Creating a list of available perks
-                List<Perk> availablePerks = new List<Perk>();
                 Jrpg.Log("Available Perks: ");
                 foreach (Perk p in gc.unlockedPerks)
                     if (!hero.perksPrefabs.Contains(p))
                     {
                         Jrpg.Log(p.name);
-                        availablePerks.Add(p);
+                        availableItems.Add(p);
                     }
-
-                // Setting the first selected element
-                activeItem = availablePerks[index];
-                maxItems = availablePerks.Count;
                 break;
         }
+
+        // Setting the first selected element
+        activeItem = availableItems[index];
+        maxItems = availableItems.Count;
 
         UpdateActiveItem();
     }
 
     public void UpdateActiveItem()
     {
+        activeItem = availableItems[index];
+        Jrpg.Log("Actual Item: " + activeItem.name);
         transform.Find("Active Item").GetComponent<SpriteRenderer>().sprite = activeItem.GetComponent<SpriteRenderer>().sprite;
     }
 
@@ -65,6 +61,7 @@ public class ItemSelectionMenu : Menu
         if (inputManager.UpArrowDown())
             if (index > 0)
             {
+                Jrpg.Log("Decrementing Item Index");
                 index -= 1;
                 UpdateActiveItem();
             }
@@ -72,6 +69,7 @@ public class ItemSelectionMenu : Menu
         if (inputManager.DownArrowDown())
             if (index < maxItems - 1)
             {
+                Jrpg.Log("Incrementing Item Index");
                 index += 1;
                 UpdateActiveItem();
             }
