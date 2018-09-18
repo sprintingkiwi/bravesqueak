@@ -5,14 +5,13 @@ using System.Linq;
 
 public class ItemSelectionMenu : Menu
 {
-    Item activeItem;
+    public Item activeItem;
     int index = 0;
     int maxItems;
-    InputManager inputManager;
 
-    public void Setup(HeroBattler hero, int itemID, string pool)
+    public void SetupSelection(HeroBattler hero, int itemID, string pool)
     {
-        inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        base.Setup();
 
         switch (pool)
         {
@@ -20,9 +19,13 @@ public class ItemSelectionMenu : Menu
 
                 // Creating a list of available skills
                 List<Skill> availableSkills = new List<Skill>();
+                Jrpg.Log("Available Skills: ");
                 foreach (Skill s in hero.unlockedSkills)
-                    if (hero.skills.Contains(s))
+                    if (!hero.skills.Contains(s))
+                    {
+                        Jrpg.Log(s.name);
                         availableSkills.Add(s);
+                    }
 
                 // Setting the first selected element
                 activeItem = availableSkills[index];

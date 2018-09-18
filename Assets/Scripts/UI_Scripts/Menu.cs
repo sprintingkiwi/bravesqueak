@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    GameController gc;
-    InputManager inputManager;
+    public GameController gc;
+    public InputManager inputManager;
 
     // Use this for initialization
-    public virtual void Start ()
+    public virtual void Setup ()
     {
+        Jrpg.Log("Starting menu: " + name);
         gc = GameObject.Find("Game Controller").GetComponent<GameController>();
         inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
     }

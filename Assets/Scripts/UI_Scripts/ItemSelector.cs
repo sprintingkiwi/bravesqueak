@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ItemSelector : MonoBehaviour
 {
-    Item selectedItem;
-    string pool;
+    public Item selectedItem;
+    public string pool;
 
     [Header("System")]
     HeroMenu hm;
