@@ -1321,7 +1321,13 @@ MonoBehaviour:
   canSave: 1
   actualSlot: 0
   partyLevel: 0
-  unlockedPerks: []
+  unlockedPerks:
+  - {fileID: 114346464545605932, guid: 8b2585ca28297b64ba9e359f909636ad, type: 2}
+  - {fileID: 114516546974924926, guid: a39df019c9139944084d2180563f620f, type: 2}
+  - {fileID: 114932445801373410, guid: 0eb19a7aebb667a47827881ac39b23c5, type: 2}
+  - {fileID: 114489423837878334, guid: 350e18e1d56c12047a1f950ffa1b29b2, type: 2}
+  - {fileID: 114311948303067148, guid: d00339fedb7f58e4993807114adfd188, type: 2}
+  - {fileID: 114311948303067148, guid: ccecaeffaaeb7344aa33d6b6482e7d63, type: 2}
   foods: []
   partyPrefabs:
   - {fileID: 114120886363940634, guid: ae7d15ce42a50c14da9e6820b70b5f56, type: 2}

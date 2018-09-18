@@ -13,6 +13,7 @@ public class HeroMenu : Menu
         base.Setup();
 
         activeHero = gc.partyPrefabs[0];
+        transform.Find("Active Hero").GetComponent<SpriteRenderer>().sprite = activeHero.GetComponent<SpriteRenderer>().sprite;
     }
 
     public virtual void ChangeItem(ItemSelector selector, string pool)

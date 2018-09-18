@@ -34,6 +34,19 @@ public class ItemSelectionMenu : Menu
                 break;
 
             case "Perk":
+                // Creating a list of available perks
+                List<Perk> availablePerks = new List<Perk>();
+                Jrpg.Log("Available Perks: ");
+                foreach (Perk p in gc.unlockedPerks)
+                    if (!hero.perksPrefabs.Contains(p))
+                    {
+                        Jrpg.Log(p.name);
+                        availablePerks.Add(p);
+                    }
+
+                // Setting the first selected element
+                activeItem = availablePerks[index];
+                maxItems = availablePerks.Count;
                 break;
         }
 
@@ -45,8 +58,10 @@ public class ItemSelectionMenu : Menu
         transform.Find("Active Item").GetComponent<SpriteRenderer>().sprite = activeItem.GetComponent<SpriteRenderer>().sprite;
     }
 
-    void Update()
+    public override void Update()
     {
+        base.Update();
+
         if (inputManager.UpArrowDown())
             if (index > 0)
             {

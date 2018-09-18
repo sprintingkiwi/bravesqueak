@@ -61,12 +61,15 @@ public class PlayerController : Character
 
         // Hero Menu
         if (Input.GetButton("Submit"))
-            if (gc.heroMenu == null)
-            {
-                canMove = false;
-                gc.heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, gc.mapCamera.transform).GetComponent<HeroMenu>();
-                gc.heroMenu.Setup();
-            }
+        {
+            if (gc.heroMenu != null || gc.situation != "Map")
+                return;
+
+            gc.currentMap.gameObject.SetActive(false);
+            canMove = false;
+            gc.heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, gc.mapCamera.transform).GetComponent<HeroMenu>();
+            gc.heroMenu.Setup();
+        }
 
         // Random Encounters
         if (randomEncounters && gc.currentMap.randomEncounters.Length > 0)
