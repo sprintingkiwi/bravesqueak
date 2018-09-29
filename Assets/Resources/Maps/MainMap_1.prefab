@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 58776897209901250}
   - component: {fileID: 114377129857038884}
   m_Layer: 0
-  m_Name: To Passage_Desert
+  m_Name: To Swamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1194,6 +1194,23 @@ GameObject:
   - component: {fileID: 212689932581603954}
   m_Layer: 0
   m_Name: tile_33
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1566390233557994
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4199721383828994}
+  - component: {fileID: 58127125417662180}
+  - component: {fileID: 114871778593645564}
+  m_Layer: 0
+  m_Name: To Passage_Desert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2488,6 +2505,19 @@ Transform:
   m_Father: {fileID: 4009876179015506}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.36}
+--- !u!4 &4199721383828994
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1566390233557994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27.9, y: 13.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4693749190838468}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4205372510373302
 Transform:
   m_ObjectHideFlags: 1
@@ -3033,12 +3063,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535312240708220}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.9, y: 13.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20.02, y: 18.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4693749190838468}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4579046030093906
 Transform:
@@ -3217,6 +3247,7 @@ Transform:
   - {fileID: 4768304981117202}
   - {fileID: 4418902926986962}
   - {fileID: 4894907179089158}
+  - {fileID: 4199721383828994}
   - {fileID: 4577018971056264}
   m_Father: {fileID: 4616614443002140}
   m_RootOrder: 6
@@ -3437,7 +3468,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1455821357048354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.33, y: 11.22, z: 0}
+  m_LocalPosition: {x: -19.42, y: 11.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4055673720240736}
@@ -4513,6 +4544,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58127125417662180
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1566390233557994}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!58 &58286804348838248
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -7125,7 +7171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: {fileID: 114991010671104258, guid: 712c0071363b47a47a7e9f9828ec1578,
+  destinationMap: {fileID: 114880826373280252, guid: 7c410303701970740ba910334055d25b,
     type: 2}
   destinationPlace: To MainMap_1
   active: 1
@@ -7376,7 +7422,7 @@ MonoBehaviour:
   status: Idle
   direction: {x: 0, y: 0}
   player: {fileID: 0}
-  encounter: {fileID: 114158055192404530, guid: 246b5024d2c9b9c44bab8907fd9f051e,
+  encounter: {fileID: 114809916583162938, guid: 0c4adad80611a7442a3b0f5853022618,
     type: 2}
 --- !u!114 &114782580368820534
 MonoBehaviour:
@@ -7522,6 +7568,22 @@ MonoBehaviour:
   status: Idle
   direction: {x: 0, y: 0}
   player: {fileID: 0}
+--- !u!114 &114871778593645564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1566390233557994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationMap: {fileID: 114991010671104258, guid: 712c0071363b47a47a7e9f9828ec1578,
+    type: 2}
+  destinationPlace: To MainMap_1
+  active: 1
+  transfering: 0
 --- !u!114 &114940386686838020
 MonoBehaviour:
   m_ObjectHideFlags: 1
