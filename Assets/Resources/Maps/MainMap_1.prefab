@@ -985,8 +985,8 @@ GameObject:
   - component: {fileID: 212347516783581198}
   - component: {fileID: 95041814915160332}
   - component: {fileID: 50599420361506882}
-  - component: {fileID: 114759667634843536}
   - component: {fileID: 61972882446653252}
+  - component: {fileID: 114005438190327664}
   m_Layer: 9
   m_Name: PirateGreenLizard_Test
   m_TagString: Untagged
@@ -6246,7 +6246,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.14, y: 0.17}
@@ -6699,6 +6699,24 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114005438190327664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1455821357048354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38f9c6fbf6e6c34ab128fb5081090e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
+  encounter: {fileID: 114809916583162938, guid: 0c4adad80611a7442a3b0f5853022618,
+    type: 2}
+  preBattleClip: {fileID: 0}
+  shiftThresold: 1
 --- !u!114 &114039080274513572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7400,30 +7418,6 @@ MonoBehaviour:
   destinationPlace: To MainMap_1
   active: 1
   transfering: 0
---- !u!114 &114759667634843536
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1455821357048354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a08a537993324f543a2842d994387dbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spr: {fileID: 0}
-  gc: {fileID: 0}
-  anim: {fileID: 0}
-  speed: 0
-  mirrorHorizontal: 0
-  level: 0
-  rb: {fileID: 0}
-  canMove: 1
-  status: Idle
-  direction: {x: 0, y: 0}
-  player: {fileID: 0}
-  encounter: {fileID: 114809916583162938, guid: 0c4adad80611a7442a3b0f5853022618,
-    type: 2}
 --- !u!114 &114782580368820534
 MonoBehaviour:
   m_ObjectHideFlags: 1
