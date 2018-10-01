@@ -40,7 +40,7 @@ public class Battler : MonoBehaviour
     public Size size;
     public int sizeModifier;
     public Skill.Element elementAffinity;
-    public enum Species { Slime, Undead, Beast, Plant, Insect, Lizard };
+    public enum Species { Slime, Undead, Beast, Plant, Insect, Dragon };
     public Species species;
     public Perk[] perksPrefabs = new Perk[2];
 
