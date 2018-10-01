@@ -13,12 +13,16 @@ public class HPRecovery : Perk
         nextRecoveryTurn = 2;
     }
 
-    void Update()
+    public override IEnumerator CustomEffect(BattleController bc)
     {
+        yield return StartCoroutine(base.CustomEffect(bc));
+
         if (bc.turnNumber == nextRecoveryTurn)
         {
             Jrpg.Heal(holder, (int)(holder.maxHP.value * 0.2f));
             nextRecoveryTurn += 2;
         }
-    }
+
+        yield return null;
+    }   
 }

@@ -8,7 +8,7 @@ public class MeleeAttack : AttackSkill
     {
         int damage = Jrpg.Roll(user.attack, powerRoll);
 
-        if (fightOutcomes[target] == "Parry")
+        if (fightOutcomes[target] == "Parry" && target.parryType == Battler.ParryType.Melee)
             damage = 0;
             //damage -= (Jrpg.Roll(target.defense) / 4);
 

@@ -8,7 +8,7 @@ public class SpecialAttack : AttackSkill
     {
         int damage = Jrpg.Roll(user.specialAttack, powerRoll);
 
-        if (fightOutcomes[target] == "Parry")
+        if (fightOutcomes[target] == "Parry" && target.parryType == Battler.ParryType.Special)
             damage = 0;
             //damage -= (Jrpg.Roll(target.specialDefense) / 4);
 

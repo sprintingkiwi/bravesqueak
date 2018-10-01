@@ -51,7 +51,7 @@ public class BattleController : MonoBehaviour
     [System.Serializable]
     public class Customizer
     {
-        public enum When { TurnStart, ActionStart }
+        public enum When { BattleBegin, TurnStart, ActionStart, TurnEnd }
         public When when;
         public Func<BattleController, IEnumerator> function;
         public MonoBehaviour source;
@@ -321,6 +321,7 @@ public class BattleController : MonoBehaviour
                     // Warmups and Cooldowns
                     //actionQueue[i].user.ProcessWarmupsAndCooldowns();
 
+                    // Strategy change if target is not legal any more
                     foreach (Battler t in actionsQueue[i].targets.ToArray())
                     {
                         if (t == null)
@@ -348,6 +349,9 @@ public class BattleController : MonoBehaviour
                     yield return StartCoroutine(DropFood(selectedFood));
                 }
             }
+
+            // Turn End Custom Functions
+            yield return RunCustomizers(Customizer.When.TurnEnd);
         }
 
         // BATTLE END:

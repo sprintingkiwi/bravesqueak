@@ -261,6 +261,7 @@ MonoBehaviour:
     value: 200
   hitPoints: 0
   skillPoints: 0
+  parryType: 0
   level: 0
   characterName: 
   size: 5
@@ -268,7 +269,7 @@ MonoBehaviour:
   elementAffinity: 0
   species: 2
   perksPrefabs:
-  - {fileID: 0}
+  - {fileID: 114932445801373410, guid: 0eb19a7aebb667a47827881ac39b23c5, type: 2}
   - {fileID: 0}
   effectsDelay:
   - animation: attack
@@ -312,6 +313,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -327,6 +329,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

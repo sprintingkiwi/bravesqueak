@@ -8,19 +8,6 @@ public class Bane : Perk
     [Header("Bane")]
     public Battler.Species banedSpecies;
 
-    public override void Setup(Battler holder)
-    {
-        base.Setup(holder);
-
-        // Subscribe Bane Effect to the customizers list in the Battle Controller
-        bc.customizers.Add(new BattleController.Customizer()
-        {
-            when = BattleController.Customizer.When.ActionStart,
-            function = CustomEffect,
-            source = this
-        });
-    }
-
     public override IEnumerator CustomEffect(BattleController bc)
     {
         yield return StartCoroutine(base.CustomEffect(bc));
