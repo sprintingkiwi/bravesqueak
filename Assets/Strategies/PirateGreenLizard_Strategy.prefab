@@ -53,17 +53,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc: {fileID: 0}
   user: {fileID: 0}
-  instEnemies: []
-  instParty: []
   selectedAction:
     skill: {fileID: 0}
     weight: 0
     conditions: []
   conditionCheck: 0
   actions:
-  - skill: {fileID: 114014343126834788, guid: 496272891487bb9439c3600eb23ea763, type: 2}
+  - skill: {fileID: 114487366432352720, guid: 3a391e4a5a233174b87a5e4dae0d9688, type: 2}
     weight: 4
     conditions: []
-  - skill: {fileID: 114487366432352720, guid: a7c4f27c5e9a9a84f8bffd30d970613f, type: 2}
-    weight: 1
+  - skill: {fileID: 114836736652321672, guid: af9448afaed6ba343b121385b7304857, type: 2}
+    weight: 4
     conditions: []

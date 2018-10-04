@@ -119,7 +119,7 @@ MonoBehaviour:
     value: 10
   maxHP:
     ID: maxHP
-    value: 120
+    value: 500
   hitPoints: 0
   skillPoints: 0
   parryType: 1
@@ -132,7 +132,9 @@ MonoBehaviour:
   perksPrefabs:
   - {fileID: 0}
   - {fileID: 0}
-  effectsDelay: []
+  effectsDelay:
+  - animation: attack
+    lenghtPercentage: 0.9
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}

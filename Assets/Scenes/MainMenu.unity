@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d658b4bdcdb4c44a565aca0ce47d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testEncounter: {fileID: 114158055192404530, guid: 878256d40c580d14fb6abe3eec93371c,
+  testEncounter: {fileID: 114809916583162938, guid: 0c4adad80611a7442a3b0f5853022618,
     type: 2}
   teams:
   - memebrs:
@@ -1314,6 +1314,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114880826373280252, guid: 7c410303701970740ba910334055d25b,
+        type: 2}
+      propertyPath: mapLayers.Array.data[0].nextFrames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4347628019579740, guid: 7c410303701970740ba910334055d25b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.0423272
@@ -1349,6 +1354,11 @@ Prefab:
     - target: {fileID: 1132970826325716, guid: 7c410303701970740ba910334055d25b, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114880826373280252, guid: 7c410303701970740ba910334055d25b,
+        type: 2}
+      propertyPath: mapLayers.Array.data[0].isAnimated
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c410303701970740ba910334055d25b, type: 2}
