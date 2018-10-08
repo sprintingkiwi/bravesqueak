@@ -29,11 +29,11 @@ public class WorldMap : MonoBehaviour
         public int sortingOrder;
         public float zLevel;
 
-        [Header("Animation")]
-        public bool isAnimated;
-        public float pause;
-        // Folder name of the other frames
-        public string[] nextFrames;
+        //[Header("Animation")]
+        //public bool isAnimated;
+        //public float pause;
+        //// Folder name of the other frames
+        //public string[] nextFrames;
     }
     [Header("Map Layers")]
     public MapLayer[] mapLayers;    
@@ -94,7 +94,7 @@ public class WorldMap : MonoBehaviour
             astar.Scan();
         }
 
-        StartCoroutine(AnimateLayers());
+        //StartCoroutine(AnimateLayers());
     }
 
     // Function to build map on the editor
@@ -140,35 +140,34 @@ public class WorldMap : MonoBehaviour
     }
 
     // Map Layers Animation Coroutine
-    public IEnumerator AnimateLayers()
-    {
-        foreach(MapLayer mainLayer in mapLayers)
-        {
+    //public IEnumerator AnimateLayers()
+    //{
+    //    foreach(MapLayer mainLayer in mapLayers)
+    //    {
             
 
-            if (mainLayer.isAnimated)
-            {
-                List<List<Sprite>> spriteLists = new List<List<Sprite>>();
-                spriteLists.Add(new List<Sprite>());
+    //        if (mainLayer.isAnimated)
+    //        {
+    //            List<List<Sprite>> spriteLists = new List<List<Sprite>>();
+    //            spriteLists.Add(new List<Sprite>());
 
-                List<string> containersNames = new List<string>();
-                containersNames.Add(mainLayer.folderName);
-                containersNames.Concat(mainLayer.nextFrames);
+    //            List<string> containersNames = new List<string>();
+    //            containersNames.Add(mainLayer.folderName);
+    //            containersNames.Concat(mainLayer.nextFrames);
 
-                foreach (string containerName in containersNames)
-                {
-                    List<Sprite> frameTiles = new List<Sprite>();
-                    Transform container = transform.Find(containerName);
-                    foreach (Transform tile in container)
-                    {
-                        frameTiles.Add(tile.GetComponent<SpriteRenderer>().sprite);
-                    }
-                }
-            }
-        }
-
-        yield return null;
-    }
+    //            foreach (string containerName in containersNames)
+    //            {
+    //                List<Sprite> frameTiles = new List<Sprite>();
+    //                Transform container = transform.Find(containerName);
+    //                foreach (Transform tile in container)
+    //                {
+    //                    frameTiles.Add(tile.GetComponent<SpriteRenderer>().sprite);
+    //                }
+    //            }
+    //        }
+    //    }
+    //    yield return null;
+    //}
 
     public virtual Encounter ChooseRandomEncounter()
     {
