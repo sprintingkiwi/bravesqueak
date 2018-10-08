@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
 
     [Header("Saves")]
     public SaveSlot[] gameSlots;
+    public Jrpg.SaveData saveData;
     public bool isSaving;
     public bool justLoadedGameSlot;
     public bool canSave;
@@ -48,7 +49,7 @@ public class GameController : MonoBehaviour
     public GameObject battleStuff;
     public GameObject areaStuff;
     public MapCameraController mapCamera;
-    public Battler[] heroes;
+    public HeroBattler[] heroes;
     public HeroMenu heroMenu;
 
     [Header("Music")]
@@ -278,12 +279,11 @@ public class GameController : MonoBehaviour
         isSaving = true;
         Jrpg.Log("SAVING IN SLOT " + actualSlot.ToString() + "...");
 
-        Jrpg.SaveData saveData = new Jrpg.SaveData();
+        //saveData = new Jrpg.SaveData();
         saveData.savedCurrentMapName = currentMap.name;
         //saveData.lastScene = SceneManager.GetActiveScene().name;
-        //Vector3 playerPos = GameObject.Find("Player").transform.position;
-        //saveData.playerPosition = new float[] { playerPos.x, playerPos.y, playerPos.z };
-        saveData.playerPosition = player.transform.position;
+        Vector3 playerPos = player.transform.position;
+        saveData.playerPosition = new float[] { playerPos.x, playerPos.y, playerPos.z };
 
         // Save unlocked perks
         saveData.unlockedPerks.Clear();
@@ -295,27 +295,28 @@ public class GameController : MonoBehaviour
         // Save heroes data in an array
         for (int i = 0; i < saveData.heroesData.Length; i++)
         {
+            Jrpg.Log("Saving data for hero " + heroes[i].name);
             saveData.heroesData[i].unlockedSkills.Clear();
             // Save each hero's unlocked skills
-            for (int s = 0; s < partyPrefabs[i].unlockedSkills.Count; s++)
+            for (int s = 0; s < heroes[i].unlockedSkills.Count; s++)
             {
-                saveData.heroesData[i].unlockedSkills.Add(partyPrefabs[i].unlockedSkills[s].name);
+                saveData.heroesData[i].unlockedSkills.Add(heroes[i].unlockedSkills[s].name);
             }
 
             // Save each hero's equipped skills
-            for (int s = 0; s < partyPrefabs[i].skills.Length; s++)
+            for (int s = 0; s < heroes[i].skills.Length; s++)
             {
-                if (partyPrefabs[i].skills[s] != null)
-                    saveData.heroesData[i].equippedSkills[s] = partyPrefabs[i].skills[s].name;
+                if (heroes[i].skills[s] != null)
+                    saveData.heroesData[i].equippedSkills[s] = heroes[i].skills[s].name;
                 else
                     saveData.heroesData[i].equippedSkills[s] = "Empty";
             }
 
             // Save each hero's equipped perks
-            for (int s = 0; s < partyPrefabs[i].perksPrefabs.Length; s++)
+            for (int s = 0; s < heroes[i].perksPrefabs.Length; s++)
             {
-                if (partyPrefabs[i].perksPrefabs[s] != null)
-                    saveData.heroesData[i].equippedPerks[s] = partyPrefabs[i].perksPrefabs[s].name;
+                if (heroes[i].perksPrefabs[s] != null)
+                    saveData.heroesData[i].equippedPerks[s] = heroes[i].perksPrefabs[s].name;
                 else
                     saveData.heroesData[i].equippedPerks[s] = "Empty";
             }
@@ -351,36 +352,36 @@ public class GameController : MonoBehaviour
 
         // Restore Heroes data
         Debug.Log("Restoring heroes skills");
-        for (int i = 0; i < partyPrefabs.Count; i++)
+        for (int i = 0; i < heroes.Count(); i++)
         {
             // Restore unlocked Skills
-            partyPrefabs[i].unlockedSkills.Clear();
+            heroes[i].unlockedSkills.Clear();
             for (int s = 0; s < saveData.heroesData[i].unlockedSkills.Count; s++)
             {
-                partyPrefabs[i].unlockedSkills.Add(Resources.Load("Skills/" + saveData.heroesData[i].unlockedSkills[s], typeof(Skill)) as Skill);
+                heroes[i].unlockedSkills.Add(Resources.Load("Skills/" + saveData.heroesData[i].unlockedSkills[s], typeof(Skill)) as Skill);
             }
 
             // Restore equipped Skills
             for (int s = 0; s < saveData.heroesData[i].equippedSkills.Length; s++)
             {
                 if (saveData.heroesData[i].equippedSkills[s] != "Empty")
-                    partyPrefabs[i].skills[s] = Resources.Load("Skills/" + saveData.heroesData[i].equippedSkills[s], typeof(Skill)) as Skill;
+                    heroes[i].skills[s] = Resources.Load("Skills/" + saveData.heroesData[i].equippedSkills[s], typeof(Skill)) as Skill;
                 else
-                    partyPrefabs[i].skills[s] = null;
+                    heroes[i].skills[s] = null;
             }
 
             // Restore equipped Perks
             for (int p = 0; p < saveData.heroesData[i].equippedPerks.Length; p++)
             {
                 if (saveData.heroesData[i].equippedPerks[p] != "Empty")
-                    partyPrefabs[i].perksPrefabs[p] = Resources.Load("Skills/" + saveData.heroesData[i].equippedPerks[p], typeof(Perk)) as Perk;
+                    heroes[i].perksPrefabs[p] = Resources.Load("Skills/" + saveData.heroesData[i].equippedPerks[p], typeof(Perk)) as Perk;
                 else
-                    partyPrefabs[i].perksPrefabs[p] = null;
+                    heroes[i].perksPrefabs[p] = null;
             }
         }
 
         // Setting player start position
-        playerStartPosition = saveData.playerPosition;
+        playerStartPosition = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
         
         // Map stuff
         savedCurrentMapName = saveData.savedCurrentMapName;

@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d658b4bdcdb4c44a565aca0ce47d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testEncounter: {fileID: 114809916583162938, guid: 9218b19cb35141045a1c1b0db8723bc2,
+  testEncounter: {fileID: 114809916583162938, guid: 0c4adad80611a7442a3b0f5853022618,
     type: 2}
   teams:
   - memebrs:
@@ -1610,6 +1610,92 @@ MonoBehaviour:
   - name: SLOT3
     gameTime: 0
     defeatedBosses: []
+  saveData:
+    defeatedBosses: []
+    savedCurrentMapName: 
+    playerPosition: {x: 0, y: 0, z: 0}
+    unlockedPerks: []
+    heroesData:
+    - unlockedSkills: []
+      equippedSkills:
+      - 
+      - 
+      - 
+      - 
+      - 
+      equippedPerks:
+      - 
+      - 
+    - unlockedSkills: []
+      equippedSkills:
+      - 
+      - 
+      - 
+      - 
+      - 
+      equippedPerks:
+      - 
+      - 
+    - unlockedSkills: []
+      equippedSkills:
+      - 
+      - 
+      - 
+      - 
+      - 
+      equippedPerks:
+      - 
+      - 
+    - unlockedSkills: []
+      equippedSkills:
+      - 
+      - 
+      - 
+      - 
+      - 
+      equippedPerks:
+      - 
+      - 
+    - unlockedSkills: []
+      equippedSkills:
+      - 
+      - 
+      - 
+      - 
+      - 
+      equippedPerks:
+      - 
+      - 
+    - unlockedSkills: []
+      equippedSkills:
+      - 
+      - 
+      - 
+      - 
+      - 
+      equippedPerks:
+      - 
+      - 
+    - unlockedSkills: []
+      equippedSkills:
+      - 
+      - 
+      - 
+      - 
+      - 
+      equippedPerks:
+      - 
+      - 
+    - unlockedSkills: []
+      equippedSkills:
+      - 
+      - 
+      - 
+      - 
+      - 
+      equippedPerks:
+      - 
+      - 
   isSaving: 0
   justLoadedGameSlot: 1
   canSave: 1

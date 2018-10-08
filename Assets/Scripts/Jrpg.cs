@@ -15,18 +15,18 @@ public class Jrpg : MonoBehaviour
         public EnemyBattler[] defeatedBosses;
         public string savedCurrentMapName;
         //public string lastScene;
-        public Vector3 playerPosition;
+        public float[] playerPosition = new float[3];
         public List<string> unlockedPerks = new List<string>();
         //public List<string>[] skillLists = new List<string>[] { new List<string>(), new List<string>(), new List<string>() };
-        public HeroData[] heroesData = new HeroData[3];
+        public HeroData[] heroesData = new HeroData[8];
     }
 
     [System.Serializable]
     public class HeroData
     {
         public List<string> unlockedSkills = new List<string>();
-        public string[] equippedSkills;
-        public string[] equippedPerks;
+        public string[] equippedSkills = new string[5];
+        public string[] equippedPerks = new string [2];
     }
 
     public static void Log(string text, string type = "")

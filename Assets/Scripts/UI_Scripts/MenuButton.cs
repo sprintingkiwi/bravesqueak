@@ -9,6 +9,7 @@ public class MenuButton : MonoBehaviour
     public UnityEvent buttonEvent;
     public string alternativeButton;
     public bool pulse;
+    public bool multiInput;
 
     [Header("Pulse")]
     // Animate the game object from -1 to +1 and back
@@ -43,6 +44,9 @@ public class MenuButton : MonoBehaviour
     public virtual void OnMouseDown()
     {
         buttonEvent.Invoke();
+
+        if (!multiInput)
+            gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
     public virtual void Pulse()
