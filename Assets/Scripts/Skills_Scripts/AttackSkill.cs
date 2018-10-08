@@ -143,16 +143,16 @@ public class AttackSkill : Skill
             attackRoll += Jrpg.Roll(user.attack, modifier: accuracy + (int)GetMod("ATK"));
             
             // Parry only if target has a melee parry type
-            if (user.parryType == Battler.ParryType.Melee)
-                defenseRoll += Jrpg.Roll(target.defense);
+            //if (user.parryType == Battler.ParryType.Melee)
+            defenseRoll += Jrpg.Roll(target.defense);
         }
         else
         {
             attackRoll += Jrpg.Roll(user.specialAttack, modifier: accuracy + (int)GetMod("SAT"));
             
             // Parry only if target has a special parry type
-            if (user.parryType == Battler.ParryType.Special)
-                defenseRoll += Jrpg.Roll(target.specialDefense);
+            //if (user.parryType == Battler.ParryType.Special)
+            defenseRoll += Jrpg.Roll(target.specialDefense);
         }
         dodgeRoll += Jrpg.Roll(target.speed);
 
@@ -257,8 +257,8 @@ public class AttackSkill : Skill
                 Jrpg.PlayEffect(target, target.parryEffect);
 
                 // Modify target hit points
-                if (!target.perfectParry)
-                    Jrpg.Damage(target, damageOutcomes[target], element);
+                //if (!target.perfectParry)
+                //Jrpg.Damage(target, damageOutcomes[target], element);
                 break;
 
             case "Dodge":

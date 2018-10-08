@@ -88,11 +88,11 @@ public class WorldMap : MonoBehaviour
         }
 
         // A Star Pathfinding
-        if (GameObject.Find("A_Star") != null)
-        {
-            AstarPath astar = GameObject.Find("A_Star").GetComponent<AstarPath>();
-            astar.Scan();
-        }
+        //if (GameObject.Find("A_Star") != null)
+        //{
+        //    AstarPath astar = GameObject.Find("A_Star").GetComponent<AstarPath>();
+        //    astar.Scan();
+        //}
 
         //StartCoroutine(AnimateLayers());
     }
