@@ -6,6 +6,7 @@ public class Transfer : MonoBehaviour
 {   
     public WorldMap destinationMap;
     public string destinationPlace;
+    public Vector3 destinationPos;
 
     [Header("System")]
     public bool active = true;

@@ -24,12 +24,13 @@ public class Jrpg : MonoBehaviour
     [System.Serializable]
     public class HeroData
     {
+        public string name;
         public List<string> unlockedSkills = new List<string>();
         public string[] equippedSkills = new string[5];
         public string[] equippedPerks = new string [2];
     }
 
-    public static void Log(string text, string type = "")
+    public static void Log(string text, string type = "", float lifeTime = 10f)
     {
         if (Debug.isDebugBuild || type == "Build")
         {
@@ -61,7 +62,7 @@ public class Jrpg : MonoBehaviour
                 logText.text = text;
 
                 // Destroy anyway after a while
-                Destroy(log, 10f);
+                Destroy(log, lifeTime);
             }
         }        
     }

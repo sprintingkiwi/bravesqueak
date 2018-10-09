@@ -18,8 +18,9 @@ public class GameController : MonoBehaviour
     public SaveSlot[] gameSlots;
     public Jrpg.SaveData saveData;
     public bool isSaving;
+    public bool isLoading;
     public bool justLoadedGameSlot;
-    public bool canSave;
+    public bool canSaveLoad;
     public int actualSlot;
     public Dictionary<string, int> experience = new Dictionary<string, int>();
     public int partyLevel;
@@ -153,10 +154,21 @@ public class GameController : MonoBehaviour
         //    justLoadedGameSlot = false;
 
         Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
+
+        canSaveLoad = true;
     }
 
     public IEnumerator TriggerBattle(Encounter encounter, string enemyName)
     {
+        if (isSaving || isLoading)
+        {
+            Jrpg.Log("Cannot trigger battle when saving or loading");
+            yield break;
+        }
+
+        canSaveLoad = false;
+        situation = "Battle";
+
         if (Debug.isDebugBuild)
             Debug.Log("Loading battle with " + encounter.name);
 
@@ -177,7 +189,7 @@ public class GameController : MonoBehaviour
             music.clip = currentMap.defaultBattleMusic;
         music.Play();
 
-        canSave = false;
+        canSaveLoad = false;
         //playerStartPosition = GameObject.Find("Player").transform.position;
         currentEnemy = enemyName;
 
@@ -189,7 +201,6 @@ public class GameController : MonoBehaviour
         // Create battle stuff
         battleStuff = Instantiate(battleStuffPrefab);
         battleStuff.transform.Find("Battle Controller").GetComponent<BattleController>().Setup(encounter);
-        situation = "Battle";
 
         // GUI Elements
 
@@ -252,10 +263,6 @@ public class GameController : MonoBehaviour
             //areaStuff = Instantiate(areaStuffPrefab);
             //player.transform.position = playerStartPosition;
 
-            situation = "Map";
-            mapCamera.followPlayer = true;
-            canSave = true;
-
             // GUI Elements
             
 
@@ -263,6 +270,9 @@ public class GameController : MonoBehaviour
             foreach (Coroutine c in new Coroutine[] { Jrpg.Fade(GameObject.Find("Intro"), 0), StartCoroutine(SetVolume(1)) })
                 yield return c;
 
+            situation = "Map";
+            canSaveLoad = true;
+            mapCamera.followPlayer = true;
             player.canMove = true;
         }
         else // Defeat
@@ -273,11 +283,18 @@ public class GameController : MonoBehaviour
         }        
     }
 
-    public void Save(int slot)
+    public IEnumerator Save(int slot)
     {
+        if (!canSaveLoad || isSaving || isLoading)
+        {
+            Jrpg.Log("Cannot save now");
+            yield break;
+        }
 
         isSaving = true;
+        player.canMove = false;
         Jrpg.Log("SAVING IN SLOT " + actualSlot.ToString() + "...");
+        Jrpg.Log("SAVING...", "Build", 2f);
 
         //saveData = new Jrpg.SaveData();
         saveData.savedCurrentMapName = currentMap.name;
@@ -296,6 +313,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < saveData.heroesData.Length; i++)
         {
             Jrpg.Log("Saving data for hero " + heroes[i].name);
+            saveData.heroesData[i].name = heroes[i].name;
             saveData.heroesData[i].unlockedSkills.Clear();
             // Save each hero's unlocked skills
             for (int s = 0; s < heroes[i].unlockedSkills.Count; s++)
@@ -328,11 +346,23 @@ public class GameController : MonoBehaviour
         bf.Serialize(saveFile, saveData);
         saveFile.Close();
 
+        player.canMove = true;
         isSaving = false;
+
+        yield return null;
     }
 
-    public void Load(int slot)
+    public IEnumerator Load(int slot)
     {
+        if (!canSaveLoad || isSaving || isLoading)
+        {
+            Jrpg.Log("Cannot load now");
+            yield break;
+        }
+
+        isLoading = true;
+        player.canMove = false;
+
         Jrpg.Log("LOADING SLOT " + actualSlot.ToString() + "...");
 
         //if (File.Exists(Application.persistentDataPath + "/ SaveData_SLOT_" + ps.actualSlot.ToString() + ".dat"))
@@ -347,7 +377,7 @@ public class GameController : MonoBehaviour
         unlockedPerks.Clear();
         for (int p = 0; p < saveData.unlockedPerks.Count; p++)
         {
-            unlockedPerks.Add(Resources.Load("Skills/" + saveData.unlockedPerks[p], typeof(Perk)) as Perk);
+            unlockedPerks.Add(Resources.Load("Perks/" + saveData.unlockedPerks[p], typeof(Perk)) as Perk);
         }
 
         // Restore Heroes data
@@ -374,21 +404,24 @@ public class GameController : MonoBehaviour
             for (int p = 0; p < saveData.heroesData[i].equippedPerks.Length; p++)
             {
                 if (saveData.heroesData[i].equippedPerks[p] != "Empty")
-                    heroes[i].perksPrefabs[p] = Resources.Load("Skills/" + saveData.heroesData[i].equippedPerks[p], typeof(Perk)) as Perk;
+                    heroes[i].perksPrefabs[p] = Resources.Load("Perks/" + saveData.heroesData[i].equippedPerks[p], typeof(Perk)) as Perk;
                 else
                     heroes[i].perksPrefabs[p] = null;
             }
         }
 
-        // Setting player start position
-        playerStartPosition = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
-        
-        // Map stuff
-        savedCurrentMapName = saveData.savedCurrentMapName;
-        justLoadedGameSlot = true;
+        // Loading
+        //yield return StartCoroutine(Jrpg.LoadScene("World"));
+        Transfer t = new GameObject().AddComponent<Transfer>();
+        t.destinationMap = (Resources.Load("Maps/" + saveData.savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
+        t.destinationPos = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
+        yield return StartCoroutine(ProcessTransfer(null, t));
 
-        // Loading World scene
-        StartCoroutine(Jrpg.LoadScene("World"));
+        //justLoadedGameSlot = true;
+        player.canMove = true;
+        isLoading = false;
+
+        yield return null;
     }
 
     public Coroutine Fade(GameObject target, float alpha, float speed, bool destroyAfter)
@@ -594,17 +627,28 @@ public class GameController : MonoBehaviour
         currentMap.Setup();
 
         Debug.Log("Find destination place");
-        Transfer instDestPlace = currentMap.transform.Find("TRANSFERS").transform.Find(transfer.destinationPlace).GetComponent<Transfer>();
-        instDestPlace.transfering = true;
+        if (transfer.destinationPlace != null)
+        {
+            Transfer instDestPlace = currentMap.transform.Find("TRANSFERS").transform.Find(transfer.destinationPlace).GetComponent<Transfer>();
+            instDestPlace.transfering = true;
+            Debug.Log("Move player");
+            player.transform.position = instDestPlace.transform.position;
+        }
+        else if (transfer.destinationPos != null)
+        {
+            Debug.Log("Move player");
+            player.transform.position = transfer.destinationPos;
+        }
+        else
+        {
+            Jrpg.Log("No destination place or position setted", "Warning");
+        }
+        player.lastCheckedPos4RandEncounters = player.transform.position;
 
         Debug.Log("Reset camera");
         MapCameraController mainCamera = GameObject.Find("Map Camera").GetComponent<MapCameraController>();
         mainCamera.Setup();
         //defeatedNormalEnemies.Clear();
-
-        Debug.Log("Move player");
-        player.transform.position = instDestPlace.transform.position;
-        player.lastCheckedPos4RandEncounters = player.transform.position;
 
         Debug.Log("Destroying old map");
         Destroy(oldMap);

@@ -887,6 +887,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   alternativeButton: Submit
   pulse: 0
+  multiInput: 0
   minimum: 1
   maximum: -1
   t: 0
@@ -1613,10 +1614,14 @@ MonoBehaviour:
   saveData:
     defeatedBosses: []
     savedCurrentMapName: 
-    playerPosition: {x: 0, y: 0, z: 0}
+    playerPosition:
+    - 0
+    - 0
+    - 0
     unlockedPerks: []
     heroesData:
-    - unlockedSkills: []
+    - name: 
+      unlockedSkills: []
       equippedSkills:
       - 
       - 
@@ -1626,7 +1631,8 @@ MonoBehaviour:
       equippedPerks:
       - 
       - 
-    - unlockedSkills: []
+    - name: 
+      unlockedSkills: []
       equippedSkills:
       - 
       - 
@@ -1636,7 +1642,8 @@ MonoBehaviour:
       equippedPerks:
       - 
       - 
-    - unlockedSkills: []
+    - name: 
+      unlockedSkills: []
       equippedSkills:
       - 
       - 
@@ -1646,7 +1653,8 @@ MonoBehaviour:
       equippedPerks:
       - 
       - 
-    - unlockedSkills: []
+    - name: 
+      unlockedSkills: []
       equippedSkills:
       - 
       - 
@@ -1656,7 +1664,8 @@ MonoBehaviour:
       equippedPerks:
       - 
       - 
-    - unlockedSkills: []
+    - name: 
+      unlockedSkills: []
       equippedSkills:
       - 
       - 
@@ -1666,7 +1675,8 @@ MonoBehaviour:
       equippedPerks:
       - 
       - 
-    - unlockedSkills: []
+    - name: 
+      unlockedSkills: []
       equippedSkills:
       - 
       - 
@@ -1676,7 +1686,8 @@ MonoBehaviour:
       equippedPerks:
       - 
       - 
-    - unlockedSkills: []
+    - name: 
+      unlockedSkills: []
       equippedSkills:
       - 
       - 
@@ -1686,7 +1697,8 @@ MonoBehaviour:
       equippedPerks:
       - 
       - 
-    - unlockedSkills: []
+    - name: 
+      unlockedSkills: []
       equippedSkills:
       - 
       - 

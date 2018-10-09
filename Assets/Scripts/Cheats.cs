@@ -73,16 +73,13 @@ public class Cheats : MonoBehaviour
         //StartCoroutine(Jrpg.LoadScene("SkillStore"));
 
         // Save & load
-        if (gc.canSave)
+        if (Input.GetKeyDown(KeyCode.F5))
         {
-            if (Input.GetKeyDown(KeyCode.F5))
-            {
-                gc.Save(gc.actualSlot);
-            }
-            else if (Input.GetKeyDown(KeyCode.F9))
-            {
-                gc.Load(gc.actualSlot);
-            }
+            StartCoroutine(gc.Save(gc.actualSlot));
+        }
+        else if (Input.GetKeyDown(KeyCode.F9))
+        {
+            StartCoroutine(gc.Load(gc.actualSlot));
         }
 
         if (Jrpg.CheckPlatform() == "Mobile")

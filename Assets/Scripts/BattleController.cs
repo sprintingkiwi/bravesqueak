@@ -90,7 +90,6 @@ public class BattleController : MonoBehaviour
 
         // Retrieving data from Game Controller
         gc = GameObject.Find("Game Controller").GetComponent<GameController>();
-        gc.canSave = false;
         //party = ps.party;
         //enemies = persistentStuff.enemies;
         foreach (Encounter.Enemy ee in encounter.enemies)
