@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2799150c4100ce741add4030fbbfefef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DescriptionScroll: {fileID: 0}
   activationPhase: 2
   description: Add half normal defense to special defense.
   bc: {fileID: 0}
@@ -90,7 +91,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300016, guid: 8f0245a55a58a7d4aa82561a160c1141, type: 3}
+  m_Sprite: {fileID: 21300016, guid: 760e299498eb4d54f9b4837698015da2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

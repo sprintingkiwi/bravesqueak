@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public Sprite DescriptionScroll;
 
 	// Use this for initialization
 	public virtual void Start ()
