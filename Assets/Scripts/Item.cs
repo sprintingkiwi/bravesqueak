@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public Sprite DescriptionScroll;
+    [TextArea(5, 10)]
+    public string description;
 
-	// Use this for initialization
-	public virtual void Start ()
+    // Use this for initialization
+    public virtual void Start ()
     {
 		
 	}

@@ -21,7 +21,7 @@ public class ItemSelectionMenu : Menu
                 // Creating a list of available skills
                 Jrpg.Log("Available Skills: ");
                 foreach (Skill s in hero.unlockedSkills)
-                    if (!hero.skills.Contains(s))
+                    if (!hero.skills.Contains(s) && s != null)
                     {
                         Jrpg.Log(s.name);
                         availableItems.Add(s);
@@ -29,14 +29,25 @@ public class ItemSelectionMenu : Menu
                 break;
 
             case "Perk":
+
                 // Creating a list of available perks
                 Jrpg.Log("Available Perks: ");
                 foreach (Perk p in gc.unlockedPerks)
-                    if (!hero.perksPrefabs.Contains(p))
+                    if (p != null)
                     {
-                        Jrpg.Log(p.name);
                         availableItems.Add(p);
                     }
+
+                // Removing Perks held by other heroes
+                foreach (HeroBattler hb in gc.heroes)
+                    foreach (Item av in availableItems.ToArray())
+                        if (hb.perksPrefabs.Contains(av))
+                            availableItems.Remove(av);
+
+                // Logging names
+                foreach (Item av in availableItems)
+                    Jrpg.Log(av.name);
+
                 break;
         }
 

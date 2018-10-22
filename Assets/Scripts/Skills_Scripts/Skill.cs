@@ -6,9 +6,6 @@ using System.Linq;
 
 public class Skill : Item
 {  
-    [TextArea(5, 10)]
-    public string description;
-
     //public enum Type { ATK, MAT, SUP }
 
     [Header("Properties")]

@@ -52,9 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c4f7e53c8076740aa0c7b0682d51a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DescriptionScroll: {fileID: 0}
-  activationPhase: 2
   description: Deal more damage to undead enemies.
+  activationPhase: 2
   bc: {fileID: 0}
   holder: {fileID: 0}
   banedSpecies: 1

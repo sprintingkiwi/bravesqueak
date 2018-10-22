@@ -297,7 +297,17 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   job: 2
-  unlockedSkills: []
+  unlockedSkills:
+  - {fileID: 114487366432352720, guid: c6ff120cdf45aab44be5e2f0cc279fa8, type: 2}
+  - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}
+  - {fileID: 114014343126834788, guid: b74d380cfd5c70c46b3f43389ba8f6ff, type: 2}
+  - {fileID: 114487366432352720, guid: a7c4f27c5e9a9a84f8bffd30d970613f, type: 2}
+  - {fileID: 114799931718013420, guid: e7251806589250d42aaed88ef5dc8ad8, type: 2}
+  - {fileID: 114607521043220432, guid: 0a5fe8e448ef532458ca66c0c713ca79, type: 2}
+  - {fileID: 114448939315776632, guid: de5b7f066c33cdf4ba379991bdf7328d, type: 2}
+  - {fileID: 114814859113074538, guid: d5e3574b933716d41a1e2bcde3ddbbf1, type: 2}
+  - {fileID: 114448939315776632, guid: 14ddaddcc9edfa14296b77ee3f50793f, type: 2}
+  - {fileID: 0}
   skills:
   - {fileID: 114487366432352720, guid: c6ff120cdf45aab44be5e2f0cc279fa8, type: 2}
   - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}

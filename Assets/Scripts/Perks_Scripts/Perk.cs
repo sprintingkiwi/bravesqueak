@@ -8,8 +8,6 @@ public class Perk : Item
 {
     [Header("Perk")]
     public BattleController.Customizer.When activationPhase;
-    [TextArea(5, 10)]
-    public string description;
 
     [Header("System")]
     public BattleController bc;
