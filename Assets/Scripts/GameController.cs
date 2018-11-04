@@ -634,14 +634,10 @@ public class GameController : MonoBehaviour
             Debug.Log("Move player");
             player.transform.position = instDestPlace.transform.position;
         }
-        else if (transfer.destinationPos != null)
+        else
         {
             Debug.Log("Move player");
             player.transform.position = transfer.destinationPos;
-        }
-        else
-        {
-            Jrpg.Log("No destination place or position setted", "Warning");
         }
         player.lastCheckedPos4RandEncounters = player.transform.position;
 

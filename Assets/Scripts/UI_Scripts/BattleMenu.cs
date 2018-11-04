@@ -8,7 +8,6 @@ public class BattleMenu : MonoBehaviour
 {
     BattleController bc;
     InputManager inputManager;
-    AudioSource audioSource;
 
     [Header("Battlers")]
     public string phase;
@@ -61,7 +60,6 @@ public class BattleMenu : MonoBehaviour
     {
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
         inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
-        audioSource = gameObject.GetComponent<AudioSource>();
 
         // Populate wheel places list
         wheelPlaces.Add(new Vector3(0, 3.5f, 0));
@@ -96,7 +94,7 @@ public class BattleMenu : MonoBehaviour
         {
             lastAngle = transform.eulerAngles;
 
-            wheelRotation:
+            //wheelRotation:
 
             // Right wheel rotation            
             if (inputManager.RightArrowDown() && skillIndex < 4)

@@ -22,6 +22,7 @@ public class SummonSkill : SupportSkill
         }
         catch (Exception e)
         {
+            Debug.LogWarning(e.ToString());
             summonPos = new Vector3(5 * (float)user.faction, 0, 0);
         }
 

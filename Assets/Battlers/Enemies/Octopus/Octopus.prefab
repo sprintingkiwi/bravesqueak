@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114069915646428382}
   - component: {fileID: 95166979374997656}
   m_Layer: 0
-  m_Name: NEW_ENEMY 1
+  m_Name: Octopus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,13 +122,11 @@ MonoBehaviour:
     value: 60
   hitPoints: 0
   skillPoints: 0
-  parryType: 0
-  level: 2
-  characterName: Pirate Green Lizard
-  size: 0
+  characterName: Octopus
+  size: 2
   sizeModifier: 0
-  elementAffinity: 1
-  species: 5
+  elementAffinity: 2
+  species: 2
   perksPrefabs:
   - {fileID: 0}
   - {fileID: 0}
