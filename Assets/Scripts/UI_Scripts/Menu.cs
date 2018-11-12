@@ -20,6 +20,11 @@ public class Menu : MonoBehaviour
     {
 		if (Input.GetButton("Cancel"))
         {
+            // Delete menu-related stuff under canvas
+            foreach (Transform t in GameObject.Find("Canvas").transform)
+                if (t.name.Contains(name))
+                    Destroy(t.gameObject);
+
             gc.currentMap.gameObject.SetActive(true);
             Destroy(this.gameObject);
             gc.player.canMove = true;

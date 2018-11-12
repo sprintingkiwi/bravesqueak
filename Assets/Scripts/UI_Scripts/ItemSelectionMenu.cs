@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class ItemSelectionMenu : Menu
@@ -9,6 +10,8 @@ public class ItemSelectionMenu : Menu
     public Item activeItem;
     int index = 0;
     int maxItems;
+    Text descriptionText;
+    SpriteRenderer elementImg;
 
     public void SetupSelection(HeroBattler hero, int itemID, string pool)
     {
@@ -26,6 +29,7 @@ public class ItemSelectionMenu : Menu
                         Jrpg.Log(s.name);
                         availableItems.Add(s);
                     }
+                
                 break;
 
             case "Perk":
@@ -55,6 +59,14 @@ public class ItemSelectionMenu : Menu
         activeItem = availableItems[index];
         maxItems = availableItems.Count;
 
+        // Description text
+        descriptionText = Instantiate(Resources.Load("Menu/ItemDescriptionText") as GameObject, GameObject.Find("Canvas").transform).GetComponent<Text>();
+        descriptionText.transform.position = Camera.main.WorldToScreenPoint(transform.Find("Description").position);
+        descriptionText.name = name + "_" + descriptionText.name;
+
+        // Element image
+        elementImg = transform.Find("Element").GetComponent<SpriteRenderer>();
+
         UpdateActiveItem();
     }
 
@@ -62,7 +74,18 @@ public class ItemSelectionMenu : Menu
     {
         activeItem = availableItems[index];
         Jrpg.Log("Actual Item: " + activeItem.name);
+
+        // Item icon
         transform.Find("Active Item").GetComponent<SpriteRenderer>().sprite = activeItem.GetComponent<SpriteRenderer>().sprite;
+        
+        // Update item description text
+        descriptionText.text = activeItem.description;
+
+        // Update Element image for skills
+        if (activeItem.GetComponent<Skill>() != null)
+        {
+            elementImg.sprite = (Resources.Load("Icons/Elements/" + activeItem.GetComponent<Skill>().element.ToString()) as GameObject).GetComponent<SpriteRenderer>().sprite;
+        }
     }
 
     public override void Update()
