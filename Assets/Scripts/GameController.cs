@@ -362,7 +362,7 @@ public class GameController : MonoBehaviour
             yield break;
         }
 
-        if (File.Exists(Application.persistentDataPath + "/ SaveData_SLOT_" + actualSlot.ToString() + ".dat"))
+        if (!File.Exists(Application.persistentDataPath + "/SaveData_SLOT_" + actualSlot.ToString() + ".dat"))
         {
             Jrpg.Log("Missing save file", "Build");
             Jrpg.Log("Missing save file", "Warning");
