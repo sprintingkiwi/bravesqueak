@@ -2590,6 +2590,7 @@ MonoBehaviour:
   destinationMap: {fileID: 114880826373280252, guid: 7c410303701970740ba910334055d25b,
     type: 2}
   destinationPlace: To Passage_Swamp
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114913678848479394
@@ -2613,15 +2614,9 @@ MonoBehaviour:
   - folderName: Ground
     sortingOrder: -1000
     zLevel: 0
-    isAnimated: 0
-    pause: 0
-    nextFrames: []
   - folderName: Overlay
     sortingOrder: 1000
     zLevel: 0
-    isAnimated: 0
-    pause: 0
-    nextFrames: []
   cameraBoundary: {fileID: 212190451284858290}
 --- !u!114 &114914085878214978
 MonoBehaviour:
@@ -2636,7 +2631,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationMap: {fileID: 114091726864809636, guid: d5bc13c031867844dad24edc2dba3804,
     type: 2}
-  destinationPlace: To Swamp
+  destinationPlace: To Passage_Swamp
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!212 &212001977454217602

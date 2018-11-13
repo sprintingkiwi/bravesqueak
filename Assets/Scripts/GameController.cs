@@ -306,7 +306,8 @@ public class GameController : MonoBehaviour
         saveData.unlockedPerks.Clear();
         for (int s = 0; s < unlockedPerks.Count; s++)
         {
-            saveData.unlockedPerks.Add(unlockedPerks[s].name);
+            if (unlockedPerks[s] != null)
+                saveData.unlockedPerks.Add(unlockedPerks[s].name);
         }
 
         // Save heroes data in an array
@@ -318,7 +319,8 @@ public class GameController : MonoBehaviour
             // Save each hero's unlocked skills
             for (int s = 0; s < heroes[i].unlockedSkills.Count; s++)
             {
-                saveData.heroesData[i].unlockedSkills.Add(heroes[i].unlockedSkills[s].name);
+                if (heroes[i].unlockedSkills[s] != null)
+                    saveData.heroesData[i].unlockedSkills.Add(heroes[i].unlockedSkills[s].name);
             }
 
             // Save each hero's equipped skills
@@ -356,18 +358,24 @@ public class GameController : MonoBehaviour
     {
         if (!canSaveLoad || isSaving || isLoading)
         {
-            Jrpg.Log("Cannot load now");
+            Jrpg.Log("Cannot load now", "Warning");
             yield break;
         }
+
+        if (File.Exists(Application.persistentDataPath + "/ SaveData_SLOT_" + actualSlot.ToString() + ".dat"))
+        {
+            Jrpg.Log("Missing save file", "Build");
+            Jrpg.Log("Missing save file", "Warning");
+            yield break;
+        }
+        else
+            Jrpg.Log("Save file found");
 
         isLoading = true;
         player.canMove = false;
 
         Jrpg.Log("LOADING SLOT " + actualSlot.ToString() + "...");
-
-        //if (File.Exists(Application.persistentDataPath + "/ SaveData_SLOT_" + ps.actualSlot.ToString() + ".dat"))
-        //{            
-        //}
+        
         BinaryFormatter bf = new BinaryFormatter();
         FileStream saveFile = File.Open(Application.persistentDataPath + "/SaveData_SLOT_" + actualSlot.ToString() + ".dat", FileMode.Open);
         Jrpg.SaveData saveData = (Jrpg.SaveData)bf.Deserialize(saveFile);
@@ -413,9 +421,12 @@ public class GameController : MonoBehaviour
         // Loading
         //yield return StartCoroutine(Jrpg.LoadScene("World"));
         Transfer t = new GameObject().AddComponent<Transfer>();
+        t.name = "Loading Transfer";
         t.destinationMap = (Resources.Load("Maps/" + saveData.savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
         t.destinationPos = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
         yield return StartCoroutine(ProcessTransfer(null, t));
+        Destroy(t.gameObject);
+        inTransfer = false;
 
         //justLoadedGameSlot = true;
         player.canMove = true;
