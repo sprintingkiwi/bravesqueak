@@ -36,7 +36,6 @@ GameObject:
   - component: {fileID: 4020264581968356}
   - component: {fileID: 212470266133150214}
   - component: {fileID: 114804569889254538}
-  - component: {fileID: 114716624936415156}
   - component: {fileID: 95966893048502026}
   m_Layer: 0
   m_Name: Flower
@@ -89,71 +88,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114716624936415156
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1827111408812024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d648abaed25f33498baf0a2a4fab689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack:
-    ID: ATK
-    value: 0
-  defense:
-    ID: DEF
-    value: 0
-  specialAttack:
-    ID: SAT
-    value: 0
-  specialDefense:
-    ID: SDF
-    value: 0
-  support:
-    ID: SUP
-    value: 0
-  speed:
-    ID: SPD
-    value: 0
-  maxHP:
-    ID: maxHP
-    value: 20
-  hitPoints: 0
-  skillPoints: 0
-  parryType: 0
-  level: 0
-  characterName: 
-  size: 0
-  sizeModifier: 0
-  elementAffinity: 0
-  species: 0
-  perksPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  effectsDelay: []
-  hitSound: {fileID: 0}
-  dodgeSound: {fileID: 0}
-  defeatSound: {fileID: 0}
-  parryEffect: {fileID: 0}
-  originalPos: {x: 0, y: 0, z: 0}
-  targetPos: {x: 0, y: 0, z: 0}
-  anim: {fileID: 0}
-  spr: {fileID: 0}
-  col: {fileID: 0}
-  targets: []
-  currentlyActiveSkills: []
-  currentSkill: {fileID: 0}
-  canAct: 0
-  perfectParry: 0
-  audioSource: {fileID: 0}
-  gc: {fileID: 0}
-  bc: {fileID: 0}
-  faction: 0
-  firewalls: []
-  hud: {fileID: 0}
 --- !u!114 &114804569889254538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62539cb01284efa4882105feee066d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: 
   bonuses:
   - ID: SUP
     value: 5

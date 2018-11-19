@@ -18,4 +18,12 @@ public class Item : MonoBehaviour
     {
 		
 	}
+
+    public virtual IEnumerator Fall()
+    {
+        // Food fall down code
+
+
+        yield return null;
+    }
 }

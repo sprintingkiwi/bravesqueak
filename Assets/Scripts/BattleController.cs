@@ -28,7 +28,7 @@ public class BattleController : MonoBehaviour
     public List<Battler> party = new List<Battler>();
     public List<Battler> enemies = new List<Battler>();
     //public List<AIBattler> summons = new List<AIBattler>();
-    public Food currentFood = null;
+    public Item droppedItem = null;
 
     [System.Serializable]
     public class BattleAction
@@ -202,17 +202,24 @@ public class BattleController : MonoBehaviour
         actionsQueue.Reverse();
     }
 
-    public IEnumerator DropFood(Food food)
+    public IEnumerator DropItem(string itemClass)
     {
-        Jrpg.Log("Dropping food: " + food.name);
+        Debug.Log("Choosing an item: " + itemClass);
+   
+        Item[] itemCollection = Resources.LoadAll<Item>(itemClass);
+        Item selectedItem = itemCollection[UnityEngine.Random.Range(0, itemCollection.Length - 1)];
+
+        Jrpg.Log("Dropping item: " + selectedItem.name);
 
         // Instantiating food object and adding a battler component
-        currentFood = Instantiate(food, gc.battleStuff.transform);
-        Battler fb = (currentFood.gameObject.GetComponent<Battler>());
-        fb.Setup();
-        yield return StartCoroutine(currentFood.Fall());
+        droppedItem = Instantiate(selectedItem, gc.battleStuff.transform);
+        Battler itemBattler = (droppedItem.gameObject.AddComponent<Battler>());
+        itemBattler.faction = Battler.Faction.Enemies;
+        itemBattler.maxHP.value = 1;
+        itemBattler.Setup();
+        yield return StartCoroutine(droppedItem.Fall());
 
-        Jrpg.Log("Dropped food: " + food.name);
+        Jrpg.Log("Dropped item: " + selectedItem.name, "Visible");
 
         yield return null;
     }
@@ -339,13 +346,24 @@ public class BattleController : MonoBehaviour
             }
 
             // Food drop
-            if (currentFood == null)
+            Jrpg.Log("Item Drop");
+            if (droppedItem == null)
             {
-                if(UnityEngine.Random.Range(1, 100) > 0)
+                if(UnityEngine.Random.Range(0, 100) <= 20)
+                {                   
+                    yield return StartCoroutine(DropItem("Food"));
+                }
+                else if(UnityEngine.Random.Range(0, 100) > 20 && UnityEngine.Random.Range(0, 100) <= 80)
                 {
-                    Food[] foodCollection = Resources.LoadAll<Food>("Food");
-                    Food selectedFood = foodCollection[UnityEngine.Random.Range(0, foodCollection.Length - 1)];
-                    yield return StartCoroutine(DropFood(selectedFood));
+                    yield return StartCoroutine(DropItem("Perks"));
+                }
+                //else if (UnityEngine.Random.Range(0, 100) > 40 && UnityEngine.Random.Range(0, 100) <= 80)
+                //{
+                //    yield return StartCoroutine(DropItem("Perks"));
+                //}
+                else
+                {
+                    Jrpg.Log("No drops this turn", "Visible");
                 }
             }
 

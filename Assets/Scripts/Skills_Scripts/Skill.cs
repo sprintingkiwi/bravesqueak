@@ -80,7 +80,7 @@ public class Skill : Item
     public Battler.Faction targetedArea; // For Ongoing Area skills
     public bool effectStillActive;
     public BattleController bc;
-    public GameController ps;
+    public GameController gc;
     public Dictionary<Battler, string> fightOutcomes = new Dictionary<Battler, string>();
     public Dictionary<Battler, int> damageOutcomes = new Dictionary<Battler, int>();
     public float userMovementSpeed;
@@ -111,7 +111,7 @@ public class Skill : Item
         if (Debug.isDebugBuild)
             Debug.Log("Using skill " + gameObject.name);
 
-        ps = GameObject.Find("Game Controller").GetComponent<GameController>();
+        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
 
         // Movement speed
@@ -404,6 +404,11 @@ public class Skill : Item
                     //Jrpg.Log("Added " + target.name + " food to inventory", "Visible");
                     //Destroy(target.GetComponent<Battler>());
                     //yield break;
+                }
+                else if (target.gameObject.GetComponent<Perk>() != null)
+                {
+                    Jrpg.Log("Added " + target.name + " to inventory", "Visible");
+                    gc.unlockedPerks.Add((Resources.Load("Perks/" + target.name.Replace("(Clone)", "")) as GameObject).GetComponent<Perk>());
                 }
                 else
                     Jrpg.Log("Destroyed battler was not inside any list", "Warning");

@@ -28,6 +28,8 @@ public class Perk : Item
             function = CustomEffect,
             source = this
         });
+
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Customizer effect. I pass the battle controller as parameter so I can access the actual state of battle and actions
