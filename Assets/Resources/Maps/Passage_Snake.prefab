@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 114157297511234136}
   - component: {fileID: 58112814957152696}
   m_Layer: 0
-  m_Name: To MainMap_1
+  m_Name: To Desert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2806,7 +2806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: {fileID: 114091726864809636, guid: d5bc13c031867844dad24edc2dba3804,
+  destinationMap: {fileID: 114461490570142884, guid: 61235687fc3bbe841acda741950a5f0c,
     type: 2}
   destinationPlace: To Passage_Snake
   destinationPos: {x: 0, y: 0, z: 0}
