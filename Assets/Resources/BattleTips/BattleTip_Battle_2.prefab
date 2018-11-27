@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 212330792954399318}
   - component: {fileID: 114276179764497292}
   m_Layer: 0
-  m_Name: New_BattleTip
+  m_Name: BattleTip_Battle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1458828197302154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.55, y: -2.44, z: 0}
+  m_LocalPosition: {x: 5.29, y: -1.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4676372764858322}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938269082418518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.28, y: -2.06, z: 0}
+  m_LocalPosition: {x: -4.44, y: -2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4676372764858322}
@@ -240,9 +240,9 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865782201910826}
-  m_Text: 'HEROES CAN EAT FOOD
+  m_Text: 'THERE ARE MANY
 
-    TO IMPROVE THEIR STATS!'
+    TYPES OF SKILLS'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -263,9 +263,11 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363134517572494}
-  m_Text: 'FOR EXAMPLE:
+  m_Text: 'SPECIAL SKILLS ARE MORE
 
-    BERRIES IMPROVE SPECIAL ATTACK'
+    EFFECTIVE AGAINST ENEMIES
+
+    WITH LOW SPECIAL DEFENSE'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -394,7 +396,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10001
-  m_Sprite: {fileID: 21300000, guid: 8bf94ead528306347830190ad18351b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec352d1b18e925e49920033521ee34e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -438,7 +440,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1001
-  m_Sprite: {fileID: 21300000, guid: b0bcb7e70ebab5c4cbc420ece83c2200, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
