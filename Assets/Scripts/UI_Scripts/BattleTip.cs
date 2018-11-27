@@ -5,8 +5,6 @@ using UnityEngine;
 public class BattleTip : MonoBehaviour
 {
 
-    public Sprite[] battleTips;
-
 	// Use this for initialization
 	void Start ()
     {

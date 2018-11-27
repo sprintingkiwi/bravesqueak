@@ -10,6 +10,7 @@ public class ItemSelectionMenu : Menu
     public Item activeItem;
     int index = 0;
     int maxItems;
+    Text nameText;
     Text descriptionText;
     SpriteRenderer elementImg;
 
@@ -59,6 +60,11 @@ public class ItemSelectionMenu : Menu
         activeItem = availableItems[index];
         maxItems = availableItems.Count;
 
+        // Name text
+        nameText = Instantiate(Resources.Load("Menu/ItemNameText") as GameObject, GameObject.Find("Canvas").transform).GetComponent<Text>();
+        nameText.transform.position = Camera.main.WorldToScreenPoint(transform.Find("Name").position);
+        nameText.name = name + "_" + nameText.name;
+
         // Description text
         descriptionText = Instantiate(Resources.Load("Menu/ItemDescriptionText") as GameObject, GameObject.Find("Canvas").transform).GetComponent<Text>();
         descriptionText.transform.position = Camera.main.WorldToScreenPoint(transform.Find("Description").position);
@@ -77,8 +83,9 @@ public class ItemSelectionMenu : Menu
 
         // Item icon
         transform.Find("Active Item").GetComponent<SpriteRenderer>().sprite = activeItem.GetComponent<SpriteRenderer>().sprite;
-        
-        // Update item description text
+
+        // Update item name and description text
+        nameText.text = activeItem.name;
         descriptionText.text = activeItem.description;
 
         // Update Element image for skills

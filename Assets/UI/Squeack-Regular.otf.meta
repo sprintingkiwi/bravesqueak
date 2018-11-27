@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: dc749d30c11568f48a739d9f12035fdf
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Squeack
+  fontNames:
+  - Squeack
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 47d1bd03ef81f1348bf383318d405ab6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

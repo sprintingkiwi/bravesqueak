@@ -222,20 +222,13 @@ public class GameController : MonoBehaviour
                 yield return c;
 
             // Battle Tips
-            BattleTip tip = Instantiate(Resources.Load("BattleTip") as GameObject, battleStuff.transform.Find("Battle Camera")).GetComponent<BattleTip>();
-            tip.GetComponent<SpriteRenderer>().sprite = tip.battleTips[UnityEngine.Random.Range(0, tip.battleTips.Length)];
-            //while (tip.transform.localPosition.z > 6)
-            //{
-            //    tip.transform.Translate(Vector3.back);
-            //    if (Input.GetButtonDown("ButtonA"))
-            //        break;
-            //    yield return null;
-            //}
+            UnityEngine.Object[] tips = Resources.LoadAll("BattleTips", typeof(GameObject));
+            GameObject tip = Instantiate(tips[UnityEngine.Random.Range(0, tips.Length)] as GameObject, battleStuff.transform.Find("Battle Camera"));
             yield return Jrpg.Fade(GameObject.Find("Intro"), 0, speed: 0.2f);
             while (!Input.GetButtonDown("ButtonA"))
                 yield return null;
             yield return Jrpg.Fade(GameObject.Find("Intro"), 1, speed: 0.2f);
-            Destroy(tip.gameObject);
+            Destroy(tip);
 
             // Music Change
             music.clip = currentMap.soundtrack;
