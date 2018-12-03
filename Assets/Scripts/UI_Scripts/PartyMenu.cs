@@ -16,6 +16,7 @@ public class PartyMenu : Menu {
         {
             heroesImages[i] = transform.Find("HEROES").GetChild(i);
             heroesImages[i].GetComponent<SpriteRenderer>().sprite = gc.heroes[i].GetComponent<SpriteRenderer>().sprite;
+            heroesImages[i].GetComponent<Animator>().runtimeAnimatorController = gc.heroes[i].GetComponent<Animator>().runtimeAnimatorController;
         }
     }
 }
