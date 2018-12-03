@@ -5,7 +5,6 @@ using UnityEngine;
 public class HeroMenu : Menu
 {
     int index;
-    ItemSelectionMenu selMenu;
 
 	// Use this for initialization
 	public override void Setup()
@@ -65,11 +64,14 @@ public class HeroMenu : Menu
 
     public void ChangeItem(ItemSelector selector, string pool)
     {
-        if (selMenu != null)
+        if (gc.itemSelectionMenu != null)
             return;
 
         Jrpg.Log("Intantiating Item Selection Menu");
-        selMenu = Instantiate(Resources.Load("Menu/ItemSelectionMenu") as GameObject, gc.mapCamera.transform).GetComponent<ItemSelectionMenu>();
-        selMenu.SetupSelection(gc.partyPrefabs[index], selector.transform.GetSiblingIndex() + 1, pool);
+        gc.itemSelectionMenu = Instantiate(Resources.Load("Menu/ItemSelectionMenu") as GameObject, gc.mapCamera.transform).GetComponent<ItemSelectionMenu>();
+        gc.itemSelectionMenu.father = this;
+        subMenus.Add(gc.itemSelectionMenu);
+        gc.itemSelectionMenu.SetupSelection(gc.partyPrefabs[index], selector.transform.GetSiblingIndex() + 1, pool);
+        gameObject.SetActive(false);
     }
 }

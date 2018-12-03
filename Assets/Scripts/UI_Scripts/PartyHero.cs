@@ -19,7 +19,6 @@ public class PartyHero : MonoBehaviour {
 
     void OnMouseDown()
     {
-        heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, partyMenu.gc.mapCamera.transform).GetComponent<HeroMenu>();
-        heroMenu.Setup();
+        partyMenu.CreateHeroMenu();
     }
 }

@@ -60,9 +60,10 @@ public class ItemSelectionMenu : Menu
         activeItem = availableItems[index];
         maxItems = availableItems.Count;
 
-        // Name text
+        // Name text 
         nameText = Instantiate(Resources.Load("Menu/ItemNameText") as GameObject, GameObject.Find("Canvas").transform).GetComponent<Text>();
         nameText.transform.position = Camera.main.WorldToScreenPoint(transform.Find("Name").position);
+        // Name of the generating menu before the text object under canvas to be able to easily destroy them after menu is destroyed
         nameText.name = name + "_" + nameText.name;
 
         // Description text

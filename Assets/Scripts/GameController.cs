@@ -52,6 +52,8 @@ public class GameController : MonoBehaviour
     public MapCameraController mapCamera;
     public HeroBattler[] heroes;
     public PartyMenu partyMenu;
+    public HeroMenu heroMenu;
+    public ItemSelectionMenu itemSelectionMenu;
 
     [Header("Music")]
     public AudioSource music;

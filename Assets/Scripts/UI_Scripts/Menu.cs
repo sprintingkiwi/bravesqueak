@@ -6,6 +6,8 @@ public class Menu : MonoBehaviour
 {
     public GameController gc;
     public InputManager inputManager;
+    public List<Menu> subMenus = new List<Menu>();
+    public Menu father;
 
     // Use this for initialization
     public virtual void Setup ()
@@ -18,16 +20,26 @@ public class Menu : MonoBehaviour
 	// Update is called once per frame
 	public virtual void Update ()
     {
-		if (Input.GetButton("Cancel"))
+        if (Input.GetButtonDown("Cancel"))
         {
-            // Delete menu-related stuff under canvas
-            foreach (Transform t in GameObject.Find("Canvas").transform)
-                if (t.name.Contains(name))
-                    Destroy(t.gameObject);
-
-            gc.currentMap.gameObject.SetActive(true);
-            Destroy(this.gameObject);
-            gc.player.canMove = true;
+            MenuDestruction();
         }
-	}
+    }
+
+    public virtual void MenuDestruction()
+    {        
+        // Delete menu-related stuff under canvas
+        foreach (Transform t in GameObject.Find("Canvas").transform)
+            if (t.name.Contains(name))
+                Destroy(t.gameObject);
+
+        gc.currentMap.gameObject.SetActive(true);
+        if (subMenus.Count == 0)
+        {
+            father.subMenus.Remove(this);
+            father.gameObject.SetActive(true);
+            Destroy(this.gameObject);
+        }
+        gc.player.canMove = true;
+    }
 }
