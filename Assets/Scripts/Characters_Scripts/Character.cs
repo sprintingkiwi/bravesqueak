@@ -7,6 +7,7 @@ public class Character : AnimatedMapElement
     public float speed;
     public bool mirrorHorizontal = true;
     public int level;
+    public float footPrintsDistance;
 
     [Header("System")]
     public Rigidbody2D rb;
@@ -16,6 +17,7 @@ public class Character : AnimatedMapElement
     public Vector2 direction = Vector2.down;
     //public Vector2 heading;
     public Dictionary<Vector2, int> directions = new Dictionary<Vector2, int>();
+    Vector3 lastFootprintPosition;
 
     // Use this for initialization
     public override void Start ()
@@ -68,7 +70,14 @@ public class Character : AnimatedMapElement
 
         // Velocity
         rb.velocity = (rb.velocity + moveDirection).normalized * speed;
-        anim.SetFloat("Speed", speed);        
+        anim.SetFloat("Speed", speed);
+
+        // Footprints
+        if ((transform.position - lastFootprintPosition).magnitude > footPrintsDistance)
+        {
+            GameObject fp = Instantiate(Resources.Load("Footprints/Footprint") as GameObject, transform.position, transform.rotation, gc.currentMap.transform);
+            lastFootprintPosition = transform.position;
+        }
     }
 
     public virtual void Stop()

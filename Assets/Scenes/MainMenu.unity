@@ -1544,6 +1544,8 @@ MonoBehaviour:
   - {fileID: 114120886363940634, guid: eb1922b45a3084b4aaee91180783aba1, type: 2}
   - {fileID: 114120886363940634, guid: af3429c4043c12048a5b607ee902027c, type: 2}
   partyMenu: {fileID: 0}
+  heroMenu: {fileID: 0}
+  itemSelectionMenu: {fileID: 0}
   music: {fileID: 1734181798}
 --- !u!4 &1734181800
 Transform:
