@@ -28,28 +28,4 @@ public class PartyMenu : Menu {
         gc.heroMenu.Setup();
         gameObject.SetActive(false);
     }
-
-    //public override void MenuDestruction()
-    //{
-    //    base.MenuDestruction();
-
-    //    if (gc.itemMenu != null)
-    //    {
-    //        Jrpg.Log("Destroying Item Menu");
-    //        Destroy(gc.itemMenu.gameObject);
-    //        return;
-    //    }
-    //    else if (gc.heroMenu != null)
-    //    {
-    //        Jrpg.Log("Destroying Hero Menu");
-    //        Destroy(gc.heroMenu.gameObject);
-    //        return;
-    //    }
-    //    else
-    //    {
-    //        Jrpg.Log("Destroying Party Menu");
-    //        Destroy(gameObject);
-    //        return;
-    //    }
-    //}
 }

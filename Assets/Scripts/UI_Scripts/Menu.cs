@@ -36,8 +36,11 @@ public class Menu : MonoBehaviour
         gc.currentMap.gameObject.SetActive(true);
         if (subMenus.Count == 0)
         {
-            father.subMenus.Remove(this);
-            father.gameObject.SetActive(true);
+            if (father != null)
+            {
+                father.subMenus.Remove(this);
+                father.gameObject.SetActive(true);
+            }            
             Destroy(this.gameObject);
         }
         gc.player.canMove = true;
