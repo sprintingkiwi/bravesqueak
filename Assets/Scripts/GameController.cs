@@ -51,6 +51,7 @@ public class GameController : MonoBehaviour
     public GameObject areaStuff;
     public MapCameraController mapCamera;
     public HeroBattler[] heroes;
+    public HeroBattler[] unlockedHeroes;
     public PartyMenu partyMenu;
     public HeroMenu heroMenu;
     public ItemSelectionMenu itemSelectionMenu;
@@ -227,7 +228,7 @@ public class GameController : MonoBehaviour
             UnityEngine.Object[] tips = Resources.LoadAll("BattleTips", typeof(GameObject));
             GameObject tip = Instantiate(tips[UnityEngine.Random.Range(0, tips.Length)] as GameObject, battleStuff.transform.Find("Battle Camera"));
             yield return Jrpg.Fade(GameObject.Find("Intro"), 0, speed: 0.2f);
-            while (!Input.GetButtonDown("ButtonA"))
+            while (!Input.GetButtonDown("ButtonA") && !Input.GetButtonDown("Cancel"))
                 yield return null;
             yield return Jrpg.Fade(GameObject.Find("Intro"), 1, speed: 0.2f);
             Destroy(tip);

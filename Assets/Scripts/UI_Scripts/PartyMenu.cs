@@ -13,11 +13,12 @@ public class PartyMenu : Menu {
 
         heroesImages = new Transform[8];
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < gc.unlockedHeroes.Length; i++)
         {
+            transform.Find("HEROES").GetChild(i).gameObject.SetActive(true);
             heroesImages[i] = transform.Find("HEROES").GetChild(i);
-            heroesImages[i].GetComponent<SpriteRenderer>().sprite = gc.heroes[i].GetComponent<SpriteRenderer>().sprite;
-            heroesImages[i].GetComponent<Animator>().runtimeAnimatorController = gc.heroes[i].GetComponent<Animator>().runtimeAnimatorController;
+            heroesImages[i].GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[i].GetComponent<SpriteRenderer>().sprite;
+            heroesImages[i].GetComponent<Animator>().runtimeAnimatorController = gc.unlockedHeroes[i].GetComponent<Animator>().runtimeAnimatorController;
         }
     }
 

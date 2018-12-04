@@ -24,7 +24,7 @@ public class PartyTick : MonoBehaviour
                 partyMenu.ticks += 1;
 
                 // Add Hero to Party
-                partyMenu.gc.partyPrefabs[partyMenu.ticks - 1] = partyMenu.gc.heroes[transform.parent.GetSiblingIndex()];
+                partyMenu.gc.partyPrefabs[partyMenu.ticks - 1] = partyMenu.gc.unlockedHeroes[transform.parent.GetSiblingIndex()];
             }
         }
         else

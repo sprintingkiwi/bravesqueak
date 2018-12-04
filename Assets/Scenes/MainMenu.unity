@@ -1543,6 +1543,12 @@ MonoBehaviour:
   - {fileID: 114120886363940634, guid: ae7d15ce42a50c14da9e6820b70b5f56, type: 2}
   - {fileID: 114120886363940634, guid: eb1922b45a3084b4aaee91180783aba1, type: 2}
   - {fileID: 114120886363940634, guid: af3429c4043c12048a5b607ee902027c, type: 2}
+  unlockedHeroes:
+  - {fileID: 114120886363940634, guid: af3429c4043c12048a5b607ee902027c, type: 2}
+  - {fileID: 114120886363940634, guid: 852241e29e159624390129fc85ff18b3, type: 2}
+  - {fileID: 114120886363940634, guid: a9c32bd611bf04244bb9efe988c887d1, type: 2}
+  - {fileID: 114120886363940634, guid: ccf6e07eddf6d6d47b3660df1e189f8b, type: 2}
+  - {fileID: 114120886363940634, guid: ae7d15ce42a50c14da9e6820b70b5f56, type: 2}
   partyMenu: {fileID: 0}
   heroMenu: {fileID: 0}
   itemSelectionMenu: {fileID: 0}
