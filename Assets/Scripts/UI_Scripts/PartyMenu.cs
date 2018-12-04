@@ -5,6 +5,7 @@ using UnityEngine;
 public class PartyMenu : Menu {
 
     public Transform[] heroesImages;
+    public int ticks;
     // Use this for initialization
     public override void Setup()
     {

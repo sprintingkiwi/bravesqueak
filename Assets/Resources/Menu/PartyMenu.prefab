@@ -1197,7 +1197,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gc: {fileID: 0}
   inputManager: {fileID: 0}
+  subMenus: []
+  father: {fileID: 0}
   heroesImages: []
+  ticks: 0
 --- !u!114 &114226239143392100
 MonoBehaviour:
   m_ObjectHideFlags: 1

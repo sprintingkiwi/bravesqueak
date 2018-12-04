@@ -11,19 +11,27 @@ public class PartyTick : MonoBehaviour
 
     void Start()
     {
-        partyMenu = transform.parent.parent.GetComponent<PartyMenu>();
+        partyMenu = transform.parent.parent.parent.GetComponent<PartyMenu>();
     }
 
     void OnMouseDown()
     {
         if (tick == null)
         {
-            tick = Instantiate(Resources.Load("Menu/Tick") as GameObject, transform);
+            if (partyMenu.ticks < 3)
+            {
+                tick = Instantiate(Resources.Load("Menu/Tick") as GameObject, transform);
+                partyMenu.ticks += 1;
+
+                // Add Hero to Party
+                partyMenu.gc.partyPrefabs[partyMenu.ticks - 1] = partyMenu.gc.heroes[transform.parent.GetSiblingIndex()];
+            }
         }
         else
         {
             Destroy(tick);
             tick = null;
+            partyMenu.ticks -= 1;
         }
     }
 
