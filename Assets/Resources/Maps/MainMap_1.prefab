@@ -1088,23 +1088,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &1677447447767598
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4894907179089158}
-  - component: {fileID: 58984921173110278}
-  - component: {fileID: 114747973809352474}
-  m_Layer: 0
-  m_Name: To BramblesMaze
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1680364970045544
 GameObject:
   m_ObjectHideFlags: 1
@@ -1714,7 +1697,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4693749190838468}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4022109887259952
 Transform:
@@ -1818,7 +1801,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4693749190838468}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4144481412230312
 Transform:
@@ -2034,7 +2017,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4693749190838468}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4237894938180552
 Transform:
@@ -2656,7 +2639,6 @@ Transform:
   m_Children:
   - {fileID: 4372429871963406}
   - {fileID: 4768304981117202}
-  - {fileID: 4894907179089158}
   - {fileID: 4236838236684410}
   - {fileID: 4015736471093574}
   - {fileID: 4132291249115552}
@@ -2948,19 +2930,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4157574099858932}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4894907179089158
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1677447447767598}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.39, y: -4.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4693749190838468}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4899721236997474
 Transform:
@@ -3526,21 +3495,6 @@ CircleCollider2D:
   m_Offset: {x: 0.3, y: 0.44}
   serializedVersion: 2
   m_Radius: 1.34
---- !u!58 &58984921173110278
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1677447447767598}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.175
 --- !u!60 &60203992403524184
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -4352,6 +4306,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
   status: Idle
@@ -4397,6 +4352,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
   status: Idle
@@ -4456,6 +4412,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 0
   level: 0
+  footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
   status: Idle
@@ -4480,6 +4437,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
   status: Idle
@@ -4521,23 +4479,6 @@ MonoBehaviour:
     type: 2}
   preBattleClip: {fileID: 0}
   shiftThresold: 1
---- !u!114 &114747973809352474
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1677447447767598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationMap: {fileID: 114720446303504176, guid: 6dead14f382c2a846adda15f5201f8ad,
-    type: 2}
-  destinationPlace: To MainMap_1
-  destinationPos: {x: 0, y: 0, z: 0}
-  active: 1
-  transfering: 0
 --- !u!114 &114754825468739986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4555,6 +4496,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
   status: Idle
@@ -4633,6 +4575,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
   status: Idle
@@ -4690,6 +4633,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 0
   level: 0
+  footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
   status: Idle

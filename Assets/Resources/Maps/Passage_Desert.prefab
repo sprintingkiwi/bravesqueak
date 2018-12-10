@@ -2828,6 +2828,7 @@ MonoBehaviour:
   destinationMap: {fileID: 114461490570142884, guid: 61235687fc3bbe841acda741950a5f0c,
     type: 2}
   destinationPlace: To Passage_Desert
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114764991910014840
@@ -2844,6 +2845,7 @@ MonoBehaviour:
   destinationMap: {fileID: 114091726864809636, guid: d5bc13c031867844dad24edc2dba3804,
     type: 2}
   destinationPlace: To Passage_Desert
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114991010671104258
@@ -2867,15 +2869,9 @@ MonoBehaviour:
   - folderName: Ground
     sortingOrder: -1000
     zLevel: 0
-    isAnimated: 0
-    pause: 0
-    nextFrames: []
   - folderName: Overlay
     sortingOrder: 1000
-    zLevel: -0.5
-    isAnimated: 0
-    pause: 0
-    nextFrames: []
+    zLevel: 0
   cameraBoundary: {fileID: 212561593871005608}
 --- !u!212 &212003219725192626
 SpriteRenderer:
