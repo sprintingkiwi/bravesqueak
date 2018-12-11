@@ -1,3 +1,3 @@
 # README #
 
-Repository for the Mice d20 JRPG - Prelude - Unity project.
+Repository for the Bravesqueak unity project: a role-playing videogame set in a fantasy world of little creatures.
