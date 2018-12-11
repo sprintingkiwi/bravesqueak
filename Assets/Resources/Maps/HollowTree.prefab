@@ -2736,7 +2736,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534918163028692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.17, y: -24.2, z: 0}
+  m_LocalPosition: {x: 73.5, y: 39.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4459646111506932}
@@ -4957,6 +4957,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 0
   level: 0
+  footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
   status: Idle
@@ -4977,6 +4978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationMap: {fileID: 114142631811641686}
   destinationPlace: To HollowTree_1_2bF
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114429882313889088
@@ -5023,6 +5025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationMap: {fileID: 114142631811641686}
   destinationPlace: To HollowTree_1_1F
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114729738892128494
@@ -5038,6 +5041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationMap: {fileID: 114142631811641686}
   destinationPlace: To HollowTree_1_2aF
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114819611083811274
@@ -5053,6 +5057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationMap: {fileID: 114142631811641686}
   destinationPlace: To HollowTree_1_3F
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114910031762017518
@@ -5069,6 +5074,7 @@ MonoBehaviour:
   destinationMap: {fileID: 114769304090041922, guid: ebc7fe3dd5b598f48880637562dab642,
     type: 2}
   destinationPlace: To HollowTree_1
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114927783600896398
@@ -5088,6 +5094,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
   status: Idle
@@ -5107,6 +5114,7 @@ MonoBehaviour:
   destinationMap: {fileID: 114091726864809636, guid: d5bc13c031867844dad24edc2dba3804,
     type: 2}
   destinationPlace: To HollowTree_1
+  destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
 --- !u!212 &212007175117891088
