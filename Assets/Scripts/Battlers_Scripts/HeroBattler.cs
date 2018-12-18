@@ -61,31 +61,31 @@ public class HeroBattler : Battler
     }    
 
     // Choose the right animator based on the active job
-    public void UpdateAnimator()
-    {
-        foreach (Transform j in transform.Find("JOBS"))
-        {
-            if (j.name == job.ToString())
-            {
-                j.gameObject.SetActive(true);
-                anim = j.GetComponent<Animator>();
-                spr = j.GetComponent<SpriteRenderer>();
-            }
-            else
-                j.gameObject.SetActive(false);
-        }
+    //public void UpdateAnimator()
+    //{
+    //    foreach (Transform j in transform.Find("JOBS"))
+    //    {
+    //        if (j.name == job.ToString())
+    //        {
+    //            j.gameObject.SetActive(true);
+    //            anim = j.GetComponent<Animator>();
+    //            spr = j.GetComponent<SpriteRenderer>();
+    //        }
+    //        else
+    //            j.gameObject.SetActive(false);
+    //    }
 
-        // Refresh Polygon Collider copying path(s) points from the template collider (under JOBS child) to the collider attached to the parent HeroBattler GameObject
-        Destroy(col);
-        col = gameObject.AddComponent<PolygonCollider2D>();
-        col.isTrigger = true;
-        PolygonCollider2D templateCol = transform.Find("JOBS").Find(job.ToString()).GetComponent<PolygonCollider2D>();
+    //    // Refresh Polygon Collider copying path(s) points from the template collider (under JOBS child) to the collider attached to the parent HeroBattler GameObject
+    //    Destroy(col);
+    //    col = gameObject.AddComponent<PolygonCollider2D>();
+    //    col.isTrigger = true;
+    //    PolygonCollider2D templateCol = transform.Find("JOBS").Find(job.ToString()).GetComponent<PolygonCollider2D>();
         
-        // this works copying one path, despite it doesn't copy all the paths if more than one
-        col.points = templateCol.points;
+    //    // this works copying one path, despite it doesn't copy all the paths if more than one
+    //    col.points = templateCol.points;
         
-        // this raises a error but I don't know why...
-        //for (int i = 0; i < templateCol.pathCount; i++)
-            //col.SetPath(i, templateCol.GetPath(i));
-    }
+    //    // this raises a error but I don't know why...
+    //    //for (int i = 0; i < templateCol.pathCount; i++)
+    //        //col.SetPath(i, templateCol.GetPath(i));
+    //}
 }

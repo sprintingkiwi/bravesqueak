@@ -21,6 +21,11 @@ public class SkillWheelIcon : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log(name + " touched");
+
+        if (Jrpg.CheckPlatform() != "Mobile")
+            return;
+
         if (bm.phase == "Target Selection" || bm.phase == "Area Selection")
         {
             // Confirm for Mobile

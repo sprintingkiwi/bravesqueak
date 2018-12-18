@@ -219,6 +219,7 @@ public class BattleMenu : MonoBehaviour
             {
                 SkillWheelIcon wi = Instantiate(skillWheelIconPrefab, transform);
                 wi.linkedSkill = playerBattler.skills[i];
+                wi.name = playerBattler.skills[i].name + " Icon";
                 SpriteRenderer spr = wi.GetComponent<SpriteRenderer>();
                 spr.sprite = wi.linkedSkill.GetComponent<SpriteRenderer>().sprite;
                 spr.color = new Color(1, 1, 1, 0);

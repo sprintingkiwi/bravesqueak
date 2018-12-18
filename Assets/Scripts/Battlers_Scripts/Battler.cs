@@ -77,7 +77,7 @@ public class Battler : MonoBehaviour
     public Vector3 targetPos;
     public Animator anim;
     public SpriteRenderer spr;
-    public PolygonCollider2D col;
+    //public PolygonCollider2D col;
     public List<GameObject> targets = new List<GameObject>();
     public List<GameObject> currentlyActiveSkills = new List<GameObject>();
     public Skill currentSkill;
@@ -186,7 +186,7 @@ public class Battler : MonoBehaviour
         UpdateStats();
 
         // Sprite stuff
-        SetupCollider();
+        //SetupCollider();
         spr = gameObject.GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
         UpdateSortingOrder();
@@ -360,7 +360,7 @@ public class Battler : MonoBehaviour
     }
 
     // Collider for target touch selection
-    public void SetupCollider()
+    public void SetupCollider(Collider2D col)
     {
         col = gameObject.AddComponent<PolygonCollider2D>();
         //col.autoTiling = true;

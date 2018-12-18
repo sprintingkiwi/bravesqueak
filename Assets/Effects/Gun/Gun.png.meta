@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: ce5ae44c41d688f40b333a61b928cde4
-timeCreated: 1474109845
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Firearm 2_0
@@ -12,14 +10,17 @@ TextureImporter:
     21300010: Firearm 2_5
     21300012: Firearm 2_6
     21300014: Firearm 2_7
-  serializedVersion: 2
+  externalObjects: {}
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -29,36 +30,74 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
+    serializedVersion: 2
     filterMode: -1
     aniso: 16
     mipBias: -1
-    wrapMode: 1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Firearm 2_0
+    - serializedVersion: 2
+      name: Firearm 2_0
       rect:
         serializedVersion: 2
         x: 193
@@ -68,15 +107,11 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -32.54461, y: 56.18274}
-        - {x: -54.54461, y: 33.18274}
-        - {x: -54.54461, y: -52.81726}
-        - {x: -48.54461, y: -54.81726}
-        - {x: 56.45539, y: -54.81726}
-        - {x: 56.45539, y: 41.18274}
-        - {x: 52.45539, y: 56.18274}
-    - name: Firearm 2_1
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Firearm 2_1
       rect:
         serializedVersion: 2
         x: 519
@@ -86,16 +121,11 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -35.599228, y: 62.12358}
-        - {x: -69.59923, y: 45.12358}
-        - {x: -69.59923, y: 7.123581}
-        - {x: -37.599228, y: -60.87642}
-        - {x: 13.400772, y: -60.87642}
-        - {x: 71.40077, y: -35.87642}
-        - {x: 71.40077, y: 23.12358}
-        - {x: 47.400772, y: 62.12358}
-    - name: Firearm 2_2
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Firearm 2_2
       rect:
         serializedVersion: 2
         x: 871
@@ -105,16 +135,11 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -49.035522, y: 55.759216}
-        - {x: -64.03552, y: 25.759216}
-        - {x: -64.03552, y: -25.240784}
-        - {x: -23.035522, y: -52.240784}
-        - {x: -13.035522, y: -54.240784}
-        - {x: 41.964478, y: -54.240784}
-        - {x: 65.96448, y: -18.240784}
-        - {x: 65.96448, y: 55.759216}
-    - name: Firearm 2_3
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Firearm 2_3
       rect:
         serializedVersion: 2
         x: 1182
@@ -124,20 +149,11 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 22.918518, y: 68.76787}
-        - {x: -55.081482, y: 68.76787}
-        - {x: -69.08148, y: 59.767868}
-        - {x: -99.08148, y: 17.767868}
-        - {x: -100.08148, y: 15.767868}
-        - {x: -100.08148, y: -22.232132}
-        - {x: -37.081482, y: -60.232132}
-        - {x: -10.081482, y: -67.23213}
-        - {x: 21.918518, y: -67.23213}
-        - {x: 99.91852, y: -26.232132}
-        - {x: 101.91852, y: -23.232132}
-        - {x: 101.91852, y: 25.767868}
-    - name: Firearm 2_4
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Firearm 2_4
       rect:
         serializedVersion: 2
         x: 1723
@@ -147,16 +163,11 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.6266848, y: 0.7194009}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -70.716, y: -41.888763}
-        - {x: -32.716003, y: -87.88876}
-        - {x: -0.7160034, y: -87.88876}
-        - {x: 42.283997, y: -61.888763}
-        - {x: 42.283997, y: 13.111237}
-        - {x: 38.283997, y: 36.111237}
-        - {x: -17.716003, y: 36.111237}
-        - {x: -70.716, y: 9.111237}
-    - name: Firearm 2_5
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Firearm 2_5
       rect:
         serializedVersion: 2
         x: 2209
@@ -166,22 +177,11 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 56.093018, y: 97.234634}
-        - {x: -55.906982, y: 97.234634}
-        - {x: -58.906982, y: 96.234634}
-        - {x: -136.90698, y: 17.234634}
-        - {x: -139.90698, y: 14.234634}
-        - {x: -139.90698, y: -10.765366}
-        - {x: -135.90698, y: -19.765366}
-        - {x: -68.90698, y: -74.765366}
-        - {x: -17.906982, y: -95.765366}
-        - {x: 45.093018, y: -95.765366}
-        - {x: 53.093018, y: -94.765366}
-        - {x: 141.09302, y: -16.765366}
-        - {x: 141.09302, y: 26.234634}
-        - {x: 78.09302, y: 88.234634}
-    - name: Firearm 2_6
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Firearm 2_6
       rect:
         serializedVersion: 2
         x: 2887
@@ -191,57 +191,11 @@ TextureImporter:
       alignment: 9
       pivot: {x: 0.46588552, y: 0.54830503}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0.8190918, y: 3.2896805}
-        - {x: 8.819092, y: -18.71032}
-        - {x: 13.819092, y: -16.71032}
-        - {x: 23.819092, y: -16.71032}
-        - {x: 27.819092, y: -15.7103195}
-        - {x: 31.819092, y: -11.7103195}
-        - {x: 31.819092, y: -16.71032}
-        - {x: 16.819092, y: -16.71032}
-        - {x: 12.819092, y: -22.71032}
-        - {x: -9.180908, y: -22.71032}
-        - {x: -23.180908, y: -28.71032}
-        - {x: -30.180908, y: -24.71032}
-        - {x: -39.18091, y: -20.71032}
-        - {x: -41.18091, y: -11.7103195}
-        - {x: -40.18091, y: -15.7103195}
-        - {x: -37.18091, y: -20.71032}
-        - {x: -32.18091, y: -23.71032}
-        - {x: -14.180908, y: -23.71032}
-        - {x: -6.180908, y: -11.7103195}
-        - {x: -2.1809082, y: 4.2896805}
-        - {x: -0.1809082, y: 45.28968}
-        - {x: -13.180908, y: 101.28968}
-        - {x: -106.18091, y: 101.28968}
-        - {x: -141.18091, y: 89.28968}
-        - {x: -146.18091, y: 68.28968}
-        - {x: -146.18091, y: -29.71032}
-        - {x: -69.18091, y: -114.71032}
-        - {x: 89.81909, y: -114.71032}
-        - {x: 121.81909, y: -95.71032}
-        - {x: 121.81909, y: 60.28968}
-        - {x: 114.81909, y: 81.28968}
-        - {x: 99.81909, y: 100.28968}
-        - {x: 19.819092, y: 75.28968}
-      - - {x: 117.81909, y: 15.2896805}
-        - {x: 115.81909, y: 12.2896805}
-        - {x: 115.81909, y: -9.7103195}
-        - {x: 117.81909, y: -20.71032}
-        - {x: 121.81909, y: -21.71032}
-        - {x: 166.81909, y: -21.71032}
-        - {x: 168.81909, y: -17.71032}
-        - {x: 168.81909, y: 11.2896805}
-        - {x: 165.81909, y: 15.2896805}
-      - - {x: -3.1809082, y: 70.28968}
-        - {x: -4.180908, y: 65.28968}
-        - {x: -4.180908, y: 42.28968}
-        - {x: -3.1809082, y: 41.28968}
-        - {x: 27.819092, y: 41.28968}
-        - {x: 27.819092, y: 69.28968}
-        - {x: 25.819092, y: 70.28968}
-    - name: Firearm 2_7
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Firearm 2_7
       rect:
         serializedVersion: 2
         x: 3638
@@ -251,43 +205,11 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 17.135864, y: 106.99795}
-        - {x: 3.1358643, y: 73.99795}
-        - {x: 18.135864, y: 43.997948}
-        - {x: 19.135864, y: -47.002052}
-        - {x: 48.135864, y: -46.002052}
-        - {x: 51.135864, y: -45.002052}
-        - {x: 50.135864, y: -45.002052}
-        - {x: 49.135864, y: -48.002052}
-        - {x: 5.1358643, y: -49.002052}
-        - {x: -39.864136, y: -57.002052}
-        - {x: -42.864136, y: -60.002052}
-        - {x: -42.864136, y: -92.00205}
-        - {x: -40.864136, y: -100.00205}
-        - {x: -23.864136, y: -112.00205}
-        - {x: 40.135864, y: -112.00205}
-        - {x: 110.135864, y: -97.00205}
-        - {x: 110.135864, y: 92.99795}
-        - {x: 62.135864, y: 106.99795}
-      - - {x: -106.864136, y: 20.997948}
-        - {x: -106.864136, y: -17.002052}
-        - {x: -93.864136, y: -55.002052}
-        - {x: -86.864136, y: -66.00205}
-        - {x: -32.864136, y: -66.00205}
-        - {x: 0.13586426, y: -40.002052}
-        - {x: 0.13586426, y: 15.997948}
-        - {x: -22.864136, y: 20.997948}
-      - - {x: -20.864136, y: 118.99795}
-        - {x: -94.864136, y: 118.99795}
-        - {x: -104.864136, y: 115.99795}
-        - {x: -104.864136, y: 26.997948}
-        - {x: -98.864136, y: 24.997948}
-        - {x: -77.864136, y: 24.997948}
-        - {x: -74.864136, y: 31.997948}
-        - {x: -10.864136, y: 70.99795}
-        - {x: -10.864136, y: 99.99795}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
     outline: []
+    physicsShape: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
