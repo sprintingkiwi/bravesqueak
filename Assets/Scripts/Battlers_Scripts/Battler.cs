@@ -38,7 +38,6 @@ public class Battler : MonoBehaviour
     public string characterName;     
     public enum Size { Medium, Colossal, Gargantuan, Huge, Large, Small, Tiny, Diminutive, Fine };
     public Size size;
-    public int sizeModifier;
     public Skill.Element elementAffinity;
     public enum Species { Slime, Undead, Beast, Plant, Insect, Dragon };
     public Species species;
@@ -56,23 +55,20 @@ public class Battler : MonoBehaviour
     //[Header("Equipment")]
     //public Weapon primaryWeapon;
     //public Weapon secondaryWeapon;
-    //public string equipmentPreset;
-
-    // Common Tables
-    [Header("Common Tables")]
-    public Dictionary<Size, int> sizeModifiers = new Dictionary<Size, int>();
+    //public string equipmentPreset;    
 
     // Sounds
-    [Header("Sound Effects Override")]
+    [Header("Effects and sounds Override")]
     public AudioClip hitSound;
     public AudioClip dodgeSound;
     public AudioClip defeatSound;
-
     // Effects
     public Effect parryEffect;
 
     // System
+    public Dictionary<Size, int> sizeModifiers = new Dictionary<Size, int>();
     [Header("System")]
+    public int sizeModifier;
     public Vector3 originalPos;
     public Vector3 targetPos;
     public Animator anim;
