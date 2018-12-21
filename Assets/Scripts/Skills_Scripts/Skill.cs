@@ -38,6 +38,7 @@ public class Skill : Item
     [Header("Skill Store")]
     public ShopRequirement shopRequirement;
     public int coins;
+
     // Elements multipliers dictionary  
     public static Dictionary<Element, Dictionary<Element, float>> elementsMultipliers = new Dictionary<Element, Dictionary<Element, float>>()
     {
@@ -58,6 +59,7 @@ public class Skill : Item
     //public string userMoveAnimation;
     //public Effect userMoveEffect;
     public string userAnimation = "attack";
+    public string[] alternativeUserAnims;
     //public Effect userEffect;
     public string targetAnimation = "hit";
     //public float pauseBeforeEffect;
@@ -119,6 +121,15 @@ public class Skill : Item
         // Correct too high movement speed
         if (userMovementSpeed > 200)
             userMovementSpeed = 200;
+
+        // Check for alternative user animations
+        if (!user.anim.parameters.Select(o => o.name).ToArray().Contains(userAnimation))
+            foreach (string aua in alternativeUserAnims)
+                if (!user.anim.parameters.Select(o => o.name).ToArray().Contains(aua))
+                {
+                    userAnimation = aua;
+                    break;
+                }
 
         foreach (Battler target in targets)
         {

@@ -258,33 +258,33 @@ public class Jrpg : MonoBehaviour
         Destroy(audio, audioSource.clip.length);
     }
 
-    public static IEnumerator PlayAnimation(Battler actor, string name, bool wait)
+    public static IEnumerator PlayAnimation(Battler actor, string animationName, bool wait)
     {
         if (actor.GetComponent<Animator>() == null)
         {
             Log("Trying to play an animation on a Battler without Animator Component", "Warning");
             yield break;
         }
-        if (name == "")
+        if (animationName == "")
         {
-            Log(name + " animation not assigned!", "Warning");
+            Log(animationName + " animation not assigned!", "Warning");
             yield break;
         }
 
-        Log("Playing animation " + name);
+        Log("Playing animation " + animationName);
 
-        if (actor.anim.parameters.Select(o => o.name).ToArray().Contains(name))
-            actor.anim.SetTrigger(name);
+        if (actor.anim.parameters.Select(o => o.name).ToArray().Contains(animationName))
+            actor.anim.SetTrigger(animationName);
         else
             if (Debug.isDebugBuild)
-            Debug.LogWarning(actor.name + " does not have a " + name + " animation");
+            Debug.LogWarning(actor.name + " does not have a " + animationName + " animation");
         
         if (wait) // Wait for the animation to finish
         {
             //yield return new WaitForSeconds(0.1f);
             yield return new WaitForEndOfFrame();
 
-            float percentage = actor.GetEffectDelay(name);
+            float percentage = actor.GetEffectDelay(animationName);
             if (percentage != 0f)
                 yield return new WaitForSeconds(actor.anim.GetCurrentAnimatorStateInfo(0).length * percentage);
             else
