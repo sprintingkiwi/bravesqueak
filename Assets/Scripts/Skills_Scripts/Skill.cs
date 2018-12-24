@@ -125,7 +125,7 @@ public class Skill : Item
         // Check for alternative user animations
         if (!user.anim.parameters.Select(o => o.name).ToArray().Contains(userAnimation))
             foreach (string aua in alternativeUserAnims)
-                if (!user.anim.parameters.Select(o => o.name).ToArray().Contains(aua))
+                if (user.anim.parameters.Select(o => o.name).ToArray().Contains(aua))
                 {
                     userAnimation = aua;
                     break;
