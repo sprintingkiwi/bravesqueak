@@ -124,17 +124,18 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Snake
   size: 2
-  sizeModifier: 0
   elementAffinity: 4
   species: 5
   perksPrefabs:
   - {fileID: 0}
   - {fileID: 0}
+  movable: 0
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
+  sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 17.5, y: -10, z: 0}
   anim: {fileID: 0}

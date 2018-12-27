@@ -42,7 +42,7 @@ public class Battler : MonoBehaviour
     public enum Species { Slime, Undead, Beast, Plant, Insect, Dragon };
     public Species species;
     public Perk[] perksPrefabs = new Perk[2];
-    public bool movable;
+    public bool movable = true;
 
     [System.Serializable]
     public class EffectDelay
