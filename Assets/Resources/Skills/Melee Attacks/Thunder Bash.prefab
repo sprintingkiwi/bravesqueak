@@ -75,6 +75,7 @@ MonoBehaviour:
   coins: 0
   storeNameImg: {fileID: 0}
   userAnimation: attack
+  alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
   targetEffect: {fileID: 114614065750280804, guid: 64eb38151b1f9fd428d6400476a728b9,
@@ -87,7 +88,7 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  ps: {fileID: 0}
+  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK
