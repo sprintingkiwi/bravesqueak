@@ -264,25 +264,24 @@ MonoBehaviour:
     value: 200
   hitPoints: 0
   skillPoints: 0
-  level: 0
   characterName: 
   size: 5
-  sizeModifier: 0
   elementAffinity: 0
   species: 0
   perksPrefabs:
   - {fileID: 114932445801373410, guid: 0eb19a7aebb667a47827881ac39b23c5, type: 2}
   - {fileID: 0}
+  movable: 1
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: 128fbe42ec1ccbd448040e5e133fa1ad, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
+  sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
   anim: {fileID: 0}
   spr: {fileID: 0}
-  col: {fileID: 0}
   targets: []
   currentlyActiveSkills: []
   currentSkill: {fileID: 0}
@@ -295,7 +294,6 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   job: 4
-  availableJobs: 01000000020000000300000004000000
   unlockedSkills: []
   skills:
   - {fileID: 114448939315776632, guid: de5b7f066c33cdf4ba379991bdf7328d, type: 2}
@@ -312,6 +310,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -327,6 +326,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

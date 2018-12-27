@@ -74,7 +74,8 @@ MonoBehaviour:
   coins: 0
   storeNameImg: {fileID: 0}
   userAnimation: attack
-  alternativeUserAnims: []
+  alternativeUserAnims:
+  - fox_bite
   targetAnimation: hit
   areaEffect: {fileID: 0}
   targetEffect: {fileID: 114979775389643346, guid: b7d3c157b7a60bc4aa477c12df5c82bb,

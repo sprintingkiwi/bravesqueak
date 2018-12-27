@@ -263,12 +263,12 @@ MonoBehaviour:
   skillPoints: 0
   characterName: 
   size: 5
-  sizeModifier: 0
   elementAffinity: 0
   species: 2
   perksPrefabs:
   - {fileID: 114932445801373410, guid: 0eb19a7aebb667a47827881ac39b23c5, type: 2}
   - {fileID: 0}
+  movable: 1
   effectsDelay:
   - animation: attack
     lenghtPercentage: 0.5
@@ -278,11 +278,11 @@ MonoBehaviour:
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
+  sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
   anim: {fileID: 0}
   spr: {fileID: 0}
-  col: {fileID: 0}
   targets: []
   currentlyActiveSkills: []
   currentSkill: {fileID: 0}
