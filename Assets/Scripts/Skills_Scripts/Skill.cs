@@ -167,7 +167,7 @@ public class Skill : Item
         yield return StartCoroutine(Beginning());
 
         // Move user towards target
-        if (moveToTarget)
+        if (moveToTarget && user.movable)
             yield return StartCoroutine(MoveToTarget(targets[0]));
 
         if (cameraFocus)

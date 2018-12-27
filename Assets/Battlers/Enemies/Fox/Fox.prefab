@@ -23,20 +23,20 @@ GameObject:
   - component: {fileID: 114069915646428382}
   - component: {fileID: 95166979374997656}
   m_Layer: 0
-  m_Name: Hedgehog
+  m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1744458674139232
+--- !u!1 &1821771226161026
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4292421823866960}
+  - component: {fileID: 4284221257802178}
   m_Layer: 0
   m_Name: HUD Hook
   m_TagString: Untagged
@@ -44,12 +44,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4292421823866960
+--- !u!4 &4284221257802178
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1744458674139232}
+  m_GameObject: {fileID: 1821771226161026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.42, y: 6.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -64,10 +64,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006907234033178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.63, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4292421823866960}
+  - {fileID: 4284221257802178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,7 +80,7 @@ Animator:
   m_GameObject: {fileID: 1006907234033178}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6b83aefd7e6cc9e4bb0482b7e713f286, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e67bc929c066e743bd0c0ceb8ef5118, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -104,34 +104,33 @@ MonoBehaviour:
     value: 30
   defense:
     ID: DEF
-    value: 80
+    value: 30
   specialAttack:
     ID: SAT
-    value: 15
+    value: 10
   specialDefense:
     ID: SDF
-    value: 40
+    value: 15
   support:
     ID: SUP
-    value: 6
+    value: 10
   speed:
     ID: SPD
-    value: 6
+    value: 20
   maxHP:
     ID: maxHP
-    value: 200
+    value: 500
   hitPoints: 0
   skillPoints: 0
-  characterName: Hedgehog
-  size: 3
-  elementAffinity: 1
+  characterName: Fox
+  size: 1
+  elementAffinity: 6
   species: 2
   perksPrefabs:
   - {fileID: 0}
   - {fileID: 0}
-  movable: 0
   effectsDelay: []
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
@@ -152,7 +151,7 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114429996944679292, guid: 8d475f97aa6760e4498fd5020fd01b54, type: 2}
+  strategy: {fileID: 114109042552807282, guid: 314b1e159fcbaf648828dbc39bb8fbd7, type: 2}
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -187,13 +186,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ff839e4fcae8fd4e95741980d4939e1, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.5, y: 4.5}
+  m_Size: {x: 14.4, y: 14.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
