@@ -7,6 +7,7 @@ public class Character : AnimatedMapElement
     public float speed;
     public bool mirrorHorizontal = true;
     public int level;
+    public bool footPrints;
     public float footPrintsDistance;
 
     [Header("System")]
@@ -18,6 +19,7 @@ public class Character : AnimatedMapElement
     //public Vector2 heading;
     public Dictionary<Vector2, int> directions = new Dictionary<Vector2, int>();
     Vector3 lastFootprintPosition;
+    int footPrintsSide = 1;
 
     // Use this for initialization
     public override void Start ()
@@ -73,11 +75,17 @@ public class Character : AnimatedMapElement
         anim.SetFloat("Speed", speed);
 
         // Footprints
-        if ((transform.position - lastFootprintPosition).magnitude > footPrintsDistance)
+        if (footPrints)
         {
-            GameObject fp = Instantiate(Resources.Load("Footprints/Footprint") as GameObject, transform.position, transform.rotation, gc.currentMap.transform);
-            lastFootprintPosition = transform.position;
-        }
+            if ((transform.position - lastFootprintPosition).magnitude > footPrintsDistance)
+            {
+                GameObject fp = Instantiate(Resources.Load("Footprints/Footprint") as GameObject, transform.position, Quaternion.LookRotation(Vector3.forward, direction), gc.currentMap.transform);
+                fp.GetComponent<Footprint>().ownerSR = spr;
+                footPrintsSide *= -1;
+                fp.transform.localScale = new Vector3(footPrintsSide * fp.transform.localScale.x, fp.transform.localScale.y, fp.transform.localScale.z);
+                lastFootprintPosition = transform.position;
+            }
+        }        
     }
 
     public virtual void Stop()

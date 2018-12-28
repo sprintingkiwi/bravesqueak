@@ -467,6 +467,7 @@ MonoBehaviour:
   speed: 3
   mirrorHorizontal: 1
   level: 3
+  footPrints: 1
   footPrintsDistance: 0.5
   rb: {fileID: 50445198967079674}
   canMove: 1

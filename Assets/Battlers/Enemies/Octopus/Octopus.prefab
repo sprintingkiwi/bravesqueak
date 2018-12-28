@@ -130,6 +130,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   movable: 0
+  evolution: {fileID: 114069915646428382, guid: 032de18ce1ca4e645ae4c9b7f368d4b4,
+    type: 2}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
