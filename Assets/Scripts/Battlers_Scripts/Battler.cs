@@ -43,6 +43,7 @@ public class Battler : MonoBehaviour
     public Species species;
     public Perk[] perksPrefabs = new Perk[2];
     public bool movable = true;
+    public Battler evolution;
 
     [System.Serializable]
     public class EffectDelay
@@ -188,11 +189,11 @@ public class Battler : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         UpdateSortingOrder();
 
-        // HUD
-        hud = (Instantiate(Resources.Load("BattlerHUD"), GameObject.Find("Canvas").transform.Find("BATTLE HUD")) as GameObject).GetComponent<BattlerHUD>();
-        hud.name = name + "_HUD";
-        hud.Start();
-        RefreshHUD();
+        //// HUD
+        //hud = (Instantiate(Resources.Load("BattlerHUD"), GameObject.Find("Canvas").transform.Find("BATTLE HUD")) as GameObject).GetComponent<BattlerHUD>();
+        //hud.name = name + "_HUD";
+        //hud.Start();
+        //RefreshHUD();
     }
 
     // Update is called once per frame
@@ -202,13 +203,13 @@ public class Battler : MonoBehaviour
         //spr.sortingOrder = -(int)(gameObject.transform.position.y * 10);
 
         
-        if (transform.Find("HUD Hook") != null)
-        {
-            Transform hudHook = transform.Find("HUD Hook");
-            hud.transform.position = Camera.main.WorldToScreenPoint(hudHook.position);
-        }
-        else
-            hud.transform.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + spr.bounds.size.y / 2, transform.position.z));
+        //if (transform.Find("HUD Hook") != null)
+        //{
+        //    Transform hudHook = transform.Find("HUD Hook");
+        //    hud.transform.position = Camera.main.WorldToScreenPoint(hudHook.position);
+        //}
+        //else
+        //    hud.transform.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + spr.bounds.size.y / 2, transform.position.z));
 
     }
 
@@ -342,18 +343,31 @@ public class Battler : MonoBehaviour
 
     public void SetupHooks()
     {
-        Transform hooks = new GameObject("HOOKS").transform;
-        hooks.transform.parent = transform;
-        hooks.transform.localPosition = Vector3.zero;
-        Transform attackHook = new GameObject("Attack").transform;
-        attackHook.transform.parent = hooks;
-        attackHook.transform.localPosition = new Vector3(-10f, 0, 0);
-        Transform nearHook = new GameObject("Near").transform;
-        nearHook.transform.parent = hooks;
-        nearHook.transform.localPosition = new Vector3(-5f, 0, 0);
+        Transform hooks;
+        if (transform.Find("HOOKS") == null)
+        {
+            hooks = new GameObject("HOOKS").transform;
+            hooks.transform.parent = transform;
+            hooks.transform.localPosition = Vector3.zero;
+        }
+        else
+            hooks = transform.Find("HOOKS");
+
+        if (hooks.Find("Attack") == null)
+        {
+            Transform attackHook = new GameObject("Attack").transform;
+            attackHook.transform.parent = hooks;
+            attackHook.transform.localPosition = new Vector3(-10f, 0, 0);
+        }
+
+        if (hooks.Find("Near") == null)
+        {
+            Transform nearHook = new GameObject("Near").transform;
+            nearHook.transform.parent = hooks;
+            nearHook.transform.localPosition = new Vector3(-5f, 0, 0);
+        }
 
         transform.Find("HOOKS").localScale = new Vector3((float)faction, 1, 1);
-
     }
 
     // Collider for target touch selection
@@ -401,11 +415,11 @@ public class Battler : MonoBehaviour
         return 0f;
     }
 
-    public void RefreshHUD()
-    {
-        hud.HP.value = (float)hitPoints / maxHP.value;
-        hud.SP.value = (float)skillPoints / 10;
-    }
+    //public void RefreshHUD()
+    //{
+    //    hud.HP.value = (float)hitPoints / maxHP.value;
+    //    hud.SP.value = (float)skillPoints / 10;
+    //}
 
     public virtual IEnumerator Blink ()
     {
@@ -446,6 +460,6 @@ public class Battler : MonoBehaviour
 
     public virtual void OnDestroy()
     {
-        Destroy(hud.gameObject);
+        //Destroy(hud.gameObject);
     }
 }

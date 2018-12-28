@@ -9,50 +9,50 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1630586791372830}
+  m_RootGameObject: {fileID: 1390360998771972}
   m_IsPrefabParent: 1
---- !u!1 &1630586791372830
+--- !u!1 &1390360998771972
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4377447360524604}
-  - component: {fileID: 82115437330863352}
-  - component: {fileID: 114280663374910852}
-  - component: {fileID: 212597804309105886}
-  - component: {fileID: 95403360949875098}
+  - component: {fileID: 4174632130042326}
+  - component: {fileID: 212728127184850812}
+  - component: {fileID: 95161650431117090}
+  - component: {fileID: 114614065750280804}
+  - component: {fileID: 82088302901040720}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: Shock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4377447360524604
+--- !u!4 &4174632130042326
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630586791372830}
+  m_GameObject: {fileID: 1390360998771972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.7244757, y: -0.1699501, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82115437330863352
+--- !u!82 &82088302901040720
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630586791372830}
+  m_GameObject: {fileID: 1390360998771972}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fa50c6a06b66e7d4fa5389674c19cdff, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 23ca7059e0d1ebb4c9ce29856afcfe96, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -123,16 +123,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95403360949875098
+--- !u!95 &95161650431117090
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630586791372830}
+  m_GameObject: {fileID: 1390360998771972}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a380216d77e07ee45915722debcf78bd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 93166f40099091e4c813f2bd7504c117, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -140,12 +140,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114280663374910852
+--- !u!114 &114614065750280804
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630586791372830}
+  m_GameObject: {fileID: 1390360998771972}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f58527a4b615754b93590381ce615a7, type: 3}
@@ -158,15 +158,16 @@ MonoBehaviour:
   loop: 0
   fade: 0
   fadeSpeed: 0.5
---- !u!212 &212597804309105886
+--- !u!212 &212728127184850812
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630586791372830}
+  m_GameObject: {fileID: 1390360998771972}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -182,6 +183,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -190,12 +192,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300010, guid: 5f4461d1eab46054ebff2f3b3b6bf458, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfe35c5d43f75a347b94937c3f0a8b48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 4.19}
+  m_Size: {x: 3.2899997, y: 3.6499999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

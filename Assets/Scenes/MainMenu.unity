@@ -373,52 +373,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &221598134
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4586443042593150, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586443042593150, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586443042593150, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586443042593150, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586443042593150, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586443042593150, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586443042593150, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586443042593150, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-      propertyPath: m_RootOrder
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1370254149090192, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e50a0ce49c89c4b45b28fa6e8a1e5582, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &319076944
 Prefab:
   m_ObjectHideFlags: 0
@@ -456,7 +410,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4586443042593150, guid: dc5caafa06b79774c93ded6d5f4215b9, type: 2}
       propertyPath: m_RootOrder
-      value: 32
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1370254149090192, guid: dc5caafa06b79774c93ded6d5f4215b9, type: 2}
       propertyPath: m_IsActive

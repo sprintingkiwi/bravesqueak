@@ -262,8 +262,8 @@ public class Skill : Item
     public virtual IEnumerator ApplyCosts()
     {
         user.skillPoints -= requiredSP;
-        //if (user.GetComponent<HeroBattler>() != null)
-        user.RefreshHUD();
+        ////if (user.GetComponent<HeroBattler>() != null)
+        //user.RefreshHUD();
 
         yield return null;
     }
@@ -396,11 +396,13 @@ public class Skill : Item
                 target.PlaySoundEffect(target.defeatSound);
                 yield return new WaitForSeconds(target.defeatSound.length);
 
+                // Fade out of dead target
+                if (target.evolution == null)
+                    yield return Jrpg.Fade(target.gameObject, 0, 1);
+
                 // Remove dead from lists
                 //bc.actionQueue.Remove(target);
                 targets.Remove(target);
-                yield return Jrpg.Fade(target.gameObject, 0, 1);
-
                 if (target.gameObject.GetComponent<HeroBattler>() != null)
                     bc.party.Remove(target.gameObject.GetComponent<HeroBattler>());
                 else if (target.gameObject.GetComponent<EnemyBattler>() != null)
@@ -424,11 +426,30 @@ public class Skill : Item
                 else
                     Jrpg.Log("Destroyed battler was not inside any list", "Warning");
 
+
+                // Evolve if it has an evolution, before destroying
+                if (target.evolution != null)
+                {
+                    Jrpg.Log(target.name + " is evolving into " + target.evolution.name, "Visible");
+
+                    Battler evo = Instantiate(target.evolution, target.transform.position, Quaternion.identity);
+                    evo.Setup();
+
+                    // Initialize evolution
+                    evo.name = target.characterName.ToString();
+                    evo.faction = target.faction;
+                    evo.transform.localScale = new Vector3(-(float)target.faction, 1, 1);
+                    if (target.faction == Battler.Faction.Heroes)
+                        bc.party.Add(evo);
+                    else
+                        bc.enemies.Add(evo);
+                }
+
                 // Destroy dead target
                 Destroy(target.gameObject);
 
                 // Death effect on target
-
+    
             }
         }
 

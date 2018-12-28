@@ -129,6 +129,9 @@ MonoBehaviour:
   perksPrefabs:
   - {fileID: 0}
   - {fileID: 0}
+  movable: 1
+  evolution: {fileID: 114069915646428382, guid: 20d5879be8a9af648943774ba9782df2,
+    type: 2}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}

@@ -6,13 +6,13 @@ using UnityEngine;
 public class SummonSkill : SupportSkill
 {
     [Header("Summon")]
-    public Summon Summon;
+    public Summon summon;
     public int requiredHP;
 
     public override IEnumerator ProcessEffects(Func<Battler, IEnumerator> effectFunction)
     {
         if (Debug.isDebugBuild)
-            Debug.Log("Summoning " + Summon.name);
+            Debug.Log("Summoning " + summon.name);
 
         // Find a position for the summoned battler
         Vector3 summonPos;
@@ -27,7 +27,7 @@ public class SummonSkill : SupportSkill
         }
 
         // Create it
-        AIBattler aib = Instantiate(Summon, summonPos, Quaternion.identity);
+        AIBattler aib = Instantiate(summon, summonPos, Quaternion.identity);
         aib.Setup();
 
         // Initialize summoned battler
