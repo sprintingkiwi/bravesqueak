@@ -88,7 +88,7 @@ MonoBehaviour:
   bc: {fileID: 0}
   gc: {fileID: 0}
   userMovementSpeed: 0
-  Summon: {fileID: 114786829868170840, guid: e43e7920b4fa2574b9f331bc9cbc7647, type: 2}
+  summon: {fileID: 0}
   requiredHP: 10
 --- !u!212 &212368838457049698
 SpriteRenderer:
