@@ -75,7 +75,9 @@ MonoBehaviour:
   coins: 0
   storeNameImg: {fileID: 0}
   userAnimation: attack
-  alternativeUserAnims: []
+  alternativeUserAnims:
+  - octopus_attack_2
+  - 
   targetAnimation: hit
   areaEffect: {fileID: 0}
   targetEffect: {fileID: 114946632963968454, guid: 296d46d3cbc48094ea4cc87558873697,

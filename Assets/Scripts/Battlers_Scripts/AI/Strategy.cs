@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Reflection;
 using System.Linq;
 
-public class Strategy : Jrpg
+public class Strategy : MonoBehaviour
 {
     [Header("System")]
     public BattleController bc;
@@ -21,7 +21,7 @@ public class Strategy : Jrpg
     public bool conditionCheck;
 
     [Header("Skills")]
-    public AIAction[] actions;
+    public AIAction[] actions;    
 
     public virtual void Start()
     {
@@ -30,7 +30,7 @@ public class Strategy : Jrpg
 
     public virtual void Execute(Battler user)
     {
-        Debug.Log("Processing " + name + " strategy");
+        Jrpg.Log("Processing " + name + " strategy");
 
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
 
@@ -50,12 +50,16 @@ public class Strategy : Jrpg
         // For each action, analyze conditions
         foreach (AIAction act in actions)
         {
+            // Shield for missing skills in actions list
+            if (act.skill == null)
+                continue;
+
             if (act.conditions.Length > 0)
             {
                 // Separate and/or type conditions
                 foreach (ActionCondition cond in act.conditions)
                 {
-                    Debug.Log("Separating and or type conditions");
+                    Jrpg.Log("Separating and or type conditions");
 
                     if (cond.conditionType == "and")
                         andConds.Add(cond);
@@ -64,11 +68,11 @@ public class Strategy : Jrpg
                 }
 
                 // and-type conditions
-                Debug.Log("Looping thround andConditions");
+                Jrpg.Log("Looping thround andConditions");
                 int andCount = 0;
                 foreach (ActionCondition ac in andConds)
                 {
-                    Debug.Log("Evaluating condition: " + ac.conditionFunction);
+                    Jrpg.Log("Evaluating condition: " + ac.conditionFunction);
 
                     // Evaluate condition
                     EvaluateActionCondition(ac);
@@ -87,7 +91,7 @@ public class Strategy : Jrpg
                 // or-type conditions
                 foreach (ActionCondition oc in orConds)
                 {
-                    Debug.Log("Looping thround orConditions");
+                    Jrpg.Log("Looping thround orConditions");
 
                     // Evaluate condition
                     EvaluateActionCondition(oc);
@@ -102,30 +106,36 @@ public class Strategy : Jrpg
                 }
             }
             else
+            {
+                Jrpg.Log("Adding unconditioned action " + act.skill.name + " to legal actions");
                 legalActions.Add(act);
-        }
+            }
+        }        
 
-
-        // Filter legal actions for their requirements
-        for (int i = 0; i < legalActions.Count; i++)
-        {
-            if (!legalActions[i].skill.ProcessRequirements(user))
-                legalActions.Remove(legalActions[i]);
-        }
-
-        // Weighted random selection of a legal action
+        // Selection of a legal action
         if (legalActions.Count > 0)
         {
+            // Filter legal actions for their requirements
+            Jrpg.Log("Legal actions for " + user.name + " :");
+            foreach (AIAction la in legalActions.ToArray())
+            {
+                Jrpg.Log(la.skill.name);
+                if (!la.skill.ProcessRequirements(user))
+                    legalActions.Remove(la);
+            }
+
+            // Weighted random selection
             selectedAction = WeightedRandom(legalActions);
-            Debug.Log(user.name + " selected action " + selectedAction.skill.name);
+            Jrpg.Log(user.name + " selected action " + selectedAction.skill.name);
             return selectedAction;
         }
         // If there are no legal actions avaiable, just wait
         else
         {
+            Jrpg.Log("No legal actions for " + user.name + ". Just waiting...");
             AIAction waitAction = new AIAction()
             {
-                skill = new Skill()
+                skill = (Resources.Load("Skills/Wait") as GameObject).GetComponent<Skill>()
             };
             return waitAction;
         }
@@ -135,7 +145,7 @@ public class Strategy : Jrpg
     {
         System.Type thisType = this.GetType();
         MethodInfo condFunc = thisType.GetMethod(condition.conditionFunction);
-        Debug.Log("Trying to invoke " + condFunc.Name);
+        Jrpg.Log("Trying to invoke " + condFunc.Name);
 
         // Collect parameters from action condition
         List<object> paramList = new List<object>();
@@ -145,12 +155,12 @@ public class Strategy : Jrpg
 
         // Invoke condition function passing condition parameters
         condFunc.Invoke(this, parameters);
-        Debug.Log("Condition check: " + conditionCheck);
+        Jrpg.Log("Condition check: " + conditionCheck);
     }
 
     AIAction WeightedRandom(List<AIAction> legalActions)
     {
-        Debug.Log("Weighted random selection of a legal action");
+        Jrpg.Log("Weighted random selection of a legal action");
 
         // Calculate sum of weigths
         int sumOfWeights = 0;
@@ -162,7 +172,7 @@ public class Strategy : Jrpg
 
         // Log
         foreach (AIAction a in legalActions)
-            Debug.Log(a.skill.name);
+            Jrpg.Log(a.skill.name);
 
         // Algorithm
         foreach (AIAction a in legalActions)
@@ -171,7 +181,7 @@ public class Strategy : Jrpg
                 return a;
             rnd -= a.weight;
         }
-        Debug.Log("Should never execute this");
+        Jrpg.Log("Should never execute this");
         return null;
     }
 
@@ -185,7 +195,7 @@ public class Strategy : Jrpg
         List<Battler> selectedTargets = new List<Battler>();
 
         foreach (Battler lt in legalTargets)
-            Debug.Log("Legal target: " + lt.name);
+            Jrpg.Log("Legal target: " + lt.name);
 
         if (selectedSkill.scope == Skill.Scope.Area)
         {
@@ -204,7 +214,7 @@ public class Strategy : Jrpg
                         selectedTargets.Add(b);
             }
 
-            Debug.Log(user.name + " selected " + selectedSkill.targetedArea.ToString() + " Area as target");
+            Jrpg.Log(user.name + " selected " + selectedSkill.targetedArea.ToString() + " Area as target");
         }
         else
         {
@@ -212,7 +222,7 @@ public class Strategy : Jrpg
             {
                 selectedTargets.Add(legalTargets[Random.Range(0, legalTargets.Count)]);
 
-                Debug.Log(user.name + " selected " + selectedTargets[i].name + " as target");
+                Jrpg.Log(user.name + " selected " + selectedTargets[i].name + " as target");
 
                 legalTargets.Remove(selectedTargets[i]);
             }
@@ -236,7 +246,7 @@ public class Strategy : Jrpg
     {
         conditionCheck = true;
 
-        Debug.Log("Finished to evaluate condition");
+        Jrpg.Log("Finished to evaluate condition Always True");
     }
 
     public void HitPoints(int percentage)
@@ -244,7 +254,7 @@ public class Strategy : Jrpg
         if (user.hitPoints < ((user.maxHP.value * percentage) / 100))
             conditionCheck = true;
 
-        Debug.Log("Finished to evaluate condition");
+        Jrpg.Log("Finished to evaluate condition for Hit Points");
     }
 
     public void TestCondition()
@@ -252,6 +262,6 @@ public class Strategy : Jrpg
         if (bc.turnNumber < 3)
             conditionCheck = true;
 
-        Debug.Log("Finished to evaluate condition");
+        Jrpg.Log("Finished to evaluate condition Test");
     }
 }
