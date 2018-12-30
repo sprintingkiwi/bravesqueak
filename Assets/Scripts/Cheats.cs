@@ -75,33 +75,57 @@ public class Cheats : MonoBehaviour
         // Save & load
         if (Input.GetKeyDown(KeyCode.F5))
         {
-            StartCoroutine(gc.Save(gc.actualSlot));
+            StartCoroutine(gc.Save(0));
+        }
+        else if(Input.GetKeyDown(KeyCode.F6))
+        {
+            StartCoroutine(gc.Save(1));
+        }
+        else if(Input.GetKeyDown(KeyCode.F7))
+        {
+            StartCoroutine(gc.Save(2));
+        }
+        else if(Input.GetKeyDown(KeyCode.F8))
+        {
+            StartCoroutine(gc.Save(3));
         }
         else if (Input.GetKeyDown(KeyCode.F9))
         {
-            StartCoroutine(gc.Load(gc.actualSlot));
+            StartCoroutine(gc.Load(0));
+        }
+        else if (Input.GetKeyDown(KeyCode.F10))
+        {
+            StartCoroutine(gc.Load(1));
+        }
+        else if (Input.GetKeyDown(KeyCode.F11))
+        {
+            StartCoroutine(gc.Load(2));
+        }
+        else if (Input.GetKeyDown(KeyCode.F12))
+        {
+            StartCoroutine(gc.Load(3));
         }
 
-        if (Jrpg.CheckPlatform() == "Mobile")
-            ShakeOnMobile();
+        //if (Jrpg.CheckPlatform() == "Mobile")
+            //ShakeOnMobile();
     }
 
-    void ShakeOnMobile()
-    {
-        if (Jrpg.CheckPlatform() == "Mobile")
-        {
-            Vector3 acceleration = Input.acceleration;
-            lowPassValue = Vector3.Lerp(lowPassValue, acceleration, lowPassFilterFactor);
-            Vector3 deltaAcceleration = acceleration - lowPassValue;
-            if (deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold || Input.GetKeyDown(KeyCode.E))
-            {
-                // Perform your "shaking actions" here. If necessary, add suitable
-                // guards in the if check above to avoid redundant handling during
-                // the same shake (e.g. a minimum refractory period).
-                gc.Load(gc.actualSlot);
-            }
-        }        
-    }
+    //void ShakeOnMobile()
+    //{
+    //    if (Jrpg.CheckPlatform() == "Mobile")
+    //    {
+    //        Vector3 acceleration = Input.acceleration;
+    //        lowPassValue = Vector3.Lerp(lowPassValue, acceleration, lowPassFilterFactor);
+    //        Vector3 deltaAcceleration = acceleration - lowPassValue;
+    //        if (deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold || Input.GetKeyDown(KeyCode.E))
+    //        {
+    //            // Perform your "shaking actions" here. If necessary, add suitable
+    //            // guards in the if check above to avoid redundant handling during
+    //            // the same shake (e.g. a minimum refractory period).
+    //            StartCoroutine(gc.Load(0));
+    //        }
+    //    }        
+    //}
 
     void ChangeTeam()
     {

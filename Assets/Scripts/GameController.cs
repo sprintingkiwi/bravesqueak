@@ -15,13 +15,13 @@ public class GameController : MonoBehaviour
     public Platform simulatedPlatform;    
 
     [Header("Saves")]
-    public SaveSlot[] gameSlots;
-    public Jrpg.SaveData saveData;
+    //public SaveSlot[] gameSlots;
+    public Jrpg.SaveData[] saveData = new Jrpg.SaveData[4];
     public bool isSaving;
     public bool isLoading;
     public bool justLoadedGameSlot;
     public bool canSaveLoad;
-    public int actualSlot;
+    //public int actualSlot = 0;
     public Dictionary<string, int> experience = new Dictionary<string, int>();
     public int partyLevel;
     //Inventory
@@ -289,59 +289,59 @@ public class GameController : MonoBehaviour
 
         isSaving = true;
         player.canMove = false;
-        Jrpg.Log("SAVING IN SLOT " + actualSlot.ToString() + "...");
+        Jrpg.Log("SAVING IN SLOT " + slot.ToString() + "...");
         Jrpg.Log("SAVING...", "Build", 2f);
 
         //saveData = new Jrpg.SaveData();
-        saveData.savedCurrentMapName = currentMap.name;
+        saveData[slot].savedCurrentMapName = currentMap.name;
         //saveData.lastScene = SceneManager.GetActiveScene().name;
         Vector3 playerPos = player.transform.position;
-        saveData.playerPosition = new float[] { playerPos.x, playerPos.y, playerPos.z };
+        saveData[slot].playerPosition = new float[] { playerPos.x, playerPos.y, playerPos.z };
 
         // Save unlocked perks
-        saveData.unlockedPerks.Clear();
+        saveData[slot].unlockedPerks.Clear();
         for (int s = 0; s < unlockedPerks.Count; s++)
         {
             if (unlockedPerks[s] != null)
-                saveData.unlockedPerks.Add(unlockedPerks[s].name);
+                saveData[slot].unlockedPerks.Add(unlockedPerks[s].name);
         }
 
         // Save heroes data in an array
-        for (int i = 0; i < saveData.heroesData.Length; i++)
+        for (int i = 0; i < saveData[slot].heroesData.Length; i++)
         {
             Jrpg.Log("Saving data for hero " + heroes[i].name);
-            saveData.heroesData[i].name = heroes[i].name;
-            saveData.heroesData[i].unlockedSkills.Clear();
+            saveData[slot].heroesData[i].name = heroes[i].name;
+            saveData[slot].heroesData[i].unlockedSkills.Clear();
             // Save each hero's unlocked skills
             for (int s = 0; s < heroes[i].unlockedSkills.Count; s++)
             {
                 if (heroes[i].unlockedSkills[s] != null)
-                    saveData.heroesData[i].unlockedSkills.Add(heroes[i].unlockedSkills[s].name);
+                    saveData[slot].heroesData[i].unlockedSkills.Add(heroes[i].unlockedSkills[s].name);
             }
 
             // Save each hero's equipped skills
             for (int s = 0; s < heroes[i].skills.Length; s++)
             {
                 if (heroes[i].skills[s] != null)
-                    saveData.heroesData[i].equippedSkills[s] = heroes[i].skills[s].name;
+                    saveData[slot].heroesData[i].equippedSkills[s] = heroes[i].skills[s].name;
                 else
-                    saveData.heroesData[i].equippedSkills[s] = "Empty";
+                    saveData[slot].heroesData[i].equippedSkills[s] = "Empty";
             }
 
             // Save each hero's equipped perks
             for (int s = 0; s < heroes[i].perksPrefabs.Length; s++)
             {
                 if (heroes[i].perksPrefabs[s] != null)
-                    saveData.heroesData[i].equippedPerks[s] = heroes[i].perksPrefabs[s].name;
+                    saveData[slot].heroesData[i].equippedPerks[s] = heroes[i].perksPrefabs[s].name;
                 else
-                    saveData.heroesData[i].equippedPerks[s] = "Empty";
+                    saveData[slot].heroesData[i].equippedPerks[s] = "Empty";
             }
         }
 
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream saveFile = File.Open(Application.persistentDataPath + "/SaveData_SLOT_" + actualSlot.ToString() + ".dat", FileMode.OpenOrCreate);
+        FileStream saveFile = File.Open(Application.persistentDataPath + "/SaveData_SLOT_" + slot.ToString() + ".dat", FileMode.OpenOrCreate);
 
-        bf.Serialize(saveFile, saveData);
+        bf.Serialize(saveFile, saveData[slot]);
         saveFile.Close();
 
         player.canMove = true;
@@ -358,7 +358,7 @@ public class GameController : MonoBehaviour
             yield break;
         }
 
-        if (!File.Exists(Application.persistentDataPath + "/SaveData_SLOT_" + actualSlot.ToString() + ".dat"))
+        if (!File.Exists(Application.persistentDataPath + "/SaveData_SLOT_" + slot.ToString() + ".dat"))
         {
             Jrpg.Log("Missing save file", "Build");
             Jrpg.Log("Missing save file", "Warning");
@@ -370,10 +370,10 @@ public class GameController : MonoBehaviour
         isLoading = true;
         player.canMove = false;
 
-        Jrpg.Log("LOADING SLOT " + actualSlot.ToString() + "...");
+        Jrpg.Log("LOADING SLOT " + slot.ToString() + "...");
         
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream saveFile = File.Open(Application.persistentDataPath + "/SaveData_SLOT_" + actualSlot.ToString() + ".dat", FileMode.Open);
+        FileStream saveFile = File.Open(Application.persistentDataPath + "/SaveData_SLOT_" + slot.ToString() + ".dat", FileMode.Open);
         Jrpg.SaveData saveData = (Jrpg.SaveData)bf.Deserialize(saveFile);
         saveFile.Close();
 

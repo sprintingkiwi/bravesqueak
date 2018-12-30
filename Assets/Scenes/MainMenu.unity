@@ -1879,118 +1879,159 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simulatedPlatform: 1
-  gameSlots:
-  - name: SLOT1
-    gameTime: 0
-    defeatedBosses: []
-  - name: SLOT2
-    gameTime: 0
-    defeatedBosses: []
-  - name: SLOT3
-    gameTime: 0
-    defeatedBosses: []
   saveData:
-    defeatedBosses: []
+  - defeatedBosses: []
     savedCurrentMapName: 
-    playerPosition:
-    - 0
-    - 0
-    - 0
+    playerPosition: []
     unlockedPerks: []
     heroesData:
     - name: 
       unlockedSkills: []
-      equippedSkills:
-      - 
-      - 
-      - 
-      - 
-      - 
-      equippedPerks:
-      - 
-      - 
+      equippedSkills: []
+      equippedPerks: []
     - name: 
       unlockedSkills: []
-      equippedSkills:
-      - 
-      - 
-      - 
-      - 
-      - 
-      equippedPerks:
-      - 
-      - 
+      equippedSkills: []
+      equippedPerks: []
     - name: 
       unlockedSkills: []
-      equippedSkills:
-      - 
-      - 
-      - 
-      - 
-      - 
-      equippedPerks:
-      - 
-      - 
+      equippedSkills: []
+      equippedPerks: []
     - name: 
       unlockedSkills: []
-      equippedSkills:
-      - 
-      - 
-      - 
-      - 
-      - 
-      equippedPerks:
-      - 
-      - 
+      equippedSkills: []
+      equippedPerks: []
     - name: 
       unlockedSkills: []
-      equippedSkills:
-      - 
-      - 
-      - 
-      - 
-      - 
-      equippedPerks:
-      - 
-      - 
+      equippedSkills: []
+      equippedPerks: []
     - name: 
       unlockedSkills: []
-      equippedSkills:
-      - 
-      - 
-      - 
-      - 
-      - 
-      equippedPerks:
-      - 
-      - 
+      equippedSkills: []
+      equippedPerks: []
     - name: 
       unlockedSkills: []
-      equippedSkills:
-      - 
-      - 
-      - 
-      - 
-      - 
-      equippedPerks:
-      - 
-      - 
+      equippedSkills: []
+      equippedPerks: []
     - name: 
       unlockedSkills: []
-      equippedSkills:
-      - 
-      - 
-      - 
-      - 
-      - 
-      equippedPerks:
-      - 
-      - 
+      equippedSkills: []
+      equippedPerks: []
+  - defeatedBosses: []
+    savedCurrentMapName: 
+    playerPosition: []
+    unlockedPerks: []
+    heroesData:
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+  - defeatedBosses: []
+    savedCurrentMapName: 
+    playerPosition: []
+    unlockedPerks: []
+    heroesData:
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+  - defeatedBosses: []
+    savedCurrentMapName: 
+    playerPosition: []
+    unlockedPerks: []
+    heroesData:
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
+    - name: 
+      unlockedSkills: []
+      equippedSkills: []
+      equippedPerks: []
   isSaving: 0
   isLoading: 0
   justLoadedGameSlot: 1
   canSaveLoad: 0
-  actualSlot: 0
   partyLevel: 0
   unlockedPerks:
   - {fileID: 114346464545605932, guid: 8b2585ca28297b64ba9e359f909636ad, type: 2}
