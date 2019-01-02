@@ -50,8 +50,10 @@ public class BattleController : MonoBehaviour
     
     [System.Serializable]
     public class Customizer
-    {
+    {        
         public enum When { BattleBegin, TurnStart, ActionStart, TurnEnd }
+        // NB: Battle begin is for editor purposes only;
+        // NB: Action Start is called by the skill execute coroutine when it starts;
         public When when;
         public Func<BattleController, IEnumerator> function;
         public MonoBehaviour source;
@@ -109,6 +111,8 @@ public class BattleController : MonoBehaviour
         // Populate turns
         turnNumber = 0;
         StartCoroutine(mainCamera.Move(encounter.cameraAdjust.delta, encounter.cameraAdjust.speed, setAsOriginalPosition: true));
+        
+        // Start battle turns
         StartCoroutine(ManageTurns());
         Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
     }

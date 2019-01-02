@@ -9,8 +9,9 @@ public class Status : MonoBehaviour
 	// Use this for initialization
 	public void Setup ()
     {
-        holder = transform.parent.parent.GetComponent<Battler>();
-        Debug.Log(holder.name + " is " + name);
+        //holder = transform.parent.parent.gameObject.GetComponent<Battler>();
+        holder = gameObject.GetComponentInParent<Battler>();
+        Jrpg.Log(holder.name + " is " + name, "Visible");
     }
 
     // Update is called once per frame

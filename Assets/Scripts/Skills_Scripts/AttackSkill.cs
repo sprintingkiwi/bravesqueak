@@ -105,22 +105,22 @@ public class AttackSkill : Skill
         if (fightOutcomes[target] == "Success")
         {
             // Calculate skill damage with multiplier
-            Debug.Log("calculating " + gameObject.name + " damage");
+            Debug.Log("Calculating " + gameObject.name + " damage");
             float dmg = Damage(target);
             float dmgMod = (int)GetMod("DMG");
             if (dmgMod != 0)
             {
+                Jrpg.Log("Damage multiplied by " + dmgMod.ToString());
                 dmg *= dmgMod;
                 cameraShake = true;
             }
-                Jrpg.Log("Damage multiplied by " + dmgMod.ToString());
             damageOutcomes[target] = (int)dmg;
 
             // Status chance
             foreach (StatusChance sc in statusChances)
             {
                 int chance = UnityEngine.Random.Range(1, 100);
-                if (chance > sc.chance)
+                if (chance <= sc.chance)
                     target.AddStatus(sc.status);
             }
         }

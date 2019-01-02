@@ -107,7 +107,7 @@ MonoBehaviour:
     value: 30
   specialAttack:
     ID: SAT
-    value: 10
+    value: 50
   specialDefense:
     ID: SDF
     value: 15
@@ -119,19 +119,18 @@ MonoBehaviour:
     value: 20
   maxHP:
     ID: maxHP
-    value: 60
+    value: 200
   hitPoints: 0
   skillPoints: 0
-  parryType: 0
-  level: 2
   characterName: Crab
   size: 4
-  sizeModifier: 0
   elementAffinity: 2
   species: 2
   perksPrefabs:
   - {fileID: 0}
   - {fileID: 0}
+  movable: 1
+  evolution: {fileID: 0}
   effectsDelay:
   - animation: attack
     lenghtPercentage: 0.9
@@ -139,11 +138,11 @@ MonoBehaviour:
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
+  sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 17.5, y: -10, z: 0}
   anim: {fileID: 0}
   spr: {fileID: 0}
-  col: {fileID: 0}
   targets: []
   currentlyActiveSkills: []
   currentSkill: {fileID: 0}
@@ -156,7 +155,7 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: 314b1e159fcbaf648828dbc39bb8fbd7, type: 2}
+  strategy: {fileID: 114109042552807282, guid: 5d7e651ca91eaa540b141e02fb6f80e0, type: 2}
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1

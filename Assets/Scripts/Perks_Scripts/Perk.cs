@@ -7,13 +7,13 @@ using UnityEngine;
 public class Perk : Item
 {
     [Header("Perk")]
-    public BattleController.Customizer.When activationPhase;
+    public BattleController.Customizer.When activationPhase; // The When parameter specifies when the Perk effect takes place.
 
     [Header("System")]
     public BattleController bc;
     public Battler holder;
 
-    // Use this for initialization
+    // Call this for initialization
     public virtual void Setup (Battler holder)
     {
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
@@ -21,7 +21,7 @@ public class Perk : Item
 
         Debug.Log(name + " perk activated for " + holder.name);
 
-        // Subscribe Bane Effect to the customizers list in the Battle Controller
+        // Subscribe Perk Effect to the customizers list in the Battle Controller
         bc.customizers.Add(new BattleController.Customizer()
         {
             when = activationPhase,

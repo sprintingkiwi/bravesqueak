@@ -357,4 +357,19 @@ public class Jrpg : MonoBehaviour
         }
     }
 
+    //public static Battler FindParentBattler(Transform myTransform)
+    //{
+    //    if (myTransform.parent == null)
+    //        return null;
+
+    //    if (myTransform.parent.gameObject.GetComponent<Battler>() != null)
+    //    {
+    //        return myTransform.parent.gameObject.GetComponent<Battler>();
+    //    }
+    //    else
+    //    {
+    //        return FindParentBattler(myTransform.parent);
+    //    }
+    //}
+
 }

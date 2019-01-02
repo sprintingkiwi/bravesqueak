@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: The Character recovers 20% of Hit Points every 2 turns.
-  activationPhase: 3
+  activationPhase: 1
   bc: {fileID: 0}
   holder: {fileID: 0}
   nextRecoveryTurn: 0

@@ -23,9 +23,7 @@ public class Battler : MonoBehaviour
     public Dictionary<string, int> deltaStats = new Dictionary<string, int>();
     // Original values for stats
     public Dictionary<string, int> originalStats = new Dictionary<string, int>();
-    // Reverse for attack calculations
-    //public Dictionary<string, Stat> reverseStats = new Dictionary<string, Stat>();
-
+    
 
     // Other stats
     [Header("Other parameters")]
@@ -229,28 +227,29 @@ public class Battler : MonoBehaviour
         }
     }
 
+    // Called by the battle controller while executing actions during the turn battle
     public virtual Coroutine UseSkill(Skill skill, List<Battler> targets)
     {
         bc.actualSkill = Instantiate(skill, gc.battleStuff.transform) as Skill;
         return bc.actualSkill.Execute(this, targets);
     }
 
-    public virtual void LevelUp()
-    {
-        Debug.Log(gameObject.name + " is leveling up");
-    }
+    //public virtual void LevelUp()
+    //{
+    //    Debug.Log(gameObject.name + " is leveling up");
+    //}
 
     //public virtual void MoveToTarget(Battler target)
     //{
     //    Debug.Log(gameObject.name + " is moving toward target " + target.name);
     //    targetPos = target.transform.position;
-    //}
-    
+    //}    
 
     public virtual void AddStatus(Status status)
     {
-        Instantiate(status, transform.Find("STATUS"));
-        status.Setup();
+        Jrpg.Log("Adding status " + status.name + " to " + name);
+        Status instStatus = Instantiate(status, transform.Find("STATUS"));
+        instStatus.Setup();
     }
 
     public virtual void ProcessStatusEffects()
