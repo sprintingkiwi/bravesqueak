@@ -110,20 +110,20 @@ public class Strategy : MonoBehaviour
                 Jrpg.Log("Adding unconditioned action " + act.skill.name + " to legal actions");
                 legalActions.Add(act);
             }
-        }        
+        }
+
+        // Filter legal actions for their requirements
+        Jrpg.Log("Legal actions for " + user.name + " :");
+        foreach (AIAction la in legalActions.ToArray())
+        {
+            Jrpg.Log(la.skill.name);
+            if (!la.skill.ProcessRequirements(user))
+                legalActions.Remove(la);
+        }
 
         // Selection of a legal action
         if (legalActions.Count > 0)
-        {
-            // Filter legal actions for their requirements
-            Jrpg.Log("Legal actions for " + user.name + " :");
-            foreach (AIAction la in legalActions.ToArray())
-            {
-                Jrpg.Log(la.skill.name);
-                if (!la.skill.ProcessRequirements(user))
-                    legalActions.Remove(la);
-            }
-
+        {           
             // Weighted random selection
             selectedAction = WeightedRandom(legalActions);
             Jrpg.Log(user.name + " selected action " + selectedAction.skill.name);
