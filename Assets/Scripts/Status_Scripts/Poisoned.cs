@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Poisoned : Status
 {
-    public override void Effect()
+    public override IEnumerator Effect()
     {
-        base.Effect();
+        yield return StartCoroutine(base.Effect());
 
         Jrpg.Damage(holder, Mathf.RoundToInt(holder.maxHP.value * 0.2f), Skill.Element.Earth);
+        yield return null;
     }
 
     public override void SaveRoll()

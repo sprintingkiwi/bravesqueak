@@ -245,18 +245,19 @@ public class Battler : MonoBehaviour
     //    targetPos = target.transform.position;
     //}    
 
-    public virtual void AddStatus(Status status)
+    public virtual IEnumerator AddStatus(Status status)
     {
         Jrpg.Log("Adding status " + status.name + " to " + name);
         Status instStatus = Instantiate(status, transform.Find("STATUS"));
-        instStatus.Setup();
+        instStatus.name = status.name;
+        yield return StartCoroutine(instStatus.Setup());
     }
 
-    public virtual void ProcessStatusEffects()
+    public virtual IEnumerator ProcessStatusEffects()
     {
         foreach (Transform s in transform.Find("STATUS"))
         {
-            s.GetComponent<Status>().Effect();
+            yield return StartCoroutine(s.GetComponent<Status>().Effect());
         }
     }
 

@@ -269,10 +269,13 @@ public class BattleController : MonoBehaviour
             yield return RunCustomizers(Customizer.When.TurnStart);
 
             // Apply status effects
+            List<Coroutine> statusCoroutines = new List<Coroutine>();
             for (int i = 0; i < actionsQueue.Count; i++)
-            {                
-                actionsQueue[i].user.ProcessStatusEffects();
+            {
+                statusCoroutines.Add(StartCoroutine(actionsQueue[i].user.ProcessStatusEffects()));
             }
+            foreach (Coroutine statusCoroutine in statusCoroutines)
+                yield return statusCoroutine;
 
             // Process ongoing skills
             Debug.Log("Processing ongoing skills effects");

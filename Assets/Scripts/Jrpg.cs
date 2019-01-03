@@ -296,10 +296,10 @@ public class Jrpg : MonoBehaviour
         yield return null;
     }
 
-    public static void PlayEffect(Battler actor, Effect effect)
+    public static IEnumerator PlayEffect(Battler actor, Effect effect, bool wait=false)
     {
         if (actor == null)
-            return;
+            yield break;
 
         // Instantiate effect. Effect GameObject pos is added to target pos in order to manage effect offset.
         Effect e;
@@ -308,9 +308,16 @@ public class Jrpg : MonoBehaviour
             e = Instantiate(effect, (actor.transform.position + (effect.transform.position * -(float)actor.faction)), Quaternion.identity);
             if (actor.faction == Battler.Faction.Heroes)
                 e.GetComponent<SpriteRenderer>().flipX = true;
+
+            // Wait for the effect to end
+            if (wait)
+                while (e != null)
+                    yield return null;
         }
         else
             Debug.LogWarning("Effect not assigned!");
+
+        yield return null;
     }
     public static void PlayEffect(Vector3 position, Effect effect, Battler.Faction targetFaction)
     {

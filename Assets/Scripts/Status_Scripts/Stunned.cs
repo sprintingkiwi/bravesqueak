@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Stunned : Status
 {
-    public override void Effect()
+    public override IEnumerator Effect()
     {
-        base.Effect();
+        yield return StartCoroutine(base.Effect());
 
         holder.canAct = false;
+        yield return null;
     }
 
     public override void SaveRoll()

@@ -310,7 +310,7 @@ public class Skill : Item
             Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), areaEffect, targets[0].faction);
         }
         else
-            Jrpg.PlayEffect(targets[0], targetEffect);
+            yield return StartCoroutine(Jrpg.PlayEffect(targets[0], targetEffect));
 
         // Process first execution effect
         yield return StartCoroutine(ProcessEffects(Effect));
@@ -359,8 +359,7 @@ public class Skill : Item
 
     public virtual IEnumerator Effect(Battler target)
     {
-        if (Debug.isDebugBuild)
-            Debug.Log("Processing " + gameObject.name + " skill effect");
+        Jrpg.Log("Processing " + gameObject.name + " skill effect");
 
         if (buffs.Length > 0)
             Buff(target);

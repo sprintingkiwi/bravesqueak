@@ -79,23 +79,23 @@ public class AttackSkill : Skill
 
     public override IEnumerator Effect(Battler target)
     {
-        base.Effect(target);
+        yield return StartCoroutine(base.Effect(target));
 
-        DefaultAttack(target);
+        yield return StartCoroutine(DefaultAttack(target));
 
         yield return null;
     }
 
     public override IEnumerator OngoingEffect(Battler target)
     {
-        base.OngoingEffect(target);
+        yield return StartCoroutine(base.OngoingEffect(target));
 
-        DefaultAttack(target);
+        yield return StartCoroutine(DefaultAttack(target));
 
         yield return null;
     }    
 
-    public virtual void DefaultAttack(Battler target)
+    public virtual IEnumerator DefaultAttack(Battler target)
     {
         if (scope == Scope.Area)
             fightOutcomes[target] = "Success";
@@ -114,16 +114,10 @@ public class AttackSkill : Skill
                 dmg *= dmgMod;
                 cameraShake = true;
             }
-            damageOutcomes[target] = (int)dmg;
-
-            // Status chance
-            foreach (StatusChance sc in statusChances)
-            {
-                int chance = UnityEngine.Random.Range(1, 100);
-                if (chance <= sc.chance)
-                    target.AddStatus(sc.status);
-            }
+            damageOutcomes[target] = (int)dmg;            
         }
+
+        yield return null;
     }
 
     // should be modified to use dodge OR parry
@@ -233,10 +227,10 @@ public class AttackSkill : Skill
                 if (targetEffect.projectile)
                 {
                     Debug.Log("Playing " + name + " after effect");
-                    Jrpg.PlayEffect(target, targetEffect.AfterEffect);
+                    yield return StartCoroutine(Jrpg.PlayEffect(target, targetEffect.AfterEffect));
                 }
                 else
-                    Jrpg.PlayEffect(target, targetEffect);
+                    yield return StartCoroutine(Jrpg.PlayEffect(target, targetEffect));
 
                 // Waiting a little
                 yield return new WaitForSeconds(0.1f);
@@ -249,12 +243,24 @@ public class AttackSkill : Skill
 
                 // Modify target hit points
                 Jrpg.Damage(target, damageOutcomes[target], element);
+
+                // Status chance
+                foreach (StatusChance sc in statusChances)
+                {
+                    if (target.transform.Find("STATUS").Find(sc.status.name) != null)
+                        continue;
+
+                    int chance = UnityEngine.Random.Range(1, 100);
+                    if (chance <= sc.chance)
+                        yield return StartCoroutine(target.AddStatus(sc.status));
+                }
+
                 break;
 
             case "Parry":
                 // Parry target effect and animation
                 yield return StartCoroutine(Jrpg.PlayAnimation(target, "parry", false));
-                Jrpg.PlayEffect(target, target.parryEffect);
+                yield return StartCoroutine(Jrpg.PlayEffect(target, target.parryEffect));
 
                 // Modify target hit points
                 //if (!target.perfectParry)
