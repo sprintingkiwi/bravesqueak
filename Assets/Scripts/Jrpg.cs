@@ -305,7 +305,7 @@ public class Jrpg : MonoBehaviour
         Effect e;
         if (effect != null)
         {
-            e = Instantiate(effect, (actor.transform.position + (effect.transform.position * -(float)actor.faction)), Quaternion.identity);
+            e = Instantiate(effect, (actor.transform.position + (effect.transform.position * -(float)actor.faction)), Quaternion.identity, actor.transform);
             if (actor.faction == Battler.Faction.Heroes)
                 e.GetComponent<SpriteRenderer>().flipX = true;
 

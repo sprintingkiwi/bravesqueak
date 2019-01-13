@@ -215,12 +215,13 @@ public class BattleController : MonoBehaviour
 
         Jrpg.Log("Dropping item: " + selectedItem.name);
 
-        // Instantiating food object and adding a battler component
+        // Instantiating drop object and adding a battler component
         Vector3 dropPos = new Vector3(5, 0, 2);
         if (encounter.partyPosAdjust != null)
             dropPos += encounter.partyPosAdjust.position;
         droppedItem = Instantiate(selectedItem, dropPos, Quaternion.identity, gc.battleStuff.transform);
         Battler itemBattler = (droppedItem.gameObject.AddComponent<Battler>());
+        droppedItem.gameObject.AddComponent<Drop>();
         itemBattler.faction = Battler.Faction.Enemies;
         itemBattler.maxHP.value = 1;
         itemBattler.Setup();

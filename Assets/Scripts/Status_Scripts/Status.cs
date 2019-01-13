@@ -29,13 +29,14 @@ public class Status : MonoBehaviour
     {
         // Status entry effects here
         yield return StartCoroutine(Jrpg.PlayAnimation(holder, "hit", true));
-        yield return StartCoroutine(Jrpg.PlayEffect(holder, statusEffect, true));
+        StartCoroutine(Jrpg.PlayEffect(holder, statusEffect, true));
     }
 
     public virtual IEnumerator Effect()
     {
         Debug.Log("Processing " + gameObject.name + " effect on " + holder.name);
-        yield return StartCoroutine(Feedback());
+        //yield return StartCoroutine(Feedback());
+        yield return null;
     }
 
     public virtual void SaveRoll()
