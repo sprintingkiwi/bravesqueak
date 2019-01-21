@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeroMenu : Menu
 {
-    int index;
+    public int heroIndex;
 
 	// Use this for initialization
 	public override void Setup()
@@ -20,19 +20,19 @@ public class HeroMenu : Menu
 
         if (inputManager.RightArrowDown())
         {
-            if (index < gc.partyPrefabs.Count - 1)
+            if (heroIndex < gc.unlockedHeroes.Length - 1)
             {
                 Jrpg.Log("Incrementing active hero index");
-                index += 1;
+                heroIndex += 1;
                 LoadHeroStuff();
             }
         }
         if (inputManager.LeftArrowDown())
         {
-            if (index > 0)
+            if (heroIndex > 0)
             {
                 Jrpg.Log("Decrementing active hero index");
-                index -= 1;
+                heroIndex -= 1;
                 LoadHeroStuff();
             }
         }
@@ -41,23 +41,23 @@ public class HeroMenu : Menu
     public void LoadHeroStuff()
     {
         // Assign Active Hero sprite
-        transform.Find("Active Hero").GetComponent<SpriteRenderer>().sprite = gc.partyPrefabs[index].GetComponent<SpriteRenderer>().sprite;
+        transform.Find("Active Hero").GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[heroIndex].GetComponent<SpriteRenderer>().sprite;
 
         // Assign equipped items sprites
         foreach (Transform skillItem in transform.Find("Skills"))
         {
-            if (gc.partyPrefabs[index].skills[skillItem.GetSiblingIndex()] != null)
+            if (gc.unlockedHeroes[heroIndex].skills[skillItem.GetSiblingIndex()] != null)
             {
                 Jrpg.Log("Assigning sprite to skill " + skillItem.name);
-                skillItem.GetComponent<SpriteRenderer>().sprite = gc.partyPrefabs[index].skills[skillItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
+                skillItem.GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[heroIndex].skills[skillItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
             }            
         }
         foreach (Transform perkItem in transform.Find("Perks"))
         {
-            if (gc.partyPrefabs[index].perksPrefabs[perkItem.GetSiblingIndex()] != null)
+            if (gc.unlockedHeroes[heroIndex].perksPrefabs[perkItem.GetSiblingIndex()] != null)
             {
                 Jrpg.Log("Assigning sprite to perk " + perkItem.name);
-                perkItem.GetComponent<SpriteRenderer>().sprite = gc.partyPrefabs[index].perksPrefabs[perkItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
+                perkItem.GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[heroIndex].perksPrefabs[perkItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
             }            
         }
     }
@@ -71,7 +71,7 @@ public class HeroMenu : Menu
         gc.itemSelectionMenu = Instantiate(Resources.Load("Menu/ItemSelectionMenu") as GameObject, gc.mapCamera.transform).GetComponent<ItemSelectionMenu>();
         gc.itemSelectionMenu.father = this;
         subMenus.Add(gc.itemSelectionMenu);
-        gc.itemSelectionMenu.SetupSelection(gc.partyPrefabs[index], selector.transform.GetSiblingIndex() + 1, pool);
+        gc.itemSelectionMenu.SetupSelection(gc.unlockedHeroes[heroIndex], selector.transform.GetSiblingIndex() + 1, pool);
         gameObject.SetActive(false);
     }
 }

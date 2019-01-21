@@ -19,14 +19,16 @@ public class PartyMenu : Menu {
             heroesImages[i] = transform.Find("HEROES").GetChild(i);
             heroesImages[i].GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[i].GetComponent<SpriteRenderer>().sprite;
             heroesImages[i].GetComponent<Animator>().runtimeAnimatorController = gc.unlockedHeroes[i].GetComponent<Animator>().runtimeAnimatorController;
+            heroesImages[i].GetComponent<PartyHero>().heroIndex = i;
         }
     }
 
-    public void CreateHeroMenu()
+    public void CreateHeroMenu(int index)
     {
         gc.heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, gc.mapCamera.transform).GetComponent<HeroMenu>();
         gc.heroMenu.father = this;
         subMenus.Add(gc.heroMenu);
+        gc.heroMenu.heroIndex = index;
         gc.heroMenu.Setup();
         gameObject.SetActive(false);
     }

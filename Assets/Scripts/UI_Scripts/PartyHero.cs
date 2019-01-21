@@ -6,6 +6,7 @@ public class PartyHero : MonoBehaviour {
 
     PartyMenu partyMenu;
     HeroMenu heroMenu;
+    public int heroIndex;
 
     void Start()
     {
@@ -19,6 +20,6 @@ public class PartyHero : MonoBehaviour {
 
     void OnMouseDown()
     {
-        partyMenu.CreateHeroMenu();
+        partyMenu.CreateHeroMenu(heroIndex);
     }
 }
