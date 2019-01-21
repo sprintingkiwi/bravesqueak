@@ -28,16 +28,18 @@ public class Skill : Item
     public enum Element { None, Earth, Water, Wind, Fire, Lightning, Ice, Light, Darkness}
     public Element element;
     public int requiredSP;
+    public bool baseSkill;
+    public HeroBattler epicSkillOf;
     
-    [System.Serializable]
-    public class ShopRequirement
-    {
-        public HeroBattler.Job job;
-        public int exp;        
-    }    
-    [Header("Skill Store")]
-    public ShopRequirement shopRequirement;
-    public int coins;
+    //[System.Serializable]
+    //public class ShopRequirement
+    //{
+    //    public HeroBattler.Job job;
+    //    public int exp;        
+    //}    
+    //[Header("Skill Store")]
+    //public ShopRequirement shopRequirement;
+    //public int coins;
 
     // Elements multipliers dictionary  
     public static Dictionary<Element, Dictionary<Element, float>> elementsMultipliers = new Dictionary<Element, Dictionary<Element, float>>()
@@ -48,7 +50,7 @@ public class Skill : Item
         {Element.Earth, new Dictionary<Element, float>() {{ Element.Fire, 2f },{ Element.Lightning, 0.25f } }},
 
     };
-    public Sprite storeNameImg;
+    //public Sprite storeNameImg;
 
     // Animations sequence
     [Header("Animations sequence")]

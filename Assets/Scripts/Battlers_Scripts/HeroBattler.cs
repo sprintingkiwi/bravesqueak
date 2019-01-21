@@ -10,7 +10,6 @@ public class HeroBattler : Battler
     [Header("Hero battler specific")]
     public Job job;
     // public Job[] availableJobs;
-    public List<Skill> unlockedSkills = new List<Skill>();
     public Skill[] skills = new Skill[5];    
 
     // Use this for initialization

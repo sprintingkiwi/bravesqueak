@@ -59,7 +59,7 @@ MonoBehaviour:
     dices: []
   buffs: []
   statusChances: []
-  scope: 4
+  scope: 3
   targetsNumber: 1
   duration: 3
   active: 1
@@ -67,11 +67,8 @@ MonoBehaviour:
   inField: 0
   element: 0
   requiredSP: -1
-  shopRequirement:
-    job: 4
-    exp: 10
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 1
+  epicSkillOf: {fileID: 0}
   userAnimation: special
   alternativeUserAnims: []
   targetAnimation: 

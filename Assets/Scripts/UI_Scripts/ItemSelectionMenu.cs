@@ -24,7 +24,7 @@ public class ItemSelectionMenu : Menu
 
                 // Creating a list of available skills
                 Jrpg.Log("Available Skills: ");
-                foreach (Skill s in hero.unlockedSkills)
+                foreach (Skill s in gc.unlockedSkills)
                     if (!hero.skills.Contains(s) && s != null)
                     {
                         Jrpg.Log(s.name);

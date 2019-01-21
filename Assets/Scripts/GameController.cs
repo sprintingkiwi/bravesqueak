@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     public Dictionary<string, int> experience = new Dictionary<string, int>();
     public int partyLevel;
     //Inventory
+    public List<Skill> unlockedSkills = new List<Skill>();
     public List<Perk> unlockedPerks = new List<Perk>();
     public List<Food> foods = new List<Food>();
 
@@ -298,6 +299,14 @@ public class GameController : MonoBehaviour
         Vector3 playerPos = player.transform.position;
         saveData[slot].playerPosition = new float[] { playerPos.x, playerPos.y, playerPos.z };
 
+        // Save unlocked skills
+        saveData[slot].unlockedSkills.Clear();
+        for (int s = 0; s < unlockedSkills.Count; s++)
+        {
+            if (unlockedSkills[s] != null)
+                saveData[slot].unlockedSkills.Add(unlockedSkills[s].name);
+        }
+
         // Save unlocked perks
         saveData[slot].unlockedPerks.Clear();
         for (int s = 0; s < unlockedPerks.Count; s++)
@@ -311,13 +320,6 @@ public class GameController : MonoBehaviour
         {
             Jrpg.Log("Saving data for hero " + heroes[i].name);
             saveData[slot].heroesData[i].name = heroes[i].name;
-            saveData[slot].heroesData[i].unlockedSkills.Clear();
-            // Save each hero's unlocked skills
-            for (int s = 0; s < heroes[i].unlockedSkills.Count; s++)
-            {
-                if (heroes[i].unlockedSkills[s] != null)
-                    saveData[slot].heroesData[i].unlockedSkills.Add(heroes[i].unlockedSkills[s].name);
-            }
 
             // Save each hero's equipped skills
             for (int s = 0; s < heroes[i].skills.Length; s++)
@@ -377,6 +379,13 @@ public class GameController : MonoBehaviour
         Jrpg.SaveData saveData = (Jrpg.SaveData)bf.Deserialize(saveFile);
         saveFile.Close();
 
+        // Restore unlocked Skills
+        unlockedSkills.Clear();
+        for (int p = 0; p < saveData.unlockedSkills.Count; p++)
+        {
+            unlockedSkills.Add(Resources.Load("Skills/" + saveData.unlockedSkills[p], typeof(Skill)) as Skill);
+        }
+
         // Restore unlocked Perks
         unlockedPerks.Clear();
         for (int p = 0; p < saveData.unlockedPerks.Count; p++)
@@ -388,13 +397,6 @@ public class GameController : MonoBehaviour
         Debug.Log("Restoring heroes skills");
         for (int i = 0; i < heroes.Count(); i++)
         {
-            // Restore unlocked Skills
-            heroes[i].unlockedSkills.Clear();
-            for (int s = 0; s < saveData.heroesData[i].unlockedSkills.Count; s++)
-            {
-                heroes[i].unlockedSkills.Add(Resources.Load("Skills/" + saveData.heroesData[i].unlockedSkills[s], typeof(Skill)) as Skill);
-            }
-
             // Restore equipped Skills
             for (int s = 0; s < saveData.heroesData[i].equippedSkills.Length; s++)
             {
