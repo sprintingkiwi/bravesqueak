@@ -60,7 +60,7 @@ public class PlayerController : Character
         }
 
         // Hero Menu
-        if (Input.GetButton("Submit"))
+        if (Input.GetButtonDown("ButtonB"))
         {
             if (gc.partyMenu != null || gc.situation != "Map")
                 return;

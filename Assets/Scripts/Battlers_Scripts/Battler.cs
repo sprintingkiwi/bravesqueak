@@ -39,7 +39,7 @@ public class Battler : MonoBehaviour
     public Skill.Element elementAffinity;
     public enum Species { Slime, Undead, Beast, Plant, Insect, Dragon };
     public Species species;
-    public Perk[] perksPrefabs = new Perk[2];
+    public Perk[] perks = new Perk[2];
     public bool movable = true;
     public Battler evolution;
 
@@ -382,7 +382,7 @@ public class Battler : MonoBehaviour
     {
         new GameObject("PERKS").transform.parent = transform;
 
-        foreach (Perk p in perksPrefabs)
+        foreach (Perk p in perks)
         {
             if (p != null)
             {

@@ -20,7 +20,7 @@ public class Menu : MonoBehaviour
 	// Update is called once per frame
 	public virtual void Update ()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("ButtonB"))
         {
             MenuDestruction();
         }

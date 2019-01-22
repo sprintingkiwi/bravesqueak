@@ -40,6 +40,8 @@ public class HeroMenu : Menu
 
     public void LoadHeroStuff()
     {
+        Jrpg.Log("Loading " + gc.unlockedHeroes[heroIndex].name + " stuff");
+
         // Assign Active Hero sprite
         transform.Find("Active Hero").GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[heroIndex].GetComponent<SpriteRenderer>().sprite;
 
@@ -54,15 +56,15 @@ public class HeroMenu : Menu
         }
         foreach (Transform perkItem in transform.Find("Perks"))
         {
-            if (gc.unlockedHeroes[heroIndex].perksPrefabs[perkItem.GetSiblingIndex()] != null)
+            if (gc.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()] != null)
             {
                 Jrpg.Log("Assigning sprite to perk " + perkItem.name);
-                perkItem.GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[heroIndex].perksPrefabs[perkItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
+                perkItem.GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
             }            
         }
     }
 
-    public void ChangeItem(ItemSelector selector, string pool)
+    public void ShowItemSelection(ItemSelector selector, string pool)
     {
         if (gc.itemSelectionMenu != null)
             return;
@@ -71,7 +73,7 @@ public class HeroMenu : Menu
         gc.itemSelectionMenu = Instantiate(Resources.Load("Menu/ItemSelectionMenu") as GameObject, gc.mapCamera.transform).GetComponent<ItemSelectionMenu>();
         gc.itemSelectionMenu.father = this;
         subMenus.Add(gc.itemSelectionMenu);
-        gc.itemSelectionMenu.SetupSelection(gc.unlockedHeroes[heroIndex], selector.transform.GetSiblingIndex() + 1, pool);
+        gc.itemSelectionMenu.SetupSelection(gc.unlockedHeroes[heroIndex], selector.transform.GetSiblingIndex(), pool);
         gameObject.SetActive(false);
     }
 }

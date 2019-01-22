@@ -24,6 +24,6 @@ public class ItemSelector : MonoBehaviour
 
     void OnMouseDown()
     {
-        hm.ChangeItem(this, pool);
+        hm.ShowItemSelection(this, pool);
     }
 }

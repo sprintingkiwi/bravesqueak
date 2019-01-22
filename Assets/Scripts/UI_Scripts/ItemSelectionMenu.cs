@@ -6,37 +6,39 @@ using System.Linq;
 
 public class ItemSelectionMenu : Menu
 {
-    List<Item> availableItems = new List<Item>();
+    public List<Item> availableItems = new List<Item>();
     public Item activeItem;
-    int index = 0;
+    int selectionIndex = 0;
     int maxItems;
     Text nameText;
     Text descriptionText;
     SpriteRenderer elementImg;
+    public string pool;
+    public int itemSlot;
 
-    public void SetupSelection(HeroBattler hero, int itemID, string pool)
+    public void SetupSelection(HeroBattler hero, int itemSlot, string pool)
     {
         base.Setup();
 
+        this.pool = pool;
+        this.itemSlot = itemSlot;
         switch (pool)
         {
             case "Skill":
-
                 // Creating a list of available skills
-                Jrpg.Log("Available Skills: ");
+                Jrpg.Log("Available Skills:");
                 foreach (Skill s in gc.unlockedSkills)
                     if (!hero.skills.Contains(s) && s != null)
                     {
                         Jrpg.Log(s.name);
                         availableItems.Add(s);
                     }
-                
+                Jrpg.Log("Selected Skill: " + hero.skills[itemSlot].name);
+                availableItems.Insert(0, hero.skills[itemSlot]);
                 break;
 
             case "Perk":
-
-                // Creating a list of available perks
-                Jrpg.Log("Available Perks: ");
+                // Creating a list of available perks                
                 foreach (Perk p in gc.unlockedPerks)
                     if (p != null)
                     {
@@ -46,18 +48,22 @@ public class ItemSelectionMenu : Menu
                 // Removing Perks held by other heroes
                 foreach (HeroBattler hb in gc.heroes)
                     foreach (Item av in availableItems.ToArray())
-                        if (hb.perksPrefabs.Contains(av))
-                            availableItems.Remove(av);
+                        if (hb.perks.Contains(av))
+                            availableItems.Remove(av);                
 
                 // Logging names
+                Jrpg.Log("Available Perks: ");
                 foreach (Item av in availableItems)
                     Jrpg.Log(av.name);
+
+                Jrpg.Log("Selected Perk: " + hero.perks[itemSlot].name);
+                availableItems.Insert(0, hero.perks[itemSlot]);
 
                 break;
         }
 
         // Setting the first selected element
-        activeItem = availableItems[index];
+        activeItem = availableItems[selectionIndex];
         maxItems = availableItems.Count;
 
         // Name text 
@@ -79,7 +85,7 @@ public class ItemSelectionMenu : Menu
 
     public void UpdateActiveItem()
     {
-        activeItem = availableItems[index];
+        activeItem = availableItems[selectionIndex];
         Jrpg.Log("Actual Item: " + activeItem.name);
 
         // Item icon
@@ -101,19 +107,39 @@ public class ItemSelectionMenu : Menu
         base.Update();
 
         if (inputManager.UpArrowDown())
-            if (index > 0)
+            if (selectionIndex > 0)
             {
                 Jrpg.Log("Decrementing Item Index");
-                index -= 1;
+                selectionIndex -= 1;
                 UpdateActiveItem();
             }
 
         if (inputManager.DownArrowDown())
-            if (index < maxItems - 1)
+            if (selectionIndex < maxItems - 1)
             {
                 Jrpg.Log("Incrementing Item Index");
-                index += 1;
+                selectionIndex += 1;
                 UpdateActiveItem();
             }
+
+        //CONFIRM
+        if (inputManager.ButtonADown())
+        {
+            switch (pool)
+            {
+                case "Skill":
+                    Jrpg.Log(activeItem.name + " skill selected at slot " + itemSlot, "Visible");
+                    gc.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].skills[itemSlot] = (Skill)activeItem;
+                    break;
+
+                case "Perk":
+                    Jrpg.Log(activeItem.name + " perk selected at slot " + itemSlot, "Visible");
+                    gc.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].perks[itemSlot] = (Perk)activeItem;
+                    break;
+            }
+            father.gameObject.SetActive(true);
+            father.Setup();
+            MenuDestruction();
+        }
     }
 }
