@@ -52,7 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 'A water attack that can overwelm and knock down.
+
+    Target: ONE ENEMY.
+
+    Element: WATER.'
   speed: 50
   accuracy: 100
   powerRoll:
@@ -71,11 +75,8 @@ MonoBehaviour:
   inField: 0
   element: 2
   requiredSP: 3
-  shopRequirement:
-    job: 5
-    exp: 0
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
   userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit

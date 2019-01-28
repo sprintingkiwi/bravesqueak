@@ -52,7 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 'The targeted enemy receives a wave of extremely dangerous corrosive
+    acid. It can also be used to get rid of corpses :)
+
+    Target: ONE ENEMY
+
+    Element: EARTH'
   speed: 70
   accuracy: 80
   powerRoll:
@@ -71,11 +76,8 @@ MonoBehaviour:
   inField: 0
   element: 1
   requiredSP: 2
-  shopRequirement:
-    job: 5
-    exp: 0
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
   userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit

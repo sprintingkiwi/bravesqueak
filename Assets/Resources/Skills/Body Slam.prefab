@@ -52,7 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 'A reckless charge with the whole body!
+
+    Target: ONE ENEMY
+
+    Element: NONE'
   speed: 70
   accuracy: 100
   powerRoll:
@@ -68,11 +72,8 @@ MonoBehaviour:
   inField: 0
   element: 0
   requiredSP: -1
-  shopRequirement:
-    job: 0
-    exp: 0
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit

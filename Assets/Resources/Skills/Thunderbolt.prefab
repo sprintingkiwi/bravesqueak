@@ -52,7 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 'A thunder from the sky!
+
+    Target: ONE ENEMY
+
+    Element: THUNDER'
   speed: 80
   accuracy: 80
   powerRoll:
@@ -68,11 +72,8 @@ MonoBehaviour:
   inField: 0
   element: 5
   requiredSP: 3
-  shopRequirement:
-    job: 5
-    exp: 20
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
   userAnimation: special
   alternativeUserAnims:
   - fox_eyes

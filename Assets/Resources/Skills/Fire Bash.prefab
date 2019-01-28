@@ -52,7 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 'A bash hit embedded with fire.
+
+    Target: ONE ENEMY
+
+    Elemet: FIRE'
   speed: 70
   accuracy: 80
   powerRoll:
@@ -69,11 +73,8 @@ MonoBehaviour:
   inField: 0
   element: 4
   requiredSP: 2
-  shopRequirement:
-    job: 2
-    exp: 0
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit

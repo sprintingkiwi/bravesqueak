@@ -10,11 +10,13 @@ public class ItemSelectionMenu : Menu
     public Item activeItem;
     int selectionIndex = 0;
     int maxItems;
-    Text nameText;
-    Text descriptionText;
+    public Text nameText;
+    public Text descriptionText;
     SpriteRenderer elementImg;
     public string pool;
     public int itemSlot;
+    Transform items;
+    public float menuItemsDistance;
 
     public void SetupSelection(HeroBattler hero, int itemSlot, string pool)
     {
@@ -22,6 +24,7 @@ public class ItemSelectionMenu : Menu
 
         this.pool = pool;
         this.itemSlot = itemSlot;
+        items = transform.Find("Items");
         switch (pool)
         {
             case "Skill":
@@ -62,34 +65,32 @@ public class ItemSelectionMenu : Menu
                 break;
         }
 
-        // Setting the first selected element
-        activeItem = availableItems[selectionIndex];
-        maxItems = availableItems.Count;
-
-        // Name text 
+        // Instantiate stuff
         nameText = Instantiate(Resources.Load("Menu/ItemNameText") as GameObject, GameObject.Find("Canvas").transform).GetComponent<Text>();
-        nameText.transform.position = Camera.main.WorldToScreenPoint(transform.Find("Name").position);
-        // Name of the generating menu before the text object under canvas to be able to easily destroy them after menu is destroyed
-        nameText.name = name + "_" + nameText.name;
-
-        // Description text
         descriptionText = Instantiate(Resources.Load("Menu/ItemDescriptionText") as GameObject, GameObject.Find("Canvas").transform).GetComponent<Text>();
-        descriptionText.transform.position = Camera.main.WorldToScreenPoint(transform.Find("Description").position);
-        descriptionText.name = name + "_" + descriptionText.name;
-
-        // Element image
-        elementImg = transform.Find("Element").GetComponent<SpriteRenderer>();
+        for (int i = 0; i < availableItems.Count; i++)
+        {
+            Vector3 itemPos = new Vector3(items.position.x, items.position.y - menuItemsDistance * i, items.position.z);
+            GameObject menuItem = Instantiate(Resources.Load("Menu/MenuItem") as GameObject, itemPos, Quaternion.identity, items);
+            menuItem.GetComponent<SpriteRenderer>().sprite = availableItems[i].GetComponent<SpriteRenderer>().sprite;
+        }
 
         UpdateActiveItem();
     }
 
     public void UpdateActiveItem()
     {
+        // Setting the first selected element
         activeItem = availableItems[selectionIndex];
         Jrpg.Log("Actual Item: " + activeItem.name);
+        maxItems = availableItems.Count;
 
-        // Item icon
-        transform.Find("Active Item").GetComponent<SpriteRenderer>().sprite = activeItem.GetComponent<SpriteRenderer>().sprite;
+        // Name text
+        nameText.name = name + "_" + nameText.name; // Name of the generating menu before the text object under canvas to be able to easily destroy them after menu is destroyed
+        // Description text
+        descriptionText.name = name + "_" + descriptionText.name; // Name of the generating menu before the text object under canvas to be able to easily destroy them after menu is destroyed
+        // Element image
+        elementImg = transform.Find("Element").GetComponent<SpriteRenderer>();
 
         // Update item name and description text
         nameText.text = activeItem.name;
@@ -111,6 +112,7 @@ public class ItemSelectionMenu : Menu
             {
                 Jrpg.Log("Decrementing Item Index");
                 selectionIndex -= 1;
+                items.Translate(Vector3.down * menuItemsDistance);
                 UpdateActiveItem();
             }
 
@@ -119,6 +121,7 @@ public class ItemSelectionMenu : Menu
             {
                 Jrpg.Log("Incrementing Item Index");
                 selectionIndex += 1;
+                items.Translate(Vector3.up * menuItemsDistance);
                 UpdateActiveItem();
             }
 

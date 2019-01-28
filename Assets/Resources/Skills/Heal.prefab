@@ -52,7 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24e31892fbd6554faae569304a4c8ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 'Restores target''s Hit Points.
+
+    Target: ONE BATTLER
+
+    ELEMENT: LIGHT'
   speed: 7
   accuracy: 0
   powerRoll:
@@ -68,11 +72,8 @@ MonoBehaviour:
   inField: 0
   element: 0
   requiredSP: 1
-  shopRequirement:
-    job: 8
-    exp: 10
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
   userAnimation: special
   alternativeUserAnims: []
   targetAnimation: idle

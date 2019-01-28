@@ -52,7 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 'The enemies will suffer under a rain of arrows!
+
+    Target: ENEMY AREA
+
+    Element: NONE'
   speed: 120
   accuracy: 70
   powerRoll:
