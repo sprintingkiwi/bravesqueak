@@ -126,10 +126,11 @@ MonoBehaviour:
   size: 3
   elementAffinity: 1
   species: 2
-  perksPrefabs:
+  perks:
   - {fileID: 0}
   - {fileID: 0}
-  movable: 0
+  movable: 1
+  evolution: {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 0}
   dodgeSound: {fileID: 0}

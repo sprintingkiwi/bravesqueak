@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Cheats : MonoBehaviour
 {
     GameController gc;
-    public Encounter testEncounter;
+    public Encounter[] testEncounters;
 
     [System.Serializable]
     public class Team
@@ -61,7 +61,19 @@ public class Cheats : MonoBehaviour
         //Debug.Log(GameObject.FindObjectOfType<AudioListener>().name);
 
         if (Input.GetKeyDown(KeyCode.T))
-            StartCoroutine(gc.TriggerBattle(testEncounter, "Random"));
+            StartCoroutine(gc.TriggerBattle(testEncounters[0], "Random"));
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            StartCoroutine(gc.TriggerBattle(testEncounters[1], "Random"));
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            StartCoroutine(gc.TriggerBattle(testEncounters[2], "Random"));
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            StartCoroutine(gc.TriggerBattle(testEncounters[3], "Random"));
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+            StartCoroutine(gc.TriggerBattle(testEncounters[4], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Y))
             ChangeTeam();

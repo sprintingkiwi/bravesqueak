@@ -30,6 +30,14 @@ public class BattleController : MonoBehaviour
     //public List<AIBattler> summons = new List<AIBattler>();
     public Item droppedItem = null;
 
+    [Header("Drops")]
+    [Range(0, 20)]
+    public int foodDropRate;
+    [Range(0, 20)]
+    public int perksDropRate;
+    [Range(0, 20)]
+    public int skillsDropRate;
+
     [System.Serializable]
     public class BattleAction
     {
@@ -356,22 +364,22 @@ public class BattleController : MonoBehaviour
                     break;
             }
 
-            // Food drop
+            // Drop
             Jrpg.Log("Item Drop");
             if (droppedItem == null)
             {
-                if(UnityEngine.Random.Range(0, 100) <= 20)
+                if(UnityEngine.Random.Range(0, 100) <= foodDropRate)
                 {                   
                     yield return StartCoroutine(DropItem("Food"));
                 }
-                else if(UnityEngine.Random.Range(0, 100) > 20 && UnityEngine.Random.Range(0, 100) <= 80)
+                else if(UnityEngine.Random.Range(0, 100) <= perksDropRate)
                 {
                     yield return StartCoroutine(DropItem("Perks"));
                 }
-                //else if (UnityEngine.Random.Range(0, 100) > 40 && UnityEngine.Random.Range(0, 100) <= 80)
-                //{
-                //    yield return StartCoroutine(DropItem("Perks"));
-                //}
+                else if (UnityEngine.Random.Range(0, 100) <= skillsDropRate)
+                {
+                    yield return StartCoroutine(DropItem("Perks"));
+                }
                 else
                 {
                     Jrpg.Log("No drops this turn", "Visible");

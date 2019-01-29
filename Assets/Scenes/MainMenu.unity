@@ -933,8 +933,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d658b4bdcdb4c44a565aca0ce47d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testEncounter: {fileID: 114809916583162938, guid: 6770848308e45f94f99e1997fdc0bdf8,
-    type: 2}
+  testEncounters:
+  - {fileID: 114809916583162938, guid: 6770848308e45f94f99e1997fdc0bdf8, type: 2}
+  - {fileID: 114158055192404530, guid: 3cdc2105dcf688144b2b1f549d9a66b2, type: 2}
+  - {fileID: 114780441065387980, guid: ebf28d6e9d9fccf4faa0fb7c18c069d1, type: 2}
+  - {fileID: 114780441065387980, guid: dc5caafa06b79774c93ded6d5f4215b9, type: 2}
+  - {fileID: 114809916583162938, guid: 15f07ebca0254964e8c72e3f70bdd0e6, type: 2}
   teams:
   - memebrs:
     - {fileID: 114120886363940634, guid: ccf6e07eddf6d6d47b3660df1e189f8b, type: 2}
@@ -2303,6 +2307,9 @@ MonoBehaviour:
   - {fileID: 114120886363940634, guid: a9c32bd611bf04244bb9efe988c887d1, type: 2}
   - {fileID: 114120886363940634, guid: ccf6e07eddf6d6d47b3660df1e189f8b, type: 2}
   - {fileID: 114120886363940634, guid: ae7d15ce42a50c14da9e6820b70b5f56, type: 2}
+  - {fileID: 114590740935363484, guid: f2d18dcc8f94f5d45bd992d584f7fa7a, type: 2}
+  - {fileID: 114253743136115620, guid: 54e5d2f2fb4d0674492c18ed539645fa, type: 2}
+  - {fileID: 114120886363940634, guid: eb1922b45a3084b4aaee91180783aba1, type: 2}
   partyMenu: {fileID: 0}
   heroMenu: {fileID: 0}
   itemSelectionMenu: {fileID: 0}
