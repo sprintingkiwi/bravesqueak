@@ -19,9 +19,6 @@ public class InputManager : MonoBehaviour
     float ver;
     bool horAxisPressed;
     bool verAxisPressed;
-    public float deltaInputTime;
-    public float lastHorTime;
-    public float lastVerTime;
 
     // Persistence
     public static InputManager cGInstance;
@@ -50,12 +47,10 @@ public class InputManager : MonoBehaviour
         swipe = SwipeCheck();
 
         hor = Input.GetAxis("Horizontal");
-        //if (-0.1f <= hor && hor <= 0.1f)
-        if (Time.time - lastHorTime > deltaInputTime)
+        if (-0.1f <= hor && hor <= 0.1f)
             horAxisPressed = false;
         ver = Input.GetAxis("Vertical");
-        //if (-0.1f <= ver && ver <= 0.1f)
-        if (Time.time - lastVerTime > deltaInputTime)
+        if (-0.1f <= ver && ver <= 0.1f)
             verAxisPressed = false;
     }
 
@@ -241,7 +236,6 @@ public class InputManager : MonoBehaviour
         else if (ver < -0.1f && !verAxisPressed)
         {
             verAxisPressed = true;
-            lastVerTime = Time.time;
             return true;
         }
         else
@@ -291,7 +285,6 @@ public class InputManager : MonoBehaviour
         else if (ver > 0.1f && !verAxisPressed)
         {
             verAxisPressed = true;
-            lastVerTime = Time.time;
             return true;
         }
         else
