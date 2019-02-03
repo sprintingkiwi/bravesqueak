@@ -118,7 +118,6 @@ public class ItemSelectionMenu : Menu
                 selectionIndex -= 1;
 
                 //items.Translate(Vector3.down * menuItemsDistance);
-                moving = true;
                 StartCoroutine(MoveItems(-1));
 
                 UpdateActiveItem();
@@ -131,7 +130,6 @@ public class ItemSelectionMenu : Menu
                 selectionIndex += 1;
 
                 //items.Translate(Vector3.up * menuItemsDistance);
-                moving = true;
                 StartCoroutine(MoveItems(1));
 
                 UpdateActiveItem();
@@ -160,10 +158,15 @@ public class ItemSelectionMenu : Menu
 
     public IEnumerator MoveItems(int direction)
     {
+        if (moving)
+            yield break;
+        else
+            moving = true;
+
         float targetY = items.position.y + (menuItemsDistance * direction);
         while (Mathf.Abs(items.transform.position.y - targetY) > 0.05f)
         {
-            items.position = new Vector3(items.position.x, items.position.y + (0.1f * direction), items.position.z);
+            items.position = new Vector3(items.position.x, items.position.y + (0.05f * direction), items.position.z);
             yield return null;
         }
         items.position = new Vector3(items.position.x, targetY, items.position.z);
