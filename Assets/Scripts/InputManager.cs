@@ -19,14 +19,12 @@ public class InputManager : MonoBehaviour
     float ver;
     bool horAxisPressed;
     bool verAxisPressed;
+    public float deltaInputTime;
+    public float lastHorTime;
+    public float lastVerTime;
 
     void Start()
     {
-        //Button rBtn = rightButton.GetComponent<Button>();
-        //rBtn.onClick.AddListener(RightButtonTask);
-        //Button lBtn = leftButton.GetComponent<Button>();
-        //lBtn.onClick.AddListener(LeftButtonTask);
-
 
     }
 
@@ -35,10 +33,12 @@ public class InputManager : MonoBehaviour
         swipe = SwipeCheck();
 
         hor = Input.GetAxis("Horizontal");
-        if (-0.1f <= hor && hor <= 0.1f)
+        //if (-0.1f <= hor && hor <= 0.1f)
+        if (Time.time - lastHorTime > deltaInputTime)
             horAxisPressed = false;
         ver = Input.GetAxis("Vertical");
-        if (-0.1f <= ver && ver <= 0.1f)
+        //if (-0.1f <= ver && ver <= 0.1f)
+        if (Time.time - lastVerTime > deltaInputTime)
             verAxisPressed = false;
     }
 
@@ -224,6 +224,7 @@ public class InputManager : MonoBehaviour
         else if (ver < -0.1f && !verAxisPressed)
         {
             verAxisPressed = true;
+            lastVerTime = Time.time;
             return true;
         }
         else
@@ -273,6 +274,7 @@ public class InputManager : MonoBehaviour
         else if (ver > 0.1f && !verAxisPressed)
         {
             verAxisPressed = true;
+            lastVerTime = Time.time;
             return true;
         }
         else

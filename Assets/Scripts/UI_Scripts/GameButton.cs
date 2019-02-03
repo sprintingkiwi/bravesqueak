@@ -26,7 +26,10 @@ public class GameButton : MonoBehaviour
     // Update is called once per frame
     public void Update ()
     {
-
+        if (Input.GetButtonDown(name))
+            spr.sprite = down;
+        else if (Input.GetButtonUp(name))
+            spr.sprite = up;
 	}
 
     void OnMouseDown()

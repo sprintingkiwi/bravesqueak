@@ -17,6 +17,7 @@ public class ItemSelectionMenu : Menu
     public int itemSlot;
     Transform items;
     public float menuItemsDistance;
+    public bool moving;
 
     public void SetupSelection(HeroBattler hero, int itemSlot, string pool)
     {
@@ -107,12 +108,19 @@ public class ItemSelectionMenu : Menu
     {
         base.Update();
 
+        if (moving)
+            return;
+
         if (inputManager.UpArrowDown())
             if (selectionIndex > 0)
             {
                 Jrpg.Log("Decrementing Item Index");
                 selectionIndex -= 1;
-                items.Translate(Vector3.down * menuItemsDistance);
+
+                //items.Translate(Vector3.down * menuItemsDistance);
+                moving = true;
+                StartCoroutine(MoveItems(-1));
+
                 UpdateActiveItem();
             }
 
@@ -121,7 +129,11 @@ public class ItemSelectionMenu : Menu
             {
                 Jrpg.Log("Incrementing Item Index");
                 selectionIndex += 1;
-                items.Translate(Vector3.up * menuItemsDistance);
+
+                //items.Translate(Vector3.up * menuItemsDistance);
+                moving = true;
+                StartCoroutine(MoveItems(1));
+
                 UpdateActiveItem();
             }
 
@@ -144,5 +156,18 @@ public class ItemSelectionMenu : Menu
             father.Setup();
             MenuDestruction();
         }
+    }
+
+    public IEnumerator MoveItems(int direction)
+    {
+        float targetY = items.position.y + (menuItemsDistance * direction);
+        while (Mathf.Abs(items.transform.position.y - targetY) > 0.05f)
+        {
+            items.position = new Vector3(items.position.x, items.position.y + (0.1f * direction), items.position.z);
+            yield return null;
+        }
+        items.position = new Vector3(items.position.x, targetY, items.position.z);
+        moving = false;
+        yield return null;
     }
 }
