@@ -23,6 +23,23 @@ public class InputManager : MonoBehaviour
     public float lastHorTime;
     public float lastVerTime;
 
+    // Persistence
+    public static InputManager cGInstance;
+    void Awake()
+    {
+        // Persistence
+        if (cGInstance == null)
+        {
+            cGInstance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
 
