@@ -17,7 +17,9 @@ public class ItemSelectionMenu : Menu
     public int itemSlot;
     Transform items;
     public float menuItemsDistance;
-    public bool moving;
+    List<Coroutine> movingCoroutines = new List<Coroutine>();
+    float targetY;
+    public float count;
 
     public void SetupSelection(HeroBattler hero, int itemSlot, string pool)
     {
@@ -108,7 +110,8 @@ public class ItemSelectionMenu : Menu
     {
         base.Update();
 
-        if (moving)
+        count = movingCoroutines.Count;
+        if (movingCoroutines.Count > 0)
             return;
 
         if (inputManager.UpArrowDown())
@@ -116,10 +119,8 @@ public class ItemSelectionMenu : Menu
             {
                 Jrpg.Log("Decrementing Item Index");
                 selectionIndex -= 1;
-
                 //items.Translate(Vector3.down * menuItemsDistance);
-                StartCoroutine(MoveItems(-1));
-
+                StartMovingCoroutine(-1);
                 UpdateActiveItem();
             }
 
@@ -128,10 +129,8 @@ public class ItemSelectionMenu : Menu
             {
                 Jrpg.Log("Incrementing Item Index");
                 selectionIndex += 1;
-
                 //items.Translate(Vector3.up * menuItemsDistance);
-                StartCoroutine(MoveItems(1));
-
+                StartMovingCoroutine(1);
                 UpdateActiveItem();
             }
 
@@ -156,21 +155,35 @@ public class ItemSelectionMenu : Menu
         }
     }
 
+    void StartMovingCoroutine(int direction)
+    {
+        if (movingCoroutines.Count > 0)
+            return;
+        movingCoroutines.Add(StartCoroutine(MoveItems(direction)));
+    }
+
+    void OnDestroy()
+    {
+        foreach (Coroutine c in movingCoroutines)
+            StopCoroutine(c);
+    }
+
+    void OnDisable()
+    {
+        foreach (Coroutine c in movingCoroutines)
+            StopCoroutine(c);
+    }
+
     public IEnumerator MoveItems(int direction)
     {
-        if (moving)
-            yield break;
-        else
-            moving = true;
-
-        float targetY = items.position.y + (menuItemsDistance * direction);
-        while (Mathf.Abs(items.transform.position.y - targetY) > 0.05f)
+        targetY = items.position.y + (menuItemsDistance * direction);
+        while (Mathf.Abs(items.transform.position.y - targetY) > 0.1f)
         {
             items.position = new Vector3(items.position.x, items.position.y + (0.05f * direction), items.position.z);
             yield return null;
         }
         items.position = new Vector3(items.position.x, targetY, items.position.z);
-        moving = false;
+        movingCoroutines.Remove(movingCoroutines[0]);
         yield return null;
     }
 }
