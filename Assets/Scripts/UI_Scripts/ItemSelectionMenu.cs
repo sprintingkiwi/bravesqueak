@@ -17,7 +17,8 @@ public class ItemSelectionMenu : Menu
     public int itemSlot;
     Transform items;
     public float menuItemsDistance;
-    List<Coroutine> movingCoroutines = new List<Coroutine>();
+    public List<Coroutine> movingCoroutines = new List<Coroutine>();
+    public bool moving;
     float targetY;
 
     public void SetupSelection(HeroBattler hero, int itemSlot, string pool)
@@ -109,28 +110,27 @@ public class ItemSelectionMenu : Menu
     {
         base.Update();
 
-        if (movingCoroutines.Count > 0)
-            return;
-
         if (inputManager.UpArrowDown())
-            if (selectionIndex > 0)
-            {
-                Jrpg.Log("Decrementing Item Index");
-                selectionIndex -= 1;
-                //items.Translate(Vector3.down * menuItemsDistance);
-                movingCoroutines.Add(StartCoroutine(MoveItems(-1)));
-                UpdateActiveItem();
-            }
+            if (!moving)
+                if (selectionIndex > 0)
+                {
+                    Jrpg.Log("Decrementing Item Index");
+                    selectionIndex -= 1;
+                    //items.Translate(Vector3.down * menuItemsDistance);
+                    movingCoroutines.Add(StartCoroutine(MoveItems(-1)));
+                    UpdateActiveItem();
+                }
 
         if (inputManager.DownArrowDown())
-            if (selectionIndex < maxItems - 1)
-            {
-                Jrpg.Log("Incrementing Item Index");
-                selectionIndex += 1;
-                //items.Translate(Vector3.up * menuItemsDistance);
-                movingCoroutines.Add(StartCoroutine(MoveItems(1)));
-                UpdateActiveItem();
-            }
+            if (!moving)
+                if (selectionIndex < maxItems - 1)
+                {
+                    Jrpg.Log("Incrementing Item Index");
+                    selectionIndex += 1;
+                    //items.Translate(Vector3.up * menuItemsDistance);
+                    movingCoroutines.Add(StartCoroutine(MoveItems(1)));
+                    UpdateActiveItem();
+                }
 
         //CONFIRM
         if (inputManager.ButtonADown())
@@ -168,6 +168,8 @@ public class ItemSelectionMenu : Menu
 
     public IEnumerator MoveItems(int direction)
     {
+        moving = true;
+
         targetY = items.position.y + (menuItemsDistance * direction);
         while (Mathf.Abs(items.transform.position.y - targetY) > 0.1f)
         {
@@ -176,6 +178,8 @@ public class ItemSelectionMenu : Menu
         }
         items.position = new Vector3(items.position.x, targetY, items.position.z);
         movingCoroutines.Remove(movingCoroutines[0]);
+
+        moving = false;
         yield return null;
     }
 }
