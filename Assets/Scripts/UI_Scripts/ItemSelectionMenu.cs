@@ -19,7 +19,6 @@ public class ItemSelectionMenu : Menu
     public float menuItemsDistance;
     List<Coroutine> movingCoroutines = new List<Coroutine>();
     float targetY;
-    public float count;
 
     public void SetupSelection(HeroBattler hero, int itemSlot, string pool)
     {
@@ -110,7 +109,6 @@ public class ItemSelectionMenu : Menu
     {
         base.Update();
 
-        count = movingCoroutines.Count;
         if (movingCoroutines.Count > 0)
             return;
 
@@ -120,7 +118,7 @@ public class ItemSelectionMenu : Menu
                 Jrpg.Log("Decrementing Item Index");
                 selectionIndex -= 1;
                 //items.Translate(Vector3.down * menuItemsDistance);
-                StartMovingCoroutine(-1);
+                movingCoroutines.Add(StartCoroutine(MoveItems(-1)));
                 UpdateActiveItem();
             }
 
@@ -130,7 +128,7 @@ public class ItemSelectionMenu : Menu
                 Jrpg.Log("Incrementing Item Index");
                 selectionIndex += 1;
                 //items.Translate(Vector3.up * menuItemsDistance);
-                StartMovingCoroutine(1);
+                movingCoroutines.Add(StartCoroutine(MoveItems(1)));
                 UpdateActiveItem();
             }
 
@@ -155,13 +153,6 @@ public class ItemSelectionMenu : Menu
         }
     }
 
-    void StartMovingCoroutine(int direction)
-    {
-        if (movingCoroutines.Count > 0)
-            return;
-        movingCoroutines.Add(StartCoroutine(MoveItems(direction)));
-    }
-
     void OnDestroy()
     {
         foreach (Coroutine c in movingCoroutines)
@@ -172,6 +163,7 @@ public class ItemSelectionMenu : Menu
     {
         foreach (Coroutine c in movingCoroutines)
             StopCoroutine(c);
+        items.position = new Vector3(items.position.x, targetY, items.position.z);
     }
 
     public IEnumerator MoveItems(int direction)

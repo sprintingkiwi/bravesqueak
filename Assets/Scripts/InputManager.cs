@@ -14,11 +14,11 @@ public class InputManager : MonoBehaviour
     [Header("UI Buttons")]
     public string touchButtonInput;
 
-    [Header("Other")]
-    float hor;
-    float ver;
-    bool horAxisPressed;
-    bool verAxisPressed;
+    //[Header("Other")]
+    //float hor;
+    //float ver;
+    //bool horAxisPressed;
+    //bool verAxisPressed;
 
     // Persistence
     public static InputManager cGInstance;
@@ -46,12 +46,12 @@ public class InputManager : MonoBehaviour
     {
         swipe = SwipeCheck();
 
-        hor = Input.GetAxis("Horizontal");
-        if (-0.1f <= hor && hor <= 0.1f)
-            horAxisPressed = false;
-        ver = Input.GetAxis("Vertical");
-        if (-0.1f <= ver && ver <= 0.1f)
-            verAxisPressed = false;
+        //hor = Input.GetAxis("Horizontal");
+        //if (-0.1f <= hor && hor <= 0.1f)
+        //    horAxisPressed = false;
+        //ver = Input.GetAxis("Vertical");
+        //if (-0.1f <= ver && ver <= 0.1f)
+        //    verAxisPressed = false;
     }
 
     // BUTTON A
@@ -139,11 +139,11 @@ public class InputManager : MonoBehaviour
             Debug.Log("Right button UI touch input received");
             return true;
         }
-        else if (hor > 0.1f && !horAxisPressed)
-        {
-            horAxisPressed = true;
-            return true;
-        }
+        //else if (hor > 0.1f && !horAxisPressed)
+        //{
+        //    horAxisPressed = true;
+        //    return true;
+        //}
         else
             return false;
     }
@@ -186,11 +186,11 @@ public class InputManager : MonoBehaviour
             Debug.Log("Left Down button UI touch input received");
             return true;
         }
-        else if (hor < -0.1f && !horAxisPressed)
-        {
-            horAxisPressed = true;
-            return true;
-        }
+        //else if (hor < -0.1f && !horAxisPressed)
+        //{
+        //    horAxisPressed = true;
+        //    return true;
+        //}
         else
             return false;
     }
@@ -233,11 +233,11 @@ public class InputManager : MonoBehaviour
             Debug.Log("Down Down button UI touch input received");
             return true;
         }
-        else if (ver < -0.1f && !verAxisPressed)
-        {
-            verAxisPressed = true;
-            return true;
-        }
+        //else if (ver < -0.1f && !verAxisPressed)
+        //{
+        //    verAxisPressed = true;
+        //    return true;
+        //}
         else
             return false;
     }
@@ -282,11 +282,11 @@ public class InputManager : MonoBehaviour
             Debug.Log("Up Down button UI touch input received");
             return true;
         }
-        else if (ver > 0.1f && !verAxisPressed)
-        {
-            verAxisPressed = true;
-            return true;
-        }
+        //else if (ver > 0.1f && !verAxisPressed)
+        //{
+        //    verAxisPressed = true;
+        //    return true;
+        //}
         else
             return false;
     }
