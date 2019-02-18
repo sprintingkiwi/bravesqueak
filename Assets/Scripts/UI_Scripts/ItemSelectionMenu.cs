@@ -111,24 +111,24 @@ public class ItemSelectionMenu : Menu
         base.Update();
 
         if (inputManager.UpArrowDown())
-            if (!moving)
+            //if (!moving)
                 if (selectionIndex > 0)
                 {
                     Jrpg.Log("Decrementing Item Index");
                     selectionIndex -= 1;
-                    //items.Translate(Vector3.down * menuItemsDistance);
-                    movingCoroutines.Add(StartCoroutine(MoveItems(-1)));
+                    items.Translate(Vector3.down * menuItemsDistance);
+                    //movingCoroutines.Add(StartCoroutine(MoveItems(-1)));
                     UpdateActiveItem();
                 }
 
         if (inputManager.DownArrowDown())
-            if (!moving)
+            //if (!moving)
                 if (selectionIndex < maxItems - 1)
                 {
                     Jrpg.Log("Incrementing Item Index");
                     selectionIndex += 1;
-                    //items.Translate(Vector3.up * menuItemsDistance);
-                    movingCoroutines.Add(StartCoroutine(MoveItems(1)));
+                    items.Translate(Vector3.up * menuItemsDistance);
+                    //movingCoroutines.Add(StartCoroutine(MoveItems(1)));
                     UpdateActiveItem();
                 }
 
