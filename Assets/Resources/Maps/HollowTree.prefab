@@ -4929,6 +4929,11 @@ MonoBehaviour:
   - weight: 3
     encounter: {fileID: 114809916583162938, guid: 1e2390b5efe211a4caeffdaf562fa7ad,
       type: 2}
+  - weight: 3
+    encounter: {fileID: 114809916583162938, guid: 5c6cfa2cf650772479f44a6c886678f1,
+      type: 2}
+  - weight: 3
+    encounter: {fileID: 0}
   mapLayers:
   - folderName: Ground
     sortingOrder: -1000
@@ -4957,6 +4962,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 0
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
@@ -5094,6 +5100,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1

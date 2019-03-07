@@ -176,18 +176,30 @@ public class WorldMap : MonoBehaviour
         // Calculate sum of weigths
         int sumOfWeights = 0;
         foreach (RandomEncounter re in randomEncounters)
+        {
+            if (re == null)
+                continue;
+
             sumOfWeights += re.weight;
+        }
 
         // Take random number greater than 0 and less than sum of weights
         int rnd = Random.Range(0, sumOfWeights);
 
         // Log
         foreach (RandomEncounter re in randomEncounters)
+        {
+            if (re == null)
+                continue;
             Jrpg.Log(re.encounter.name);
+        }            
 
         // Algorithm
         foreach (RandomEncounter re in randomEncounters)
         {
+            if (re == null)
+                continue;
+
             if (rnd < re.weight)
                 return re.encounter;
             rnd -= re.weight;

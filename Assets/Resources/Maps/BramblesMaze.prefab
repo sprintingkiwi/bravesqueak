@@ -3077,10 +3077,10 @@ MonoBehaviour:
   randomEncountersRate: 10
   randomEncounters:
   - weight: 5
-    encounter: {fileID: 114158055192404530, guid: 3cdc2105dcf688144b2b1f549d9a66b2,
+    encounter: {fileID: 114158055192404530, guid: a5f735d5bff1daa419be60fb8a769e06,
       type: 2}
   - weight: 3
-    encounter: {fileID: 114158055192404530, guid: 443f29211312ddb4e972301cd240869b,
+    encounter: {fileID: 114809916583162938, guid: 9218b19cb35141045a1c1b0db8723bc2,
       type: 2}
   - weight: 2
     encounter: {fileID: 114809916583162938, guid: e7b7208756760364091e2386eb5f321f,

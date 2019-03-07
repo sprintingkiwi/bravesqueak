@@ -2855,7 +2855,18 @@ MonoBehaviour:
   preBattleSound: {fileID: 8300000, guid: 2f0b9a5956ba39e4c9c6a72f54312dda, type: 3}
   defaultBattleback: {fileID: 0}
   randomEncountersRate: 0
-  randomEncounters: []
+  randomEncounters:
+  - weight: 0
+    encounter: {fileID: 114809916583162938, guid: 9218b19cb35141045a1c1b0db8723bc2,
+      type: 2}
+  - weight: 0
+    encounter: {fileID: 114809916583162938, guid: 6770848308e45f94f99e1997fdc0bdf8,
+      type: 2}
+  - weight: 0
+    encounter: {fileID: 114158055192404530, guid: 878256d40c580d14fb6abe3eec93371c,
+      type: 2}
+  - weight: 0
+    encounter: {fileID: 0}
   mapLayers:
   - folderName: Ground
     sortingOrder: -1000
