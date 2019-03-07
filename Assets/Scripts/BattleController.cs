@@ -229,11 +229,12 @@ public class BattleController : MonoBehaviour
             dropPos += encounter.partyPosAdjust.position;
         droppedItem = Instantiate(selectedItem, dropPos, Quaternion.identity, gc.battleStuff.transform);
         Battler itemBattler = (droppedItem.gameObject.AddComponent<Battler>());
-        droppedItem.gameObject.AddComponent<Drop>();
+        //droppedItem.gameObject.AddComponent<Drop>();
         itemBattler.faction = Battler.Faction.Enemies;
         itemBattler.maxHP.value = 1;
         itemBattler.Setup();
         yield return StartCoroutine(droppedItem.Fall());
+        yield return StartCoroutine(droppedItem.Shake());
 
         Jrpg.Log("Dropped item: " + selectedItem.name, "Visible");
 
@@ -378,7 +379,7 @@ public class BattleController : MonoBehaviour
                 }
                 else if (UnityEngine.Random.Range(0, 100) <= skillsDropRate)
                 {
-                    yield return StartCoroutine(DropItem("Perks"));
+                    yield return StartCoroutine(DropItem("Skills"));
                 }
                 else
                 {

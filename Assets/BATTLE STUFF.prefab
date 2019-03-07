@@ -195,9 +195,9 @@ MonoBehaviour:
   party: []
   enemies: []
   droppedItem: {fileID: 0}
-  foodDropRate: 0
-  perksDropRate: 0
-  skillsDropRate: 0
+  foodDropRate: 20
+  perksDropRate: 20
+  skillsDropRate: 20
   actionsQueue: []
   actualAction:
     user: {fileID: 0}

@@ -26,6 +26,7 @@ public class Cheats : MonoBehaviour
     public float shakeDetectionThreshold;
     float lowPassFilterFactor;
     Vector3 lowPassValue;
+    public string droppedItemClass;
 
     // Persistence
     public static Cheats cGInstance;
@@ -80,6 +81,11 @@ public class Cheats : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.O))
             StartCoroutine(Jrpg.LoadScene("MainMenu"));
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            StartCoroutine(GameObject.Find("Battle Controller").GetComponent<BattleController>().DropItem(droppedItemClass));
+        }
 
         //if (Input.GetKeyDown(KeyCode.N))
         //StartCoroutine(Jrpg.LoadScene("SkillStore"));
