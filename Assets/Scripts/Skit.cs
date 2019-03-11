@@ -46,7 +46,7 @@ public class Skit : AnimatedMapElement
         yield return null;
     }
 
-    IEnumerator TriggerBattle()
+    public virtual IEnumerator TriggerBattle()
     {
         // If the skit has a prebattle animation, then play it
         foreach (AnimatorControllerParameter acp in anim.parameters)
