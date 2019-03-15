@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnowDoor_Open_Control : Skit {
+public class SnowDoor_Open_Control : Transfer {
 
-    public override IEnumerator TriggerBattle()
+    public override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameObject.Find("Yeti_Skit") != null || GameObject.Find("Snowman_Skit") != null)
+        if (transform.parent.parent.Find("ENEMIES").childCount > 0)
         {
             Jrpg.Log("Still not beaten the mini bosses!");
-            yield break;
+            return;
         }
 
+        gameObject.GetComponent<AnimatedMapElement>().anim.SetTrigger("prebattle");
 
-
-        //yield return StartCoroutine(base.TriggerBattle());
+        base.OnTriggerEnter2D(collision);
     }
 }

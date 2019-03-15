@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 95367900925254338}
   - component: {fileID: 114219722249847044}
   - component: {fileID: 58351699544308818}
+  - component: {fileID: 50638101256064730}
   m_Layer: 0
   m_Name: Octopus_Skit_0009
   m_TagString: Untagged
@@ -2501,6 +2502,26 @@ Transform:
   m_Father: {fileID: 4804336800551702}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50638101256064730
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1186063199651658}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58351699544308818
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -2891,7 +2912,7 @@ MonoBehaviour:
   - folderName: Overlay
     sortingOrder: 1000
     zLevel: 0
-  cameraBoundary: {fileID: 0}
+  cameraBoundary: {fileID: 212211039594046040}
 --- !u!212 &212024548677222442
 SpriteRenderer:
   m_ObjectHideFlags: 1

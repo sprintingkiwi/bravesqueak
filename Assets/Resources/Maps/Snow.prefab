@@ -659,6 +659,7 @@ GameObject:
   - component: {fileID: 58216384115608656}
   - component: {fileID: 114556090947620210}
   - component: {fileID: 50958311755069356}
+  - component: {fileID: 114039747189609698}
   m_Layer: 0
   m_Name: Snow_Door_Skit
   m_TagString: Untagged
@@ -2237,7 +2238,6 @@ Transform:
   m_Children:
   - {fileID: 4392692639314926}
   - {fileID: 4864585668486298}
-  - {fileID: 4917146988230720}
   m_Father: {fileID: 4361552747476900}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2317,6 +2317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4877466713908222}
+  - {fileID: 4917146988230720}
   m_Father: {fileID: 4361552747476900}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2665,8 +2666,8 @@ Transform:
   m_LocalPosition: {x: -0.37000275, y: 17.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4571311089112422}
-  m_RootOrder: 2
+  m_Father: {fileID: 4690727020819206}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4920698543391606
 Transform:
@@ -2776,7 +2777,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070114628082344}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2796,7 +2797,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1223536967254434}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2816,7 +2817,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1706597470133640}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2836,7 +2837,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934047563188778}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2856,7 +2857,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1345034610438510}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2876,7 +2877,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040854830769278}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2896,7 +2897,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669956426021474}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2916,7 +2917,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1539396826538850}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2936,7 +2937,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1496420157100830}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3740,6 +3741,20 @@ MonoBehaviour:
   status: Idle
   direction: {x: 0, y: -1}
   player: {fileID: 0}
+--- !u!114 &114039747189609698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496420157100830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2e20b896f412241bc4fc4b40108db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spr: {fileID: 0}
+  gc: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &114054179057077634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3817,13 +3832,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2281af70987bc3e4ca710f6d48a9e351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spr: {fileID: 0}
-  gc: {fileID: 0}
-  anim: {fileID: 0}
-  encounter: {fileID: 114780441065387980, guid: dc5caafa06b79774c93ded6d5f4215b9,
-    type: 2}
-  preBattleClip: {fileID: 7400000, guid: 0290e0eb7675f0e4da9106b287ff64e6, type: 2}
-  shiftThresold: 1
+  destinationMap: {fileID: 0}
+  destinationPlace: 
+  destinationPos: {x: 0, y: 0, z: 0}
+  active: 1
+  transfering: 0
 --- !u!114 &114614235329742704
 MonoBehaviour:
   m_ObjectHideFlags: 1

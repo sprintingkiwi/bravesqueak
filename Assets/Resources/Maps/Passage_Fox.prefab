@@ -1304,6 +1304,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1995428891693102
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4221447520960304}
+  - component: {fileID: 114067357576886076}
+  - component: {fileID: 58113753846394410}
+  m_Layer: 0
+  m_Name: To Snow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4000715966078550
 Transform:
   m_ObjectHideFlags: 1
@@ -1537,6 +1554,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4950020883723450}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4221447520960304
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995428891693102}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08, y: -9.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4690727020819206}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4231832402943748
 Transform:
@@ -2075,7 +2105,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4221447520960304}
   m_Father: {fileID: 4361552747476900}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2437,6 +2468,21 @@ Transform:
   m_Father: {fileID: 4804336800551702}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58113753846394410
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995428891693102}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!60 &60539554317282880
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -2696,6 +2742,23 @@ PolygonCollider2D:
       - {x: -0.20624998, y: -10.48125}
       - {x: -0.31875, y: -10.55625}
       - {x: -0.9, y: -10.518749}
+--- !u!114 &114067357576886076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995428891693102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationMap: {fileID: 114720446303504176, guid: def9d3a25a2501244980f3db51f14a50,
+    type: 2}
+  destinationPlace: To Passage_Fox
+  destinationPos: {x: 0, y: 0, z: 0}
+  active: 1
+  transfering: 0
 --- !u!114 &114720446303504176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2720,7 +2783,7 @@ MonoBehaviour:
   - folderName: Overlay
     sortingOrder: 1000
     zLevel: 0
-  cameraBoundary: {fileID: 0}
+  cameraBoundary: {fileID: 212211039594046040}
 --- !u!212 &212022364500393698
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -18,7 +18,7 @@ public class Transfer : MonoBehaviour
         gc = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "Player" && !gc.inTransfer && active && !transfering)
         {
