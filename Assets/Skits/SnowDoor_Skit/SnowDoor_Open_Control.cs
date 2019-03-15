@@ -12,6 +12,8 @@ public class SnowDoor_Open_Control : Skit {
             yield break;
         }
 
-        yield return StartCoroutine(base.TriggerBattle());
+
+
+        //yield return StartCoroutine(base.TriggerBattle());
     }
 }
