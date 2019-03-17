@@ -1698,8 +1698,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1628785579881544}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -109.2, y: -121.9, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -83.59091, y: -110.409966, z: 2.3400574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4804336800551702}
@@ -2899,8 +2899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de327edb4afb2d42a9083cb8903b322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtrack: {fileID: 0}
-  defaultBattleMusic: {fileID: 8300000, guid: 9d45dad2cdb1b2c4f9327d6886bdb6d2, type: 3}
+  soundtrack: {fileID: 8300000, guid: 9579431a8bd2a3543a28b5afaa0e1d52, type: 3}
+  defaultBattleMusic: {fileID: 8300000, guid: 0065e1f7e74545644aa8437cde0ba07b, type: 3}
   preBattleSound: {fileID: 8300000, guid: 2f0b9a5956ba39e4c9c6a72f54312dda, type: 3}
   defaultBattleback: {fileID: 0}
   randomEncountersRate: 0

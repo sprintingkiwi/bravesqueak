@@ -618,8 +618,9 @@ public class GameController : MonoBehaviour
         player.canMove = false;
 
         Debug.Log("Check music change");
-        if (transfer.destinationMap.soundtrack != music.clip)
-            StartCoroutine(SetVolume(0, speed));
+        if (transfer.destinationMap.soundtrack != null)
+            if (transfer.destinationMap.soundtrack != music.clip)
+                StartCoroutine(SetVolume(0, speed));
 
         Debug.Log("Fading out and pointing old map");
         // This will also wait for the music to fade out, if needed (the speed is the same)
