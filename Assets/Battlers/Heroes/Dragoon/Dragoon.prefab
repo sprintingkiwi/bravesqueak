@@ -351,11 +351,12 @@ MonoBehaviour:
   characterName: 
   size: 5
   elementAffinity: 0
-  species: 0
-  perksPrefabs:
-  - {fileID: 114311948303067148, guid: d00339fedb7f58e4993807114adfd188, type: 2}
+  species: 2
+  perks:
+  - {fileID: 0}
   - {fileID: 0}
   movable: 1
+  evolution: {fileID: 0}
   effectsDelay:
   - animation: special
     lenghtPercentage: 0.8
@@ -380,13 +381,12 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   job: 3
-  unlockedSkills: []
   skills:
-  - {fileID: 114238026829365552, guid: 9b9eb11db93e47e4f964065e87eddd31, type: 2}
+  - {fileID: 114338331553455674, guid: 5422b820e87adf64c968821e4bbbb5ff, type: 2}
   - {fileID: 114487366432352720, guid: bb5a0304e58de84439c0961b8712635f, type: 2}
   - {fileID: 114014343126834788, guid: 5d088365765038f459338cf900163b68, type: 2}
-  - {fileID: 114487366432352720, guid: a7c4f27c5e9a9a84f8bffd30d970613f, type: 2}
-  - {fileID: 114338331553455674, guid: 5422b820e87adf64c968821e4bbbb5ff, type: 2}
+  - {fileID: 114255436312251458, guid: 1977606b12460224cb4b91b7d54351ee, type: 2}
+  - {fileID: 0}
 --- !u!212 &212351009626954626
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -267,7 +267,7 @@ MonoBehaviour:
   characterName: 
   size: 5
   elementAffinity: 0
-  species: 0
+  species: 2
   perks:
   - {fileID: 0}
   - {fileID: 0}
@@ -296,10 +296,10 @@ MonoBehaviour:
   hud: {fileID: 0}
   job: 4
   skills:
-  - {fileID: 114448939315776632, guid: de5b7f066c33cdf4ba379991bdf7328d, type: 2}
+  - {fileID: 114825584013065182, guid: 40ba2c97750021d40840aade8042ebf3, type: 2}
   - {fileID: 114487366432352720, guid: 6a6fec55dfab8cc43b470cefacd2d091, type: 2}
   - {fileID: 114510658932947970, guid: 5b210aa628e3aa048ad1b04c5c13be95, type: 2}
-  - {fileID: 114510658932947970, guid: bee98e5a8c9efe04ea2b13c3208a760a, type: 2}
+  - {fileID: 114238026829365552, guid: 60d7cb0b6815cb1479a0af96bd1a7fab, type: 2}
   - {fileID: 114115067928026556, guid: 01c9b776ffd00d6469648059fdc76d0e, type: 2}
 --- !u!212 &212351009626954626
 SpriteRenderer:

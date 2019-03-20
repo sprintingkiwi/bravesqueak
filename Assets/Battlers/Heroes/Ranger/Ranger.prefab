@@ -269,7 +269,7 @@ MonoBehaviour:
   characterName: 
   size: 5
   elementAffinity: 0
-  species: 0
+  species: 2
   perks:
   - {fileID: 0}
   - {fileID: 0}

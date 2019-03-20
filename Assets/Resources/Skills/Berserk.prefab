@@ -71,9 +71,9 @@ MonoBehaviour:
       - faces: 8
     rollResult: 0
   statusChances: []
-  scope: 0
+  scope: 4
   targetsNumber: 1
-  duration: 0
+  duration: 3
   active: 1
   inBattle: 1
   inField: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   requiredSP: 0
   baseSkill: 0
   epicSkillOf: {fileID: 0}
-  userAnimation: attack
+  userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
