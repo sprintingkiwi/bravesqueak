@@ -265,7 +265,7 @@ MonoBehaviour:
   size: 5
   elementAffinity: 0
   species: 2
-  perksPrefabs:
+  perks:
   - {fileID: 0}
   - {fileID: 0}
   movable: 1
@@ -296,19 +296,8 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   job: 6
-  unlockedSkills:
-  - {fileID: 114487366432352720, guid: c6ff120cdf45aab44be5e2f0cc279fa8, type: 2}
-  - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}
-  - {fileID: 114014343126834788, guid: b74d380cfd5c70c46b3f43389ba8f6ff, type: 2}
-  - {fileID: 114487366432352720, guid: a7c4f27c5e9a9a84f8bffd30d970613f, type: 2}
-  - {fileID: 114799931718013420, guid: e7251806589250d42aaed88ef5dc8ad8, type: 2}
-  - {fileID: 114409233767409186, guid: 214820a91d759664c82667b7c169bc4f, type: 2}
-  - {fileID: 114338331553455674, guid: 5422b820e87adf64c968821e4bbbb5ff, type: 2}
-  - {fileID: 114070373249245436, guid: d6b2e85914a127d428259ffc73a743f3, type: 2}
-  - {fileID: 114863936190228534, guid: adcda2522d74f0d409adf712847989d2, type: 2}
-  - {fileID: 114836736652321672, guid: af9448afaed6ba343b121385b7304857, type: 2}
   skills:
-  - {fileID: 114487366432352720, guid: c6ff120cdf45aab44be5e2f0cc279fa8, type: 2}
+  - {fileID: 114836736652321672, guid: 1607c4dcca53ec24caa629db61a33ab4, type: 2}
   - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}
   - {fileID: 114014343126834788, guid: b74d380cfd5c70c46b3f43389ba8f6ff, type: 2}
   - {fileID: 114836736652321672, guid: a1d5de150b0b50e4a89ebf5630e1c1e5, type: 2}
