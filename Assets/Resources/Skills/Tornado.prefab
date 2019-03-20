@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114448939315776632}
-  - component: {fileID: 212894792583035140}
+  - component: {fileID: 114836736652321672}
+  - component: {fileID: 212461386023369356}
   m_Layer: 0
-  m_Name: Cry
+  m_Name: Tornado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114448939315776632
+--- !u!114 &114836736652321672
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,46 +49,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
+  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 'A sound attack that will hit multiple targets at once!
+  description: 'Wind can be very dangerous!
 
-    Target: AREA
+    Target: AREA.
 
-    Element: NONE'
-  speed: 70
+    Element: WIND.'
+  speed: 50
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 4
-    - faces: 4
-    - faces: 12
+    - faces: 8
+    - faces: 8
   buffs: []
-  statusChances: []
-  scope: 5
+  statusChances:
+  - status: {fileID: 114414827486457196, guid: f089c7a92c8ed6c4e9e45b82aa1206d5, type: 2}
+    chance: 10
+  scope: 2
   targetsNumber: 1
   duration: 0
   active: 1
   inBattle: 1
   inField: 0
-  element: 0
-  requiredSP: -1
+  element: 3
+  requiredSP: 3
   baseSkill: 0
   epicSkillOf: {fileID: 0}
-  userAnimation: attack
+  userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit
-  areaEffect: {fileID: 114614065750280804, guid: 9551f6143f203b74c9e22529e9a1dbd8,
-    type: 2}
-  targetEffect: {fileID: 114614065750280804, guid: c856dd539ffed004095cc0ccb20b7522,
+  areaEffect: {fileID: 0}
+  targetEffect: {fileID: 114847223870776074, guid: 692c469f234525146bfaf432bf3346dc,
     type: 2}
   moveToTarget: 0
   cameraFocus: 0
-  cameraShake: 0
+  cameraShake: 1
   user: {fileID: 0}
   targets: []
-  targetedArea: 1
+  targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
   gc: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
     value: 0
   - name: DMG
     value: 0
---- !u!212 &212894792583035140
+--- !u!212 &212461386023369356
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -142,7 +142,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

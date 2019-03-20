@@ -68,11 +68,8 @@ MonoBehaviour:
   inField: 0
   element: 6
   requiredSP: -1
-  shopRequirement:
-    job: 0
-    exp: 0
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit

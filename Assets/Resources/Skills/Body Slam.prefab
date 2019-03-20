@@ -72,7 +72,7 @@ MonoBehaviour:
   inField: 0
   element: 0
   requiredSP: -1
-  baseSkill: 0
+  baseSkill: 1
   epicSkillOf: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoisonPowder : Skill
-{
+public class BattleCry : SpecialAttack {
+
 
 }

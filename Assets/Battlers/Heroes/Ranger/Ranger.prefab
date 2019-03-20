@@ -270,10 +270,11 @@ MonoBehaviour:
   size: 5
   elementAffinity: 0
   species: 0
-  perksPrefabs:
+  perks:
   - {fileID: 0}
   - {fileID: 0}
   movable: 1
+  evolution: {fileID: 0}
   effectsDelay:
   - animation: attack
     lenghtPercentage: 1
@@ -298,12 +299,11 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   job: 9
-  unlockedSkills: []
   skills:
-  - {fileID: 114607521043220432, guid: e110c3cefd812604b91ff4fb98da96ca, type: 2}
+  - {fileID: 0}
   - {fileID: 114791456912984680, guid: f720cbfd65f4e4943a09604325f86798, type: 2}
   - {fileID: 114607521043220432, guid: 0a5fe8e448ef532458ca66c0c713ca79, type: 2}
-  - {fileID: 114836736652321672, guid: a1d5de150b0b50e4a89ebf5630e1c1e5, type: 2}
+  - {fileID: 0}
   - {fileID: 114607521043220432, guid: 396fee5440661ba41b47bb20229b23eb, type: 2}
 --- !u!212 &212922865670699482
 SpriteRenderer:

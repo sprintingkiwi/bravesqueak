@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114409233767409186}
-  - component: {fileID: 212382500279847778}
+  - component: {fileID: 114448939315776632}
+  - component: {fileID: 212894792583035140}
   m_Layer: 0
-  m_Name: Ora Pro Nobis
+  m_Name: Battle Cry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114409233767409186
+--- !u!114 &114448939315776632
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,14 +49,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a60234fbf54695438a6c701d109537c, type: 3}
+  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Resurrect, heal and cure.
-  speed: 0
-  accuracy: 0
+  description: 'A sound attack that will hit multiple targets at once and rise allies
+    attack!
+
+    Target: AREA
+
+    Element: NONE'
+  speed: 70
+  accuracy: 100
   powerRoll:
-    dices: []
+    dices:
+    - faces: 4
+    - faces: 4
+    - faces: 12
   buffs: []
   statusChances: []
   scope: 5
@@ -66,28 +74,42 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 0
-  requiredSP: 0
-  shopRequirement:
-    job: 0
-    exp: 0
-  coins: 0
-  storeNameImg: {fileID: 0}
-  userAnimation: special
+  requiredSP: -1
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
+  userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit
-  areaEffect: {fileID: 0}
-  targetEffect: {fileID: 0}
+  areaEffect: {fileID: 114614065750280804, guid: 9551f6143f203b74c9e22529e9a1dbd8,
+    type: 2}
+  targetEffect: {fileID: 114614065750280804, guid: c856dd539ffed004095cc0ccb20b7522,
+    type: 2}
   moveToTarget: 0
   cameraFocus: 0
   cameraShake: 0
   user: {fileID: 0}
   targets: []
-  targetedArea: 0
+  targetedArea: 1
   effectStillActive: 0
   bc: {fileID: 0}
   gc: {fileID: 0}
   userMovementSpeed: 0
---- !u!212 &212382500279847778
+  mods:
+  - name: ATK
+    value: 0
+  - name: SAT
+    value: 0
+  - name: DEF
+    value: 0
+  - name: SDF
+    value: 0
+  - name: EVA
+    value: 0
+  - name: CRT
+    value: 0
+  - name: DMG
+    value: 0
+--- !u!212 &212894792583035140
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -121,7 +143,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -64,9 +64,7 @@ MonoBehaviour:
     - faces: 8
     - faces: 8
   buffs: []
-  statusChances:
-  - status: {fileID: 114537509661692964, guid: 7a135abb400d7834285b40f2beef954e, type: 2}
-    chance: 100
+  statusChances: []
   scope: 2
   targetsNumber: 1
   duration: 0
