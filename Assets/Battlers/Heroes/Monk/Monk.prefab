@@ -298,9 +298,9 @@ MonoBehaviour:
   job: 6
   skills:
   - {fileID: 114836736652321672, guid: 1607c4dcca53ec24caa629db61a33ab4, type: 2}
-  - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}
-  - {fileID: 114014343126834788, guid: b74d380cfd5c70c46b3f43389ba8f6ff, type: 2}
-  - {fileID: 114836736652321672, guid: a1d5de150b0b50e4a89ebf5630e1c1e5, type: 2}
+  - {fileID: 114814859113074538, guid: d5e3574b933716d41a1e2bcde3ddbbf1, type: 2}
+  - {fileID: 114014343126834788, guid: ee63e8ebc28331d41b2d65d900b02462, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!212 &212351009626954626
 SpriteRenderer:

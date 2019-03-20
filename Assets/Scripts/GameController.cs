@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour
     public GameObject areaStuff;
     public MapCameraController mapCamera;
     public HeroBattler[] heroes;
+    public bool unlockAll;
     public HeroBattler[] unlockedHeroes;
     public PartyMenu partyMenu;
     public HeroMenu heroMenu;
