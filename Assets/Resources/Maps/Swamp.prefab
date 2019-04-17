@@ -957,8 +957,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1132970826325716}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52.1, y: -89.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.490917, y: -77.70996, z: 2.3400574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4041562433009982}
@@ -2929,7 +2929,8 @@ MonoBehaviour:
     encounter: {fileID: 114158055192404530, guid: 878256d40c580d14fb6abe3eec93371c,
       type: 2}
   - weight: 0
-    encounter: {fileID: 0}
+    encounter: {fileID: 114809916583162938, guid: ec6ec380fac442649b4423ce06aacecc,
+      type: 2}
   mapLayers:
   - folderName: Ground
     sortingOrder: -1000

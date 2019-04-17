@@ -633,7 +633,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4369981930563730, guid: d70f772dcd4238644a9aa01679d24019, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 50734255366695242, guid: d70f772dcd4238644a9aa01679d24019,
         type: 2}
@@ -1553,7 +1553,6 @@ Transform:
   m_Children:
   - {fileID: 73467199}
   - {fileID: 1317087881}
-  - {fileID: 1628061897}
   - {fileID: 283477399}
   - {fileID: 999056084}
   - {fileID: 130903264}
@@ -1570,6 +1569,7 @@ Transform:
   - {fileID: 1812459300}
   - {fileID: 1869017015}
   - {fileID: 1237420178}
+  - {fileID: 1628061897}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2612,6 +2612,7 @@ MonoBehaviour:
   - {fileID: 114120886363940634, guid: ae7d15ce42a50c14da9e6820b70b5f56, type: 2}
   - {fileID: 114120886363940634, guid: eb1922b45a3084b4aaee91180783aba1, type: 2}
   - {fileID: 114120886363940634, guid: af3429c4043c12048a5b607ee902027c, type: 2}
+  unlockAll: 0
   unlockedHeroes:
   - {fileID: 114120886363940634, guid: af3429c4043c12048a5b607ee902027c, type: 2}
   - {fileID: 114120886363940634, guid: 852241e29e159624390129fc85ff18b3, type: 2}
