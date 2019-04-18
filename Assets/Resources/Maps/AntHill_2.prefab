@@ -1152,8 +1152,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467083024620798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -132, y: -26.1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -106.390915, y: -14.609962, z: 2.3400574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4518181912460462}
@@ -3071,6 +3071,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
@@ -3094,6 +3095,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
@@ -3117,6 +3119,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
@@ -3140,6 +3143,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
@@ -3163,6 +3167,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
@@ -3186,6 +3191,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
@@ -3256,6 +3262,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 1
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
@@ -3279,13 +3286,7 @@ MonoBehaviour:
   defaultBattleback: {fileID: 1751974990724546, guid: 2fb87cc40828ad54ea2c381a2c060660,
     type: 2}
   randomEncountersRate: 30
-  randomEncounters:
-  - weight: 5
-    encounter: {fileID: 114809916583162938, guid: 15f07ebca0254964e8c72e3f70bdd0e6,
-      type: 2}
-  - weight: 5
-    encounter: {fileID: 114809916583162938, guid: 1e2390b5efe211a4caeffdaf562fa7ad,
-      type: 2}
+  randomEncounters: []
   mapLayers:
   - folderName: Ground
     sortingOrder: -1000
@@ -3308,6 +3309,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 0
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1
@@ -3333,6 +3335,7 @@ MonoBehaviour:
   speed: 0
   mirrorHorizontal: 0
   level: 0
+  footPrints: 0
   footPrintsDistance: 0
   rb: {fileID: 0}
   canMove: 1

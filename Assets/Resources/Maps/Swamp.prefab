@@ -2916,7 +2916,8 @@ MonoBehaviour:
   soundtrack: {fileID: 8300000, guid: a648e1f911e36f34c8c2ccd99038ee3e, type: 3}
   defaultBattleMusic: {fileID: 8300000, guid: 0065e1f7e74545644aa8437cde0ba07b, type: 3}
   preBattleSound: {fileID: 8300000, guid: 2f0b9a5956ba39e4c9c6a72f54312dda, type: 3}
-  defaultBattleback: {fileID: 0}
+  defaultBattleback: {fileID: 1971214822492736, guid: c4e135a3cb743cc4abcfb2000885b435,
+    type: 2}
   randomEncountersRate: 0
   randomEncounters:
   - weight: 0

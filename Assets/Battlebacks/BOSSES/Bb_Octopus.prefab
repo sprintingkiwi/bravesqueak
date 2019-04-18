@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4804720275890900}
   m_Layer: 0
-  m_Name: Octopus_Battleback
+  m_Name: Bb_Octopus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

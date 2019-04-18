@@ -924,6 +924,7 @@ GameObject:
   - component: {fileID: 95471907291179542}
   - component: {fileID: 114214019105706752}
   - component: {fileID: 58902372658489778}
+  - component: {fileID: 50814196272764888}
   m_Layer: 0
   m_Name: Beetle_Skit
   m_TagString: Untagged
@@ -2603,8 +2604,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1130087018116536}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -82, y: -27, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -56.39092, y: -15.509962, z: 2.3400574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4143706499852784}
@@ -2881,6 +2882,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!50 &50814196272764888
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635269639844024}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50819153816236112
 Rigidbody2D:
   serializedVersion: 4
@@ -4033,7 +4054,7 @@ MonoBehaviour:
   soundtrack: {fileID: 8300000, guid: 9579431a8bd2a3543a28b5afaa0e1d52, type: 3}
   defaultBattleMusic: {fileID: 8300000, guid: 0065e1f7e74545644aa8437cde0ba07b, type: 3}
   preBattleSound: {fileID: 8300000, guid: 2f0b9a5956ba39e4c9c6a72f54312dda, type: 3}
-  defaultBattleback: {fileID: 1751974990724546, guid: 2fb87cc40828ad54ea2c381a2c060660,
+  defaultBattleback: {fileID: 1675982186083152, guid: 195aeada9e7aae94d92dd9f99c0060bf,
     type: 2}
   randomEncountersRate: 15
   randomEncounters:
