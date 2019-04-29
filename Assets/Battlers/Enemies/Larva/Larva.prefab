@@ -72,35 +72,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 6
+    value: 50
   defense:
     ID: DEF
-    value: 6
+    value: 20
   specialAttack:
     ID: SAT
-    value: 10
+    value: 50
   specialDefense:
     ID: SDF
-    value: 12
+    value: 80
   support:
     ID: SUP
-    value: 14
+    value: 50
   speed:
     ID: SPD
-    value: 4
+    value: 10
   maxHP:
     ID: maxHP
-    value: 40
+    value: 90
   hitPoints: 0
   skillPoints: 0
   characterName: Larva
   size: 5
-  elementAffinity: 7
+  elementAffinity: 6
   species: 4
-  perksPrefabs:
+  perks:
   - {fileID: 0}
   - {fileID: 0}
   movable: 1
+  evolution: {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}

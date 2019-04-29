@@ -101,46 +101,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 15
+    value: 50
   defense:
     ID: DEF
-    value: 10
+    value: 20
   specialAttack:
     ID: SAT
-    value: 25
+    value: 50
   specialDefense:
     ID: SDF
     value: 20
   support:
     ID: SUP
-    value: 15
+    value: 50
   speed:
     ID: SPD
-    value: 60
+    value: 40
   maxHP:
     ID: maxHP
-    value: 30
+    value: 50
   hitPoints: 0
   skillPoints: 0
-  level: 1
   characterName: Cactus Boxer
   size: 4
-  sizeModifier: 0
   elementAffinity: 4
   species: 3
-  perksPrefabs:
+  perks:
   - {fileID: 0}
   - {fileID: 0}
+  movable: 1
+  evolution: {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
+  sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 17.5, y: -10, z: 0}
   anim: {fileID: 0}
   spr: {fileID: 0}
-  col: {fileID: 0}
   targets: []
   currentlyActiveSkills: []
   currentSkill: {fileID: 0}
@@ -163,6 +163,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -178,6 +179,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

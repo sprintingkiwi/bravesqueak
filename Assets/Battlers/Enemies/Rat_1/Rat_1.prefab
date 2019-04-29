@@ -101,35 +101,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 20
+    value: 50
   defense:
     ID: DEF
-    value: 20
+    value: 40
   specialAttack:
     ID: SAT
-    value: 5
+    value: 50
   specialDefense:
     ID: SDF
-    value: 10
+    value: 20
   support:
     ID: SUP
-    value: 5
+    value: 50
   speed:
     ID: SPD
-    value: 5
+    value: 20
   maxHP:
     ID: maxHP
-    value: 80
+    value: 100
   hitPoints: 0
   skillPoints: 0
   characterName: Rat Brute
   size: 0
-  elementAffinity: 1
+  elementAffinity: 7
   species: 2
-  perksPrefabs:
+  perks:
   - {fileID: 0}
   - {fileID: 0}
   movable: 1
+  evolution: {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}

@@ -101,35 +101,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 30
+    value: 50
   defense:
     ID: DEF
     value: 30
   specialAttack:
     ID: SAT
-    value: 10
+    value: 50
   specialDefense:
     ID: SDF
     value: 15
   support:
     ID: SUP
-    value: 10
+    value: 50
   speed:
     ID: SPD
-    value: 20
+    value: 60
   maxHP:
     ID: maxHP
-    value: 60
+    value: 50
   hitPoints: 0
   skillPoints: 0
   characterName: Pirate Green Lizard
   size: 0
   elementAffinity: 1
   species: 5
-  perksPrefabs:
+  perks:
   - {fileID: 0}
   - {fileID: 0}
   movable: 1
+  evolution: {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
