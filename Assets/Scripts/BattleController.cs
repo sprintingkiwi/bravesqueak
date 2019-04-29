@@ -31,6 +31,7 @@ public class BattleController : MonoBehaviour
     public Item droppedItem = null;
 
     [Header("Drops")]
+    public bool enableDrops;
     [Range(0, 20)]
     public int foodDropRate;
     [Range(0, 20)]
@@ -367,7 +368,7 @@ public class BattleController : MonoBehaviour
 
             // Drop
             Jrpg.Log("Item Drop");
-            if (droppedItem == null)
+            if (droppedItem == null && enableDrops)
             {
                 if(UnityEngine.Random.Range(0, 100) <= foodDropRate)
                 {                   

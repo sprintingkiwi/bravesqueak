@@ -245,25 +245,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 40
+    value: 50
   defense:
     ID: DEF
-    value: 20
+    value: 50
   specialAttack:
     ID: SAT
-    value: 30
+    value: 50
   specialDefense:
     ID: SDF
-    value: 20
+    value: 50
   support:
     ID: SUP
-    value: 25
+    value: 50
   speed:
     ID: SPD
-    value: 40
+    value: 90
   maxHP:
     ID: maxHP
-    value: 100
+    value: 70
   hitPoints: 0
   skillPoints: 0
   characterName: 

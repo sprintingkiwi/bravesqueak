@@ -63,7 +63,12 @@ MonoBehaviour:
     dices:
     - faces: 6
     - faces: 6
-  buffs: []
+  buffs:
+  - ID: SPD
+    roll:
+      dices:
+      - faces: 8
+    rollResult: 0
   statusChances: []
   scope: 2
   targetsNumber: 1

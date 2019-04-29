@@ -268,30 +268,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 10
+    value: 50
   defense:
     ID: DEF
     value: 10
   specialAttack:
     ID: SAT
-    value: 40
+    value: 50
   specialDefense:
     ID: SDF
-    value: 30
+    value: 50
   support:
     ID: SUP
     value: 20
   speed:
     ID: SPD
-    value: 20
+    value: 50
   maxHP:
     ID: maxHP
-    value: 60
+    value: 40
   hitPoints: 0
   skillPoints: 0
   characterName: 
   size: 5
-  elementAffinity: 0
+  elementAffinity: 2
   species: 2
   perks:
   - {fileID: 0}
@@ -322,7 +322,7 @@ MonoBehaviour:
   job: 5
   skills:
   - {fileID: 114836736652321672, guid: af9448afaed6ba343b121385b7304857, type: 2}
-  - {fileID: 114238026829365552, guid: 9b9eb11db93e47e4f964065e87eddd31, type: 2}
+  - {fileID: 114238026829365552, guid: 0d5bc5a67c1397d4583da6a0d1dc5039, type: 2}
   - {fileID: 114610778547815510, guid: acada68455ea759468e2fd5f9347ef0e, type: 2}
   - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}
   - {fileID: 114755667126410738, guid: 0631581c998af6f4babec1a0f8df0426, type: 2}
