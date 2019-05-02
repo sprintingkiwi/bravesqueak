@@ -23,37 +23,7 @@ GameObject:
   - component: {fileID: 114069915646428382}
   - component: {fileID: 95166979374997656}
   m_Layer: 0
-  m_Name: Fox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1102874002578732
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4934645056910880}
-  m_Layer: 0
-  m_Name: HOOKS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1347714476547748
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4149077152155488}
-  m_Layer: 0
-  m_Name: Attack
+  m_Name: Crab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,19 +44,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4149077152155488
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1347714476547748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.2, y: -5.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4934645056910880}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4284221257802178
 Transform:
   m_ObjectHideFlags: 1
@@ -108,26 +65,11 @@ Transform:
   m_GameObject: {fileID: 1006907234033178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.63, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
-  m_Children:
-  - {fileID: 4284221257802178}
-  - {fileID: 4934645056910880}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4934645056910880
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1102874002578732}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4149077152155488}
-  m_Father: {fileID: 4867988908997448}
-  m_RootOrder: 1
+  - {fileID: 4284221257802178}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95166979374997656
 Animator:
@@ -138,7 +80,7 @@ Animator:
   m_GameObject: {fileID: 1006907234033178}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1e67bc929c066e743bd0c0ceb8ef5118, type: 2}
+  m_Controller: {fileID: 9100000, guid: 85c7e6a941401514e92d87a135c4bdf4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -159,37 +101,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 30
+    value: 40
   defense:
     ID: DEF
-    value: 30
+    value: 60
   specialAttack:
     ID: SAT
-    value: 10
+    value: 40
   specialDefense:
     ID: SDF
-    value: 15
+    value: 20
   support:
     ID: SUP
-    value: 10
+    value: 40
   speed:
     ID: SPD
     value: 20
   maxHP:
     ID: maxHP
-    value: 500
+    value: 70
   hitPoints: 0
   skillPoints: 0
-  characterName: Fox
-  size: 1
-  elementAffinity: 6
+  characterName: Crab
+  size: 4
+  elementAffinity: 2
   species: 2
-  perksPrefabs:
+  perks:
   - {fileID: 0}
   - {fileID: 0}
-  movable: 0
+  movable: 1
   evolution: {fileID: 0}
-  effectsDelay: []
+  effectsDelay:
+  - animation: attack
+    lenghtPercentage: 0.9
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
@@ -211,7 +155,7 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: c5b39cdc836f7a744997f74826b19f09, type: 2}
+  strategy: {fileID: 114109042552807282, guid: 5d7e651ca91eaa540b141e02fb6f80e0, type: 2}
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -246,12 +190,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 09b085e82e4f5a64c8d8d40a57b23ce6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0ae568373aa5cf4b9ec60a7fde8f1d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 9, y: 9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

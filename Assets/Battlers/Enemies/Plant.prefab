@@ -9,78 +9,49 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1006907234033178}
+  m_RootGameObject: {fileID: 1724591388762088}
   m_IsPrefabParent: 1
---- !u!1 &1006907234033178
+--- !u!1 &1724591388762088
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4867988908997448}
-  - component: {fileID: 212565198787684934}
-  - component: {fileID: 114069915646428382}
-  - component: {fileID: 95166979374997656}
+  - component: {fileID: 4744275960321154}
+  - component: {fileID: 212683479717685656}
+  - component: {fileID: 114386406591785424}
+  - component: {fileID: 95016114397771596}
   m_Layer: 0
-  m_Name: Octopus_Head
+  m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1821771226161026
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4284221257802178}
-  m_Layer: 0
-  m_Name: HUD Hook
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4284221257802178
+--- !u!4 &4744275960321154
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1821771226161026}
+  m_GameObject: {fileID: 1724591388762088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.42, y: 6.16, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4867988908997448}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4867988908997448
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006907234033178}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.63, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4284221257802178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95166979374997656
+--- !u!95 &95016114397771596
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006907234033178}
+  m_GameObject: {fileID: 1724591388762088}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e684d4a784d09c48b9fb872a5079d27, type: 2}
+  m_Controller: {fileID: 9100000, guid: 816658f797cb10c4583c8742842cb44e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -88,12 +59,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114069915646428382
+--- !u!114 &114386406591785424
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006907234033178}
+  m_GameObject: {fileID: 1724591388762088}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28d4f5af032f3214da41cdd8a2e153b0, type: 3}
@@ -101,35 +72,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 30
+    value: 35
   defense:
     ID: DEF
-    value: 30
+    value: 40
   specialAttack:
     ID: SAT
-    value: 10
+    value: 50
   specialDefense:
     ID: SDF
-    value: 15
+    value: 80
   support:
     ID: SUP
-    value: 10
+    value: 40
   speed:
     ID: SPD
-    value: 20
+    value: 10
   maxHP:
     ID: maxHP
     value: 60
   hitPoints: 0
   skillPoints: 0
-  characterName: Octopus Head
-  size: 2
-  elementAffinity: 2
-  species: 2
-  perksPrefabs:
+  characterName: Plant
+  size: 3
+  elementAffinity: 1
+  species: 3
+  perks:
   - {fileID: 0}
   - {fileID: 0}
-  movable: 0
+  movable: 1
+  evolution: {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
@@ -137,7 +109,7 @@ MonoBehaviour:
   parryEffect: {fileID: 0}
   sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
-  targetPos: {x: 17.5, y: -10, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
   anim: {fileID: 0}
   spr: {fileID: 0}
   targets: []
@@ -152,20 +124,20 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: 314b1e159fcbaf648828dbc39bb8fbd7, type: 2}
---- !u!212 &212565198787684934
+  strategy: {fileID: 114429996944679292, guid: a26303c4c945b45498e7c374d2785dad, type: 2}
+--- !u!212 &212683479717685656
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006907234033178}
+  m_GameObject: {fileID: 1724591388762088}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -187,12 +159,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2fc9ba2417aa6f94d8dfd34f133f549c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63f949f0cc8efde49925714c361fca62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 38.399998, y: 21.599998}
+  m_Size: {x: 32, y: 32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

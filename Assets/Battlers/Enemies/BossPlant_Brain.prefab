@@ -20,15 +20,43 @@ GameObject:
   m_Component:
   - component: {fileID: 4867988908997448}
   - component: {fileID: 212565198787684934}
-  - component: {fileID: 95166979374997656}
   - component: {fileID: 114069915646428382}
+  - component: {fileID: 95166979374997656}
   m_Layer: 0
-  m_Name: Larva
+  m_Name: BossPlant_Brain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1821771226161026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4284221257802178}
+  m_Layer: 0
+  m_Name: HUD Hook
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4284221257802178
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821771226161026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.42, y: 6.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4867988908997448}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4867988908997448
 Transform:
   m_ObjectHideFlags: 1
@@ -36,9 +64,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006907234033178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.63, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4284221257802178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51,7 +80,7 @@ Animator:
   m_GameObject: {fileID: 1006907234033178}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 02d5e862f51e6d14398ed5bfa53140e8, type: 2}
+  m_Controller: {fileID: 9100000, guid: c66ca225c7e9e4c4c9b61a45a0ed98c5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -72,35 +101,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 50
+    value: 30
   defense:
     ID: DEF
-    value: 20
+    value: 30
   specialAttack:
     ID: SAT
-    value: 50
+    value: 10
   specialDefense:
     ID: SDF
-    value: 80
+    value: 15
   support:
     ID: SUP
-    value: 50
+    value: 10
   speed:
     ID: SPD
-    value: 10
+    value: 20
   maxHP:
     ID: maxHP
-    value: 90
+    value: 60
   hitPoints: 0
   skillPoints: 0
-  characterName: Larva
-  size: 5
-  elementAffinity: 6
-  species: 4
+  characterName: Boss Plant Brain
+  size: 2
+  elementAffinity: 1
+  species: 3
   perks:
   - {fileID: 0}
   - {fileID: 0}
-  movable: 1
+  movable: 0
   evolution: {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
@@ -124,7 +153,7 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: 8855d7a34386bc14bbf783e6ead8165f, type: 2}
+  strategy: {fileID: 114109042552807282, guid: 0f58db33f9f0dc146b0f354d85fb604b, type: 2}
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -159,12 +188,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8a3a803dd840eb4287507fe57537dce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edc6c0896f24d2e4591a32b3169b34ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.4, y: 14.4}
+  m_Size: {x: 76.799995, y: 43.199997}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

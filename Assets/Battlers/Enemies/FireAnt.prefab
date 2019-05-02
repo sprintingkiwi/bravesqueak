@@ -20,43 +20,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4867988908997448}
   - component: {fileID: 212565198787684934}
-  - component: {fileID: 114069915646428382}
   - component: {fileID: 95166979374997656}
+  - component: {fileID: 114069915646428382}
   m_Layer: 0
-  m_Name: Octopus
+  m_Name: FireAnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1821771226161026
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4284221257802178}
-  m_Layer: 0
-  m_Name: HUD Hook
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4284221257802178
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1821771226161026}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.42, y: 6.16, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4867988908997448}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4867988908997448
 Transform:
   m_ObjectHideFlags: 1
@@ -64,10 +36,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006907234033178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.63, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4284221257802178}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,7 +51,7 @@ Animator:
   m_GameObject: {fileID: 1006907234033178}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 579fb2ebfdedf8644bfd69b740e50840, type: 2}
+  m_Controller: {fileID: 9100000, guid: 30222aeb5705bc04eb14236cd7046ff4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -101,37 +72,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 30
+    value: 40
   defense:
     ID: DEF
-    value: 30
+    value: 20
   specialAttack:
     ID: SAT
-    value: 10
+    value: 40
   specialDefense:
     ID: SDF
-    value: 15
+    value: 40
   support:
     ID: SUP
-    value: 10
+    value: 40
   speed:
     ID: SPD
-    value: 20
+    value: 80
   maxHP:
     ID: maxHP
-    value: 250
+    value: 40
   hitPoints: 0
   skillPoints: 0
-  characterName: Octopus
-  size: 2
-  elementAffinity: 2
-  species: 2
-  perksPrefabs:
+  characterName: Fire Ant
+  size: 5
+  elementAffinity: 4
+  species: 4
+  perks:
   - {fileID: 0}
   - {fileID: 0}
-  movable: 0
-  evolution: {fileID: 114069915646428382, guid: 032de18ce1ca4e645ae4c9b7f368d4b4,
-    type: 2}
+  movable: 1
+  evolution: {fileID: 0}
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}
@@ -154,7 +124,7 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: 4c6651a88960fcd469342fe515116585, type: 2}
+  strategy: {fileID: 114109042552807282, guid: 705f813b76085514b9b68fd2bc48cfde, type: 2}
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -189,12 +159,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4c75bcac4c457bd4ca26dcd2e2d688e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ee00b5e5f0f749418cfd6dac48d3ed5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 96, y: 54}
+  m_Size: {x: 14.4, y: 14.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

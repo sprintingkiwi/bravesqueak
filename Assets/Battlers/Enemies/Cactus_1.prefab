@@ -101,19 +101,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 50
+    value: 40
   defense:
     ID: DEF
     value: 20
   specialAttack:
     ID: SAT
-    value: 50
+    value: 40
   specialDefense:
     ID: SDF
     value: 20
   support:
     ID: SUP
-    value: 50
+    value: 40
   speed:
     ID: SPD
     value: 40
