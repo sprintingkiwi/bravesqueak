@@ -171,6 +171,9 @@ public class GameController : MonoBehaviour
             yield break;
         }
 
+        if (encounter == null)
+            yield break;
+
         canSaveLoad = false;
         situation = "Battle";
 

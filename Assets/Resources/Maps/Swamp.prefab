@@ -2920,16 +2920,16 @@ MonoBehaviour:
     type: 2}
   randomEncountersRate: 0
   randomEncounters:
-  - weight: 0
+  - weight: 3
     encounter: {fileID: 114809916583162938, guid: 9218b19cb35141045a1c1b0db8723bc2,
       type: 2}
-  - weight: 0
+  - weight: 3
     encounter: {fileID: 114809916583162938, guid: 6770848308e45f94f99e1997fdc0bdf8,
       type: 2}
-  - weight: 0
+  - weight: 3
     encounter: {fileID: 114158055192404530, guid: 878256d40c580d14fb6abe3eec93371c,
       type: 2}
-  - weight: 0
+  - weight: 3
     encounter: {fileID: 114809916583162938, guid: ec6ec380fac442649b4423ce06aacecc,
       type: 2}
   mapLayers:

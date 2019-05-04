@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 95451199811738538}
   - component: {fileID: 212351009626954626}
   m_Layer: 0
-  m_Name: Zombie
+  m_Name: Swordmaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,9 +116,9 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.59, y: 0.41}
+    pivot: {x: 0.52, y: 0.44}
     oldSize: {x: 18, y: 18}
-    newSize: {x: 9, y: 9}
+    newSize: {x: 18, y: 18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -219,7 +219,7 @@ Animator:
   m_GameObject: {fileID: 1954718922003644}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 03070b00340e7e6429561af3f36fcca5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4d75b3988b131254a8fc7ac0bcffbf59, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -240,22 +240,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 50
+    value: 90
   defense:
     ID: DEF
-    value: 70
+    value: 50
   specialAttack:
     ID: SAT
     value: 50
   specialDefense:
     ID: SDF
-    value: 70
+    value: 50
   support:
     ID: SUP
     value: 50
   speed:
     ID: SPD
-    value: 50
+    value: 70
   maxHP:
     ID: maxHP
     value: 100
@@ -263,8 +263,8 @@ MonoBehaviour:
   skillPoints: 0
   characterName: 
   size: 5
-  elementAffinity: 8
-  species: 1
+  elementAffinity: 5
+  species: 2
   perks:
   - {fileID: 0}
   - {fileID: 0}
@@ -295,13 +295,13 @@ MonoBehaviour:
   faction: 1
   firewalls: []
   hud: {fileID: 0}
-  job: 7
+  job: 1
   skills:
+  - {fileID: 114487366432352720, guid: c6ff120cdf45aab44be5e2f0cc279fa8, type: 2}
+  - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}
+  - {fileID: 114014343126834788, guid: b74d380cfd5c70c46b3f43389ba8f6ff, type: 2}
   - {fileID: 0}
-  - {fileID: 114836736652321672, guid: a1d5de150b0b50e4a89ebf5630e1c1e5, type: 2}
-  - {fileID: 114448939315776632, guid: 14ddaddcc9edfa14296b77ee3f50793f, type: 2}
-  - {fileID: 0}
-  - {fileID: 114058463478330858, guid: 9916d7eecc2371240996692895cd010b, type: 2}
+  - {fileID: 114799931718013420, guid: e7251806589250d42aaed88ef5dc8ad8, type: 2}
 --- !u!212 &212351009626954626
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -336,12 +336,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 431f313cc427dc14595a2d8a93683ca7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41e7797f600670343bfa94e3db9c0b48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9, y: 9}
+  m_Size: {x: 18, y: 18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

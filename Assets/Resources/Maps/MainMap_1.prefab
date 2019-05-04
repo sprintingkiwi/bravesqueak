@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 58695028836820356}
   - component: {fileID: 114967584534930232}
   m_Layer: 0
-  m_Name: To AntHill
+  m_Name: To Passage_AntHill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 58886895608173546}
   - component: {fileID: 114068704343215850}
   m_Layer: 0
-  m_Name: To HollowTree_1
+  m_Name: To Passage_HollowTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4329,7 +4329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: {fileID: 114142631811641686, guid: d70f772dcd4238644a9aa01679d24019,
+  destinationMap: {fileID: 114720446303504176, guid: a2e69e14af40b1f4d84e9532f0a6df27,
     type: 2}
   destinationPlace: To MainMap_1
   destinationPos: {x: 0, y: 0, z: 0}
@@ -4679,7 +4679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: {fileID: 114618980357317238, guid: 13186551c1fabb54f80108e447960bc5,
+  destinationMap: {fileID: 114720446303504176, guid: 2dd498843d07f004e9b13daa1c3549b9,
     type: 2}
   destinationPlace: To MainMap_1
   destinationPos: {x: 0, y: 0, z: 0}

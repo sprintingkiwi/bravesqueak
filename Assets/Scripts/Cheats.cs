@@ -62,7 +62,7 @@ public class Cheats : MonoBehaviour
         //Debug.Log(GameObject.FindObjectOfType<AudioListener>().name);
 
         if (Input.GetKeyDown(KeyCode.T))
-            StartCoroutine(gc.TriggerBattle(testEncounters[0], "Random"));
+            gc.StartCoroutine(gc.TriggerBattle(gc.currentMap.ChooseRandomEncounter(), "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
             StartCoroutine(gc.TriggerBattle(testEncounters[1], "Random"));
@@ -125,7 +125,13 @@ public class Cheats : MonoBehaviour
         }
 
         //if (Jrpg.CheckPlatform() == "Mobile")
-            //ShakeOnMobile();
+        //ShakeOnMobile();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerController pc = GameObject.Find("Player").GetComponent<PlayerController>();
+            pc.randomEncounters = !pc.randomEncounters;
+        }
     }
 
     //void ShakeOnMobile()

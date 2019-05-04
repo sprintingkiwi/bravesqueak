@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 95451199811738538}
   - component: {fileID: 212351009626954626}
   m_Layer: 0
-  m_Name: Swordmaster
+  m_Name: Monk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,9 +116,9 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.52, y: 0.44}
+    pivot: {x: 0.603, y: 0.428}
     oldSize: {x: 18, y: 18}
-    newSize: {x: 18, y: 18}
+    newSize: {x: 9, y: 9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -219,7 +219,7 @@ Animator:
   m_GameObject: {fileID: 1954718922003644}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4d75b3988b131254a8fc7ac0bcffbf59, type: 2}
+  m_Controller: {fileID: 9100000, guid: fde590d3f0577bd44965436b4f6ddd29, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -246,24 +246,24 @@ MonoBehaviour:
     value: 50
   specialAttack:
     ID: SAT
-    value: 50
+    value: 70
   specialDefense:
     ID: SDF
-    value: 50
+    value: 90
   support:
     ID: SUP
-    value: 50
+    value: 70
   speed:
     ID: SPD
     value: 70
   maxHP:
     ID: maxHP
-    value: 100
+    value: 70
   hitPoints: 0
   skillPoints: 0
   characterName: 
   size: 5
-  elementAffinity: 5
+  elementAffinity: 3
   species: 2
   perks:
   - {fileID: 0}
@@ -295,13 +295,13 @@ MonoBehaviour:
   faction: 1
   firewalls: []
   hud: {fileID: 0}
-  job: 1
+  job: 6
   skills:
-  - {fileID: 114487366432352720, guid: c6ff120cdf45aab44be5e2f0cc279fa8, type: 2}
-  - {fileID: 114749022154217498, guid: 2d63d15ad3918454181732c042195f21, type: 2}
-  - {fileID: 114014343126834788, guid: b74d380cfd5c70c46b3f43389ba8f6ff, type: 2}
+  - {fileID: 114836736652321672, guid: 1607c4dcca53ec24caa629db61a33ab4, type: 2}
+  - {fileID: 114814859113074538, guid: d5e3574b933716d41a1e2bcde3ddbbf1, type: 2}
+  - {fileID: 114014343126834788, guid: ee63e8ebc28331d41b2d65d900b02462, type: 2}
   - {fileID: 0}
-  - {fileID: 114799931718013420, guid: e7251806589250d42aaed88ef5dc8ad8, type: 2}
+  - {fileID: 0}
 --- !u!212 &212351009626954626
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -336,12 +336,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 41e7797f600670343bfa94e3db9c0b48, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cdf72be159dbd58488ad4dc1ac56e4e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 18, y: 18}
+  m_Size: {x: 9, y: 9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
