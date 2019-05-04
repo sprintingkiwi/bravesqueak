@@ -203,6 +203,7 @@ public class BattleMenu : MonoBehaviour
 
         if (skillScroll != null)
             Destroy(skillScroll);
+        Debug.Log(focusedSkill.element.ToString());
         skillScroll = Instantiate(Resources.Load("SkillScrolls/Scroll_" + focusedSkill.element.ToString()) as GameObject, transform.parent);
         //skillScroll.transform.Translate(Vector3.up * 16);
 

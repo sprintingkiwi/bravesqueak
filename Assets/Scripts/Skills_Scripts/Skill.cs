@@ -25,7 +25,7 @@ public class Skill : Item
     public bool active = true;
     public bool inBattle = true;
     public bool inField;
-    public enum Element { None, Earth, Water, Wind, Fire, Thunder, Light, Darkness}
+    public enum Element { None, Earth, Water, Wind, Fire, Thunder, Ice, Light, Darkness}
     public Element element;
     public int requiredSP;
     public bool baseSkill;

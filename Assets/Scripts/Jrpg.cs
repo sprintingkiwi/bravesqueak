@@ -79,11 +79,16 @@ public class Jrpg : MonoBehaviour
         return result;
     }
 
-    public static int Roll(Stat stat, Roll roll = null, int modifier = 100)
+    public static int Roll(Stat stat = null, Roll roll = null, int modifier = 100)
     {
         int gap = 5;
         int result = 0;
 
+        // Stat value 50 if stat parameter is not gived
+        if (stat == null)
+            stat = new Stat() { ID = "", value = 50 };
+
+        // D12 is roll parameter is not given
         if (roll == null)
             roll = new Roll() { dices = new Roll.Dice[] { new Roll.Dice() { faces = 12 } } };
 
