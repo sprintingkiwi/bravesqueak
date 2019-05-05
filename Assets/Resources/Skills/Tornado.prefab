@@ -67,7 +67,7 @@ MonoBehaviour:
   statusChances:
   - status: {fileID: 114414827486457196, guid: f089c7a92c8ed6c4e9e45b82aa1206d5, type: 2}
     chance: 10
-  scope: 2
+  scope: 5
   targetsNumber: 1
   duration: 0
   active: 1

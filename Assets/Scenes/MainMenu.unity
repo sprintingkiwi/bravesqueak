@@ -2138,7 +2138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96134597444001046906f38930b19b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simulatedPlatform: 1
+  simulatedPlatform: 0
   saveData:
   - defeatedBosses: []
     savedCurrentMapName: 

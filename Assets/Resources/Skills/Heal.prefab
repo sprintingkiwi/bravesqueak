@@ -70,7 +70,7 @@ MonoBehaviour:
   active: 1
   inBattle: 1
   inField: 0
-  element: 0
+  element: 7
   requiredSP: 1
   baseSkill: 0
   epicSkillOf: {fileID: 0}

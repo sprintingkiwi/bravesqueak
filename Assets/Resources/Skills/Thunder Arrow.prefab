@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114791456912984680}
-  - component: {fileID: 212244746370017988}
+  - component: {fileID: 114607521043220432}
+  - component: {fileID: 212680232374482140}
   m_Layer: 0
-  m_Name: Arrow Shower
+  m_Name: Thunder Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114791456912984680
+--- !u!114 &114607521043220432
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,29 +52,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 'The enemies will suffer under a rain of arrows!
-
-    Target: ENEMY AREA
-
-    Element: NONE'
-  speed: 120
-  accuracy: 70
+  description: 
+  speed: 60
+  accuracy: 80
   powerRoll:
     dices:
-    - faces: 4
+    - faces: 12
+    - faces: 12
   buffs: []
   statusChances: []
-  scope: 5
+  scope: 2
   targetsNumber: 1
   duration: 0
   active: 1
   inBattle: 1
   inField: 0
-  element: 0
-  requiredSP: 2
+  element: 5
+  requiredSP: 4
   baseSkill: 0
-  epicSkillOf: {fileID: 114253743136115620, guid: 54e5d2f2fb4d0674492c18ed539645fa,
-    type: 2}
+  epicSkillOf: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit
@@ -83,7 +79,7 @@ MonoBehaviour:
     type: 2}
   moveToTarget: 0
   cameraFocus: 0
-  cameraShake: 0
+  cameraShake: 1
   user: {fileID: 0}
   targets: []
   targetedArea: 0
@@ -106,7 +102,7 @@ MonoBehaviour:
     value: 0
   - name: DMG
     value: 0
---- !u!212 &212244746370017988
+--- !u!212 &212680232374482140
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -145,7 +141,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.8933333, y: 1.8933333}
+  m_Size: {x: 1.9066666, y: 1.8933333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

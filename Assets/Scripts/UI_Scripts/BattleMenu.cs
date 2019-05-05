@@ -188,7 +188,7 @@ public class BattleMenu : MonoBehaviour
         }
     }
 
-    void SetSkillScroll()
+    public void SetSkillScroll()
     {
         if (playerBattler.skills[skillIndex] == null)
         {
@@ -198,12 +198,16 @@ public class BattleMenu : MonoBehaviour
         }
 
         // Skill name scrolls
-        Skill focusedSkill = playerBattler.skills[skillIndex];
+        Skill focusedSkill;
+        if (Jrpg.CheckPlatform() == "Mobile")
+            focusedSkill = selectedSkill;
+        else
+            focusedSkill = playerBattler.skills[skillIndex];
         Jrpg.Log(focusedSkill.name);
 
         if (skillScroll != null)
             Destroy(skillScroll);
-        Debug.Log(focusedSkill.element.ToString());
+        //Debug.Log(focusedSkill.element.ToString());
         skillScroll = Instantiate(Resources.Load("SkillScrolls/Scroll_" + focusedSkill.element.ToString()) as GameObject, transform.parent);
         //skillScroll.transform.Translate(Vector3.up * 16);
 
@@ -614,7 +618,8 @@ public class BattleMenu : MonoBehaviour
 
         // End turn
         //Jrpg.Fade(playerBattler.transform.Find("Highlighter").gameObject, 0, 0.5f, true);
-        Destroy(playerBattler.transform.Find("Highlighter").gameObject);
+        if (playerBattler.transform.Find("Highlighter") != null)
+            Destroy(playerBattler.transform.Find("Highlighter").gameObject);
         if (bc.mainCamera.transform.Find("Target Cursor") != null)
             Destroy(bc.mainCamera.transform.Find("Target Cursor").gameObject);
             //Jrpg.Fade(bc.mainCamera.transform.Find("Target Cursor").gameObject, 0, 0.1f, true);

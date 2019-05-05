@@ -10,6 +10,7 @@ public class GameButton : MonoBehaviour
     public Sprite down;
     public float fadeSpeed = 0.2f;
     public float alpha = 1;
+    bool physicalButtonFeedback;
 
 	// Use this for initialization
 	public void Start ()
@@ -21,16 +22,34 @@ public class GameButton : MonoBehaviour
         // Fade in
         //Jrpg.Fade(gameObject, alpha, fadeSpeed);
         spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 1);
+
+        physicalButtonFeedback = IsButtonAvailable(name);
     }
 
     // Update is called once per frame
     public void Update ()
     {
-        if (Input.GetButtonDown(name))
-            spr.sprite = down;
-        else if (Input.GetButtonUp(name))
-            spr.sprite = up;
+        if (physicalButtonFeedback)
+        {
+            if (Input.GetButtonDown(name))
+                spr.sprite = down;
+            else if (Input.GetButtonUp(name))
+                spr.sprite = up;
+        }        
 	}
+
+    bool IsButtonAvailable(string btnName)
+    {
+        try
+        {
+            Input.GetButton(btnName);
+            return true;
+        }
+        catch (UnityException exc)
+        {
+            return false;
+        }
+    }
 
     void OnMouseDown()
     {

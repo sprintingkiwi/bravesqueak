@@ -28,6 +28,7 @@ public class SkillWheelIcon : MonoBehaviour
 
         if (bm.phase == "Target Selection" || bm.phase == "Area Selection")
         {
+            bm.SetSkillScroll();
             // Confirm for Mobile
             if (linkedSkill.ProcessRequirements(bm.playerBattler))
                 bm.selectedSkill = linkedSkill;
