@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 'Wind can be very dangerous!
+  description: 'Brambles blocking your enemies!
 
     Target: AREA.
 
