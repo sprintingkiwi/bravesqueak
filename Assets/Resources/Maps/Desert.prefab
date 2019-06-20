@@ -2286,7 +2286,7 @@ MonoBehaviour:
   preBattleSound: {fileID: 8300000, guid: 2f0b9a5956ba39e4c9c6a72f54312dda, type: 3}
   defaultBattleback: {fileID: 1855870307715296, guid: 738587400a0482c469f3d47cd252803c,
     type: 2}
-  randomEncountersRate: 0
+  randomEncountersRate: 15
   randomEncounters:
   - weight: 3
     encounter: {fileID: 114158055192404530, guid: 246b5024d2c9b9c44bab8907fd9f051e,

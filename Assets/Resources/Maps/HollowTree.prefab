@@ -5033,7 +5033,7 @@ MonoBehaviour:
   preBattleSound: {fileID: 8300000, guid: 2f0b9a5956ba39e4c9c6a72f54312dda, type: 3}
   defaultBattleback: {fileID: 1751974990724546, guid: 2fb87cc40828ad54ea2c381a2c060660,
     type: 2}
-  randomEncountersRate: 20
+  randomEncountersRate: 15
   randomEncounters:
   - weight: 7
     encounter: {fileID: 114809916583162938, guid: e7b7208756760364091e2386eb5f321f,

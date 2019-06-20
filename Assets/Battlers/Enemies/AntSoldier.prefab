@@ -395,7 +395,7 @@ MonoBehaviour:
     value: 40
   speed:
     ID: SPD
-    value: 80
+    value: 50
   maxHP:
     ID: maxHP
     value: 30
