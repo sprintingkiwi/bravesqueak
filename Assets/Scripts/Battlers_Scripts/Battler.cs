@@ -257,7 +257,17 @@ public class Battler : MonoBehaviour
     {
         foreach (Transform s in transform.Find("STATUS"))
         {
-            yield return StartCoroutine(s.GetComponent<Status>().Effect());
+            Status status = s.GetComponent<Status>();
+            yield return StartCoroutine(status.Effect());
+        }
+    }
+
+    public virtual IEnumerator StatusSaveRolls()
+    {
+        foreach (Transform s in transform.Find("STATUS"))
+        {
+            Status status = s.GetComponent<Status>();
+            yield return StartCoroutine(status.SaveRoll());
         }
     }
 

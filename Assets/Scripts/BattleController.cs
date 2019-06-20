@@ -330,7 +330,18 @@ public class BattleController : MonoBehaviour
                 if (actionsQueue[i].user != null)
                 {
                     // Log
-                    Debug.Log(actionsQueue[i].user.name + " is still alive and can act");
+                    Debug.Log(actionsQueue[i].user.name + " is still alive...");
+
+                    // Check if the user can act
+                    if (actionsQueue[i].user.canAct)
+                        Debug.Log(actionsQueue[i].user.name + "... and can act");
+                    else
+                    {
+                        Debug.Log(actionsQueue[i].user.name + "... but cannot act. Using Wait skill.");
+                        // Load wait skill if user cannot act
+                        actionsQueue[i].skillPrefab = (Resources.Load("Skills/Wait") as GameObject).GetComponent<Skill>();
+                    }
+
                     Jrpg.Log(actionsQueue[i].user.name + " action");
                     yield return new WaitForSeconds(0.1f);
 
@@ -364,6 +375,12 @@ public class BattleController : MonoBehaviour
                 outcome = EvaluateBattleOutcome();
                 if (outcome != "Continue")
                     break;
+            }
+
+            //Status Save Rolls
+            for (int i = 0; i < actionsQueue.Count; i++)
+            {
+                yield return StartCoroutine(actionsQueue[i].user.StatusSaveRolls());
             }
 
             // Drop

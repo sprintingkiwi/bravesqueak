@@ -12,13 +12,6 @@ public class Stunned : Status
         yield return null;
     }
 
-    public override void SaveRoll()
-    {
-        base.SaveRoll();
-
-
-    }
-
     public override void CheckDestroyed()
     {
         base.CheckDestroyed();

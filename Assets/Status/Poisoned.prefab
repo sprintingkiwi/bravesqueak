@@ -53,4 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusEffect: {fileID: 114696480298692704, guid: 205823002e85dfd44bd367d1ec3bbe2f,
     type: 2}
+  decadence: 20
   holder: {fileID: 0}

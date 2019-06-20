@@ -5,6 +5,8 @@ using UnityEngine;
 public class Status : MonoBehaviour
 {
     public Effect statusEffect;
+    public float decadence;
+    float lastSaveRollThreshold = 0;
 
     [Header("System")]
     public Battler holder;
@@ -39,13 +41,31 @@ public class Status : MonoBehaviour
         yield return null;
     }
 
-    public virtual void SaveRoll()
+    public virtual IEnumerator SaveRoll()
     {
         Debug.Log("Save roll for " + holder.name + " to remove " + gameObject.name);
+
+        // Check for status removal
+        if (Random.Range(0, 100) < lastSaveRollThreshold)
+        {
+            yield return StartCoroutine(RemoveStatus());
+        }
+
+        // Add decadence to increase removal chances every turn
+        lastSaveRollThreshold += decadence;
+
+        yield return null;
     }
 
     public virtual void CheckDestroyed()
     {
         Debug.Log("Checking for " + gameObject.name + " destroy condition");
+    }
+
+    public virtual IEnumerator RemoveStatus()
+    {
+        Destroy(gameObject);
+
+        yield return null;
     }
 }

@@ -61,8 +61,8 @@ MonoBehaviour:
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 8
-    - faces: 8
+    - faces: 3
+    - faces: 3
   buffs: []
   statusChances:
   - status: {fileID: 114414827486457196, guid: f089c7a92c8ed6c4e9e45b82aa1206d5, type: 2}
@@ -81,7 +81,7 @@ MonoBehaviour:
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114847223870776074, guid: 692c469f234525146bfaf432bf3346dc,
+  targetEffect: {fileID: 114946632963968454, guid: 792a0d4d41be5464ca4da79d3c7616ca,
     type: 2}
   moveToTarget: 0
   cameraFocus: 0

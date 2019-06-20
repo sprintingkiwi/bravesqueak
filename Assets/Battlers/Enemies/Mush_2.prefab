@@ -252,7 +252,7 @@ MonoBehaviour:
   targets: []
   currentlyActiveSkills: []
   currentSkill: {fileID: 0}
-  canAct: 0
+  canAct: 1
   perfectParry: 0
   audioSource: {fileID: 0}
   gc: {fileID: 0}
