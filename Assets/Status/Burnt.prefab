@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4321466647863666}
   - component: {fileID: 114537509661692964}
   m_Layer: 0
-  m_Name: Poisoned
+  m_Name: Burnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusEffect: {fileID: 114696480298692704, guid: 205823002e85dfd44bd367d1ec3bbe2f,
     type: 2}
-  decadence: 20
+  decadence: 40
   holder: {fileID: 0}
-  damagePercentage: 0.2
+  damagePercentage: 0.3

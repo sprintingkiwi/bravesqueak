@@ -72,8 +72,9 @@ MonoBehaviour:
   inField: 0
   element: 6
   requiredSP: 0
-  baseSkill: 0
+  baseSkill: 1
   epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
   userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit

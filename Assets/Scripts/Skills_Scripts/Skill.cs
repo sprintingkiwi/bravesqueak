@@ -57,7 +57,7 @@ public class Skill : Item
     // Animations sequence
     [Header("Animations sequence")]
     //public string userBeginAnimation;
-    //public Effect userBeginEffect;
+    public Effect userBeginEffect;
     //public string targetBeginAnimation;
     //public Effect targetBeginEffect;
     //public string userMoveAnimation;
@@ -275,6 +275,10 @@ public class Skill : Item
     public virtual IEnumerator Beginning()
     {
         yield return null;
+
+        // User Begin Effect
+        if (userBeginEffect != null)
+            yield return StartCoroutine(Jrpg.PlayEffect(user, userBeginEffect, wait: true));
     }
 
     public virtual IEnumerator MoveToTarget(Battler target)
