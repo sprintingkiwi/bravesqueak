@@ -3929,7 +3929,10 @@ MonoBehaviour:
   defaultBattleback: {fileID: 1351263331636660, guid: ae1bb8feae4e8d44684aecab271cf01c,
     type: 2}
   randomEncountersRate: 15
-  randomEncounters: []
+  randomEncounters:
+  - weight: 4
+    encounter: {fileID: 114809916583162938, guid: 2306f6037989d9440a825c4fb86fef4d,
+      type: 2}
   mapLayers:
   - folderName: Ground
     sortingOrder: -1000
