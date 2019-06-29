@@ -259,13 +259,13 @@ MonoBehaviour:
     value: 50
   specialAttack:
     ID: SAT
-    value: 50
+    value: 70
   specialDefense:
     ID: SDF
     value: 70
   support:
     ID: SUP
-    value: 50
+    value: 70
   speed:
     ID: SPD
     value: 30

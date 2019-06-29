@@ -399,7 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack:
     ID: ATK
-    value: 30
+    value: 70
   defense:
     ID: DEF
     value: 60
@@ -411,7 +411,7 @@ MonoBehaviour:
     value: 30
   support:
     ID: SUP
-    value: 60
+    value: 70
   speed:
     ID: SPD
     value: 10

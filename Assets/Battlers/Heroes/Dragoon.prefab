@@ -337,7 +337,7 @@ MonoBehaviour:
     value: 40
   support:
     ID: SUP
-    value: 50
+    value: 70
   speed:
     ID: SPD
     value: 50

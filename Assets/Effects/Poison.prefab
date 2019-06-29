@@ -155,7 +155,7 @@ MonoBehaviour:
   speed: 0
   AfterEffect: {fileID: 0}
   customLayer: 0
-  loop: 1
+  loop: 0
   fade: 0
   fadeSpeed: 0.5
 --- !u!212 &212162763489015240
