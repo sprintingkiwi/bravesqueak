@@ -19,9 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 212592076274011496}
+  - component: {fileID: 114014343126834788}
+  - component: {fileID: 212945115848342930}
   m_Layer: 0
-  m_Name: Dragon Shape
+  m_Name: Swordmaster_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +41,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &212592076274011496
+--- !u!114 &114014343126834788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650370697774398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  speed: 100
+  accuracy: 100
+  powerRoll:
+    dices:
+    - faces: 6
+  buffs: []
+  statusChances: []
+  scope: 2
+  targetsNumber: 1
+  duration: 0
+  active: 1
+  inBattle: 1
+  inField: 0
+  element: 0
+  requiredSP: -1
+  baseSkill: 1
+  epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
+  userAnimation: attack
+  alternativeUserAnims: []
+  targetAnimation: hit
+  areaEffect: {fileID: 0}
+  targetEffect: {fileID: 114979775389643346, guid: b7d3c157b7a60bc4aa477c12df5c82bb,
+    type: 2}
+  moveToTarget: 1
+  cameraFocus: 0
+  cameraShake: 0
+  user: {fileID: 0}
+  targets: []
+  targetedArea: 0
+  effectStillActive: 0
+  bc: {fileID: 0}
+  gc: {fileID: 0}
+  userMovementSpeed: 0
+  mods:
+  - name: ATK
+    value: 0
+  - name: SAT
+    value: 0
+  - name: DEF
+    value: 0
+  - name: SDF
+    value: 0
+  - name: EVA
+    value: 0
+  - name: CRT
+    value: 0
+  - name: DMG
+    value: 0
+--- !u!212 &212945115848342930
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -74,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ab6c591524a7a948ad8a696d6553add, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
