@@ -60,7 +60,9 @@ MonoBehaviour:
     - faces: 12
     - faces: 12
   buffs: []
-  statusChances: []
+  statusChances:
+  - status: {fileID: 114537509661692964, guid: 87146e5644e94d349aa91d8c6188d45a, type: 2}
+    chance: 100
   scope: 2
   targetsNumber: 1
   duration: 0
@@ -71,6 +73,7 @@ MonoBehaviour:
   requiredSP: 4
   baseSkill: 0
   epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit

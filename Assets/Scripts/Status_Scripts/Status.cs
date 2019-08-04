@@ -31,13 +31,20 @@ public class Status : MonoBehaviour
     {
         // Status entry effects here
         yield return StartCoroutine(Jrpg.PlayAnimation(holder, "hit", true));
-        StartCoroutine(Jrpg.PlayEffect(holder, statusEffect, true));
+        // Process status effect and wait for its completion only if it's not in loop mode
+        yield return StartCoroutine(Jrpg.PlayEffect(holder, statusEffect, !statusEffect.loop));
     }
 
     public virtual IEnumerator Effect()
     {
         Debug.Log("Processing " + gameObject.name + " effect on " + holder.name);
-        //yield return StartCoroutine(Feedback());
+        
+        // Repeat feedback if status effect is not in loop mode
+        if (!statusEffect.loop)
+            yield return StartCoroutine(Feedback());
+        else // else just play the hit animation
+            yield return StartCoroutine(Jrpg.PlayAnimation(holder, "hit", true));
+
         yield return null;
     }
 

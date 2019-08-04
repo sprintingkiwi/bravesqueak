@@ -266,6 +266,9 @@ public class Battler : MonoBehaviour
     {
         foreach (Transform s in transform.Find("STATUS"))
         {
+            if (s.gameObject == null)
+                continue;
+
             Status status = s.GetComponent<Status>();
             yield return StartCoroutine(status.SaveRoll());
         }

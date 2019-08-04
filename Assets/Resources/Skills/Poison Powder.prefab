@@ -71,11 +71,13 @@ MonoBehaviour:
   requiredSP: 0
   baseSkill: 0
   epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 0}
+  targetEffect: {fileID: 114696480298692704, guid: 205823002e85dfd44bd367d1ec3bbe2f,
+    type: 2}
   moveToTarget: 0
   cameraFocus: 0
   cameraShake: 0
