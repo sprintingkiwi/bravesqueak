@@ -29,6 +29,6 @@ public class PartyHero : MonoBehaviour {
         //partyMenu.CreateHeroMenu(heroIndex);
 
         // Now just displaying the Hero's description Image
-        Instantiate(heroDescription);
+        partyMenu.ShowHeroDescription(heroDescription);
     }
 }

@@ -6,6 +6,8 @@ public class PartyMenu : Menu {
 
     public Transform[] heroesImages;
     public int ticks;
+    public GameObject currentHeroDesc;
+
     // Use this for initialization
     public override void Setup()
     {
@@ -23,6 +25,19 @@ public class PartyMenu : Menu {
         }
     }
 
+    public override void Update()
+    {
+        if (inputManager.ButtonBDown())
+        {
+            if (currentHeroDesc == null)
+                MenuDestruction();
+            else
+            {
+                Destroy(currentHeroDesc);
+            }
+        }        
+    }
+
     public void CreateHeroMenu(int index)
     {
         gc.heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, gc.mapCamera.transform).GetComponent<HeroMenu>();
@@ -32,4 +47,11 @@ public class PartyMenu : Menu {
         gc.heroMenu.Setup();
         gameObject.SetActive(false);
     }
+
+    public void ShowHeroDescription(GameObject heroDescription)
+    {
+        Jrpg.Log("Displaying " + name + " description");
+        currentHeroDesc = Instantiate(heroDescription);
+    }
+
 }
