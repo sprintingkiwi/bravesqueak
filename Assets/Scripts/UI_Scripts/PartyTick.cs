@@ -16,6 +16,11 @@ public class PartyTick : MonoBehaviour
 
     void OnMouseDown()
     {
+        Select();
+    }
+
+    public void Select()
+    {
         if (tick == null)
         {
             if (partyMenu.ticks < 3)

@@ -7,6 +7,10 @@ public class PartyMenu : Menu {
     public Transform[] heroesImages;
     public int ticks;
     public GameObject currentHeroDesc;
+    public GameObject highlighter;
+    public int index;
+
+    Transform heroes;
 
     // Use this for initialization
     public override void Setup()
@@ -15,18 +19,24 @@ public class PartyMenu : Menu {
 
         heroesImages = new Transform[8];
 
+        heroes = transform.Find("HEROES");
+
         for (int i = 0; i < gc.unlockedHeroes.Length; i++)
         {
             transform.Find("HEROES").GetChild(i).gameObject.SetActive(true);
-            heroesImages[i] = transform.Find("HEROES").GetChild(i);
+            heroesImages[i] = heroes.GetChild(i);
             heroesImages[i].GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[i].GetComponent<SpriteRenderer>().sprite;
             heroesImages[i].GetComponent<Animator>().runtimeAnimatorController = gc.unlockedHeroes[i].GetComponent<Animator>().runtimeAnimatorController;
             heroesImages[i].GetComponent<PartyHero>().heroIndex = i;
         }
+
+        highlighter = transform.Find("Highlight").gameObject;
     }
 
     public override void Update()
     {
+        SelectionManagement();
+
         if (inputManager.ButtonBDown())
         {
             if (currentHeroDesc == null)
@@ -36,6 +46,19 @@ public class PartyMenu : Menu {
                 Destroy(currentHeroDesc);
             }
         }        
+
+        if (inputManager.ButtonADown())
+        {
+            if (currentHeroDesc == null)
+            {
+                ShowHeroDescription(heroes.GetChild(index).GetComponent<PartyHero>().heroDescription);
+            }
+            else
+            {
+                heroes.GetChild(index).GetComponentInChildren<PartyTick>().Select();
+                Destroy(currentHeroDesc);
+            }
+        }
     }
 
     public void CreateHeroMenu(int index)
@@ -51,7 +74,29 @@ public class PartyMenu : Menu {
     public void ShowHeroDescription(GameObject heroDescription)
     {
         Jrpg.Log("Displaying " + name + " description");
-        currentHeroDesc = Instantiate(heroDescription);
+        currentHeroDesc = Instantiate(heroDescription, transform);
+    }
+
+    public void SelectionManagement()
+    {
+        // Move index based on arrows
+        if (inputManager.RightArrowDown())
+        {
+            if (index < heroes.childCount - 1)
+                index += 1;
+            else
+                index = 0;
+        }
+        if (inputManager.LeftArrowDown())
+        {
+            if (index > 0)
+                index -= 1;
+            else
+                index = heroes.childCount - 1;
+        }
+
+        // Positioning highlighter
+        highlighter.transform.position = transform.Find("HEROES").GetChild(index).position;                
     }
 
 }
