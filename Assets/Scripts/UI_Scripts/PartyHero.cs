@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PartyHero : MonoBehaviour {
 
+    [Header("Heroes Description Image Prefab")]
+    public GameObject heroDescription;
+
+    [Header("System")]
+    public int heroIndex;
+
     PartyMenu partyMenu;
     HeroMenu heroMenu;
-    public int heroIndex;
 
     void Start()
     {
@@ -20,6 +25,10 @@ public class PartyHero : MonoBehaviour {
 
     void OnMouseDown()
     {
-        partyMenu.CreateHeroMenu(heroIndex);
+        //// Used to Create Hero Menu
+        //partyMenu.CreateHeroMenu(heroIndex);
+
+        // Now just displaying the Hero's description Image
+        Instantiate(heroDescription);
     }
 }
