@@ -65,7 +65,7 @@ MonoBehaviour:
       - faces: 6
       - faces: 6
     rollResult: 0
-  - ID: SPA
+  - ID: SAT
     roll:
       dices:
       - faces: 6
