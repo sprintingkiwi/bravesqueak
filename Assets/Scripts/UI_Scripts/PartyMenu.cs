@@ -9,6 +9,7 @@ public class PartyMenu : Menu {
     public GameObject currentHeroDesc;
     public GameObject highlighter;
     public int index;
+    public Battler[] availables;
 
     Transform heroes;
 
@@ -16,17 +17,22 @@ public class PartyMenu : Menu {
     public override void Setup()
     {
         base.Setup();
+    }
+
+    public void SelectionSetup(Battler[] availables)
+    {
+        this.availables = availables;
 
         heroesImages = new Transform[8];
 
         heroes = transform.Find("HEROES");
 
-        for (int i = 0; i < gc.unlockedHeroes.Length; i++)
+        for (int i = 0; i < availables.Length; i++)
         {
             transform.Find("HEROES").GetChild(i).gameObject.SetActive(true);
             heroesImages[i] = heroes.GetChild(i);
-            heroesImages[i].GetComponent<SpriteRenderer>().sprite = gc.unlockedHeroes[i].GetComponent<SpriteRenderer>().sprite;
-            heroesImages[i].GetComponent<Animator>().runtimeAnimatorController = gc.unlockedHeroes[i].GetComponent<Animator>().runtimeAnimatorController;
+            heroesImages[i].GetComponent<SpriteRenderer>().sprite = availables[i].GetComponent<SpriteRenderer>().sprite;
+            heroesImages[i].GetComponent<Animator>().runtimeAnimatorController = availables[i].GetComponent<Animator>().runtimeAnimatorController;
             heroesImages[i].GetComponent<PartyHero>().heroIndex = i;
         }
 

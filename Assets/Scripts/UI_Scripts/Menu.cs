@@ -43,6 +43,6 @@ public class Menu : MonoBehaviour
             }            
             Destroy(this.gameObject);
         }
-        gc.player.canMove = true;
+        //gc.player.canMove = true;
     }
 }

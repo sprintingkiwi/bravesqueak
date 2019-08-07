@@ -183,7 +183,7 @@ MonoBehaviour:
   faction: 1
   firewalls: []
   hud: {fileID: 0}
-  job: 9
+  job: 8
   skills:
   - {fileID: 114607521043220432, guid: 97f0c5144d111234e8d46b0488d77ecd, type: 2}
   - {fileID: 114791456912984680, guid: f720cbfd65f4e4943a09604325f86798, type: 2}

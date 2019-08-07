@@ -2314,7 +2314,7 @@ MonoBehaviour:
   - {fileID: 114590740935363484, guid: f2d18dcc8f94f5d45bd992d584f7fa7a, type: 2}
   - {fileID: 114253743136115620, guid: 54e5d2f2fb4d0674492c18ed539645fa, type: 2}
   - {fileID: 114120886363940634, guid: eb1922b45a3084b4aaee91180783aba1, type: 2}
-  partyMenu: {fileID: 0}
+  selectionCache: []
   heroMenu: {fileID: 0}
   itemSelectionMenu: {fileID: 0}
   music: {fileID: 1734181798}

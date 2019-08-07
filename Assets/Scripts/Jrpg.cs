@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Linq;
+using System;
 
 public class Jrpg : MonoBehaviour
 {
@@ -73,7 +74,7 @@ public class Jrpg : MonoBehaviour
 
         for (int i = 0; i < dice; i++)
         {
-            result = result + Random.Range(1, faces);
+            result = result + UnityEngine.Random.Range(1, faces);
         }
 
         return result;
@@ -367,6 +368,43 @@ public class Jrpg : MonoBehaviour
             Debug.LogWarning(go.name + " has no rigidbody and cannot jump away!");
             yield break;
         }
+    }
+
+    public static void SetupHeroesSelection(Battler[] availables, int selectables)
+    {
+        GameController gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+
+        gc.currentSelectionMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, gc.mapCamera.transform).GetComponent<PartyMenu>();
+        gc.currentSelectionMenu.Setup();
+        gc.currentSelectionMenu.SelectionSetup(availables);
+    }
+
+    public static IEnumerator HeroesSelection(Battler[] availables, int selectables, Action callback)
+    {
+        GameController gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+
+        if (gc.currentSelectionMenu != null)
+            yield break;
+
+        // Freeze player
+        gc.player.canMove = false;
+
+        // Create selection menu
+        SetupHeroesSelection(availables, selectables);
+
+        // Clear cache list for selected heroes
+        gc.selectionCache.Clear();
+
+        // Wait for player to select heroes
+        while (gc.currentSelectionMenu.ticks < selectables)
+            yield return null;
+
+        // Execute callback function after selection ended
+        callback();
+
+        // Unfreeze player
+        gc.player.canMove = true;
+        yield return null;
     }
 
     //public static Battler FindParentBattler(Transform myTransform)

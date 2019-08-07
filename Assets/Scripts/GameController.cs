@@ -54,7 +54,11 @@ public class GameController : MonoBehaviour
     public HeroBattler[] heroes;
     public bool unlockAll;
     public HeroBattler[] unlockedHeroes;
-    public PartyMenu partyMenu;
+    public PartyMenu currentSelectionMenu;
+
+    // This is to be used as a cache list for heroes selection menu in various situations
+    public List<Battler> selectionCache = new List<Battler>();
+
     public HeroMenu heroMenu;
     public ItemSelectionMenu itemSelectionMenu;
 

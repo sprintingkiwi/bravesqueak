@@ -8,10 +8,16 @@ public class PartyTick : MonoBehaviour
 
     [Header("System")]
     PartyMenu partyMenu;
+    PartyHero partyHero;
+
+    GameController gc;
 
     void Start()
     {
         partyMenu = transform.parent.parent.parent.GetComponent<PartyMenu>();
+        partyHero = transform.parent.GetComponent<PartyHero>();
+
+        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
     void OnMouseDown()
@@ -23,14 +29,20 @@ public class PartyTick : MonoBehaviour
     {
         if (tick == null)
         {
-            if (partyMenu.ticks < 3)
-            {
-                tick = Instantiate(Resources.Load("Menu/Tick") as GameObject, transform);
-                partyMenu.ticks += 1;
 
-                // Add Hero to Party
-                partyMenu.gc.partyPrefabs[partyMenu.ticks - 1] = partyMenu.gc.unlockedHeroes[transform.parent.GetSiblingIndex()];
+            tick = Instantiate(Resources.Load("Menu/Tick") as GameObject, transform);
+            partyMenu.ticks += 1;
+
+            //// Add Hero to Party
+            //partyMenu.gc.partyPrefabs[partyMenu.ticks - 1] = partyMenu.gc.unlockedHeroes[transform.parent.GetSiblingIndex()];
+
+            // Add hero to cache list of selected heroes
+            foreach (Battler h in gc.heroes)
+            {
+                if (h.name == partyMenu.availables[partyHero.heroIndex].name)
+                    gc.selectionCache.Add(h);
             }
+
         }
         else
         {

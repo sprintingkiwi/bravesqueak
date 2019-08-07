@@ -59,16 +59,15 @@ public class PlayerController : Character
                 Stop();
         }
 
-        // Hero Menu
+        // Party Menu
         if (Input.GetButtonDown("ButtonB"))
         {
-            if (gc.partyMenu != null || gc.situation != "Map")
+            if (gc.situation != "Map")
                 return;
 
             gc.currentMap.gameObject.SetActive(false);
-            canMove = false;
-            gc.partyMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, gc.mapCamera.transform).GetComponent<PartyMenu>();
-            gc.partyMenu.Setup();
+
+            StartCoroutine(Jrpg.HeroesSelection(gc.unlockedHeroes, 3, PartySelectionCallback));
         }
 
         // Random Encounters
@@ -122,6 +121,16 @@ public class PlayerController : Character
                 gc.StartCoroutine(gc.TriggerBattle(gc.currentMap.ChooseRandomEncounter(), "Random"));
             }
             lastCheckedPos4RandEncounters = transform.position;
+        }
+    }
+
+    // Callback to update party with selection cache
+    public void PartySelectionCallback()
+    {
+        gc.partyPrefabs.Clear();
+        foreach(Battler b in gc.selectionCache)
+        {
+            gc.partyPrefabs.Add((HeroBattler)b);
         }
     }
 }
