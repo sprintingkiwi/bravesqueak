@@ -7,12 +7,12 @@ public class PartyTick : MonoBehaviour
     public GameObject tick;
 
     [Header("System")]
-    PartyMenu partyMenu;
-    PartyHero partyHero;
+    public PartyMenu partyMenu;
+    public PartyHero partyHero;
 
     GameController gc;
 
-    void Start()
+    public void Setup()
     {
         partyMenu = transform.parent.parent.parent.GetComponent<PartyMenu>();
         partyHero = transform.parent.GetComponent<PartyHero>();
@@ -26,9 +26,12 @@ public class PartyTick : MonoBehaviour
     }
 
     public void Select()
-    {
+    {       
+
         if (tick == null)
         {
+            if (partyMenu.ticks > 2)
+                return;
 
             tick = Instantiate(Resources.Load("Menu/Tick") as GameObject, transform);
             partyMenu.ticks += 1;
@@ -49,6 +52,13 @@ public class PartyTick : MonoBehaviour
             Destroy(tick);
             tick = null;
             partyMenu.ticks -= 1;
+
+            // Remove hero from cache list of selected heroes
+            foreach (Battler h in gc.heroes)
+            {
+                if (h.name == partyMenu.availables[partyHero.heroIndex].name)
+                    gc.selectionCache.Remove(h);
+            }
         }
     }
 

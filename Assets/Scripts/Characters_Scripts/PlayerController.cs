@@ -67,7 +67,7 @@ public class PlayerController : Character
 
             gc.currentMap.gameObject.SetActive(false);
 
-            StartCoroutine(Jrpg.HeroesSelection(gc.unlockedHeroes, 3, PartySelectionCallback));
+            StartCoroutine(Jrpg.HeroesSelection(gc.unlockedHeroes, 3, PartySelectionCallback, gc.partyPrefabs.ToArray()));
         }
 
         // Random Encounters

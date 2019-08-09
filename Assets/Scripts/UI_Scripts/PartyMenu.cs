@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PartyMenu : Menu {
 
@@ -10,6 +11,7 @@ public class PartyMenu : Menu {
     public GameObject highlighter;
     public int index;
     public Battler[] availables;
+    public Battler[] alreadySelected;
 
     Transform heroes;
 
@@ -19,9 +21,10 @@ public class PartyMenu : Menu {
         base.Setup();
     }
 
-    public void SelectionSetup(Battler[] availables)
+    public void SelectionSetup(Battler[] availables, Battler[] alreadySelected=null)
     {
         this.availables = availables;
+        this.alreadySelected = alreadySelected;
 
         heroesImages = new Transform[8];
 
@@ -33,7 +36,19 @@ public class PartyMenu : Menu {
             heroesImages[i] = heroes.GetChild(i);
             heroesImages[i].GetComponent<SpriteRenderer>().sprite = availables[i].GetComponent<SpriteRenderer>().sprite;
             heroesImages[i].GetComponent<Animator>().runtimeAnimatorController = availables[i].GetComponent<Animator>().runtimeAnimatorController;
-            heroesImages[i].GetComponent<PartyHero>().heroIndex = i;
+            PartyHero ph = heroesImages[i].GetComponent<PartyHero>();
+            ph.heroIndex = i;
+        }
+
+        // Select already selected heroes
+        for (int i = 0; i < availables.Length; i++)
+        {
+            PartyTick pt = heroesImages[i].GetComponentInChildren<PartyTick>();
+            pt.Setup();
+
+            if (alreadySelected != null)
+                if (alreadySelected.Contains(availables[i]))
+                    pt.Select();
         }
 
         highlighter = transform.Find("Highlight").gameObject;

@@ -370,16 +370,16 @@ public class Jrpg : MonoBehaviour
         }
     }
 
-    public static void SetupHeroesSelection(Battler[] availables, int selectables)
+    public static void SetupHeroesSelection(Battler[] availables, int selectables, Battler[] alreadySelected = null)
     {
         GameController gc = GameObject.Find("Game Controller").GetComponent<GameController>();
 
         gc.currentSelectionMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, gc.mapCamera.transform).GetComponent<PartyMenu>();
         gc.currentSelectionMenu.Setup();
-        gc.currentSelectionMenu.SelectionSetup(availables);
+        gc.currentSelectionMenu.SelectionSetup(availables, alreadySelected);
     }
 
-    public static IEnumerator HeroesSelection(Battler[] availables, int selectables, Action callback)
+    public static IEnumerator HeroesSelection(Battler[] availables, int selectables, Action callback, Battler[] alreadySelected=null)
     {
         GameController gc = GameObject.Find("Game Controller").GetComponent<GameController>();
 
@@ -389,14 +389,14 @@ public class Jrpg : MonoBehaviour
         // Freeze player
         gc.player.canMove = false;
 
-        // Create selection menu
-        SetupHeroesSelection(availables, selectables);
-
         // Clear cache list for selected heroes
         gc.selectionCache.Clear();
 
+        // Create selection menu
+        SetupHeroesSelection(availables, selectables, alreadySelected);        
+
         // Wait for player to select heroes
-        while (gc.currentSelectionMenu.ticks < selectables)
+        while (gc.currentSelectionMenu != null)
             yield return null;
 
         // Execute callback function after selection ended
