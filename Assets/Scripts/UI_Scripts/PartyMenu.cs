@@ -116,6 +116,21 @@ public class PartyMenu : Menu {
                 index = heroes.childCount - 1;
         }
 
+        if (inputManager.DownArrowDown())
+        {
+            if (index < heroes.childCount - 4)
+                index += 4;
+            else
+                index = 3;
+        }
+        if (inputManager.UpArrowDown())
+        {
+            if (index > 3)
+                index -= 4;
+            else
+                index = heroes.childCount - 4;
+        }
+
         // Positioning highlighter
         highlighter.transform.position = transform.Find("HEROES").GetChild(index).position;                
     }
