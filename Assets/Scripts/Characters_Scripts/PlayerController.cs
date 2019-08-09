@@ -132,5 +132,15 @@ public class PlayerController : Character
         {
             gc.partyPrefabs.Add((HeroBattler)b);
         }
+
+        // Check if at least 3 else add random
+        int count = gc.partyPrefabs.Count;
+        while (count < 3)
+        {
+            foreach (HeroBattler h in gc.unlockedHeroes)
+                if (!gc.partyPrefabs.Contains(h))
+                    gc.partyPrefabs.Add(h);
+            count = gc.partyPrefabs.Count;
+        }
     }
 }
