@@ -11,22 +11,19 @@ public class MapCameraController : BattleCameraController
     public Vector3 pos;
     public Transform target;
     public SpriteRenderer spriteBounds;
-    public GameController gc;
     public bool followPlayer;
 
     // Use this for initialization
     public override void Start()
     {
         base.Start();
-
-        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
-        
+       
         Setup();
     }
 
     public void Setup()
     {
-        spriteBounds = gc.currentMap.cameraBoundary;
+        spriteBounds = GameController.instance.currentMap.cameraBoundary;
         float vertExtent = gameObject.GetComponent<Camera>().orthographicSize;
         float horzExtent = vertExtent * Screen.width / Screen.height;
         leftBound = spriteBounds.transform.position.x + (horzExtent - spriteBounds.sprite.bounds.size.x / 2.0f);

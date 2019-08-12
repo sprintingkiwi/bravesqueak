@@ -72,7 +72,7 @@ public class PartyMenu : Menu {
     {
         SelectionManagement();
 
-        if (inputManager.ButtonBDown())
+        if (InputManager.instance.ButtonBDown())
         {
             if (currentHeroDesc == null)
                 MenuDestruction();
@@ -82,7 +82,7 @@ public class PartyMenu : Menu {
             }
         }        
 
-        if (inputManager.ButtonADown())
+        if (InputManager.instance.ButtonADown())
         {
             if (currentHeroDesc == null)
             {
@@ -98,11 +98,11 @@ public class PartyMenu : Menu {
 
     public void CreateHeroMenu(int index)
     {
-        gc.heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, gc.mapCamera.transform).GetComponent<HeroMenu>();
-        gc.heroMenu.father = this;
-        subMenus.Add(gc.heroMenu);
-        gc.heroMenu.heroIndex = index;
-        gc.heroMenu.Setup();
+        GameController.instance.heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, GameController.instance.mapCamera.transform).GetComponent<HeroMenu>();
+        GameController.instance.heroMenu.father = this;
+        subMenus.Add(GameController.instance.heroMenu);
+        GameController.instance.heroMenu.heroIndex = index;
+        GameController.instance.heroMenu.Setup();
         gameObject.SetActive(false);
     }
 
@@ -115,14 +115,14 @@ public class PartyMenu : Menu {
     public void SelectionManagement()
     {
         // Move index based on arrows
-        if (inputManager.RightArrowDown())
+        if (InputManager.instance.RightArrowDown())
         {
             if (index < heroes.childCount - 1)
                 index += 1;
             else
                 index = 0;
         }
-        if (inputManager.LeftArrowDown())
+        if (InputManager.instance.LeftArrowDown())
         {
             if (index > 0)
                 index -= 1;
@@ -130,14 +130,14 @@ public class PartyMenu : Menu {
                 index = heroes.childCount - 1;
         }
 
-        if (inputManager.DownArrowDown())
+        if (InputManager.instance.DownArrowDown())
         {
             if (index < heroes.childCount - 4)
                 index += 4;
             else
                 index = 3;
         }
-        if (inputManager.UpArrowDown())
+        if (InputManager.instance.UpArrowDown())
         {
             if (index > 3)
                 index -= 4;

@@ -33,7 +33,7 @@ public class ItemSelectionMenu : Menu
             case "Skill":
                 // Creating a list of available skills
                 Jrpg.Log("Available Skills:");
-                foreach (Skill s in gc.unlockedSkills)
+                foreach (Skill s in GameController.instance.unlockedSkills)
                     if (!hero.skills.Contains(s) && s != null)
                     {
                         Jrpg.Log(s.name);
@@ -45,14 +45,14 @@ public class ItemSelectionMenu : Menu
 
             case "Perk":
                 // Creating a list of available perks                
-                foreach (Perk p in gc.unlockedPerks)
+                foreach (Perk p in GameController.instance.unlockedPerks)
                     if (p != null)
                     {
                         availableItems.Add(p);
                     }
 
                 // Removing Perks held by other heroes
-                foreach (HeroBattler hb in gc.heroes)
+                foreach (HeroBattler hb in GameController.instance.heroes)
                     foreach (Item av in availableItems.ToArray())
                         if (hb.perks.Contains(av))
                             availableItems.Remove(av);                
@@ -110,7 +110,7 @@ public class ItemSelectionMenu : Menu
     {
         base.Update();
 
-        if (inputManager.UpArrowDown())
+        if (InputManager.instance.UpArrowDown())
             //if (!moving)
                 if (selectionIndex > 0)
                 {
@@ -121,7 +121,7 @@ public class ItemSelectionMenu : Menu
                     UpdateActiveItem();
                 }
 
-        if (inputManager.DownArrowDown())
+        if (InputManager.instance.DownArrowDown())
             //if (!moving)
                 if (selectionIndex < maxItems - 1)
                 {
@@ -133,18 +133,18 @@ public class ItemSelectionMenu : Menu
                 }
 
         //CONFIRM
-        if (inputManager.ButtonADown())
+        if (InputManager.instance.ButtonADown())
         {
             switch (pool)
             {
                 case "Skill":
                     Jrpg.Log(activeItem.name + " skill selected at slot " + itemSlot, "Visible");
-                    gc.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].skills[itemSlot] = (Skill)activeItem;
+                    GameController.instance.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].skills[itemSlot] = (Skill)activeItem;
                     break;
 
                 case "Perk":
                     Jrpg.Log(activeItem.name + " perk selected at slot " + itemSlot, "Visible");
-                    gc.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].perks[itemSlot] = (Perk)activeItem;
+                    GameController.instance.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].perks[itemSlot] = (Perk)activeItem;
                     break;
             }
             father.gameObject.SetActive(true);

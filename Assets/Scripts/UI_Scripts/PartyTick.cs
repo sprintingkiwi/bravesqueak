@@ -10,14 +10,12 @@ public class PartyTick : MonoBehaviour
     public PartyMenu partyMenu;
     public PartyHero partyHero;
 
-    GameController gc;
-
     public void Setup()
     {
         partyMenu = transform.parent.parent.parent.GetComponent<PartyMenu>();
         partyHero = transform.parent.GetComponent<PartyHero>();
 
-        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
     void OnMouseDown()
@@ -37,13 +35,13 @@ public class PartyTick : MonoBehaviour
             partyMenu.ticks += 1;
 
             //// Add Hero to Party
-            //partyMenu.gc.partyPrefabs[partyMenu.ticks - 1] = partyMenu.gc.unlockedHeroes[transform.parent.GetSiblingIndex()];
+            //partyMenu.GameController.instance.partyPrefabs[partyMenu.ticks - 1] = partyMenu.GameController.instance.unlockedHeroes[transform.parent.GetSiblingIndex()];
 
             // Add hero to cache list of selected heroes
-            foreach (Battler h in gc.heroes)
+            foreach (Battler h in GameController.instance.heroes)
             {
                 if (h.name == partyMenu.availables[partyHero.heroIndex].name)
-                    gc.selectionCache.Add(h);
+                    GameController.instance.selectionCache.Add(h);
             }
 
         }
@@ -54,10 +52,10 @@ public class PartyTick : MonoBehaviour
             partyMenu.ticks -= 1;
 
             // Remove hero from cache list of selected heroes
-            foreach (Battler h in gc.heroes)
+            foreach (Battler h in GameController.instance.heroes)
             {
                 if (h.name == partyMenu.availables[partyHero.heroIndex].name)
-                    gc.selectionCache.Remove(h);
+                    GameController.instance.selectionCache.Remove(h);
             }
         }
     }

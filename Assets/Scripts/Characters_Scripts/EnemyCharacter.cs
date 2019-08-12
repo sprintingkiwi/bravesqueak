@@ -30,11 +30,11 @@ public class EnemyCharacter : NPC
         if (type == "Enter")
             if (sensor == "Encounter Trigger")
                 if (other.gameObject.name == "Player")
-                    gc.StartCoroutine(gc.TriggerBattle(encounter, name));
+                    GameController.instance.StartCoroutine(GameController.instance.TriggerBattle(encounter, name));
     }
 
     void OnMouseDown()
     {
-        gc.StartCoroutine(gc.TriggerBattle(encounter, name));
+        GameController.instance.StartCoroutine(GameController.instance.TriggerBattle(encounter, name));
     }    
 }

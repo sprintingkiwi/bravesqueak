@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Cheats : MonoBehaviour
 {
-    GameController gc;
     public Encounter[] testEncounters;
 
     [System.Serializable]
@@ -48,7 +47,7 @@ public class Cheats : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
 
         // Shaking for mobile
         lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
@@ -62,19 +61,19 @@ public class Cheats : MonoBehaviour
         //Debug.Log(GameObject.FindObjectOfType<AudioListener>().name);
 
         if (Input.GetKeyDown(KeyCode.T))
-            gc.StartCoroutine(gc.TriggerBattle(gc.currentMap.ChooseRandomEncounter(), "Random"));
+            GameController.instance.StartCoroutine(GameController.instance.TriggerBattle(GameController.instance.currentMap.ChooseRandomEncounter(), "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            StartCoroutine(gc.TriggerBattle(testEncounters[1], "Random"));
+            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[1], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            StartCoroutine(gc.TriggerBattle(testEncounters[2], "Random"));
+            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[2], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            StartCoroutine(gc.TriggerBattle(testEncounters[3], "Random"));
+            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[3], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
-            StartCoroutine(gc.TriggerBattle(testEncounters[4], "Random"));
+            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[4], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Y))
             ChangeTeam();
@@ -93,35 +92,35 @@ public class Cheats : MonoBehaviour
         // Save & load
         if (Input.GetKeyDown(KeyCode.F5))
         {
-            StartCoroutine(gc.Save(0));
+            StartCoroutine(GameController.instance.Save(0));
         }
         else if(Input.GetKeyDown(KeyCode.F6))
         {
-            StartCoroutine(gc.Save(1));
+            StartCoroutine(GameController.instance.Save(1));
         }
         else if(Input.GetKeyDown(KeyCode.F7))
         {
-            StartCoroutine(gc.Save(2));
+            StartCoroutine(GameController.instance.Save(2));
         }
         else if(Input.GetKeyDown(KeyCode.F8))
         {
-            StartCoroutine(gc.Save(3));
+            StartCoroutine(GameController.instance.Save(3));
         }
         else if (Input.GetKeyDown(KeyCode.F9))
         {
-            StartCoroutine(gc.Load(0));
+            StartCoroutine(GameController.instance.Load(0));
         }
         else if (Input.GetKeyDown(KeyCode.F10))
         {
-            StartCoroutine(gc.Load(1));
+            StartCoroutine(GameController.instance.Load(1));
         }
         else if (Input.GetKeyDown(KeyCode.F11))
         {
-            StartCoroutine(gc.Load(2));
+            StartCoroutine(GameController.instance.Load(2));
         }
         else if (Input.GetKeyDown(KeyCode.F12))
         {
-            StartCoroutine(gc.Load(3));
+            StartCoroutine(GameController.instance.Load(3));
         }
 
         //if (Jrpg.CheckPlatform() == "Mobile")
@@ -146,7 +145,7 @@ public class Cheats : MonoBehaviour
     //            // Perform your "shaking actions" here. If necessary, add suitable
     //            // guards in the if check above to avoid redundant handling during
     //            // the same shake (e.g. a minimum refractory period).
-    //            StartCoroutine(gc.Load(0));
+    //            StartCoroutine(GameController.instance.Load(0));
     //        }
     //    }        
     //}
@@ -162,7 +161,7 @@ public class Cheats : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            gc.partyPrefabs[i] = (HeroBattler)teams[actualTeam].memebrs[i];
+            GameController.instance.partyPrefabs[i] = (HeroBattler)teams[actualTeam].memebrs[i];
         }
     }
 }

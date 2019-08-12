@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : Character
 {
-    InputManager inputManager;
     Joystick joy;
     public Vector3 lastCheckedPos4RandEncounters;
     public bool randomEncounters;
@@ -19,7 +18,7 @@ public class PlayerController : Character
     {
         base.Start();
 
-        inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
         if (Jrpg.CheckPlatform() == "Mobile")
             joy = GameObject.Find("Joystick").GetComponent<Joystick>();
     }
@@ -62,50 +61,50 @@ public class PlayerController : Character
         // Party Menu
         if (Input.GetButtonDown("ButtonB"))
         {
-            if (gc.situation != "Map")
+            if (GameController.instance.situation != "Map")
                 return;
 
-            gc.currentMap.gameObject.SetActive(false);
+            GameController.instance.currentMap.gameObject.SetActive(false);
 
-            StartCoroutine(Jrpg.HeroesSelection(gc.unlockedHeroes, 3, PartySelectionCallback, gc.partyPrefabs.ToArray()));
+            StartCoroutine(Jrpg.HeroesSelection(GameController.instance.unlockedHeroes, 3, PartySelectionCallback, GameController.instance.partyPrefabs.ToArray()));
         }
 
         // Random Encounters
-        if (randomEncounters && gc.currentMap.randomEncounters.Length > 0)
+        if (randomEncounters && GameController.instance.currentMap.randomEncounters.Length > 0)
             CheckRandomEncounter();
 
         //// Keydown
-        //if (inputManager.DownArrow())
+        //if (InputManager.instance.DownArrow())
         //{
         //    Move(Vector2.down);
         //}
-        //else if (inputManager.UpArrow())
+        //else if (InputManager.instance.UpArrow())
         //{
         //    Move(Vector2.up);
         //}
-        //if (inputManager.LeftArrow())
+        //if (InputManager.instance.LeftArrow())
         //{
         //    Move(Vector2.left);
         //}
-        //else if (inputManager.RightArrow())
+        //else if (InputManager.instance.RightArrow())
         //{
         //    Move(Vector2.right);
         //}
 
         //// Keyup
-        //if (inputManager.DownArrowUp())
+        //if (InputManager.instance.DownArrowUp())
         //{
         //    Stop();
         //}
-        //else if (inputManager.UpArrowUp())
+        //else if (InputManager.instance.UpArrowUp())
         //{
         //    Stop();
         //}
-        //if (inputManager.LeftArrowUp())
+        //if (InputManager.instance.LeftArrowUp())
         //{
         //    Stop();
         //}
-        //else if (inputManager.RightArrowUp())
+        //else if (InputManager.instance.RightArrowUp())
         //{
         //    Stop();
         //}
@@ -115,10 +114,10 @@ public class PlayerController : Character
     {
         if ((transform.position - lastCheckedPos4RandEncounters).magnitude > 3)
         {
-            if (Random.Range(0, 100) < gc.currentMap.randomEncountersRate)
+            if (Random.Range(0, 100) < GameController.instance.currentMap.randomEncountersRate)
             {
                 Jrpg.Log("Triggering random battle");
-                gc.StartCoroutine(gc.TriggerBattle(gc.currentMap.ChooseRandomEncounter(), "Random"));
+                GameController.instance.StartCoroutine(GameController.instance.TriggerBattle(GameController.instance.currentMap.ChooseRandomEncounter(), "Random"));
             }
             lastCheckedPos4RandEncounters = transform.position;
         }
@@ -127,20 +126,20 @@ public class PlayerController : Character
     // Callback to update party with selection cache
     public void PartySelectionCallback()
     {
-        gc.partyPrefabs.Clear();
-        foreach(Battler b in gc.selectionCache)
+        GameController.instance.partyPrefabs.Clear();
+        foreach(Battler b in GameController.instance.selectionCache)
         {
-            gc.partyPrefabs.Add((HeroBattler)b);
+            GameController.instance.partyPrefabs.Add((HeroBattler)b);
         }
 
         // Check if at least 3 else add random
-        int count = gc.partyPrefabs.Count;
+        int count = GameController.instance.partyPrefabs.Count;
         while (count < 3)
         {
-            foreach (HeroBattler h in gc.unlockedHeroes)
-                if (!gc.partyPrefabs.Contains(h))
-                    gc.partyPrefabs.Add(h);
-            count = gc.partyPrefabs.Count;
+            foreach (HeroBattler h in GameController.instance.unlockedHeroes)
+                if (!GameController.instance.partyPrefabs.Contains(h))
+                    GameController.instance.partyPrefabs.Add(h);
+            count = GameController.instance.partyPrefabs.Count;
         }
     }
 }

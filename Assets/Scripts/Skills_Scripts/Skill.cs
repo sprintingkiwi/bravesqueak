@@ -86,7 +86,6 @@ public class Skill : Item
     public Battler.Faction targetedArea; // For Ongoing Area skills
     public bool effectStillActive;
     public BattleController bc;
-    public GameController gc;
     public Dictionary<Battler, string> fightOutcomes = new Dictionary<Battler, string>();
     public Dictionary<Battler, int> damageOutcomes = new Dictionary<Battler, int>();
     public float userMovementSpeed;
@@ -117,7 +116,7 @@ public class Skill : Item
         if (Debug.isDebugBuild)
             Debug.Log("Using skill " + gameObject.name);
 
-        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
 
         // Movement speed
@@ -420,7 +419,7 @@ public class Skill : Item
                     yield return StartCoroutine(user.Eat(target.gameObject.GetComponent<Food>()));
 
                     // ALTERNATIVE
-                    //bc.gc.foods.Add(target.gameObject.GetComponent<Food>());
+                    //bc.GameController.instance.foods.Add(target.gameObject.GetComponent<Food>());
                     //Jrpg.Log("Added " + target.name + " food to inventory", "Visible");
                     //Destroy(target.GetComponent<Battler>());
                     //yield break;
@@ -428,7 +427,7 @@ public class Skill : Item
                 else if (target.gameObject.GetComponent<Perk>() != null)
                 {
                     Jrpg.Log("Added " + target.name + " to inventory", "Visible");
-                    gc.unlockedPerks.Add((Resources.Load("Perks/" + target.name.Replace("(Clone)", "")) as GameObject).GetComponent<Perk>());
+                    GameController.instance.unlockedPerks.Add((Resources.Load("Perks/" + target.name.Replace("(Clone)", "")) as GameObject).GetComponent<Perk>());
                 }
                 else
                     Jrpg.Log("Destroyed battler was not inside any list", "Warning");

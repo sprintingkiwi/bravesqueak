@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    public GameController gc;
-    public InputManager inputManager;
     public List<Menu> subMenus = new List<Menu>();
     public Menu father;
 
@@ -13,14 +11,14 @@ public class Menu : MonoBehaviour
     public virtual void Setup ()
     {
         Jrpg.Log("Starting menu: " + name);
-        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
-        inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
     }
 	
 	// Update is called once per frame
 	public virtual void Update ()
     {
-        if (inputManager.ButtonBDown())
+        if (InputManager.instance.ButtonBDown())
         {
             MenuDestruction();
         }
@@ -33,7 +31,7 @@ public class Menu : MonoBehaviour
             if (t.name.Contains(name))
                 Destroy(t.gameObject);
 
-        gc.currentMap.gameObject.SetActive(true);
+        GameController.instance.currentMap.gameObject.SetActive(true);
         if (subMenus.Count == 0)
         {
             if (father != null)
@@ -43,6 +41,6 @@ public class Menu : MonoBehaviour
             }            
             Destroy(this.gameObject);
         }
-        //gc.player.canMove = true;
+        //GameController.instance.player.canMove = true;
     }
 }

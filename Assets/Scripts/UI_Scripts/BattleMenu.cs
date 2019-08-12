@@ -7,7 +7,6 @@ using System.Linq;
 public class BattleMenu : MonoBehaviour
 {
     BattleController bc;
-    InputManager inputManager;
 
     [Header("Battlers")]
     public string phase;
@@ -59,7 +58,7 @@ public class BattleMenu : MonoBehaviour
     public Coroutine Setup()
     {
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
-        inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
 
         // Populate wheel places list
         wheelPlaces.Add(new Vector3(0, 3.5f, 0));
@@ -97,7 +96,7 @@ public class BattleMenu : MonoBehaviour
             //wheelRotation:
 
             // Right wheel rotation            
-            if (inputManager.RightArrowDown() && skillIndex < 4)
+            if (InputManager.instance.RightArrowDown() && skillIndex < 4)
             {
                 rightWheelRotation:
                 Jrpg.Log("Rotating wheel right", "Visible");
@@ -115,7 +114,7 @@ public class BattleMenu : MonoBehaviour
                     yield return null;
 
                     // Manage multi-input
-                    if (inputManager.RightArrowDown())
+                    if (InputManager.instance.RightArrowDown())
                     {
                         transform.eulerAngles = targetAngle;
                         if (skillIndex < 4)
@@ -123,7 +122,7 @@ public class BattleMenu : MonoBehaviour
                         else
                             break;
                     }
-                    //else if (inputManager.LeftArrowDown())
+                    //else if (InputManager.instance.LeftArrowDown())
                     //{
                     //    yield return new WaitForEndOfFrame();
                     //    skillIndex -= 1;
@@ -133,13 +132,13 @@ public class BattleMenu : MonoBehaviour
                     //    yield return null;
                     //    break;
                     //}
-                    else if (inputManager.ButtonADown())
+                    else if (InputManager.instance.ButtonADown())
                         break;
                 }
             }
 
             // Left wheel rotation
-            if (inputManager.LeftArrowDown() && skillIndex > 0)
+            if (InputManager.instance.LeftArrowDown() && skillIndex > 0)
             {
                 leftWheelRotation:
                 Jrpg.Log("Rotating wheel left", "Visible");
@@ -157,7 +156,7 @@ public class BattleMenu : MonoBehaviour
                     yield return null;
 
                     // Manage multi-input
-                    if (inputManager.LeftArrowDown())
+                    if (InputManager.instance.LeftArrowDown())
                     {
                         transform.eulerAngles = targetAngle;
                         if (skillIndex > 0)
@@ -165,13 +164,13 @@ public class BattleMenu : MonoBehaviour
                         else
                             break;
                     }
-                    else if (inputManager.ButtonADown())
+                    else if (InputManager.instance.ButtonADown())
                         break;
                 }
             }
 
             // Confirm for Keyboard / Controllers
-            if (inputManager.ButtonADown())
+            if (InputManager.instance.ButtonADown())
             {
                 if (playerBattler.skills[skillIndex] != null)
                 {
@@ -373,7 +372,7 @@ public class BattleMenu : MonoBehaviour
                 Debug.Log("Waiting for confirm on touch button");
 
                 phase = "Target Selection";
-                while (!inputManager.ButtonAUp())
+                while (!InputManager.instance.ButtonAUp())
                 {
                     // Restart selection if skill changed
                     if (selectedSkill != lastSelectedSkill)
@@ -397,7 +396,7 @@ public class BattleMenu : MonoBehaviour
 
                 phase = "Area Selection";
                 // Waiting for confirm
-                while (!inputManager.ButtonAUp())
+                while (!InputManager.instance.ButtonAUp())
                 {
                     // Restart selection if skill changed
                     if (selectedSkill != lastSelectedSkill)
@@ -507,7 +506,7 @@ public class BattleMenu : MonoBehaviour
                 while (selectedTargets.Count < selectedSkill.targetsNumber)
                 {
                     // Switch between legal targets
-                    if (inputManager.RightArrowDown())
+                    if (InputManager.instance.RightArrowDown())
                     {
                         if (currentlySelectedTarget < legalTargets.Count - 1)
                             currentlySelectedTarget += 1;
@@ -516,7 +515,7 @@ public class BattleMenu : MonoBehaviour
 
                         MoveTargetCursor();
                     }
-                    if (inputManager.LeftArrowDown())
+                    if (InputManager.instance.LeftArrowDown())
                     {
                         if (currentlySelectedTarget > 0)
                             currentlySelectedTarget -= 1;
@@ -527,7 +526,7 @@ public class BattleMenu : MonoBehaviour
                     }
 
                     // Button B
-                    if (inputManager.ButtonBUp())
+                    if (InputManager.instance.ButtonBUp())
                     {
                         Debug.Log("Aborting");
                         phase = "Skill Selection";
@@ -544,7 +543,7 @@ public class BattleMenu : MonoBehaviour
                     else
                     {
                         // Button A to confirm target (double touch only on mobile)
-                        if (inputManager.ButtonADown())
+                        if (InputManager.instance.ButtonADown())
                         {                            
                             ConfirmTarget();
                         }
@@ -566,10 +565,10 @@ public class BattleMenu : MonoBehaviour
                 areaSelection.transform.position = new Vector3(12.5f * (float)selectedFaction, -10f, 0);
                 yield return Jrpg.Fade(areaSelection, 1, 0.2f);
                 // Waiting for confirm
-                while (!inputManager.ButtonADown())
+                while (!InputManager.instance.ButtonADown())
                 {
                     // Switching Area with the arrows
-                    if (inputManager.RightArrowDown() || inputManager.LeftArrowDown())
+                    if (InputManager.instance.RightArrowDown() || InputManager.instance.LeftArrowDown())
                     {
                         // Invert Area Selection
                         if (selectedFaction == Battler.Faction.Enemies)
@@ -588,7 +587,7 @@ public class BattleMenu : MonoBehaviour
                     }
 
                     // Button B
-                    if (inputManager.ButtonBUp())
+                    if (InputManager.instance.ButtonBUp())
                     {
                         Debug.Log("Aborting");
                         phase = "Skill Selection";

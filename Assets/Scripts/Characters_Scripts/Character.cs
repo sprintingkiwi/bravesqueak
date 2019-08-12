@@ -79,7 +79,7 @@ public class Character : AnimatedMapElement
         {
             if ((transform.position - lastFootprintPosition).magnitude > footPrintsDistance)
             {
-                GameObject fp = Instantiate(Resources.Load("Footprints/Footprint") as GameObject, transform.position, Quaternion.LookRotation(Vector3.forward, direction), gc.currentMap.transform);
+                GameObject fp = Instantiate(Resources.Load("Footprints/Footprint") as GameObject, transform.position, Quaternion.LookRotation(Vector3.forward, direction), GameController.instance.currentMap.transform);
                 fp.GetComponent<Footprint>().ownerSR = spr;
                 footPrintsSide *= -1;
                 fp.transform.localScale = new Vector3(footPrintsSide * fp.transform.localScale.x, fp.transform.localScale.y, fp.transform.localScale.z);

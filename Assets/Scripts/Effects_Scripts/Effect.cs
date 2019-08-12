@@ -10,7 +10,7 @@ public class Effect : JrpgBehaviour
     public bool projectile;
     public float speed;
     public Effect AfterEffect;
-    //GameController gc;
+    //GameController GameController.instance;
 
     [Header("Advanced Custom Settings")]
     public int customLayer = 0;
@@ -21,7 +21,7 @@ public class Effect : JrpgBehaviour
     // Use this for initialization
     public virtual void Start ()
     {
-        //gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+        //GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
 
         anim = gameObject.GetComponent<Animator>();
 

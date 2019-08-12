@@ -139,9 +139,8 @@ public class Jrpg : MonoBehaviour
 
     public static Coroutine Fade(GameObject target, float alpha = 1, float speed = 1, bool destroyAfter = false)
     {
-        GameController gc = GameObject.Find("Game Controller").GetComponent<GameController>();
         //ps.fadingCoroutinesCount += 1;
-        return gc.Fade(target, alpha, speed, destroyAfter);
+        return GameController.instance.Fade(target, alpha, speed, destroyAfter);
     }
 
     public static IEnumerator TextFade(GameObject target, float speed = 1f, float min = 0, float max = 1, bool destroyAfter = false)
@@ -167,11 +166,9 @@ public class Jrpg : MonoBehaviour
     {
         AsyncOperation async = SceneManager.LoadSceneAsync(sceneName);
         async.allowSceneActivation = false;
-
-        GameController gc = GameObject.Find("Game Controller").GetComponent<GameController>();
-                
+               
         // Wait for the game to finish saving, just in case...
-        while (gc.isSaving)
+        while (GameController.instance.isSaving)
         {
             yield return null;
         }
@@ -187,7 +184,7 @@ public class Jrpg : MonoBehaviour
 
         while (async.progress < 0.9f)
             yield return null;
-        yield return gc.StartCoroutine(gc.SetVolume(0));
+        yield return GameController.instance.StartCoroutine(GameController.instance.SetVolume(0));
 
         async.allowSceneActivation = true;
         while (!async.isDone)
@@ -378,38 +375,34 @@ public class Jrpg : MonoBehaviour
 
     public static void SetupHeroesSelection(Battler[] availables, int selectables, Battler[] alreadySelected = null)
     {
-        GameController gc = GameObject.Find("Game Controller").GetComponent<GameController>();
-
-        gc.currentSelectionMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, gc.mapCamera.transform).GetComponent<PartyMenu>();
-        gc.currentSelectionMenu.Setup();
-        gc.currentSelectionMenu.SelectionSetup(availables, alreadySelected);
+        GameController.instance.currentSelectionMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, GameController.instance.mapCamera.transform).GetComponent<PartyMenu>();
+        GameController.instance.currentSelectionMenu.Setup();
+        GameController.instance.currentSelectionMenu.SelectionSetup(availables, alreadySelected);
     }
 
     public static IEnumerator HeroesSelection(Battler[] availables, int selectables, Action callback, Battler[] alreadySelected=null)
     {
-        GameController gc = GameObject.Find("Game Controller").GetComponent<GameController>();
-
-        if (gc.currentSelectionMenu != null)
+        if (GameController.instance.currentSelectionMenu != null)
             yield break;
 
         // Freeze player
-        gc.player.canMove = false;
+        GameController.instance.player.canMove = false;
 
         // Clear cache list for selected heroes
-        gc.selectionCache.Clear();
+        GameController.instance.selectionCache.Clear();
 
         // Create selection menu
         SetupHeroesSelection(availables, selectables, alreadySelected);        
 
         // Wait for player to select heroes
-        while (gc.currentSelectionMenu != null)
+        while (GameController.instance.currentSelectionMenu != null)
             yield return null;
 
         // Execute callback function after selection ended
         callback();
 
         // Unfreeze player
-        gc.player.canMove = true;
+        GameController.instance.player.canMove = true;
         yield return null;
     }
 

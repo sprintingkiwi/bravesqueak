@@ -82,7 +82,6 @@ public class Battler : MonoBehaviour
     public AudioSource audioSource;
     //public float sideMod;
     //public bool confirmedAsTarget;
-    public GameController gc;
     public BattleController bc;
     public Dictionary<Skill, float> warmups = new Dictionary<Skill, float>();
     public Dictionary<Skill, float> cooldowns = new Dictionary<Skill, float>();
@@ -99,7 +98,7 @@ public class Battler : MonoBehaviour
 
     public virtual void Setup()
     {
-        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
 
         // Populate stats dictionary
@@ -230,7 +229,7 @@ public class Battler : MonoBehaviour
     // Called by the battle controller while executing actions during the turn battle
     public virtual Coroutine UseSkill(Skill skill, List<Battler> targets)
     {
-        bc.actualSkill = Instantiate(skill, gc.battleStuff.transform) as Skill;
+        bc.actualSkill = Instantiate(skill, GameController.instance.battleStuff.transform) as Skill;
         return bc.actualSkill.Execute(this, targets);
     }
 

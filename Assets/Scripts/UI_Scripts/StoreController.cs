@@ -6,7 +6,6 @@ using System.Linq;
 public class StoreController : MonoBehaviour
 {
     GameController ps;
-    InputManager inputManager;
     Transform panel;
     public GameObject storeSkillPrefab;
     Skill[] skillCollection;
@@ -18,7 +17,7 @@ public class StoreController : MonoBehaviour
 	void Start ()
     {
         ps = GameObject.Find("Game Controller").GetComponent<GameController>();
-        inputManager = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
         panel = GameObject.Find("PANEL").transform;
 
         skillCollection = Resources.LoadAll<Skill>("Skills");
@@ -35,11 +34,11 @@ public class StoreController : MonoBehaviour
 	void Update ()
     {
         // UI focus
-		if (inputManager.RightArrowDown())
+		if (InputManager.instance.RightArrowDown())
         {
             focus = "Heroes";
         }
-        else if (inputManager.LeftArrowDown())
+        else if (InputManager.instance.LeftArrowDown())
         {
             focus = "Skills";
         }
@@ -47,7 +46,7 @@ public class StoreController : MonoBehaviour
         // Up and Down selection
         if (focus == "Heroes")
         {
-            if (inputManager.DownArrowDown())
+            if (InputManager.instance.DownArrowDown())
             {
                 int index = ps.partyPrefabs.IndexOf(selectedHero) + 1;
                 if (index < ps.partyPrefabs.Count)
@@ -58,7 +57,7 @@ public class StoreController : MonoBehaviour
                 Debug.Log("Selected " + selectedHero.name);
                 SetupShoppableSkills(selectedHero);
             }
-            else if (inputManager.UpArrowDown())
+            else if (InputManager.instance.UpArrowDown())
             {
                 int index = ps.partyPrefabs.IndexOf(selectedHero) - 1;
                 if (index >= 0)
@@ -72,11 +71,11 @@ public class StoreController : MonoBehaviour
         }
         else
         {
-            if (inputManager.DownArrowDown())
+            if (InputManager.instance.DownArrowDown())
             {
 
             }
-            else if (inputManager.UpArrowDown())
+            else if (InputManager.instance.UpArrowDown())
             {
 
             }

@@ -5,7 +5,6 @@ using System.Linq;
 
 public class WorldMap : MonoBehaviour
 {
-    GameController gc;
     public AudioClip soundtrack;
     public AudioClip defaultBattleMusic;
     public AudioClip preBattleSound;
@@ -43,7 +42,7 @@ public class WorldMap : MonoBehaviour
 
     void Awake()
     {
-        gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
     void Update()
@@ -66,12 +65,12 @@ public class WorldMap : MonoBehaviour
     {      
         // DO SOME STUFF RIGHT AFTER THE MAP LOADS:        
         // Init music
-        if (soundtrack != gc.music.clip)
+        if (soundtrack != GameController.instance.music.clip)
         {
-            gc.music.Stop();
-            gc.music.clip = soundtrack;
-            gc.music.Play();
-            StartCoroutine(gc.SetVolume(1));
+            GameController.instance.music.Stop();
+            GameController.instance.music.clip = soundtrack;
+            GameController.instance.music.Play();
+            StartCoroutine(GameController.instance.SetVolume(1));
         }
 
         // Enemies names
@@ -81,7 +80,7 @@ public class WorldMap : MonoBehaviour
         }
 
         // Destroy defeated enemies
-        foreach (string de in gc.defeatedBosses.ToArray())
+        foreach (string de in GameController.instance.defeatedBosses.ToArray())
         {
             Debug.Log("Destroying " + de);
             Destroy(GameObject.Find(de));
