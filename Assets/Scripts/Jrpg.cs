@@ -353,11 +353,17 @@ public class Jrpg : MonoBehaviour
     }
     public static IEnumerator JumpAway(GameObject go, Vector3 direction, float power = 200f)
     {
+        if (go == null)
+            yield break;
+
         if (go.GetComponent<Rigidbody2D>() != null)
         {
             Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
             while (true)
             {
+                if (go == null)
+                    yield break;
+
                 rb.AddForce(direction * power);
                 yield return null;
                 //yield return new WaitForSeconds(0.1f);
