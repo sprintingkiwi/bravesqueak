@@ -21,13 +21,13 @@ public class InputManager : MonoBehaviour
     //bool verAxisPressed;
 
     // Persistence
-    public static InputManager cGInstance;
+    public static InputManager instance;
     void Awake()
     {
         // Persistence
-        if (cGInstance == null)
+        if (instance == null)
         {
-            cGInstance = this;
+            instance = this;
         }
         else
         {

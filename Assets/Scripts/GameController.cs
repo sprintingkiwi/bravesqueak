@@ -79,13 +79,13 @@ public class GameController : MonoBehaviour
     }
 
     // Persistence
-    public static GameController cGInstance;
+    public static GameController instance;
     void Awake()
     {
         // Persistence
-        if (cGInstance == null)
+        if (instance == null)
         {
-            cGInstance = this;
+            instance = this;
         }
         else
         {

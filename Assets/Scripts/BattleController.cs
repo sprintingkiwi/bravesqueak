@@ -380,7 +380,8 @@ public class BattleController : MonoBehaviour
             //Status Save Rolls
             for (int i = 0; i < actionsQueue.Count; i++)
             {
-                yield return StartCoroutine(actionsQueue[i].user.StatusSaveRolls());
+                if (actionsQueue[i].user != null)
+                    yield return StartCoroutine(actionsQueue[i].user.StatusSaveRolls());
             }
 
             // Drop
