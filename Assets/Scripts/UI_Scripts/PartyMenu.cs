@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class PartyMenu : Menu {
@@ -14,6 +15,8 @@ public class PartyMenu : Menu {
     public int index;
     public Battler[] availables;
     public Battler[] alreadySelected;
+    public GameObject heroUI;
+    Coroutine heroUICoroutine;
 
     Transform heroes;
 
@@ -70,30 +73,8 @@ public class PartyMenu : Menu {
 
     public override void Update()
     {
-        SelectionManagement();
-
-        if (InputManager.instance.ButtonBDown())
-        {
-            if (currentHeroDesc == null)
-                MenuDestruction();
-            else
-            {
-                Destroy(currentHeroDesc);
-            }
-        }        
-
-        if (InputManager.instance.ButtonADown())
-        {
-            if (currentHeroDesc == null)
-            {
-                ShowHeroDescription(heroes.GetChild(index).GetComponent<PartyHero>().heroDescription);
-            }
-            else
-            {
-                heroes.GetChild(index).GetComponentInChildren<PartyTick>().Select();
-                Destroy(currentHeroDesc);
-            }
-        }
+        if (heroUICoroutine == null)
+            SelectionManagement();
     }
 
     public void CreateHeroMenu(int index)
@@ -146,7 +127,78 @@ public class PartyMenu : Menu {
         }
 
         // Positioning highlighter
-        highlighter.transform.position = transform.Find("HEROES").GetChild(index).position;                
+        highlighter.transform.position = transform.Find("HEROES").GetChild(index).position;
+
+        // Cancel
+        if (InputManager.instance.ButtonBDown())
+        {
+            if (currentHeroDesc == null)
+                MenuDestruction();
+            else
+            {
+                Destroy(currentHeroDesc);
+            }
+        }
+
+        // Confirm
+        if (InputManager.instance.ButtonADown())
+        {
+            heroUICoroutine = StartCoroutine(ManageHeroUI());
+        }
+    }
+
+    public IEnumerator ManageHeroUI()
+    {
+        GameObject hu = Instantiate(heroUI, GameObject.Find("Canvas").transform);
+        hu.transform.position = Camera.main.WorldToScreenPoint(highlighter.transform.position);
+
+        // Wait until menu button selection
+        int UIindex = 0;
+        yield return null;
+        while (!InputManager.instance.ButtonADown())
+        {
+            // Highlight current button
+            foreach(Transform t in hu.transform)
+            {
+                t.GetComponent<Image>().color = Color.grey;
+            }
+            Image selectedImg = hu.transform.GetChild(UIindex).GetComponent<Image>();
+            selectedImg.color = Color.yellow;
+
+            // UI selection management
+            if (InputManager.instance.DownArrowDown())
+                if (UIindex < hu.transform.childCount - 1)
+                    UIindex += 1;
+            if (InputManager.instance.UpArrowDown())
+                if (UIindex > 0)
+                    UIindex -= 1;
+            if (InputManager.instance.ButtonBDown())
+            {
+                heroUICoroutine = null;
+                Destroy(hu);
+                yield break;
+            }
+
+            yield return null;
+        }
+
+        ConfirmHeroSelection();
+        Destroy(hu);
+
+        yield return null;
+    } 
+
+    public void ConfirmHeroSelection()
+    {
+        if (currentHeroDesc == null)
+        {
+            ShowHeroDescription(heroes.GetChild(index).GetComponent<PartyHero>().heroDescription);
+        }
+        else
+        {
+            heroes.GetChild(index).GetComponentInChildren<PartyTick>().Select();
+            Destroy(currentHeroDesc);
+        }
     }
 
 }

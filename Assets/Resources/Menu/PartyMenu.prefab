@@ -363,6 +363,7 @@ MonoBehaviour:
   index: 0
   availables: []
   alreadySelected: []
+  heroUI: {fileID: 1783206344659418, guid: 25a90d33ba2bb974e95ed7b136f41e83, type: 2}
 --- !u!212 &212104834371490174
 SpriteRenderer:
   m_ObjectHideFlags: 1
