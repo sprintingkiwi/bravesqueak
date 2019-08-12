@@ -5,6 +5,8 @@ using System.Linq;
 
 public class PartyMenu : Menu {
 
+    [Header("Party Menu")]
+    public GameObject partyHeroPrefab;
     public Transform[] heroesImages;
     public int ticks;
     public GameObject currentHeroDesc;
@@ -26,14 +28,26 @@ public class PartyMenu : Menu {
         this.availables = availables;
         this.alreadySelected = alreadySelected;
 
-        heroesImages = new Transform[8];
+        heroesImages = new Transform[availables.Length];
 
         heroes = transform.Find("HEROES");
 
+        // Get list of position hooks
+        List<Vector3> positions = new List<Vector3>();
         for (int i = 0; i < availables.Length; i++)
         {
-            transform.Find("HEROES").GetChild(i).gameObject.SetActive(true);
-            heroesImages[i] = heroes.GetChild(i);
+            positions.Add(heroes.GetChild(i).position);
+        }
+
+        // Destroy hooks
+        foreach (Transform t in heroes)
+            Destroy(t.gameObject);
+
+        // Populates hero objects
+        for (int i = 0; i < availables.Length; i++)
+        {            
+            heroesImages[i] = Instantiate(partyHeroPrefab, positions[i], Quaternion.identity, heroes).transform;
+            heroesImages[i].gameObject.name = availables[i].name + "_Menu";
             heroesImages[i].GetComponent<SpriteRenderer>().sprite = availables[i].GetComponent<SpriteRenderer>().sprite;
             heroesImages[i].GetComponent<Animator>().runtimeAnimatorController = availables[i].GetComponent<Animator>().runtimeAnimatorController;
             PartyHero ph = heroesImages[i].GetComponent<PartyHero>();
