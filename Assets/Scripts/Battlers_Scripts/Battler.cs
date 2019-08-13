@@ -65,6 +65,9 @@ public class Battler : MonoBehaviour
     // Effects
     public Effect parryEffect;
 
+    [Header("Battler Description Image Prefab")]
+    public GameObject battlerDescription;
+
     // System
     public Dictionary<Size, int> sizeModifiers = new Dictionary<Size, int>();
     [Header("System")]

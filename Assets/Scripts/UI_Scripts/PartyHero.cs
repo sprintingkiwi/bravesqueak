@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PartyHero : MonoBehaviour {
-
-    [Header("Heroes Description Image Prefab")]
-    public GameObject heroDescription;
+public class PartyHero : MonoBehaviour {    
 
     [Header("System")]
     public int heroIndex;
+    public GameObject tick;
 
     PartyMenu partyMenu;
     HeroMenu heroMenu;
@@ -18,17 +16,17 @@ public class PartyHero : MonoBehaviour {
         partyMenu = transform.parent.parent.GetComponent<PartyMenu>();
     }
 
-    void OnMouseEnter()
-    {
-        gameObject.GetComponent<Animator>().SetTrigger("attack");
-    }
+    //void OnMouseEnter()
+    //{
+    //    gameObject.GetComponent<Animator>().SetTrigger("attack");
+    //}
 
-    void OnMouseDown()
-    {
-        //// Used to Create Hero Menu
-        //partyMenu.CreateHeroMenu(heroIndex);
+    //void OnMouseDown()
+    //{
+    //    //// Used to Create Hero Menu
+    //    //partyMenu.CreateHeroMenu(heroIndex);
 
-        // Now just displaying the Hero's description Image
-        partyMenu.ShowHeroDescription(heroDescription);
-    }
+    //    // Now just displaying the Hero's description Image
+    //    partyMenu.ShowHeroDescription(partyMenu.availables[heroIndex].battlerDescription);
+    //}
 }

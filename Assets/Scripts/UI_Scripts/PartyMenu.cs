@@ -60,12 +60,9 @@ public class PartyMenu : Menu {
         // Select already selected heroes
         for (int i = 0; i < availables.Length; i++)
         {
-            PartyTick pt = heroesImages[i].GetComponentInChildren<PartyTick>();
-            pt.Setup();
-
             if (alreadySelected != null)
                 if (alreadySelected.Contains(availables[i]))
-                    pt.Select();
+                    Select(heroesImages[i].GetComponent<PartyHero>());
         }
 
         highlighter = transform.Find("Highlight").gameObject;
@@ -73,6 +70,15 @@ public class PartyMenu : Menu {
 
     public override void Update()
     {
+        // Wait to destroy hero description if it's being showed
+        if (currentHeroDesc != null)
+            if (Input.anyKeyDown)
+            {
+                Destroy(currentHeroDesc);
+                return;
+            }
+
+        // Manage selection if not inside UI coroutine
         if (heroUICoroutine == null)
             SelectionManagement();
     }
@@ -128,6 +134,7 @@ public class PartyMenu : Menu {
 
         // Positioning highlighter
         highlighter.transform.position = transform.Find("HEROES").GetChild(index).position;
+        highlighter.SetActive(true);
 
         // Cancel
         if (InputManager.instance.ButtonBDown())
@@ -152,8 +159,15 @@ public class PartyMenu : Menu {
         GameObject hu = Instantiate(heroUI, GameObject.Find("Canvas").transform);
         hu.transform.position = Camera.main.WorldToScreenPoint(highlighter.transform.position);
 
+        // Write Select/Deselect
+        if (GameController.instance.selectionCache.Contains(availables[index]))
+        {
+            hu.transform.Find("Select").GetComponentInChildren<Text>().text = "Remove";
+        }
+
         // Wait until menu button selection
         int UIindex = 0;
+        Image selectedImg = hu.transform.GetChild(0).GetComponent<Image>();
         yield return null;
         while (!InputManager.instance.ButtonADown())
         {
@@ -162,8 +176,12 @@ public class PartyMenu : Menu {
             {
                 t.GetComponent<Image>().color = Color.grey;
             }
-            Image selectedImg = hu.transform.GetChild(UIindex).GetComponent<Image>();
+            selectedImg = hu.transform.GetChild(UIindex).GetComponent<Image>();
             selectedImg.color = Color.yellow;
+            if (selectedImg.name == "Select" && ticks > 2 && !GameController.instance.selectionCache.Contains(availables[index]))
+            {
+                selectedImg.color = Color.red;
+            }
 
             // UI selection management
             if (InputManager.instance.DownArrowDown())
@@ -182,22 +200,50 @@ public class PartyMenu : Menu {
             yield return null;
         }
 
-        ConfirmHeroSelection();
+        if (selectedImg.name == "Select")
+            Select(heroesImages[index].GetComponent<PartyHero>());
+        else
+            ShowHeroDescription(availables[index].battlerDescription);
+
+        heroUICoroutine = null;
         Destroy(hu);
-
         yield return null;
-    } 
+    }
 
-    public void ConfirmHeroSelection()
+    public void Select(PartyHero partyHero)
     {
-        if (currentHeroDesc == null)
+
+        if (partyHero.tick == null)
         {
-            ShowHeroDescription(heroes.GetChild(index).GetComponent<PartyHero>().heroDescription);
+            if (ticks > 2)
+                return;
+
+            partyHero.tick = Instantiate(Resources.Load("Menu/Tick") as GameObject, partyHero.transform.Find("Square").transform);
+            ticks += 1;
+
+            //// Add Hero to Party
+            //partyMenu.GameController.instance.partyPrefabs[partyMenu.ticks - 1] = partyMenu.GameController.instance.unlockedHeroes[transform.parent.GetSiblingIndex()];
+
+            // Add hero to cache list of selected heroes
+            foreach (Battler h in GameController.instance.heroes)
+            {
+                if (h.name == availables[partyHero.heroIndex].name)
+                    GameController.instance.selectionCache.Add(h);
+            }
+
         }
         else
         {
-            heroes.GetChild(index).GetComponentInChildren<PartyTick>().Select();
-            Destroy(currentHeroDesc);
+            Destroy(partyHero.tick);
+            partyHero.tick = null;
+            ticks -= 1;
+
+            // Remove hero from cache list of selected heroes
+            foreach (Battler h in GameController.instance.heroes)
+            {
+                if (h.name == availables[partyHero.heroIndex].name)
+                    GameController.instance.selectionCache.Remove(h);
+            }
         }
     }
 
