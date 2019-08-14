@@ -336,7 +336,7 @@ public class BattleController : MonoBehaviour
                     {
                         Debug.Log(actionsQueue[i].user.name + "... but cannot act. Using Wait skill.");
                         // Load wait skill if user cannot act
-                        actionsQueue[i].skillPrefab = (Resources.Load("Skills/Wait") as GameObject).GetComponent<Skill>();
+                        actionsQueue[i].skillPrefab = (Resources.Load("Wait") as GameObject).GetComponent<Skill>();
                     }
 
                     Jrpg.Log(actionsQueue[i].user.name + " action");

@@ -135,7 +135,7 @@ public class Strategy : MonoBehaviour
             Jrpg.Log("No legal actions for " + user.name + ". Just waiting...");
             AIAction waitAction = new AIAction()
             {
-                skill = (Resources.Load("Skills/Wait") as GameObject).GetComponent<Skill>()
+                skill = (Resources.Load("Wait") as GameObject).GetComponent<Skill>()
             };
             return waitAction;
         }

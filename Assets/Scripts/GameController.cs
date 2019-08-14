@@ -328,8 +328,7 @@ public class GameController : MonoBehaviour
 
         isSaving = true;
         player.canMove = false;
-        Jrpg.Log("SAVING IN SLOT " + slot.ToString() + "...");
-        Jrpg.Log("SAVING...", "Build", 2f);
+        Jrpg.Log("SAVING IN SLOT " + (slot + 1).ToString() + " ...", "Build", 2f);
 
         //saveData = new Jrpg.SaveData();
         saveData[slot].savedCurrentMapName = currentMap.name;
@@ -467,6 +466,8 @@ public class GameController : MonoBehaviour
         //justLoadedGameSlot = true;
         player.canMove = true;
         isLoading = false;
+
+        Jrpg.Log("LOADED SLOT " + (slot + 1).ToString() + " ...", "Build", 2f);
 
         yield return null;
     }
