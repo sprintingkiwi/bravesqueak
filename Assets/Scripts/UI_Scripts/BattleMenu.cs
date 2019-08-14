@@ -211,7 +211,13 @@ public class BattleMenu : MonoBehaviour
         //skillScroll.transform.Translate(Vector3.up * 16);
 
         skillScrollName = GameObject.Find("Canvas").transform.Find("Skill Scroll Name").GetComponent<Text>();
+
+        // Name the skill scroll
         skillScrollName.text = focusedSkill.name;
+        if (focusedSkill.displayName != "")
+            skillScrollName.text = focusedSkill.displayName;
+
+        // Scroll position
         skillScrollName.transform.position = Camera.main.WorldToScreenPoint(skillScroll.transform.position);
     }
 

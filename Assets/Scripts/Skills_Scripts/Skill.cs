@@ -5,10 +5,11 @@ using System;
 using System.Linq;
 
 public class Skill : Item
-{  
+{
     //public enum Type { ATK, MAT, SUP }
 
     [Header("Properties")]
+    public string displayName;
     //public Type type;
     //public string expType = "Common";
     public int speed;
