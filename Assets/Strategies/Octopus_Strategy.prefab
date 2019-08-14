@@ -59,6 +59,9 @@ MonoBehaviour:
     conditions: []
   conditionCheck: 0
   actions:
-  - skill: {fileID: 0}
+  - skill: {fileID: 114448939315776632, guid: 6825919412d1f52428ba8aa54b1bf5a4, type: 2}
     weight: 4
+    conditions: []
+  - skill: {fileID: 114836736652321672, guid: 28474b95bb21d974fb7d2719539a865e, type: 2}
+    weight: 2
     conditions: []

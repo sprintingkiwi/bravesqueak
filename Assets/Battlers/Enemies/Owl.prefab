@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95463034235182276}
   - component: {fileID: 114416217682565956}
   m_Layer: 0
-  m_Name: Owl_Head
+  m_Name: Owl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
+  battlerDescription: {fileID: 0}
   sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 17.5, y: -10, z: 0}
@@ -120,7 +121,6 @@ MonoBehaviour:
   canAct: 1
   perfectParry: 0
   audioSource: {fileID: 0}
-  gc: {fileID: 0}
   bc: {fileID: 0}
   faction: -1
   firewalls: []

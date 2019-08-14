@@ -64,16 +64,16 @@ public class Cheats : MonoBehaviour
             GameController.instance.StartCoroutine(GameController.instance.TriggerBattle(GameController.instance.currentMap.ChooseRandomEncounter(), "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[1], "Random"));
+            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[0], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[2], "Random"));
+            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[1], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[3], "Random"));
+            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[2], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
-            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[4], "Random"));
+            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[3], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Y))
             ChangeTeam();
