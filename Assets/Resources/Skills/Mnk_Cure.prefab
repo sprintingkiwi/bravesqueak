@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114814859113074538}
   - component: {fileID: 212607565923853684}
   m_Layer: 0
-  m_Name: Cure
+  m_Name: Mnk_Cure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,7 @@ MonoBehaviour:
     Target: ONE ALLY
 
     Element: LIGHT'
+  displayName: Cure
   speed: 0
   accuracy: 0
   powerRoll:
@@ -87,7 +88,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
 --- !u!212 &212607565923853684
 SpriteRenderer:

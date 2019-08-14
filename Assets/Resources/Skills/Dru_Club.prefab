@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114487366432352720}
   - component: {fileID: 212258056524800154}
   m_Layer: 0
-  m_Name: Club
+  m_Name: Dru_Club
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
+  displayName: Club
   speed: 60
   accuracy: 75
   powerRoll:
@@ -85,7 +86,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

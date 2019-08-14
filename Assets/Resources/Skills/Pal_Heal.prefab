@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114115067928026556}
   - component: {fileID: 212225656126719098}
   m_Layer: 0
-  m_Name: Heal
+  m_Name: Pal_Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,7 @@ MonoBehaviour:
     Target: ONE BATTLER
 
     ELEMENT: LIGHT'
+  displayName: Heal
   speed: 7
   accuracy: 0
   powerRoll:
@@ -89,7 +90,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
 --- !u!212 &212225656126719098
 SpriteRenderer:

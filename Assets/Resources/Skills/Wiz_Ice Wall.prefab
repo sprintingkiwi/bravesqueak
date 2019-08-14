@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114755667126410738}
   - component: {fileID: 212297671237066398}
   m_Layer: 0
-  m_Name: Ice Wall
+  m_Name: Wiz_Ice Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
+  displayName: Ice Wall
   speed: 100
   accuracy: 100
   powerRoll:
@@ -85,7 +86,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   instWallEffect: {fileID: 0}
   burnEffect: {fileID: 114946632963968454, guid: 40726e7f2432a0d4da912a2cc00f90f4,

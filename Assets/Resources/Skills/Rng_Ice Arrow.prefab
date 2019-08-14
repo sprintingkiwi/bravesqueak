@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114607521043220432}
   - component: {fileID: 212680232374482140}
   m_Layer: 0
-  m_Name: Ice Arrow
+  m_Name: Rng_Ice Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
+  displayName: Ice Arrow
   speed: 120
   accuracy: 100
   powerRoll:
@@ -85,7 +86,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114014343126834788}
   - component: {fileID: 212884628882320274}
   m_Layer: 0
-  m_Name: Spear
+  m_Name: Dra_Spear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
+  displayName: Spear
   speed: 80
   accuracy: 90
   powerRoll:
@@ -85,7 +86,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114255436312251458}
   - component: {fileID: 212789383041383176}
   m_Layer: 0
-  m_Name: Stalactites
+  m_Name: Wiz_Stalactites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,6 +59,7 @@ MonoBehaviour:
     Element: FIRE
 
 '
+  displayName: Stalactites
   speed: 80
   accuracy: 75
   powerRoll:
@@ -92,7 +93,6 @@ MonoBehaviour:
   targetedArea: 1
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

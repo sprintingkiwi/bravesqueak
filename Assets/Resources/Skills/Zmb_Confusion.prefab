@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114836736652321672}
   - component: {fileID: 212461386023369356}
   m_Layer: 0
-  m_Name: Confusion
+  m_Name: Zmb_Confusion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,7 @@ MonoBehaviour:
     Target: ONE ENEMY.
 
     Element: WATER.'
+  displayName: Confusion
   speed: 50
   accuracy: 100
   powerRoll:
@@ -90,7 +91,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

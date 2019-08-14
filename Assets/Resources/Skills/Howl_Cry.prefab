@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114448939315776632}
   - component: {fileID: 212894792583035140}
   m_Layer: 0
-  m_Name: Cry
+  m_Name: Howl_Cry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,7 @@ MonoBehaviour:
     Target: AREA
 
     Element: NONE'
+  displayName: 
   speed: 70
   accuracy: 100
   powerRoll:
@@ -76,6 +77,7 @@ MonoBehaviour:
   requiredSP: -1
   baseSkill: 0
   epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit
@@ -91,7 +93,6 @@ MonoBehaviour:
   targetedArea: 1
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

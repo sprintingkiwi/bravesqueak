@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114448939315776632}
   - component: {fileID: 212894792583035140}
   m_Layer: 0
-  m_Name: AntQueen RightClaw Slash
+  m_Name: AntQueen_RightClaw Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
+  displayName: 
   speed: 70
   accuracy: 100
   powerRoll:
@@ -69,11 +70,9 @@ MonoBehaviour:
   inField: 0
   element: 0
   requiredSP: -1
-  shopRequirement:
-    job: 0
-    exp: 0
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit
@@ -88,7 +87,6 @@ MonoBehaviour:
   targetedArea: 1
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114448939315776632}
   - component: {fileID: 212894792583035140}
   m_Layer: 0
-  m_Name: Zombie Headbutt
+  m_Name: Zmb_Headbutt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,7 @@ MonoBehaviour:
     Target: ONE ENEMY
 
     Element: NONE'
+  displayName: Headbutt
   speed: 70
   accuracy: 100
   powerRoll:
@@ -89,7 +90,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

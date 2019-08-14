@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114180593342923254}
   - component: {fileID: 212244742432949980}
   m_Layer: 0
-  m_Name: Body Wheel
+  m_Name: Hog_Body Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
+  displayName: 
   speed: 70
   accuracy: 70
   powerRoll:
@@ -70,6 +71,7 @@ MonoBehaviour:
   requiredSP: 0
   baseSkill: 0
   epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
   userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit
@@ -84,7 +86,6 @@ MonoBehaviour:
   targetedArea: 1
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

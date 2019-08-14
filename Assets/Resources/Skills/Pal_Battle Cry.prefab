@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212894792583035140}
   - component: {fileID: 114825584013065182}
   m_Layer: 0
-  m_Name: Battle Cry
+  m_Name: Pal_Battle Cry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
+  displayName: Battle Cry
   speed: 0
   accuracy: 0
   powerRoll:
@@ -97,7 +98,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
 --- !u!212 &212894792583035140
 SpriteRenderer:

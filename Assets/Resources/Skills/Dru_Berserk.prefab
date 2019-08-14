@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212663812037258710}
   - component: {fileID: 114389647848365838}
   m_Layer: 0
-  m_Name: Berserk
+  m_Name: Dru_Berserk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
+  displayName: Berserk
   speed: 0
   accuracy: 0
   powerRoll:
@@ -95,7 +96,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
 --- !u!212 &212663812037258710
 SpriteRenderer:

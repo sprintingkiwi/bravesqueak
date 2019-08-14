@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114836736652321672}
   - component: {fileID: 212461386023369356}
   m_Layer: 0
-  m_Name: Acid Splash
+  m_Name: Zmb_Acid Splash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,6 +58,7 @@ MonoBehaviour:
     Target: ONE ENEMY
 
     Element: EARTH'
+  displayName: Acid Splash
   speed: 70
   accuracy: 80
   powerRoll:
@@ -93,7 +94,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK
