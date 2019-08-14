@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114070373249245436}
-  - component: {fileID: 212684798391524616}
+  - component: {fileID: 114798076592822612}
+  - component: {fileID: 212368838457049698}
   m_Layer: 0
-  m_Name: Resistance
+  m_Name: Summon AntSoldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114070373249245436
+--- !u!114 &114798076592822612
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,44 +49,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d552af73051694eac34b643a2fd105, type: 3}
+  m_Script: {fileID: 11500000, guid: 31742f5693f070b4b970544209f7daae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
-  speed: 7
+  description: Summon an Ant Soldier.
+  displayName: 
+  speed: 20
   accuracy: 0
   powerRoll:
     dices: []
-  buffs:
-  - ID: CON
-    roll:
-      dices:
-      - faces: 6
-      - faces: 6
-    rollResult: 0
-  - ID: WIL
-    roll:
-      dices:
-      - faces: 4
-      - faces: 4
-    rollResult: 0
+  buffs: []
   statusChances: []
-  scope: 0
+  scope: 4
   targetsNumber: 1
-  duration: 3
+  duration: 0
   active: 1
   inBattle: 1
   inField: 0
-  element: 1
-  requiredSP: 5
-  shopRequirement:
-    job: 8
-    exp: 10
-  coins: 0
-  storeNameImg: {fileID: 0}
-  userAnimation: special
+  element: 0
+  requiredSP: 2
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
+  userAnimation: attack
   alternativeUserAnims: []
-  targetAnimation: special
+  targetAnimation: hit
   areaEffect: {fileID: 0}
   targetEffect: {fileID: 114308449136090854, guid: ef5e008a7ec3d844ea6f5034cf8e4b54,
     type: 2}
@@ -98,9 +85,10 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
---- !u!212 &212684798391524616
+  summon: {fileID: 0}
+  requiredHP: 10
+--- !u!212 &212368838457049698
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -134,7 +122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -57,6 +57,7 @@ MonoBehaviour:
     Target: ONE ENEMY
 
     Element: FIRE'
+  displayName: 
   speed: 100
   accuracy: 100
   powerRoll:
@@ -75,6 +76,7 @@ MonoBehaviour:
   requiredSP: 2
   baseSkill: 0
   epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
   userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit
@@ -89,7 +91,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK

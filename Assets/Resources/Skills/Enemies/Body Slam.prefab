@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114014343126834788}
-  - component: {fileID: 212945115848342930}
+  - component: {fileID: 114448939315776632}
+  - component: {fileID: 212894792583035140}
   m_Layer: 0
-  m_Name: Bite
+  m_Name: Body Slam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114014343126834788
+--- !u!114 &114448939315776632
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,12 +52,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
-  speed: 100
+  description: 'A reckless charge with the whole body!
+
+    Target: ONE ENEMY
+
+    Element: NONE'
+  displayName: 
+  speed: 70
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 6
+    - faces: 10
   buffs: []
   statusChances: []
   scope: 2
@@ -70,12 +75,12 @@ MonoBehaviour:
   requiredSP: -1
   baseSkill: 1
   epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
   userAnimation: attack
-  alternativeUserAnims:
-  - fox_bite
+  alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114979775389643346, guid: b7d3c157b7a60bc4aa477c12df5c82bb,
+  targetEffect: {fileID: 114781217208494670, guid: 28833b11d27ff82488cd8a82b631df75,
     type: 2}
   moveToTarget: 1
   cameraFocus: 0
@@ -85,7 +90,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
   mods:
   - name: ATK
@@ -102,7 +106,7 @@ MonoBehaviour:
     value: 0
   - name: DMG
     value: 0
---- !u!212 &212945115848342930
+--- !u!212 &212894792583035140
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

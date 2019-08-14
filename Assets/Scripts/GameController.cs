@@ -337,46 +337,46 @@ public class GameController : MonoBehaviour
         Vector3 playerPos = player.transform.position;
         saveData[slot].playerPosition = new float[] { playerPos.x, playerPos.y, playerPos.z };
 
-        // Save unlocked skills
-        saveData[slot].unlockedSkills.Clear();
-        for (int s = 0; s < unlockedSkills.Count; s++)
-        {
-            if (unlockedSkills[s] != null)
-                saveData[slot].unlockedSkills.Add(unlockedSkills[s].name);
-        }
+        //// Save unlocked skills
+        //saveData[slot].unlockedSkills.Clear();
+        //for (int s = 0; s < unlockedSkills.Count; s++)
+        //{
+        //    if (unlockedSkills[s] != null)
+        //        saveData[slot].unlockedSkills.Add(unlockedSkills[s].name);
+        //}
 
-        // Save unlocked perks
-        saveData[slot].unlockedPerks.Clear();
-        for (int s = 0; s < unlockedPerks.Count; s++)
-        {
-            if (unlockedPerks[s] != null)
-                saveData[slot].unlockedPerks.Add(unlockedPerks[s].name);
-        }
+        //// Save unlocked perks
+        //saveData[slot].unlockedPerks.Clear();
+        //for (int s = 0; s < unlockedPerks.Count; s++)
+        //{
+        //    if (unlockedPerks[s] != null)
+        //        saveData[slot].unlockedPerks.Add(unlockedPerks[s].name);
+        //}
 
-        // Save heroes data in an array
-        for (int i = 0; i < saveData[slot].heroesData.Length; i++)
-        {
-            Jrpg.Log("Saving data for hero " + heroes[i].name);
-            saveData[slot].heroesData[i].name = heroes[i].name;
+        //// Save heroes data in an array
+        //for (int i = 0; i < saveData[slot].heroesData.Length; i++)
+        //{
+        //    Jrpg.Log("Saving data for hero " + heroes[i].name);
+        //    saveData[slot].heroesData[i].name = heroes[i].name;
 
-            // Save each hero's equipped skills
-            for (int s = 0; s < heroes[i].skills.Length; s++)
-            {
-                if (heroes[i].skills[s] != null)
-                    saveData[slot].heroesData[i].equippedSkills[s] = heroes[i].skills[s].name;
-                else
-                    saveData[slot].heroesData[i].equippedSkills[s] = "Empty";
-            }
+        //    // Save each hero's equipped skills
+        //    for (int s = 0; s < heroes[i].skills.Length; s++)
+        //    {
+        //        if (heroes[i].skills[s] != null)
+        //            saveData[slot].heroesData[i].equippedSkills[s] = heroes[i].skills[s].name;
+        //        else
+        //            saveData[slot].heroesData[i].equippedSkills[s] = "Empty";
+        //    }
 
-            // Save each hero's equipped perks
-            for (int s = 0; s < heroes[i].perks.Length; s++)
-            {
-                if (heroes[i].perks[s] != null)
-                    saveData[slot].heroesData[i].equippedPerks[s] = heroes[i].perks[s].name;
-                else
-                    saveData[slot].heroesData[i].equippedPerks[s] = "Empty";
-            }
-        }
+        //    // Save each hero's equipped perks
+        //    for (int s = 0; s < heroes[i].perks.Length; s++)
+        //    {
+        //        if (heroes[i].perks[s] != null)
+        //            saveData[slot].heroesData[i].equippedPerks[s] = heroes[i].perks[s].name;
+        //        else
+        //            saveData[slot].heroesData[i].equippedPerks[s] = "Empty";
+        //    }
+        //}
 
         BinaryFormatter bf = new BinaryFormatter();
         FileStream saveFile = File.Open(Application.persistentDataPath + "/SaveData_SLOT_" + slot.ToString() + ".dat", FileMode.OpenOrCreate);
@@ -417,42 +417,42 @@ public class GameController : MonoBehaviour
         Jrpg.SaveData saveData = (Jrpg.SaveData)bf.Deserialize(saveFile);
         saveFile.Close();
 
-        // Restore unlocked Skills
-        unlockedSkills.Clear();
-        for (int p = 0; p < saveData.unlockedSkills.Count; p++)
-        {
-            unlockedSkills.Add(Resources.Load("Skills/" + saveData.unlockedSkills[p], typeof(Skill)) as Skill);
-        }
+        //// Restore unlocked Skills
+        //unlockedSkills.Clear();
+        //for (int p = 0; p < saveData.unlockedSkills.Count; p++)
+        //{
+        //    unlockedSkills.Add(Resources.Load("Skills/" + saveData.unlockedSkills[p], typeof(Skill)) as Skill);
+        //}
 
-        // Restore unlocked Perks
-        unlockedPerks.Clear();
-        for (int p = 0; p < saveData.unlockedPerks.Count; p++)
-        {
-            unlockedPerks.Add(Resources.Load("Perks/" + saveData.unlockedPerks[p], typeof(Perk)) as Perk);
-        }
+        //// Restore unlocked Perks
+        //unlockedPerks.Clear();
+        //for (int p = 0; p < saveData.unlockedPerks.Count; p++)
+        //{
+        //    unlockedPerks.Add(Resources.Load("Perks/" + saveData.unlockedPerks[p], typeof(Perk)) as Perk);
+        //}
 
-        // Restore Heroes data
-        Debug.Log("Restoring heroes skills");
-        for (int i = 0; i < heroes.Count(); i++)
-        {
-            // Restore equipped Skills
-            for (int s = 0; s < saveData.heroesData[i].equippedSkills.Length; s++)
-            {
-                if (saveData.heroesData[i].equippedSkills[s] != "Empty")
-                    heroes[i].skills[s] = Resources.Load("Skills/" + saveData.heroesData[i].equippedSkills[s], typeof(Skill)) as Skill;
-                else
-                    heroes[i].skills[s] = null;
-            }
+        //// Restore Heroes data
+        //Debug.Log("Restoring heroes skills");
+        //for (int i = 0; i < heroes.Count(); i++)
+        //{
+        //    // Restore equipped Skills
+        //    for (int s = 0; s < saveData.heroesData[i].equippedSkills.Length; s++)
+        //    {
+        //        if (saveData.heroesData[i].equippedSkills[s] != "Empty")
+        //            heroes[i].skills[s] = Resources.Load("Skills/" + saveData.heroesData[i].equippedSkills[s], typeof(Skill)) as Skill;
+        //        else
+        //            heroes[i].skills[s] = null;
+        //    }
 
-            // Restore equipped Perks
-            for (int p = 0; p < saveData.heroesData[i].equippedPerks.Length; p++)
-            {
-                if (saveData.heroesData[i].equippedPerks[p] != "Empty")
-                    heroes[i].perks[p] = Resources.Load("Perks/" + saveData.heroesData[i].equippedPerks[p], typeof(Perk)) as Perk;
-                else
-                    heroes[i].perks[p] = null;
-            }
-        }
+        //    // Restore equipped Perks
+        //    for (int p = 0; p < saveData.heroesData[i].equippedPerks.Length; p++)
+        //    {
+        //        if (saveData.heroesData[i].equippedPerks[p] != "Empty")
+        //            heroes[i].perks[p] = Resources.Load("Perks/" + saveData.heroesData[i].equippedPerks[p], typeof(Perk)) as Perk;
+        //        else
+        //            heroes[i].perks[p] = null;
+        //    }
+        //}
 
         // Loading
         //yield return StartCoroutine(Jrpg.LoadScene("World"));

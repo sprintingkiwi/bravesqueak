@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
+  displayName: 
   speed: 0
   accuracy: 0
   powerRoll:
@@ -67,11 +68,9 @@ MonoBehaviour:
   inField: 0
   element: 0
   requiredSP: 0
-  shopRequirement:
-    job: 0
-    exp: 0
-  coins: 0
-  storeNameImg: {fileID: 0}
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
   userAnimation: wait
   alternativeUserAnims: []
   targetAnimation: hit
@@ -85,7 +84,6 @@ MonoBehaviour:
   targetedArea: 0
   effectStillActive: 0
   bc: {fileID: 0}
-  gc: {fileID: 0}
   userMovementSpeed: 0
 --- !u!212 &212844352918454824
 SpriteRenderer:
