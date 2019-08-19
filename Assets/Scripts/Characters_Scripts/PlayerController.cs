@@ -66,7 +66,7 @@ public class PlayerController : Character
 
             GameController.instance.currentMap.gameObject.SetActive(false);
 
-            StartCoroutine(Jrpg.HeroesSelection(GameController.instance.unlockedHeroes, 3, PartySelectionCallback, GameController.instance.partyPrefabs.ToArray()));
+            StartCoroutine(Jrpg.HeroesSelection(GameController.instance.unlockedHeroes, 3, Jrpg.PartySelectionCallback, GameController.instance.partyPrefabs.ToArray()));
         }
 
         // Random Encounters
@@ -122,24 +122,5 @@ public class PlayerController : Character
             lastCheckedPos4RandEncounters = transform.position;
         }
     }
-
-    // Callback to update party with selection cache
-    public void PartySelectionCallback()
-    {
-        GameController.instance.partyPrefabs.Clear();
-        foreach(Battler b in GameController.instance.selectionCache)
-        {
-            GameController.instance.partyPrefabs.Add((HeroBattler)b);
-        }
-
-        // Check if at least 3 else add random
-        int count = GameController.instance.partyPrefabs.Count;
-        while (count < 3)
-        {
-            foreach (HeroBattler h in GameController.instance.unlockedHeroes)
-                if (!GameController.instance.partyPrefabs.Contains(h))
-                    GameController.instance.partyPrefabs.Add(h);
-            count = GameController.instance.partyPrefabs.Count;
-        }
-    }
+    
 }

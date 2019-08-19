@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
     public PartyMenu currentSelectionMenu;
 
     // This is to be used as a cache list for heroes selection menu in various situations
-    public List<Battler> selectionCache = new List<Battler>();
+    public List<HeroBattler> selectionCache = new List<HeroBattler>();
 
     public HeroMenu heroMenu;
     public ItemSelectionMenu itemSelectionMenu;
@@ -125,32 +125,43 @@ public class GameController : MonoBehaviour
 
     public void StartNewGame()
     {
-        // Choose random starter battlers
-        Jrpg.Log("Choosing random starters");
-        partyPrefabs = new List<HeroBattler>();
-        for (int i = 0; i < 3; i++)
-        {
-            while (partyPrefabs.Count < 3)
-            {
-                HeroBattler b = heroes[UnityEngine.Random.Range(0, 7)];
-                if (!partyPrefabs.Contains(b))
-                {
-                    partyPrefabs.Add(b);
-                    Jrpg.Log("Added " + b.name);
-                }
-            }
-        }
+        //// Choose random starter battlers
+        //Jrpg.Log("Choosing random starters");
+        //partyPrefabs = new List<HeroBattler>();
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    while (partyPrefabs.Count < 3)
+        //    {
+        //        HeroBattler b = heroes[UnityEngine.Random.Range(0, 7)];
+        //        if (!partyPrefabs.Contains(b))
+        //        {
+        //            partyPrefabs.Add(b);
+        //            Jrpg.Log("Added " + b.name);
+        //        }
+        //    }
+        //}
+
         if (!unlockAll)
         {
-            unlockedHeroes = partyPrefabs.ToArray();
+
         }
         else
+        {
             Jrpg.Log("Unlock all mode: unlocking all characters");
+        }
 
         // Start Everything
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Title"), Vector3.up));
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Play"), Vector3.down, power: 20f));
         StartCoroutine(Jrpg.LoadScene("World"));
+    }
+
+    public void FirstHeroesSelection()
+    {
+        // Starting heroes selection
+        partyPrefabs = new List<HeroBattler>();
+        unlockedHeroes = partyPrefabs.ToArray();
+        StartCoroutine(Jrpg.HeroesSelection(heroes, 3, Jrpg.StartSelectionCallback));
     }
 
     public void InitializeGame()
@@ -193,6 +204,8 @@ public class GameController : MonoBehaviour
         //    justLoadedGameSlot = false;
 
         Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
+
+        FirstHeroesSelection();
 
         canSaveLoad = true;
     }

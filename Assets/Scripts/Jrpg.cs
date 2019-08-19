@@ -373,20 +373,21 @@ public class Jrpg : MonoBehaviour
         }
     }
 
-    public static void SetupHeroesSelection(Battler[] availables, int selectables, Battler[] alreadySelected = null)
+    public static void SetupHeroesSelection(HeroBattler[] availables, int selectables, HeroBattler[] alreadySelected = null)
     {
         GameController.instance.currentSelectionMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, GameController.instance.mapCamera.transform).GetComponent<PartyMenu>();
         GameController.instance.currentSelectionMenu.Setup();
         GameController.instance.currentSelectionMenu.SelectionSetup(availables, alreadySelected);
     }
 
-    public static IEnumerator HeroesSelection(Battler[] availables, int selectables, Action callback, Battler[] alreadySelected=null)
+    public static IEnumerator HeroesSelection(HeroBattler[] availables, int selectables, Action callback, HeroBattler[] alreadySelected=null)
     {
         if (GameController.instance.currentSelectionMenu != null)
             yield break;
 
         // Freeze player
-        GameController.instance.player.canMove = false;
+        if (GameController.instance.player != null)
+            GameController.instance.player.canMove = false;
 
         // Clear cache list for selected heroes
         GameController.instance.selectionCache.Clear();
@@ -402,8 +403,58 @@ public class Jrpg : MonoBehaviour
         callback();
 
         // Unfreeze player
-        GameController.instance.player.canMove = true;
+        if (GameController.instance.player != null)
+            GameController.instance.player.canMove = true;
         yield return null;
+    }
+
+    // Callback to update party with selection cache
+    public static void PartySelectionCallback()
+    {
+        GameController.instance.partyPrefabs.Clear();
+        foreach (HeroBattler b in GameController.instance.selectionCache)
+        {
+            GameController.instance.partyPrefabs.Add(b);
+        }
+
+        // Check if at least 3 else add random
+        int count = GameController.instance.partyPrefabs.Count;
+        while (count < 3)
+        {
+            foreach (HeroBattler h in GameController.instance.unlockedHeroes)
+                if (!GameController.instance.partyPrefabs.Contains(h))
+                    GameController.instance.partyPrefabs.Add(h);
+            count = GameController.instance.partyPrefabs.Count;
+        }
+    }
+
+    public static void StartSelectionCallback()
+    {
+        // Check if at least 3 else add random
+        int count = GameController.instance.selectionCache.Count;
+        while (count < 3)
+        {
+            Log("Selecting random starters");
+            HeroBattler h = GameController.instance.heroes[UnityEngine.Random.Range(0, GameController.instance.heroes.Length - 1)];
+            if (!GameController.instance.selectionCache.Contains(h))
+            {
+                GameController.instance.selectionCache.Add(h);
+                Log("Automatically added " + h.name);
+            }
+            count = GameController.instance.selectionCache.Count;
+        }
+        
+        // Adding to party
+        GameController.instance.partyPrefabs.Clear();
+        foreach (HeroBattler b in GameController.instance.selectionCache)
+        {
+            GameController.instance.partyPrefabs.Add(b);
+        }
+
+        // Only at start, set unlocked heroes to starting heroes
+        GameController.instance.unlockedHeroes = GameController.instance.selectionCache.ToArray();
+
+        Log("Done selecting starting characters!");
     }
 
     //public static Battler FindParentBattler(Transform myTransform)

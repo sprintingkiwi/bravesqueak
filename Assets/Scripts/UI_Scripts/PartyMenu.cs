@@ -13,8 +13,8 @@ public class PartyMenu : Menu {
     public GameObject currentHeroDesc;
     public GameObject highlighter;
     public int index;
-    public Battler[] availables;
-    public Battler[] alreadySelected;
+    public HeroBattler[] availables;
+    public HeroBattler[] alreadySelected;
     public GameObject heroUI;
     Coroutine heroUICoroutine;
 
@@ -26,7 +26,7 @@ public class PartyMenu : Menu {
         base.Setup();
     }
 
-    public void SelectionSetup(Battler[] availables, Battler[] alreadySelected=null)
+    public void SelectionSetup(HeroBattler[] availables, HeroBattler[] alreadySelected=null)
     {
         this.availables = availables;
         this.alreadySelected = alreadySelected;
@@ -225,7 +225,7 @@ public class PartyMenu : Menu {
             //partyMenu.GameController.instance.partyPrefabs[partyMenu.ticks - 1] = partyMenu.GameController.instance.unlockedHeroes[transform.parent.GetSiblingIndex()];
 
             // Add hero to cache list of selected heroes
-            foreach (Battler h in GameController.instance.heroes)
+            foreach (HeroBattler h in GameController.instance.heroes)
             {
                 if (h.name == availables[partyHero.heroIndex].name)
                     GameController.instance.selectionCache.Add(h);
@@ -239,7 +239,7 @@ public class PartyMenu : Menu {
             ticks -= 1;
 
             // Remove hero from cache list of selected heroes
-            foreach (Battler h in GameController.instance.heroes)
+            foreach (HeroBattler h in GameController.instance.heroes)
             {
                 if (h.name == availables[partyHero.heroIndex].name)
                     GameController.instance.selectionCache.Remove(h);
