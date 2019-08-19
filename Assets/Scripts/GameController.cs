@@ -300,7 +300,7 @@ public class GameController : MonoBehaviour
             {
                 Jrpg.Log("Destroying " + currentEnemy);
                 Destroy(currentMap.transform.Find("ENEMIES").Find(currentEnemy).gameObject);
-                if (encounter.boss)
+                if (encounter.type != Encounter.Type.Common)
                     defeatedBosses.Add(currentEnemy);
             }
             else
@@ -319,6 +319,23 @@ public class GameController : MonoBehaviour
                 yield return c;
 
             situation = "Map";
+
+            // Select new hero if defeated boss
+            if (encounter.type == Encounter.Type.Boss)
+            {
+                List<HeroBattler> remainingHeroes = new List<HeroBattler>();
+                foreach (HeroBattler hb in heroes)
+                    if (!unlockedHeroes.Contains(hb))
+                        remainingHeroes.Add(hb);
+
+                if (remainingHeroes.Count > 0)
+                {
+                    Jrpg.Log("Starting new hero selection");
+                    StartCoroutine(Jrpg.HeroesSelection(remainingHeroes.ToArray(), 1, Jrpg.NewHeroCallback));
+                }
+            }
+
+            // Restore normal map situation
             canSaveLoad = true;
             mapCamera.followPlayer = true;
             player.canMove = true;

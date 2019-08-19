@@ -148,7 +148,7 @@ MonoBehaviour:
   enemies:
   - recipe: {fileID: 114069915646428382, guid: feda8348509482543ab8a31e9f5ff804, type: 2}
     place: {fileID: 4922312702444724}
-  boss: 1
+  type: 1
 --- !u!212 &212003281901323110
 SpriteRenderer:
   m_ObjectHideFlags: 1

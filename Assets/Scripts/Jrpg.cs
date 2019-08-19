@@ -454,7 +454,13 @@ public class Jrpg : MonoBehaviour
         // Only at start, set unlocked heroes to starting heroes
         GameController.instance.unlockedHeroes = GameController.instance.selectionCache.ToArray();
 
-        Log("Done selecting starting characters!");
+        Log("Done selecting starting characters");
+    }
+
+    public static void NewHeroCallback()
+    {
+        GameController.instance.unlockedHeroes.Concat(GameController.instance.selectionCache);
+        Log("Done adding new hero");
     }
 
     //public static Battler FindParentBattler(Transform myTransform)

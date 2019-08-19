@@ -24,5 +24,6 @@ public class Encounter : MonoBehaviour
     public CameraAdjust cameraAdjust;
     public AudioClip battleMusic;
     public Enemy[] enemies;
-    public bool boss;
+    public enum Type { Common, Miniboss, Boss };
+    public Type type;
 }
