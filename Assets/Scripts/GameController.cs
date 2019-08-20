@@ -141,15 +141,6 @@ public class GameController : MonoBehaviour
         //    }
         //}
 
-        if (!unlockAll)
-        {
-
-        }
-        else
-        {
-            Jrpg.Log("Unlock all mode: unlocking all characters");
-        }
-
         // Start Everything
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Title"), Vector3.up));
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Play"), Vector3.down, power: 20f));
@@ -205,7 +196,16 @@ public class GameController : MonoBehaviour
 
         Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
 
-        FirstHeroesSelection();
+
+        // First Hero Selection
+        if (!unlockAll)
+        {
+            FirstHeroesSelection();
+        }
+        else
+        {
+            Jrpg.Log("Unlock all mode: unlocking all characters");
+        }
 
         canSaveLoad = true;
     }

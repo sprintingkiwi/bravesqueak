@@ -377,7 +377,7 @@ public class Jrpg : MonoBehaviour
     {
         GameController.instance.currentSelectionMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, GameController.instance.mapCamera.transform).GetComponent<PartyMenu>();
         GameController.instance.currentSelectionMenu.Setup();
-        GameController.instance.currentSelectionMenu.SelectionSetup(availables, alreadySelected);
+        GameController.instance.currentSelectionMenu.SelectionSetup(availables, selectables, alreadySelected);
     }
 
     public static IEnumerator HeroesSelection(HeroBattler[] availables, int selectables, Action callback, HeroBattler[] alreadySelected=null)
@@ -459,7 +459,7 @@ public class Jrpg : MonoBehaviour
 
     public static void NewHeroCallback()
     {
-        GameController.instance.unlockedHeroes.Concat(GameController.instance.selectionCache);
+        GameController.instance.unlockedHeroes = GameController.instance.unlockedHeroes.Concat(GameController.instance.selectionCache).ToArray();
         Log("Done adding new hero");
     }
 

@@ -14,6 +14,7 @@ public class PartyMenu : Menu {
     public GameObject highlighter;
     public int index;
     public HeroBattler[] availables;
+    public int selectables;
     public HeroBattler[] alreadySelected;
     public GameObject heroUI;
     Coroutine heroUICoroutine;
@@ -26,9 +27,10 @@ public class PartyMenu : Menu {
         base.Setup();
     }
 
-    public void SelectionSetup(HeroBattler[] availables, HeroBattler[] alreadySelected=null)
+    public void SelectionSetup(HeroBattler[] availables, int selectables, HeroBattler[] alreadySelected=null)
     {
         this.availables = availables;
+        this.selectables = selectables;
         this.alreadySelected = alreadySelected;
 
         heroesImages = new Transform[availables.Length];
@@ -178,7 +180,7 @@ public class PartyMenu : Menu {
             }
             selectedImg = hu.transform.GetChild(UIindex).GetComponent<Image>();
             selectedImg.color = Color.yellow;
-            if (selectedImg.name == "Select" && ticks > 2 && !GameController.instance.selectionCache.Contains(availables[index]))
+            if (selectedImg.name == "Select" && ticks >= selectables && !GameController.instance.selectionCache.Contains(availables[index]))
             {
                 selectedImg.color = Color.red;
             }
@@ -215,7 +217,7 @@ public class PartyMenu : Menu {
 
         if (partyHero.tick == null)
         {
-            if (ticks > 2)
+            if (ticks >= selectables)
                 return;
 
             partyHero.tick = Instantiate(Resources.Load("Menu/Tick") as GameObject, partyHero.transform.Find("Square").transform);
