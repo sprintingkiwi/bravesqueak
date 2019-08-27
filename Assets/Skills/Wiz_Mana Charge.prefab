@@ -71,7 +71,7 @@ MonoBehaviour:
   baseSkill: 1
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: special
+  userAnimation: mana
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}

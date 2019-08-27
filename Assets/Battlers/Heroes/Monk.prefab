@@ -191,8 +191,8 @@ MonoBehaviour:
   - {fileID: 114836736652321672, guid: 1607c4dcca53ec24caa629db61a33ab4, type: 2}
   - {fileID: 114814859113074538, guid: d5e3574b933716d41a1e2bcde3ddbbf1, type: 2}
   - {fileID: 114014343126834788, guid: ee63e8ebc28331d41b2d65d900b02462, type: 2}
-  - {fileID: 114610778547815510, guid: acada68455ea759468e2fd5f9347ef0e, type: 2}
-  - {fileID: 114238026829365552, guid: 0d5bc5a67c1397d4583da6a0d1dc5039, type: 2}
+  - {fileID: 114755667126410738, guid: 8a009165ece2f734fbca280b0320631b, type: 2}
+  - {fileID: 114238026829365552, guid: b7fb899621233f34bb9b37511e1235bc, type: 2}
 --- !u!212 &212351009626954626
 SpriteRenderer:
   m_ObjectHideFlags: 1
