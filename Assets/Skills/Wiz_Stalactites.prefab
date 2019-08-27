@@ -82,9 +82,9 @@ MonoBehaviour:
   alternativeUserAnims:
   - bossplant_machinegun
   targetAnimation: hit
-  areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114946632963968454, guid: e965e01949920ad44a557b56193550c0,
+  areaEffect: {fileID: 114614065750280804, guid: 251d90a7cd18fbe42b3977e1306fc004,
     type: 2}
+  targetEffect: {fileID: 0}
   moveToTarget: 0
   cameraFocus: 0
   cameraShake: 1

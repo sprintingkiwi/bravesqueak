@@ -210,6 +210,11 @@ public class AttackSkill : Skill
 
     public virtual IEnumerator ProcessFightOutcome(Battler target)
     {
+        // Considering area effect as main effect if there is only an area effect
+        if (targetEffect == null && areaEffect != null)
+            targetEffect = areaEffect;
+
+        // Shoot if effect is a projectile
         if (targetEffect.projectile)
             yield return StartCoroutine(ShootProjectile(target));        
 
