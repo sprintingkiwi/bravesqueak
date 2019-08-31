@@ -83,7 +83,7 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: special
+  userAnimation: berserk
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
