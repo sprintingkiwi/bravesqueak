@@ -51,7 +51,7 @@ public class AttackSkill : Skill
 
         if (scope == Scope.Area)
             //Jrpg.PlayEffect(Vector3.zero, areaEffect, Battler.Faction.Heroes);
-            Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), areaEffect, user.faction);
+            yield return StartCoroutine(Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), areaEffect, user.faction, areaEffect.waitComplete));
 
         // Process first execution effect
         yield return StartCoroutine(ProcessEffects(Effect));
@@ -210,9 +210,8 @@ public class AttackSkill : Skill
 
     public virtual IEnumerator ProcessFightOutcome(Battler target)
     {
-        // Considering area effect as main effect if there is only an area effect
-        if (targetEffect == null && areaEffect != null)
-            targetEffect = areaEffect;
+        if (targetEffect == null)
+            targetEffect = (Resources.Load("EmptyEffect") as GameObject).GetComponent<Effect>();
 
         // Shoot if effect is a projectile
         if (targetEffect.projectile)

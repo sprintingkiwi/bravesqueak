@@ -83,7 +83,7 @@ MonoBehaviour:
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 114614065750280804, guid: 64eb38151b1f9fd428d6400476a728b9,
     type: 2}
-  userAnimation: attack
+  userAnimation: thunder_sword
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}

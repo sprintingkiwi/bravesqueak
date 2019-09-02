@@ -72,7 +72,7 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: special
+  userAnimation: firewall
   alternativeUserAnims: []
   targetAnimation: idle
   areaEffect: {fileID: 0}

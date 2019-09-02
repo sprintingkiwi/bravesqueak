@@ -79,12 +79,12 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: special
+  userAnimation: brambles
   alternativeUserAnims: []
   targetAnimation: hit
-  areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114946632963968454, guid: 792a0d4d41be5464ca4da79d3c7616ca,
+  areaEffect: {fileID: 114614065750280804, guid: e2be272e129035440bbcd056df25841b,
     type: 2}
+  targetEffect: {fileID: 0}
   moveToTarget: 0
   cameraFocus: 0
   cameraShake: 1

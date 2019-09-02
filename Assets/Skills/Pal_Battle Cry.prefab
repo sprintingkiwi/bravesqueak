@@ -85,7 +85,7 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: attack
+  userAnimation: cry
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}

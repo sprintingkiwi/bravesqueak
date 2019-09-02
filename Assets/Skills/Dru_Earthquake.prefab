@@ -78,7 +78,7 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: attack
+  userAnimation: quake
   alternativeUserAnims:
   - octopus_attack_1
   - bossplant_earthquake

@@ -76,7 +76,7 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: special
+  userAnimation: thunder
   alternativeUserAnims:
   - fox_eyes
   targetAnimation: hit

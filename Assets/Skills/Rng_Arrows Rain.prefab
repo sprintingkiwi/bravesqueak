@@ -77,7 +77,7 @@ MonoBehaviour:
   epicSkillOf: {fileID: 114253743136115620, guid: 54e5d2f2fb4d0674492c18ed539645fa,
     type: 2}
   userBeginEffect: {fileID: 0}
-  userAnimation: attack
+  userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}

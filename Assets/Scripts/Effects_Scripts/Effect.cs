@@ -10,6 +10,7 @@ public class Effect : JrpgBehaviour
     public bool projectile;
     public float speed;
     public Effect AfterEffect;
+    public bool waitComplete;
     //GameController GameController.instance;
 
     [Header("Advanced Custom Settings")]
