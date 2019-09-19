@@ -265,9 +265,9 @@ public class BattleController : MonoBehaviour
                     activeBattlerPos = new Vector3(6f, -5f, 0f);
 
                 StartCoroutine(b.MoveTo(activeBattlerPos, speed: 150f));
-                b.hud.gameObject.SetActive(true); //HUD on
+                yield return StartCoroutine(b.hud.Appear()); //HUD on
                 yield return SetupBattleMenu(b.GetComponent<HeroBattler>()); // Battle menu routine
-                b.hud.gameObject.SetActive(false); //HUD off
+                yield return StartCoroutine(b.hud.Disappear()); //HUD off
                 StartCoroutine(b.MoveTo(b.originalPos, speed: 150f));
                 yield return new WaitForSeconds(0.1f);
             }

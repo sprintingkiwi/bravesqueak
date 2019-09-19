@@ -218,13 +218,6 @@ public class Jrpg : MonoBehaviour
         Vector3 dmgPos = Camera.main.WorldToScreenPoint(target.transform.position);
         Instantiate(dmgText, dmgPos, Quaternion.identity, GameObject.Find("Canvas").transform).Setup(value.ToString(), lifeTime);
 
-        // Update HUD
-        // Uncomment this to view HUD only for Heroes
-        ////if (target.GetComponent<HeroBattler>() != null)  
-        
-        // HUD
-        target.hud.gameObject.SetActive(true);
-        target.StartCoroutine(target.hud.Disappear(1.5f));
     }
 
     public static void Heal(Battler target, int value, float lifeTime = 0.5f)

@@ -261,8 +261,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: {fileID: 0}
   SP: {fileID: 0}
+  oldHP: 0
+  oldSP: 0
   hudHook: {fileID: 0}
   owner: {fileID: 0}
+  waitChanging: 0.05
 --- !u!114 &114301522663510746
 MonoBehaviour:
   m_ObjectHideFlags: 1

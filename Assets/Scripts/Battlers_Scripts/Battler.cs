@@ -426,7 +426,6 @@ public class Battler : MonoBehaviour
         if (transform.Find("HUD Hook") != null)
             hud.hudHook = transform.Find("HUD Hook");
         hud.Setup();
-        hud.gameObject.SetActive(false);
     }
 
     public virtual IEnumerator Blink ()

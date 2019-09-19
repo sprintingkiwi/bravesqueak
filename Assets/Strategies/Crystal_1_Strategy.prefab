@@ -62,7 +62,7 @@ MonoBehaviour:
   - skill: {fileID: 114238026829365552, guid: ff2d6b0b526ced34d824adb7bde3e6f5, type: 2}
     weight: 4
     conditions: []
-  - skill: {fileID: 114115067928026556, guid: 01c9b776ffd00d6469648059fdc76d0e, type: 2}
+  - skill: {fileID: 114115067928026556, guid: 7f53ec02bf085504a87b41eb66a2d440, type: 2}
     weight: 2
     conditions:
     - conditionFunction: HitPoints
