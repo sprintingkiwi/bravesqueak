@@ -11,7 +11,6 @@ public class BattlerHUD : MonoBehaviour
     public float oldSP;
     public Transform hudHook;
     public Battler owner;
-    public float waitChanging;
 
     // Use this for initialization
     public void Setup()
@@ -24,7 +23,7 @@ public class BattlerHUD : MonoBehaviour
         HP.value = owner.hitPoints;
         SP.value = owner.skillPoints;
         oldHP = HP.value;
-        oldSP = SP.value;
+        //oldSP = SP.value;
 
         HP.gameObject.SetActive(false);
         SP.gameObject.SetActive(false);
@@ -47,19 +46,20 @@ public class BattlerHUD : MonoBehaviour
         // HP
         if (oldHP != owner.hitPoints)
         {
-            StartCoroutine(ChangeValue(HP, owner.hitPoints, waitChanging));
-            oldHP = owner.hitPoints;
+            StartCoroutine(ChangeValue(HP, owner.hitPoints, 0.05f, 0.5f));
+            oldHP = owner.hitPoints; //update old
         }
-        // SP
-        if (oldSP != owner.skillPoints)
-        {
 
-            StartCoroutine(ChangeValue(SP, owner.skillPoints, waitChanging));
-            oldSP = owner.skillPoints;
-        }
+        // SP
+        //if (oldSP != owner.skillPoints)
+        //{
+
+        //    //StartCoroutine(ChangeValue(SP, owner.skillPoints, 0.4f, 1f)); //Doing this in battle menu
+        //    oldSP = owner.skillPoints; //update old
+        //}
     }
 
-    public IEnumerator ChangeValue(Slider slider, float newValue, float wait)
+    public IEnumerator ChangeValue(Slider slider, float newValue, float waitChanging, float waitAfter)
     {
         slider.gameObject.SetActive(true);
 
@@ -69,7 +69,7 @@ public class BattlerHUD : MonoBehaviour
             for (int i = 0; i < delta; i++)
             {
                 slider.value += 1;
-                yield return new WaitForSeconds(wait);
+                yield return new WaitForSeconds(waitChanging);
             }
         }
         else
@@ -77,10 +77,11 @@ public class BattlerHUD : MonoBehaviour
             for (int i = 0; i < delta; i++)
             {
                 slider.value -= 1;
-                yield return new WaitForSeconds(wait);
+                yield return new WaitForSeconds(waitChanging);
             }
         }
 
+        yield return new WaitForSeconds(waitAfter);
         slider.gameObject.SetActive(false);
     }
 

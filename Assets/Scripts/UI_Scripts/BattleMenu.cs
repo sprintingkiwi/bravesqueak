@@ -175,7 +175,10 @@ public class BattleMenu : MonoBehaviour
                 if (playerBattler.skills[skillIndex] != null)
                 {
                     if (playerBattler.skills[skillIndex].ProcessRequirements(playerBattler))
+                    {
                         selectedSkill = playerBattler.skills[skillIndex];
+                        StartCoroutine(playerBattler.hud.ChangeValue(playerBattler.hud.SP, (playerBattler.hud.owner.skillPoints - selectedSkill.requiredSP), 0f, 1f));
+                    }
                     else
                         Jrpg.PlaySound("Forbidden");
                 }
