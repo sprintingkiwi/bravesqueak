@@ -266,8 +266,6 @@ public class Skill : Item
     public virtual IEnumerator ApplyCosts()
     {
         user.skillPoints -= requiredSP;
-        ////if (user.GetComponent<HeroBattler>() != null)
-        //user.RefreshHUD();
 
         yield return null;
     }
@@ -343,7 +341,9 @@ public class Skill : Item
     public virtual IEnumerator ProcessEffects(Func<Battler, IEnumerator> effectFunction)
     {
         foreach (Battler target in targets.ToArray())
+        {
             yield return StartCoroutine(effectFunction(target));
+        }
 
         yield return new WaitForSeconds(0.1f);
     }    

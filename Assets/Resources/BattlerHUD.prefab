@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1831887992058716
 GameObject:
   m_ObjectHideFlags: 1
@@ -261,6 +261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: {fileID: 0}
   SP: {fileID: 0}
+  hudHook: {fileID: 0}
+  owner: {fileID: 0}
 --- !u!114 &114301522663510746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,7 +303,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224311449169156652}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:

@@ -189,11 +189,8 @@ public class Battler : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         UpdateSortingOrder();
 
-        //// HUD
-        //hud = (Instantiate(Resources.Load("BattlerHUD"), GameObject.Find("Canvas").transform.Find("BATTLE HUD")) as GameObject).GetComponent<BattlerHUD>();
-        //hud.name = name + "_HUD";
-        //hud.Start();
-        //RefreshHUD();
+        // HUD
+        SetupHUD();
     }
 
     // Update is called once per frame
@@ -201,15 +198,6 @@ public class Battler : MonoBehaviour
     {
         // Adjust layer sorting order based on y position
         //spr.sortingOrder = -(int)(gameObject.transform.position.y * 10);
-
-        
-        //if (transform.Find("HUD Hook") != null)
-        //{
-        //    Transform hudHook = transform.Find("HUD Hook");
-        //    hud.transform.position = Camera.main.WorldToScreenPoint(hudHook.position);
-        //}
-        //else
-        //    hud.transform.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + spr.bounds.size.y / 2, transform.position.z));
 
     }
 
@@ -430,11 +418,16 @@ public class Battler : MonoBehaviour
         return 0f;
     }
 
-    //public void RefreshHUD()
-    //{
-    //    hud.HP.value = (float)hitPoints / maxHP.value;
-    //    hud.SP.value = (float)skillPoints / 10;
-    //}
+    public void SetupHUD()
+    {
+        hud = (Instantiate(Resources.Load("BattlerHUD"), GameObject.Find("Canvas").transform.Find("BATTLE HUD")) as GameObject).GetComponent<BattlerHUD>();
+        hud.name = name + "_HUD";
+        hud.owner = this;
+        if (transform.Find("HUD Hook") != null)
+            hud.hudHook = transform.Find("HUD Hook");
+        hud.Setup();
+        hud.gameObject.SetActive(false);
+    }
 
     public virtual IEnumerator Blink ()
     {

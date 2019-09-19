@@ -221,8 +221,10 @@ public class Jrpg : MonoBehaviour
         // Update HUD
         // Uncomment this to view HUD only for Heroes
         ////if (target.GetComponent<HeroBattler>() != null)  
-        // Refresh
-        //target.RefreshHUD();
+        
+        // HUD
+        target.hud.gameObject.SetActive(true);
+        target.StartCoroutine(target.hud.Disappear(1.5f));
     }
 
     public static void Heal(Battler target, int value, float lifeTime = 0.5f)
