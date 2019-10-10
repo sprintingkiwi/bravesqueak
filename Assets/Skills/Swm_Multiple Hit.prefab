@@ -75,7 +75,8 @@ MonoBehaviour:
   userAnimation: multiple
   alternativeUserAnims: []
   targetAnimation: hit
-  areaEffect: {fileID: 0}
+  areaEffect: {fileID: 114781217208494670, guid: 28833b11d27ff82488cd8a82b631df75,
+    type: 2}
   targetEffect: {fileID: 114979775389643346, guid: b7d3c157b7a60bc4aa477c12df5c82bb,
     type: 2}
   moveToTarget: 1

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114014343126834788}
   - component: {fileID: 212946916256668930}
   m_Layer: 0
-  m_Name: Pirate_Scimitar
+  m_Name: Crystal_2_Punch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,8 +58,7 @@ MonoBehaviour:
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 4
-    - faces: 4
+    - faces: 12
   buffs: []
   statusChances: []
   scope: 2
@@ -68,7 +67,7 @@ MonoBehaviour:
   active: 1
   inBattle: 1
   inField: 0
-  element: 0
+  element: 6
   requiredSP: -1
   baseSkill: 1
   epicSkillOf: {fileID: 0}

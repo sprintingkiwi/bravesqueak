@@ -238,11 +238,11 @@ MonoBehaviour:
   enemies:
   - recipe: {fileID: 114069915646428382, guid: 07ef9c35f429fd448b8de064138f23d7, type: 2}
     place: {fileID: 4740698478568138}
-  - recipe: {fileID: 114069915646428382, guid: 07ef9c35f429fd448b8de064138f23d7, type: 2}
+  - recipe: {fileID: 114069915646428382, guid: 3075be30475b7d64f80fef508ab91ed6, type: 2}
     place: {fileID: 4315181530860574}
   - recipe: {fileID: 114069915646428382, guid: 07ef9c35f429fd448b8de064138f23d7, type: 2}
     place: {fileID: 4435096208240928}
-  boss: 0
+  type: 0
 --- !u!212 &212043806403438010
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -409,7 +409,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0559060dfb4a5a547bcd90e5005a27e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e43bff5cdecb25345a38486d9348dca8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
