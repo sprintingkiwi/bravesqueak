@@ -49,7 +49,7 @@ public class AttackSkill : Skill
         // Trigger user animation
         yield return StartCoroutine(Jrpg.PlayAnimation(user, userAnimation, true));
 
-        if (scope == Scope.Area)
+        if (scope == Scope.Area && areaEffect != null)
             //Jrpg.PlayEffect(Vector3.zero, areaEffect, Battler.Faction.Heroes);
             yield return StartCoroutine(Jrpg.PlayEffect(new Vector3(10f * (float)targets[0].faction, -7f, 0), areaEffect, user.faction, areaEffect.waitComplete));
 
