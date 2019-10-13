@@ -73,8 +73,8 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 4
-  requiredSP: -1
-  baseSkill: 1
+  requiredSP: 2
+  baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
   userAnimation: attack

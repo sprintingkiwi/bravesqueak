@@ -7,6 +7,8 @@ public class BattlerHUD : MonoBehaviour
 {
     public Slider HP;
     public Slider SP;
+    public Slider SPTotal;
+    public Slider SPPlus;
     public float oldHP;
     public float oldSP;
     public Transform hudHook;
@@ -17,16 +19,23 @@ public class BattlerHUD : MonoBehaviour
     {
         HP = transform.Find("HP").GetComponent<Slider>();
         SP = transform.Find("SP").GetComponent<Slider>();
+        SPTotal = transform.Find("SP_Total").GetComponent<Slider>();
+        SPPlus = transform.Find("SP_Plus").GetComponent<Slider>();
 
         HP.maxValue = owner.maxHP.value;
 
         HP.value = owner.hitPoints;
         SP.value = owner.skillPoints;
+        SPTotal.value = owner.skillPoints;
+        SPPlus.value = owner.skillPoints;
+
         oldHP = HP.value;
         //oldSP = SP.value;
 
         HP.gameObject.SetActive(false);
         SP.gameObject.SetActive(false);
+        SPTotal.gameObject.SetActive(false);
+        SPPlus.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -92,7 +101,11 @@ public class BattlerHUD : MonoBehaviour
         if (hp)
             HP.gameObject.SetActive(true);
         if (sp)
+        {
             SP.gameObject.SetActive(true);
+            SPTotal.gameObject.SetActive(true);
+            SPPlus.gameObject.SetActive(true);
+        }
         yield return null;
     }
 
@@ -101,7 +114,11 @@ public class BattlerHUD : MonoBehaviour
         if (hp)
             HP.gameObject.SetActive(false);
         if (sp)
+        {
             SP.gameObject.SetActive(false);
+            SPTotal.gameObject.SetActive(false);
+            SPPlus.gameObject.SetActive(false);
+        }
 
         yield return new WaitForSeconds(time);
     }

@@ -10,6 +10,7 @@ public class Skill : Item
 
     [Header("Properties")]
     public string displayName;
+    public Color displayNameColor = new Color(0, 0, 0, 255);
     //public Type type;
     //public string expType = "Common";
     public int speed;

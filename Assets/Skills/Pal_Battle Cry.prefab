@@ -81,7 +81,7 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 7
-  requiredSP: 0
+  requiredSP: 2
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}

@@ -88,6 +88,8 @@ public class BattleMenu : MonoBehaviour
 
     IEnumerator RotateWheel()
     {
+        UpdateSP(playerBattler.skills[skillIndex]);
+
         // Wait until a skill is selected
         while (selectedSkill == null)
         {
@@ -104,7 +106,8 @@ public class BattleMenu : MonoBehaviour
                 skillIndex += 1;
 
                 SetSkillScroll();
-                
+                UpdateSP(playerBattler.skills[skillIndex]);
+
                 targetAngle = new Vector3(0, 0, transform.eulerAngles.z + 15);
                 rotationStartTime = Time.time;
                 while (Time.time - rotationStartTime < 0.8f)
@@ -146,6 +149,7 @@ public class BattleMenu : MonoBehaviour
                 skillIndex -= 1;
 
                 SetSkillScroll();
+                UpdateSP(playerBattler.skills[skillIndex]);
 
                 targetAngle = new Vector3(0, 0, transform.eulerAngles.z - 15);
                 rotationStartTime = Time.time;
@@ -177,7 +181,7 @@ public class BattleMenu : MonoBehaviour
                     if (playerBattler.skills[skillIndex].ProcessRequirements(playerBattler))
                     {
                         selectedSkill = playerBattler.skills[skillIndex];
-                        StartCoroutine(playerBattler.hud.ChangeValue(playerBattler.hud.SP, (playerBattler.hud.owner.skillPoints - selectedSkill.requiredSP), 0f, 1f));
+                        
                     }
                     else
                         Jrpg.PlaySound("Forbidden");
@@ -187,6 +191,28 @@ public class BattleMenu : MonoBehaviour
             }
 
             yield return null;
+        }
+    }
+
+    // Change SP indicator bar
+    public void UpdateSP(Skill skill)
+    {
+        playerBattler.hud.SP.value = playerBattler.skillPoints;
+        playerBattler.hud.SPTotal.value = playerBattler.skillPoints;
+        playerBattler.hud.SPPlus.value = playerBattler.skillPoints;
+
+        //StartCoroutine(playerBattler.hud.ChangeValue(playerBattler.hud.SP, (playerBattler.hud.owner.skillPoints - selectedSkill.requiredSP), 0f, 1f));
+        if (skill.requiredSP >= 0)
+        {
+            playerBattler.hud.SP.value = playerBattler.skillPoints - skill.requiredSP;
+            playerBattler.hud.SPPlus.gameObject.SetActive(false);
+            playerBattler.hud.SPTotal.gameObject.SetActive(true);
+        }
+        else
+        {
+            playerBattler.hud.SPPlus.value = playerBattler.skillPoints - skill.requiredSP;
+            playerBattler.hud.SPTotal.gameObject.SetActive(false);
+            playerBattler.hud.SPPlus.gameObject.SetActive(true);
         }
     }
 
@@ -218,7 +244,10 @@ public class BattleMenu : MonoBehaviour
         // Name the skill scroll
         skillScrollName.text = focusedSkill.name;
         if (focusedSkill.displayName != "")
+        {
             skillScrollName.text = focusedSkill.displayName;
+            skillScrollName.color = focusedSkill.displayNameColor;
+        }
 
         // Scroll position
         skillScrollName.transform.position = Camera.main.WorldToScreenPoint(skillScroll.transform.position);
@@ -606,6 +635,10 @@ public class BattleMenu : MonoBehaviour
                         selectedSkill = null;
                         selectedTargets.Clear();
                         yield return Jrpg.Fade(gameObject, 1, 0.5f);
+
+                        playerBattler.hud.SP.value = playerBattler.skillPoints; // Reset SP if aborting skill selection
+                        playerBattler.hud.SPTotal.value = playerBattler.skillPoints; // Reset SP Total if aborting skill selection
+
                         goto OtherPlatformSelection;
                     }
 

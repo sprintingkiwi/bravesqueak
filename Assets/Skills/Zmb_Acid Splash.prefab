@@ -59,6 +59,7 @@ MonoBehaviour:
 
     Element: EARTH'
   displayName: Acid Splash
+  displayNameColor: {r: 1, g: 1, b: 1, a: 1}
   speed: 70
   accuracy: 80
   powerRoll:

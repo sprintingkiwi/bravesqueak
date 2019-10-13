@@ -58,6 +58,7 @@ MonoBehaviour:
 
     Element: WATER.'
   displayName: Confusion
+  displayNameColor: {r: 1, g: 1, b: 1, a: 1}
   speed: 50
   accuracy: 100
   powerRoll:
@@ -73,7 +74,7 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 8
-  requiredSP: 3
+  requiredSP: 1
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}

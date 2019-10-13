@@ -177,7 +177,7 @@ public class Battler : MonoBehaviour
 
         // HP & SP
         hitPoints = maxHP.value;
-        skillPoints = Random.Range(2, 5);
+        skillPoints = Random.Range(3, 8);
 
         // Stats
         SaveOriginalStats();

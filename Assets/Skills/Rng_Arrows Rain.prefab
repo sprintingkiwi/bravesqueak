@@ -72,7 +72,7 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 0
-  requiredSP: 2
+  requiredSP: 3
   baseSkill: 0
   epicSkillOf: {fileID: 114253743136115620, guid: 54e5d2f2fb4d0674492c18ed539645fa,
     type: 2}
