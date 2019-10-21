@@ -58,10 +58,12 @@ MonoBehaviour:
 
     Element: FIRE'
   displayName: Firebolt
+  displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 80
   accuracy: 90
   powerRoll:
     dices:
+    - faces: 8
     - faces: 8
   buffs: []
   statusChances: []
