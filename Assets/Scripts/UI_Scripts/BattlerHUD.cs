@@ -55,7 +55,7 @@ public class BattlerHUD : MonoBehaviour
         // HP
         if (oldHP != owner.hitPoints)
         {
-            StartCoroutine(ChangeValue(HP, owner.hitPoints, 0.05f, 0.5f));
+            StartCoroutine(ChangeValue(HP, owner.hitPoints, 0.025f, 0.5f));
             oldHP = owner.hitPoints; //update old
         }
 
