@@ -92,6 +92,7 @@ public class Skill : Item
     public Dictionary<Battler, string> fightOutcomes = new Dictionary<Battler, string>();
     public Dictionary<Battler, int> damageOutcomes = new Dictionary<Battler, int>();
     public float userMovementSpeed;
+    public Coroutine flowCoroutine;
 
     public virtual void Awake()
     {
@@ -143,7 +144,8 @@ public class Skill : Item
             damageOutcomes.Add(target, 0);
         }
 
-        return StartCoroutine(ExecuteFlow());        
+        flowCoroutine = StartCoroutine(ExecuteFlow());
+        return flowCoroutine;        
     }
 
     public virtual IEnumerator ExecuteFlow()
@@ -192,7 +194,7 @@ public class Skill : Item
         // AssignExperience();
 
         // Death check and animation
-        yield return StartCoroutine(ProcessDeath());
+        yield return StartCoroutine(ProcessDeaths());
 
         // Skill destruction for skills without duration
         if (duration <= 0)
@@ -229,7 +231,7 @@ public class Skill : Item
 
         yield return StartCoroutine(ProcessEffects(OngoingEffect));
 
-        yield return StartCoroutine(ProcessDeath());
+        yield return StartCoroutine(ProcessDeaths());
 
         // Remove Ongoing-Skill if all the targets are dead
         if (targets.Count <= 0)
@@ -389,80 +391,87 @@ public class Skill : Item
     //    }
     //}
 
-    public virtual IEnumerator ProcessDeath()
+    public virtual IEnumerator ProcessDeaths()
     {
         // CYCLE for multitarget death
         //for (int i = 0; i < targets.Count; i++)
         foreach (Battler target in targets.ToArray())
         {
-            //target = targets[i];
-
-            if (target.hitPoints <= 0)
-            {
-                Jrpg.Log(target.name + " is K.O.");
-
-                // Play death sound and wait befor destroying the target
-                target.PlaySoundEffect(target.defeatSound);
-                yield return new WaitForSeconds(target.defeatSound.length);
-
-                // Fade out of dead target
-                if (target.evolution == null)
-                    yield return Jrpg.Fade(target.gameObject, 0, 1);
-
-                // Remove dead from lists
-                //bc.actionQueue.Remove(target);
-                targets.Remove(target);
-                if (target.gameObject.GetComponent<HeroBattler>() != null)
-                    bc.party.Remove(target.gameObject.GetComponent<HeroBattler>());
-                else if (target.gameObject.GetComponent<EnemyBattler>() != null)
-                    bc.enemies.Remove(target.gameObject.GetComponent<EnemyBattler>());
-                else if (target.gameObject.GetComponent<Food>() != null)
-                {
-                    Jrpg.Log(user.name + " is eating " + target.name, "Visible");
-                    yield return StartCoroutine(user.Eat(target.gameObject.GetComponent<Food>()));
-
-                    // ALTERNATIVE
-                    //bc.GameController.instance.foods.Add(target.gameObject.GetComponent<Food>());
-                    //Jrpg.Log("Added " + target.name + " food to inventory", "Visible");
-                    //Destroy(target.GetComponent<Battler>());
-                    //yield break;
-                }
-                else if (target.gameObject.GetComponent<Perk>() != null)
-                {
-                    Jrpg.Log("Added " + target.name + " to inventory", "Visible");
-                    GameController.instance.unlockedPerks.Add((Resources.Load("Perks/" + target.name.Replace("(Clone)", "")) as GameObject).GetComponent<Perk>());
-                }
-                else
-                    Jrpg.Log("Destroyed battler was not inside any list", "Warning");
-
-
-                // Evolve if it has an evolution, before destroying
-                if (target.evolution != null)
-                {
-                    Jrpg.Log(target.name + " is evolving into " + target.evolution.name, "Visible");
-
-                    Battler evo = Instantiate(target.evolution, target.transform.position, Quaternion.identity);
-                    evo.Setup();
-
-                    // Initialize evolution
-                    evo.name = target.characterName.ToString();
-                    evo.faction = target.faction;
-                    evo.transform.localScale = new Vector3(-(float)target.faction, 1, 1);
-                    if (target.faction == Battler.Faction.Heroes)
-                        bc.party.Add(evo);
-                    else
-                        bc.enemies.Add(evo);
-                }
-
-                // Destroy dead target
-                Destroy(target.gameObject);
-
-                // Death effect on target
-    
-            }
+            yield return StartCoroutine(ProcessDeath(target));
         }
 
         yield return new WaitForSeconds(1f);
+    }
+
+    public virtual IEnumerator ProcessDeath(Battler target)
+    {
+        //target = targets[i];
+
+        if (target.hitPoints <= 0)
+        {
+            Jrpg.Log(target.name + " is K.O.");
+
+            // Play death sound and wait befor destroying the target
+            target.PlaySoundEffect(target.defeatSound);
+            yield return new WaitForSeconds(target.defeatSound.length);
+
+            // Fade out of dead target
+            if (target.evolution == null)
+                yield return Jrpg.Fade(target.gameObject, 0, 1);
+
+            // Remove dead from lists
+            //bc.actionQueue.Remove(target);
+            if (targets.Contains(target))
+                targets.Remove(target);
+            if (target.gameObject.GetComponent<HeroBattler>() != null)
+                bc.party.Remove(target.gameObject.GetComponent<HeroBattler>());
+            else if (target.gameObject.GetComponent<EnemyBattler>() != null)
+                bc.enemies.Remove(target.gameObject.GetComponent<EnemyBattler>());
+            else if (target.gameObject.GetComponent<Food>() != null)
+            {
+                Jrpg.Log(user.name + " is eating " + target.name, "Visible");
+                yield return StartCoroutine(user.Eat(target.gameObject.GetComponent<Food>()));
+
+                // ALTERNATIVE
+                //bc.GameController.instance.foods.Add(target.gameObject.GetComponent<Food>());
+                //Jrpg.Log("Added " + target.name + " food to inventory", "Visible");
+                //Destroy(target.GetComponent<Battler>());
+                //yield break;
+            }
+            else if (target.gameObject.GetComponent<Perk>() != null)
+            {
+                Jrpg.Log("Added " + target.name + " to inventory", "Visible");
+                GameController.instance.unlockedPerks.Add((Resources.Load("Perks/" + target.name.Replace("(Clone)", "")) as GameObject).GetComponent<Perk>());
+            }
+            else
+                Jrpg.Log("Destroyed battler was not inside any list", "Warning");
+
+
+            // Evolve if it has an evolution, before destroying
+            if (target.evolution != null)
+            {
+                Jrpg.Log(target.name + " is evolving into " + target.evolution.name, "Visible");
+
+                Battler evo = Instantiate(target.evolution, target.transform.position, Quaternion.identity);
+                evo.Setup();
+
+                // Initialize evolution
+                evo.name = target.characterName.ToString();
+                evo.faction = target.faction;
+                evo.transform.localScale = new Vector3(-(float)target.faction, 1, 1);
+                if (target.faction == Battler.Faction.Heroes)
+                    bc.party.Add(evo);
+                else
+                    bc.enemies.Add(evo);
+            }
+
+            // Destroy dead target
+            Destroy(target.gameObject);
+
+            // Death effect on target
+
+        }
+        yield return null;
     }
 
     // Buffs management
@@ -593,7 +602,8 @@ public class Skill : Item
         foreach (Battler target in targets)
         {
             foreach (WallSkill fs in target.firewalls)
-                yield return StartCoroutine(fs.WallEffect(this));
+                if (user.faction != target.faction) // No damage to allies
+                    yield return StartCoroutine(fs.WallEffect(this));
         }
 
         yield return null;

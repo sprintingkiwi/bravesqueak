@@ -32,6 +32,9 @@ public class WallSkill : SupportSkill
     {
         Debug.Log("Triggered " + name + " firewall effect");
 
+        if (receivedSkill.user == null)
+            yield break;
+
         yield return null;
     }
 

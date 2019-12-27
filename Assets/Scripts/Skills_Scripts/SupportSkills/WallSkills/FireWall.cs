@@ -14,6 +14,12 @@ public class FireWall : WallSkill
 
         Instantiate(burnEffect, receivedSkill.user.transform.position, Quaternion.identity, receivedSkill.user.transform);
         Jrpg.Damage(receivedSkill.user, Jrpg.Roll(user.specialAttack, powerRoll), element);
+        if (receivedSkill.user.hitPoints <= 0)
+        {
+            StopCoroutine(receivedSkill.flowCoroutine);
+            yield return StartCoroutine(ProcessDeath(receivedSkill.user));
+        }
+
         yield return null;
     }
 }
