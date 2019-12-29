@@ -421,6 +421,7 @@ public class Skill : Item
 
             // Remove dead from lists
             //bc.actionQueue.Remove(target);
+            //target.StopAllCoroutines();
             if (targets.Contains(target))
                 targets.Remove(target);
             if (target.gameObject.GetComponent<HeroBattler>() != null)

@@ -350,7 +350,7 @@ public class BattleController : MonoBehaviour
                         if (c != null)
                             StopCoroutine(c);
                     }
-                    cameraCoroutines.Add(StartCoroutine(mainCamera.DefaultFollow(actionsQueue[i].user)));
+                    cameraCoroutines.Add(actionsQueue[i].user.StartCoroutine(mainCamera.DefaultFollow(actionsQueue[i].user)));
                     
                     // Update battlers stats adding delta stats
                     Debug.Log("Updating battlers STATS");

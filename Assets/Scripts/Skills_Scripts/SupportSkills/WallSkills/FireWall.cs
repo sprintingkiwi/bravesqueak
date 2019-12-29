@@ -15,8 +15,8 @@ public class FireWall : WallSkill
         Instantiate(burnEffect, receivedSkill.user.transform.position, Quaternion.identity, receivedSkill.user.transform);
         Jrpg.Damage(receivedSkill.user, Jrpg.Roll(user.specialAttack, powerRoll), element);
         if (receivedSkill.user.hitPoints <= 0)
-        {
-            StopCoroutine(receivedSkill.flowCoroutine);
+        { // Needs to be fixed if battlers should die from wall damage
+            //StopCoroutine(receivedSkill.flowCoroutine);
             yield return StartCoroutine(ProcessDeath(receivedSkill.user));
         }
 
