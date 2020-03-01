@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 114263525989527718}
   - component: {fileID: 58089766750741288}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: BossPlant Encounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2835,7 +2835,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spr: {fileID: 0}
-  gc: {fileID: 0}
   anim: {fileID: 0}
   encounter: {fileID: 114780441065387980, guid: e50a0ce49c89c4b45b28fa6e8a1e5582,
     type: 2}
