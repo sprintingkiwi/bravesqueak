@@ -17,7 +17,7 @@ public class FireWall : WallSkill
         if (receivedSkill.user.hitPoints <= 0)
         { // Needs to be fixed if battlers should die from wall damage
             //StopCoroutine(receivedSkill.flowCoroutine);
-            yield return StartCoroutine(ProcessDeath(receivedSkill.user));
+            //yield return StartCoroutine(ProcessDeath(receivedSkill.user));
         }
 
         yield return null;

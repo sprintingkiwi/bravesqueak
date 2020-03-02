@@ -201,7 +201,7 @@ MonoBehaviour:
   battleback: {fileID: 1675982186083152, guid: ded9522953fe0b44c9f6e03402ad39c0, type: 2}
   partyPosAdjust: {fileID: 4723732732414148}
   cameraAdjust:
-    delta: {x: 0, y: 0, z: -8}
+    delta: {x: 0, y: 0, z: -6}
     speed: 1
   battleMusic: {fileID: 8300000, guid: 002f1eb7d29732e488c6360ec1ce0608, type: 3}
   enemies:
