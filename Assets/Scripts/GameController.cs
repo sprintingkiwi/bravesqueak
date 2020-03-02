@@ -152,7 +152,7 @@ public class GameController : MonoBehaviour
         // Starting heroes selection
         partyPrefabs = new List<HeroBattler>();
         unlockedHeroes = partyPrefabs.ToArray();
-        StartCoroutine(Jrpg.HeroesSelection(heroes, 3, Jrpg.StartSelectionCallback));
+        StartCoroutine(Jrpg.HeroesSelection(heroes, 3, Jrpg.StartSelectionCallback, forceSelectMaximum: true));
     }
 
     public void InitializeGame()
@@ -339,7 +339,7 @@ public class GameController : MonoBehaviour
                 if (remainingHeroes.Count > 0)
                 {
                     Jrpg.Log("Starting new hero selection");
-                    StartCoroutine(Jrpg.HeroesSelection(remainingHeroes.ToArray(), 1, Jrpg.NewHeroCallback));
+                    StartCoroutine(Jrpg.HeroesSelection(remainingHeroes.ToArray(), 1, Jrpg.NewHeroCallback, forceSelectMaximum: true));
                 }
             }
 

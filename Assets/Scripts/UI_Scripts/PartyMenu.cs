@@ -17,8 +17,9 @@ public class PartyMenu : Menu {
     public int selectables;
     public HeroBattler[] alreadySelected;
     public GameObject heroUI;
-    Coroutine heroUICoroutine;
+    public bool forceSelectMaximum;
 
+    Coroutine heroUICoroutine;
     Transform heroes;
 
     // Use this for initialization
@@ -247,6 +248,15 @@ public class PartyMenu : Menu {
                     GameController.instance.selectionCache.Remove(h);
             }
         }
+    }
+
+    public override void MenuDestruction()
+    {
+        if (forceSelectMaximum) // Force the user to select the maximum number of selectable heroes
+            if (GameController.instance.selectionCache.Count < selectables)
+                return;
+
+        base.MenuDestruction();
     }
 
 }

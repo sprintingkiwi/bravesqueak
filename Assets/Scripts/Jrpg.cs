@@ -376,14 +376,15 @@ public class Jrpg : MonoBehaviour
         }
     }
 
-    public static void SetupHeroesSelection(HeroBattler[] availables, int selectables, HeroBattler[] alreadySelected = null)
+    public static void SetupHeroesSelection(HeroBattler[] availables, int selectables, HeroBattler[] alreadySelected = null, bool forceSelectMaximum = false)
     {
         GameController.instance.currentSelectionMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, GameController.instance.mapCamera.transform).GetComponent<PartyMenu>();
+        GameController.instance.currentSelectionMenu.forceSelectMaximum = forceSelectMaximum;
         GameController.instance.currentSelectionMenu.Setup();
         GameController.instance.currentSelectionMenu.SelectionSetup(availables, selectables, alreadySelected);
     }
 
-    public static IEnumerator HeroesSelection(HeroBattler[] availables, int selectables, Action callback, HeroBattler[] alreadySelected=null)
+    public static IEnumerator HeroesSelection(HeroBattler[] availables, int selectables, Action callback, HeroBattler[] alreadySelected=null, bool forceSelectMaximum=false)
     {
         if (GameController.instance.currentSelectionMenu != null)
             yield break;
@@ -396,7 +397,7 @@ public class Jrpg : MonoBehaviour
         GameController.instance.selectionCache.Clear();
 
         // Create selection menu
-        SetupHeroesSelection(availables, selectables, alreadySelected);        
+        SetupHeroesSelection(availables, selectables, alreadySelected, forceSelectMaximum);        
 
         // Wait for player to select heroes
         while (GameController.instance.currentSelectionMenu != null)
