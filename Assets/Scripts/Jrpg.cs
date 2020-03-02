@@ -425,9 +425,10 @@ public class Jrpg : MonoBehaviour
         int count = GameController.instance.partyPrefabs.Count;
         while (count < 3)
         {
-            foreach (HeroBattler h in GameController.instance.unlockedHeroes)
-                if (!GameController.instance.partyPrefabs.Contains(h))
-                    GameController.instance.partyPrefabs.Add(h);
+            //foreach (HeroBattler h in GameController.instance.unlockedHeroes)
+            HeroBattler h = GameController.instance.unlockedHeroes[UnityEngine.Random.Range(0, GameController.instance.unlockedHeroes.Length)];
+            if (!GameController.instance.partyPrefabs.Contains(h))
+                GameController.instance.partyPrefabs.Add(h);
             count = GameController.instance.partyPrefabs.Count;
         }
     }
