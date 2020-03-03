@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114448939315776632}
   - component: {fileID: 212894792583035140}
   m_Layer: 0
-  m_Name: Oct_Atk1
+  m_Name: Snake_Facade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,10 +59,10 @@ MonoBehaviour:
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 10
+    - faces: 12
   buffs: []
   statusChances: []
-  scope: 2
+  scope: 5
   targetsNumber: 1
   duration: 0
   active: 1
@@ -73,11 +73,11 @@ MonoBehaviour:
   baseSkill: 1
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: octopus_attack_1
+  userAnimation: snake_attack_1
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114781217208494670, guid: 28833b11d27ff82488cd8a82b631df75,
+  targetEffect: {fileID: 114614065750280804, guid: c856dd539ffed004095cc0ccb20b7522,
     type: 2}
   moveToTarget: 1
   cameraFocus: 0
