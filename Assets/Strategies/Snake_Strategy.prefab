@@ -65,3 +65,9 @@ MonoBehaviour:
   - skill: {fileID: 114448939315776632, guid: 6f63d3e41f040cc47b564feb28d6ae53, type: 2}
     weight: 2
     conditions: []
+  - skill: {fileID: 114836736652321672, guid: 209aa42b5f304584982deb0166628467, type: 2}
+    weight: 2
+    conditions: []
+  - skill: {fileID: 114836736652321672, guid: 3cfe2d869d13f4c42a3d16c5f97c94d5, type: 2}
+    weight: 2
+    conditions: []

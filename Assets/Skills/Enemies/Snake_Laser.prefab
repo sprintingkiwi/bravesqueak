@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114448939315776632}
-  - component: {fileID: 212894792583035140}
+  - component: {fileID: 114836736652321672}
+  - component: {fileID: 212461386023369356}
   m_Layer: 0
-  m_Name: Snake_Facade
+  m_Name: Snake_Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114448939315776632
+--- !u!114 &114836736652321672
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -49,42 +49,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
+  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
-  displayName: 
+  displayName: Water Splash
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 70
+  speed: 50
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 12
+    - faces: 6
+    - faces: 6
+    - faces: 6
+    - faces: 6
   buffs: []
   statusChances: []
-  scope: 5
+  scope: 2
   targetsNumber: 1
   duration: 0
   active: 1
   inBattle: 1
   inField: 0
-  element: 0
-  requiredSP: 2
+  element: 4
+  requiredSP: 3
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: snake_attack_1
+  userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114614065750280804, guid: c856dd539ffed004095cc0ccb20b7522,
+  targetEffect: {fileID: 114280663374910852, guid: e9b19b6920789ab4fadb2fa9ebb334cd,
     type: 2}
-  moveToTarget: 1
+  moveToTarget: 0
   cameraFocus: 0
-  cameraShake: 0
+  cameraShake: 1
   user: {fileID: 0}
   targets: []
-  targetedArea: 0
+  targetedArea: 1
   effectStillActive: 0
   bc: {fileID: 0}
   userMovementSpeed: 0
@@ -103,7 +106,7 @@ MonoBehaviour:
     value: 0
   - name: DMG
     value: 0
---- !u!212 &212894792583035140
+--- !u!212 &212461386023369356
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -137,7 +140,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
