@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour
     public bool unlockAll;
     public HeroBattler[] unlockedHeroes;
     public PartyMenu currentSelectionMenu;
+    public WorldMap[] maps;
 
     // This is to be used as a cache list for heroes selection menu in various situations
     public List<HeroBattler> selectionCache = new List<HeroBattler>();
@@ -165,10 +166,16 @@ public class GameController : MonoBehaviour
         intro.GetComponent<Image>().enabled = true;
 
         // Instance current map
-        WorldMap wm = (Resources.Load("Maps/" + savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
+        WorldMap worldMap = null;
+        foreach (WorldMap wm in maps)
+        {
+            if (wm.name == savedCurrentMapName)
+                worldMap = wm;
+        }
+        //WorldMap worldMap = (Resources.Load("Maps/" + savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
         if (GameObject.Find(savedCurrentMapName) != null)
             Destroy(GameObject.Find(savedCurrentMapName));
-        currentMap = Instantiate(wm, Vector3.zero, Quaternion.identity, areaStuff.transform);
+        currentMap = Instantiate(worldMap, Vector3.zero, Quaternion.identity, areaStuff.transform);
         currentMap.name = savedCurrentMapName;
         currentMap.Setup();
 
@@ -495,7 +502,12 @@ public class GameController : MonoBehaviour
         //yield return StartCoroutine(Jrpg.LoadScene("World"));
         Transfer t = new GameObject().AddComponent<Transfer>();
         t.name = "Loading Transfer";
-        t.destinationMap = (Resources.Load("Maps/" + saveData.savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
+        foreach (WorldMap wm in maps)
+        {
+            if (wm.name == saveData.savedCurrentMapName)
+                t.destinationMap = wm;
+        }
+        //t.destinationMap = (Resources.Load("Maps/" + saveData.savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
         t.destinationPos = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
         yield return StartCoroutine(ProcessTransfer(null, t));
         Destroy(t.gameObject);
