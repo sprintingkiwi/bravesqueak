@@ -136,6 +136,7 @@ MonoBehaviour:
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
+  battlerDescription: {fileID: 0}
   sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 17.5, y: -10, z: 0}
@@ -147,13 +148,12 @@ MonoBehaviour:
   canAct: 1
   perfectParry: 0
   audioSource: {fileID: 0}
-  gc: {fileID: 0}
   bc: {fileID: 0}
   faction: -1
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: 314b1e159fcbaf648828dbc39bb8fbd7, type: 2}
+  strategy: {fileID: 114109042552807282, guid: dc9df667c6ed03c4f96584859fa00e78, type: 2}
 --- !u!212 &212565198787684934
 SpriteRenderer:
   m_ObjectHideFlags: 1
