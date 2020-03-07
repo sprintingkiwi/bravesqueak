@@ -90,12 +90,12 @@ MonoBehaviour:
     value: 30
   maxHP:
     ID: maxHP
-    value: 200
+    value: 400
   hitPoints: 0
   skillPoints: 0
   characterName: Owl Head
   size: 2
-  elementAffinity: 1
+  elementAffinity: 3
   species: 2
   perks:
   - {fileID: 0}
@@ -161,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 09a41bca79c0c4647b9a985bd0372db2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 337def5a00aaccc4c8bcd4c52b5eb8b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

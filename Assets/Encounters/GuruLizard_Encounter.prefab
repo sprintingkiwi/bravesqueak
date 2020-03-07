@@ -242,7 +242,7 @@ MonoBehaviour:
     place: {fileID: 4761987206811308}
   - recipe: {fileID: 114069915646428382, guid: 98fd7d1517b08c3459eccedbf31c56d0, type: 2}
     place: {fileID: 4949169107384686}
-  boss: 0
+  type: 1
 --- !u!212 &212102466181849338
 SpriteRenderer:
   m_ObjectHideFlags: 1
