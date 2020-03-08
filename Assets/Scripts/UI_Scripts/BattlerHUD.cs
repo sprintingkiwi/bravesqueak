@@ -14,6 +14,8 @@ public class BattlerHUD : MonoBehaviour
     public Transform hudHook;
     public Battler owner;
 
+    bool hide;
+
     // Use this for initialization
     public void Setup()
     {
@@ -36,11 +38,23 @@ public class BattlerHUD : MonoBehaviour
         SP.gameObject.SetActive(false);
         SPTotal.gameObject.SetActive(false);
         SPPlus.gameObject.SetActive(false);
+
+        // Show HUD only for common encounters
+        if (!GameController.instance.showDebugInfo)
+        {
+            Encounter encounter = GameController.instance.battleStuff.GetComponentInChildren<BattleController>().encounter;
+            if (owner.faction == Battler.Faction.Enemies)
+                if (encounter.type == Encounter.Type.Boss || encounter.type == Encounter.Type.Miniboss)
+                    hide = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (hide)
+            return;
+
         Refresh();
 
         if (hudHook != null)

@@ -177,7 +177,7 @@ MonoBehaviour:
     value: 20
   maxHP:
     ID: maxHP
-    value: 500
+    value: 800
   hitPoints: 0
   skillPoints: 0
   characterName: Fox

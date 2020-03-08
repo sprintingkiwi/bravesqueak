@@ -5,12 +5,13 @@ using UnityEngine;
 public class Poisoned : Status
 {
     public float damagePercentage;
+    public Skill.Element element;
 
     public override IEnumerator Effect()
     {
         yield return StartCoroutine(base.Effect());
 
-        Jrpg.Damage(holder, Mathf.RoundToInt(holder.maxHP.value * damagePercentage), Skill.Element.Earth);
+        Jrpg.Damage(holder, Mathf.RoundToInt(holder.maxHP.value * damagePercentage), element);
         yield return null;
     }
 

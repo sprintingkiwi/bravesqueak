@@ -148,7 +148,7 @@ MonoBehaviour:
     value: 30
   maxHP:
     ID: maxHP
-    value: 160
+    value: 300
   hitPoints: 0
   skillPoints: 0
   characterName: 

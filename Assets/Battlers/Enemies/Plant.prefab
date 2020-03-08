@@ -90,7 +90,7 @@ MonoBehaviour:
     value: 10
   maxHP:
     ID: maxHP
-    value: 60
+    value: 350
   hitPoints: 0
   skillPoints: 0
   characterName: Plant
@@ -107,6 +107,7 @@ MonoBehaviour:
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
+  battlerDescription: {fileID: 0}
   sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
@@ -118,7 +119,6 @@ MonoBehaviour:
   canAct: 1
   perfectParry: 0
   audioSource: {fileID: 0}
-  gc: {fileID: 0}
   bc: {fileID: 0}
   faction: -1
   firewalls: []

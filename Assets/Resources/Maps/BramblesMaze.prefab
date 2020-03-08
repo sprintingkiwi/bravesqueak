@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 58998860986186864}
   - component: {fileID: 114297103122865644}
   m_Layer: 0
-  m_Name: To MainMap_1
+  m_Name: To Passage_Brambles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3139,7 +3139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spr: {fileID: 0}
-  gc: {fileID: 0}
   anim: {fileID: 0}
   encounter: {fileID: 114158055192404530, guid: 3cdc2105dcf688144b2b1f549d9a66b2,
     type: 2}

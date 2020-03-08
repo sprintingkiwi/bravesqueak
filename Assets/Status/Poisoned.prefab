@@ -56,3 +56,4 @@ MonoBehaviour:
   decadence: 20
   holder: {fileID: 0}
   damagePercentage: 0.2
+  element: 1

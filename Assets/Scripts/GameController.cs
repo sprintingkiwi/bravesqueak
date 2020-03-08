@@ -12,7 +12,8 @@ public class GameController : MonoBehaviour
 {
     public enum Platform { Mobile, Other }
     [Header("Debug")]
-    public Platform simulatedPlatform;    
+    public Platform simulatedPlatform;
+    public bool showDebugInfo;
 
     [Header("Saves")]
     //public SaveSlot[] gameSlots;
