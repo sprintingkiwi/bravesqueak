@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b43edf3d758e489c13ee4f3abd758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: A FRIENDLY SUPPORTER...
   attack:
     ID: ATK
     value: 70
@@ -167,8 +168,6 @@ MonoBehaviour:
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
-  battlerDescription: {fileID: 1407391352099136, guid: 51975033bc0205c46a34b8e1509ed735,
-    type: 2}
   sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
@@ -191,6 +190,8 @@ MonoBehaviour:
   - {fileID: 114607521043220432, guid: 0a5fe8e448ef532458ca66c0c713ca79, type: 2}
   - {fileID: 114607521043220432, guid: e110c3cefd812604b91ff4fb98da96ca, type: 2}
   - {fileID: 114607521043220432, guid: 396fee5440661ba41b47bb20229b23eb, type: 2}
+  UIPrefab: {fileID: 1471432516914874, guid: 6d7246f85c87e4d46a42adc34314bac8, type: 2}
+  DescriptionBG: {fileID: 2800000, guid: c22547c3194dd9e4e8aba1d599dc05bc, type: 3}
 --- !u!212 &212922865670699482
 SpriteRenderer:
   m_ObjectHideFlags: 1

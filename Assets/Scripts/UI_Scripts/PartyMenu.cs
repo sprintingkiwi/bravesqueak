@@ -96,11 +96,20 @@ public class PartyMenu : Menu {
         gameObject.SetActive(false);
     }
 
-    public void ShowHeroDescription(GameObject heroDescription)
+    public void ShowHeroDescription(HeroBattler hero)
     {
         Jrpg.Log("Displaying " + name + " description");
-        currentHeroDesc = Instantiate(heroDescription, GameObject.Find("Canvas").transform);
-
+        currentHeroDesc = Instantiate(hero.UIPrefab, transform);
+        currentHeroDesc.transform.Find("Background").GetComponent<Image>().sprite = Sprite.Create(hero.DescriptionBG, new Rect(0, 0, hero.DescriptionBG.width, hero.DescriptionBG.height), new Vector2(0, 0));
+        currentHeroDesc.transform.Find("Battler").GetComponent<Image>().sprite = hero.GetComponent<SpriteRenderer>().sprite;
+        currentHeroDesc.transform.Find("Text").GetComponent<Text>().text = hero.description;
+        foreach (Image skillImg in currentHeroDesc.transform.Find("Skills").GetComponentsInChildren<Image>())
+        {
+            Skill skill = hero.skills[skillImg.transform.GetSiblingIndex()];
+            skillImg.sprite = skill.GetComponent<SpriteRenderer>().sprite;
+            skillImg.GetComponentInChildren<Text>().text = skill.description.ToUpper();
+        }
+        currentHeroDesc.transform.Find("Element").GetComponent<Image>().sprite = (Resources.Load("Icons/Elements/" + hero.elementAffinity.ToString()) as GameObject).GetComponent<SpriteRenderer>().sprite;
     }
 
     public void SelectionManagement()
@@ -207,7 +216,7 @@ public class PartyMenu : Menu {
         if (selectedImg.name == "Select")
             Select(heroesImages[index].GetComponent<PartyHero>());
         else
-            ShowHeroDescription(availables[index].battlerDescription);
+            ShowHeroDescription(availables[index]);
 
         heroUICoroutine = null;
         Destroy(hu);

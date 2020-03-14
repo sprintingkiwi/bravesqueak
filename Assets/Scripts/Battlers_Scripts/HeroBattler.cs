@@ -10,7 +10,12 @@ public class HeroBattler : Battler
     [Header("Hero battler specific")]
     public Job job;
     // public Job[] availableJobs;
-    public Skill[] skills = new Skill[5];    
+    public Skill[] skills = new Skill[5];
+
+
+    [Header("Hero Description Stuff")]
+    public GameObject UIPrefab;
+    public Texture2D DescriptionBG;
 
     // Use this for initialization
     public override void Setup()

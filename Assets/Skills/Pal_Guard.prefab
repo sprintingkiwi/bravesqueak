@@ -52,12 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bed5f6b2e58044b99bd16976722929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 'Enhances the chance to parry received attacks until next turn.
-
-    Target: ONE ALLY
-
-    Element: NONE'
+  description: Enhances the chance to parry received attacks until next turn.
   displayName: Guard
+  displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 1000
   accuracy: 100
   powerRoll:

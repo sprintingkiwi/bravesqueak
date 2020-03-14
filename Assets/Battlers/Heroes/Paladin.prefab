@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8b43edf3d758e489c13ee4f3abd758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: A MIGHTY PALADIN WHO BRINGS LIGHT INTO THE DARKNESS...
   attack:
     ID: ATK
     value: 70
@@ -165,8 +166,6 @@ MonoBehaviour:
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
-  battlerDescription: {fileID: 1699332659895976, guid: 6d7246f85c87e4d46a42adc34314bac8,
-    type: 2}
   sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
@@ -189,6 +188,8 @@ MonoBehaviour:
   - {fileID: 114510658932947970, guid: 5b210aa628e3aa048ad1b04c5c13be95, type: 2}
   - {fileID: 114238026829365552, guid: 60d7cb0b6815cb1479a0af96bd1a7fab, type: 2}
   - {fileID: 114115067928026556, guid: 01c9b776ffd00d6469648059fdc76d0e, type: 2}
+  UIPrefab: {fileID: 1471432516914874, guid: 6d7246f85c87e4d46a42adc34314bac8, type: 2}
+  DescriptionBG: {fileID: 2800000, guid: 44d7af039b6faed45974aa3bc02c482c, type: 3}
 --- !u!212 &212351009626954626
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,6 +6,9 @@ using System.Linq;
 
 public class Battler : MonoBehaviour
 {
+    [TextArea(5, 10)]
+    public string description;
+
     // MAIN STATS
     [Header("Main Stats")]
     public Stat attack = new Stat { ID = "ATK" };
@@ -63,10 +66,7 @@ public class Battler : MonoBehaviour
     public AudioClip dodgeSound;
     public AudioClip defeatSound;
     // Effects
-    public Effect parryEffect;
-
-    [Header("Battler Description Image Prefab")]
-    public GameObject battlerDescription;
+    public Effect parryEffect;    
 
     // System
     public Dictionary<Size, int> sizeModifiers = new Dictionary<Size, int>();

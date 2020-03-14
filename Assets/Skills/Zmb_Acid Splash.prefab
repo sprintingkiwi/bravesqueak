@@ -52,12 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 'The targeted enemy receives a wave of extremely dangerous corrosive
-    acid. It can also be used to get rid of corpses :)
-
-    Target: ONE ENEMY
-
-    Element: EARTH'
+  description: The targeted enemy receives a wave of extremely dangerous corrosive
+    acid.
   displayName: Acid Splash
   displayNameColor: {r: 1, g: 1, b: 1, a: 1}
   speed: 70

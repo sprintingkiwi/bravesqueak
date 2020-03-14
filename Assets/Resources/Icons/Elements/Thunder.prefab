@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4286151034548932}
   - component: {fileID: 212332518361070012}
   m_Layer: 0
-  m_Name: Lightning
+  m_Name: Thunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
