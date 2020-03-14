@@ -165,7 +165,7 @@ MonoBehaviour:
   dodgeSound: {fileID: 0}
   defeatSound: {fileID: 0}
   parryEffect: {fileID: 0}
-  battlerDescription: {fileID: 1407391352099136, guid: 51975033bc0205c46a34b8e1509ed735,
+  battlerDescription: {fileID: 1699332659895976, guid: 6d7246f85c87e4d46a42adc34314bac8,
     type: 2}
   sizeModifier: 0
   originalPos: {x: 0, y: 0, z: 0}

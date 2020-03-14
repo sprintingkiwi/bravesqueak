@@ -99,7 +99,7 @@ public class PartyMenu : Menu {
     public void ShowHeroDescription(GameObject heroDescription)
     {
         Jrpg.Log("Displaying " + name + " description");
-        currentHeroDesc = Instantiate(heroDescription, transform);
+        currentHeroDesc = Instantiate(heroDescription, GameObject.Find("Canvas").transform);
     }
 
     public void SelectionManagement()
