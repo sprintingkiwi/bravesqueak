@@ -110,6 +110,7 @@ public class PartyMenu : Menu {
             skillImg.GetComponentInChildren<Text>().text = skill.description.ToUpper();
         }
         currentHeroDesc.transform.Find("Element").Find("Image").GetComponent<Image>().sprite = (Resources.Load("Icons/Elements/" + hero.elementAffinity.ToString()) as GameObject).GetComponent<SpriteRenderer>().sprite;
+        currentHeroDesc.transform.Find("Battler").position += hero.correctHeroPosition;
     }
 
     public void SelectionManagement()

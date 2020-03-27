@@ -16,6 +16,7 @@ public class HeroBattler : Battler
     [Header("Hero Description Stuff")]
     public GameObject UIPrefab;
     public Texture2D DescriptionBG;
+    public Vector3 correctHeroPosition;
 
     // Use this for initialization
     public override void Setup()
