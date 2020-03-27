@@ -109,7 +109,7 @@ public class PartyMenu : Menu {
             skillImg.sprite = skill.GetComponent<SpriteRenderer>().sprite;
             skillImg.GetComponentInChildren<Text>().text = skill.description.ToUpper();
         }
-        currentHeroDesc.transform.Find("Element").GetComponent<Image>().sprite = (Resources.Load("Icons/Elements/" + hero.elementAffinity.ToString()) as GameObject).GetComponent<SpriteRenderer>().sprite;
+        currentHeroDesc.transform.Find("Element").Find("Image").GetComponent<Image>().sprite = (Resources.Load("Icons/Elements/" + hero.elementAffinity.ToString()) as GameObject).GetComponent<SpriteRenderer>().sprite;
     }
 
     public void SelectionManagement()
