@@ -13,7 +13,7 @@ public class Jrpg : MonoBehaviour
     [System.Serializable]
     public class SaveData
     {
-        public EnemyBattler[] defeatedBosses;
+        public string[] defeatedBosses;
         public string savedCurrentMapName;
         //public string lastScene;
         public float[] playerPosition = new float[3];

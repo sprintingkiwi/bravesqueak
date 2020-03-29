@@ -374,6 +374,7 @@ public class GameController : MonoBehaviour
         //saveData.lastScene = SceneManager.GetActiveScene().name;
         Vector3 playerPos = player.transform.position;
         saveData[slot].playerPosition = new float[] { playerPos.x, playerPos.y, playerPos.z };
+        saveData[slot].defeatedBosses = defeatedBosses.ToArray();
 
         //// Save unlocked skills
         //saveData[slot].unlockedSkills.Clear();
@@ -492,8 +493,18 @@ public class GameController : MonoBehaviour
         //    }
         //}
 
-        // Loading
+        // LOADING
         //yield return StartCoroutine(Jrpg.LoadScene("World"));
+
+        // Defeated enemies (bosses)
+        foreach (string db in saveData.defeatedBosses)
+            if (!defeatedBosses.Contains(db))
+                defeatedBosses.Add(db);
+        foreach (string db in defeatedBosses.ToArray())
+            if (!saveData.defeatedBosses.Contains(db))
+                defeatedBosses.Remove(db);
+
+        // Transfer to map
         Transfer t = new GameObject().AddComponent<Transfer>();
         t.name = "Loading Transfer";
         t.destinationMap = (Resources.Load("Maps/" + saveData.savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
@@ -502,6 +513,7 @@ public class GameController : MonoBehaviour
         Destroy(t.gameObject);
         inTransfer = false;
 
+        // Unlock player
         //justLoadedGameSlot = true;
         player.canMove = true;
         isLoading = false;
