@@ -361,6 +361,16 @@ public class GameController : MonoBehaviour
             //yield return StartCoroutine(Jrpg.LoadScene("MainMenu"));
 
             // Load slot 0 when defeated (?)
+            music.clip = currentMap.soundtrack;
+            music.Play();
+            Destroy(battleStuff);
+            foreach (Transform t in GameObject.Find("BATTLE HUD").transform)
+                Destroy(t.gameObject);
+            areaStuff.SetActive(true);
+            situation = "Map";
+            canSaveLoad = true;
+            mapCamera.followPlayer = true;
+            player.canMove = true;
             yield return StartCoroutine(Load(0));
         }        
     }
