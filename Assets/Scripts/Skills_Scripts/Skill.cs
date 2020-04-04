@@ -48,7 +48,7 @@ public class Skill : Item
     {
         {Element.Fire, new Dictionary<Element, float>() {{ Element.Water, 2f }, { Element.Earth, 0.5f }, { Element.Ice, 0.5f }, { Element.Fire, 0.5f } }},
         {Element.Water, new Dictionary<Element, float>() {{ Element.Thunder, 2f }, { Element.Fire, 0.5f }, { Element.Water, 0.5f } }},
-        {Element.Wind, new Dictionary<Element, float>() {{ Element.Earth, 0.5f }, { Element.Thunder, 2f }, { Element.Ice, 2f }, { Element.Water, 0.5f }, { Element.Wind, 0.5f } }},
+        {Element.Wind, new Dictionary<Element, float>() {{ Element.Earth, 0.1f }, { Element.Thunder, 2f }, { Element.Ice, 2f }, { Element.Water, 0.5f }, { Element.Wind, 0.5f } }},
         {Element.Earth, new Dictionary<Element, float>() {{ Element.Fire, 2f }, { Element.Thunder, 0.1f }, { Element.Water, 0.5f }, { Element.Wind, 2f }, { Element.Ice, 2f } }},
         {Element.Thunder, new Dictionary<Element, float>() {{ Element.Earth, 2f }, { Element.Thunder, 0.5f } }},
         {Element.Ice, new Dictionary<Element, float>() {{ Element.Fire, 2f }, { Element.Water, 0.5f } }},

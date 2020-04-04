@@ -118,7 +118,7 @@ MonoBehaviour:
     value: 20
   maxHP:
     ID: maxHP
-    value: 250
+    value: 350
   hitPoints: 0
   skillPoints: 0
   characterName: Octopus
