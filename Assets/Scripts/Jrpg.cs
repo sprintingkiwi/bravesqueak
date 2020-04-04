@@ -17,6 +17,8 @@ public class Jrpg : MonoBehaviour
         public string savedCurrentMapName;
         //public string lastScene;
         public float[] playerPosition = new float[3];
+        public List<string> unlockedHeroes = new List<string>();
+        public List<string> partyHeroes = new List<string>();
         public List<string> unlockedSkills = new List<string>();
         public List<string> unlockedPerks = new List<string>();
         //public List<string>[] skillLists = new List<string>[] { new List<string>(), new List<string>(), new List<string>() };

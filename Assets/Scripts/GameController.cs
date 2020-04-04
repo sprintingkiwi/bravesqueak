@@ -340,7 +340,7 @@ public class GameController : MonoBehaviour
                 if (remainingHeroes.Count > 0)
                 {
                     Jrpg.Log("Starting new hero selection");
-                    StartCoroutine(Jrpg.HeroesSelection(remainingHeroes.ToArray(), 1, Jrpg.NewHeroCallback, forceSelectMaximum: true));
+                    yield return StartCoroutine(Jrpg.HeroesSelection(remainingHeroes.ToArray(), 1, Jrpg.NewHeroCallback, forceSelectMaximum: true));
                 }
             }
 
@@ -348,12 +348,20 @@ public class GameController : MonoBehaviour
             canSaveLoad = true;
             mapCamera.followPlayer = true;
             player.canMove = true;
+
+            // Save at the end of each battle at slot 0 (?)
+            yield return StartCoroutine(Save(0));
         }
         else // Defeat
         {
             yield return Jrpg.Fade(GameObject.Find("Intro"), 1);
             Jrpg.Log("You lose", "Build");
-            yield return StartCoroutine(Jrpg.LoadScene("MainMenu"));
+
+            // Load main menu when defeated (?)
+            //yield return StartCoroutine(Jrpg.LoadScene("MainMenu"));
+
+            // Load slot 0 when defeated (?)
+            yield return StartCoroutine(Load(0));
         }        
     }
 
@@ -375,6 +383,16 @@ public class GameController : MonoBehaviour
         Vector3 playerPos = player.transform.position;
         saveData[slot].playerPosition = new float[] { playerPos.x, playerPos.y, playerPos.z };
         saveData[slot].defeatedBosses = defeatedBosses.ToArray();
+
+        // Save unlocked heroes
+        saveData[slot].unlockedHeroes.Clear();
+        foreach (HeroBattler hb in unlockedHeroes)
+            saveData[slot].unlockedHeroes.Add(hb.name);
+
+        // Save party heroes
+        saveData[slot].partyHeroes.Clear();
+        foreach (HeroBattler hb in partyPrefabs.ToArray())
+            saveData[slot].partyHeroes.Add(hb.name);
 
         //// Save unlocked skills
         //saveData[slot].unlockedSkills.Clear();
@@ -495,6 +513,20 @@ public class GameController : MonoBehaviour
 
         // LOADING
         //yield return StartCoroutine(Jrpg.LoadScene("World"));
+
+        // Unlocked heroes
+        List<HeroBattler> tempUnlocked = new List<HeroBattler>();
+        foreach(HeroBattler hb in heroes)
+            if (saveData.unlockedHeroes.ToArray().Contains(hb.name))
+                tempUnlocked.Add(hb);
+        unlockedHeroes = tempUnlocked.ToArray();
+
+        // Party heroes
+        List<HeroBattler> tempParty = new List<HeroBattler>();
+        foreach (HeroBattler hb in heroes)
+            if (saveData.partyHeroes.ToArray().Contains(hb.name))
+                tempParty.Add(hb);
+        partyPrefabs = tempParty;
 
         // Defeated enemies (bosses)
         foreach (string db in saveData.defeatedBosses)
