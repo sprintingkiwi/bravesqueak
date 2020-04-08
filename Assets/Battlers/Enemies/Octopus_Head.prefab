@@ -118,7 +118,7 @@ MonoBehaviour:
     value: 20
   maxHP:
     ID: maxHP
-    value: 300
+    value: 250
   hitPoints: 0
   skillPoints: 0
   characterName: Octopus Head
