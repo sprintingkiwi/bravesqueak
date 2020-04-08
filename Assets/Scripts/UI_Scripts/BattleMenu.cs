@@ -242,10 +242,10 @@ public class BattleMenu : MonoBehaviour
         skillScrollName = GameObject.Find("Canvas").transform.Find("Skill Scroll Name").GetComponent<Text>();
 
         // Name the skill scroll
-        skillScrollName.text = focusedSkill.name;
+        skillScrollName.text = focusedSkill.name.ToUpper();
         if (focusedSkill.displayName != "")
         {
-            skillScrollName.text = focusedSkill.displayName;
+            skillScrollName.text = focusedSkill.displayName.ToUpper();
             skillScrollName.color = focusedSkill.displayNameColor;
         }
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 224693453320793886}
   - component: {fileID: 222307024185281680}
   - component: {fileID: 114549217086131022}
+  - component: {fileID: 6447018063586188169}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -77,6 +78,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: A MIGHTY PALADIN WHO BRINGS LIGHT INTO THE DARKNESS...
+--- !u!114 &6447018063586188169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099898697647204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce26127f7fb10f45ab80d0980235d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1125558520775862
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +287,7 @@ GameObject:
   - component: {fileID: 224410971619385720}
   - component: {fileID: 222668739515332676}
   - component: {fileID: 114982219115554830}
+  - component: {fileID: 6427332017768573474}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -340,6 +354,18 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
+--- !u!114 &6427332017768573474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232152176957624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce26127f7fb10f45ab80d0980235d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1458187052150604
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +377,7 @@ GameObject:
   - component: {fileID: 224544074016727544}
   - component: {fileID: 222157551000676262}
   - component: {fileID: 114988137761362130}
+  - component: {fileID: 1522541273530704694}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -417,6 +444,18 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
+--- !u!114 &1522541273530704694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458187052150604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce26127f7fb10f45ab80d0980235d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1471432516914874
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +718,7 @@ GameObject:
   - component: {fileID: 224782306469522390}
   - component: {fileID: 222080257931544262}
   - component: {fileID: 114482332213213846}
+  - component: {fileID: 9120049698336612139}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -745,6 +785,18 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
+--- !u!114 &9120049698336612139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607277178762108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce26127f7fb10f45ab80d0980235d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1625732892134028
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +882,7 @@ GameObject:
   - component: {fileID: 224433022720330386}
   - component: {fileID: 222938673720745924}
   - component: {fileID: 114823799135824820}
+  - component: {fileID: 1445263943329853799}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -896,6 +949,18 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
+--- !u!114 &1445263943329853799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666777019554860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce26127f7fb10f45ab80d0980235d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692983883321942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1231,7 @@ GameObject:
   - component: {fileID: 224259846620896682}
   - component: {fileID: 222623169417756808}
   - component: {fileID: 114196007608989198}
+  - component: {fileID: 213761687222945047}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1232,6 +1298,18 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
+--- !u!114 &213761687222945047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808610452857742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce26127f7fb10f45ab80d0980235d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &601530390629511939
 GameObject:
   m_ObjectHideFlags: 0

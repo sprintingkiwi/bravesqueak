@@ -66,6 +66,11 @@ public class GameController : MonoBehaviour
     [Header("Music")]
     public AudioSource music;
 
+    [Header("UI")]
+    public Font activeFont;
+    public Font defaultFont;
+    public Font accessibleFont;
+
     // Coroutines counters
     //public int fadingCoroutinesCount;
     //public int skillCoroutinesCount;
@@ -796,5 +801,13 @@ public class GameController : MonoBehaviour
 
         Debug.Log("Unfreezing player");
         player.canMove = true;
+    }
+
+    public void SetFont(bool accessible)
+    {
+        if (accessible)
+            activeFont = accessibleFont;
+        else
+            activeFont = defaultFont;
     }
 }
