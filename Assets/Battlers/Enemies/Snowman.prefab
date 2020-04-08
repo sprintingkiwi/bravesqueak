@@ -102,13 +102,13 @@ MonoBehaviour:
     value: 70
   defense:
     ID: DEF
-    value: 80
+    value: 60
   specialAttack:
     ID: SAT
     value: 70
   specialDefense:
     ID: SDF
-    value: 90
+    value: 50
   support:
     ID: SUP
     value: 70
