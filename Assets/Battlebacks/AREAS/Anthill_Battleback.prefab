@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4700829906113696}
   - component: {fileID: 212626160582100630}
   m_Layer: 0
-  m_Name: Anthill_BB_2
+  m_Name: Anthill_BB_Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4019013596089104}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &212626160582100630
 SpriteRenderer:
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 150
+  m_SortingOrder: 120
   m_Sprite: {fileID: 21300000, guid: 2a1a196078cee104fb5ad1f8d1b1916f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4937795493774234}
   - component: {fileID: 212942813114257942}
   m_Layer: 0
-  m_Name: Anthill_BB_3
+  m_Name: Anthill_BB_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4019013596089104}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &212942813114257942
 SpriteRenderer:
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -30
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 88d5784c3ba84bb4c980b6e3cdabae27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 4752821449582834}
   - component: {fileID: 212776992607601952}
   m_Layer: 0
-  m_Name: Anthill_BB_1
+  m_Name: Anthill_BB_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,7 +231,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 110
   m_Sprite: {fileID: 21300000, guid: 50408b3907d5a4f4894f20a6a9605329, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -270,9 +270,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4700829906113696}
-  - {fileID: 4752821449582834}
   - {fileID: 4937795493774234}
+  - {fileID: 4752821449582834}
+  - {fileID: 4700829906113696}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
