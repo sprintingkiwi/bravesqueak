@@ -108,6 +108,12 @@ public class PlayerController : Character
         //{
         //    Stop();
         //}
+
+
+        // Change player character animator to fit first battler
+        if (GameController.instance.partyPrefabs.Count > 0)
+            if (GameController.instance.partyPrefabs[0].playerCharacter != null)
+                anim.runtimeAnimatorController = GameController.instance.partyPrefabs[0].playerCharacter;
     }
 
     public void CheckRandomEncounter()

@@ -11,6 +11,7 @@ public class HeroBattler : Battler
     public Job job;
     // public Job[] availableJobs;
     public Skill[] skills = new Skill[5];
+    public RuntimeAnimatorController playerCharacter;
 
 
     [Header("Hero Description Stuff")]
