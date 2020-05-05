@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 95166979374997656}
   - component: {fileID: 114069915646428382}
   m_Layer: 0
-  m_Name: Rat_2
+  m_Name: Rat_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7c547c4158ebdca47a14ad5a15c120d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b94703110759c574d95e16ccc4d72f4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 1006907234033178}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5eb64d72bfb630d4fa160d13a9c9dcf6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 377a19c3136055a4191776f9f5ac597b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
     value: 40
   hitPoints: 0
   skillPoints: 0
-  characterName: Rat Assassin
+  characterName: Rat Shaman
   size: 0
   elementAffinity: 7
   species: 2
@@ -169,7 +169,7 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: 94ecdd7ff5f529b4db0fa1920796e272, type: 3}
+  strategy: {fileID: 114109042552807282, guid: 3c11b8f2b9263624ba4ba2fa4f06b1c4, type: 3}
 --- !u!1 &1161068817782078
 GameObject:
   m_ObjectHideFlags: 0

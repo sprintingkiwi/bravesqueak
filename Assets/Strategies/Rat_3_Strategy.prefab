@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1980963907462350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4393621171321538}
+  - component: {fileID: 114109042552807282}
+  m_Layer: 0
+  m_Name: Rat_3_Strategy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4393621171321538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980963907462350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.9160004, y: -0.83732224, z: 2.0654287}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114109042552807282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980963907462350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605c29f12d935f3439edeb58617e28ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bc: {fileID: 0}
+  user: {fileID: 0}
+  selectedAction:
+    skill: {fileID: 0}
+    weight: 0
+    conditions: []
+  conditionCheck: 0
+  actions:
+  - skill: {fileID: 114255436312251458, guid: 62a88a3fe3a6d3f4ebf30395c7b455fe, type: 3}
+    weight: 3
+    conditions: []
+  - skill: {fileID: 114610778547815510, guid: 32ba783e476842f40b522e50a372ee14, type: 3}
+    weight: 4
+    conditions: []
+  - skill: {fileID: 114115067928026556, guid: e93b869b3300db043a8b7fcc385e66a2, type: 3}
+    weight: 2
+    conditions: []
+  - skill: {fileID: 114836736652321672, guid: 8d38343ffbd7049478618e63f1279fe2, type: 3}
+    weight: 1
+    conditions: []
