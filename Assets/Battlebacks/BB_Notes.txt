@@ -1,4 +1,4 @@
 Battleback gameobjects should be organized in three layers of sprites:
 - Ground, at -10 sprite orderer level (behind battler which are at 100)
 - Light, at 110 (just over both battlers and ground)
-- Overlay at 120 (just over light but behind UI, which is at 150)
+- Overlay at 148 (over light but slightly behind UI, which is at 150)

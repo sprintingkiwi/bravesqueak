@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4700829906113696}
   - component: {fileID: 212626160582100630}
   m_Layer: 0
-  m_Name: Anthill_BB_Overlay
+  m_Name: overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 120
+  m_SortingOrder: 148
   m_Sprite: {fileID: 21300000, guid: 2a1a196078cee104fb5ad1f8d1b1916f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4937795493774234}
   - component: {fileID: 212942813114257942}
   m_Layer: 0
-  m_Name: Anthill_BB_Ground
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
