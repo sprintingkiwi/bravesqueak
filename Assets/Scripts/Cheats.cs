@@ -130,7 +130,7 @@ public class Cheats : MonoBehaviour
         {
             PlayerController pc = GameObject.Find("Player").GetComponent<PlayerController>();
             pc.randomEncounters = !pc.randomEncounters;
-            Jrpg.Log("Random Encounters: " + pc.randomEncounters.ToString(), "Visible");
+            Jrpg.Log("Random Encounters: " + pc.randomEncounters.ToString(), "Build");
         }
     }
 
