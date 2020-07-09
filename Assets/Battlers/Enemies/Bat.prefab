@@ -122,7 +122,7 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Bat
   size: 3
-  elementAffinity: 8
+  elementAffinity: 3
   species: 2
   perks:
   - {fileID: 0}

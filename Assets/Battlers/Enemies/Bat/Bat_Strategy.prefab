@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4393621171321538}
   - component: {fileID: 114109042552807282}
   m_Layer: 0
-  m_Name: Cactus_2_Strategy
+  m_Name: Bat_Strategy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,6 +51,12 @@ MonoBehaviour:
     conditions: []
   conditionCheck: 0
   actions:
-  - skill: {fileID: 114115067928026556, guid: 1949ff0e7ccdea84bb289cc2fbfd89ff, type: 3}
+  - skill: {fileID: 114014343126834788, guid: b04b67c865fef2b458f7d7de3523c3e2, type: 3}
+    weight: 4
+    conditions: []
+  - skill: {fileID: 114238026829365552, guid: c8758d0eafa4a9c4ab7de77dbd60b8d2, type: 3}
+    weight: 2
+    conditions: []
+  - skill: {fileID: 114836736652321672, guid: 819dbddee1925de4a97e697611c4bd62, type: 3}
     weight: 2
     conditions: []
