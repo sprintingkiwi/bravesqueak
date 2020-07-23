@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114836736652321672}
-  - component: {fileID: 212461386023369356}
+  - component: {fileID: 114014343126834788}
+  - component: {fileID: 212884628882320274}
   m_Layer: 0
-  m_Name: Wiz_Water Splash
+  m_Name: Crab Fire Pincer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114836736652321672
+--- !u!114 &114014343126834788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,40 +41,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
+  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Summon an overwhelming wave
-  displayName: Water Splash
+  description: Attack with a pincer
+  displayName: Pincer
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 50
-  accuracy: 100
+  speed: 80
+  accuracy: 90
   powerRoll:
     dices:
-    - faces: 8
-    - faces: 8
+    - faces: 6
   buffs: []
   statusChances: []
-  scope: 5
+  scope: 2
   targetsNumber: 1
   duration: 0
   active: 1
   inBattle: 1
   inField: 0
-  element: 2
-  requiredSP: 4
-  baseSkill: 0
+  element: 4
+  requiredSP: -1
+  baseSkill: 1
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: wave
+  userAnimation: attack
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114847223870776074, guid: 692c469f234525146bfaf432bf3346dc,
+  targetEffect: {fileID: 114614065750280804, guid: c856dd539ffed004095cc0ccb20b7522,
     type: 3}
-  moveToTarget: 0
+  moveToTarget: 1
   cameraFocus: 0
-  cameraShake: 1
+  cameraShake: 0
   user: {fileID: 0}
   targets: []
   targetedArea: 0
@@ -96,7 +95,7 @@ MonoBehaviour:
     value: 0
   - name: DMG
     value: 0
---- !u!212 &212461386023369356
+--- !u!212 &212884628882320274
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 4e9e7ece51a1f36408a3b6dff43b180c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11423091f4edfd74ca1f6c6cd9795cb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
