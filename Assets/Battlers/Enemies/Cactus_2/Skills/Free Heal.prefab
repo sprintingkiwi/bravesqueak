@@ -65,7 +65,7 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: heal
+  userAnimation: special
   alternativeUserAnims: []
   targetAnimation: idle
   areaEffect: {fileID: 0}

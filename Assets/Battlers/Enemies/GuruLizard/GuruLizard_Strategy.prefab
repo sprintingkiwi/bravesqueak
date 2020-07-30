@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4393621171321538}
   - component: {fileID: 114429996944679292}
   m_Layer: 0
-  m_Name: Hedgehog_Strategy 1
+  m_Name: GuruLizard_Strategy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,9 +55,19 @@ MonoBehaviour:
       condParameters: 
   conditionCheck: 0
   actions:
-  - skill: {fileID: 114180593342923254, guid: 5b24cf7b519c9ac47b7841c11aa9f5f0, type: 3}
-    weight: 6
+  - skill: {fileID: 114238026829365552, guid: 8184792d53687a5408740294077f3ca9, type: 3}
+    weight: 8
     conditions: []
-  - skill: {fileID: 114448939315776632, guid: 7e5dfc84489457b4b8648a536e08c55b, type: 3}
-    weight: 1
+  - skill: {fileID: 114755667126410738, guid: cf2afc510e6203e4a89a298ecdc2a475, type: 3}
+    weight: 2
+    conditions:
+    - conditionFunction: HitPoints
+      conditionType: or
+      weightInfluence: 14
+      condParameters: 32000000
+  - skill: {fileID: 114255436312251458, guid: a3dced37ee7354441bbf00528ea5a55b, type: 3}
+    weight: 4
+    conditions: []
+  - skill: {fileID: 114014343126834788, guid: dfbc9fb9fd5c2d443add3bde8e58d672, type: 3}
+    weight: 8
     conditions: []
