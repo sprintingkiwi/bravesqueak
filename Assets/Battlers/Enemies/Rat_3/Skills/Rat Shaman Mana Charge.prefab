@@ -118,7 +118,8 @@ MonoBehaviour:
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 0}
+  targetEffect: {fileID: 114308449136090854, guid: ef5e008a7ec3d844ea6f5034cf8e4b54,
+    type: 3}
   moveToTarget: 0
   cameraFocus: 0
   cameraShake: 0

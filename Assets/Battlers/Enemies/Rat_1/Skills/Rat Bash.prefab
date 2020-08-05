@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 212259988449940486}
-  - component: {fileID: 114610778547815510}
+  - component: {fileID: 114487366432352720}
+  - component: {fileID: 212258056524800154}
   m_Layer: 0
-  m_Name: Wiz_Mana Charge
+  m_Name: Rat Bash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &212259988449940486
+--- !u!114 &114487366432352720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650370697774398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: A powerful strike
+  displayName: Bash
+  displayNameColor: {r: 0, g: 0, b: 0, a: 255}
+  speed: 50
+  accuracy: 80
+  powerRoll:
+    dices:
+    - faces: 4
+    - faces: 4
+    - faces: 4
+  buffs: []
+  statusChances: []
+  scope: 2
+  targetsNumber: 1
+  duration: 0
+  active: 1
+  inBattle: 1
+  inField: 0
+  element: 0
+  requiredSP: 2
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
+  userAnimation: attack
+  alternativeUserAnims:
+  - octopus_attack_2
+  - 
+  targetAnimation: hit
+  areaEffect: {fileID: 0}
+  targetEffect: {fileID: 114946632963968454, guid: 296d46d3cbc48094ea4cc87558873697,
+    type: 3}
+  moveToTarget: 1
+  cameraFocus: 0
+  cameraShake: 1
+  user: {fileID: 0}
+  targets: []
+  targetedArea: 0
+  effectStillActive: 0
+  bc: {fileID: 0}
+  userMovementSpeed: 0
+  mods:
+  - name: ATK
+    value: 0
+  - name: SAT
+    value: 0
+  - name: DEF
+    value: 0
+  - name: SDF
+    value: 0
+  - name: EVA
+    value: 0
+  - name: CRT
+    value: 0
+  - name: DMG
+    value: 0
+--- !u!212 &212258056524800154
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,61 +138,14 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4e9e7ece51a1f36408a3b6dff43b180c, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 3d7395ab1feb8914ca1a036ecdbd8743, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.8933333, y: 1.8933333}
+  m_Size: {x: 1.8933333, y: 1.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114610778547815510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650370697774398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e3a862918c257419e56c8f1a7fbd6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: Charge your magic energy
-  displayName: Mana Charge
-  displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 0
-  accuracy: 0
-  powerRoll:
-    dices: []
-  buffs: []
-  statusChances: []
-  scope: 4
-  targetsNumber: 1
-  duration: 0
-  active: 1
-  inBattle: 1
-  inField: 0
-  element: 0
-  requiredSP: -2
-  baseSkill: 1
-  epicSkillOf: {fileID: 0}
-  userBeginEffect: {fileID: 0}
-  userAnimation: mana
-  alternativeUserAnims: []
-  targetAnimation: hit
-  areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114308449136090854, guid: ef5e008a7ec3d844ea6f5034cf8e4b54,
-    type: 3}
-  moveToTarget: 0
-  cameraFocus: 0
-  cameraShake: 0
-  user: {fileID: 0}
-  targets: []
-  targetedArea: 0
-  effectStillActive: 0
-  bc: {fileID: 0}
-  userMovementSpeed: 0

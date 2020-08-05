@@ -52,14 +52,14 @@ MonoBehaviour:
   conditionCheck: 0
   actions:
   - skill: {fileID: 114255436312251458, guid: 62a88a3fe3a6d3f4ebf30395c7b455fe, type: 3}
-    weight: 3
+    weight: 5
     conditions: []
   - skill: {fileID: 114610778547815510, guid: 32ba783e476842f40b522e50a372ee14, type: 3}
-    weight: 4
+    weight: 3
     conditions: []
   - skill: {fileID: 114115067928026556, guid: e93b869b3300db043a8b7fcc385e66a2, type: 3}
-    weight: 2
+    weight: 3
     conditions: []
   - skill: {fileID: 114836736652321672, guid: 8d38343ffbd7049478618e63f1279fe2, type: 3}
-    weight: 1
+    weight: 3
     conditions: []
