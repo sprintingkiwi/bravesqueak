@@ -71,7 +71,8 @@ public class Status : MonoBehaviour
 
     public virtual IEnumerator RemoveStatus()
     {
-        Destroy(gameObject);
+        Debug.Log("Removing " + gameObject.name + " of " + holder.name);
+        this.enabled = false; // will be destroyed in Battler.ProcessStatusEffects
 
         yield return null;
     }

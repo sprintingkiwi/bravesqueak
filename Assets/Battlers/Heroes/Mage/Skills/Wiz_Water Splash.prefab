@@ -51,8 +51,8 @@ MonoBehaviour:
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 8
-    - faces: 8
+    - faces: 12
+    - faces: 12
   buffs: []
   statusChances: []
   scope: 5

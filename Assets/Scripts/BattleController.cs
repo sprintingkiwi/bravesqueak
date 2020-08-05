@@ -382,6 +382,7 @@ public class BattleController : MonoBehaviour
                 if (actionsQueue[i].user != null)
                     yield return StartCoroutine(actionsQueue[i].user.StatusSaveRolls());
             }
+            Debug.LogWarning("Finished to process Save Rolls");
 
             // Drop
             Jrpg.Log("Item Drop");

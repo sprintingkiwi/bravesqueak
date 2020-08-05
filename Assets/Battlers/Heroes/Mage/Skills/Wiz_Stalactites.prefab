@@ -49,11 +49,11 @@ MonoBehaviour:
 '
   displayName: Stalactites
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 80
+  speed: 70
   accuracy: 75
   powerRoll:
     dices:
-    - faces: 4
+    - faces: 20
   buffs: []
   statusChances: []
   scope: 5

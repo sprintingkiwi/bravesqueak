@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Poisoned : Status
 {
+    [Header("Poison")]
     public float damagePercentage;
     public Skill.Element element;
 

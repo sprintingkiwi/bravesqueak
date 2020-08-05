@@ -48,10 +48,11 @@ MonoBehaviour:
   displayName: Ice Bolt
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 80
-  accuracy: 90
+  accuracy: 100
   powerRoll:
     dices:
-    - faces: 8
+    - faces: 10
+    - faces: 10
   buffs: []
   statusChances: []
   scope: 2

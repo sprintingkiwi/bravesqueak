@@ -245,22 +245,21 @@ public class Battler : MonoBehaviour
 
     public virtual IEnumerator ProcessStatusEffects()
     {
-        foreach (Transform s in transform.Find("STATUS"))
+        foreach (Status status in transform.Find("STATUS").GetComponentsInChildren<Status>())
         {
-            Status status = s.GetComponent<Status>();
-            yield return StartCoroutine(status.Effect());
+            if (status.enabled)
+                yield return StartCoroutine(status.Effect());
+            else // Clean disabled status
+                Destroy(status.gameObject, 1);
         }
     }
 
     public virtual IEnumerator StatusSaveRolls()
     {
-        foreach (Transform s in transform.Find("STATUS"))
+        foreach (Status status in transform.Find("STATUS").GetComponentsInChildren<Status>())
         {
-            if (s.gameObject == null)
-                continue;
-
-            Status status = s.GetComponent<Status>();
-            yield return StartCoroutine(status.SaveRoll());
+            if (status.gameObject != null)
+                yield return StartCoroutine(status.SaveRoll());
         }
     }
 

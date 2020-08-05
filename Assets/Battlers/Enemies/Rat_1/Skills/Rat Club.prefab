@@ -53,7 +53,9 @@ MonoBehaviour:
     dices:
     - faces: 10
   buffs: []
-  statusChances: []
+  statusChances:
+  - status: {fileID: 114414827486457196, guid: f089c7a92c8ed6c4e9e45b82aa1206d5, type: 3}
+    chance: 100
   scope: 2
   targetsNumber: 1
   duration: 0
