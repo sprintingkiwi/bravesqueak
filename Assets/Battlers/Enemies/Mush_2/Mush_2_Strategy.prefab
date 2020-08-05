@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4393621171321538}
-  - component: {fileID: 114429996944679292}
+  - component: {fileID: 114109042552807282}
   m_Layer: 0
-  m_Name: Plant_Strategy
+  m_Name: Mush_2_Strategy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114429996944679292
+--- !u!114 &114109042552807282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,22 +46,11 @@ MonoBehaviour:
   bc: {fileID: 0}
   user: {fileID: 0}
   selectedAction:
-    skill: {fileID: 114510658932947970, guid: 5b210aa628e3aa048ad1b04c5c13be95, type: 3}
-    weight: 10
-    conditions:
-    - conditionFunction: TestCondition
-      conditionType: or
-      weightInfluence: 0
-      condParameters: 
+    skill: {fileID: 0}
+    weight: 0
+    conditions: []
   conditionCheck: 0
   actions:
-  - skill: {fileID: 114448939315776632, guid: b176d75bb31efc1458f9d295745dd192, type: 3}
+  - skill: {fileID: 114448939315776632, guid: 1e2ba84cf5f1f304ba3e984702a46c8e, type: 3}
     weight: 4
     conditions: []
-  - skill: {fileID: 114836736652321672, guid: 788335616807bdf46bd85acf8f9eb6e0, type: 3}
-    weight: 1
-    conditions:
-    - conditionFunction: HitPoints
-      conditionType: or
-      weightInfluence: 10
-      condParameters: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 114448939315776632}
   - component: {fileID: 212894792583035140}
   m_Layer: 0
-  m_Name: Body Slam
+  m_Name: Mush Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 10
+    - faces: 6
   buffs: []
   statusChances: []
   scope: 2
