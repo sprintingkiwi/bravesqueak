@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114487366432352720}
-  - component: {fileID: 212258056524800154}
+  - component: {fileID: 114238026829365552}
+  - component: {fileID: 212295707000658394}
   m_Layer: 0
-  m_Name: SnowBall
+  m_Name: Snowman Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114487366432352720
+--- !u!114 &114238026829365552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,17 +41,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
+  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
   displayName: 
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 100
+  speed: 80
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 12
+    - faces: 16
   buffs: []
   statusChances: []
   scope: 2
@@ -60,20 +60,20 @@ MonoBehaviour:
   active: 1
   inBattle: 1
   inField: 0
-  element: 6
-  requiredSP: -2
-  baseSkill: 0
+  element: 8
+  requiredSP: 3
+  baseSkill: 1
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: attack
+  userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114847223870776074, guid: 692c469f234525146bfaf432bf3346dc,
+  targetEffect: {fileID: 114946632963968454, guid: cca244c213a209048a945f39bffc5448,
     type: 3}
   moveToTarget: 0
   cameraFocus: 0
-  cameraShake: 1
+  cameraShake: 0
   user: {fileID: 0}
   targets: []
   targetedArea: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
     value: 0
   - name: DMG
     value: 0
---- !u!212 &212258056524800154
+--- !u!212 &212295707000658394
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,12 +134,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.8933333, y: 1.92}
+  m_Size: {x: 1.8933333, y: 1.8933333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
