@@ -6722,7 +6722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationMap: {fileID: 114720446303504176, guid: def9d3a25a2501244980f3db51f14a50,
     type: 3}
-  destinationPlace: Snow_Door_Skit
+  destinationPlace: Return_Hook
   destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0
