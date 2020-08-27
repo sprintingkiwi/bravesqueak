@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae97b0f3ca52db4493ceba476e65f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleback: {fileID: 1756757468031732, guid: 5d9db7c48218b1a4990c159d88836f8a, type: 3}
+  battleback: {fileID: 0}
   partyPosAdjust: {fileID: 0}
   cameraAdjust:
     delta: {x: 0, y: 0, z: 0}
