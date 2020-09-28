@@ -150,6 +150,7 @@ public class GameController : MonoBehaviour
         // Start Everything
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Title"), Vector3.up));
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Play"), Vector3.down, power: 20f));
+        StartCoroutine(Jrpg.JumpAway(GameObject.Find("New Game"), Vector3.down, power: 30f));
         StartCoroutine(Jrpg.LoadScene("World"));
     }
 
