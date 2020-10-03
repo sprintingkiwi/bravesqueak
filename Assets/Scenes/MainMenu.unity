@@ -2626,7 +2626,7 @@ GameObject:
   - component: {fileID: 1579145162}
   - component: {fileID: 1579145163}
   m_Layer: 0
-  m_Name: Chalkboard
+  m_Name: Main Menu Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
