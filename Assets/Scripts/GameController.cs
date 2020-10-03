@@ -22,7 +22,8 @@ public class GameController : MonoBehaviour
     public bool isLoading;
     public bool justLoadedGameSlot;
     public bool canSaveLoad;
-    //public int actualSlot = 0;
+    public int currentSaveSlot = 0;
+    public bool continueGame;
     public Dictionary<string, int> experience = new Dictionary<string, int>();
     public int partyLevel;
     //Inventory
@@ -194,27 +195,27 @@ public class GameController : MonoBehaviour
         player = areaStuff.transform.Find("Player").GetComponent<PlayerController>();
         player.transform.position = playerStartPosition;
 
-        // TODO: uncomment when saves are fixed
-        // If just ended a battle or loaded a new map-scene, save the game
-        //if (!justLoadedGameSlot) // But not right after a game-slot loading
-        //    Save(actualSlot);
-        //else
-        //    justLoadedGameSlot = false;
-
         Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
+        
 
-
-        // First Hero Selection
-        if (!unlockAll)
+        if (continueGame) // CONTINUE
         {
-            FirstHeroesSelection();
+            canSaveLoad = true;
+            StartCoroutine(Load(currentSaveSlot));
         }
-        else
+        else // NEW GAME
         {
-            Jrpg.Log("Unlock all mode: unlocking all characters");
+            // First Hero Selection
+            if (!unlockAll)
+            {
+                FirstHeroesSelection();
+            }
+            else
+            {
+                Jrpg.Log("Unlock all mode: unlocking all characters");
+            }
+            canSaveLoad = true;
         }
-
-        canSaveLoad = true;
     }
 
     public IEnumerator TriggerBattle(Encounter encounter, string enemyName)
@@ -356,7 +357,7 @@ public class GameController : MonoBehaviour
             player.canMove = true;
 
             // Save at the end of each battle at slot 0 (?)
-            yield return StartCoroutine(Save(0));
+            yield return StartCoroutine(Save(currentSaveSlot));
         }
         else // Defeat
         {
@@ -377,7 +378,7 @@ public class GameController : MonoBehaviour
             canSaveLoad = true;
             mapCamera.followPlayer = true;
             player.canMove = true;
-            yield return StartCoroutine(Load(0));
+            yield return StartCoroutine(Load(currentSaveSlot));
         }        
     }
 
@@ -811,4 +812,15 @@ public class GameController : MonoBehaviour
         else
             activeFont = defaultFont;
     }
+
+    public void SetSaveSlot(int slotID)
+    {
+        currentSaveSlot = slotID;
+    }
+
+    public void ContinueGame()
+    {
+        continueGame = true;
+    }
+
 }

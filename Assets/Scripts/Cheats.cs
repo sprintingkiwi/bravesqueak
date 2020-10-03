@@ -92,35 +92,35 @@ public class Cheats : MonoBehaviour
         // Save & load
         if (Input.GetKeyDown(KeyCode.F5))
         {
-            StartCoroutine(GameController.instance.Save(0));
+            StartCoroutine(GameController.instance.Save(3));
         }
         else if(Input.GetKeyDown(KeyCode.F6))
         {
-            StartCoroutine(GameController.instance.Save(1));
+            StartCoroutine(GameController.instance.Save(4));
         }
         else if(Input.GetKeyDown(KeyCode.F7))
         {
-            StartCoroutine(GameController.instance.Save(2));
+            StartCoroutine(GameController.instance.Save(5));
         }
         else if(Input.GetKeyDown(KeyCode.F8))
         {
-            StartCoroutine(GameController.instance.Save(3));
+            StartCoroutine(GameController.instance.Save(6));
         }
         else if (Input.GetKeyDown(KeyCode.F9))
         {
-            StartCoroutine(GameController.instance.Load(0));
+            StartCoroutine(GameController.instance.Load(3));
         }
         else if (Input.GetKeyDown(KeyCode.F10))
         {
-            StartCoroutine(GameController.instance.Load(1));
+            StartCoroutine(GameController.instance.Load(4));
         }
         else if (Input.GetKeyDown(KeyCode.F11))
         {
-            StartCoroutine(GameController.instance.Load(2));
+            StartCoroutine(GameController.instance.Load(5));
         }
         else if (Input.GetKeyDown(KeyCode.F12))
         {
-            StartCoroutine(GameController.instance.Load(3));
+            StartCoroutine(GameController.instance.Load(6));
         }
 
         //if (Jrpg.CheckPlatform() == "Mobile")
