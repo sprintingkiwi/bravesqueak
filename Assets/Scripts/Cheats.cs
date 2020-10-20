@@ -27,6 +27,8 @@ public class Cheats : MonoBehaviour
     Vector3 lowPassValue;
     public string droppedItemClass;
 
+    public bool mute;
+
     // Persistence
     public static Cheats cGInstance;
     void Awake()
@@ -131,6 +133,20 @@ public class Cheats : MonoBehaviour
             PlayerController pc = GameObject.Find("Player").GetComponent<PlayerController>();
             pc.randomEncounters = !pc.randomEncounters;
             Jrpg.Log("Random Encounters: " + pc.randomEncounters.ToString(), "Build");
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (mute)
+            {
+                GameController.instance.music.volume = 1.0f;
+                mute = false;
+            }
+            else
+            {
+                GameController.instance.music.volume = 0.0f;
+                mute = true;
+            }
         }
     }
 
