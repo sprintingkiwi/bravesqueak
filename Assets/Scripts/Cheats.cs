@@ -137,15 +137,13 @@ public class Cheats : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            if (mute)
+            if (GameController.instance.music.mute)
             {
-                GameController.instance.music.volume = 1.0f;
-                mute = false;
+                GameController.instance.music.mute = false;
             }
             else
             {
-                GameController.instance.music.volume = 0.0f;
-                mute = true;
+                GameController.instance.music.mute = true;
             }
         }
     }
