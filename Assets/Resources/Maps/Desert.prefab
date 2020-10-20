@@ -1457,9 +1457,6 @@ MonoBehaviour:
     encounter: {fileID: 114809916583162938, guid: 8d97e9842f0f4ce4d95c0f66d9e783d7,
       type: 3}
   - weight: 3
-    encounter: {fileID: 114158055192404530, guid: a5f735d5bff1daa419be60fb8a769e06,
-      type: 3}
-  - weight: 3
     encounter: {fileID: 114158055192404530, guid: f3bbb70e9cce6f040af5ce57088848fc,
       type: 3}
   mapLayers:
