@@ -19,6 +19,9 @@ public class PartyMenu : Menu {
     public GameObject heroUI;
     public bool forceSelectMaximum;
 
+    [Header("Drag and Drop Party Menu")]
+    public Text titleText; 
+
     Coroutine heroUICoroutine;
     Transform heroes;
 
@@ -28,11 +31,14 @@ public class PartyMenu : Menu {
         base.Setup();
     }
 
-    public void SelectionSetup(HeroBattler[] availables, int selectables, HeroBattler[] alreadySelected=null)
+    public void SelectionSetup(HeroBattler[] availables, int selectables, HeroBattler[] alreadySelected=null, string title="")
     {
         this.availables = availables;
         this.selectables = selectables;
         this.alreadySelected = alreadySelected;
+
+        if (title != "")
+            titleText.text = title;
 
         heroesImages = new Transform[availables.Length];
 
