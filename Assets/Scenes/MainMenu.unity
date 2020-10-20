@@ -3591,8 +3591,8 @@ MonoBehaviour:
   heroMenu: {fileID: 0}
   itemSelectionMenu: {fileID: 0}
   music: {fileID: 1734181798}
-  activeFont: {fileID: 12800000, guid: 6ba7a81d4c4984e468a02fbf815da069, type: 3}
-  defaultFont: {fileID: 12800000, guid: bb2ec23687545874894eb2d74df809c6, type: 3}
+  activeFont: {fileID: 12800000, guid: 8e52df6513fe2a842bf942e5881f5044, type: 3}
+  defaultFont: {fileID: 12800000, guid: 8e52df6513fe2a842bf942e5881f5044, type: 3}
   accessibleFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1734181800
 Transform:
