@@ -6395,7 +6395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationMap: {fileID: 114091726864809636, guid: d5bc13c031867844dad24edc2dba3804,
     type: 3}
-  destinationPlace: To AntHill
+  destinationPlace: To Passage_AntHill
   destinationPos: {x: 0, y: 0, z: 0}
   active: 1
   transfering: 0

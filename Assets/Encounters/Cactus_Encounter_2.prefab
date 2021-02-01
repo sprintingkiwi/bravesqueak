@@ -446,4 +446,4 @@ MonoBehaviour:
     place: {fileID: 4163484981323270}
   - recipe: {fileID: 114069915646428382, guid: dde894c0fbc2abe41a6bc5aa52f6a22d, type: 3}
     place: {fileID: 4992575913266568}
-  type: 0
+  type: 1

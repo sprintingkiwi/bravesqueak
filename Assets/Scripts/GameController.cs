@@ -315,7 +315,9 @@ public class GameController : MonoBehaviour
             if (currentEnemy != "Random")
             {
                 Jrpg.Log("Destroying " + currentEnemy);
-                Destroy(currentMap.transform.Find("ENEMIES").Find(currentEnemy).gameObject);
+                GameObject enemyToDestroy = currentMap.transform.Find("ENEMIES").Find(currentEnemy).gameObject;
+                if (enemyToDestroy != null)
+                    Destroy(enemyToDestroy);
                 if (encounter.type != Encounter.Type.Common)
                     defeatedBosses.Add(currentEnemy);
             }

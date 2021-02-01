@@ -168,7 +168,7 @@ MonoBehaviour:
     place: {fileID: 4740698478568138}
   - recipe: {fileID: 114069915646428382, guid: 06206063f79480d4598af08eac210eaa, type: 3}
     place: {fileID: 4435096208240928}
-  type: 0
+  type: 1
 --- !u!1 &1605135197743440
 GameObject:
   m_ObjectHideFlags: 0
