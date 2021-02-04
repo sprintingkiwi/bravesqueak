@@ -10,6 +10,6 @@ public class NPC : Character
     {
         base.Start();
 
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player = GameController.instance.player;
     }
 }
