@@ -5902,7 +5902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spr: {fileID: 0}
   anim: {fileID: 0}
-  encounter: {fileID: 114809916583162938, guid: 6770848308e45f94f99e1997fdc0bdf8,
+  encounter: {fileID: 114809916583162938, guid: 1d5434c69dee5f44fb61e32012af1b4c,
     type: 3}
   preBattleClip: {fileID: 0}
   shiftThresold: 1
@@ -6062,7 +6062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spr: {fileID: 0}
   anim: {fileID: 0}
-  encounter: {fileID: 114809916583162938, guid: ec6ec380fac442649b4423ce06aacecc,
+  encounter: {fileID: 114809916583162938, guid: 1179942a0a3e00945b6fe2f9584e631b,
     type: 3}
   preBattleClip: {fileID: 0}
   shiftThresold: 1
@@ -6222,7 +6222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spr: {fileID: 0}
   anim: {fileID: 0}
-  encounter: {fileID: 114809916583162938, guid: ec6ec380fac442649b4423ce06aacecc,
+  encounter: {fileID: 114809916583162938, guid: 1179942a0a3e00945b6fe2f9584e631b,
     type: 3}
   preBattleClip: {fileID: 0}
   shiftThresold: 1
@@ -6614,7 +6614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spr: {fileID: 0}
   anim: {fileID: 0}
-  encounter: {fileID: 114809916583162938, guid: 6770848308e45f94f99e1997fdc0bdf8,
+  encounter: {fileID: 114809916583162938, guid: 1d5434c69dee5f44fb61e32012af1b4c,
     type: 3}
   preBattleClip: {fileID: 0}
   shiftThresold: 1
