@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4814736442693676}
   - component: {fileID: 114809916583162938}
   m_Layer: 0
-  m_Name: Crab_Encounter
+  m_Name: Crab 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -88,7 +88,7 @@ MonoBehaviour:
   enemies:
   - recipe: {fileID: 114069915646428382, guid: f072fccd940eb6d46b8438e9d7efd680, type: 3}
     place: {fileID: 4254128295991490}
-  type: 2
+  type: 1
 --- !u!1 &1453218004743192
 GameObject:
   m_ObjectHideFlags: 0

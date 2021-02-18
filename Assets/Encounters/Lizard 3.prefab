@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 4347810047065882}
   - component: {fileID: 114158055192404530}
   m_Layer: 0
-  m_Name: 3Pirates_Encounter
+  m_Name: Lizard 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
