@@ -1,0 +1,275 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snow
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 53d9eefb321961746b5f5aac27480aef, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 279e3d30d157a5d4bb24dded80659843, type: 3}
+  - {fileID: 21300000, guid: d4acc550d21797e49bbf753f2afdc8f5, type: 3}
+  - {fileID: 21300000, guid: 5f02b6504664fec4db47b5c8b0a9c744, type: 3}
+  - {fileID: 21300000, guid: e2e6fb902fcfa03418f599a625975a1b, type: 3}
+  - {fileID: 21300000, guid: 0bf7cfc093625d141b3370b291650318, type: 3}
+  - {fileID: 21300000, guid: 0451fbf06c58cb143b3b68b101b9e50b, type: 3}
+  - {fileID: 21300000, guid: db0b92216d6e79c468d3130899a3c768, type: 3}
+  - {fileID: 21300000, guid: 847f0a21aaecfdb4c99ccf77f3b939fa, type: 3}
+  - {fileID: 21300000, guid: 54184d41ee9326e4fb453c539f705f87, type: 3}
+  - {fileID: 21300000, guid: e67e457199d93fd40aca0b4827f889e5, type: 3}
+  - {fileID: 21300000, guid: b3cd45914e6f77948a270d151630015a, type: 3}
+  - {fileID: 21300000, guid: ddc37691d601732459aa25c48b5043ff, type: 3}
+  - {fileID: 21300000, guid: 2bd083a1b6e617240bd9c64734437854, type: 3}
+  - {fileID: 21300000, guid: 8bc2efa1b78f16345822ed09b456e67c, type: 3}
+  - {fileID: 21300000, guid: 5a084af185ce881429f7eab90828e118, type: 3}
+  - {fileID: 21300000, guid: d29cb412ed10c15479321bf646e46a4b, type: 3}
+  - {fileID: 21300000, guid: 1600a75200201b542b7855d96225cfe7, type: 3}
+  - {fileID: 21300000, guid: 0ddd1e72f05c37540bcd04ecf6999230, type: 3}
+  - {fileID: 21300000, guid: 61417e729f97759428a6fa1f9c0f2307, type: 3}
+  - {fileID: 21300000, guid: 02d9a19299cebb546ac173e18ae3a693, type: 3}
+  - {fileID: 21300000, guid: 72d2c49234f923148bfec095893cab79, type: 3}
+  - {fileID: 21300000, guid: 708928a23e480d740a1b724acad66b5b, type: 3}
+  - {fileID: 21300000, guid: f98539a2b275533478db2deb49778442, type: 3}
+  - {fileID: 21300000, guid: 62c2e0b2507b2fd47a0db610437d31d2, type: 3}
+  - {fileID: 21300000, guid: a787e8f27129433469e2b1c02a90ef46, type: 3}
+  - {fileID: 21300000, guid: b61b9343a3910f74e86193f576e3b62c, type: 3}
+  - {fileID: 21300000, guid: c9c0a6439d96f294bac06b0c65fbc222, type: 3}
+  - {fileID: 21300000, guid: ddeb91b34f290954f930d8634bcc0d3f, type: 3}
+  - {fileID: 21300000, guid: bec67be3cf65b944599e702534051a30, type: 3}
+  - {fileID: 21300000, guid: 388b6bf30477278468d1e316c4e9480a, type: 3}
+  - {fileID: 21300000, guid: 202e94148a89c0f48b04d2cc618a5846, type: 3}
+  - {fileID: 21300000, guid: 4cec3f24004cff44dbf7067eaa67af71, type: 3}
+  - {fileID: 21300000, guid: 67d34834f4892354e913c713f2c6d7bc, type: 3}
+  - {fileID: 21300000, guid: ef63174449b096e4daaa326abde899b4, type: 3}
+  - {fileID: 21300000, guid: 67807854b4d46eb42bdcb2536ebfbf6a, type: 3}
+  - {fileID: 21300000, guid: b634ed64a1b711f4a9cf3186cd39adb2, type: 3}
+  - {fileID: 21300000, guid: 3e617f64e05b6e3498b5c13c6a3bbb02, type: 3}
+  - {fileID: 21300000, guid: 0e4cacb459e473f4c8de9d35129921eb, type: 3}
+  - {fileID: 21300000, guid: 041b0fb4f992ba7488a79d7a4ca932f1, type: 3}
+  - {fileID: 21300000, guid: a07322d4e0772324c8411cbc0b640dde, type: 3}
+  - {fileID: 21300000, guid: dc215dd460178ef4b8d0ce2fc6dd143c, type: 3}
+  - {fileID: 21300000, guid: 29156005395b2a747a1d0eb6efc5e399, type: 3}
+  - {fileID: 21300000, guid: 1baece059222e734c9c7ef59a546f9d4, type: 3}
+  - {fileID: 21300000, guid: e464f815e4c4b6649b2aa74bacec0c50, type: 3}
+  - {fileID: 21300000, guid: 86ec3d254f5d3934d817c3a526f72b67, type: 3}
+  - {fileID: 21300000, guid: cab7a4757b6a638408b06f39679859af, type: 3}
+  - {fileID: 21300000, guid: 29828ca536482e844978a36b4dcb59d7, type: 3}
+  - {fileID: 21300000, guid: 3881fbf545046e143a203e3bf14c6950, type: 3}
+  - {fileID: 21300000, guid: 91466476c70ac9c4f8eeba901d5b8086, type: 3}
+  - {fileID: 21300000, guid: f59b718653bf71e4981bcdfa283216ce, type: 3}
+  - {fileID: 21300000, guid: 6114b6d6bc707c14a90ae583a2307f06, type: 3}
+  - {fileID: 21300000, guid: ac3b98d66f143224bac9422147f6725b, type: 3}
+  - {fileID: 21300000, guid: 9ae511e609c7a0543ba59a235d121c66, type: 3}
+  - {fileID: 21300000, guid: c0cfc4f662e5d4e4682b6fcaa8d4349a, type: 3}
+  - {fileID: 21300000, guid: 27b25af62105ae04b90c98a5b84742a6, type: 3}
+  - {fileID: 21300000, guid: 6e21b807a2a1d4347b6e2d12bc7dacf8, type: 3}
+  - {fileID: 21300000, guid: 8117f6577fd0fc144af7ad4bee77cebc, type: 3}
+  - {fileID: 21300000, guid: 70ef6087a0489e148acb620c04bf98e1, type: 3}
+  - {fileID: 21300000, guid: faae591863f18a84db5030717f8625b8, type: 3}
+  - {fileID: 21300000, guid: 79093178aef0b014cbc288d523b77530, type: 3}
+  - {fileID: 21300000, guid: ba5295a80d66a444ba3c8d5b3660993a, type: 3}
+  - {fileID: 21300000, guid: 460980c809d9d914bb473587d8fc4c1d, type: 3}
+  - {fileID: 21300000, guid: a56096c8123afb64ba43f26846076d0b, type: 3}
+  - {fileID: 21300000, guid: d5e75539ac1051c46a8022ef91c04315, type: 3}
+  - {fileID: 21300000, guid: 04b04d39b8705bb4eacf7d09ec7462b2, type: 3}
+  - {fileID: 21300000, guid: fa685499884595144a97fa38e90b7587, type: 3}
+  - {fileID: 21300000, guid: c3fbd3b9f358f6340bdd5595f0d8b991, type: 3}
+  - {fileID: 21300000, guid: ff1c22c995157cb4ba1e7079b67201d2, type: 3}
+  - {fileID: 21300000, guid: 00a81fc930243bb449c3a271dd8d7362, type: 3}
+  - {fileID: 21300000, guid: f92cdee92a7f187468c3626e229cb107, type: 3}
+  - {fileID: 21300000, guid: 0aeeb14a8c015e4469b3675193ce3b39, type: 3}
+  - {fileID: 21300000, guid: e820f66a8b2038a41b88c4f1f082ec57, type: 3}
+  - {fileID: 21300000, guid: ea62fb6a49340224aaae5877922a9b8c, type: 3}
+  - {fileID: 21300000, guid: 160ec78a4fa7c99448fd7376fecd2303, type: 3}
+  - {fileID: 21300000, guid: e1b9b99ad6d99e047a0b24e2660c0d91, type: 3}
+  - {fileID: 21300000, guid: 7007beaa3e8212c449463fafe514834a, type: 3}
+  - {fileID: 21300000, guid: c1f590cabbce17d4bbb641fbdc366c56, type: 3}
+  - {fileID: 21300000, guid: 7eb328ca88b40c347920d43bcb44e827, type: 3}
+  - {fileID: 21300000, guid: 1ef7dcca98922874ebe6cdebc6e33474, type: 3}
+  - {fileID: 21300000, guid: b0f046ea3f6cbc74a891271c96c44873, type: 3}
+  - {fileID: 21300000, guid: 8425240bdb94db1469c7e10896965852, type: 3}
+  - {fileID: 21300000, guid: c1ab671b9121eb74ca26b512c9ffabee, type: 3}
+  - {fileID: 21300000, guid: d8d201ab4efa85045ac207e0b5ea80d6, type: 3}
+  - {fileID: 21300000, guid: e6ed63cbfcff8ea49bd67990a495a7b3, type: 3}
+  - {fileID: 21300000, guid: 7bd4d2fba84db234d8b1de78f41d178d, type: 3}
+  - {fileID: 21300000, guid: 31bea8fb00dd65f4899b227a03822d17, type: 3}
+  - {fileID: 21300000, guid: e505770c2c5b6c5408b5b2031ea87b04, type: 3}
+  - {fileID: 21300000, guid: a140731c506572d4ba10336b86522aea, type: 3}
+  - {fileID: 21300000, guid: 76d8cd5c4e3196c43a5642a36dbd954d, type: 3}
+  - {fileID: 21300000, guid: 5a511d6c75b5518459c7a1d9590741da, type: 3}
+  - {fileID: 21300000, guid: b239cf6cd436f7e4bbc01dbe79080d0f, type: 3}
+  - {fileID: 21300000, guid: dc66147c57268ab4eb4e50be31357d59, type: 3}
+  - {fileID: 21300000, guid: 3c373f7ce2c62b541a53e355430c207a, type: 3}
+  - {fileID: 21300000, guid: b9fa099c0c9d50941a1ca9db10dcd278, type: 3}
+  - {fileID: 21300000, guid: 646770bcf7065eb4cb8ad82f9d3522a2, type: 3}
+  - {fileID: 21300000, guid: d44947ec5c375f949924a89d962fca78, type: 3}
+  - {fileID: 21300000, guid: 1bdfe72d49c87524e9588a2ac1cb7324, type: 3}
+  - {fileID: 21300000, guid: 6d51a54dfaff19c418ce837e5426a3b5, type: 3}
+  - {fileID: 21300000, guid: e0222d7d95c063b40aae2fe4278247ef, type: 3}
+  - {fileID: 21300000, guid: 61514d9dd9d1b44498f392b498bd1fc7, type: 3}
+  - {fileID: 21300000, guid: 6a43f50e1c21ca44294843742d626519, type: 3}
+  - {fileID: 21300000, guid: e838ec0ed8f794f4a8c52685f3a0331b, type: 3}
+  - {fileID: 21300000, guid: 591f5b2e0faf508499fbbb8bef119d96, type: 3}
+  - {fileID: 21300000, guid: 7061ee5ecbfe0fb49af301e581530c68, type: 3}
+  - {fileID: 21300000, guid: 6146dc6e273723849b6316ccf3703184, type: 3}
+  - {fileID: 21300000, guid: f6259aae42544af4a86247b125f34383, type: 3}
+  - {fileID: 21300000, guid: 2f8fd5de4d087b54da819291c560e816, type: 3}
+  - {fileID: 21300000, guid: b49b5ade6e5fe284e81572efe111b595, type: 3}
+  - {fileID: 21300000, guid: 1925eeeec6503bc4d9de8587dfeae3c9, type: 3}
+  - {fileID: 21300000, guid: 3a8cd71fde39431498fbaca1ac8c076d, type: 3}
+  - {fileID: 21300000, guid: 7938b52fe5ddeaa4cad31c5c82a1b40a, type: 3}
+  - {fileID: 21300000, guid: 1e0e563fd562cd948b39edd320f41558, type: 3}
+  - {fileID: 21300000, guid: 8e41095f608ddf042998d3556149326e, type: 3}
+  - {fileID: 21300000, guid: 7e42607f4071e654f86b91bf3d5b7ab0, type: 3}
+  - {fileID: 21300000, guid: 4c0b879f1d1098d4985841134225adc0, type: 3}
+  - {fileID: 21300000, guid: e9c0d2af7d0b4c247aca4ac97ff7a992, type: 3}
+  - {fileID: 21300000, guid: e214cebfa7432ea4fb42e46db909091e, type: 3}
+  - {fileID: 21300000, guid: 19eb0dcf28056714fb7936021f449965, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Snow_Overlay_1
+  - Snow_Overlay_8
+  - Animation_Snow_Door_0019
+  - Snow_Column_5
+  - Snow_Ground_14
+  - Snow_Ground_2
+  - Snow_Overlay_16
+  - Snow_Column_4
+  - Animation_Snow_Door_0007
+  - Snow_Ground_33
+  - Snow_Overlay_36
+  - Animation_Snow_Door_0020
+  - Snow_Overlay_30
+  - Snow_Ground_11
+  - Snow_Ground_13
+  - Snow_Ground_18
+  - Animation_Snow_Door_0011
+  - Snow_Overlay_13
+  - Snow_Ground_29
+  - Snow_Ground_24
+  - Snow_Overlay_21
+  - Snow_Light
+  - Animation_SnowLights_0004
+  - Animation_Snow_Door_0026
+  - Snow_Ground_23
+  - Snow_Ground_19
+  - Animation_Snow_Door_0004
+  - Snow_Column_2
+  - Snow_Overlay_31
+  - Snow_Ground_34
+  - Animation_Snow_Door_0010
+  - Snow_Overlay_12
+  - Snow_Ground
+  - Animation_Snow_Door_0001
+  - Animation_Snow_Door_0002
+  - Snow_Ground_36
+  - Animation_Snow_Door_0017
+  - Snow_Overlay_33
+  - Animation_SnowLights_0002
+  - Animation_Snow_Door_0009
+  - Snow_Ground_35
+  - Snow_Ground_12
+  - Snow_Ground_25
+  - Snow_Overlay_23
+  - Animation_Snow_Door_0003
+  - Snow_Passability
+  - Animation_SnowLights_0003
+  - Snow_Overlay_6
+  - Snow_Overlay_11
+  - Snow_Column_1
+  - Snow_Ground_10
+  - Snow_Ground_21
+  - Animation_Snow_Door_0015
+  - Animation_SnowLights_0000
+  - Animation_Snow_Door_0024
+  - Snow_Overlay_15
+  - Snow_Overlay_26
+  - Snow_Overlay_24
+  - Snow_Ground_32
+  - Animation_Snow_Door_0014
+  - Animation_Snow_Door_0008
+  - Snow_Ground_5
+  - Snow_Overlay_9
+  - Snow_Overlay_35
+  - Snow_Ground_16
+  - Animation_Snow_Door_0000
+  - Snow_Ground_6
+  - Snow_Ground_3
+  - Animation_SnowLights_0008
+  - Snow_Overlay_19
+  - Snow_Overlay_5
+  - Animation_Snow_Door_0021
+  - Snow_Ground_27
+  - Snow_Ground_28
+  - Snow_Overlay_18
+  - Snow_Overlay_27
+  - Snow_Overlay_4
+  - Animation_SnowLights_0007
+  - Snow_Overlay_3
+  - Animation_Snow_Door_0022
+  - Snow_Ground_15
+  - Animation_SnowLights_0006
+  - Snow_Ground_20
+  - Snow_Ground_31
+  - Snow_Overlay_34
+  - Snow_Ground_7
+  - Animation_Snow_Door_0023
+  - Animation_Snow_Door_0006
+  - Animation_Snow_Door_0018
+  - Snow_Overlay_17
+  - Snow_Ground_22
+  - Animation_Snow_Door_0013
+  - Snow_Ground_4
+  - Snow_Ground_17
+  - Snow_Overlay_29
+  - Snow_Overlay_20
+  - Snow_Overlay_22
+  - Animation_SnowLights_0005
+  - Animation_Snow_Door_0016
+  - Snow_Ground_26
+  - Snow_Overlay
+  - Snow_Overlay_14
+  - Snow_Overlay_28
+  - Snow_Overlay_10
+  - Animation_SnowLights_0001
+  - Snow_Overlay_2
+  - Snow_Ground_1
+  - Snow_Ground_30
+  - Snow_Ground_9
+  - Animation_Snow_Door_0025
+  - Animation_Snow_Door_0005
+  - Snow_Overlay_25
+  - Animation_Snow_Door_0012
+  - Snow_Overlay_7
+  - Snow_Overlay_32
+  - Snow_Ground_8
+  - Snowman
+  - Snow_Column_3
+  m_Tag: Snow
+  m_IsVariant: 0

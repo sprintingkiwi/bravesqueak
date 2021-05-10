@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Passage_Swamp
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f5d193d1c527edc4a8f337569be7485e, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2dcff40017e59c34a8fd2736a8c50d6f, type: 3}
+  - {fileID: 21300000, guid: 8871cc10ada905c4e9febff82567f023, type: 3}
+  - {fileID: 21300000, guid: 7315784067da31243a43f4651c8bfc74, type: 3}
+  - {fileID: 21300000, guid: df3efa8068aff9840b3b75bfa5a38d17, type: 3}
+  - {fileID: 21300000, guid: fed81f801e165634ca58b4776b21a931, type: 3}
+  - {fileID: 21300000, guid: 8da75521c0ef3d64f99bc15ca3f97056, type: 3}
+  - {fileID: 21300000, guid: 4e621e31eccd7aa48b4a8c7e60591caa, type: 3}
+  - {fileID: 21300000, guid: 3f87774103a29014494f6e5ad5b15542, type: 3}
+  - {fileID: 21300000, guid: 899b3561859de5246a319a3dfcbae5e1, type: 3}
+  - {fileID: 21300000, guid: 53b6aa61f0b35c64898ed897dedbf0d8, type: 3}
+  - {fileID: 21300000, guid: 995557a146b65b041a9091f36eb2a00a, type: 3}
+  - {fileID: 21300000, guid: 1f556b4287f5a6d42931303ba0b3dc57, type: 3}
+  - {fileID: 21300000, guid: 3be536720d510924c8d6a78855c0bf9e, type: 3}
+  - {fileID: 21300000, guid: 55ae1192c1563814db9ef9d1edf6f0b4, type: 3}
+  - {fileID: 21300000, guid: d139c5e2354d7a94b88c69f7f8c67a51, type: 3}
+  - {fileID: 21300000, guid: 84ee00f20da13974982faf298c2df41e, type: 3}
+  - {fileID: 21300000, guid: 422d2ef2b7b5b5f40b833108647052d4, type: 3}
+  - {fileID: 21300000, guid: f3de242337525c04fa812b69b62e0970, type: 3}
+  - {fileID: 21300000, guid: 8f02ca23359b52f46b351fe547fcd398, type: 3}
+  - {fileID: 21300000, guid: 2a6dad23a544c6947ab4349cb884987f, type: 3}
+  - {fileID: 21300000, guid: a201c8535168fa5438238021a72a36ce, type: 3}
+  - {fileID: 21300000, guid: c5d84473b82eb80438d9e2948f9bb790, type: 3}
+  - {fileID: 21300000, guid: 884bc4c383b035c4ea4e120f8621a721, type: 3}
+  - {fileID: 21300000, guid: 430308e3937331f45a94df9d251ae786, type: 3}
+  - {fileID: 21300000, guid: 1de0b5f3444ab594ca92fb7cff13b682, type: 3}
+  - {fileID: 21300000, guid: 890d59f35624c304c93e16ddb73bfd3c, type: 3}
+  - {fileID: 21300000, guid: 2cc75e2425dd2bf49a0f9ed9e744dbfa, type: 3}
+  - {fileID: 21300000, guid: 4a95e544f15724649879c563e26b112f, type: 3}
+  - {fileID: 21300000, guid: bb54eda4615919a4698ff9103be0c5e8, type: 3}
+  - {fileID: 21300000, guid: 12ef3205217c121478f68ae112c1542a, type: 3}
+  - {fileID: 21300000, guid: 4c5a3045b3559964fb21fdb29f3c7aba, type: 3}
+  - {fileID: 21300000, guid: ed7822459c0694649bb8a61a130f9909, type: 3}
+  - {fileID: 21300000, guid: 508fac45016ad0f4c986dea9c98c0e7b, type: 3}
+  - {fileID: 21300000, guid: b5c9c7a590a93d44cbed064bd4ab3ed9, type: 3}
+  - {fileID: 21300000, guid: ede0d4c5606fd0f418fb613893d9aa39, type: 3}
+  - {fileID: 21300000, guid: ae25aec539fd0e34292deb36a0ddb71b, type: 3}
+  - {fileID: 21300000, guid: 533050d55c3524946bd55e9615e257f7, type: 3}
+  - {fileID: 21300000, guid: 8af5d6f56fe3ad34d9955202ad09dd9d, type: 3}
+  - {fileID: 21300000, guid: 3fe260061baab894bb8653803f00ef92, type: 3}
+  - {fileID: 21300000, guid: 88b6f706f2e23dc469330ee3e35dc864, type: 3}
+  - {fileID: 21300000, guid: 248cc3967984b364897a9a1e30be58e7, type: 3}
+  - {fileID: 21300000, guid: 65576be67e8976e4a9669eab2f244e32, type: 3}
+  - {fileID: 21300000, guid: abdecf176e7fb6b47abc18c9bef34bf3, type: 3}
+  - {fileID: 21300000, guid: bb965a374e6cff94485d49855e4d092e, type: 3}
+  - {fileID: 21300000, guid: a81a56579d2d3dd43a56e004f3dc1ad3, type: 3}
+  - {fileID: 21300000, guid: 4d47d857c74ff3545869853578b4d61e, type: 3}
+  - {fileID: 21300000, guid: f9bc7667867f8284491d7aaacb992c13, type: 3}
+  - {fileID: 21300000, guid: b1eeab677dc2be243b787cd0c80613ae, type: 3}
+  - {fileID: 21300000, guid: 4f557f7755e47a945b3779dc56a30076, type: 3}
+  - {fileID: 21300000, guid: e47a9c8788613f44390e337c26e81b2d, type: 3}
+  - {fileID: 21300000, guid: c0dc6e87caacaa347a09d5eca147d6f4, type: 3}
+  - {fileID: 21300000, guid: 70b0f5b7298f3c948b578d99732b9e6a, type: 3}
+  - {fileID: 21300000, guid: 0fbb17c74cbf23340bda05a9202ab87d, type: 3}
+  - {fileID: 21300000, guid: 1d1d8ad73c6aedc42b3ce1d2aa899125, type: 3}
+  - {fileID: 21300000, guid: 7202b1e7a96dfbb4fb8737ce24037d27, type: 3}
+  - {fileID: 21300000, guid: 909d20f76ea340a47ad6ce1f5fd15807, type: 3}
+  - {fileID: 21300000, guid: 888eb058b293ab244b5f2844235ce47f, type: 3}
+  - {fileID: 21300000, guid: 14b1d2582a511f24fa397153f0f79bc6, type: 3}
+  - {fileID: 21300000, guid: cc914088ce3c0b54d92a489cd7b86586, type: 3}
+  - {fileID: 21300000, guid: 774930b80e8616f4ca09419a7932d7af, type: 3}
+  - {fileID: 21300000, guid: 70099fd85f254b74da4906018e9c6959, type: 3}
+  - {fileID: 21300000, guid: 0ffc1cf8e70a0a443beff09123fd9acf, type: 3}
+  - {fileID: 21300000, guid: 7ab96d09c617454488079da1147fab4c, type: 3}
+  - {fileID: 21300000, guid: 6f3c902967bdaa44aa24cacaadd5f1e1, type: 3}
+  - {fileID: 21300000, guid: 33db3749d5097944b94c0743de01666e, type: 3}
+  - {fileID: 21300000, guid: 78e76869b35493645bca4336d6ff4ea1, type: 3}
+  - {fileID: 21300000, guid: d29720d9efdcd5c4388bc5f2cba2d6b7, type: 3}
+  - {fileID: 21300000, guid: 573964e9791cb414ba6e90582676365c, type: 3}
+  - {fileID: 21300000, guid: ca97e2f953e20f249bd3159d99d50d82, type: 3}
+  - {fileID: 21300000, guid: 8b3f923af960a7743baf6adbcedd67b6, type: 3}
+  - {fileID: 21300000, guid: 4cff7e6a592b4d74195cdc40d5fbff61, type: 3}
+  - {fileID: 21300000, guid: d1a2d97a3edc02b4b8bf2a5d40db4a9e, type: 3}
+  - {fileID: 21300000, guid: 1bbbb09adc798454c8f819ffbc6a704c, type: 3}
+  - {fileID: 21300000, guid: da42d20b15322a141a002499b023a593, type: 3}
+  - {fileID: 21300000, guid: 59522a7ba98f19a4c815f16fb287cd15, type: 3}
+  - {fileID: 21300000, guid: ae2820dbbfdd2f94d96e8073040f409f, type: 3}
+  - {fileID: 21300000, guid: f382a1dbe94ca094e9b00691d05c2a4d, type: 3}
+  - {fileID: 21300000, guid: 477ab2fbd9c83a64794b2c34bab09ea9, type: 3}
+  - {fileID: 21300000, guid: 88747afb37393934f9b8b8a064b2594b, type: 3}
+  - {fileID: 21300000, guid: 98fab65cdedf63b41bc7547b77c814ef, type: 3}
+  - {fileID: 21300000, guid: 6f844d6c52fd9024b9779d0adc63ac73, type: 3}
+  - {fileID: 21300000, guid: cbbe6d7cbfa41f74e920ecc937c01ada, type: 3}
+  - {fileID: 21300000, guid: ef52a56db2ce244498cbd738831d9a1f, type: 3}
+  - {fileID: 21300000, guid: 4c923d8d58dd6e54492e0fc24e2bef2c, type: 3}
+  - {fileID: 21300000, guid: 050a64cd185ad254fbba88352525951d, type: 3}
+  - {fileID: 21300000, guid: bcf2b10e16ece914484831af3f608598, type: 3}
+  - {fileID: 21300000, guid: 2dbe490e66bf4914d9109f4855b1ea2a, type: 3}
+  - {fileID: 21300000, guid: 9070ec0ea9afa7446ae1cc37c80941d2, type: 3}
+  - {fileID: 21300000, guid: 63005a1e3a593be4cb680e2f15be98a6, type: 3}
+  - {fileID: 21300000, guid: 8e92ed1e715441047904cf18414dc76f, type: 3}
+  - {fileID: 21300000, guid: 022fdabe0dc4de247a0a76ad89cf988e, type: 3}
+  - {fileID: 21300000, guid: b6fc5e2f565369f488a3dfa9254d9007, type: 3}
+  - {fileID: 21300000, guid: f631c93f39af2c143900fc70a3405932, type: 3}
+  - {fileID: 21300000, guid: 3ef1364f6232c2c4f9dd0f3c98c01c60, type: 3}
+  - {fileID: 21300000, guid: b6494d4feeb434a4a85936b1e24e4e19, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Passage_Swamp_Overlay_5
+  - Passage_Swamp_Overlay_12
+  - Passage_Swamp_Ground_20
+  - Passage_Swamp_Ground_35
+  - Passage_Swamp_Overlay_15
+  - Passage_Swamp_Overlay_13
+  - Passage_Swamp_Ground_13
+  - Passage_Swamp_Waves0015
+  - Passage_Swamp_Overlay_14
+  - Passage_Swamp_Overlay_18
+  - Passage_Swamp_Ground_12
+  - Passage_Swamp_Waves0012
+  - Passage_Swamp_Ground
+  - Passage_Swamp_Ground_24
+  - Passage_Swamp_Ground_2
+  - Passage_Swamp_Waves0002
+  - Passage_Swamp_Overlay_25
+  - Passage_Swamp_Light
+  - Passage_Swamp_Overlay_22
+  - Passage_Swamp_Ground_4
+  - Passage_Swamp_Overlay_20
+  - Passage_Swamp_Waves0010
+  - Passage_Swamp_Ground_26
+  - Passage_Swamp_Overlay_30
+  - Passage_Swamp_Overlay_19
+  - Passage_Swamp_Ground_1
+  - Passage_Swamp_Ground_23
+  - Passage_Swamp_Overlay_27
+  - Passage_Swamp_Ground_16
+  - Passage_Swamp_Overlay_16
+  - Passage_Swamp_Waves0016
+  - Passage_Swamp_Overlay_9
+  - Passage_Swamp_Overlay_36
+  - Passage_Swamp_Ground_14
+  - Passage_Swamp_Waves0005
+  - Passage_Swamp_Overlay_7
+  - Passage_Swamp_Ground
+  - Passage_Swamp_Ground_6
+  - Passage_Swamp_Overlay_1
+  - Passage_Swamp_Ground_21
+  - Passage_Swamp_Ground_15
+  - Passage_Swamp_Overlay_26
+  - Passage_Swamp_Overlay_2
+  - Passage_Swamp_Overlay_10
+  - Passage_Swamp_Ground_9
+  - Passage_Swamp_Overlay_24
+  - Passage_Swamp_Ground_29
+  - Passage_Swamp_Ground_34
+  - Passage_Swamp_Ground_18
+  - Passage_Swamp_Overlay_8
+  - Passage_Swamp_Waves0003
+  - Passage_Swamp_Waves0004
+  - Passage_Swamp_Overlay_17
+  - Passage_Swamp_Ground_33
+  - Passage_Swamp_Ground_27
+  - Passage_Swamp_Ground_5
+  - Passage_Swamp_Waves0009
+  - Passage_Swamp_Overlay_6
+  - Passage_Swamp_Ground_22
+  - Passage_Swamp_Overlay_28
+  - Passage_Swamp_Ground_30
+  - Passage_Swamp_Passability
+  - Passage_Swamp_Overlay_32
+  - Passage_Swamp_Ground_17
+  - Passage_Swamp_Ground_3
+  - Passage_Swamp_Ground_7
+  - Passage_Swamp_Ground_25
+  - Passage_Swamp_Waves0013
+  - Passage_Swamp_Overlay_33
+  - Passage_Swamp_Overlay_3
+  - Passage_Swamp_Overlay_34
+  - Passage_Swamp_Overlay_21
+  - Passage_Swamp_Overlay_31
+  - Passage_Swamp_Ground_31
+  - Passage_Swamp_Waves0001
+  - Passage_Swamp_Overlay
+  - Passage_Swamp_Overlay
+  - Passage_Swamp_Ground_19
+  - Passage_Swamp_Waves0008
+  - Passage_Swamp_Overlay_23
+  - Passage_Swamp_Waves0006
+  - Passage_Swamp_Ground_28
+  - Passage_Swamp_Waves0014
+  - Passage_Swamp_Overlay_11
+  - Passage_Swamp_Ground_11
+  - Passage_Swamp_Waves0011
+  - Passage_Swamp_Ground_36
+  - Passage_Swamp_Ground_32
+  - Passage_Swamp_Ground_10
+  - Passage_Swamp_Overlay_35
+  - Passage_Swamp_Ground_8
+  - Passage_Swamp_Waves0007
+  - Passage_Swamp_Overlay_4
+  - Passage_Swamp_Waves0000
+  - Passage_Swamp_Overlay_29
+  m_Tag: Passage_Swamp
+  m_IsVariant: 0

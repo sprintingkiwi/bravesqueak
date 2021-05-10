@@ -1,0 +1,189 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Passage_Desert
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 5ab5078306a230d468dde0a30c2714bb, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: eeeb7630b503d6a468d840429c1b8d46, type: 3}
+  - {fileID: 21300000, guid: a30276609e862524c8cb353efcc4724c, type: 3}
+  - {fileID: 21300000, guid: 23b365b085802eb4e99352bb49295a5f, type: 3}
+  - {fileID: 21300000, guid: 0b97bcf0f1c97f641aaf0919077d0b96, type: 3}
+  - {fileID: 21300000, guid: 2a69ff81d456cd34aa208ae45cb73562, type: 3}
+  - {fileID: 21300000, guid: 34c5d9d19d413ea46a72ab1f0c323c1c, type: 3}
+  - {fileID: 21300000, guid: 693aab12784a97f40b1dd4c13379b1ce, type: 3}
+  - {fileID: 21300000, guid: efb9f332bdf4096448934768b880ea17, type: 3}
+  - {fileID: 21300000, guid: 8798243256954914c861702f5ee60437, type: 3}
+  - {fileID: 21300000, guid: 3b3ece521d8434545bc65cbb3f41b2da, type: 3}
+  - {fileID: 21300000, guid: d4196fb25ea5b6549946161b15274330, type: 3}
+  - {fileID: 21300000, guid: 39f0011377927304a97579942b6223cf, type: 3}
+  - {fileID: 21300000, guid: dc1e42435398ab7499502f7dba8474a4, type: 3}
+  - {fileID: 21300000, guid: 1f266243e140fd449baea37a36febace, type: 3}
+  - {fileID: 21300000, guid: a2d5385384a8174498395b2199563026, type: 3}
+  - {fileID: 21300000, guid: 19309e535d67da54b91d118b477600c9, type: 3}
+  - {fileID: 21300000, guid: 881adcc351efdf546b8adc490faa3aa0, type: 3}
+  - {fileID: 21300000, guid: 70c788d32c8b63b4c90b0808c5fa83fd, type: 3}
+  - {fileID: 21300000, guid: 3fd736e35f5d5ff4aa9c8cd8be20807b, type: 3}
+  - {fileID: 21300000, guid: d6b4ab7453232ca44a620c15ec12801b, type: 3}
+  - {fileID: 21300000, guid: 64db6584b04278445835af023a95be9d, type: 3}
+  - {fileID: 21300000, guid: 1deed4d48297d984abb19f6aaf1ff341, type: 3}
+  - {fileID: 21300000, guid: c2bd36d410a9ce240970d5c96d842080, type: 3}
+  - {fileID: 21300000, guid: 17faece47385904499b655df46a4accc, type: 3}
+  - {fileID: 21300000, guid: 8749926530c77104c8d63acbd7f4427f, type: 3}
+  - {fileID: 21300000, guid: b9c5b775ce0b2bf46a20052772f9f13b, type: 3}
+  - {fileID: 21300000, guid: 1ebe85857b3dd854d94390d5ac21a51c, type: 3}
+  - {fileID: 21300000, guid: c82e359506a659944aa972a4914878f4, type: 3}
+  - {fileID: 21300000, guid: 164892a5b09addd44bc8a3bbb53184ae, type: 3}
+  - {fileID: 21300000, guid: 671438a5520996245991161b0cd9b881, type: 3}
+  - {fileID: 21300000, guid: d5301ca5b9e5d6147840593167c8ad9f, type: 3}
+  - {fileID: 21300000, guid: 675b3fc5a7650d34c87b732ecaeea773, type: 3}
+  - {fileID: 21300000, guid: 5ffa1126a35fe5c478f530e7cb057c22, type: 3}
+  - {fileID: 21300000, guid: 0dc8b546b7e35fb46b56b143233c46b2, type: 3}
+  - {fileID: 21300000, guid: 5f107c76099982d4aa7dfa4a139be47b, type: 3}
+  - {fileID: 21300000, guid: 200d3a170705aff4dac3eb3f82ef71ed, type: 3}
+  - {fileID: 21300000, guid: 26d232574feaa404693a3beeac8a0d98, type: 3}
+  - {fileID: 21300000, guid: 36195f87e8e8e9b40893a086cddd8d1f, type: 3}
+  - {fileID: 21300000, guid: 95fae2c7feb18d844969738fd54fe71e, type: 3}
+  - {fileID: 21300000, guid: f569c118ac4cd174e8191f2b6cfa1d57, type: 3}
+  - {fileID: 21300000, guid: d96bae68f478e844eb412dbf06c08b68, type: 3}
+  - {fileID: 21300000, guid: 874a4c98bf6593649b4e57949133d0f9, type: 3}
+  - {fileID: 21300000, guid: c6e872a86b2a04c4aaa50922ffb33bda, type: 3}
+  - {fileID: 21300000, guid: e36c4db8a1070db469c2cdbace1a7d90, type: 3}
+  - {fileID: 21300000, guid: a0d8c029eaf307d4dbb9de4eed21fa25, type: 3}
+  - {fileID: 21300000, guid: 842909492e1ca374ebe856eba51f170e, type: 3}
+  - {fileID: 21300000, guid: 2059278962dc510478d494ac4fdb9a41, type: 3}
+  - {fileID: 21300000, guid: 18e2f1a97b538ac4b80cb7b391c70257, type: 3}
+  - {fileID: 21300000, guid: 739d8da988d2a8347959217a3c476af6, type: 3}
+  - {fileID: 21300000, guid: 11efe5b99057b0e4d9c88cd86fe29aba, type: 3}
+  - {fileID: 21300000, guid: d507bbd92e5ba2846ae9ce35ba46d110, type: 3}
+  - {fileID: 21300000, guid: e45a394abe45de44b8b0853942e0f4b4, type: 3}
+  - {fileID: 21300000, guid: 0c662b7a8db4dfb4aaa898b59e4d7593, type: 3}
+  - {fileID: 21300000, guid: d33cbc7a0b6947f4ebf4d06499569af0, type: 3}
+  - {fileID: 21300000, guid: 0e107a9aacb13ff4f91db470a96a0f1a, type: 3}
+  - {fileID: 21300000, guid: 5e48eeca089a0da4f869a320aac0ad26, type: 3}
+  - {fileID: 21300000, guid: a5f8d91bc57ad9249adf15ebde14564b, type: 3}
+  - {fileID: 21300000, guid: e1d1f34b96c645d40a36c8cbc12e59b1, type: 3}
+  - {fileID: 21300000, guid: 658ff31c531b1204ba168319e892ada0, type: 3}
+  - {fileID: 21300000, guid: c58a523c0e6eef44a8271f44a565eebe, type: 3}
+  - {fileID: 21300000, guid: c2464d6c9476fd840bdaadfce4556a86, type: 3}
+  - {fileID: 21300000, guid: e52c19bc2c38d59438a6e66bbb19c067, type: 3}
+  - {fileID: 21300000, guid: 07f3d8dc70a45a5439595b312608cb33, type: 3}
+  - {fileID: 21300000, guid: 8a1c6e6d86cffff46a5416d9488025f0, type: 3}
+  - {fileID: 21300000, guid: fda3788d51c7b244394d1d58322b73ad, type: 3}
+  - {fileID: 21300000, guid: 4e82a88d7a2a1ad4b98b3e01c73edc79, type: 3}
+  - {fileID: 21300000, guid: 04b17cdd258f71649aafcf3da595a8b8, type: 3}
+  - {fileID: 21300000, guid: fc1285edabe25544594b281e0ec5dd31, type: 3}
+  - {fileID: 21300000, guid: 90dd013e934c30c439809743f17af31e, type: 3}
+  - {fileID: 21300000, guid: 39a9b2bef5cc3694884d3fce6f2600d9, type: 3}
+  - {fileID: 21300000, guid: ef5fcfde24c93304ca82192d426e5afa, type: 3}
+  - {fileID: 21300000, guid: af802aee3e082de46abb8fa1c5a40923, type: 3}
+  - {fileID: 21300000, guid: 7e5d286f6cc6d974c86387a9a83ed0a8, type: 3}
+  - {fileID: 21300000, guid: a077727f0bc32f94d9e0845ad1756e57, type: 3}
+  - {fileID: 21300000, guid: f6708caf81eee8d4fa5943a6995d186f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Passage_Desert_Overlay_16
+  - Passage_Desert_Ground_1
+  - Passage_Desert_Ground_14
+  - Passage_Desert_Overlay_20
+  - Passage_Desert_Overlay_4
+  - Passage_Desert_Ground_33
+  - Passage_Desert_Overlay_18
+  - Passage_Desert_Ground_8
+  - Passage_Desert_Overlay_17
+  - Passage_Desert_Overlay_12
+  - Passage_Desert_Overlay_14
+  - Passage_Desert_Overlay_25
+  - Passage_Desert_Ground_4
+  - Passage_Desert_Overlay_6
+  - Passage_Desert_Overlay_7
+  - Passage_Desert_Overlay_13
+  - Passage_Desert_Overlay_11
+  - Passage_Desert_Ground_6
+  - Passage_Desert_Ground_3
+  - Passage_Desert_Ground_9
+  - Passage_Desert_Ground_5
+  - Passage_Desert_Ground_36
+  - Passage_Desert_Ground_32
+  - Passage_Desert_Ground_30
+  - Passage_Desert_Ground_29
+  - Passage_Desert_Overlay_29
+  - Passage_Desert_Overlay_32
+  - Passage_Desert_Ground_16
+  - Passage_Desert_Ground_19
+  - Passage_Desert_Overlay_22
+  - Passage_Desert_Ground_17
+  - Passage_Desert_Ground_26
+  - Passage_Desert_Overlay_34
+  - Passage_Desert_Ground
+  - Passage_Desert_Ground_21
+  - Passage_Desert_Overlay_36
+  - Passage_Desert_Overlay_27
+  - Passage_Desert_Ground_10
+  - Passage_Desert_Overlay_8
+  - Passage_Desert_Overlay_10
+  - Passage_Desert_Ground_22
+  - Passage_Desert_Ground_23
+  - Passage_Desert_Ground_27
+  - Passage_Desert_Ground_2
+  - Passage_Desert_Overlay_21
+  - Passage_Desert_Ground_7
+  - Passage_Desert_Overlay_26
+  - Passage_Desert_Ground_18
+  - Passage_Desert_Overlay_30
+  - Passage_Desert_Overlay_19
+  - Passage_Desert_Ground_11
+  - Passage_Desert_Overlay_9
+  - Passage_Desert_Ground_28
+  - Passage_Desert_Overlay_24
+  - Passage_Desert_Ground_20
+  - Passage_Desert_Passability
+  - Passage_Desert_Overlay_3
+  - Passage_Desert_Overlay_1
+  - Passage_Desert_Ground_34
+  - Passage_Desert_Overlay_33
+  - Passage_Desert_Overlay_23
+  - Passage_Desert_Ground_31
+  - Passage_Desert_Overlay_35
+  - Passage_Desert_Overlay_31
+  - Passage_Desert_Ground_24
+  - Passage_Desert_Ground_12
+  - Passage_Desert_Overlay_2
+  - Passage_Desert_Ground_35
+  - Passage_Desert_Overlay_28
+  - Passage_Desert_Overlay
+  - Passage_Desert_Ground_13
+  - Passage_Desert_Ground_25
+  - Passage_Desert_Ground_15
+  - Passage_Desert_Overlay_5
+  - Passage_Desert_Overlay_15
+  m_Tag: Passage_Desert
+  m_IsVariant: 0

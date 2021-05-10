@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BramblesMaze
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ac2b9a609ff5eac41a0c2c71383c07d5, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d59ad80095de17c45a9d9ad8f7022203, type: 3}
+  - {fileID: 21300000, guid: a5d46150c8edd2f438eae1b88a714f0d, type: 3}
+  - {fileID: 21300000, guid: 08c4e280379f3bd41ab34b317565f553, type: 3}
+  - {fileID: 21300000, guid: 20f0bf41995d3a241ad84d19436b2c29, type: 3}
+  - {fileID: 21300000, guid: bed200d17fa2db24593341cb193bc760, type: 3}
+  - {fileID: 21300000, guid: 9b8502f160c63b9409fd37c8bc7e8976, type: 3}
+  - {fileID: 21300000, guid: 6ba74d4241b01654ca160945704ffc00, type: 3}
+  - {fileID: 21300000, guid: caf7f56296252c645b9bdf911e737fda, type: 3}
+  - {fileID: 21300000, guid: 01bf6e92ec7c33a42957f110e7a9dbbe, type: 3}
+  - {fileID: 21300000, guid: a17d93b2aae6816469b97d5ac4f523e4, type: 3}
+  - {fileID: 21300000, guid: 4e2397e28667c0e458bc98eb2e521b91, type: 3}
+  - {fileID: 21300000, guid: d97093f2d1b6d8f49b77b3e6b68be84e, type: 3}
+  - {fileID: 21300000, guid: b5ea0143e1bbf92448aae61a94ee9abb, type: 3}
+  - {fileID: 21300000, guid: 1644f183b7cf55a448dc89589a33b74e, type: 3}
+  - {fileID: 21300000, guid: 6f11d6a3ce612f64896344df0174d9c4, type: 3}
+  - {fileID: 21300000, guid: 2d65983485ce45441b815bcab06ba161, type: 3}
+  - {fileID: 21300000, guid: a26a9da43c9cb814f832e263f1b9475a, type: 3}
+  - {fileID: 21300000, guid: 0c90dbe4e695c544aa2607ef6e532a08, type: 3}
+  - {fileID: 21300000, guid: 40c51b8515a1aaa4ca4b86a081e96812, type: 3}
+  - {fileID: 21300000, guid: e4592ee5f693e5a4b8fb517099db41c1, type: 3}
+  - {fileID: 21300000, guid: feb255f6d67a88549a70c92bf74a46e4, type: 3}
+  - {fileID: 21300000, guid: 1e7edb074a64d394ab76b53418c2605f, type: 3}
+  - {fileID: 21300000, guid: c9198017522b2a54aa806b2f22e0e1e3, type: 3}
+  - {fileID: 21300000, guid: 8b6531f7e8602104893fef259dc6c6f9, type: 3}
+  - {fileID: 21300000, guid: b0ae84789e6d5844fa2cf187cee5cc01, type: 3}
+  - {fileID: 21300000, guid: fd96f688e020f5b47b9247d737caf8f4, type: 3}
+  - {fileID: 21300000, guid: 44d11c1a129f6e0439adc7bcf89ce8ae, type: 3}
+  - {fileID: 21300000, guid: d8a64d3aa9d6b9c41b941b251edfd543, type: 3}
+  - {fileID: 21300000, guid: 08ae557a5f4d1fd46bc58cadbf3a0357, type: 3}
+  - {fileID: 21300000, guid: 48cf12bcf951c6647bc1c15c3813d19e, type: 3}
+  - {fileID: 21300000, guid: ca2b9b3d4545a6e4c97d106c5b4c0dfe, type: 3}
+  - {fileID: 21300000, guid: 5df91dddb8846054198f46c44c88fec1, type: 3}
+  - {fileID: 21300000, guid: 9238eafd96ddfa945a188714ccd11053, type: 3}
+  - {fileID: 21300000, guid: 2254784e6ffa669439ce3604b80ac0cb, type: 3}
+  - {fileID: 21300000, guid: e86ee0de0458a554cb5a3366179ac4d8, type: 3}
+  - {fileID: 21300000, guid: 80e22afe0eb11aa4a84835e2886305c1, type: 3}
+  - {fileID: 21300000, guid: b79be31fea4d24f4b92cc0d0ff4b898a, type: 3}
+  - {fileID: 21300000, guid: b388f13f4466b784f938eff3a50730bb, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - BramblesMaze_Ground_9
+  - BramblesMaze_Ground_32
+  - BramblesMaze_Ground_21
+  - BramblesMaze_Ground_8
+  - BramblesMaze_Ground_23
+  - BramblesMaze_Ground_6
+  - BramblesMaze_Ground_12
+  - BramblesMaze_Ground_14
+  - BramblesMaze_Ground_1
+  - BramblesMaze_Ground_31
+  - BramblesMaze_Ground_5
+  - BramblesMaze_Ground_18
+  - BramblesMaze_Ground_36
+  - BramblesMaze_Ground
+  - BramblesMaze_Ground_10
+  - BramblesMaze_Ground_26
+  - BramblesMaze_Ground_30
+  - BramblesMaze_Ground_27
+  - BramblesMaze_Ground_13
+  - BramblesMaze_Ground_4
+  - BramblesMaze_Ground_19
+  - BramblesMaze_Ground_7
+  - BramblesMaze_Ground_20
+  - BramblesMaze_Ground_17
+  - BramblesMaze_Ground_34
+  - BramblesMaze_Ground_11
+  - BramblesMaze_Ground_3
+  - BramblesMaze_Ground_24
+  - BramblesMaze_Ground_22
+  - BramblesMaze_Ground_35
+  - BramblesMaze_Ground_33
+  - BramblesMaze_Ground_29
+  - BramblesMaze_Ground_16
+  - BramblesMaze_Ground_28
+  - BramblesMaze_Passability
+  - BramblesMaze_Ground_2
+  - BramblesMaze_Ground_25
+  - BramblesMaze_Ground_15
+  m_Tag: BramblesMaze
+  m_IsVariant: 0

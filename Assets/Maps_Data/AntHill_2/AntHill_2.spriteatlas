@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AntHill_2
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 152f42df2e8edf349be8fae9f504c846, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1e4f80104a7983343a51ed81a8b3a34c, type: 3}
+  - {fileID: 21300000, guid: fd5e3e20bdcd9884ea68cdd7f5b9f326, type: 3}
+  - {fileID: 21300000, guid: 801513505173d514284e59c827b7782f, type: 3}
+  - {fileID: 21300000, guid: e9b3bc31837c2894a9435480a3bc164f, type: 3}
+  - {fileID: 21300000, guid: 11b826c107e7d2e418d3c7ea0b15b328, type: 3}
+  - {fileID: 21300000, guid: 8c1e25d155cdfcf4da1ccf7a3868fac3, type: 3}
+  - {fileID: 21300000, guid: 049332b2ac29b2846a4416880523333f, type: 3}
+  - {fileID: 21300000, guid: 8d9627b279a9b9240afee4f936a3a2b4, type: 3}
+  - {fileID: 21300000, guid: 54ef2cf264a0f1b428feb7fd43d01dfd, type: 3}
+  - {fileID: 21300000, guid: 11efdc33f0282bf48b1bc7c389351ab8, type: 3}
+  - {fileID: 21300000, guid: 762a0163ef64d2e4ebfb309b942209c5, type: 3}
+  - {fileID: 21300000, guid: f443a363b7c1354428de9eed06c16e75, type: 3}
+  - {fileID: 21300000, guid: 7c9332f3ad1a3954d99d7798b15b5cf7, type: 3}
+  - {fileID: 21300000, guid: a5d16e6431e554c4faf185aafb40b293, type: 3}
+  - {fileID: 21300000, guid: 34d67ea46de50b344aa3e2b5c213f477, type: 3}
+  - {fileID: 21300000, guid: 99947825750317148a2389865802a38b, type: 3}
+  - {fileID: 21300000, guid: 3b331f65cebe48c4d93c08eb1bd4dc86, type: 3}
+  - {fileID: 21300000, guid: 4778bf56a7fdb42478344c6c3402a61d, type: 3}
+  - {fileID: 21300000, guid: f2d3e707121c3834ab3148a13e710891, type: 3}
+  - {fileID: 21300000, guid: 4ed3d3275115aa04d91e854482e067c3, type: 3}
+  - {fileID: 21300000, guid: b5ead7885fde7854285d0bfd41679381, type: 3}
+  - {fileID: 21300000, guid: 5fbc84a8438cba04d926af29168a2cde, type: 3}
+  - {fileID: 21300000, guid: 1b58a5d81307f8b468b1376957380fc8, type: 3}
+  - {fileID: 21300000, guid: 384411f8857ac4f4a9b0bf93efa06248, type: 3}
+  - {fileID: 21300000, guid: f09e13b91efc21f4ab1113d0d9564e11, type: 3}
+  - {fileID: 21300000, guid: 617f8ab9f10803f45b24d2f9ec484660, type: 3}
+  - {fileID: 21300000, guid: 38a344c9a354db944b178bcea4db20dc, type: 3}
+  - {fileID: 21300000, guid: 211ed73ab956bd74580dc1485317282e, type: 3}
+  - {fileID: 21300000, guid: 3cd7f28a07c9b8940a55d2236fba1a4c, type: 3}
+  - {fileID: 21300000, guid: 23b372aab4725fb4f969a7d7bd8de04e, type: 3}
+  - {fileID: 21300000, guid: 1f34770bdce7e8c43bae520ed602e024, type: 3}
+  - {fileID: 21300000, guid: 888d3a1b4d07be040ac2646a9d566fd9, type: 3}
+  - {fileID: 21300000, guid: 74d94c2bd3d066f47871d74246bf6645, type: 3}
+  - {fileID: 21300000, guid: 2e77285b5a9f1d448bd535ce5ee1738f, type: 3}
+  - {fileID: 21300000, guid: 8d63f15c9af28c74a918c80a3beae4e9, type: 3}
+  - {fileID: 21300000, guid: bfe759ac9f19ca042a9ba5cc276d6c6e, type: 3}
+  - {fileID: 21300000, guid: a10605dc2deb56b43bdf152bdff40a37, type: 3}
+  - {fileID: 21300000, guid: cb9b990d98f20334ebbc7840ae3ef012, type: 3}
+  - {fileID: 21300000, guid: fdbee4ed7f404874cb5c8bf0b4aeaeaf, type: 3}
+  - {fileID: 21300000, guid: d6fcc43e0afe25a468e2b395e061276d, type: 3}
+  - {fileID: 21300000, guid: a102354e01b0a1e478adad0acbe721cb, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - AntHill_2_Passability
+  - AntHill_2_Ground_20
+  - AntHill_2_Ground_34
+  - AntHill_2_Ground_32
+  - AntHill_2_Ground_29
+  - AntHill_2_Ground_12
+  - AntHill_2_Ground_6
+  - AntHill_2_Ground_27
+  - AntHill_2_Ground
+  - AntHill_2_Ground_7
+  - AntHill_2_Underlay
+  - AntHill_2_Ground_4
+  - AntHill_2_Ground_8
+  - AntHill_2_Ground_1
+  - AntHill_2_Ground_11
+  - AntHill_2_Ground_22
+  - AntHill_2_Ground_33
+  - AntHill_2_Ground_21
+  - AntHill_2_Ground_19
+  - AntHill_2_Ground_25
+  - AntHill_2_Ground_2
+  - AntHill_2_Ground_30
+  - AntHill_2_Ground_5
+  - AntHill_2_Ground_35
+  - AntHill_2_Ground_24
+  - AntHill_2_Ground_31
+  - AntHill_2_Ground_14
+  - AntHill_2_Ground_17
+  - AntHill_2_Ground_9
+  - AntHill_2_Ground_3
+  - AntHill_2_Ground_10
+  - AntQueen_Character
+  - AntHill_2_Ground_16
+  - Candle
+  - AntHill_2_Ground_23
+  - AntHill_2_Ground_36
+  - AntHill_2_Ground_26
+  - AntHill_2_Ground_18
+  - AntHill_2_Ground_15
+  - AntHill_2_Ground_28
+  - AntHill_2_Ground_13
+  m_Tag: AntHill_2
+  m_IsVariant: 0

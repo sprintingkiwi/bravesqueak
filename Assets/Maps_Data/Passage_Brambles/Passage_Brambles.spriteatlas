@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Passage_Brambles
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 45e5336bb4766f049827d127519a823e, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 50db9420693c5d442bac232e8fbf5b58, type: 3}
+  - {fileID: 21300000, guid: aa1d8720581dd344986fd2ed5f07610d, type: 3}
+  - {fileID: 21300000, guid: c77d8c20b6f437341bd2f9248b9658fb, type: 3}
+  - {fileID: 21300000, guid: 81ba76306121a8442930c6ab252905ab, type: 3}
+  - {fileID: 21300000, guid: d41b7e501d6f46e4983e646b9756267a, type: 3}
+  - {fileID: 21300000, guid: ef3cf47002a439f4e9b0aeafa665fe8c, type: 3}
+  - {fileID: 21300000, guid: b93c08901406df44d83b75fed263dbb2, type: 3}
+  - {fileID: 21300000, guid: d4fef9a07433da747972b29a2473d6e8, type: 3}
+  - {fileID: 21300000, guid: 52e15c515382b584fa49b2159b13dd34, type: 3}
+  - {fileID: 21300000, guid: 2d129b3287350aa498b8bb5a3b7ed8ce, type: 3}
+  - {fileID: 21300000, guid: b7b3caa2a30a8e941a89a7572e4df1e4, type: 3}
+  - {fileID: 21300000, guid: 2635b0037674b73439f762c8e02f49b4, type: 3}
+  - {fileID: 21300000, guid: 01933d938c07c5348af2aee2a3aab91e, type: 3}
+  - {fileID: 21300000, guid: e728a8042377b764e9dfa467673e5729, type: 3}
+  - {fileID: 21300000, guid: 17f1052426dcec54f8655d6bffa8c881, type: 3}
+  - {fileID: 21300000, guid: a3d92cc47257f8946895ae3c3ce1cafa, type: 3}
+  - {fileID: 21300000, guid: 156adcf4d80f47d4ea7ec18b23992c15, type: 3}
+  - {fileID: 21300000, guid: 8345dc1536da87a408e61ddccef0f3a8, type: 3}
+  - {fileID: 21300000, guid: d68e5e3556522d8429e4ea30dcc403a6, type: 3}
+  - {fileID: 21300000, guid: 6ba38545d8e914444a0267e74f3f96f1, type: 3}
+  - {fileID: 21300000, guid: 705a6b757a9dbcf469b323ebf0517c60, type: 3}
+  - {fileID: 21300000, guid: d8f9c7b54af4f9749a98d22d8ce3d1aa, type: 3}
+  - {fileID: 21300000, guid: 9fae42c52a224204f8442d883321f406, type: 3}
+  - {fileID: 21300000, guid: 5cdb86c5c18083f4c8b64f732bbeebbd, type: 3}
+  - {fileID: 21300000, guid: 4dbbf5e567a86294bbb3f7f0d1e36df3, type: 3}
+  - {fileID: 21300000, guid: 58d803f51fa302c438d845115e882c4f, type: 3}
+  - {fileID: 21300000, guid: 364536c695dee0f4d9ee777e0202b6d2, type: 3}
+  - {fileID: 21300000, guid: 584fa2e6e01e00b4da8005cf3d4d25bd, type: 3}
+  - {fileID: 21300000, guid: dbd1f3f6175465f4aa0c38330ba35b76, type: 3}
+  - {fileID: 21300000, guid: 1fb76107fc1468946bbe066d659e970b, type: 3}
+  - {fileID: 21300000, guid: 4e503247d3be56147ad0378f871073ad, type: 3}
+  - {fileID: 21300000, guid: 932666572b467d34e807f565c6cb9779, type: 3}
+  - {fileID: 21300000, guid: d4eadf67e7f167546923a4ad5bf20d4c, type: 3}
+  - {fileID: 21300000, guid: eb797497afc095d4da9c6e18fee49ade, type: 3}
+  - {fileID: 21300000, guid: 9a2724d7e5b00da42bc2a529288488f3, type: 3}
+  - {fileID: 21300000, guid: 223cc538c4032bd4799f7ec66f01db8d, type: 3}
+  - {fileID: 21300000, guid: 9e0ae648defde8d408c1e749b0c8507b, type: 3}
+  - {fileID: 21300000, guid: 18d83a587a5cc81408419e544b4e71cd, type: 3}
+  - {fileID: 21300000, guid: 6db9b388e610f1c459fa5f97d4466365, type: 3}
+  - {fileID: 21300000, guid: 759966d8d908e9940aeb493b249de212, type: 3}
+  - {fileID: 21300000, guid: 6707bf091817aad4e8a197ebe9dcf85a, type: 3}
+  - {fileID: 21300000, guid: 4da67a293e297ab4eb2cd16f44dba680, type: 3}
+  - {fileID: 21300000, guid: 92c57179e4894734fb9f9c85afd1357e, type: 3}
+  - {fileID: 21300000, guid: d7c129794f5c3d749b13cd138cc82ff1, type: 3}
+  - {fileID: 21300000, guid: 3d0709b9a607e4249bf9f7526e7c8e5a, type: 3}
+  - {fileID: 21300000, guid: fcee95d9a92c018438f87dd2119fe768, type: 3}
+  - {fileID: 21300000, guid: 9397425a1290d99448789b8f34161fa5, type: 3}
+  - {fileID: 21300000, guid: a6612e6aad798644785d6fce7c27d827, type: 3}
+  - {fileID: 21300000, guid: 1dd2c27ac4741714a8a4cb936e05c3ad, type: 3}
+  - {fileID: 21300000, guid: 4a7bc0aa7a634a847b7e2076e7dc915b, type: 3}
+  - {fileID: 21300000, guid: 819625aa8a163c343a0f7440ae37cd63, type: 3}
+  - {fileID: 21300000, guid: a1fe42ea6c7dd0b4fb3c3182a665ddf3, type: 3}
+  - {fileID: 21300000, guid: 969692eaeb0130b4abe6e585d7bf9122, type: 3}
+  - {fileID: 21300000, guid: 003081faccfc8a140b57381a212d667c, type: 3}
+  - {fileID: 21300000, guid: 3afd83fa1b994294d9f8e820406e9b39, type: 3}
+  - {fileID: 21300000, guid: 203e6afa84599ad4ea8d70650eb4a7ff, type: 3}
+  - {fileID: 21300000, guid: 3f452cfa1029c574cb2b8da5a2a64e60, type: 3}
+  - {fileID: 21300000, guid: a223fd1b9dfa04945b5384d2169871ff, type: 3}
+  - {fileID: 21300000, guid: 917ed92bdba45084fa2cf5a3fac9c220, type: 3}
+  - {fileID: 21300000, guid: 9accd34b74ce8ae4d9ae549c1d73c262, type: 3}
+  - {fileID: 21300000, guid: d7b8737b6b8e1314d93cc7d9de925fb3, type: 3}
+  - {fileID: 21300000, guid: 1a83da9b5f405694a91228cdb84e0728, type: 3}
+  - {fileID: 21300000, guid: f563f1abda5a71c4e9d50d8361727640, type: 3}
+  - {fileID: 21300000, guid: 37438b0c3e982884784009572c95c624, type: 3}
+  - {fileID: 21300000, guid: 209b703c34ab3ee4b9069dbc68e4aa27, type: 3}
+  - {fileID: 21300000, guid: 7239a23c560b0d241b36ce78b943fc98, type: 3}
+  - {fileID: 21300000, guid: 07ac153c75073cb43a16334eea35fe35, type: 3}
+  - {fileID: 21300000, guid: da47714cfe96b094eaea15d78199f9c3, type: 3}
+  - {fileID: 21300000, guid: 135f5b5cf2750ea4e88341cf1b5b7414, type: 3}
+  - {fileID: 21300000, guid: f77b3e5c953d73f42a22ef0f45924465, type: 3}
+  - {fileID: 21300000, guid: b9c493acd3138a24e9afb88bfd4aed0f, type: 3}
+  - {fileID: 21300000, guid: c0807fccdbfee73439a4098adb446eb4, type: 3}
+  - {fileID: 21300000, guid: 681dd8fcdf9a612478a460d836056f54, type: 3}
+  - {fileID: 21300000, guid: a663481da9c54e74cae7f8929d09f63d, type: 3}
+  - {fileID: 21300000, guid: f8c6d82d6c00bac4baefa1de4d509325, type: 3}
+  - {fileID: 21300000, guid: c8173a4daa93c384ea4ebd5b429805da, type: 3}
+  - {fileID: 21300000, guid: 0a80a07dda498f245a41272beb5bfc0c, type: 3}
+  - {fileID: 21300000, guid: d64d417d8ca437349a7ac81f44be5780, type: 3}
+  - {fileID: 21300000, guid: 84b4e5ad661b829438fddd04f83d6a67, type: 3}
+  - {fileID: 21300000, guid: 5eb642bd4d51dd54fb940982953ceccb, type: 3}
+  - {fileID: 21300000, guid: a98ee3cd06f512042b4ed2cc658b3987, type: 3}
+  - {fileID: 21300000, guid: e738ebed5457af1418bb56777580175b, type: 3}
+  - {fileID: 21300000, guid: c051a8fd8ceb2bd46b7eb8c68c72fdaf, type: 3}
+  - {fileID: 21300000, guid: 0c79383e3d0e3aa45893fd919d92f254, type: 3}
+  - {fileID: 21300000, guid: 94026a6eb8e4927488738457306f6cba, type: 3}
+  - {fileID: 21300000, guid: d95e6e8e2f58a4e479c003443f19531a, type: 3}
+  - {fileID: 21300000, guid: e0bf439e8786fc54c8e0b01f0c68cd99, type: 3}
+  - {fileID: 21300000, guid: 5deaaade5f1971149811f628d0cab839, type: 3}
+  - {fileID: 21300000, guid: 2efe41feded6a4a4fa460044142582ac, type: 3}
+  - {fileID: 21300000, guid: 40f619fe7c96a774098acb24e5fcb318, type: 3}
+  - {fileID: 21300000, guid: 3cc47e3f7c7b06844b637656227fdc18, type: 3}
+  - {fileID: 21300000, guid: 58ccfe5ff380fa240b8d1270c0dd8e53, type: 3}
+  - {fileID: 21300000, guid: 03e8497f7f0471546950844945e7804e, type: 3}
+  - {fileID: 21300000, guid: 06d176af263e74b4b8fb5d8cc5589946, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Passage_Brambles_Ground_29
+  - Passage_Brambles_Overlay_29
+  - Passage_Brambles_Ground_15
+  - Passage_Brambles_Ground_1
+  - Passage_Brambles_Ground_20
+  - Passage_Brambles_Overlay_12
+  - Passage_Brambles_Overlay_30
+  - Passage_Brambles_Overlay_5
+  - Passage_Brambles_Overlay_18
+  - Passage_Brambles_Ground_11
+  - Passage_Brambles_Overlay_19
+  - Passage_Brambles_LightEffect_10002
+  - Passage_Brambles_Ground_6
+  - Passage_Brambles_LightEffect_10009
+  - Passage_Brambles_Overlay_26
+  - Passage_Brambles_Overlay_32
+  - Passage_Brambles_Overlay_10
+  - Passage_Brambles_Overlay_4
+  - Passage_Brambles_LightEffect_20001
+  - Passage_Brambles_Ground_9
+  - Passage_Brambles_Ground_10
+  - Passage_Brambles_Overlay_36
+  - Passage_Brambles_Ground_4
+  - Passage_Brambles_LightEffect_10000
+  - Passage_Brambles_Ground_16
+  - Passage_Brambles_Ground_22
+  - Passage_Brambles_Overlay_22
+  - Passage_Brambles_Overlay_28
+  - Passage_Brambles_LightEffect_20004
+  - Passage_Brambles_Ground_8
+  - Passage_Brambles_Overlay_21
+  - Passage_Brambles_Ground_7
+  - Passage_Brambles_Ground_27
+  - Passage_Brambles_Overlay_13
+  - Passage_Brambles_Ground_33
+  - Passage_Brambles_Overlay_11
+  - Passage_Brambles_LightEffect_10006
+  - Passage_Brambles_Overlay_31
+  - Passage_Brambles_Overlay_35
+  - Passage_Brambles_Overlay_16
+  - Passage_Brambles_Overlay_8
+  - Passage_Brambles_Ground_36
+  - Passage_Brambles_Overlay_27
+  - Passage_Brambles_Ground_17
+  - Passage_Brambles_Ground_18
+  - Passage_Brambles_Passability
+  - Passage_Brambles_Overlay_1
+  - Passage_Brambles_Ground_12
+  - Passage_Brambles_Ground_24
+  - Passage_Brambles_LightEffect_10004
+  - Passage_Brambles_LightEffect_10001
+  - Passage_Brambles_LightEffect_10007
+  - Passage_Brambles_Ground_2
+  - Passage_Brambles_Overlay_3
+  - Passage_Brambles_Ground_14
+  - Passage_Brambles_Overlay_15
+  - Passage_Brambles_Overlay_23
+  - Passage_Brambles_Ground_13
+  - Passage_Brambles_LightEffect_20002
+  - Passage_Brambles_Ground_26
+  - Passage_Brambles_Overlay_6
+  - Passage_Brambles_Overlay_20
+  - Passage_Brambles_Ground_31
+  - Passage_Brambles_LightEffect_20009
+  - Passage_Brambles_LightEffect_10003
+  - Passage_Brambles_LightEffect_20005
+  - Passage_Brambles_Ground_32
+  - Passage_Brambles_Overlay_14
+  - Passage_Brambles_Ground
+  - Passage_Brambles_LightEffect_20000
+  - Passage_Brambles_Overlay_34
+  - Passage_Brambles_Ground_19
+  - Passage_Brambles_LightEffect_20007
+  - Passage_Brambles_Ground_5
+  - Passage_Brambles_Overlay_9
+  - Passage_Brambles_LightEffect_10005
+  - Passage_Brambles_Ground_30
+  - Passage_Brambles_Overlay_2
+  - Passage_Brambles_Overlay_33
+  - Passage_Brambles_Ground_35
+  - Passage_Brambles_Overlay_17
+  - Passage_Brambles_Overlay_25
+  - Passage_Brambles_LightEffect_20008
+  - Passage_Brambles_LightEffect_20006
+  - Passage_Brambles_Ground_21
+  - Passage_Brambles_LightEffect_20003
+  - Passage_Brambles_LightEffect_10008
+  - Passage_Brambles_Overlay_7
+  - Passage_Brambles_Ground_25
+  - Passage_Brambles_Ground_23
+  - Passage_Brambles_Overlay_24
+  - Passage_Brambles_Ground_34
+  - Passage_Brambles_Ground_28
+  - Passage_Brambles_Ground_3
+  m_Tag: Passage_Brambles
+  m_IsVariant: 0

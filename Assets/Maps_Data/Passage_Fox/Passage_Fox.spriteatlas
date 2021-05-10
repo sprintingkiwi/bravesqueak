@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Passage_Fox
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: cee10d9f5333f734ab098b0349bbfe2c, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 546e9170b25f9cc47a3b897bad3ff1aa, type: 3}
+  - {fileID: 21300000, guid: 64dcfe70a338a424b962c30bc96d6ce8, type: 3}
+  - {fileID: 21300000, guid: 54c63090795a3034abad5ccd4629e434, type: 3}
+  - {fileID: 21300000, guid: aac06f61b33f0ad4a89621c7220a40ff, type: 3}
+  - {fileID: 21300000, guid: 9d755591d4ecbae4a961c807bb25a017, type: 3}
+  - {fileID: 21300000, guid: 982c25a1150d43143b9bd194debae4bf, type: 3}
+  - {fileID: 21300000, guid: 3e3fadc1bda82ba418f6b10492644c22, type: 3}
+  - {fileID: 21300000, guid: d2553ae1914ceb94483cd24b13cad8b5, type: 3}
+  - {fileID: 21300000, guid: 1c6bcd328f610974da188670c04769f8, type: 3}
+  - {fileID: 21300000, guid: eee10862429fb434699359e28c08884e, type: 3}
+  - {fileID: 21300000, guid: 688e957236d15a14baeb7447a601943d, type: 3}
+  - {fileID: 21300000, guid: b6500da21ef14b64183b7c040dc2e534, type: 3}
+  - {fileID: 21300000, guid: f60f75c2a855c9a4381bdee084514ef1, type: 3}
+  - {fileID: 21300000, guid: 3615bae2f2c3ec1449944d581117edcc, type: 3}
+  - {fileID: 21300000, guid: c3072613638b8e249a253bd0c5e08428, type: 3}
+  - {fileID: 21300000, guid: 9ee1a9b33bc4fd4499ccf937858c6f1a, type: 3}
+  - {fileID: 21300000, guid: ae1ba4e3185886c4a9d2cdadaea12c77, type: 3}
+  - {fileID: 21300000, guid: ae7a5cf3e5b055444a3584d2213c7e55, type: 3}
+  - {fileID: 21300000, guid: c0a663648d684b745833e1294675f811, type: 3}
+  - {fileID: 21300000, guid: 495ff574a2d8cb7459f89020f9872c82, type: 3}
+  - {fileID: 21300000, guid: 64cd7a7413eb2494289fb7091a9f1139, type: 3}
+  - {fileID: 21300000, guid: ec56f1947d6e84f4eae6daa7d7562541, type: 3}
+  - {fileID: 21300000, guid: 8ab91d94ea8188144ac2610610bae4f3, type: 3}
+  - {fileID: 21300000, guid: ffb1d9a49b6d0264a9ce97ea24049504, type: 3}
+  - {fileID: 21300000, guid: f5d816b461a1b2c4193dae24483a66e7, type: 3}
+  - {fileID: 21300000, guid: d997edd43268d114d9d492812e3d372d, type: 3}
+  - {fileID: 21300000, guid: cfeda8f47d64b5a42a063adab0cc05fe, type: 3}
+  - {fileID: 21300000, guid: 57bd8605e17bc3048abdf5dd8c358515, type: 3}
+  - {fileID: 21300000, guid: 377cb325d0a415b44a456a30e56b05c5, type: 3}
+  - {fileID: 21300000, guid: dfd348754b9021c499b3c494b500d24f, type: 3}
+  - {fileID: 21300000, guid: 46f663856a439e247adae5fb7afa4355, type: 3}
+  - {fileID: 21300000, guid: 0da8c78589611e241952a3a6955b48be, type: 3}
+  - {fileID: 21300000, guid: 721214959b52e7147add09d0d8baaf39, type: 3}
+  - {fileID: 21300000, guid: 5772e286d4295374a8dab09bf0021568, type: 3}
+  - {fileID: 21300000, guid: 833399862380de2469ecadb03efdf837, type: 3}
+  - {fileID: 21300000, guid: 66241bd625930f94a8b80481dcb3d674, type: 3}
+  - {fileID: 21300000, guid: 319f24a72357ab746b9541b113ca4233, type: 3}
+  - {fileID: 21300000, guid: 22266ec735b267d468fac6bbc626ca9c, type: 3}
+  - {fileID: 21300000, guid: c68b01f70f17da6478bea781e3798bd8, type: 3}
+  - {fileID: 21300000, guid: 26d746f737831b04ea30a19154bbed1a, type: 3}
+  - {fileID: 21300000, guid: f652080815415e049b0409f85f980d02, type: 3}
+  - {fileID: 21300000, guid: e4419c28b14319949b4e28ec4fd12ace, type: 3}
+  - {fileID: 21300000, guid: f29acf388b07d914aab25d1c9cd172e7, type: 3}
+  - {fileID: 21300000, guid: 4ec2c9487275bc347917ce050d013a98, type: 3}
+  - {fileID: 21300000, guid: a730f08827a247641a87c387cc06c23d, type: 3}
+  - {fileID: 21300000, guid: adf15c88e62beb74ab6211d48c518c82, type: 3}
+  - {fileID: 21300000, guid: 409664c8368307f4c8bb59c5cc07bd6c, type: 3}
+  - {fileID: 21300000, guid: f96ec7e8cec2e694fa27077cb8e8b0cb, type: 3}
+  - {fileID: 21300000, guid: 15542a393db677b47af931e67de349c3, type: 3}
+  - {fileID: 21300000, guid: 20c46e6958e548748b1745684894ef11, type: 3}
+  - {fileID: 21300000, guid: 5bbabfa994db03f448458e413b9f3da4, type: 3}
+  - {fileID: 21300000, guid: 421495e9ba71c2d41b30d865a7f051e6, type: 3}
+  - {fileID: 21300000, guid: 2b106af9fcaaf2848b42b9c9d75f4c61, type: 3}
+  - {fileID: 21300000, guid: 3497239a1b364454c8e556d95fff3273, type: 3}
+  - {fileID: 21300000, guid: a20402ba2da8dfc4ca4b99fd47a32872, type: 3}
+  - {fileID: 21300000, guid: 4095363bdd6b60645905bdad102647b6, type: 3}
+  - {fileID: 21300000, guid: e64ef76b3f8f2584aa6efbe331be9777, type: 3}
+  - {fileID: 21300000, guid: 35f9277bf9c8bbf499a48df440d84949, type: 3}
+  - {fileID: 21300000, guid: b89c04db25581cf4089b219332adfebb, type: 3}
+  - {fileID: 21300000, guid: 55ed90fb977a78a45a89fe0d2cd52f06, type: 3}
+  - {fileID: 21300000, guid: a2b70a2caa7e02446a15ae7bc5f15388, type: 3}
+  - {fileID: 21300000, guid: 1278cdbcc6cddcd4fac13fc8d7472c86, type: 3}
+  - {fileID: 21300000, guid: dc69883edcb205a4f9440595a7217f88, type: 3}
+  - {fileID: 21300000, guid: f37de47e68dc6ce4bb4611b1764d8705, type: 3}
+  - {fileID: 21300000, guid: f4531e7ede8d42a4785dda0f5fed381d, type: 3}
+  - {fileID: 21300000, guid: 7b0ff78ee9e45b545a682ee544912468, type: 3}
+  - {fileID: 21300000, guid: 6cdd3aae14b190e44bd7bc2e06ebc123, type: 3}
+  - {fileID: 21300000, guid: 61da63debd86b2a47a19e6c264a93eac, type: 3}
+  - {fileID: 21300000, guid: 0f1518eea820f7d4691b0b7d30d00a80, type: 3}
+  - {fileID: 21300000, guid: 15fcb40f78f081943b9bee4eef9500ef, type: 3}
+  - {fileID: 21300000, guid: 32f9cf0fd428c4b408a304ea2266b6ed, type: 3}
+  - {fileID: 21300000, guid: 0e8d371f049e6cb40bed81db4c1f399d, type: 3}
+  - {fileID: 21300000, guid: 36391a3fefe5a1243a3c5c14c0722ee0, type: 3}
+  - {fileID: 21300000, guid: a86d329f49e81434ba06c53c317ca26f, type: 3}
+  - {fileID: 21300000, guid: d7ce4caf324a2da49a5ac8553a030793, type: 3}
+  - {fileID: 21300000, guid: d65210bfb7c04924d83310bbd92d932b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Passage_Fox_Overlay_30
+  - Passage_Fox_Overlay_21
+  - Passage_Fox_Ground_13
+  - Passage_Fox_Ground_30
+  - Passage_Fox_Overlay_25
+  - Passage_Fox_Overlay_19
+  - Passage_Fox_Overlay_15
+  - Passage_Fox_Ground_36
+  - Passage_Fox_Overlay_17
+  - Passage_Fox_Ground_9
+  - Passage_Fox_Ground_11
+  - Passage_Fox_Overlay_26
+  - Passage_Fox_Overlay_34
+  - Passage_Fox_Ground_14
+  - Passage_Fox_Ground_8
+  - Passage_Fox_Ground_17
+  - Passage_Fox_Overlay_33
+  - Passage_Fox_Ground_15
+  - Passage_Fox_Overlay_23
+  - Passage_Fox_Ground_6
+  - Passage_Fox_Ground_1
+  - Passage_Fox_Ground_28
+  - Passage_Fox_Ground_5
+  - Passage_Fox_Ground_20
+  - Passage_Fox_Overlay_9
+  - Passage_Fox_Overlay_1
+  - Passage_Fox_Ground_19
+  - Passage_Fox_Ground_21
+  - Passage_Fox_Overlay_16
+  - Passage_Fox_Overlay_13
+  - Passage_Fox_Ground_27
+  - Passage_Fox_Overlay_10
+  - Passage_Fox_Ground_22
+  - Passage_Fox_Ground_4
+  - Passage_Fox_Overlay_27
+  - Passage_Fox_Overlay_18
+  - Passage_Fox_Ground_12
+  - Passage_Fox_Overlay_31
+  - Passage_Fox_Overlay_35
+  - Passage_Fox_Overlay_29
+  - Passage_Fox_Overlay_36
+  - Passage_Fox_Overlay_24
+  - Passage_Fox_Ground
+  - Passage_Fox_Light
+  - Passage_Fox_Overlay_11
+  - Passage_Fox_Ground_25
+  - Passage_Fox_Ground_35
+  - Passage_Fox_Ground_16
+  - Passage_Fox_Overlay_2
+  - Passage_Fox_Overlay_8
+  - Passage_Fox_Overlay_22
+  - Passage_Fox_Ground_10
+  - Passage_Fox_Ground_24
+  - Passage_Fox_Passability
+  - Passage_Fox_Ground_31
+  - Passage_Fox_Ground_34
+  - Passage_Fox_Overlay
+  - Passage_Fox_Overlay_28
+  - Passage_Fox_Overlay_5
+  - Passage_Fox_Overlay_4
+  - Passage_Fox_Overlay_7
+  - Passage_Fox_Overlay_20
+  - Passage_Fox_Overlay_3
+  - Passage_Fox_Ground_3
+  - Passage_Fox_Ground_7
+  - Passage_Fox_Ground_33
+  - Passage_Fox_Ground_23
+  - Passage_Fox_Ground_2
+  - Passage_Fox_Overlay_12
+  - Passage_Fox_Ground_18
+  - Passage_Fox_Ground_29
+  - Passage_Fox_Ground_32
+  - Passage_Fox_Ground_26
+  - Passage_Fox_Overlay_6
+  - Passage_Fox_Overlay_32
+  - Passage_Fox_Overlay_14
+  m_Tag: Passage_Fox
+  m_IsVariant: 0
