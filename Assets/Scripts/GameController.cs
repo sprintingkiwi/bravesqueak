@@ -286,7 +286,7 @@ public class GameController : MonoBehaviour
 
             // Battle Tips
             if (encounter.type != Encounter.Type.Boss)
-                yield return StartCoroutine(ShowBattleTip(3));
+                yield return StartCoroutine(ShowBattleTip(-1));
             else
                 Jrpg.Log("Congrats! You defeated a Boss!");
 
