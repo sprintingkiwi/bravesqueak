@@ -40,9 +40,9 @@ public class BattlerHUD : MonoBehaviour
         SPPlus.gameObject.SetActive(false);
 
         // Show HUD only for common encounters
-        if (!GameController.instance.showDebugInfo)
+        if (!GameController.Instance.showDebugInfo)
         {
-            Encounter encounter = GameController.instance.battleStuff.GetComponentInChildren<BattleController>().encounter;
+            Encounter encounter = GameController.Instance.battleStuff.GetComponentInChildren<BattleController>().encounter;
             if (owner.faction == Battler.Faction.Enemies)
                 if (encounter.type == Encounter.Type.Boss || encounter.type == Encounter.Type.Miniboss)
                     hide = true;

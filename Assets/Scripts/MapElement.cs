@@ -11,7 +11,7 @@ public class MapElement : JrpgBehaviour
     public virtual void Start ()
     {
         spr = gameObject.GetComponent<SpriteRenderer>();
-        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
     // Update is called once per frame

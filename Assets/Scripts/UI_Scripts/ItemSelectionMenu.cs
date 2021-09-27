@@ -33,7 +33,7 @@ public class ItemSelectionMenu : Menu
             case "Skill":
                 // Creating a list of available skills
                 Jrpg.Log("Available Skills:");
-                foreach (Skill s in GameController.instance.unlockedSkills)
+                foreach (Skill s in GameController.Instance.unlockedSkills)
                     if (!hero.skills.Contains(s) && s != null)
                     {
                         Jrpg.Log(s.name);
@@ -45,14 +45,14 @@ public class ItemSelectionMenu : Menu
 
             case "Perk":
                 // Creating a list of available perks                
-                foreach (Perk p in GameController.instance.unlockedPerks)
+                foreach (Perk p in GameController.Instance.unlockedPerks)
                     if (p != null)
                     {
                         availableItems.Add(p);
                     }
 
                 // Removing Perks held by other heroes
-                foreach (HeroBattler hb in GameController.instance.heroes)
+                foreach (HeroBattler hb in GameController.Instance.heroes)
                     foreach (Item av in availableItems.ToArray())
                         if (hb.perks.Contains(av))
                             availableItems.Remove(av);                
@@ -139,12 +139,12 @@ public class ItemSelectionMenu : Menu
             {
                 case "Skill":
                     Jrpg.Log(activeItem.name + " skill selected at slot " + itemSlot, "Visible");
-                    GameController.instance.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].skills[itemSlot] = (Skill)activeItem;
+                    GameController.Instance.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].skills[itemSlot] = (Skill)activeItem;
                     break;
 
                 case "Perk":
                     Jrpg.Log(activeItem.name + " perk selected at slot " + itemSlot, "Visible");
-                    GameController.instance.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].perks[itemSlot] = (Perk)activeItem;
+                    GameController.Instance.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].perks[itemSlot] = (Perk)activeItem;
                     break;
             }
             father.gameObject.SetActive(true);

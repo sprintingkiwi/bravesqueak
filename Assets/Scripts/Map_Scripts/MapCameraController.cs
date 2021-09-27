@@ -23,7 +23,7 @@ public class MapCameraController : BattleCameraController
 
     public void Setup()
     {
-        spriteBounds = GameController.instance.currentMap.cameraBoundary;
+        spriteBounds = GameController.Instance.currentMap.cameraBoundary;
         float vertExtent = gameObject.GetComponent<Camera>().orthographicSize;
         float horzExtent = vertExtent * Screen.width / Screen.height;
         leftBound = spriteBounds.transform.position.x + (horzExtent - spriteBounds.sprite.bounds.size.x / 2.0f);

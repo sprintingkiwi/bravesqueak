@@ -86,13 +86,13 @@ public class GameController : MonoBehaviour
     }
 
     // Persistence
-    public static GameController instance;
+    public static GameController Instance;
     void Awake()
     {
         // Persistence
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -286,20 +286,9 @@ public class GameController : MonoBehaviour
 
             // Battle Tips
             if (encounter.type != Encounter.Type.Boss)
-            {
-                Jrpg.Log("Defeated common enemy or miniboss, now showing battle tip");
-                UnityEngine.Object[] tips = Resources.LoadAll("BattleTips", typeof(GameObject));
-                GameObject tip = Instantiate(tips[UnityEngine.Random.Range(0, tips.Length)] as GameObject, battleStuff.transform.Find("Battle Camera"));
-                yield return Jrpg.Fade(GameObject.Find("Intro"), 0, speed: 0.2f);
-                while (!Input.anyKeyDown && !(Input.touchCount > 0))
-                    yield return null;
-                yield return Jrpg.Fade(GameObject.Find("Intro"), 1, speed: 0.2f);
-                Destroy(tip);
-            }
+                yield return StartCoroutine(ShowBattleTip(3));
             else
-            {
                 Jrpg.Log("Congrats! You defeated a Boss!");
-            }            
 
             // Music Change
             music.clip = currentMap.soundtrack;
@@ -382,6 +371,22 @@ public class GameController : MonoBehaviour
             player.canMove = true;
             yield return StartCoroutine(Load(currentSaveSlot));
         }        
+    }
+
+    public IEnumerator ShowBattleTip(int tipID = 0)
+    {
+        Jrpg.Log("Defeated common enemy or miniboss, now showing battle tip");
+        UnityEngine.Object[] tips = Resources.LoadAll("BattleTips", typeof(GameObject));
+        GameObject tip;
+        if (tipID == -1)
+            tip = Instantiate(tips[UnityEngine.Random.Range(0, tips.Length)] as GameObject, battleStuff.transform.Find("Battle Camera"));
+        else
+            tip = Instantiate(tips[tipID] as GameObject, battleStuff.transform.Find("Battle Camera"));
+        yield return Jrpg.Fade(GameObject.Find("Intro"), 0, speed: 0.2f);
+        while (!Input.anyKeyDown && !(Input.touchCount > 0))
+            yield return null;
+        yield return Jrpg.Fade(GameObject.Find("Intro"), 1, speed: 0.2f);
+        Destroy(tip);
     }
 
     public IEnumerator Save(int slot)

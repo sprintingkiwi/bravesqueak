@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
     public virtual void Setup ()
     {
         Jrpg.Log("Starting menu: " + name);
-        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
         InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
     }
 	
@@ -31,7 +31,7 @@ public class Menu : MonoBehaviour
             if (t.name.Contains(name))
                 Destroy(t.gameObject);
 
-        GameController.instance.currentMap.gameObject.SetActive(true);
+        GameController.Instance.currentMap.gameObject.SetActive(true);
         if (subMenus.Count == 0)
         {
             if (father != null)

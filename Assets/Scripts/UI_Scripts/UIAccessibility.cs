@@ -16,7 +16,7 @@ public class UIAccessibility : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lastFont != GameController.instance.activeFont)
-            gameObject.GetComponent<Text>().font = GameController.instance.activeFont;
+        if (lastFont != GameController.Instance.activeFont)
+            gameObject.GetComponent<Text>().font = GameController.Instance.activeFont;
     }
 }

@@ -142,7 +142,7 @@ public class Jrpg : MonoBehaviour
     public static Coroutine Fade(GameObject target, float alpha = 1, float speed = 1, bool destroyAfter = false)
     {
         //ps.fadingCoroutinesCount += 1;
-        return GameController.instance.Fade(target, alpha, speed, destroyAfter);
+        return GameController.Instance.Fade(target, alpha, speed, destroyAfter);
     }
 
     public static IEnumerator TextFade(GameObject target, float speed = 1f, float min = 0, float max = 1, bool destroyAfter = false)
@@ -170,7 +170,7 @@ public class Jrpg : MonoBehaviour
         async.allowSceneActivation = false;
                
         // Wait for the game to finish saving, just in case...
-        while (GameController.instance.isSaving)
+        while (GameController.Instance.isSaving)
         {
             yield return null;
         }
@@ -186,7 +186,7 @@ public class Jrpg : MonoBehaviour
 
         while (async.progress < 0.9f)
             yield return null;
-        yield return GameController.instance.StartCoroutine(GameController.instance.SetVolume(0));
+        yield return GameController.Instance.StartCoroutine(GameController.Instance.SetVolume(0));
 
         async.allowSceneActivation = true;
         while (!async.isDone)
@@ -380,93 +380,93 @@ public class Jrpg : MonoBehaviour
 
     public static void SetupHeroesSelection(HeroBattler[] availables, int selectables, HeroBattler[] alreadySelected = null, bool forceSelectMaximum = false, string title="")
     {
-        GameController.instance.currentSelectionMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, GameController.instance.mapCamera.transform).GetComponent<PartyMenu>();
-        GameController.instance.currentSelectionMenu.forceSelectMaximum = forceSelectMaximum;
-        GameController.instance.currentSelectionMenu.Setup();
-        GameController.instance.currentSelectionMenu.SelectionSetup(availables, selectables, alreadySelected, title);
+        GameController.Instance.currentSelectionMenu = Instantiate(Resources.Load("Menu/PartyMenu") as GameObject, GameController.Instance.mapCamera.transform).GetComponent<PartyMenu>();
+        GameController.Instance.currentSelectionMenu.forceSelectMaximum = forceSelectMaximum;
+        GameController.Instance.currentSelectionMenu.Setup();
+        GameController.Instance.currentSelectionMenu.SelectionSetup(availables, selectables, alreadySelected, title);
     }
 
     public static IEnumerator HeroesSelection(HeroBattler[] availables, int selectables, Action callback, HeroBattler[] alreadySelected=null, bool forceSelectMaximum=false, string title="")
     {
-        if (GameController.instance.currentSelectionMenu != null)
+        if (GameController.Instance.currentSelectionMenu != null)
             yield break;
 
         // Freeze player
-        if (GameController.instance.player != null)
-            GameController.instance.player.canMove = false;
+        if (GameController.Instance.player != null)
+            GameController.Instance.player.canMove = false;
 
         // Clear cache list for selected heroes
-        GameController.instance.selectionCache.Clear();
+        GameController.Instance.selectionCache.Clear();
 
         // Create selection menu
         SetupHeroesSelection(availables, selectables, alreadySelected, forceSelectMaximum, title);        
 
         // Wait for player to select heroes
-        while (GameController.instance.currentSelectionMenu != null)
+        while (GameController.Instance.currentSelectionMenu != null)
             yield return null;
 
         // Execute callback function after selection ended
         callback();
 
         // Unfreeze player
-        if (GameController.instance.player != null)
-            GameController.instance.player.canMove = true;
+        if (GameController.Instance.player != null)
+            GameController.Instance.player.canMove = true;
         yield return null;
     }
 
     // Callback to update party with selection cache
     public static void PartySelectionCallback()
     {
-        GameController.instance.partyPrefabs.Clear();
-        foreach (HeroBattler b in GameController.instance.selectionCache)
+        GameController.Instance.partyPrefabs.Clear();
+        foreach (HeroBattler b in GameController.Instance.selectionCache)
         {
-            GameController.instance.partyPrefabs.Add(b);
+            GameController.Instance.partyPrefabs.Add(b);
         }
 
         // Check if at least 3 else add random
-        int count = GameController.instance.partyPrefabs.Count;
+        int count = GameController.Instance.partyPrefabs.Count;
         while (count < 3)
         {
             //foreach (HeroBattler h in GameController.instance.unlockedHeroes)
-            HeroBattler h = GameController.instance.unlockedHeroes[UnityEngine.Random.Range(0, GameController.instance.unlockedHeroes.Length)];
-            if (!GameController.instance.partyPrefabs.Contains(h))
-                GameController.instance.partyPrefabs.Add(h);
-            count = GameController.instance.partyPrefabs.Count;
+            HeroBattler h = GameController.Instance.unlockedHeroes[UnityEngine.Random.Range(0, GameController.Instance.unlockedHeroes.Length)];
+            if (!GameController.Instance.partyPrefabs.Contains(h))
+                GameController.Instance.partyPrefabs.Add(h);
+            count = GameController.Instance.partyPrefabs.Count;
         }
     }
 
     public static void StartSelectionCallback()
     {
         // Check if at least 3 else add random
-        int count = GameController.instance.selectionCache.Count;
+        int count = GameController.Instance.selectionCache.Count;
         while (count < 3)
         {
             Log("Selecting random starters");
-            HeroBattler h = GameController.instance.heroes[UnityEngine.Random.Range(0, GameController.instance.heroes.Length - 1)];
-            if (!GameController.instance.selectionCache.Contains(h))
+            HeroBattler h = GameController.Instance.heroes[UnityEngine.Random.Range(0, GameController.Instance.heroes.Length - 1)];
+            if (!GameController.Instance.selectionCache.Contains(h))
             {
-                GameController.instance.selectionCache.Add(h);
+                GameController.Instance.selectionCache.Add(h);
                 Log("Automatically added " + h.name);
             }
-            count = GameController.instance.selectionCache.Count;
+            count = GameController.Instance.selectionCache.Count;
         }
         
         // Adding to party
-        GameController.instance.partyPrefabs.Clear();
-        foreach (HeroBattler b in GameController.instance.selectionCache)
+        GameController.Instance.partyPrefabs.Clear();
+        foreach (HeroBattler b in GameController.Instance.selectionCache)
         {
-            GameController.instance.partyPrefabs.Add(b);
+            GameController.Instance.partyPrefabs.Add(b);
         }
 
         // Only at start, set unlocked heroes to starting heroes
-        GameController.instance.unlockedHeroes = GameController.instance.selectionCache.ToArray();
+        GameController.Instance.unlockedHeroes = GameController.Instance.selectionCache.ToArray();
 
         Log("Done selecting starting characters");
     }
 
     public static void NewHeroCallback()
     {
-        GameController.instance.unlockedHeroes = GameController.instance.unlockedHeroes.Concat(GameController.instance.selectionCache).ToArray();
+        GameController.Instance.unlockedHeroes = GameController.Instance.unlockedHeroes.Concat(GameController.Instance.selectionCache).ToArray();
         Log("Done adding new hero");
     }
 

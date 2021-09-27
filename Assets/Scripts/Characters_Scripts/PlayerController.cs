@@ -61,16 +61,16 @@ public class PlayerController : Character
         // Party Menu
         if (Input.GetButtonDown("ButtonB"))
         {
-            if (GameController.instance.situation != "Map")
+            if (GameController.Instance.situation != "Map")
                 return;
 
-            GameController.instance.currentMap.gameObject.SetActive(false);
+            GameController.Instance.currentMap.gameObject.SetActive(false);
 
-            StartCoroutine(Jrpg.HeroesSelection(GameController.instance.unlockedHeroes, 3, Jrpg.PartySelectionCallback, GameController.instance.partyPrefabs.ToArray(), title:"CHOOSE YUOR HEROES"));
+            StartCoroutine(Jrpg.HeroesSelection(GameController.Instance.unlockedHeroes, 3, Jrpg.PartySelectionCallback, GameController.Instance.partyPrefabs.ToArray(), title:"CHOOSE YUOR HEROES"));
         }
 
         // Random Encounters
-        if (randomEncounters && GameController.instance.currentMap.randomEncounters.Length > 0)
+        if (randomEncounters && GameController.Instance.currentMap.randomEncounters.Length > 0)
             CheckRandomEncounter();
 
         //// Keydown
@@ -111,19 +111,19 @@ public class PlayerController : Character
 
 
         // Change player character animator to fit first battler
-        if (GameController.instance.partyPrefabs.Count > 0)
-            if (GameController.instance.partyPrefabs[0].playerCharacter != null)
-                anim.runtimeAnimatorController = GameController.instance.partyPrefabs[0].playerCharacter;
+        if (GameController.Instance.partyPrefabs.Count > 0)
+            if (GameController.Instance.partyPrefabs[0].playerCharacter != null)
+                anim.runtimeAnimatorController = GameController.Instance.partyPrefabs[0].playerCharacter;
     }
 
     public void CheckRandomEncounter()
     {
         if ((transform.position - lastCheckedPos4RandEncounters).magnitude > 3)
         {
-            if (Random.Range(0, 100) < GameController.instance.currentMap.randomEncountersRate)
+            if (Random.Range(0, 100) < GameController.Instance.currentMap.randomEncountersRate)
             {
                 Jrpg.Log("Triggering random battle");
-                GameController.instance.StartCoroutine(GameController.instance.TriggerBattle(GameController.instance.currentMap.ChooseRandomEncounter(), "Random"));
+                GameController.Instance.StartCoroutine(GameController.Instance.TriggerBattle(GameController.Instance.currentMap.ChooseRandomEncounter(), "Random"));
             }
             lastCheckedPos4RandEncounters = transform.position;
         }

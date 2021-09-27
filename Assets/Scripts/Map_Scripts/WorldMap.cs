@@ -42,7 +42,7 @@ public class WorldMap : MonoBehaviour
 
     void Awake()
     {
-        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
     void Update()
@@ -65,12 +65,12 @@ public class WorldMap : MonoBehaviour
     {      
         // DO SOME STUFF RIGHT AFTER THE MAP LOADS:        
         // Init music
-        if (soundtrack != GameController.instance.music.clip)
+        if (soundtrack != GameController.Instance.music.clip)
         {
-            GameController.instance.music.Stop();
-            GameController.instance.music.clip = soundtrack;
-            GameController.instance.music.Play();
-            StartCoroutine(GameController.instance.SetVolume(1));
+            GameController.Instance.music.Stop();
+            GameController.Instance.music.clip = soundtrack;
+            GameController.Instance.music.Play();
+            StartCoroutine(GameController.Instance.SetVolume(1));
         }
 
         // Enemies names
@@ -80,7 +80,7 @@ public class WorldMap : MonoBehaviour
         }
 
         // Destroy defeated enemies
-        foreach (string de in GameController.instance.defeatedBosses.ToArray())
+        foreach (string de in GameController.Instance.defeatedBosses.ToArray())
         {
             Debug.Log("Destroying " + de);
             Destroy(GameObject.Find(de));

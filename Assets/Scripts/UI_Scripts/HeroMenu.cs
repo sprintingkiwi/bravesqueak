@@ -20,7 +20,7 @@ public class HeroMenu : Menu
 
         if (InputManager.instance.RightArrowDown())
         {
-            if (heroIndex < GameController.instance.unlockedHeroes.Length - 1)
+            if (heroIndex < GameController.Instance.unlockedHeroes.Length - 1)
             {
                 Jrpg.Log("Incrementing active hero index");
                 heroIndex += 1;
@@ -40,40 +40,40 @@ public class HeroMenu : Menu
 
     public void LoadHeroStuff()
     {
-        Jrpg.Log("Loading " + GameController.instance.unlockedHeroes[heroIndex].name + " stuff");
+        Jrpg.Log("Loading " + GameController.Instance.unlockedHeroes[heroIndex].name + " stuff");
 
         // Assign Active Hero sprite
-        transform.Find("Active Hero").GetComponent<SpriteRenderer>().sprite = GameController.instance.unlockedHeroes[heroIndex].GetComponent<SpriteRenderer>().sprite;
+        transform.Find("Active Hero").GetComponent<SpriteRenderer>().sprite = GameController.Instance.unlockedHeroes[heroIndex].GetComponent<SpriteRenderer>().sprite;
 
         // Assign equipped items sprites
         foreach (Transform skillItem in transform.Find("Skills"))
         {
-            if (GameController.instance.unlockedHeroes[heroIndex].skills[skillItem.GetSiblingIndex()] != null)
+            if (GameController.Instance.unlockedHeroes[heroIndex].skills[skillItem.GetSiblingIndex()] != null)
             {
                 Jrpg.Log("Assigning sprite to skill " + skillItem.name);
-                skillItem.GetComponent<SpriteRenderer>().sprite = GameController.instance.unlockedHeroes[heroIndex].skills[skillItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
+                skillItem.GetComponent<SpriteRenderer>().sprite = GameController.Instance.unlockedHeroes[heroIndex].skills[skillItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
             }            
         }
         foreach (Transform perkItem in transform.Find("Perks"))
         {
-            if (GameController.instance.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()] != null)
+            if (GameController.Instance.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()] != null)
             {
                 Jrpg.Log("Assigning sprite to perk " + perkItem.name);
-                perkItem.GetComponent<SpriteRenderer>().sprite = GameController.instance.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
+                perkItem.GetComponent<SpriteRenderer>().sprite = GameController.Instance.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
             }            
         }
     }
 
     public void ShowItemSelection(ItemSelector selector, string pool)
     {
-        if (GameController.instance.itemSelectionMenu != null)
+        if (GameController.Instance.itemSelectionMenu != null)
             return;
 
         Jrpg.Log("Intantiating Item Selection Menu");
-        GameController.instance.itemSelectionMenu = Instantiate(Resources.Load("Menu/ItemSelectionMenu") as GameObject, GameController.instance.mapCamera.transform).GetComponent<ItemSelectionMenu>();
-        GameController.instance.itemSelectionMenu.father = this;
-        subMenus.Add(GameController.instance.itemSelectionMenu);
-        GameController.instance.itemSelectionMenu.SetupSelection(GameController.instance.unlockedHeroes[heroIndex], selector.transform.GetSiblingIndex(), pool);
+        GameController.Instance.itemSelectionMenu = Instantiate(Resources.Load("Menu/ItemSelectionMenu") as GameObject, GameController.Instance.mapCamera.transform).GetComponent<ItemSelectionMenu>();
+        GameController.Instance.itemSelectionMenu.father = this;
+        subMenus.Add(GameController.Instance.itemSelectionMenu);
+        GameController.Instance.itemSelectionMenu.SetupSelection(GameController.Instance.unlockedHeroes[heroIndex], selector.transform.GetSiblingIndex(), pool);
         gameObject.SetActive(false);
     }
 }

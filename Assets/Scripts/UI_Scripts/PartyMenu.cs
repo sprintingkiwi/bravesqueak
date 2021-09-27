@@ -94,11 +94,11 @@ public class PartyMenu : Menu {
 
     public void CreateHeroMenu(int index)
     {
-        GameController.instance.heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, GameController.instance.mapCamera.transform).GetComponent<HeroMenu>();
-        GameController.instance.heroMenu.father = this;
-        subMenus.Add(GameController.instance.heroMenu);
-        GameController.instance.heroMenu.heroIndex = index;
-        GameController.instance.heroMenu.Setup();
+        GameController.Instance.heroMenu = Instantiate(Resources.Load("Menu/HeroMenu") as GameObject, GameController.Instance.mapCamera.transform).GetComponent<HeroMenu>();
+        GameController.Instance.heroMenu.father = this;
+        subMenus.Add(GameController.Instance.heroMenu);
+        GameController.Instance.heroMenu.heroIndex = index;
+        GameController.Instance.heroMenu.Setup();
         gameObject.SetActive(false);
     }
 
@@ -180,7 +180,7 @@ public class PartyMenu : Menu {
         hu.transform.position = Camera.main.WorldToScreenPoint(highlighter.transform.position);
 
         // Write Select/Deselect
-        if (GameController.instance.selectionCache.Contains(availables[index]))
+        if (GameController.Instance.selectionCache.Contains(availables[index]))
         {
             hu.transform.Find("Select").GetComponentInChildren<Text>().text = "Remove";
         }
@@ -198,7 +198,7 @@ public class PartyMenu : Menu {
             }
             selectedImg = hu.transform.GetChild(UIindex).GetComponent<Image>();
             selectedImg.color = Color.yellow;
-            if (selectedImg.name == "Select" && ticks >= selectables && !GameController.instance.selectionCache.Contains(availables[index]))
+            if (selectedImg.name == "Select" && ticks >= selectables && !GameController.Instance.selectionCache.Contains(availables[index]))
             {
                 selectedImg.color = Color.red;
             }
@@ -245,10 +245,10 @@ public class PartyMenu : Menu {
             //partyMenu.GameController.instance.partyPrefabs[partyMenu.ticks - 1] = partyMenu.GameController.instance.unlockedHeroes[transform.parent.GetSiblingIndex()];
 
             // Add hero to cache list of selected heroes
-            foreach (HeroBattler h in GameController.instance.heroes)
+            foreach (HeroBattler h in GameController.Instance.heroes)
             {
                 if (h.name == availables[partyHero.heroIndex].name)
-                    GameController.instance.selectionCache.Add(h);
+                    GameController.Instance.selectionCache.Add(h);
             }
 
         }
@@ -259,10 +259,10 @@ public class PartyMenu : Menu {
             ticks -= 1;
 
             // Remove hero from cache list of selected heroes
-            foreach (HeroBattler h in GameController.instance.heroes)
+            foreach (HeroBattler h in GameController.Instance.heroes)
             {
                 if (h.name == availables[partyHero.heroIndex].name)
-                    GameController.instance.selectionCache.Remove(h);
+                    GameController.Instance.selectionCache.Remove(h);
             }
         }
     }
@@ -270,7 +270,7 @@ public class PartyMenu : Menu {
     public override void MenuDestruction()
     {
         if (forceSelectMaximum) // Force the user to select the maximum number of selectable heroes
-            if (GameController.instance.selectionCache.Count < selectables)
+            if (GameController.Instance.selectionCache.Count < selectables)
                 return;
 
         base.MenuDestruction();

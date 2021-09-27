@@ -101,7 +101,7 @@ public class Battler : MonoBehaviour
 
     public virtual void Setup()
     {
-        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
 
         // Populate stats dictionary
@@ -220,7 +220,7 @@ public class Battler : MonoBehaviour
     // Called by the battle controller while executing actions during the turn battle
     public virtual Coroutine UseSkill(Skill skill, List<Battler> targets)
     {
-        bc.actualSkill = Instantiate(skill, GameController.instance.battleStuff.transform) as Skill;
+        bc.actualSkill = Instantiate(skill, GameController.Instance.battleStuff.transform) as Skill;
         return bc.actualSkill.Execute(this, targets);
     }
 

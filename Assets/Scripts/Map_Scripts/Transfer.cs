@@ -14,20 +14,20 @@ public class Transfer : MonoBehaviour
 
     void Start()
     {
-        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "Player" && !GameController.instance.inTransfer && active && !transfering)
+        if (collision.name == "Player" && !GameController.Instance.inTransfer && active && !transfering)
         {
-            GameController.instance.StartCoroutine(GameController.instance.ProcessTransfer(collision, this));
+            GameController.Instance.StartCoroutine(GameController.Instance.ProcessTransfer(collision, this));
         }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        GameController.instance.inTransfer = false;
+        GameController.Instance.inTransfer = false;
         transfering = false;
     }    
 }

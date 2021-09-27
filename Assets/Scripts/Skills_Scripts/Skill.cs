@@ -120,7 +120,7 @@ public class Skill : Item
         if (Debug.isDebugBuild)
             Debug.Log("Using skill " + gameObject.name);
 
-        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
 
         // Movement speed
@@ -442,7 +442,7 @@ public class Skill : Item
             else if (target.gameObject.GetComponent<Perk>() != null)
             {
                 Jrpg.Log("Added " + target.name + " to inventory", "Visible");
-                GameController.instance.unlockedPerks.Add((Resources.Load("Perks/" + target.name.Replace("(Clone)", "")) as GameObject).GetComponent<Perk>());
+                GameController.Instance.unlockedPerks.Add((Resources.Load("Perks/" + target.name.Replace("(Clone)", "")) as GameObject).GetComponent<Perk>());
             }
             else
                 Jrpg.Log("Destroyed battler was not inside any list", "Warning");

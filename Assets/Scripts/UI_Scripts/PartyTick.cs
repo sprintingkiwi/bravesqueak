@@ -15,7 +15,7 @@ public class PartyTick : MonoBehaviour
         partyMenu = transform.parent.parent.parent.GetComponent<PartyMenu>();
         partyHero = transform.parent.GetComponent<PartyHero>();
 
-        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
     //void OnMouseDown()

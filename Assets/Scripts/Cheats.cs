@@ -49,7 +49,7 @@ public class Cheats : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
 
         // Shaking for mobile
         lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
@@ -63,19 +63,19 @@ public class Cheats : MonoBehaviour
         //Debug.Log(GameObject.FindObjectOfType<AudioListener>().name);
 
         if (Input.GetKeyDown(KeyCode.T))
-            GameController.instance.StartCoroutine(GameController.instance.TriggerBattle(GameController.instance.currentMap.ChooseRandomEncounter(), "Random"));
+            GameController.Instance.StartCoroutine(GameController.Instance.TriggerBattle(GameController.Instance.currentMap.ChooseRandomEncounter(), "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[0], "Random"));
+            StartCoroutine(GameController.Instance.TriggerBattle(testEncounters[0], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[1], "Random"));
+            StartCoroutine(GameController.Instance.TriggerBattle(testEncounters[1], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[2], "Random"));
+            StartCoroutine(GameController.Instance.TriggerBattle(testEncounters[2], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
-            StartCoroutine(GameController.instance.TriggerBattle(testEncounters[3], "Random"));
+            StartCoroutine(GameController.Instance.TriggerBattle(testEncounters[3], "Random"));
 
         if (Input.GetKeyDown(KeyCode.Y))
             ChangeTeam();
@@ -94,35 +94,35 @@ public class Cheats : MonoBehaviour
         // Save & load
         if (Input.GetKeyDown(KeyCode.F5))
         {
-            StartCoroutine(GameController.instance.Save(3));
+            StartCoroutine(GameController.Instance.Save(3));
         }
         else if(Input.GetKeyDown(KeyCode.F6))
         {
-            StartCoroutine(GameController.instance.Save(4));
+            StartCoroutine(GameController.Instance.Save(4));
         }
         else if(Input.GetKeyDown(KeyCode.F7))
         {
-            StartCoroutine(GameController.instance.Save(5));
+            StartCoroutine(GameController.Instance.Save(5));
         }
         else if(Input.GetKeyDown(KeyCode.F8))
         {
-            StartCoroutine(GameController.instance.Save(6));
+            StartCoroutine(GameController.Instance.Save(6));
         }
         else if (Input.GetKeyDown(KeyCode.F9))
         {
-            StartCoroutine(GameController.instance.Load(3));
+            StartCoroutine(GameController.Instance.Load(3));
         }
         else if (Input.GetKeyDown(KeyCode.F10))
         {
-            StartCoroutine(GameController.instance.Load(4));
+            StartCoroutine(GameController.Instance.Load(4));
         }
         else if (Input.GetKeyDown(KeyCode.F11))
         {
-            StartCoroutine(GameController.instance.Load(5));
+            StartCoroutine(GameController.Instance.Load(5));
         }
         else if (Input.GetKeyDown(KeyCode.F12))
         {
-            StartCoroutine(GameController.instance.Load(6));
+            StartCoroutine(GameController.Instance.Load(6));
         }
 
         //if (Jrpg.CheckPlatform() == "Mobile")
@@ -137,14 +137,19 @@ public class Cheats : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            if (GameController.instance.music.mute)
+            if (GameController.Instance.music.mute)
             {
-                GameController.instance.music.mute = false;
+                GameController.Instance.music.mute = false;
             }
             else
             {
-                GameController.instance.music.mute = true;
+                GameController.Instance.music.mute = true;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            StartCoroutine(GameController.Instance.ShowBattleTip());
         }
     }
 
@@ -176,7 +181,7 @@ public class Cheats : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            GameController.instance.partyPrefabs[i] = (HeroBattler)teams[actualTeam].memebrs[i];
+            GameController.Instance.partyPrefabs[i] = (HeroBattler)teams[actualTeam].memebrs[i];
         }
     }
 }

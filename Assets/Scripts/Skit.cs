@@ -36,12 +36,12 @@ public class Skit : AnimatedMapElement
 
     IEnumerator ProcessSkitEncounter()
     {
-        GameController.instance.player.canMove = false;
+        GameController.Instance.player.canMove = false;
 
         // Focus camera to skit
-        GameController.instance.mapCamera.followPlayer = false;
+        GameController.Instance.mapCamera.followPlayer = false;
         //yield return StartCoroutine(mapCam.Move(Vector3.up * 5));
-        GameController.instance.mapCamera.activeCoroutines.Add(StartCoroutine(GameController.instance.mapCamera.SlideTo(new Vector3(spr.bounds.center.x, spr.bounds.center.y - 1.3f, GameController.instance.mapCamera.transform.position.z), threshold: shiftThresold, speed: 0.5f, callback: TriggerBattle())));
+        GameController.Instance.mapCamera.activeCoroutines.Add(StartCoroutine(GameController.Instance.mapCamera.SlideTo(new Vector3(spr.bounds.center.x, spr.bounds.center.y - 1.3f, GameController.Instance.mapCamera.transform.position.z), threshold: shiftThresold, speed: 0.5f, callback: TriggerBattle())));
 
         yield return null;
     }
@@ -68,6 +68,6 @@ public class Skit : AnimatedMapElement
             }
 
         // Trigger Battle
-        yield return StartCoroutine(GameController.instance.TriggerBattle(encounter, name));
+        yield return StartCoroutine(GameController.Instance.TriggerBattle(encounter, name));
     }
 }
