@@ -451,6 +451,8 @@ public class BattleController : MonoBehaviour
 
     void DebugCheats()
     {
+        if (!Application.isEditor) return;
+
         if (Input.GetKeyDown(KeyCode.W))
             enemies.Clear();
     }

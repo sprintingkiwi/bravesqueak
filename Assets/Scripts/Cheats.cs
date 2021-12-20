@@ -60,7 +60,7 @@ public class Cheats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(GameObject.FindObjectOfType<AudioListener>().name);
+        if (!Application.isEditor) return;
 
         if (Input.GetKeyDown(KeyCode.T))
             GameController.Instance.StartCoroutine(GameController.Instance.TriggerBattle(GameController.Instance.currentMap.ChooseRandomEncounter(), "Random"));
@@ -87,9 +87,6 @@ public class Cheats : MonoBehaviour
         {
             StartCoroutine(GameObject.Find("Battle Controller").GetComponent<BattleController>().DropItem(droppedItemClass));
         }
-
-        //if (Input.GetKeyDown(KeyCode.N))
-        //StartCoroutine(Jrpg.LoadScene("SkillStore"));
 
         // Save & load
         if (Input.GetKeyDown(KeyCode.F5))
