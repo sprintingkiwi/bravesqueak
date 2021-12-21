@@ -520,9 +520,10 @@ public class Skill : Item
         if (user.skillPoints < requiredSP)
         {            
             if (user.faction == Battler.Faction.Heroes)
-                Jrpg.Log(name + " cannot be used: not enough SP", "Build");
-            else
-                Jrpg.Log(name + " cannot be used: not enough SP");
+            {
+                Jrpg.Log("You don't have enough Skill Points to use " + displayName, "Build");
+                Jrpg.PlaySound("Forbidden");
+            }
             return false;
         }
         else
