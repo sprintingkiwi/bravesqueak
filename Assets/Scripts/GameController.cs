@@ -344,6 +344,7 @@ public class GameController : MonoBehaviour
 
             // Restore normal map situation
             canSaveLoad = true;
+            yield return StartCoroutine(mapCamera.MoveTo(new Vector3(player.transform.position.x, player.transform.position.y, mapCamera.transform.position.z)));
             mapCamera.followPlayer = true;
             player.canMove = true;
 
