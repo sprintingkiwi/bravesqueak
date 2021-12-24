@@ -150,7 +150,7 @@ MonoBehaviour:
   firewalls: []
   hud: {fileID: 0}
   prefabName: 
-  strategy: {fileID: 114109042552807282, guid: 314b1e159fcbaf648828dbc39bb8fbd7, type: 3}
+  strategy: {fileID: 114109042552807282, guid: 7beb8bf6a1ee93b4db42b3ab123bc494, type: 3}
 --- !u!95 &95166979374997656
 Animator:
   serializedVersion: 3
