@@ -262,7 +262,7 @@ public class Jrpg : MonoBehaviour
 
     public static IEnumerator PlayAnimation(Battler actor, string animationName, bool wait)
     {
-        if (animationName == "wait") yield break; // Jump this part if battler is waiting
+        if (animationName == "none") yield break; // Jump this part if battler is waiting
 
         if (actor.GetComponent<Animator>() == null)
         {
