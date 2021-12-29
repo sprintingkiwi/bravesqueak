@@ -18,4 +18,10 @@ public class Stunned : Status
 
 
     }
+
+    public override IEnumerator RemoveStatus()
+    {
+        holder.canAct = true;
+        yield return StartCoroutine(base.RemoveStatus());
+    }
 }
