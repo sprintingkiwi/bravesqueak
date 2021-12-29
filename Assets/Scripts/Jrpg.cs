@@ -262,6 +262,8 @@ public class Jrpg : MonoBehaviour
 
     public static IEnumerator PlayAnimation(Battler actor, string animationName, bool wait)
     {
+        if (animationName == "wait") yield break; // Jump this part if battler is waiting
+
         if (actor.GetComponent<Animator>() == null)
         {
             Log("Trying to play an animation on a Battler without Animator Component", "Warning");
