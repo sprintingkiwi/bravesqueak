@@ -136,7 +136,7 @@ MonoBehaviour:
     value: 80
   maxHP:
     ID: maxHP
-    value: 40
+    value: 500
   hitPoints: 0
   skillPoints: 0
   characterName: Rat Shaman

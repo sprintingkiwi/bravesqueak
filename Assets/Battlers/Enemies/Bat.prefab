@@ -117,7 +117,7 @@ MonoBehaviour:
     value: 20
   maxHP:
     ID: maxHP
-    value: 400
+    value: 500
   hitPoints: 0
   skillPoints: 0
   characterName: Bat
