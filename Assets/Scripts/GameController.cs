@@ -15,6 +15,10 @@ public class GameController : MonoBehaviour
     public Platform simulatedPlatform;
     public bool showDebugInfo;
 
+    [Header("Drag and Drop")]
+    public GameObject battleStuffPrefab;
+    public GameObject areaStuffPrefab;
+
     [Header("Saves")]
     //public SaveSlot[] gameSlots;
     public Jrpg.SaveData[] saveData = new Jrpg.SaveData[4];
@@ -47,9 +51,7 @@ public class GameController : MonoBehaviour
     public Vector3 playerStartPosition;
     //public List<string> defeatedNormalEnemies = new List<string>();
     public List<string> defeatedBosses = new List<string>();
-    public bool inTransfer;
-    public GameObject battleStuffPrefab;
-    public GameObject areaStuffPrefab;
+    public bool inTransfer;    
     public GameObject battleStuff;
     public GameObject areaStuff;
     public MapCameraController mapCamera;

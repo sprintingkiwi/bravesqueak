@@ -9,7 +9,6 @@ public class AreaLoadHelper : MonoBehaviour
     // Update is called once per frame
     void Start ()
     {
-        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
         GameController.Instance.InitializeGame();
     }
 }

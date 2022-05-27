@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &73361140770673922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73361140770673924}
+  - component: {fileID: 73361140770673923}
+  m_Layer: 0
+  m_Name: CHEATS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73361140770673924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73361140770673922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.47, y: 2.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73361140770673923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73361140770673922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d658b4bdcdb4c44a565aca0ce47d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testEncounters:
+  - {fileID: 114809916583162938, guid: 5c6cfa2cf650772479f44a6c886678f1, type: 3}
+  - {fileID: 114809916583162938, guid: 4402ed8d9d51ca444b65f4ab21eeb668, type: 3}
+  - {fileID: 114809916583162938, guid: 711a7308b959e5a4daafc5ab1d0ec633, type: 3}
+  - {fileID: 114158055192404530, guid: 3cdc2105dcf688144b2b1f549d9a66b2, type: 3}
+  teams:
+  - memebrs:
+    - {fileID: 114120886363940634, guid: ccf6e07eddf6d6d47b3660df1e189f8b, type: 3}
+    - {fileID: 114120886363940634, guid: a9c32bd611bf04244bb9efe988c887d1, type: 3}
+    - {fileID: 114120886363940634, guid: eb1922b45a3084b4aaee91180783aba1, type: 3}
+  - memebrs:
+    - {fileID: 114120886363940634, guid: ae7d15ce42a50c14da9e6820b70b5f56, type: 3}
+    - {fileID: 114590740935363484, guid: f2d18dcc8f94f5d45bd992d584f7fa7a, type: 3}
+    - {fileID: 114253743136115620, guid: 54e5d2f2fb4d0674492c18ed539645fa, type: 3}
+  actualTeam: 0
+  shakeDetectionThreshold: 2
+  droppedItemClass: Food
+  mute: 0
