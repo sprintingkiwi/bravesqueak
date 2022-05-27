@@ -28,10 +28,14 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 22dede3b77923764cae5403add24ffd4, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 0e99ca10f3a4ff54a99c1a57d260dcac, type: 3}
@@ -261,5 +265,6 @@ SpriteAtlas:
   - HollowTree_Ground_3
   - HollowTree_Ground_28
   - HollowTree_Overlay_2_34
+  m_RenderDataMap: {}
   m_Tag: HollowTree
   m_IsVariant: 0

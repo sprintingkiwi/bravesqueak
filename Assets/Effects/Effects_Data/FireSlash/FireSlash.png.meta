@@ -57,7 +57,7 @@ TextureImporter:
       213: 21300034
     second: Fire Slash_17
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -77,6 +77,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -85,9 +87,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -108,9 +110,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -500,6 +506,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Fire Slash_14: 21300028
+      Fire Slash_5: 21300010
+      Fire Slash_9: 21300018
+      Fire Slash_6: 21300012
+      Fire Slash_7: 21300014
+      Fire Slash_8: 21300016
+      Fire Slash_12: 21300024
+      Fire Slash_13: 21300026
+      Fire Slash_3: 21300006
+      Fire Slash_1: 21300002
+      Fire Slash_2: 21300004
+      Fire Slash_11: 21300022
+      Fire Slash_4: 21300008
+      Fire Slash_0: 21300000
+      Fire Slash_10: 21300020
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

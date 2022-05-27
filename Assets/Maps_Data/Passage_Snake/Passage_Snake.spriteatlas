@@ -28,10 +28,14 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: a21ef9daf5f1f6b469f3e4b5fa15c286, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 569e9a003eb25ac47b901a1570dcf129, type: 3}
@@ -187,5 +191,6 @@ SpriteAtlas:
   - Passage_Snake_Overlay_18
   - Passage_Snake_Ground_15
   - Passage_Snake_Overlay_22
+  m_RenderDataMap: {}
   m_Tag: Passage_Snake
   m_IsVariant: 0

@@ -28,10 +28,14 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: f5d193d1c527edc4a8f337569be7485e, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 2dcff40017e59c34a8fd2736a8c50d6f, type: 3}
@@ -225,5 +229,6 @@ SpriteAtlas:
   - Passage_Swamp_Overlay_4
   - Passage_Swamp_Waves0000
   - Passage_Swamp_Overlay_29
+  m_RenderDataMap: {}
   m_Tag: Passage_Swamp
   m_IsVariant: 0

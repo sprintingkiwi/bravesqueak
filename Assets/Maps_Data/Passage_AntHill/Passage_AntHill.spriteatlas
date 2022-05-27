@@ -28,10 +28,14 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: d6071555a28705743bf1940c74ceffc7, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 584f001000df4fb4087cf1d3fff33f88, type: 3}
@@ -229,5 +233,6 @@ SpriteAtlas:
   - Passage_AntHill_Overlay_27
   - Passage_AntHill_Ground_11
   - Passage_AntHill_Overlay_14
+  m_RenderDataMap: {}
   m_Tag: Passage_AntHill
   m_IsVariant: 0

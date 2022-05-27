@@ -120,7 +120,7 @@ TextureImporter:
       213: 21300076
     second: Special15_38
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -140,6 +140,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -148,9 +150,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -171,9 +173,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1067,6 +1073,46 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Special15_10: 21300020
+      Special15_35: 21300070
+      Special15_34: 21300068
+      Special15_37: 21300074
+      Special15_16: 21300032
+      Special15_36: 21300072
+      Special15_23: 21300046
+      Special15_20: 21300040
+      Special15_7: 21300014
+      Special15_29: 21300058
+      Special15_31: 21300062
+      Special15_22: 21300044
+      Special15_33: 21300066
+      Special15_2: 21300004
+      Special15_5: 21300010
+      Special15_24: 21300048
+      Special15_8: 21300016
+      Special15_12: 21300024
+      Special15_15: 21300030
+      Special15_21: 21300042
+      Special15_0: 21300000
+      Special15_18: 21300036
+      Special15_26: 21300052
+      Special15_25: 21300050
+      Special15_38: 21300076
+      Special15_17: 21300034
+      Special15_13: 21300026
+      Special15_1: 21300002
+      Special15_19: 21300038
+      Special15_4: 21300008
+      Special15_14: 21300028
+      Special15_9: 21300018
+      Special15_11: 21300022
+      Special15_28: 21300056
+      Special15_27: 21300054
+      Special15_30: 21300060
+      Special15_6: 21300012
+      Special15_32: 21300064
+      Special15_3: 21300006
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

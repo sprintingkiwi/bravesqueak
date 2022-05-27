@@ -111,7 +111,7 @@ TextureImporter:
       213: 21300070
     second: Elements_35
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -131,6 +131,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -139,9 +141,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -162,9 +164,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -983,6 +989,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Elements_11: 21300022
+      Elements_26: 21300052
+      Elements_34: 21300068
+      Elements_8: 21300016
+      Elements_18: 21300036
+      Elements_2: 21300004
+      Elements_31: 21300062
+      Elements_32: 21300064
+      Elements_6: 21300012
+      Elements_0: 21300000
+      Elements_4: 21300008
+      Elements_5: 21300010
+      Elements_23: 21300046
+      Elements_16: 21300032
+      Elements_24: 21300048
+      Elements_1: 21300002
+      Elements_21: 21300042
+      Elements_7: 21300014
+      Elements_22: 21300044
+      Elements_29: 21300058
+      Elements_9: 21300018
+      Elements_10: 21300020
+      Elements_19: 21300038
+      Elements_25: 21300050
+      Elements_28: 21300056
+      Elements_12: 21300024
+      Elements_27: 21300054
+      Elements_30: 21300060
+      Elements_15: 21300030
+      Elements_13: 21300026
+      Elements_14: 21300028
+      Elements_20: 21300040
+      Elements_3: 21300006
+      Elements_33: 21300066
+      Elements_35: 21300070
+      Elements_17: 21300034
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

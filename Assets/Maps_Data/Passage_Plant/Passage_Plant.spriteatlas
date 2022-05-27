@@ -28,10 +28,14 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: bec1b3ba02061824fbc3ea2ee5649fee, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 00fc705004d8c5c4abc996a9b8325e34, type: 3}
@@ -199,5 +203,6 @@ SpriteAtlas:
   - Passage_Plant_Ground_2
   - Passage_Plant_Overlay_23
   - Passage_Plant_Overlay_35
+  m_RenderDataMap: {}
   m_Tag: Passage_Plant
   m_IsVariant: 0
