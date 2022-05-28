@@ -200,6 +200,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 1341260877364519449, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: testEncounters.Array.data[0]
+      value: 
+      objectReference: {fileID: 114809916583162938, guid: 15f07ebca0254964e8c72e3f70bdd0e6,
+        type: 3}
     - target: {fileID: 6344839934035448254, guid: 266dafa3ac699814fa0170494574260c,
         type: 3}
       propertyPath: m_LocalPosition.x

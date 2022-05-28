@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     public bool justLoadedGameSlot;
     public bool canSaveLoad;
     public int currentSaveSlot = 0;
-    public bool continueGame;
+    //public bool continueGame;
     public Dictionary<string, int> experience = new Dictionary<string, int>();
     public int partyLevel;
     //Inventory
@@ -131,7 +131,7 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void StartNewGame()
+    public void StartNewGame(int slot)
     {
         //// Choose random starter battlers
         //Jrpg.Log("Choosing random starters");
@@ -150,10 +150,24 @@ public class GameController : MonoBehaviour
         //}
 
         // Start Everything
+        MenuFadingAnimations();
+        currentSaveSlot = slot;
+        StartCoroutine(Jrpg.LoadScene("MainMap_1"));
+    }
+
+    public void ContinueGame(int slot)
+    {
+        MenuFadingAnimations();
+        canSaveLoad = true;
+        currentSaveSlot = slot;
+        StartCoroutine(Load(slot));
+    }
+
+    void MenuFadingAnimations()
+    {
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Title"), Vector3.up));
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Play"), Vector3.down, power: 20f));
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("New Game"), Vector3.down, power: 30f));
-        StartCoroutine(Jrpg.LoadScene("MainMap_1"));
     }
 
     public void FirstHeroesSelection()
@@ -188,33 +202,27 @@ public class GameController : MonoBehaviour
         //Music
         if (map.soundtrack != null)
             if (map.soundtrack != music.clip)
-                StartCoroutine(ChangeMusic(map.soundtrack, 1));            
-
+                StartCoroutine(ChangeMusic(map.soundtrack, 1));
 
         // Set player position
         player.transform.position = playerStartPosition;
 
-        Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
-        
+        Jrpg.Fade(GameObject.Find("Intro"), 0, 1);        
 
-        if (continueGame) // CONTINUE
-        {
-            canSaveLoad = true;
-            StartCoroutine(Load(currentSaveSlot));
-        }
-        else // NEW GAME
-        {
-            // First Hero Selection
-            if (!unlockAll)
-            {
-                FirstHeroesSelection();
-            }
-            else
-            {
-                Jrpg.Log("Unlock all mode: unlocking all characters");
-            }
-            canSaveLoad = true;
-        }
+        //if (continueGame) // CONTINUE
+        //{
+        //    canSaveLoad = true;
+        //    StartCoroutine(Load(currentSaveSlot));
+        //}
+        //else // NEW GAME
+        //{
+        //    // First Hero Selection
+        //    if (!unlockAll)
+        //        FirstHeroesSelection();
+        //    else
+        //        Jrpg.Log("Unlock all mode: unlocking all characters");
+        //    canSaveLoad = true;
+        //}
     }
 
     public IEnumerator TriggerBattle(Encounter encounter, string enemyName)
@@ -343,7 +351,8 @@ public class GameController : MonoBehaviour
 
             // Restore normal map situation
             canSaveLoad = true;
-            yield return StartCoroutine(mapCamera.MoveTo(new Vector3(player.transform.position.x, player.transform.position.y, mapCamera.transform.position.z)));
+            //yield return StartCoroutine(mapCamera.MoveTo(new Vector3(player.transform.position.x, player.transform.position.y, mapCamera.transform.position.z)));
+            StartCoroutine(mapCamera.MoveTo(new Vector3(player.transform.position.x, player.transform.position.y, mapCamera.transform.position.z)));
             mapCamera.followPlayer = true;
             player.canMove = true;
 
@@ -836,9 +845,9 @@ public class GameController : MonoBehaviour
         currentSaveSlot = slotID;
     }
 
-    public void ContinueGame()
-    {
-        continueGame = true;
-    }
+    //public void ContinueGame()
+    //{
+    //    continueGame = true;
+    //}
 
 }
