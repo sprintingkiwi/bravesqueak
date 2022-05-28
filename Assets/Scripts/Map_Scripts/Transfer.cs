@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Transfer : MonoBehaviour
 {   
-    public WorldMap destinationMap;
-    public string destinationPlace;
+    public string destinationMap;
+    //public string destinationPlace;
     public Vector3 destinationPos;
 
     [Header("System")]
@@ -14,14 +14,15 @@ public class Transfer : MonoBehaviour
 
     void Start()
     {
-        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+
     }
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "Player" && !GameController.Instance.inTransfer && active && !transfering)
         {
-            GameController.Instance.StartCoroutine(GameController.Instance.ProcessTransfer(collision, this));
+            Debug.LogWarning("Map: " + destinationMap);
+            GameController.Instance.StartCoroutine(GameController.Instance.ProcessTransfer(destinationMap, destinationPos));
         }
     }
 

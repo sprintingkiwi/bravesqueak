@@ -555,13 +555,14 @@ public class GameController : MonoBehaviour
                 defeatedBosses.Remove(db);
 
         // Transfer to map
-        Transfer t = new GameObject().AddComponent<Transfer>();
-        t.name = "Loading Transfer";
-        t.destinationMap = (Resources.Load("Maps/" + saveData.savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
-        t.destinationPos = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
-        yield return StartCoroutine(ProcessTransfer(null, t));
-        Destroy(t.gameObject);
-        inTransfer = false;
+        SceneManager.LoadScene(saveData.savedCurrentMapName);
+        //Transfer t = new GameObject().AddComponent<Transfer>();
+        //t.name = "Loading Transfer";
+        //t.destinationMap = (Resources.Load("Maps/" + saveData.savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
+        //t.destinationPos = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
+        //yield return StartCoroutine(ProcessTransfer(null, t));
+        //Destroy(t.gameObject);
+        //inTransfer = false;
 
         // Unlock player
         //justLoadedGameSlot = true;
@@ -750,60 +751,67 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public IEnumerator ProcessTransfer(Collider2D collision, Transfer transfer, float speed = 1)
+    public IEnumerator ProcessTransfer(string mapName, Vector3 pos)
     {
-        Debug.Log("Transfering player " + name);
-        
-        Debug.Log("Freezing player");
-        player.canMove = false;
+        Debug.Log("Transfering to " + mapName);
+        playerStartPosition = pos;
+        inTransfer = true;
+        SceneManager.LoadScene(mapName);
 
-        Debug.Log("Check music change");
-        if (transfer.destinationMap.soundtrack != null)
-            if (transfer.destinationMap.soundtrack != music.clip)
-                StartCoroutine(SetVolume(0, speed));
-
-        Debug.Log("Fading out and pointing old map");
-        // This will also wait for the music to fade out, if needed (the speed is the same)
-        yield return Jrpg.Fade(GameObject.Find("Intro"), 1, speed);
-        WorldMap destinationMap = transfer.destinationMap;
-        GameObject oldMap = currentMap.gameObject;
         yield return null;
 
-        Debug.Log("Instance new map");
-        inTransfer = true;
-        transfer.transfering = true;
-        currentMap = Instantiate(destinationMap, Vector3.zero, Quaternion.identity, areaStuff.transform);
-        currentMap.name = transfer.destinationMap.name;
-        currentMap.Setup();
+        //Debug.Log("Transfering player " + name);
+        
+        //Debug.Log("Freezing player");
+        //player.canMove = false;
 
-        Debug.Log("Find destination place");
-        if (transfer.destinationPlace != null)
-        {
-            Transfer instDestPlace = currentMap.transform.Find("TRANSFERS").transform.Find(transfer.destinationPlace).GetComponent<Transfer>();
-            instDestPlace.transfering = true;
-            Debug.Log("Move player");
-            player.transform.position = instDestPlace.transform.position;
-        }
-        else
-        {
-            Debug.Log("Move player");
-            player.transform.position = transfer.destinationPos;
-        }
-        player.lastCheckedPos4RandEncounters = player.transform.position;
+        //Debug.Log("Check music change");
+        //if (transfer.destinationMap.soundtrack != null)
+        //    if (transfer.destinationMap.soundtrack != music.clip)
+        //        StartCoroutine(SetVolume(0, speed));
 
-        Debug.Log("Reset camera");
-        MapCameraController mainCamera = GameObject.Find("Map Camera").GetComponent<MapCameraController>();
-        mainCamera.Setup(currentMap);
-        //defeatedNormalEnemies.Clear();
+        //Debug.Log("Fading out and pointing old map");
+        //// This will also wait for the music to fade out, if needed (the speed is the same)
+        //yield return Jrpg.Fade(GameObject.Find("Intro"), 1, speed);
+        //WorldMap destinationMap = transfer.destinationMap;
+        //GameObject oldMap = currentMap.gameObject;
+        //yield return null;
 
-        Debug.Log("Destroying old map");
-        Destroy(oldMap);
+        //Debug.Log("Instance new map");
+        //inTransfer = true;
+        //transfer.transfering = true;
+        //currentMap = Instantiate(destinationMap, Vector3.zero, Quaternion.identity, areaStuff.transform);
+        //currentMap.name = transfer.destinationMap.name;
+        //currentMap.Setup();
 
-        Debug.Log("Fading in");
-        yield return Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
+        //Debug.Log("Find destination place");
+        //if (transfer.destinationPlace != null)
+        //{
+        //    Transfer instDestPlace = currentMap.transform.Find("TRANSFERS").transform.Find(transfer.destinationPlace).GetComponent<Transfer>();
+        //    instDestPlace.transfering = true;
+        //    Debug.Log("Move player");
+        //    player.transform.position = instDestPlace.transform.position;
+        //}
+        //else
+        //{
+        //    Debug.Log("Move player");
+        //    player.transform.position = transfer.destinationPos;
+        //}
+        //player.lastCheckedPos4RandEncounters = player.transform.position;
 
-        Debug.Log("Unfreezing player");
-        player.canMove = true;
+        //Debug.Log("Reset camera");
+        //MapCameraController mainCamera = GameObject.Find("Map Camera").GetComponent<MapCameraController>();
+        //mainCamera.Setup(currentMap);
+        ////defeatedNormalEnemies.Clear();
+
+        //Debug.Log("Destroying old map");
+        //Destroy(oldMap);
+
+        //Debug.Log("Fading in");
+        //yield return Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
+
+        //Debug.Log("Unfreezing player");
+        //player.canMove = true;
     }
 
     public void SetFont(bool accessible)
