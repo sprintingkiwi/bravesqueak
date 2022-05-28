@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
     public string lastBattleOutcome;
 
     [Header("Scenes and Maps")]
-    public PlayerController player;
+    //public PlayerController areaStuff.player;
     public string lastScene;
     public WorldMap currentMap;
     public string savedCurrentMapName;
@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
     public List<string> defeatedBosses = new List<string>();
     public bool inTransfer;    
     public GameObject battleStuff;
-    public GameObject areaStuff;
+    public AreaStuff areaStuff;
     public MapCameraController mapCamera;
     public HeroBattler[] heroes;
     public bool unlockAll;
@@ -167,9 +167,9 @@ public class GameController : MonoBehaviour
 
     public void InitializeGame()
     {
-        areaStuff = Instantiate(areaStuffPrefab);
+        areaStuff = Instantiate(areaStuffPrefab).GetComponent<AreaStuff>();
         situation = "Map";
-        mapCamera = areaStuff.transform.Find("Map Camera").GetComponent<MapCameraController>();
+        mapCamera = areaStuff.mapCamera;
 
         GameObject intro = GameObject.Find("Intro");
         intro.GetComponent<Image>().enabled = true;
@@ -193,9 +193,8 @@ public class GameController : MonoBehaviour
         //    situation = "Map";
         //}      
 
-        // Find player and set right player position
-        player = areaStuff.transform.Find("Player").GetComponent<PlayerController>();
-        player.transform.position = playerStartPosition;
+        // Set player position
+        areaStuff.player.transform.position = playerStartPosition;
 
         Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
         
@@ -237,7 +236,7 @@ public class GameController : MonoBehaviour
         if (Debug.isDebugBuild)
             Debug.Log("Loading battle with " + encounter.name);
 
-        player.canMove = false;
+        areaStuff.player.canMove = false;
 
         Jrpg.PlaySound(currentMap.preBattleSound);
 
@@ -259,7 +258,7 @@ public class GameController : MonoBehaviour
         currentEnemy = enemyName;
 
         //currentMap.gameObject.SetActive(false);
-        areaStuff.SetActive(false);
+        areaStuff.gameObject.SetActive(false);
         //Destroy(areaStuff);
         //Destroy(currentMap.gameObject);
 
@@ -315,10 +314,10 @@ public class GameController : MonoBehaviour
             else
                 Jrpg.Log("Not destroying enemies on map because it is a random encounter");
 
-            areaStuff.SetActive(true);
+            areaStuff.gameObject.SetActive(true);
             //currentMap.gameObject.SetActive(true);
             //areaStuff = Instantiate(areaStuffPrefab);
-            //player.transform.position = playerStartPosition;
+            //areaStuff.player.transform.position = playerStartPosition;
 
             // GUI Elements
             
@@ -346,9 +345,9 @@ public class GameController : MonoBehaviour
 
             // Restore normal map situation
             canSaveLoad = true;
-            yield return StartCoroutine(mapCamera.MoveTo(new Vector3(player.transform.position.x, player.transform.position.y, mapCamera.transform.position.z)));
+            yield return StartCoroutine(mapCamera.MoveTo(new Vector3(areaStuff.player.transform.position.x, areaStuff.player.transform.position.y, mapCamera.transform.position.z)));
             mapCamera.followPlayer = true;
-            player.canMove = true;
+            areaStuff.player.canMove = true;
 
             // Save at the end of each battle at slot 0 (?)
             yield return StartCoroutine(Save(currentSaveSlot));
@@ -367,11 +366,11 @@ public class GameController : MonoBehaviour
             Destroy(battleStuff);
             foreach (Transform t in GameObject.Find("BATTLE HUD").transform)
                 Destroy(t.gameObject);
-            areaStuff.SetActive(true);
+            areaStuff.gameObject.SetActive(true);
             situation = "Map";
             canSaveLoad = true;
             mapCamera.followPlayer = true;
-            player.canMove = true;
+            areaStuff.player.canMove = true;
             yield return StartCoroutine(Load(currentSaveSlot));
         }        
     }
@@ -401,13 +400,13 @@ public class GameController : MonoBehaviour
         }
 
         isSaving = true;
-        player.canMove = false;
+        areaStuff.player.canMove = false;
         Jrpg.Log("SAVING IN SLOT " + (slot + 1).ToString() + " ...", "Build", 2f);
 
         //saveData = new Jrpg.SaveData();
         saveData[slot].savedCurrentMapName = currentMap.name;
         //saveData.lastScene = SceneManager.GetActiveScene().name;
-        Vector3 playerPos = player.transform.position;
+        Vector3 playerPos = areaStuff.player.transform.position;
         saveData[slot].playerPosition = new float[] { playerPos.x, playerPos.y, playerPos.z };
         saveData[slot].defeatedBosses = defeatedBosses.ToArray();
 
@@ -468,7 +467,7 @@ public class GameController : MonoBehaviour
         bf.Serialize(saveFile, saveData[slot]);
         saveFile.Close();
 
-        player.canMove = true;
+        areaStuff.player.canMove = true;
         isSaving = false;
 
         yield return null;
@@ -492,7 +491,7 @@ public class GameController : MonoBehaviour
             Jrpg.Log("Save file found");
 
         isLoading = true;
-        player.canMove = false;
+        areaStuff.player.canMove = false;
 
         Jrpg.Log("LOADING SLOT " + slot.ToString() + "...");
         
@@ -572,9 +571,9 @@ public class GameController : MonoBehaviour
         Destroy(t.gameObject);
         inTransfer = false;
 
-        // Unlock player
+        // Unlock areaStuff.player
         //justLoadedGameSlot = true;
-        player.canMove = true;
+        areaStuff.player.canMove = true;
         isLoading = false;
 
         Jrpg.Log("LOADED SLOT " + (slot + 1).ToString() + " ...", "Build", 2f);
@@ -761,10 +760,10 @@ public class GameController : MonoBehaviour
 
     public IEnumerator ProcessTransfer(Collider2D collision, Transfer transfer, float speed = 1)
     {
-        Debug.Log("Transfering player " + name);
+        Debug.Log("Transfering areaStuff.player " + name);
         
-        Debug.Log("Freezing player");
-        player.canMove = false;
+        Debug.Log("Freezing areaStuff.player");
+        areaStuff.player.canMove = false;
 
         Debug.Log("Check music change");
         if (transfer.destinationMap.soundtrack != null)
@@ -790,15 +789,15 @@ public class GameController : MonoBehaviour
         {
             Transfer instDestPlace = currentMap.transform.Find("TRANSFERS").transform.Find(transfer.destinationPlace).GetComponent<Transfer>();
             instDestPlace.transfering = true;
-            Debug.Log("Move player");
-            player.transform.position = instDestPlace.transform.position;
+            Debug.Log("Move areaStuff.player");
+            areaStuff.player.transform.position = instDestPlace.transform.position;
         }
         else
         {
-            Debug.Log("Move player");
-            player.transform.position = transfer.destinationPos;
+            Debug.Log("Move areaStuff.player");
+            areaStuff.player.transform.position = transfer.destinationPos;
         }
-        player.lastCheckedPos4RandEncounters = player.transform.position;
+        areaStuff.player.lastCheckedPos4RandEncounters = areaStuff.player.transform.position;
 
         Debug.Log("Reset camera");
         MapCameraController mainCamera = GameObject.Find("Map Camera").GetComponent<MapCameraController>();
@@ -811,8 +810,8 @@ public class GameController : MonoBehaviour
         Debug.Log("Fading in");
         yield return Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
 
-        Debug.Log("Unfreezing player");
-        player.canMove = true;
+        Debug.Log("Unfreezing areaStuff.player");
+        areaStuff.player.canMove = true;
     }
 
     public void SetFont(bool accessible)

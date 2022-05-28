@@ -10,6 +10,6 @@ public class NPC : Character
     {
         base.Start();
 
-        player = GameController.Instance.player;
+        player = GameController.Instance.areaStuff.player;
     }
 }
