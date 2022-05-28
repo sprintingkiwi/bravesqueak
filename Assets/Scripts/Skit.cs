@@ -36,7 +36,7 @@ public class Skit : AnimatedMapElement
 
     IEnumerator ProcessSkitEncounter()
     {
-        GameController.Instance.areaStuff.player.canMove = false;
+        GameController.Instance.player.canMove = false;
 
         // Focus camera to skit
         GameController.Instance.mapCamera.followPlayer = false;

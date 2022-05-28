@@ -45,6 +45,11 @@ public class WorldMap : MonoBehaviour
         GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
     }
 
+    private void Start()
+    {
+        GameController.Instance.InitializeMap(this);
+    }
+
     void Update()
     {
         //if (transform.Find("Passability").GetComponent<PolygonCollider2D>().enabled == false)

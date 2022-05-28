@@ -394,8 +394,8 @@ public class Jrpg : MonoBehaviour
             yield break;
 
         // Freeze player
-        if (GameController.Instance.areaStuff.player != null)
-            GameController.Instance.areaStuff.player.canMove = false;
+        if (GameController.Instance.player != null)
+            GameController.Instance.player.canMove = false;
 
         // Clear cache list for selected heroes
         GameController.Instance.selectionCache.Clear();
@@ -411,8 +411,8 @@ public class Jrpg : MonoBehaviour
         callback();
 
         // Unfreeze player
-        if (GameController.Instance.areaStuff.player != null)
-            GameController.Instance.areaStuff.player.canMove = true;
+        if (GameController.Instance.player != null)
+            GameController.Instance.player.canMove = true;
         yield return null;
     }
 
