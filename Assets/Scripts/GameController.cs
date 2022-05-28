@@ -561,6 +561,7 @@ public class GameController : MonoBehaviour
                 defeatedBosses.Remove(db);
 
         // Transfer to map
+        playerStartPosition = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
         SceneManager.LoadScene(saveData.savedCurrentMapName);
         //Transfer t = new GameObject().AddComponent<Transfer>();
         //t.name = "Loading Transfer";
@@ -568,7 +569,7 @@ public class GameController : MonoBehaviour
         //t.destinationPos = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
         //yield return StartCoroutine(ProcessTransfer(null, t));
         //Destroy(t.gameObject);
-        //inTransfer = false;
+        inTransfer = false;
 
         // Unlock player
         //justLoadedGameSlot = true;
