@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMap_1.unity
     guid: 32ca7d54a89d36441a1987201b03427f
+  - enabled: 1
+    path: Assets/Scenes/Passage_AntHill.unity
+    guid: 27ed995f31c81f8478b51beceab1285e
   m_configObjects: {}

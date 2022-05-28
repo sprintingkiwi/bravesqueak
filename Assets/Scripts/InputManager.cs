@@ -24,17 +24,7 @@ public class InputManager : MonoBehaviour
     public static InputManager instance;
     void Awake()
     {
-        // Persistence
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
+        instance = this;
     }
 
     void Start()

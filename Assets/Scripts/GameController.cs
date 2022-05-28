@@ -16,8 +16,9 @@ public class GameController : MonoBehaviour
     public bool showDebugInfo;
 
     [Header("Drag and Drop")]
-    public GameObject battleStuffPrefab;
-    public GameObject areaStuffPrefab;
+    public GameObject battleStuff;
+    public AreaStuff areaStuff;
+    public MapCameraController mapCamera;
 
     [Header("Saves")]
     //public SaveSlot[] gameSlots;
@@ -51,10 +52,7 @@ public class GameController : MonoBehaviour
     public Vector3 playerStartPosition;
     //public List<string> defeatedNormalEnemies = new List<string>();
     public List<string> defeatedBosses = new List<string>();
-    public bool inTransfer;    
-    public GameObject battleStuff;
-    public AreaStuff areaStuff;
-    public MapCameraController mapCamera;
+    public bool inTransfer;
     public HeroBattler[] heroes;
     public bool unlockAll;
     public HeroBattler[] unlockedHeroes;
@@ -98,7 +96,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             return;
         }
         DontDestroyOnLoad(gameObject);
@@ -154,7 +152,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Title"), Vector3.up));
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("Play"), Vector3.down, power: 20f));
         StartCoroutine(Jrpg.JumpAway(GameObject.Find("New Game"), Vector3.down, power: 30f));
-        StartCoroutine(Jrpg.LoadScene("World"));
+        StartCoroutine(Jrpg.LoadScene("MainMap_1"));
     }
 
     public void FirstHeroesSelection()
@@ -165,33 +163,26 @@ public class GameController : MonoBehaviour
         StartCoroutine(Jrpg.HeroesSelection(heroes, 3, Jrpg.StartSelectionCallback, forceSelectMaximum: true, title: "CHOOSE YUOR HEROES"));
     }
 
-    public void InitializeGame()
+    public void InitializeMap()
     {
-        areaStuff = Instantiate(areaStuffPrefab).GetComponent<AreaStuff>();
         situation = "Map";
-        mapCamera = areaStuff.mapCamera;
+        areaStuff.gameObject.SetActive(true);
+        
+        //mapCamera = areaStuff.mapCamera;
 
         GameObject intro = GameObject.Find("Intro");
         intro.GetComponent<Image>().enabled = true;
 
         // Instance current map
-        WorldMap wm = (Resources.Load("Maps/" + savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
-        if (GameObject.Find(savedCurrentMapName) != null)
-            Destroy(GameObject.Find(savedCurrentMapName));
-        currentMap = Instantiate(wm, Vector3.zero, Quaternion.identity, areaStuff.transform);
-        currentMap.name = savedCurrentMapName;
-        currentMap.Setup();
+        //WorldMap wm = (Resources.Load("Maps/" + savedCurrentMapName) as GameObject).GetComponent<WorldMap>();
+        //if (GameObject.Find(savedCurrentMapName) != null)
+        //    Destroy(GameObject.Find(savedCurrentMapName));
+        //currentMap = Instantiate(wm, Vector3.zero, Quaternion.identity, areaStuff.transform);
+        //currentMap.name = savedCurrentMapName;
+        currentMap = FindObjectOfType<WorldMap>();
 
-        //// After-battle behaviour
-        //if (situation.EndsWith("Battle"))
-        //{
-        //    // Here we can do something right after a battle ends
-        //    if (lastBattleOutcome == "Win")
-        //    {
-        //        Debug.Log("Battle won, now destroying defeated enemy characters");
-        //    }
-        //    situation = "Map";
-        //}      
+        currentMap.Setup();
+        mapCamera.Setup(currentMap);
 
         // Set player position
         areaStuff.player.transform.position = playerStartPosition;
@@ -263,7 +254,7 @@ public class GameController : MonoBehaviour
         //Destroy(currentMap.gameObject);
 
         // Create battle stuff
-        battleStuff = Instantiate(battleStuffPrefab);
+        battleStuff.SetActive(true);
         battleStuff.transform.Find("Battle Controller").GetComponent<BattleController>().Setup(encounter);
 
         // GUI Elements
@@ -801,7 +792,7 @@ public class GameController : MonoBehaviour
 
         Debug.Log("Reset camera");
         MapCameraController mainCamera = GameObject.Find("Map Camera").GetComponent<MapCameraController>();
-        mainCamera.Setup();
+        mainCamera.Setup(currentMap);
         //defeatedNormalEnemies.Clear();
 
         Debug.Log("Destroying old map");

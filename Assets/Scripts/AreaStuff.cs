@@ -6,7 +6,6 @@ public class AreaStuff : MonoBehaviour
 {
     [Header("Drag and Drop")]
     public PlayerController player;
-    public MapCameraController mapCamera;
 
     // Start is called before the first frame update
     void Start()

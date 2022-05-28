@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Cheats : MonoBehaviour
 {
     public Encounter[] testEncounters;
+    public string testScene;
 
     [System.Serializable]
     public class Team
@@ -29,22 +30,6 @@ public class Cheats : MonoBehaviour
 
     public bool mute;
 
-    // Persistence
-    public static Cheats cGInstance;
-    void Awake()
-    {
-        // Persistence
-        if (cGInstance == null)
-        {
-            cGInstance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
-    }
 
     // Use this for initialization
     void Start()
@@ -180,5 +165,10 @@ public class Cheats : MonoBehaviour
         {
             GameController.Instance.partyPrefabs[i] = (HeroBattler)teams[actualTeam].memebrs[i];
         }
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(testScene);
     }
 }

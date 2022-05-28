@@ -17,13 +17,11 @@ public class MapCameraController : BattleCameraController
     public override void Start()
     {
         base.Start();
-       
-        Setup();
     }
 
-    public void Setup()
+    public void Setup(WorldMap map)
     {
-        spriteBounds = GameController.Instance.currentMap.cameraBoundary;
+        spriteBounds = map.cameraBoundary;
         float vertExtent = gameObject.GetComponent<Camera>().orthographicSize;
         float horzExtent = vertExtent * Screen.width / Screen.height;
         leftBound = spriteBounds.transform.position.x + (horzExtent - spriteBounds.sprite.bounds.size.x / 2.0f);
