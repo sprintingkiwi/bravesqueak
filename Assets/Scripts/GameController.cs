@@ -97,7 +97,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
             return;
         }
         DontDestroyOnLoad(gameObject);
