@@ -185,6 +185,12 @@ public class GameController : MonoBehaviour
         map.Setup();
         mapCamera.Setup(map);
 
+        //Music
+        if (map.soundtrack != null)
+            if (map.soundtrack != music.clip)
+                StartCoroutine(ChangeMusic(map.soundtrack, 1));            
+
+
         // Set player position
         player.transform.position = playerStartPosition;
 
@@ -728,6 +734,7 @@ public class GameController : MonoBehaviour
         yield return StartCoroutine(SetVolume(0));
 
         music.Stop();
+        yield return new WaitForSeconds(speed);
         music.clip = newClip;
         music.Play();
 
@@ -757,6 +764,7 @@ public class GameController : MonoBehaviour
         playerStartPosition = pos;
         inTransfer = true;
         SceneManager.LoadScene(mapName);
+        //StartCoroutine(Jrpg.LoadScene(mapName));
 
         yield return null;
 

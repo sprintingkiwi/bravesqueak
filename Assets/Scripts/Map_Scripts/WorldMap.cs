@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class WorldMap : MonoBehaviour
 {
@@ -27,12 +26,6 @@ public class WorldMap : MonoBehaviour
         public string folderName;
         public int sortingOrder;
         public float zLevel;
-
-        //[Header("Animation")]
-        //public bool isAnimated;
-        //public float pause;
-        //// Folder name of the other frames
-        //public string[] nextFrames;
     }
     [Header("Map Layers")]
     public MapLayer[] mapLayers;    
@@ -40,23 +33,9 @@ public class WorldMap : MonoBehaviour
     [Header("System")]
     public SpriteRenderer cameraBoundary;
 
-    void Awake()
-    {
-        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
-    }
-
     private void Start()
     {
         GameController.Instance.InitializeMap(this);
-    }
-
-    void Update()
-    {
-        //if (transform.Find("Passability").GetComponent<PolygonCollider2D>().enabled == false)
-        //{
-        //    Debug.LogWarning(name + " map passability collider is not enabled. Enabling it now...");
-        //    transform.Find("Passability").GetComponent<PolygonCollider2D>().enabled = true;
-        //}
     }
 
     public virtual void BuildMap()
@@ -70,13 +49,13 @@ public class WorldMap : MonoBehaviour
     {      
         // DO SOME STUFF RIGHT AFTER THE MAP LOADS:        
         // Init music
-        if (soundtrack != GameController.Instance.music.clip)
-        {
-            GameController.Instance.music.Stop();
-            GameController.Instance.music.clip = soundtrack;
-            GameController.Instance.music.Play();
-            StartCoroutine(GameController.Instance.SetVolume(1));
-        }
+        //if (soundtrack != GameController.Instance.music.clip)
+        //{
+        //    GameController.Instance.music.Stop();
+        //    GameController.Instance.music.clip = soundtrack;
+        //    GameController.Instance.music.Play();
+        //    StartCoroutine(GameController.Instance.SetVolume(1));
+        //}
 
         // Enemies names
         foreach (Transform t in transform.Find("ENEMIES"))
@@ -97,8 +76,6 @@ public class WorldMap : MonoBehaviour
         //    AstarPath astar = GameObject.Find("A_Star").GetComponent<AstarPath>();
         //    astar.Scan();
         //}
-
-        //StartCoroutine(AnimateLayers());
     }
 
     // Function to build map on the editor
@@ -142,36 +119,6 @@ public class WorldMap : MonoBehaviour
             }
         }
     }
-
-    // Map Layers Animation Coroutine
-    //public IEnumerator AnimateLayers()
-    //{
-    //    foreach(MapLayer mainLayer in mapLayers)
-    //    {
-            
-
-    //        if (mainLayer.isAnimated)
-    //        {
-    //            List<List<Sprite>> spriteLists = new List<List<Sprite>>();
-    //            spriteLists.Add(new List<Sprite>());
-
-    //            List<string> containersNames = new List<string>();
-    //            containersNames.Add(mainLayer.folderName);
-    //            containersNames.Concat(mainLayer.nextFrames);
-
-    //            foreach (string containerName in containersNames)
-    //            {
-    //                List<Sprite> frameTiles = new List<Sprite>();
-    //                Transform container = transform.Find(containerName);
-    //                foreach (Transform tile in container)
-    //                {
-    //                    frameTiles.Add(tile.GetComponent<SpriteRenderer>().sprite);
-    //                }
-    //            }
-    //        }
-    //    }
-    //    yield return null;
-    //}
 
     public virtual Encounter ChooseRandomEncounter()
     {
