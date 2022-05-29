@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
     public string lastScene;
     public WorldMap currentMap;
     public string savedCurrentMapName;
-    public Vector3 playerStartPosition;
+    //public Vector3 playerStartPosition;
     //public List<string> defeatedNormalEnemies = new List<string>();
     public List<string> defeatedBosses = new List<string>();
     public bool inTransfer;
@@ -158,7 +158,7 @@ public class GameController : MonoBehaviour
     public void ContinueGame(int slot)
     {
         MenuFadingAnimations();
-        canSaveLoad = true;
+        //canSaveLoad = true;
         currentSaveSlot = slot;
         StartCoroutine(Load(slot));
     }
@@ -205,9 +205,9 @@ public class GameController : MonoBehaviour
                 StartCoroutine(ChangeMusic(map.soundtrack, 1));
 
         // Set player position
-        player.transform.position = playerStartPosition;
+        //player.transform.position = playerStartPosition;
 
-        Jrpg.Fade(GameObject.Find("Intro"), 0, 1);        
+        Jrpg.Fade(GameObject.Find("Intro"), 0, 1);
 
         //if (continueGame) // CONTINUE
         //{
@@ -223,6 +223,8 @@ public class GameController : MonoBehaviour
         //        Jrpg.Log("Unlock all mode: unlocking all characters");
         //    canSaveLoad = true;
         //}
+
+        canSaveLoad = true;
     }
 
     public IEnumerator TriggerBattle(Encounter encounter, string enemyName)
@@ -259,7 +261,7 @@ public class GameController : MonoBehaviour
             music.clip = currentMap.defaultBattleMusic;
         music.Play();
 
-        canSaveLoad = false;
+        //canSaveLoad = false;
         //playerStartPosition = GameObject.Find("Player").transform.position;
         currentEnemy = enemyName;
 
@@ -573,7 +575,7 @@ public class GameController : MonoBehaviour
                 defeatedBosses.Remove(db);
 
         // Transfer to map
-        playerStartPosition = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
+        player.transform.position = new Vector3(saveData.playerPosition[0], saveData.playerPosition[1], saveData.playerPosition[2]);
         SceneManager.LoadScene(saveData.savedCurrentMapName);
         //Transfer t = new GameObject().AddComponent<Transfer>();
         //t.name = "Loading Transfer";
@@ -774,11 +776,15 @@ public class GameController : MonoBehaviour
     public IEnumerator ProcessTransfer(string mapName, Vector3 pos)
     {
         Debug.Log("Transfering to " + mapName);
-        playerStartPosition = pos;
+        canSaveLoad = false;
         inTransfer = true;
-        SceneManager.LoadScene(mapName);
-        //StartCoroutine(Jrpg.LoadScene(mapName));
 
+        SceneManager.LoadScene(mapName);
+        yield return null;
+
+        player.transform.position = pos;
+        canSaveLoad = true;
+        //StartCoroutine(Jrpg.LoadScene(mapName));
         yield return null;
 
         //Debug.Log("Transfering player " + name);
