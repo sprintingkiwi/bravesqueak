@@ -5418,7 +5418,7 @@ GameObject:
   - component: {fileID: 4369981930563730}
   - component: {fileID: 114142631811641686}
   m_Layer: 0
-  m_Name: HollowTree
+  m_Name: HollowTree_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
