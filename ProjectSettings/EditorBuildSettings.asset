@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 30041c7c1a5ce5948b67ac1799e9a864
   - enabled: 1
-    path: Assets/Scenes/World.unity
-    guid: eb52b65b4a5d33141b309597e69c4386
-  - enabled: 1
     path: Assets/Scenes/MainMap_1.unity
     guid: 32ca7d54a89d36441a1987201b03427f
   - enabled: 1
@@ -32,4 +29,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Passage_Swamp.unity
     guid: 62c7b966ee6adc14186a1ab75fa5012d
+  - enabled: 1
+    path: Assets/Scenes/AntHill_1.unity
+    guid: 32721093b457721429d803f0d54086e5
+  - enabled: 1
+    path: Assets/Scenes/AntHill_2.unity
+    guid: f066ca822114d724ea747e35921406a3
+  - enabled: 1
+    path: Assets/Scenes/BramblesMaze.unity
+    guid: a2d4060b653365c45acf5f89df93c9d4
+  - enabled: 1
+    path: Assets/Scenes/Desert.unity
+    guid: 0fbe743bc03bbc14fbb8734f51e3d5c7
+  - enabled: 1
+    path: Assets/Scenes/HollowTree_1.unity
+    guid: 7222d163e4b4f104aa67e10143b99ab4
+  - enabled: 1
+    path: Assets/Scenes/HollowTree_2.unity
+    guid: f70e441404a15f245a7595cb70ddc171
+  - enabled: 1
+    path: Assets/Scenes/Passage_Fox.unity
+    guid: 6ea34c58e91ef554c8a624d62642d740
+  - enabled: 1
+    path: Assets/Scenes/Passage_Octopus.unity
+    guid: 8974d924ef0c7d94194169675a16e4ba
+  - enabled: 1
+    path: Assets/Scenes/Passage_Snake.unity
+    guid: 2874ea7c3e3c90349ba395249a142d7a
+  - enabled: 1
+    path: Assets/Scenes/Snow.unity
+    guid: 26d19f8d4f77b9743a121ba20db0d1b0
+  - enabled: 1
+    path: Assets/Scenes/Swamp.unity
+    guid: 823449f96487b18459eeb7102ee765a8
   m_configObjects: {}

@@ -3543,7 +3543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationMap: AntHill_1
-  destinationPos: {x: -16.18, y: -4.61, z: 0}
+  destinationPos: {x: 14.22, y: 10.3, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114691420661505138

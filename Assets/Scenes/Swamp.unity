@@ -190,6 +190,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 6344839934035448254, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344839934035448254, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.76
+      objectReference: {fileID: 0}
     - target: {fileID: 8515324322440373414, guid: 266dafa3ac699814fa0170494574260c,
         type: 3}
       propertyPath: m_IsActive
