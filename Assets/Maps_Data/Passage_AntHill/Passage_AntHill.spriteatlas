@@ -96,6 +96,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ef146cc7bc79d424598b521192317d83, type: 3}
   - {fileID: 21300000, guid: 1bd190d746a925c4286ff07b5cce0d80, type: 3}
   - {fileID: 21300000, guid: cc412ed74ed2b2d4bb5e05965ff5eb50, type: 3}
+  - {fileID: 21300000, guid: e0a74858c923b0a41a48a672980ddb91, type: 3}
   - {fileID: 21300000, guid: 1d621ab803c6c054ca74d32a4f5974c4, type: 3}
   - {fileID: 21300000, guid: 0ad0b1298906fe240b45b21399e1b47f, type: 3}
   - {fileID: 21300000, guid: 5923f069016188643b82fc2fd26359d1, type: 3}
@@ -194,6 +195,7 @@ SpriteAtlas:
   - Passage_AntHill_Overlay_11
   - Passage_AntHill_Overlay_15
   - Passage_AntHill_Overlay_8
+  - Passage_AntHill_Ground
   - Passage_AntHill_Overlay_18
   - Animation_HoleLights0018
   - Passage_AntHill_Overlay_3
