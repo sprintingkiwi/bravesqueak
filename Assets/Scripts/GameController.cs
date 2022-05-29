@@ -182,7 +182,7 @@ public class GameController : MonoBehaviour
     {
         currentMap = map;
         situation = "Map";
-        areaStuff.gameObject.SetActive(true);
+        areaStuff.SetActive(true);
         
         //mapCamera = areaStuff.mapCamera;
 
@@ -264,7 +264,8 @@ public class GameController : MonoBehaviour
         currentEnemy = enemyName;
 
         //currentMap.gameObject.SetActive(false);
-        areaStuff.gameObject.SetActive(false);
+        areaStuff.SetActive(false);
+        currentMap.gameObject.SetActive(false);
         //Destroy(areaStuff);
         //Destroy(currentMap.gameObject);
 
@@ -320,7 +321,8 @@ public class GameController : MonoBehaviour
             else
                 Jrpg.Log("Not destroying enemies on map because it is a random encounter");
 
-            areaStuff.gameObject.SetActive(true);
+            areaStuff.SetActive(true);
+            currentMap.gameObject.SetActive(true);
             //currentMap.gameObject.SetActive(true);
             //areaStuff = Instantiate(areaStuffPrefab);
             //player.transform.position = playerStartPosition;
@@ -373,7 +375,8 @@ public class GameController : MonoBehaviour
             Destroy(battleStuff);
             foreach (Transform t in GameObject.Find("BATTLE HUD").transform)
                 Destroy(t.gameObject);
-            areaStuff.gameObject.SetActive(true);
+            areaStuff.SetActive(true);
+            currentMap.gameObject.SetActive(true);
             situation = "Map";
             canSaveLoad = true;
             mapCamera.followPlayer = true;
