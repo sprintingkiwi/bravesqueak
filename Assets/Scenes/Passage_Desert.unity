@@ -3367,8 +3367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Desert
+  destinationPos: {x: -21.03, y: 16.7, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &4751745024422764657
@@ -3383,8 +3383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: MainMap_1
+  destinationPos: {x: 8.51, y: -10.61, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &4755426811719622155

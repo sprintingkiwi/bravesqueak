@@ -5438,8 +5438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Passage_Snow
+  destinationPos: {x: 7.2, y: -8.02, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114068703359997930
@@ -5454,8 +5454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Passage_HollowTree
+  destinationPos: {x: -8.39, y: -7.18, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114090144016589698
@@ -5518,8 +5518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Passage_Brambles
+  destinationPos: {x: -7.54, y: -9.25, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114301561721143108
@@ -5578,8 +5578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Passage_Desert
+  destinationPos: {x: -4.27, y: 7.48, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &114385881895196182
@@ -5844,8 +5844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Passage_Swamp
+  destinationPos: {x: 1.51, y: 9.1, z: 0}
   active: 1
   transfering: 0
 --- !u!212 &212003246754565188

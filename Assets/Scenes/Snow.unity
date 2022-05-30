@@ -294,8 +294,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8725034553829571282}
-  - component: {fileID: 4245674923182618176}
-  - component: {fileID: 3134115679839369416}
   - component: {fileID: 2149281673600156385}
   - component: {fileID: 8113464368470293669}
   m_Layer: 0
@@ -661,22 +659,6 @@ Transform:
   m_Father: {fileID: 5208343179499815367}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &3134115679839369416
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939277880539066263}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
 --- !u!114 &3196382742181486311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,22 +697,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4245674923182618176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939277880539066263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
-  active: 1
-  transfering: 0
 --- !u!58 &4321414327857275469
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4872,8 +4838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Passage_Snow
+  destinationPos: {x: -2.4, y: 9.55, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &5319111285568724005
@@ -5094,8 +5060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2281af70987bc3e4ca710f6d48a9e351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Passage_Fox
+  destinationPos: {x: -0.38, y: -10.3, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &5323216401299305745

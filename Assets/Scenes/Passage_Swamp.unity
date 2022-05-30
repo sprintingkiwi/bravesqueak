@@ -7667,8 +7667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Swamp
+  destinationPos: {x: 22.17, y: 17, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &6889711864255998389
@@ -7710,7 +7710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: MainMap_1
+  destinationPos: {x: -8.29, y: -10.48, z: 0}
   active: 1
   transfering: 0

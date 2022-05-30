@@ -4312,8 +4312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: Desert
+  destinationPos: {x: 19.25, y: -19.46, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &5073894559170522363

@@ -3986,8 +3986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: BramblesMaze
+  destinationPos: {x: -17.7, y: 8.4, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &3307630776900280157
@@ -4029,8 +4029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3adae5d472acb6458fe81dbc31d68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationMap: 
-  destinationPos: {x: 0, y: 0, z: 0}
+  destinationMap: MainMap_1
+  destinationPos: {x: 14.48, y: 9.39, z: 0}
   active: 1
   transfering: 0
 --- !u!212 &3350961133173932955
