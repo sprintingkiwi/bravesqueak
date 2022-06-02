@@ -776,6 +776,7 @@ public class GameController : MonoBehaviour
     public IEnumerator ProcessTransfer(string mapName, Vector3 pos)
     {
         Debug.Log("Transfering to " + mapName);
+        player.gameObject.SetActive(false);
         canSaveLoad = false;
         inTransfer = true;
 
@@ -783,6 +784,7 @@ public class GameController : MonoBehaviour
         yield return null;
 
         player.transform.position = pos;
+        player.gameObject.SetActive(true);
         canSaveLoad = true;
         //StartCoroutine(Jrpg.LoadScene(mapName));
         yield return null;
