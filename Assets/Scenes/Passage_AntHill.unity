@@ -2394,10 +2394,6 @@ MonoBehaviour:
   randomEncountersRate: 0
   randomEncounters: []
   mapLayers:
-  - folderName: Ground
-    sortingOrder: -1000
-    zLevel: 0
-    split: {x: 0, y: 0}
   - folderName: Overlay
     sortingOrder: 1000
     zLevel: 0
