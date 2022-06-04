@@ -112,8 +112,11 @@ public class WorldMap : MonoBehaviour
                 sr.sprite = Resources.Load<Sprite>("Maps/" + tileDir + "/" + layerName.ToUpper() + "/" + tileDir + "_" + layerName +"_" + tileCount.ToString());
                 sr.sortingOrder = sortingOrder;
 
-                // Find right position
-                Vector3 pos = new Vector3(Mathf.Round((startPos.x + (boundary.bounds.size.x / mapSplit.x) * column) * 10) / 10, Mathf.Round((startPos.y - (boundary.bounds.size.y / mapSplit.y) * row) * 10) / 10, zLevel);
+                // Find right position (Rounding to 2 decimal places because with 100 pixel per unit it is pixel perfect)
+                Vector3 pos = new Vector3(
+                    Mathf.Round((startPos.x + (boundary.bounds.size.x / mapSplit.x) * column) * 100) / 100,
+                    Mathf.Round((startPos.y - (boundary.bounds.size.y / mapSplit.y) * row) * 100) / 100,
+                    zLevel);
                 tile.transform.position = pos;
 
                 tileCount += 1;
