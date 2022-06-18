@@ -23,9 +23,10 @@ public class WorldMap : MonoBehaviour
     [System.Serializable]
     public class MapLayer
     {
-        public string folderName;
+        public string folderName;        
         public int sortingOrder;
         public float zLevel;
+        public Vector2 split;
     }
     [Header("Map Layers")]
     public MapLayer[] mapLayers;    
@@ -41,7 +42,7 @@ public class WorldMap : MonoBehaviour
     public virtual void BuildMap()
     {
         foreach (MapLayer ml in mapLayers)
-            DisposeMapTiles(ml.folderName, ml.sortingOrder, ml.zLevel);
+            DisposeMapTiles(ml.folderName, ml.sortingOrder, ml.zLevel, ml.split);
     }
 
     // Use this for initialization
@@ -79,7 +80,7 @@ public class WorldMap : MonoBehaviour
     }
 
     // Function to build map on the editor
-    public void DisposeMapTiles(string layerName, int sortingOrder, float zLevel)
+    public void DisposeMapTiles(string layerName, int sortingOrder, float zLevel, Vector2 mapSplit)
     {
         // Get container object
         Transform container = transform.Find(layerName.ToUpper());
@@ -99,9 +100,9 @@ public class WorldMap : MonoBehaviour
         Vector3 startPos = new Vector3(boundary.bounds.center.x - boundary.bounds.size.x / 2, boundary.bounds.center.y + boundary.bounds.size.y / 2, zLevel);
 
         int tileCount = 1;
-        for (int column = 0; column < 6; column++)
+        for (int column = 0; column < mapSplit.x; column++)
         {
-            for (int row = 0; row < 6; row++)
+            for (int row = 0; row < mapSplit.y; row++)
             {                  
                 // Create tile
                 GameObject tile = new GameObject("tile_" + tileCount.ToString());
@@ -111,8 +112,11 @@ public class WorldMap : MonoBehaviour
                 sr.sprite = Resources.Load<Sprite>("Maps/" + tileDir + "/" + layerName.ToUpper() + "/" + tileDir + "_" + layerName +"_" + tileCount.ToString());
                 sr.sortingOrder = sortingOrder;
 
-                // Find right position
-                Vector3 pos = new Vector3(startPos.x + (boundary.bounds.size.x / 6) * column, startPos.y - (boundary.bounds.size.y / 6) * row, zLevel);
+                // Find right position (Rounding to 2 decimal places because with 100 pixel per unit it is pixel perfect)
+                Vector3 pos = new Vector3(
+                    Mathf.Round((startPos.x + (boundary.bounds.size.x / mapSplit.x) * column) * 100) / 100,
+                    Mathf.Round((startPos.y - (boundary.bounds.size.y / mapSplit.y) * row) * 100) / 100,
+                    zLevel);
                 tile.transform.position = pos;
 
                 tileCount += 1;

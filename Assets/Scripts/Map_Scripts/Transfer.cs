@@ -21,7 +21,7 @@ public class Transfer : MonoBehaviour
     {
         if (collision.name == "Player" && !GameController.Instance.inTransfer && active && !transfering)
         {
-            Debug.LogWarning("Map: " + destinationMap);
+            //Debug.LogWarning("Map: " + destinationMap);
             GameController.Instance.StartCoroutine(GameController.Instance.ProcessTransfer(destinationMap, destinationPos));
         }
     }

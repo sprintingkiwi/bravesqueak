@@ -714,7 +714,6 @@ MonoBehaviour:
   lastScene: 
   currentMap: {fileID: 0}
   savedCurrentMapName: MainMap_1
-  playerStartPosition: {x: 0, y: 0, z: 0}
   defeatedBosses: []
   inTransfer: 0
   heroes:
@@ -2660,7 +2659,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1

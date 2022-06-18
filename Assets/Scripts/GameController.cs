@@ -158,8 +158,8 @@ public class GameController : MonoBehaviour
     public void ContinueGame(int slot)
     {
         MenuFadingAnimations();
-        //canSaveLoad = true;
         currentSaveSlot = slot;
+        canSaveLoad = true;
         StartCoroutine(Load(slot));
     }
 
@@ -776,13 +776,16 @@ public class GameController : MonoBehaviour
     public IEnumerator ProcessTransfer(string mapName, Vector3 pos)
     {
         Debug.Log("Transfering to " + mapName);
+        player.gameObject.SetActive(false);
         canSaveLoad = false;
         inTransfer = true;
 
-        SceneManager.LoadScene(mapName);
+        if (mapName != "")
+            SceneManager.LoadScene(mapName);
         yield return null;
 
         player.transform.position = pos;
+        player.gameObject.SetActive(true);
         canSaveLoad = true;
         //StartCoroutine(Jrpg.LoadScene(mapName));
         yield return null;
