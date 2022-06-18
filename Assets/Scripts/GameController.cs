@@ -158,8 +158,8 @@ public class GameController : MonoBehaviour
     public void ContinueGame(int slot)
     {
         MenuFadingAnimations();
-        //canSaveLoad = true;
         currentSaveSlot = slot;
+        canSaveLoad = true;
         StartCoroutine(Load(slot));
     }
 
