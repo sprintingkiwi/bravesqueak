@@ -780,7 +780,8 @@ public class GameController : MonoBehaviour
         canSaveLoad = false;
         inTransfer = true;
 
-        SceneManager.LoadScene(mapName);
+        if (mapName != "")
+            SceneManager.LoadScene(mapName);
         yield return null;
 
         player.transform.position = pos;
