@@ -374,7 +374,7 @@ public class BattleMenu : MonoBehaviour
             selectedSkill = playerBattler.skills[skillIndex];
             Skill lastSelectedSkill = null;
 
-            GameObject skillSelector = Instantiate(skillSelectorPrefab, bc.mainCamera.transform);
+            GameObject skillSelector = Instantiate(skillSelectorPrefab, bc.battleCamera.transform);
 
             // Label to restart target selection when skill is changed
             MobileSelection:
@@ -429,7 +429,7 @@ public class BattleMenu : MonoBehaviour
                 // For Area skills only
                 selectedFaction = Battler.Faction.Enemies;
                 Battler.Faction lastFaction = selectedFaction;
-                areaSelection = Instantiate(areaSelectionPrefab, bc.mainCamera.transform) as GameObject;
+                areaSelection = Instantiate(areaSelectionPrefab, bc.battleCamera.transform) as GameObject;
                 yield return Jrpg.Fade(areaSelection, 1, 0.2f);
 
                 phase = "Area Selection";
@@ -510,7 +510,7 @@ public class BattleMenu : MonoBehaviour
                 Jrpg.Fade(activeBattler, 0, 0.5f)
             };
 
-            GameObject undoButton = Instantiate(undoBtnPrefab, bc.mainCamera.transform) as GameObject;
+            GameObject undoButton = Instantiate(undoBtnPrefab, bc.battleCamera.transform) as GameObject;
             undoButton.name = "Undo Button";
 
             // Target Selection
@@ -599,7 +599,7 @@ public class BattleMenu : MonoBehaviour
                     selectedFaction = Battler.Faction.Enemies;
                 else
                     selectedFaction = Battler.Faction.Heroes;
-                areaSelection = Instantiate(areaSelectionPrefab, bc.mainCamera.transform) as GameObject;
+                areaSelection = Instantiate(areaSelectionPrefab, bc.battleCamera.transform) as GameObject;
                 areaSelection.transform.position = new Vector3(12.5f * (float)selectedFaction, -10f, 0);
                 yield return Jrpg.Fade(areaSelection, 1, 0.2f);
                 // Waiting for confirm
@@ -661,8 +661,8 @@ public class BattleMenu : MonoBehaviour
         //Jrpg.Fade(playerBattler.transform.Find("Highlighter").gameObject, 0, 0.5f, true);
         if (playerBattler.transform.Find("Highlighter") != null)
             Destroy(playerBattler.transform.Find("Highlighter").gameObject);
-        if (bc.mainCamera.transform.Find("Target Cursor") != null)
-            Destroy(bc.mainCamera.transform.Find("Target Cursor").gameObject);
+        if (bc.battleCamera.transform.Find("Target Cursor") != null)
+            Destroy(bc.battleCamera.transform.Find("Target Cursor").gameObject);
             //Jrpg.Fade(bc.mainCamera.transform.Find("Target Cursor").gameObject, 0, 0.1f, true);
         Destroy(gameObject);
     }
@@ -670,7 +670,7 @@ public class BattleMenu : MonoBehaviour
     public void CreateTargetCursor()
     {
         Debug.Log("Creating cursor");
-        targetCursor = Instantiate(targetCursorPrefab, Vector3.zero, Quaternion.identity, bc.mainCamera.transform) as GameObject;
+        targetCursor = Instantiate(targetCursorPrefab, Vector3.zero, Quaternion.identity, bc.battleCamera.transform) as GameObject;
         targetCursor.name = "Target Cursor";
         currentlySelectedTarget = 0;
     }

@@ -179,7 +179,7 @@ public class Skill : Item
             yield return StartCoroutine(MoveToTarget(targets[0]));
 
         if (cameraFocus)
-            bc.cameraCoroutines.Add(StartCoroutine(bc.mainCamera.Focus(targets[UnityEngine.Random.Range(0, targets.Count - 1)])));
+            bc.cameraCoroutines.Add(StartCoroutine(bc.battleCamera.Focus(targets[UnityEngine.Random.Range(0, targets.Count - 1)])));
 
         yield return StartCoroutine(Fighting());
 

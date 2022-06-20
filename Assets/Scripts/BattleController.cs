@@ -10,6 +10,9 @@ using System;
 
 public class BattleController : MonoBehaviour
 {
+    [Header("Drag and Drop")]
+    public BattleCameraController battleCamera;
+
     [Header("Game Objects")]
     //public List<HeroBattler> party = new List<HeroBattler>();
     public Encounter encounter;
@@ -19,7 +22,6 @@ public class BattleController : MonoBehaviour
     public GameObject battleback;
     public BattleMenu battleMenu;
     public Coroutine processChoiceCoroutine;
-    public BattleCameraController mainCamera;
 
     [Header("Instantiated")]
     public List<Battler> party = new List<Battler>();
@@ -93,11 +95,11 @@ public class BattleController : MonoBehaviour
     {
         this.encounter = encounter;
 
-        mainCamera = GameObject.Find("Battle Camera").GetComponent<BattleCameraController>();
-        InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        //battleCamera = GameObject.Find("Battle Camera").GetComponent<BattleCameraController>();
+        //InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
 
         // Retrieving data from Game Controller
-        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        //GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
         //party = ps.party;
         //enemies = persistentStuff.enemies;
         foreach (Encounter.Enemy ee in encounter.enemies)
@@ -116,7 +118,7 @@ public class BattleController : MonoBehaviour
 
         // Populate turns
         turnNumber = 0;
-        StartCoroutine(mainCamera.Move(encounter.cameraAdjust.delta, encounter.cameraAdjust.speed, setAsOriginalPosition: true));
+        StartCoroutine(battleCamera.Move(encounter.cameraAdjust.delta, encounter.cameraAdjust.speed, setAsOriginalPosition: true));
         
         // Start battle turns
         StartCoroutine(ManageTurns());
@@ -193,7 +195,7 @@ public class BattleController : MonoBehaviour
 
     Coroutine SetupBattleMenu(HeroBattler playerBattler)
     {
-        battleMenu = Instantiate(battleMenuPrefab, mainCamera.gameObject.transform).GetComponent<BattleMenu>();
+        battleMenu = Instantiate(battleMenuPrefab, battleCamera.gameObject.transform).GetComponent<BattleMenu>();
         battleMenu.name = "Battle Menu";
         //battleMenu.instParty = instParty;
         //battleMenu.instEnemies = instEnemies;
@@ -350,7 +352,7 @@ public class BattleController : MonoBehaviour
                         if (c != null)
                             StopCoroutine(c);
                     }
-                    cameraCoroutines.Add(StartCoroutine(mainCamera.DefaultFollow(actionsQueue[i].user)));
+                    cameraCoroutines.Add(StartCoroutine(battleCamera.DefaultFollow(actionsQueue[i].user)));
                     
                     // Update battlers stats adding delta stats
                     Debug.Log("Updating battlers STATS");

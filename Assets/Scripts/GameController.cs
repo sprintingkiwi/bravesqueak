@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     [Header("Drag and Drop")]
     public MapCameraController mapCamera;
     public PlayerController player;
-    public GameObject battleStuffTemplate;
+    public BattleStuff battleStuffTemplate;
     public GameObject areaStuff;
 
     [Header("Saves")]
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
     public string currentEnemy;
     public string situation;
     public string lastBattleOutcome;
-    public GameObject battleStuffInstance;
+    public BattleStuff battleStuffInstance;
 
     [Header("Scenes and Maps")]
     //public PlayerController player;
@@ -273,11 +273,10 @@ public class GameController : MonoBehaviour
         //Destroy(currentMap.gameObject);
 
         // Create battle stuff
-        battleStuffInstance = Instantiate(battleStuffTemplate); battleStuffInstance.SetActive(true);
-        battleStuffInstance.transform.Find("Battle Controller").GetComponent<BattleController>().Setup(encounter);
+        battleStuffInstance = Instantiate(battleStuffTemplate); battleStuffInstance.gameObject.SetActive(true);
+        battleStuffInstance.battleController.Setup(encounter);
 
         // GUI Elements
-
 
         // Visual and music fade in
         foreach (Coroutine c in new Coroutine[] { Jrpg.Fade(GameObject.Find("Intro"), 0), StartCoroutine(SetVolume(1)) })
@@ -306,7 +305,7 @@ public class GameController : MonoBehaviour
             music.Play();
 
             // Clear battle stuff
-            Destroy(battleStuffInstance);
+            Destroy(battleStuffInstance.gameObject);
             // Destroy HUD
             foreach (Transform t in GameObject.Find("BATTLE HUD").transform)
                 Destroy(t.gameObject);
@@ -375,7 +374,7 @@ public class GameController : MonoBehaviour
             // Load slot 0 when defeated (?)
             music.clip = currentMap.soundtrack;
             music.Play();
-            Destroy(battleStuffInstance);
+            Destroy(battleStuffInstance.gameObject);
             foreach (Transform t in GameObject.Find("BATTLE HUD").transform)
                 Destroy(t.gameObject);
             areaStuff.SetActive(true);

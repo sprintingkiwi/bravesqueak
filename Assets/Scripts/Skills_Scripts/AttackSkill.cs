@@ -223,7 +223,7 @@ public class AttackSkill : Skill
             case "Success":
                 // Shake Camera
                 if (cameraShake)
-                    bc.cameraCoroutines.Add(StartCoroutine(bc.mainCamera.Shake()));
+                    bc.cameraCoroutines.Add(StartCoroutine(bc.battleCamera.Shake()));
                 //else // Little camera shake also after normal attacks?
                     //bc.cameraCoroutines.Add(StartCoroutine(bc.mainCamera.Shake(0.2f, 0.1f, 1)));
                     

@@ -54,7 +54,7 @@ MonoBehaviour:
   showDebugInfo: 0
   mapCamera: {fileID: 6452277527807380602}
   player: {fileID: 6450746315878835698}
-  battleStuffTemplate: {fileID: 3889387014091838515}
+  battleStuffTemplate: {fileID: 304283337217973246}
   areaStuff: {fileID: 6348678286665220212}
   saveData:
   - defeatedBosses: []
@@ -2173,6 +2173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3885659462582038225}
+  - component: {fileID: 304283337217973246}
   m_Layer: 0
   m_Name: BATTLE STUFF
   m_TagString: Untagged
@@ -2198,6 +2199,19 @@ Transform:
   m_Father: {fileID: 81310702407153715}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &304283337217973246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889387014091838515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b6c5b16cca4cc4b9574d98f1e2abd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleController: {fileID: 3776579527461239753}
 --- !u!1 &3889508930447072753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,6 +2256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd071821d1fe32942a551c2d5a17202e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleCamera: {fileID: 3776576699192486321}
   encounter: {fileID: 0}
   encounterEnemies: []
   partyPositions:
@@ -2256,7 +2271,6 @@ MonoBehaviour:
   battleback: {fileID: 0}
   battleMenu: {fileID: 114410819081018136, guid: 1020de853881a9d4f892ba48a9ddcc3d,
     type: 3}
-  mainCamera: {fileID: 0}
   party: []
   enemies: []
   droppedItem: {fileID: 0}
