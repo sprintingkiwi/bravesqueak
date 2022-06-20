@@ -142,7 +142,7 @@ public class BattleController : MonoBehaviour
         // Heroes
         for (int i = 0; i < GameController.Instance.partyPrefabs.Count; i++)
         {
-            HeroBattler h = Instantiate(GameController.Instance.partyPrefabs[i], partyPositions[i], Quaternion.identity, GameController.Instance.battleStuff.transform) as HeroBattler;
+            HeroBattler h = Instantiate(GameController.Instance.partyPrefabs[i], partyPositions[i], Quaternion.identity, GameController.Instance.battleStuffInstance.transform) as HeroBattler;
             h.name = h.job.ToString();
             //h.GetComponent<SpriteRenderer>().sortingOrder = 4 - i;
 
@@ -161,7 +161,7 @@ public class BattleController : MonoBehaviour
             // prefab, so it's not necessary anymore.
             //Vector3 enPos = new Vector3(enemiesPositions[i].x + enemies[i].transform.position.x, enemiesPositions[i].y + enemies[i].transform.position.y, enemies[i].transform.position.z);
 
-            EnemyBattler e = Instantiate(encounterEnemies[i].recipe, encounterEnemies[i].place.transform.position, Quaternion.identity, GameController.Instance.battleStuff.transform) as EnemyBattler;
+            EnemyBattler e = Instantiate(encounterEnemies[i].recipe, encounterEnemies[i].place.transform.position, Quaternion.identity, GameController.Instance.battleStuffInstance.transform) as EnemyBattler;
             e.prefabName = e.name.Remove(e.name.Length - 7);
             e.name = e.species.ToString() + " " + i.ToString();
             
@@ -183,7 +183,7 @@ public class BattleController : MonoBehaviour
         // This is for the direct load from Resources asset folder
         Debug.Log("Loading battleback: " + battleback);
 
-        GameObject bb = Instantiate(battleback, GameController.Instance.battleStuff.transform);
+        GameObject bb = Instantiate(battleback, GameController.Instance.battleStuffInstance.transform);
         bb.name = "BATTLEBACK";
 
         // Load encounter-specific battleback layers
@@ -225,7 +225,7 @@ public class BattleController : MonoBehaviour
         Vector3 dropPos = new Vector3(5, 0, 2);
         if (encounter.partyPosAdjust != null)
             dropPos += encounter.partyPosAdjust.position;
-        droppedItem = Instantiate(selectedItem, dropPos, Quaternion.identity, GameController.Instance.battleStuff.transform);
+        droppedItem = Instantiate(selectedItem, dropPos, Quaternion.identity, GameController.Instance.battleStuffInstance.transform);
         Battler itemBattler = (droppedItem.gameObject.AddComponent<Battler>());
         //droppedItem.gameObject.AddComponent<Drop>();
         itemBattler.faction = Battler.Faction.Enemies;

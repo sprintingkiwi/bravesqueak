@@ -41,9 +41,9 @@ public class Skit : AnimatedMapElement
         // Focus camera to skit
         GameController.Instance.mapCamera.followPlayer = false;
         //yield return StartCoroutine(mapCam.Move(Vector3.up * 5));
-        GameController.Instance.mapCamera.activeCoroutines.Add(StartCoroutine(GameController.Instance.mapCamera.SlideTo(new Vector3(spr.bounds.center.x, spr.bounds.center.y - 1.3f, GameController.Instance.mapCamera.transform.position.z), threshold: shiftThresold, speed: 0.5f, callback: TriggerBattle())));
-
-        yield return null;
+        //GameController.Instance.mapCamera.activeCoroutines.Add(StartCoroutine(GameController.Instance.mapCamera.SlideTo(new Vector3(spr.bounds.center.x, spr.bounds.center.y - 1.3f, GameController.Instance.mapCamera.transform.position.z), threshold: shiftThresold, speed: 0.5f, callback: TriggerBattle())));
+        yield return StartCoroutine(TriggerBattle());
+        //yield return null;
     }
 
     public virtual IEnumerator TriggerBattle()

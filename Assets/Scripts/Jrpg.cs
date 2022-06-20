@@ -327,7 +327,7 @@ public class Jrpg : MonoBehaviour
         Effect e;
         if (effect != null)
         {
-            e = Instantiate(effect, position, Quaternion.identity, GameObject.Find("Game Controller").GetComponent<GameController>().battleStuff.transform);
+            e = Instantiate(effect, position, Quaternion.identity, GameObject.Find("Game Controller").GetComponent<GameController>().battleStuffInstance.transform);
             if (targetFaction == Battler.Faction.Heroes)
             {
                 SpriteRenderer spr = e.GetComponent<SpriteRenderer>();

@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     [Header("Drag and Drop")]
     public MapCameraController mapCamera;
     public PlayerController player;
-    public GameObject battleStuff;
+    public GameObject battleStuffTemplate;
     public GameObject areaStuff;
 
     [Header("Saves")]
@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
     public string currentEnemy;
     public string situation;
     public string lastBattleOutcome;
+    public GameObject battleStuffInstance;
 
     [Header("Scenes and Maps")]
     //public PlayerController player;
@@ -272,8 +273,8 @@ public class GameController : MonoBehaviour
         //Destroy(currentMap.gameObject);
 
         // Create battle stuff
-        battleStuff.SetActive(true);
-        battleStuff.transform.Find("Battle Controller").GetComponent<BattleController>().Setup(encounter);
+        battleStuffInstance = Instantiate(battleStuffTemplate); battleStuffInstance.SetActive(true);
+        battleStuffInstance.transform.Find("Battle Controller").GetComponent<BattleController>().Setup(encounter);
 
         // GUI Elements
 
@@ -305,7 +306,7 @@ public class GameController : MonoBehaviour
             music.Play();
 
             // Clear battle stuff
-            Destroy(battleStuff);
+            Destroy(battleStuffInstance);
             // Destroy HUD
             foreach (Transform t in GameObject.Find("BATTLE HUD").transform)
                 Destroy(t.gameObject);
@@ -374,7 +375,7 @@ public class GameController : MonoBehaviour
             // Load slot 0 when defeated (?)
             music.clip = currentMap.soundtrack;
             music.Play();
-            Destroy(battleStuff);
+            Destroy(battleStuffInstance);
             foreach (Transform t in GameObject.Find("BATTLE HUD").transform)
                 Destroy(t.gameObject);
             areaStuff.SetActive(true);
@@ -393,9 +394,9 @@ public class GameController : MonoBehaviour
         UnityEngine.Object[] tips = Resources.LoadAll("BattleTips", typeof(GameObject));
         GameObject tip;
         if (tipID == -1)
-            tip = Instantiate(tips[UnityEngine.Random.Range(0, tips.Length)] as GameObject, battleStuff.transform.Find("Battle Camera"));
+            tip = Instantiate(tips[UnityEngine.Random.Range(0, tips.Length)] as GameObject, battleStuffInstance.transform.Find("Battle Camera"));
         else
-            tip = Instantiate(tips[tipID] as GameObject, battleStuff.transform.Find("Battle Camera"));
+            tip = Instantiate(tips[tipID] as GameObject, battleStuffInstance.transform.Find("Battle Camera"));
         yield return Jrpg.Fade(GameObject.Find("Intro"), 0, speed: 0.2f);
         while (!Input.anyKeyDown && !(Input.touchCount > 0))
             yield return null;

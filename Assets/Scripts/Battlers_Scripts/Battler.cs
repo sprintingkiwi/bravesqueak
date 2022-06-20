@@ -220,7 +220,7 @@ public class Battler : MonoBehaviour
     // Called by the battle controller while executing actions during the turn battle
     public virtual Coroutine UseSkill(Skill skill, List<Battler> targets)
     {
-        bc.actualSkill = Instantiate(skill, GameController.Instance.battleStuff.transform) as Skill;
+        bc.actualSkill = Instantiate(skill, GameController.Instance.battleStuffInstance.transform) as Skill;
         return bc.actualSkill.Execute(this, targets);
     }
 

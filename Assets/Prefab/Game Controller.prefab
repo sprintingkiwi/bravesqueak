@@ -54,7 +54,7 @@ MonoBehaviour:
   showDebugInfo: 0
   mapCamera: {fileID: 6452277527807380602}
   player: {fileID: 6450746315878835698}
-  battleStuff: {fileID: 3889387014091838515}
+  battleStuffTemplate: {fileID: 3889387014091838515}
   areaStuff: {fileID: 6348678286665220212}
   saveData:
   - defeatedBosses: []
@@ -711,6 +711,7 @@ MonoBehaviour:
   currentEnemy: 
   situation: 
   lastBattleOutcome: 
+  battleStuffInstance: {fileID: 0}
   lastScene: 
   currentMap: {fileID: 0}
   savedCurrentMapName: MainMap_1
