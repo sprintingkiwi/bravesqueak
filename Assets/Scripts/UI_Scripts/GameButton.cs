@@ -22,19 +22,19 @@ public class GameButton : MonoBehaviour
         //Jrpg.Fade(gameObject, alpha, fadeSpeed);
         spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 1);
 
-        physicalButtonFeedback = IsButtonAvailable(name);
+        //physicalButtonFeedback = IsButtonAvailable(name);
     }
 
     // Update is called once per frame
     public void Update ()
     {
-        if (physicalButtonFeedback)
-        {
-            if (Input.GetButtonDown(name))
-                spr.sprite = down;
-            else if (Input.GetButtonUp(name))
-                spr.sprite = up;
-        }        
+        //if (physicalButtonFeedback)
+        //{
+        //    if (Input.GetButtonDown(name))
+        //        spr.sprite = down;
+        //    else if (Input.GetButtonUp(name))
+        //        spr.sprite = up;
+        //}        
 	}
 
     bool IsButtonAvailable(string btnName)

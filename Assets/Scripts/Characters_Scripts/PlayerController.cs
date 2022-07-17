@@ -28,6 +28,7 @@ public class PlayerController : Character
     {
         base.Update();
 
+        // Touchscreen Input
         if (Jrpg.CheckPlatform() == "Mobile")
         {
             if (joy.direction != Vector2.zero && canMove)
@@ -35,6 +36,8 @@ public class PlayerController : Character
             else
                 Stop();
         }
+
+        // Physical keys Input
         else
         {
             hor = Input.GetAxis("Horizontal");
@@ -52,7 +55,7 @@ public class PlayerController : Character
             else
                 yMove = 0;
             Vector2 axisInput = new Vector2(xMove, yMove);
-            if (axisInput != Vector2.zero && canMove)
+            if ((axisInput-Vector2.zero).magnitude > 0.1f && canMove)
                 Move(axisInput);
             else
                 Stop();

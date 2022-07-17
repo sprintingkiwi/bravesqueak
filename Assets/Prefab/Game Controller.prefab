@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96134597444001046906f38930b19b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simulatedPlatform: 1
+  simulatedPlatform: 0
   showDebugInfo: 0
   mapCamera: {fileID: 6452277527807380602}
   player: {fileID: 6450746315878835698}
@@ -2934,6 +2934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c90efae913b4a4198520aafca72ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapCamera: {fileID: 6365719773448972678}
   dragging: 0
   direction: {x: 0, y: 0}
   deadzone: 0.02
