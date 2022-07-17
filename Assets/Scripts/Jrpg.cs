@@ -7,6 +7,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Linq;
 using System;
+//using UnityEngine.Networking;
+using System.Runtime.InteropServices;
 
 public class Jrpg : MonoBehaviour
 {
@@ -471,6 +473,10 @@ public class Jrpg : MonoBehaviour
         GameController.Instance.unlockedHeroes = GameController.Instance.unlockedHeroes.Concat(GameController.Instance.selectionCache).ToArray();
         Log("Done adding new hero");
     }
+
+    [DllImport("__Internal")]
+    private static extern bool IsMobile();
+    public static bool IsMobileWebGL() { return IsMobile(); }
 
     //public static Battler FindParentBattler(Transform myTransform)
     //{
