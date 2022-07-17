@@ -743,17 +743,14 @@ public class GameController : MonoBehaviour
     {
         if (Debug.isDebugBuild)
             Debug.Log("Music changing to " + newClip.name);
-
-        float oldVolume = music.volume;
+        //float oldVolume = music.volume;
 
         yield return StartCoroutine(SetVolume(0));
-
         music.Stop();
         yield return new WaitForSeconds(speed);
         music.clip = newClip;
         music.Play();
-
-        yield return StartCoroutine(SetVolume(oldVolume));
+        yield return StartCoroutine(SetVolume(1));
     }
 
     public IEnumerator SetVolume(float newVolume, float speed = 1f)
