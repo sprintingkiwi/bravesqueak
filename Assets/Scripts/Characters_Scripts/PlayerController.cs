@@ -62,7 +62,7 @@ public class PlayerController : Character
         }
 
         // Party Menu
-        if (Input.GetButtonDown("ButtonB"))
+        if (InputManager.instance.ButtonBDown())
         {
             if (GameController.Instance.situation != "Map")
                 return;
