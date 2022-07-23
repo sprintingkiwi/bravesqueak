@@ -119,21 +119,21 @@ public class Jrpg : MonoBehaviour
 
     public static string CheckPlatform()
     {
-        if (Debug.isDebugBuild)
-        {
-            return GameObject.Find("Game Controller").GetComponent<GameController>().simulatedPlatform.ToString();
-        }
-        else
-        {
-            if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
-            {
-                return "Mobile";
-            }
-            else
-            {
-                return "Other";
-            }
-        }                 
+        //if (Debug.isDebugBuild)
+        //{
+        return GameObject.Find("Game Controller").GetComponent<GameController>().simulatedPlatform.ToString();
+        //}
+        //else
+        //{
+        //    if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        //    {
+        //        return "Mobile";
+        //    }
+        //    else
+        //    {
+        //        return "Other";
+        //    }
+        //}                 
     }
 
     public static void AdjustSortingOrder(GameObject go)
