@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 212565198787684934}
   - component: {fileID: 114069915646428382}
   - component: {fileID: 95166979374997656}
-  - component: {fileID: 5469737042365133512}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Untagged
@@ -177,73 +176,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &5469737042365133512
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006907234033178}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.61, y: 0.365}
-    oldSize: {x: 22.5, y: 22.5}
-    newSize: {x: 9, y: 9}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.2710934, y: -2.4556642}
-      - {x: 2.798437, y: -1.576758}
-      - {x: 3.062109, y: -1.0933596}
-      - {x: 3.062109, y: -0.12656271}
-      - {x: 2.7544918, y: 0.44472635}
-      - {x: 1.9195309, y: 0.9720701}
-      - {x: 1.3921871, y: 0.9281248}
-      - {x: 1.1285152, y: 1.4115232}
-      - {x: 0.381445, y: 2.202539}
-      - {x: 0.33749968, y: 2.8617187}
-      - {x: -0.014062822, y: 3.2572265}
-      - {x: -0.36562532, y: 3.476953}
-      - {x: -1.0687504, y: 3.476953}
-      - {x: -1.7718754, y: 2.905664}
-      - {x: -2.6068363, y: 3.0375}
-      - {x: -3.3099613, y: 3.2572265}
-      - {x: -5.0238285, y: 3.1253905}
-      - {x: -5.683008, y: 2.334375}
-      - {x: -5.814844, y: 1.4994138}
-      - {x: -6.342188, y: 1.1917967}
-      - {x: -7.4408207, y: 0.35683572}
-      - {x: -7.748438, y: 0.35683572}
-      - {x: -8.056055, y: 0.13710916}
-      - {x: -8.275782, y: -0.65390646}
-      - {x: -8.275782, y: -1.576758}
-      - {x: -8.143946, y: -1.708594}
-      - {x: -8.01211, y: -1.7525393}
-      - {x: -7.5726566, y: -1.0933596}
-      - {x: -7.616602, y: -1.7964846}
-      - {x: -7.35293, y: -2.1919923}
-      - {x: -7.1332035, y: -2.1919923}
-      - {x: -6.7376957, y: -1.5328127}
-      - {x: -6.210352, y: -1.7525393}
-      - {x: -4.8480473, y: -2.016211}
-      - {x: -3.7933598, y: -2.1041017}
-      - {x: -3.6175785, y: -2.3238282}
-      - {x: -2.3431644, y: -3.0269532}
-      - {x: -1.9037113, y: -3.1587892}
-      - {x: -0.5414066, y: -3.1587892}
-      - {x: -0.23378938, y: -3.0708985}
-      - {x: 1.3921871, y: -2.9390626}
-      - {x: 1.9634762, y: -2.719336}
 --- !u!1 &1821771226161026
 GameObject:
   m_ObjectHideFlags: 0
