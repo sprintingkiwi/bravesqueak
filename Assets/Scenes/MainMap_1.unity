@@ -190,6 +190,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 6344839934035448254, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344839934035448254, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.56
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266dafa3ac699814fa0170494574260c, type: 3}
 --- !u!1 &25021139
