@@ -818,21 +818,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Controller
       objectReference: {fileID: 0}
-    - target: {fileID: 1341260877364519449, guid: 266dafa3ac699814fa0170494574260c,
-        type: 3}
-      propertyPath: testScene
-      value: MainMap_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348678286665220212, guid: 266dafa3ac699814fa0170494574260c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8515324322440373414, guid: 266dafa3ac699814fa0170494574260c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266dafa3ac699814fa0170494574260c, type: 3}
 --- !u!1 &271724777

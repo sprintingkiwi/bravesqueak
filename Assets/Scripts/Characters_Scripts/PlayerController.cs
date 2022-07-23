@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : Character
 {
-    Joystick joy;
+    public JoystickUI joy;
     public Vector3 lastCheckedPos4RandEncounters;
     public bool randomEncounters;
 
@@ -19,8 +19,6 @@ public class PlayerController : Character
         base.Start();
 
         InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
-        if (Jrpg.CheckPlatform() == "Mobile")
-            joy = GameObject.Find("Joystick").GetComponent<Joystick>();
     }
 
     // Update is called once per frame
@@ -29,7 +27,7 @@ public class PlayerController : Character
         base.Update();
 
         // Touchscreen Input
-        if (Jrpg.CheckPlatform() == "Mobile")
+        if (joy.gameObject.activeSelf)
         {
             if (joy.direction != Vector2.zero && canMove)
                 Move(joy.direction);

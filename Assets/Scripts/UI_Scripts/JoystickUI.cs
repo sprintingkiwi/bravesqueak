@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Joystick : MonoBehaviour
+public class JoystickUI : MonoBehaviour
 {
     [Header("Drag and Drop")]
     public Camera mapCamera;
@@ -42,7 +42,7 @@ public class Joystick : MonoBehaviour
             //else
             //{
                 Vector3 mousePos = Input.mousePosition;
-                touchPos = mapCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 1f));
+                touchPos = new Vector3(mousePos.x, mousePos.y, 1f);
                 //Instantiate(pointTest, touchPos, Quaternion.identity);
             //}
             Vector2 stickMovement = (touchPos - transform.parent.position) * sensibility;
@@ -52,13 +52,13 @@ public class Joystick : MonoBehaviour
         }
     }
 
-    public void OnMouseDown()
+    public void PointerDown()
     {
         dragging = true;
         Debug.LogWarning("Dragging");
     }
 
-    public void OnMouseUp()
+    public void PointerUp()
     {
         dragging = false;
         transform.localPosition = Vector3.zero;
