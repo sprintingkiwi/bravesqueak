@@ -11,8 +11,7 @@ public class Menu : MonoBehaviour
     public virtual void Setup ()
     {
         Jrpg.Log("Starting menu: " + name);
-        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
-        InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        GameController.Instance.player.joy.transform.parent.gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -42,5 +41,6 @@ public class Menu : MonoBehaviour
             Destroy(this.gameObject);
         }
         //GameController.instance.player.canMove = true;
+        GameController.Instance.player.joy.transform.parent.gameObject.SetActive(true);
     }
 }

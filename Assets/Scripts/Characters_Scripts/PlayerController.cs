@@ -65,8 +65,7 @@ public class PlayerController : Character
             if (GameController.Instance.situation != "Map")
                 return;
 
-            GameController.Instance.currentMap.gameObject.SetActive(false);
-
+            GameController.Instance.currentMap.gameObject.SetActive(false);            
             StartCoroutine(Jrpg.HeroesSelection(GameController.Instance.unlockedHeroes, 3, Jrpg.PartySelectionCallback, GameController.Instance.partyPrefabs.ToArray(), title:"CHOOSE YUOR HEROES"));
         }
 

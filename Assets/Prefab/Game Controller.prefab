@@ -321,6 +321,7 @@ MonoBehaviour:
   player: {fileID: 6450746315878835698}
   battleStuffTemplate: {fileID: 304283337217973246}
   areaStuff: {fileID: 6348678286665220212}
+  backgroundCamera: {fileID: 4287386990902377708}
   saveData:
   - defeatedBosses: []
     savedCurrentMapName: 
@@ -3366,7 +3367,7 @@ Camera:
   m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
