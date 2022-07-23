@@ -35,6 +35,7 @@ Transform:
   - {fileID: 6344676462879130146}
   - {fileID: 3885659462582038225}
   - {fileID: 3043921075184970854}
+  - {fileID: 4721097811117880912}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2304,6 +2305,7 @@ GameObject:
   - component: {fileID: 3766700900083099159}
   - component: {fileID: 3809493206745864947}
   - component: {fileID: 3776576699192486321}
+  - component: {fileID: 456283297583067843}
   m_Layer: 0
   m_Name: Battle Camera
   m_TagString: MainCamera
@@ -2398,6 +2400,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPos: {x: 0, y: 0, z: 0}
+--- !u!114 &456283297583067843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889677343647408541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934cfb88c3c8a2c4895b4ed59161a685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5317742507497818186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,6 +2628,7 @@ GameObject:
   - component: {fileID: 6460334400957369680}
   - component: {fileID: 6430573353182838258}
   - component: {fileID: 6452277527807380602}
+  - component: {fileID: 1029744277060670514}
   m_Layer: 0
   m_Name: Map Camera
   m_TagString: MainCamera
@@ -2674,7 +2689,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -2717,6 +2732,18 @@ MonoBehaviour:
   target: {fileID: 6344839934035448254}
   spriteBounds: {fileID: 0}
   followPlayer: 0
+--- !u!114 &1029744277060670514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348049993465289814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934cfb88c3c8a2c4895b4ed59161a685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6348280290783622846
 GameObject:
   m_ObjectHideFlags: 0
@@ -3224,6 +3251,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f496b00671e6ad3409ef7a7c4a14b0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6422125477632163541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4721097811117880912}
+  - component: {fileID: 4287386990902377708}
+  m_Layer: 0
+  m_Name: Background Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4721097811117880912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422125477632163541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 81310702407153715}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &4287386990902377708
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422125477632163541}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -2
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &7923003190042951587
 GameObject:
   m_ObjectHideFlags: 0
