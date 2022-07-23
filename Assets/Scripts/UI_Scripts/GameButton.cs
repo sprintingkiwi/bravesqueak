@@ -20,7 +20,7 @@ public class GameButton : MonoBehaviour
 
         // Fade in
         //Jrpg.Fade(gameObject, alpha, fadeSpeed);
-        spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 1);
+        //spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 1);
 
         //physicalButtonFeedback = IsButtonAvailable(name);
     }
