@@ -200,6 +200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 1333940016667134146, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1341260877364519449, guid: 266dafa3ac699814fa0170494574260c,
         type: 3}
       propertyPath: testEncounters.Array.data[0]
@@ -225,6 +230,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 19.385315
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957953555541460369, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266dafa3ac699814fa0170494574260c, type: 3}
