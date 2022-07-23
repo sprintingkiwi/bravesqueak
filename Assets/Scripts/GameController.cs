@@ -73,6 +73,7 @@ public class GameController : MonoBehaviour
     public Font activeFont;
     public Font defaultFont;
     public Font accessibleFont;
+    public bool touchControls;
 
     // Coroutines counters
     //public int fadingCoroutinesCount;

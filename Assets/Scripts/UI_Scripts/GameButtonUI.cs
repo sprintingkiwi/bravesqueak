@@ -23,9 +23,9 @@ public class GameButtonUI : MonoBehaviour
         InputManager.instance.ProcessButtonTouch(name, "Down");
     }
 
-    public void ButtonUp()
-    {
-        Debug.Log(name + " touched up");
-        InputManager.instance.ProcessButtonTouch(name, "Up");
-    }
+    //public void ButtonUp()
+    //{
+    //    Debug.Log(name + " touched up");
+    //    InputManager.instance.ProcessButtonTouch(name, "Up");
+    //}
 }

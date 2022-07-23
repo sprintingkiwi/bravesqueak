@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 961273248}
   - component: {fileID: 961273251}
   - component: {fileID: 961273252}
+  - component: {fileID: 1279412211724974588}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -186,6 +187,18 @@ MonoBehaviour:
   deadzone: 1
   sensibility: 1
   maxOffset: 12
+--- !u!114 &1279412211724974588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961273246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817b0a8d65c124446bec0ebf727f5e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1650341398
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +210,7 @@ GameObject:
   - component: {fileID: 1650341399}
   - component: {fileID: 1650341401}
   - component: {fileID: 1650341400}
+  - component: {fileID: 3249367221971651473}
   m_Layer: 2
   m_Name: Joystick Base
   m_TagString: Untagged
@@ -263,6 +277,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3249367221971651473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650341398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817b0a8d65c124446bec0ebf727f5e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &81310702407153726
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +347,6 @@ MonoBehaviour:
   player: {fileID: 6450746315878835698}
   battleStuffTemplate: {fileID: 304283337217973246}
   areaStuff: {fileID: 6348678286665220212}
-  backgroundCamera: {fileID: 4287386990902377708}
   saveData:
   - defeatedBosses: []
     savedCurrentMapName: 
@@ -1010,6 +1035,7 @@ MonoBehaviour:
   activeFont: {fileID: 12800000, guid: bb2ec23687545874894eb2d74df809c6, type: 3}
   defaultFont: {fileID: 12800000, guid: bb2ec23687545874894eb2d74df809c6, type: 3}
   accessibleFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  touchControls: 1
 --- !u!82 &81310702407153725
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2761,6 +2787,7 @@ GameObject:
   - component: {fileID: 4687511030914610845}
   - component: {fileID: 8152883756773632184}
   - component: {fileID: 4488773902398999876}
+  - component: {fileID: 5533436254873017858}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -2827,6 +2854,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5533436254873017858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5317742507497818186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39d8664701e73747a6076074884fd9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5797479865233494091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,6 +2926,7 @@ GameObject:
   - component: {fileID: 6694599164054416601}
   - component: {fileID: 3187998905125800180}
   - component: {fileID: 8428558796447840092}
+  - component: {fileID: 6084671544558752668}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -2953,6 +2993,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6084671544558752668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942302152145329767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39d8664701e73747a6076074884fd9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6348049993465289814
 GameObject:
   m_ObjectHideFlags: 0

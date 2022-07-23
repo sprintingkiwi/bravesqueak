@@ -564,7 +564,7 @@ public class BattleMenu : MonoBehaviour
                     }
 
                     // Button B
-                    if (InputManager.instance.ButtonBUp())
+                    if (InputManager.instance.ButtonBDown())
                     {
                         Debug.Log("Aborting");
                         phase = "Skill Selection";
@@ -625,7 +625,7 @@ public class BattleMenu : MonoBehaviour
                     }
 
                     // Button B
-                    if (InputManager.instance.ButtonBUp())
+                    if (InputManager.instance.ButtonBDown())
                     {
                         Debug.Log("Aborting");
                         phase = "Skill Selection";
