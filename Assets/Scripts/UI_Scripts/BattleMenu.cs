@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 public class BattleMenu : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class BattleMenu : MonoBehaviour
     public int skillIndex;
     public SkillWheelIcon skillWheelIconPrefab;
     public GameObject skillScroll;
-    public Text skillScrollName;
+    public TextMeshPro skillScrollName;
 
     // Use this for initialization
     public void Start ()
@@ -239,18 +240,18 @@ public class BattleMenu : MonoBehaviour
         skillScroll = Instantiate(Resources.Load("SkillScrolls/Scroll_" + focusedSkill.element.ToString()) as GameObject, transform.parent);
         //skillScroll.transform.Translate(Vector3.up * 16);
 
-        skillScrollName = GameObject.Find("Canvas").transform.Find("Skill Scroll Name").GetComponent<Text>();
+        skillScrollName = skillScroll.transform.Find("Name").GetComponent<TextMeshPro>();
+        //skillScrollName = GameObject.Find("Canvas").transform.Find("Skill Scroll Name").GetComponent<Text>();
 
         // Name the skill scroll
         skillScrollName.text = focusedSkill.name.ToUpper();
         if (focusedSkill.displayName != "")
         {
             skillScrollName.text = focusedSkill.displayName.ToUpper();
-            skillScrollName.color = focusedSkill.displayNameColor;
+            //skillScrollName.color = focusedSkill.displayNameColor;
         }
-
         // Scroll position
-        skillScrollName.transform.position = Camera.main.WorldToScreenPoint(skillScroll.transform.position);
+        //skillScrollName.transform.position = Camera.main.WorldToScreenPoint(skillScroll.transform.position);
     }
 
     void SetupWheelIcons()
