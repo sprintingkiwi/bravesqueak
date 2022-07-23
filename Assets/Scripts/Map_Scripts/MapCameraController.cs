@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapCameraController : BattleCameraController
+public class MapCameraController : MonoBehaviour
 {
     public float rightBound;
     public float leftBound;
@@ -15,15 +15,10 @@ public class MapCameraController : BattleCameraController
 
     Camera cam;
 
-    // Use this for initialization
-    public override void Start()
-    {
-        base.Start();
-        cam = gameObject.GetComponent<Camera>();
-    }
-
     public void Setup(WorldMap map)
     {
+        cam = gameObject.GetComponent<Camera>();
+
         float screenRatio = Screen.width / Screen.height;
         float desiredRatio = 16f / 9f;
         float height = Screen.height;
@@ -43,7 +38,7 @@ public class MapCameraController : BattleCameraController
 
         spriteBounds = map.cameraBoundary;
         float vertExtent = cam.orthographicSize;
-        float horzExtent = vertExtent * width / height; //Screen.width / Screen.height;
+        float horzExtent = (vertExtent * width) / height; //Screen.width / Screen.height;
         leftBound = spriteBounds.transform.position.x + (horzExtent - spriteBounds.sprite.bounds.size.x / 2.0f);
         rightBound = spriteBounds.transform.position.x + (spriteBounds.sprite.bounds.size.x / 2.0f - horzExtent);
         bottomBound = spriteBounds.transform.position.y + (vertExtent - spriteBounds.sprite.bounds.size.y / 2.0f);
@@ -53,12 +48,9 @@ public class MapCameraController : BattleCameraController
     }
 
     // Update is called once per frame
-    public override void Update()
+    void Update()
     {
-        base.Update();
-
-        if (followPlayer)
-            FollowPlayer();
+        if (followPlayer) FollowPlayer();
     }
 
     void FollowPlayer()
