@@ -16,7 +16,7 @@ public class ExitMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (InputManager.instance.ButtonBDown())
         {
             if (buttonsContainer.gameObject.activeSelf)
                 buttonsContainer.gameObject.SetActive(false);
