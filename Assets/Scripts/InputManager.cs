@@ -32,22 +32,23 @@ public class InputManager : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        swipe = SwipeCheck();
-
-        //hor = Input.GetAxis("Horizontal");
-        //if (-0.1f <= hor && hor <= 0.1f)
-        //    horAxisPressed = false;
-        //ver = Input.GetAxis("Vertical");
-        //if (-0.1f <= ver && ver <= 0.1f)
-        //    verAxisPressed = false;
-    }
-
-    //private void LateUpdate()
+    //void Update()
     //{
-    //    touchButtonInput = "None";
+    //    swipe = SwipeCheck();
+
+    //    //hor = Input.GetAxis("Horizontal");
+    //    //if (-0.1f <= hor && hor <= 0.1f)
+    //    //    horAxisPressed = false;
+    //    //ver = Input.GetAxis("Vertical");
+    //    //if (-0.1f <= ver && ver <= 0.1f)
+    //    //    verAxisPressed = false;
     //}
+
+    void LateUpdate()
+    {
+        if (touchButtonInput != "None")
+            touchButtonInput = "None";
+    }
 
     // BUTTON A
     public bool ButtonADown()
