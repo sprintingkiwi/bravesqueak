@@ -1807,7 +1807,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1843061214}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: set_mute
         m_Mode: 0
@@ -1817,7 +1817,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 0
 --- !u!1 &803535736
@@ -4059,7 +4059,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1343631539}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: SetFont
         m_Mode: 0
@@ -4842,6 +4842,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824440492}
   m_CullTransparentMesh: 0
+--- !u!82 &1843061214 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 81310702407153725, guid: 266dafa3ac699814fa0170494574260c,
+    type: 3}
+  m_PrefabInstance: {fileID: 235118244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1852376175
 GameObject:
   m_ObjectHideFlags: 0
