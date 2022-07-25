@@ -127,9 +127,7 @@ MonoBehaviour:
   size: 3
   elementAffinity: 3
   species: 2
-  perks:
-  - {fileID: 0}
-  - {fileID: 0}
+  perks: []
   movable: 1
   evolution: {fileID: 0}
   effectsDelay: []

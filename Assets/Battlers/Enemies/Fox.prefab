@@ -128,9 +128,7 @@ MonoBehaviour:
   size: 1
   elementAffinity: 6
   species: 2
-  perks:
-  - {fileID: 0}
-  - {fileID: 0}
+  perks: []
   movable: 0
   evolution: {fileID: 114069915646428382, guid: 730938d28fd8ded4e97ad1e655a5fa6e,
     type: 3}

@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.9160004, y: -0.83732224, z: 2.0654287}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,8 +47,8 @@ MonoBehaviour:
   bc: {fileID: 0}
   user: {fileID: 0}
   selectedAction:
-    skill: {fileID: 114510658932947970, guid: 5b210aa628e3aa048ad1b04c5c13be95, type: 3}
-    weight: 10
+    skill: {fileID: 0}
+    weight: 0
     conditions:
     - conditionFunction: TestCondition
       conditionType: or
@@ -64,4 +65,4 @@ MonoBehaviour:
     - conditionFunction: HitPoints
       conditionType: or
       weightInfluence: 10
-      condParameters: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      condParameters: 28000000
