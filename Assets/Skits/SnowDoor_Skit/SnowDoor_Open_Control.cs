@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class SnowDoor_Open_Control : Transfer {
 
+    public Skit[] miniBosses;
+
     public override void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if both mini bosses are dead
-        if (transform.parent.parent.Find("ENEMIES").childCount > 0)
+        bool openDoor = true;
+        foreach (Skit skit in miniBosses) if (skit != null) openDoor = false;
+        if (!openDoor)
         {
             Jrpg.Log("Still not beaten the mini bosses!");
             return;
