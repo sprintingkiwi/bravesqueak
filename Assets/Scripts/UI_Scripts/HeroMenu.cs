@@ -18,7 +18,7 @@ public class HeroMenu : Menu
     {
         base.Update();
 
-        if (InputManager.instance.RightArrowDown())
+        if (InputManager.Instance.RightArrowDown())
         {
             if (heroIndex < GameController.Instance.unlockedHeroes.Length - 1)
             {
@@ -27,7 +27,7 @@ public class HeroMenu : Menu
                 LoadHeroStuff();
             }
         }
-        if (InputManager.instance.LeftArrowDown())
+        if (InputManager.Instance.LeftArrowDown())
         {
             if (heroIndex > 0)
             {

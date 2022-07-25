@@ -20,7 +20,7 @@ public class GameButtonUI : MonoBehaviour
     public void ButtonDown()
     {
         Debug.Log(name + " touched down");
-        InputManager.instance.ProcessButtonTouch(name, "Down");
+        InputManager.Instance.ProcessButtonTouch(name, "Down");
     }
 
     //public void ButtonUp()

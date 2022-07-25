@@ -121,7 +121,7 @@ public class Jrpg : MonoBehaviour
     {
         //if (Debug.isDebugBuild)
         //{
-        return GameObject.Find("Game Controller").GetComponent<GameController>().simulatedPlatform.ToString();
+        return GameController.Instance.simulatedPlatform.ToString();
         //}
         //else
         //{
@@ -329,7 +329,7 @@ public class Jrpg : MonoBehaviour
         Effect e;
         if (effect != null)
         {
-            e = Instantiate(effect, position, Quaternion.identity, GameObject.Find("Game Controller").GetComponent<GameController>().battleStuffInstance.transform);
+            e = Instantiate(effect, position, Quaternion.identity, GameController.Instance.battleStuffInstance.transform);
             if (targetFaction == Battler.Faction.Heroes)
             {
                 SpriteRenderer spr = e.GetComponent<SpriteRenderer>();

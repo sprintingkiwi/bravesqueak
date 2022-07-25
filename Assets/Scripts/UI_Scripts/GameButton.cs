@@ -14,7 +14,7 @@ public class GameButton : MonoBehaviour
 	// Use this for initialization
 	public void Start ()
     {
-        InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        
         spr = gameObject.GetComponent<SpriteRenderer>();
         spr.sprite = up;
 
@@ -55,7 +55,7 @@ public class GameButton : MonoBehaviour
         Debug.Log(name + " touched down");
 
         spr.sprite = down;
-        InputManager.instance.ProcessButtonTouch(name, "Down");
+        InputManager.Instance.ProcessButtonTouch(name, "Down");
     }
 
     void OnMouseUp()
@@ -63,6 +63,6 @@ public class GameButton : MonoBehaviour
         Debug.Log(name + " touched up");
 
         spr.sprite = up;
-        InputManager.instance.ProcessButtonTouch(name, "Up");
+        InputManager.Instance.ProcessButtonTouch(name, "Up");
     }
 }

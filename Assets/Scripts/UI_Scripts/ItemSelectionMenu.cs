@@ -110,7 +110,7 @@ public class ItemSelectionMenu : Menu
     {
         base.Update();
 
-        if (InputManager.instance.UpArrowDown())
+        if (InputManager.Instance.UpArrowDown())
             //if (!moving)
                 if (selectionIndex > 0)
                 {
@@ -121,7 +121,7 @@ public class ItemSelectionMenu : Menu
                     UpdateActiveItem();
                 }
 
-        if (InputManager.instance.DownArrowDown())
+        if (InputManager.Instance.DownArrowDown())
             //if (!moving)
                 if (selectionIndex < maxItems - 1)
                 {
@@ -133,7 +133,7 @@ public class ItemSelectionMenu : Menu
                 }
 
         //CONFIRM
-        if (InputManager.instance.ButtonADown())
+        if (InputManager.Instance.ButtonADown())
         {
             switch (pool)
             {

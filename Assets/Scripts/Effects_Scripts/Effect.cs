@@ -22,7 +22,7 @@ public class Effect : JrpgBehaviour
     // Use this for initialization
     public virtual void Start ()
     {
-        //GameController.instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        //
 
         anim = gameObject.GetComponent<Animator>();
 

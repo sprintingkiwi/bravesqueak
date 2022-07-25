@@ -96,10 +96,10 @@ public class BattleController : MonoBehaviour
         this.encounter = encounter;
 
         //battleCamera = GameObject.Find("Battle Camera").GetComponent<BattleCameraController>();
-        //InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        //
 
         // Retrieving data from Game Controller
-        //GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        //
         //party = ps.party;
         //enemies = persistentStuff.enemies;
         foreach (Encounter.Enemy ee in encounter.enemies)

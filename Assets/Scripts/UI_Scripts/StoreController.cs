@@ -16,8 +16,8 @@ public class StoreController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        ps = GameObject.Find("Game Controller").GetComponent<GameController>();
-        InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        ps = GameController.Instance;
+        
         panel = GameObject.Find("PANEL").transform;
 
         skillCollection = Resources.LoadAll<Skill>("Skills");
@@ -34,11 +34,11 @@ public class StoreController : MonoBehaviour
 	void Update ()
     {
         // UI focus
-		if (InputManager.instance.RightArrowDown())
+		if (InputManager.Instance.RightArrowDown())
         {
             focus = "Heroes";
         }
-        else if (InputManager.instance.LeftArrowDown())
+        else if (InputManager.Instance.LeftArrowDown())
         {
             focus = "Skills";
         }
@@ -46,7 +46,7 @@ public class StoreController : MonoBehaviour
         // Up and Down selection
         if (focus == "Heroes")
         {
-            if (InputManager.instance.DownArrowDown())
+            if (InputManager.Instance.DownArrowDown())
             {
                 int index = ps.partyPrefabs.IndexOf(selectedHero) + 1;
                 if (index < ps.partyPrefabs.Count)
@@ -57,7 +57,7 @@ public class StoreController : MonoBehaviour
                 Debug.Log("Selected " + selectedHero.name);
                 SetupShoppableSkills(selectedHero);
             }
-            else if (InputManager.instance.UpArrowDown())
+            else if (InputManager.Instance.UpArrowDown())
             {
                 int index = ps.partyPrefabs.IndexOf(selectedHero) - 1;
                 if (index >= 0)
@@ -71,11 +71,11 @@ public class StoreController : MonoBehaviour
         }
         else
         {
-            if (InputManager.instance.DownArrowDown())
+            if (InputManager.Instance.DownArrowDown())
             {
 
             }
-            else if (InputManager.instance.UpArrowDown())
+            else if (InputManager.Instance.UpArrowDown())
             {
 
             }

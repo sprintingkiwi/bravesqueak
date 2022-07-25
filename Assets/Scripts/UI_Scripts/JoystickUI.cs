@@ -55,7 +55,7 @@ public class JoystickUI : MonoBehaviour
     public void PointerDown()
     {
         dragging = true;
-        Debug.LogWarning("Dragging");
+        //Debug.LogWarning("Dragging");
     }
 
     public void PointerUp()

@@ -120,7 +120,7 @@ public class Skill : Item
         if (Debug.isDebugBuild)
             Debug.Log("Using skill " + gameObject.name);
 
-        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
 
         // Movement speed

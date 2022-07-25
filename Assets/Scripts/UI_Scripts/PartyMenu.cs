@@ -122,14 +122,14 @@ public class PartyMenu : Menu {
     public void SelectionManagement()
     {
         // Move index based on arrows
-        if (InputManager.instance.RightArrowDown())
+        if (InputManager.Instance.RightArrowDown())
         {
             if (index < heroes.childCount - 1)
                 index += 1;
             else
                 index = 0;
         }
-        if (InputManager.instance.LeftArrowDown())
+        if (InputManager.Instance.LeftArrowDown())
         {
             if (index > 0)
                 index -= 1;
@@ -137,14 +137,14 @@ public class PartyMenu : Menu {
                 index = heroes.childCount - 1;
         }
 
-        if (InputManager.instance.DownArrowDown())
+        if (InputManager.Instance.DownArrowDown())
         {
             if (index < heroes.childCount - 4)
                 index += 4;
             else
                 index = 3;
         }
-        if (InputManager.instance.UpArrowDown())
+        if (InputManager.Instance.UpArrowDown())
         {
             if (index > 3)
                 index -= 4;
@@ -157,7 +157,7 @@ public class PartyMenu : Menu {
         highlighter.SetActive(true);
 
         // Cancel
-        if (InputManager.instance.ButtonBDown())
+        if (InputManager.Instance.ButtonBDown())
         {
             if (currentHeroDesc == null)
                 MenuDestruction();
@@ -168,7 +168,7 @@ public class PartyMenu : Menu {
         }
 
         // Confirm
-        if (InputManager.instance.ButtonADown())
+        if (InputManager.Instance.ButtonADown())
         {
             heroUICoroutine = StartCoroutine(ManageHeroUI());
         }
@@ -189,7 +189,7 @@ public class PartyMenu : Menu {
         int UIindex = 0;
         Image selectedImg = hu.transform.GetChild(0).GetComponent<Image>();
         yield return null;
-        while (!InputManager.instance.ButtonADown())
+        while (!InputManager.Instance.ButtonADown())
         {
             // Highlight current button
             foreach(Transform t in hu.transform)
@@ -204,13 +204,13 @@ public class PartyMenu : Menu {
             }
 
             // UI selection management
-            if (InputManager.instance.DownArrowDown())
+            if (InputManager.Instance.DownArrowDown())
                 if (UIindex < hu.transform.childCount - 1)
                     UIindex += 1;
-            if (InputManager.instance.UpArrowDown())
+            if (InputManager.Instance.UpArrowDown())
                 if (UIindex > 0)
                     UIindex -= 1;
-            if (InputManager.instance.ButtonBDown())
+            if (InputManager.Instance.ButtonBDown())
             {
                 heroUICoroutine = null;
                 Destroy(hu);

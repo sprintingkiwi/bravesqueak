@@ -21,10 +21,10 @@ public class InputManager : MonoBehaviour
     //bool verAxisPressed;
 
     // Persistence
-    public static InputManager instance;
+    public static InputManager Instance;
     void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     void Start()

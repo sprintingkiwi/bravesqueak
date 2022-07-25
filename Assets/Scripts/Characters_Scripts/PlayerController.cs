@@ -18,7 +18,7 @@ public class PlayerController : Character
     {
         base.Start();
 
-        InputManager.instance = GameObject.Find("Input Manager").GetComponent<InputManager>();
+        
     }
 
     // Update is called once per frame
@@ -61,7 +61,7 @@ public class PlayerController : Character
 
         // Party Menu
         if (GameController.Instance.currentSelectionMenu == null && GameController.Instance.situation == "Map")
-            if (InputManager.instance.ButtonBDown())
+            if (InputManager.Instance.ButtonBDown())
             {
                 GameController.Instance.currentMap.gameObject.SetActive(false);
                 StartCoroutine(Jrpg.HeroesSelection(GameController.Instance.unlockedHeroes, 3, Jrpg.PartySelectionCallback, GameController.Instance.partyPrefabs.ToArray(), title: "CHOOSE YUOR HEROES"));

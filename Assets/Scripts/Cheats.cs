@@ -34,7 +34,7 @@ public class Cheats : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        
 
         // Shaking for mobile
         lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;

@@ -101,7 +101,7 @@ public class Battler : MonoBehaviour
 
     public virtual void Setup()
     {
-        GameController.Instance = GameObject.Find("Game Controller").GetComponent<GameController>();
+        
         bc = GameObject.Find("Battle Controller").GetComponent<BattleController>();
 
         // Populate stats dictionary
