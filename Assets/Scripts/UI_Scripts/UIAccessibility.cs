@@ -17,6 +17,9 @@ public class UIAccessibility : MonoBehaviour
     void Update()
     {
         if (lastFont != GameController.Instance.activeFont)
+        {
             gameObject.GetComponent<Text>().font = GameController.Instance.activeFont;
+            lastFont = GameController.Instance.activeFont;
+        }
     }
 }
