@@ -44,10 +44,10 @@ public class InputManager : MonoBehaviour
         //    verAxisPressed = false;
     }
 
-    private void LateUpdate()
-    {
-        touchButtonInput = "None";
-    }
+    //private void LateUpdate()
+    //{
+    //    touchButtonInput = "None";
+    //}
 
     // BUTTON A
     public bool ButtonADown()
@@ -56,7 +56,7 @@ public class InputManager : MonoBehaviour
             return true;
         else if (touchButtonInput == "ButtonA Down")
         {
-            //touchButtonInput = "None";
+            touchButtonInput = "None";
             Debug.Log("Button A UI touch input received");
             return true;
         }
@@ -71,7 +71,7 @@ public class InputManager : MonoBehaviour
             return true;
         else if (touchButtonInput == "ButtonA Up")
         {
-            //touchButtonInput = "None";
+            touchButtonInput = "None";
             Debug.Log("ButtonA button UI touch input received");
             return true;
         }
@@ -86,7 +86,7 @@ public class InputManager : MonoBehaviour
             return true;
         else if (touchButtonInput == "ButtonB Down")
         {
-            //touchButtonInput = "None";
+            touchButtonInput = "None";
             Debug.Log("Button B UI touch input received");
             return true;
         }
@@ -101,7 +101,7 @@ public class InputManager : MonoBehaviour
             return true;
         else if (touchButtonInput == "ButtonB Up")
         {
-            //touchButtonInput = "None";
+            touchButtonInput = "None";
             Debug.Log("ButtonB button UI touch input received");
             return true;
         }

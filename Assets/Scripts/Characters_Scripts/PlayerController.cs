@@ -60,14 +60,12 @@ public class PlayerController : Character
         }
 
         // Party Menu
-        if (InputManager.instance.ButtonBDown())
-        {
-            if (GameController.Instance.situation != "Map")
-                return;
-
-            GameController.Instance.currentMap.gameObject.SetActive(false);            
-            StartCoroutine(Jrpg.HeroesSelection(GameController.Instance.unlockedHeroes, 3, Jrpg.PartySelectionCallback, GameController.Instance.partyPrefabs.ToArray(), title:"CHOOSE YUOR HEROES"));
-        }
+        if (GameController.Instance.currentSelectionMenu == null && GameController.Instance.situation == "Map")
+            if (InputManager.instance.ButtonBDown())
+            {
+                GameController.Instance.currentMap.gameObject.SetActive(false);
+                StartCoroutine(Jrpg.HeroesSelection(GameController.Instance.unlockedHeroes, 3, Jrpg.PartySelectionCallback, GameController.Instance.partyPrefabs.ToArray(), title: "CHOOSE YUOR HEROES"));
+            }
 
         // Random Encounters
         if (randomEncounters && GameController.Instance.currentMap.randomEncounters.Length > 0)
