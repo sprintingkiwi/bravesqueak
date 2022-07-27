@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationMap: Swamp
-  destinationPos: {x: -23.76, y: -19.54, z: 0}
+  destinationPos: {x: -23.05, y: -18.86, z: 0}
   active: 1
   transfering: 0
 --- !u!212 &4529787836172871983
