@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnowDoor_Open_Control : Transfer {
+public class SnowDoor_Open_Control : MonoBehaviour {
 
+    [Header("Drag and Drop")]
     public Skit[] miniBosses;
+    public GameObject returnHook;
 
-    public override void OnTriggerEnter2D(Collider2D collision)
+    bool openDoor;
+
+    void Update()
     {
         // Check if both mini bosses are dead
-        bool openDoor = true;
+        openDoor = true;
         foreach (Skit skit in miniBosses) if (skit != null) openDoor = false;
+
+        // Show transfer indicator
+        returnHook.SetActive(openDoor);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
         if (!openDoor)
         {
             Jrpg.Log("Still not beaten the mini bosses!");
@@ -19,15 +30,5 @@ public class SnowDoor_Open_Control : Transfer {
 
         // Start door animation with trigger
         gameObject.GetComponent<AnimatedMapElement>().anim.SetTrigger("prebattle");
-
-        // Wait animation then transfer coroutine
-        StartCoroutine(WaitAndOpen(collision));
-    }
-
-    IEnumerator WaitAndOpen(Collider2D collision)
-    {
-        yield return new WaitForSeconds(4f);
-        base.OnTriggerEnter2D(collision);
-        yield return null;
     }
 }

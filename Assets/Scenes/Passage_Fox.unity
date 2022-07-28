@@ -1111,7 +1111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destinationMap: Snow
-  destinationPos: {x: -0.26, y: 11.08, z: 0}
+  destinationPos: {x: -0.77, y: 15.07, z: 0}
   active: 1
   transfering: 0
 --- !u!114 &4282556952369262660
