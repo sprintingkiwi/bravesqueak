@@ -8,6 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class EULA : MonoBehaviour
 {
+    [Header("Options")]
+    public string consentFileName;
+
+    [Header("Drag and Drop")]
+    public GameObject scrollView;
+
     [System.Serializable]
     class EULAConsent
     {
@@ -22,7 +28,7 @@ public class EULA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        consentPath = Application.persistentDataPath + "/EULA_Consent.dat";
+        consentPath = Application.persistentDataPath + "/" + consentFileName + ".dat";
         Debug.Log(consentPath);
         bf = new BinaryFormatter();
 
@@ -34,6 +40,7 @@ public class EULA : MonoBehaviour
                 answer = "Not Accepted"
             };
             SaveEULAConsent();
+            scrollView.SetActive(true);
         }
         else
         {

@@ -159,9 +159,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: -17}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &203437492
 MonoBehaviour:
@@ -263,6 +263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab0baf8d3514ea4298a1126b43e938f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  consentFileName: Privacy_Consent
+  scrollView: {fileID: 313931032}
 --- !u!1 &251966583
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &313931033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -520,23 +522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cd555bffc9572499240615e47de76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentEndY: 1960
-  maxContentY: 1961.233
-  contentReadEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1115355202}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  contentEndY: 1
+  maxContentY: 2
+  contentReadEvents: []
   content: {fileID: 327507252}
 --- !u!1 &327507251
 GameObject:
@@ -572,7 +560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 300}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &362146759
@@ -762,9 +750,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: -17, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &762330053
 MonoBehaviour:
@@ -911,120 +899,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "End-User License Agreement\r\nLast updated: 28/07/2022\r\nThis End-User
-    License Agreement (referred to as the \"EULA\") is a legally binding agreement
-    between you, the Licensee, an individual customer or entity, and Alessandro Norfo,
-    the author of Bravesqueak, the Software, which may include associated media,
-    printed materials, and online or electronic documentation. This Agreement is
-    a legally binding contract that includes terms that limit your legal rights and
-    Licensors' liability to you, and shall govern all access to and use of this Software.
-    You hereby agree, without limitation or alteration, to all the terms and conditions
-    contained herein.\r\nBy installing, copying, or otherwise using the Licensed
-    Product (Software), the Licensee agrees to be bound by the terms and conditions
-    outlined in this EULA. However, if the Licensee does not agree to the terms and
-    conditions outlined in this EULA, the said Licensee may not download, install,
-    or use Software.\r\nDefinitions\r\n\_\"EULA\" shall refer to this End-User-License-Agreement,
-    including any amendment to this Agreement.\r\n\"Licensee\" shall refer to the
-    individual or entity that downloads and uses the Software.\r\n\"Licensor\" shall
-    refer to the company or author, Alessandro Norfo, located at Via Mercadante 12,
-    40033, Casalecchio di Reno, Bologna, Italy.\r\n\_\"Software/Licensed product\"
-    shall mean Bravesqueak, the Licensed Product provided pursuant to this EULA.\r\nGrant
-    of License\r\nSubject to the terms of this EULA, the Alessandro Norfo hereby
-    grants to the Licensee, a royalty-free, revocable, limited, non-exclusive license
-    during the term of this EULA to possess and to use a copy of the Software. The
-    Software is being distributed by Alessandro Norfo. Licensee is not allowed to
-    make a charge for distributing this Software, either for profit or merely to
-    recover media and distribution costs.\r\nIntellectual Property\r\nYou hereby
-    unconditionally agree that all right, title and interest in the copyrights and
-    other intellectual property rights in the Licensed Product reside with the Licensors.
-    The trademarks, logos, designs, and service marks appearing on the Licensed Product
-    are registered and unregistered marks of Licensor.\_ Accordingly, nothing in
-    this EULA or the Licensed Product grants you any right to use any form of intellectual
-    property contained in the Licensed Product.\r\nTherefore, all rights, titles,
-    interests, and copyrights in and/or to the Software, including but not limited
-    to all images, graphics, animations, audio, video, music, text, data, code, algorithm,
-    and information, are owned by the Licensor. Accordingly, the Software is protected
-    by all applicable copyright laws and international treaties, and the Licensee
-    is expected to use the Software concerning all intellectual property contained
-    therein, except as otherwise provided for in this EULA.\r\nDescription of Rights
-    and Limitations\r\nInstallation and Use: Licensee may install and use the Software
-    on a shared computer or concurrently on different computers, and make multiple
-    back-up copies of the Software, solely for Licensee's use within Licensee's business
-    or personal use.\r\nReproduction and Distribution:\_ Licensee may not duplicate
-    or re-distribute copies of the Software, without the Licensors express written
-    permission.\_\r\nLicensee Limitation: The Licensee may not:\r\n    1. Use the
-    Licensed Product for any purpose other than personal and non-commercial purposes;
-    \r\n    2. Use the Licensed Product for any illegal or unlawful purpose; \r\n   
-    3. Gather factual content or any other portion of the Licensed product by any
-    automated means, including but not limited to database scraping or screen scraping;
-    or \r\n    4. Reverse engineer, decompile, or disassemble Software, except and
-    only to the extent that such activity is expressly permitted by applicable law
-    notwithstanding the limitation. \r\nUpdate and Maintenance\r\nAlessandro Norfo
-    shall provide updates and maintenance on a\_as-needed basis.\r\nSupport\r\nAlessandro
-    Norfo has no obligation to Software support, or to continue providing or updating
-    any of the Software.\r\nGeneral Provisions\r\nTermination\r\nIn the event of
-    termination, all licenses provided under this EULA shall immediately terminate,
-    and you agree to discontinue accessing or attempting to access this Licensed
-    product.\r\nAccordingly, this EULA may be:\r\n    1. Automatically terminated
-    if the Licensee fails to comply with any of the terms and conditions under this
-    EULA; \r\n    2. Terminated by Alessandro Norfo; or \r\n    3. Terminated by
-    the Licensee. \r\nEither Alessandro Norfo or the Licensee may terminate this
-    EULA immediately upon written notice to the other party, including but not limited
-    to electronic mail.\r\nNon-Transferability\r\nThe Licensee has the option to
-    permanently transfer all rights under this Agreement, provided the recipient
-    agrees to the terms of this EULA. Accordingly, this EULA is not assignable or
-    transferable by the Licensee without the prior written consent of Alessandro
-    Norfo; and any attempt to do so shall be void.\r\nNotice\r\nAny notice, report,
-    approval or consent required under this EULA shall be in writing and deemed to
-    have been duly given if delivered by recorded delivery to the respective addresses
-    of the parties.\r\nIntegration\r\nBoth parties hereby agree that this EULA is
-    the entire and exclusive statement and legal acknowledgement of the mutual understanding
-    of the parties and supersedes and cancels any previous written and oral agreement
-    and/or communication relating to the subject matter of this EULA.\r\nSeverability\r\nNo
-    delay or failure to exercise, on the part of either party, any privilege, power
-    or rights under this EULA shall operate as a waiver of any of the terms and provisions
-    of this EULA. Accordingly, no single or partial exercise of any right under this
-    Agreement shall preclude further exercise of any other right under this EULA.
-    Suppose any of the outlined provisions of this EULA is deemed to be unenforceable
-    or invalid in whole or in part by a court of competent jurisdiction. In that
-    case, such provision shall be limited to the minimum extent necessary for this
-    EULA to remain in full force and effect and enforceable. The remaining provisions
-    of this Agreement shall not be rendered unenforceable or invalid. They shall
-    continue to be enforceable and valid in isolation of the unenforceable and invalid
-    provisions of this EULA.\r\nWarranty and Disclaimer\r\nAlessandro Norfo, and
-    author of this Software, expressly disclaim any warranty for the Bravesqueak.
-    The Licensed Product and all applicable documentation is provided as-is, without
-    warranty of any kind, whether express or implied, including, without limitation,
-    the implied warranties of merchantability, fitness for a particular purpose,
-    or non-infringement. Accordingly, the Licensee accepts any risk arising out of
-    the use or performance of the Software.\r\nLimited Liability\r\nThe Licensee
-    agrees that the Alessandro Norfo shall not be liable to Licensee, or any other
-    related person or entity claiming any loss of profits, income, savings, or any
-    other consequential, incidental, special, punitive, direct or indirect damage,
-    whether arising in contract, tort, warranty, or otherwise. Even if Alessandro
-    Norfo has been advised of the possibility of such damages. These limitations
-    shall necessarily apply regardless of the primary purpose of any limited remedy.
-    Under no circumstances shall Alessandro Norfo aggregate liability to the Licensee,
-    or any other person or entity claiming through the Licensee, exceed the actual
-    monetary amount paid by the Licensee to Alessandro Norfo for the Software.\r\nIndemnification\r\nYou
-    hereby agree to indemnify and hold Alessandro Norfo harmless from and against
-    all liabilities, damages, losses or expenses, including but not limited to reasonable
-    attorney or other professional fees in any claim, demand, action or proceeding
-    initiated by any third-party against Alessandro Norfo, arising from any of your
-    acts, including without limitation, violating this EULA or any other agreement
-    or any applicable law.\r\nEntire Agreement\r\nThis Agreement rightly constitutes
-    the entire understanding between the Alessandro Norfo and the Licensee and all
-    parties involved. It supersedes all prior agreements of the parties, whether
-    written or oral, express or implied, statement, condition, or a representation
-    or warranty.\r\nGoverning Law and Jurisdiction\r\nThis EULA shall be deemed to
-    be construed under the jurisdiction of the courts located in Italy, without regard
-    to conflicts of laws as regards the provisions thereof. Any legal action relating
-    to this EULA shall be brought exclusively in the courts of Italy, and all parties
-    consent to the jurisdiction thereof. Furthermore, the prevailing party in any
-    action to enforce this EULA shall be entitled to recover costs and expenses including,
-    without limitation, legal fees. Accordingly, this EULA is made within the exclusive
-    jurisdiction of the Italy, and its jurisdiction shall supersede any other jurisdiction
-    of either party's election."
+  m_text: 'Privacy Policy
+
+    Bravesqueak and its developers take your privacy very
+    seriously. Bravesqueak uses no analytics or advertising frameworks. Bravesqueak
+    logs no information on you and has no interests in doing so.
+
+    Bravesqueak
+    does not collect, transmit, distribute or sell your data.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1051,7 +933,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 36.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1318,7 +1200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1115355203
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1647,9 +1529,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1519159528
 MonoBehaviour:
@@ -1772,7 +1654,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1848,7 +1730,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2051,7 +1933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accept EULA?
+  m_text: Accept Privacy Policy?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2078,7 +1960,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.75
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
