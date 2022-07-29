@@ -13,6 +13,7 @@ public class EULA : MonoBehaviour
 
     [Header("Drag and Drop")]
     public GameObject scrollView;
+    public GameObject loading;
 
     [System.Serializable]
     class EULAConsent
@@ -92,6 +93,7 @@ public class EULA : MonoBehaviour
 
     void GoOn()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (loading != null) loading.SetActive(true);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
