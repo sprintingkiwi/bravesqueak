@@ -46,15 +46,11 @@ public class EULA : MonoBehaviour
         {
             eulaConsent = GetEULAConsent();
             if (eulaConsent != null)
-                if (eulaConsent.answer == "Accepted")
-                    GoOn();
+            {
+                if (eulaConsent.answer == "Accepted") GoOn();
+                else scrollView.SetActive(true);
+            }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     EULAConsent GetEULAConsent()
