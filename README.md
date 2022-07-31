@@ -1,6 +1,8 @@
 # README #
-
 Repository for the Bravesqueak unity project: a role-playing videogame set in a fantasy world of little creatures.
+
+## Touchscreen / Keyboard controls ##
+There is a "TouchControls" bool in GameController which allows to switch between touchscreen (emulators-like) buttons and keyboard/gamepad controls, during runtime.
 
 ## INSTRUCTIONS TO BUILD SPLITTED MAPS IN THE EDITOR
 * GROUND and OVERLAY(when available) container objects must have the passability sprite in their sprite renderers
