@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleCameraController : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public Vector3 originalPos;
     public List<Coroutine> activeCoroutines = new List<Coroutine>();
@@ -11,12 +11,6 @@ public class BattleCameraController : MonoBehaviour
 	public virtual void Start ()
     {
         originalPos = transform.position;
-	}
-
-    // Update is called once per frame
-    public virtual void Update ()
-    {
-		
 	}
 
     public virtual void OnDisable()

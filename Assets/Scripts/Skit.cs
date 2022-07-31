@@ -7,6 +7,7 @@ public class Skit : AnimatedMapElement
     [Header("Skit")]
     public Encounter encounter;
     public AnimationClip preBattleClip;
+    public bool slideCamera = false;
 
     [Header("Camera Shift")]
     public float shiftThresold = 1f;
@@ -41,9 +42,8 @@ public class Skit : AnimatedMapElement
         // Focus camera to skit
         GameController.Instance.mapCamera.followPlayer = false;
         //yield return StartCoroutine(mapCam.Move(Vector3.up * 5));
-        //GameController.Instance.mapCamera.activeCoroutines.Add(StartCoroutine(GameController.Instance.mapCamera.SlideTo(new Vector3(spr.bounds.center.x, spr.bounds.center.y - 1.3f, GameController.Instance.mapCamera.transform.position.z), threshold: shiftThresold, speed: 0.5f, callback: TriggerBattle())));
-        yield return StartCoroutine(TriggerBattle());
-        //yield return null;
+        if (slideCamera) yield return StartCoroutine(GameController.Instance.mapCamera.SlideTo(new Vector3(spr.bounds.center.x, spr.bounds.center.y - 1.3f, GameController.Instance.mapCamera.transform.position.z), threshold: shiftThresold, speed: 0.5f, callback: TriggerBattle()));
+        else yield return StartCoroutine(TriggerBattle());
     }
 
     public virtual IEnumerator TriggerBattle()

@@ -10606,6 +10606,7 @@ MonoBehaviour:
   encounter: {fileID: 114182225423817548, guid: 561f44b030876d9428c727565bd6bed8,
     type: 3}
   preBattleClip: {fileID: 0}
+  slideCamera: 1
   shiftThresold: 1
 --- !u!114 &114545290591823105
 MonoBehaviour:

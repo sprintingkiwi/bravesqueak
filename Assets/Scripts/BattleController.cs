@@ -11,7 +11,7 @@ using System;
 public class BattleController : MonoBehaviour
 {
     [Header("Drag and Drop")]
-    public BattleCameraController battleCamera;
+    public CameraController battleCamera;
 
     [Header("Game Objects")]
     //public List<HeroBattler> party = new List<HeroBattler>();

@@ -8718,6 +8718,7 @@ MonoBehaviour:
   encounter: {fileID: 114809916583162938, guid: 8d97e9842f0f4ce4d95c0f66d9e783d7,
     type: 3}
   preBattleClip: {fileID: 0}
+  slideCamera: 0
   shiftThresold: 1
 --- !u!1 &735048594651893876
 GameObject:
@@ -9664,6 +9665,7 @@ MonoBehaviour:
   encounter: {fileID: 114158055192404530, guid: 749b3617ce2c37746acacc80046aaf65,
     type: 3}
   preBattleClip: {fileID: 0}
+  slideCamera: 0
   shiftThresold: 1
 --- !u!212 &3299496284426262598
 SpriteRenderer:
@@ -9734,6 +9736,7 @@ MonoBehaviour:
   encounter: {fileID: 114809916583162938, guid: 8d97e9842f0f4ce4d95c0f66d9e783d7,
     type: 3}
   preBattleClip: {fileID: 0}
+  slideCamera: 0
   shiftThresold: 1
 --- !u!50 &3651182669663752589
 Rigidbody2D:
@@ -10046,6 +10049,7 @@ MonoBehaviour:
   encounter: {fileID: 114809916583162938, guid: 964ebfbf761a5e64d90f6db54c474619,
     type: 3}
   preBattleClip: {fileID: 0}
+  slideCamera: 0
   shiftThresold: 1
 --- !u!212 &5168087584692675676
 SpriteRenderer:
@@ -10771,6 +10775,7 @@ MonoBehaviour:
   encounter: {fileID: 114158055192404530, guid: 246b5024d2c9b9c44bab8907fd9f051e,
     type: 3}
   preBattleClip: {fileID: 0}
+  slideCamera: 0
   shiftThresold: 1
 --- !u!4 &7318040007461357520
 Transform:
@@ -10837,6 +10842,7 @@ MonoBehaviour:
   encounter: {fileID: 114158055192404530, guid: 246b5024d2c9b9c44bab8907fd9f051e,
     type: 3}
   preBattleClip: {fileID: 0}
+  slideCamera: 0
   shiftThresold: 1
 --- !u!114 &7529252214048419187
 MonoBehaviour:
@@ -10855,6 +10861,7 @@ MonoBehaviour:
   encounter: {fileID: 114158055192404530, guid: b2c6ed21f3418394d89093ff0b6fb62d,
     type: 3}
   preBattleClip: {fileID: 0}
+  slideCamera: 0
   shiftThresold: 1
 --- !u!95 &7531992537364546515
 Animator:
@@ -11309,6 +11316,7 @@ MonoBehaviour:
   encounter: {fileID: 114158055192404530, guid: a5f735d5bff1daa419be60fb8a769e06,
     type: 3}
   preBattleClip: {fileID: 0}
+  slideCamera: 0
   shiftThresold: 1
 --- !u!114 &8825902864092110421
 MonoBehaviour:
@@ -11465,7 +11473,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 60, y: 40}
+    oldSize: {x: 60.058655, y: 40}
     newSize: {x: 60, y: 40}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapCameraController : MonoBehaviour
+public class MapCameraController : CameraController
 {
     public float rightBound;
     public float leftBound;
