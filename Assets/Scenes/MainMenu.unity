@@ -1293,8 +1293,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1437939890}
   m_HandleRect: {fileID: 1437939889}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.915515
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1449,6 +1449,7 @@ GameObject:
   - component: {fileID: 678552557}
   - component: {fileID: 678552556}
   - component: {fileID: 678552555}
+  - component: {fileID: 678552558}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -1547,6 +1548,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678552553}
   m_CullTransparentMesh: 0
+--- !u!114 &678552558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678552553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cd555bffc9572499240615e47de76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentEndY: 0
+  maxContentY: 600
+  contentReadEvents: []
+  content: {fileID: 1858123705}
 --- !u!1 &697592980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3637,7 +3654,7 @@ RectTransform:
   m_Father: {fileID: 271724778}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.084484994}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -3794,7 +3811,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.99999994, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4719,7 +4736,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1519236571}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5303,14 +5320,115 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\nAUTHORS\nGraphics: Valentina Pantaleoni\r\nSoftware: Alessandro Norfo\r\nSoundtracks:
-    Francesco Ciarmatori\n\n\n\nAlso credits to:\n\r\r\nShort jingles by Kenney Vleugels
-    (www.kenney.nl)\r\nLicense (CC0)\r http://creativecommons.org/publicdomain/zero/1.0/\r\n\r\nDigital
-    SFX set by Kenney Vleugels (www.kenney.nl)\r\n\r\nPterodactyl Screech\r\nhttp://soundbible.com/1860-Pterodactyl-Screech.html\r\nAbout:
-    Sound of a pterodactyl or large prehistoric bird or monster screeching as it
-    flies overhead.\r\nTitle: Pterodactyl Screech\r\nUploaded: 06.24.11 \r\nLicense:
-    Attribution 3.0 \r\nRecorded by Mike Koenig\n\nhttps://unsplash.com/license\r\nhttps://unsplash.com/photos/jVVgYBLKZ5s\r\nhttps://unsplash.com/search/photos/wooden-table\r\n\r\nhttp://www.wildtextures.com/terms-of-use/\r\nhttp://www.wildtextures.com/free-textures/old-grunge-paper-texture/\r\nhttp://www.wildtextures.com/category/wood/\r\n\r\nhttps://www.pexels.com/photo-license/\r\nhttps://www.pexels.com/photo/background-brown-paper-texture-268372/\r\n\r\nhttps://www.freecreatives.com/about-us\r\nhttps://www.freecreatives.com/textures/ice-texture.html\r\n\r\nhttps://mattiamc.deviantart.com/art/ChalkBoard-Texture-MC2015-506107812\r\n\r\nhttps://jooinn.com/s/license.html\r\n\r\nhttp://www.freepik.com
-    Designed by rawpixel.com/Freepik\n"
+  m_Text: '
+
+    AUTHORS
+
+    Graphics: Valentina Pantaleoni
+
+    Software: Alessandro
+    Norfo
+
+    
+
+    
+
+    
+
+    Also credits to:
+
+    
+
+    For SOUNDS:
+
+    
+
+    Short
+    jingles AND Digital SFX by Kenney Vleugels (www.kenney.nl)
+
+    LICENSE: CC0
+    1.0 Universal (CC0 1.0)Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/
+
+    
+
+    Pterodactyl
+    Screech, recorded by Mike Koenig
+
+    http://soundbible.com/1860-Pterodactyl-Screech.html
+
+    Uploaded:
+    06.24.11
+
+    LICENSE: Attribution 3.0
+
+    
+
+    
+
+    For TEXTURES:
+
+    
+
+    https://unsplash.com
+
+    http://www.wildtextures.com
+
+    https://www.pexels.com
+
+    https://www.freecreatives.com
+
+    https://jooinn.com/s/license.html
+
+    http://www.freepik.com
+    Designed by rawpixel.com/Freepik
+
+    
+
+    Wood Texture by Simon Stankowski
+
+    https://unsplash.com/photos/jVVgYBLKZ5s
+
+    LICENSE:
+    https://unsplash.com/license
+
+    
+
+    Old Grunge Paper Texture
+
+    http://www.wildtextures.com/free-textures/old-grunge-paper-texture/
+
+    LICENSE:
+    http://www.wildtextures.com/terms-of-use/
+
+    
+
+    Background Brown Paper
+    Texture
+
+    https://www.pexels.com/photo/background-brown-paper-texture-268372/
+
+    LICENSE:
+    https://www.pexels.com/photo-license/
+
+    
+
+    Ice Texture
+
+    https://www.freecreatives.com/textures/ice-texture.html
+
+    https://www.freecreatives.com/about-us
+
+    
+
+    ChalkBoard
+    Texture
+
+    https://mattiamc.deviantart.com/art/ChalkBoard-Texture-MC2015-506107812
+
+    LICENSE:
+    CC 4.0 Attribution
+
+'
 --- !u!222 &2074401039
 CanvasRenderer:
   m_ObjectHideFlags: 0
