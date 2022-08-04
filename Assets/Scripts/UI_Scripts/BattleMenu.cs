@@ -92,6 +92,7 @@ public class BattleMenu : MonoBehaviour
         UpdateSP(playerBattler.skills[skillIndex]);
 
         // Wait until a skill is selected
+        InputManager.Instance.touchButtonInput = "None";
         while (selectedSkill == null)
         {
             lastAngle = transform.eulerAngles;
