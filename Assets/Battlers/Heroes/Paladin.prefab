@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.66, y: 5.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4511683294616398}
   m_RootOrder: 0
@@ -56,6 +57,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.38, y: -3.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4511683294616398}
   m_RootOrder: 1
@@ -89,6 +91,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.41, y: -7.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4843676354557362}
   - {fileID: 4202745155139392}
@@ -162,7 +165,7 @@ MonoBehaviour:
   hud: {fileID: 0}
   job: 4
   skills:
-  - {fileID: 114825584013065182, guid: 40ba2c97750021d40840aade8042ebf3, type: 3}
+  - {fileID: -5730668357991069248, guid: 40ba2c97750021d40840aade8042ebf3, type: 3}
   - {fileID: 114487366432352720, guid: 6a6fec55dfab8cc43b470cefacd2d091, type: 3}
   - {fileID: 114510658932947970, guid: 5b210aa628e3aa048ad1b04c5c13be95, type: 3}
   - {fileID: 114238026829365552, guid: 60d7cb0b6815cb1479a0af96bd1a7fab, type: 3}
@@ -173,7 +176,7 @@ MonoBehaviour:
   correctHeroPosition: {x: 0, y: 0, z: 0}
 --- !u!95 &95451199811738538
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -186,6 +189,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -201,10 +205,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
