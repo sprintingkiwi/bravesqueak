@@ -62,7 +62,7 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 3
-  requiredSP: 5
+  requiredSP: 0
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114847223870776074, guid: 692c469f234525146bfaf432bf3346dc,
+  targetEffect: {fileID: -1916907979831044115, guid: 352304b7fbe11f445970df6ae36e6227,
     type: 3}
   moveToTarget: 0
   cameraFocus: 0
