@@ -1954,7 +1954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -30, y: 10}
+  m_AnchoredPosition: {x: -40, y: 20}
   m_SizeDelta: {x: 60, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835314535
@@ -5329,27 +5329,27 @@ MonoBehaviour:
     Software: Alessandro
     Norfo
 
-    
 
-    
 
-    
+
+
+
 
     Also credits to:
 
-    
+
 
     For SOUNDS:
 
-    
 
-    Short
-    jingles AND Digital SFX by Kenney Vleugels (www.kenney.nl)
 
-    LICENSE: CC0
-    1.0 Universal (CC0 1.0)Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/
+    Short jingles AND
+    Digital SFX by Kenney Vleugels (www.kenney.nl)
 
-    
+    LICENSE: CC0 1.0 Universal
+    (CC0 1.0)Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/
+
+
 
     Pterodactyl
     Screech, recorded by Mike Koenig
@@ -5361,13 +5361,13 @@ MonoBehaviour:
 
     LICENSE: Attribution 3.0
 
-    
 
-    
+
+
 
     For TEXTURES:
 
-    
+
 
     https://unsplash.com
 
@@ -5382,7 +5382,7 @@ MonoBehaviour:
     http://www.freepik.com
     Designed by rawpixel.com/Freepik
 
-    
+
 
     Wood Texture by Simon Stankowski
 
@@ -5391,7 +5391,7 @@ MonoBehaviour:
     LICENSE:
     https://unsplash.com/license
 
-    
+
 
     Old Grunge Paper Texture
 
@@ -5400,17 +5400,16 @@ MonoBehaviour:
     LICENSE:
     http://www.wildtextures.com/terms-of-use/
 
-    
 
-    Background Brown Paper
-    Texture
+
+    Background Brown Paper Texture
 
     https://www.pexels.com/photo/background-brown-paper-texture-268372/
 
     LICENSE:
     https://www.pexels.com/photo-license/
 
-    
+
 
     Ice Texture
 
@@ -5418,7 +5417,7 @@ MonoBehaviour:
 
     https://www.freecreatives.com/about-us
 
-    
+
 
     ChalkBoard
     Texture
