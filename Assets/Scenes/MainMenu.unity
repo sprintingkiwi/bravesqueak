@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentEndY: 0
-  maxContentY: 600
+  maxContentY: 800
   contentReadEvents: []
   content: {fileID: 1858123705}
 --- !u!1 &697592980
