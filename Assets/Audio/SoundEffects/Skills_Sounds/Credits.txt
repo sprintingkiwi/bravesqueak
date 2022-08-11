@@ -1,0 +1,7 @@
+Explosion = Spell_04 (Modified) of Fantasy SFX Pack (Unity Store)
+
+Fireball:
+Julien Matthey on https://freesound.org/people/Julien%20Matthey/sounds/105016/
+LICENSE: https://creativecommons.org/publicdomain/zero/1.0/
+
+Thunder = Spell_02 of Fantasy SFX Pack (Unity Store)

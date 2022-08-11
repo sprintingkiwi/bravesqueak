@@ -1,0 +1,11 @@
+Click_1 = chop by Kenney(RPG Audio pack)
+
+DodgeDefault = phaserUp2 by Kenney(Digital Audio pack)
+
+Confirm = jingles_SAX16 by Kenney(Music Jingles pack)
+
+DefeatDefault = Goblin01 di Fantasy SFX Pack (Unity store)
+
+HitDefault e HitDefault_2(modificato) = ascia colpo senza armatura (Ciarma e Claudio)
+
+ParryDefault = SwordArmorHit (Ciarma e Claudio)
