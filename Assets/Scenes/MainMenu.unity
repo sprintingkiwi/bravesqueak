@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentEndY: 0
-  maxContentY: 600
+  maxContentY: 850
   contentReadEvents: []
   content: {fileID: 1858123705}
 --- !u!1 &697592980
@@ -4319,7 +4319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.9500122, y: -2.2000122}
+  m_AnchoredPosition: {x: -3.9499512, y: -2.2000122}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1568013276
@@ -4341,7 +4341,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4351,10 +4351,12 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -896552882, guid: 82016deb8be69a145b2e3133b2219e85,
+      type: 3}
+    m_PressedSprite: {fileID: 400081781, guid: 82016deb8be69a145b2e3133b2219e85, type: 3}
+    m_SelectedSprite: {fileID: -896552882, guid: 82016deb8be69a145b2e3133b2219e85,
+      type: 3}
+    m_DisabledSprite: {fileID: 21300002, guid: a0df971020253f34fb5bedf80fcdcbca, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -4398,7 +4400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300002, guid: a0df971020253f34fb5bedf80fcdcbca, type: 3}
+  m_Sprite: {fileID: 400081781, guid: 82016deb8be69a145b2e3133b2219e85, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5350,6 +5352,13 @@ MonoBehaviour:
     (CC0 1.0)Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/
 
 
+    Fantasy
+    SFX by Little Robot Sound Factory
+
+    https://assetstore.unity.com/packages/audio/sound-fx/fantasy-sfx-32833
+
+    https://assetstore.unity.com/publishers/5673
+
 
     Pterodactyl
     Screech, recorded by Mike Koenig
@@ -5362,10 +5371,19 @@ MonoBehaviour:
     LICENSE: Attribution 3.0
 
 
+    Fireball:
+
+    Julien Matthey on
+    https://freesound.org/people/Julien%20Matthey/sounds/105016/
+
+    LICENSE: https://creativecommons.org/publicdomain/zero/1.0/
 
 
 
-    For TEXTURES:
+
+
+    For
+    TEXTURES:
 
 
 
