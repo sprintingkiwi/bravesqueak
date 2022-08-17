@@ -255,7 +255,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: G:/Sviluppo_Software/sprintingkiwi.keystore
+  AndroidKeystoreName: G:/Sviluppo_Software/bravesqueakstudio.keystore
   AndroidKeyaliasName: bravesqueak
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
