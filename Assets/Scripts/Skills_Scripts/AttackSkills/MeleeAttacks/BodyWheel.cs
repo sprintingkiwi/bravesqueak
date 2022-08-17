@@ -10,8 +10,10 @@ public class BodyWheel : MeleeAttack
         StartCoroutine(AsyncMovement());
 
         Vector3 triggerDamagePos = new Vector3(-12.5f * (float)user.faction, user.transform.position.y, 0);
-        while ((user.transform.position - triggerDamagePos).magnitude > 0.5f)
-            yield return null;
+
+        //yield return new WaitForSeconds(2);
+        //while ((user.transform.position - triggerDamagePos).magnitude > 0.1f)
+        //    yield return null;
     }
 
     IEnumerator AsyncMovement()
@@ -19,8 +21,8 @@ public class BodyWheel : MeleeAttack
         user.targetPos = new Vector3(-40f * (float)user.faction, user.transform.position.y, 0);
         Debug.Log(user.name + " BODY WHEEL toward targets ");
         Debug.Log("User is moving toward target at speed " + userMovementSpeed.ToString());
-        yield return new WaitForSeconds(0.7f);
-        while (user.transform.position != user.targetPos)
+        yield return new WaitForSeconds(1f);
+        while (user.transform.position.x < user.targetPos.x)
         {
             user.transform.position = Vector3.MoveTowards(user.transform.position, user.targetPos, 80f * Time.deltaTime);
             //Jrpg.AdjustSortingOrder(user.gameObject);
