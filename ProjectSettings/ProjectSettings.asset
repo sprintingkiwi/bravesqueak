@@ -178,7 +178,7 @@ PlayerSettings:
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
   CreateWallpaper: 0
-  APKExpansionFiles: 0
+  APKExpansionFiles: 1
   keepLoadedShadersAlive: 0
   StripUnusedMeshComponents: 0
   VertexChannelCompressionMask: 4054
@@ -255,7 +255,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: G:/Sviluppo_Software/BRAVESQUEAK/bravesqueak.keystore
+  AndroidKeystoreName: G:/Sviluppo_Software/sprintingkiwi.keystore
   AndroidKeyaliasName: bravesqueak
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
