@@ -474,9 +474,9 @@ public class Jrpg : MonoBehaviour
         Log("Done adding new hero");
     }
 
-    [DllImport("__Internal")]
-    private static extern bool IsMobile();
-    public static bool IsMobileWebGL() { return IsMobile(); }
+    //[DllImport("__Internal")]
+    //private static extern bool IsMobile();
+    //public static bool IsMobileWebGL() { return IsMobile(); }
 
     //public static Battler FindParentBattler(Transform myTransform)
     //{
