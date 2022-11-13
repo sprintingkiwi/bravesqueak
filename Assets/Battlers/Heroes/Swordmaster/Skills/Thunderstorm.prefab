@@ -118,7 +118,7 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: wave
+  userAnimation: thunder
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 114497562577361482, guid: 1beea3f47d4a8344d8e09eb303f728a6,

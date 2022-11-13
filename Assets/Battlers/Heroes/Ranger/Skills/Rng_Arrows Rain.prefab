@@ -75,7 +75,7 @@ MonoBehaviour:
     type: 3}
   moveToTarget: 0
   cameraFocus: 0
-  cameraShake: 0
+  cameraShake: 1
   user: {fileID: 0}
   targets: []
   targetedArea: 0

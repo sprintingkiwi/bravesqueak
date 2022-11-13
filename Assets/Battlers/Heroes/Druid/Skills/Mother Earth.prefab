@@ -119,7 +119,7 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: brambles
+  userAnimation: berserk
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 114614065750280804, guid: e2be272e129035440bbcd056df25841b,
