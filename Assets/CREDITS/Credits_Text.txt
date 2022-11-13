@@ -13,6 +13,7 @@ Also credits to:
 
 For SOUNDS:
 
+Weapons/Armors clashing sound Effects by Claudio Marchi
 
 Short jingles AND Digital SFX by Kenney Vleugels (www.kenney.nl)
 LICENSE: CC0 1.0 Universal (CC0 1.0)Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/
