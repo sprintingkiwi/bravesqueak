@@ -48,12 +48,12 @@ MonoBehaviour:
   description: Burn with Sun light
   displayName: Light Ray
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 80
-  accuracy: 90
+  speed: 100
+  accuracy: 80
   powerRoll:
     dices:
-    - faces: 6
-    - faces: 6
+    - faces: 8
+    - faces: 8
   buffs: []
   statusChances:
   - status: {fileID: 114414827486457196, guid: f089c7a92c8ed6c4e9e45b82aa1206d5, type: 3}

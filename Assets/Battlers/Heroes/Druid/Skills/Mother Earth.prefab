@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4457589023571354}
   - component: {fileID: 212663812037258710}
-  - component: {fileID: 114389647848365838}
+  - component: {fileID: 776588366740716180}
   m_Layer: 0
-  m_Name: Dru_Berserk
+  m_Name: Mother Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114389647848365838
+--- !u!114 &776588366740716180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,53 +94,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e3a862918c257419e56c8f1a7fbd6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Lose your mind and go berserk
-  displayName: Berserk
+  description: Mother Earth's revenge for climate change!
+  displayName: Brambles
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 0
-  accuracy: 0
+  speed: 100
+  accuracy: 80
   powerRoll:
-    dices: []
-  buffs:
-  - ID: ATK
-    roll:
-      dices:
-      - faces: 20
-      - faces: 20
-      - faces: 20
-      - faces: 20
-      - faces: 20
-      - faces: 20
-      - faces: 20
-      - faces: 20
-      - faces: 20
-      - faces: 20
-    rollResult: 0
-  - ID: SPD
-    roll:
-      dices:
-      - faces: 8
-      - faces: 8
-    rollResult: 0
+    dices:
+    - faces: 8
+    - faces: 8
+  buffs: []
   statusChances: []
-  scope: 4
+  scope: 2
   targetsNumber: 1
-  duration: 3
+  duration: 0
   active: 1
   inBattle: 1
   inField: 0
-  element: 0
+  element: 1
   requiredSP: 3
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: berserk
+  userAnimation: brambles
   alternativeUserAnims: []
   targetAnimation: hit
-  areaEffect: {fileID: 0}
+  areaEffect: {fileID: 114614065750280804, guid: e2be272e129035440bbcd056df25841b,
+    type: 3}
   targetEffect: {fileID: 0}
   moveToTarget: 0
   cameraFocus: 0
@@ -151,3 +134,18 @@ MonoBehaviour:
   effectStillActive: 0
   bc: {fileID: 0}
   userMovementSpeed: 0
+  mods:
+  - name: ATK
+    value: 0
+  - name: SAT
+    value: 0
+  - name: DEF
+    value: 0
+  - name: SDF
+    value: 0
+  - name: EVA
+    value: 0
+  - name: CRT
+    value: 0
+  - name: DMG
+    value: 0

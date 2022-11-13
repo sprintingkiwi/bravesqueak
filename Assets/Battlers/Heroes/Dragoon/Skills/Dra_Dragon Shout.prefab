@@ -49,12 +49,10 @@ MonoBehaviour:
   displayName: Dragon Shout
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 70
-  accuracy: 100
+  accuracy: 75
   powerRoll:
     dices:
-    - faces: 4
-    - faces: 4
-    - faces: 12
+    - faces: 20
   buffs: []
   statusChances:
   - status: {fileID: 114537509661692964, guid: 87146e5644e94d349aa91d8c6188d45a, type: 3}

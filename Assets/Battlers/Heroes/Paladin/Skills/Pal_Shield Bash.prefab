@@ -48,11 +48,12 @@ MonoBehaviour:
   description: Bash with a shield
   displayName: Shield Bash
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 80
-  accuracy: 100
+  speed: 100
+  accuracy: 80
   powerRoll:
     dices:
-    - faces: 12
+    - faces: 8
+    - faces: 8
   buffs: []
   statusChances: []
   scope: 2
@@ -61,8 +62,8 @@ MonoBehaviour:
   active: 1
   inBattle: 1
   inField: 0
-  element: 0
-  requiredSP: 2
+  element: 7
+  requiredSP: 3
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}

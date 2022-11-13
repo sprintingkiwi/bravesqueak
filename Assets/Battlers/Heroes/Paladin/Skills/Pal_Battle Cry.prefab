@@ -100,12 +100,11 @@ MonoBehaviour:
   description: Restore hit points to all allies
   displayName: Battle Cry
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 7
-  accuracy: 0
+  speed: 100
+  accuracy: 100
   powerRoll:
     dices:
-    - faces: 12
-    - faces: 12
+    - faces: 20
   buffs: []
   statusChances: []
   scope: 5

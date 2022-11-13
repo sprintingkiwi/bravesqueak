@@ -169,11 +169,11 @@ MonoBehaviour:
   hud: {fileID: 0}
   job: 2
   skills:
-  - {fileID: -1665814698798362663, guid: e5a0c0a4105b10e408f53c95ce1bea30, type: 3}
+  - {fileID: 776588366740716180, guid: 2f872d40a68fa664e8faf01f051815d1, type: 3}
   - {fileID: 114836736652321672, guid: ddb4e4f66084a6e448822d40b0c32e4d, type: 3}
   - {fileID: 114487366432352720, guid: 9785fc464c0f2ac4aa87033e20eecbdf, type: 3}
   - {fileID: 114487366432352720, guid: a7c4f27c5e9a9a84f8bffd30d970613f, type: 3}
-  - {fileID: 114389647848365838, guid: 2f872d40a68fa664e8faf01f051815d1, type: 3}
+  - {fileID: -9021980329584273431, guid: e5a0c0a4105b10e408f53c95ce1bea30, type: 3}
   playerCharacter: {fileID: 0}
   UIPrefab: {fileID: 1471432516914874, guid: 6d7246f85c87e4d46a42adc34314bac8, type: 3}
   DescriptionBG: {fileID: 2800000, guid: b8e2680d2259ee74589ef251d3a980ab, type: 3}

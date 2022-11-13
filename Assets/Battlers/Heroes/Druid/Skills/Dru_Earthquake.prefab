@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4457589023571354}
   - component: {fileID: 212894792583035140}
-  - component: {fileID: -1665814698798362663}
+  - component: {fileID: -9021980329584273431}
   m_Layer: 0
   m_Name: Dru_Earthquake
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1665814698798362663
+--- !u!114 &-9021980329584273431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
+  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Earthquake
+  description: An earthquake shakes the ground
   displayName: Earthquake
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 70
@@ -118,14 +118,15 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: quake
-  alternativeUserAnims: []
+  userAnimation: attack
+  alternativeUserAnims:
+  - octopus_attack_2
+  - 
   targetAnimation: hit
-  areaEffect: {fileID: 114614065750280804, guid: 9551f6143f203b74c9e22529e9a1dbd8,
+  areaEffect: {fileID: 0}
+  targetEffect: {fileID: 114946632963968454, guid: 296d46d3cbc48094ea4cc87558873697,
     type: 3}
-  targetEffect: {fileID: 114614065750280804, guid: c856dd539ffed004095cc0ccb20b7522,
-    type: 3}
-  moveToTarget: 0
+  moveToTarget: 1
   cameraFocus: 0
   cameraShake: 1
   user: {fileID: 0}

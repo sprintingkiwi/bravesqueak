@@ -49,11 +49,11 @@ MonoBehaviour:
   displayName: Air Slash
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 100
-  accuracy: 100
+  accuracy: 80
   powerRoll:
     dices:
-    - faces: 12
-    - faces: 12
+    - faces: 8
+    - faces: 8
   buffs: []
   statusChances: []
   scope: 2

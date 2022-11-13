@@ -98,13 +98,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: Restore hit points
-  displayName: Cure
+  displayName: Heal
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 7
   accuracy: 0
   powerRoll:
     dices:
-    - faces: 6
+    - faces: 12
+    - faces: 12
   buffs: []
   statusChances: []
   scope: 3
@@ -114,13 +115,13 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 7
-  requiredSP: -1
+  requiredSP: 2
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: special
+  userAnimation: heal
   alternativeUserAnims: []
-  targetAnimation: special
+  targetAnimation: idle
   areaEffect: {fileID: 0}
   targetEffect: {fileID: 114308449136090854, guid: ef5e008a7ec3d844ea6f5034cf8e4b54,
     type: 3}
