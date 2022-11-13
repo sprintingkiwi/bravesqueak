@@ -125,7 +125,7 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Zombie Mouse
   size: 5
-  elementAffinity: 7
+  elementAffinity: 8
   species: 1
   perks: []
   movable: 1

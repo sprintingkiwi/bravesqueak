@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: Mother Earth's revenge for climate change!
-  displayName: Brambles
+  displayName: Mother Earth
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 100
   accuracy: 80

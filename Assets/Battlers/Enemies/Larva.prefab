@@ -144,7 +144,7 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Larva
   size: 6
-  elementAffinity: 6
+  elementAffinity: 7
   species: 4
   perks: []
   movable: 1

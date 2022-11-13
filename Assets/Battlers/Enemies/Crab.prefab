@@ -125,7 +125,7 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Crab
   size: 0
-  elementAffinity: 2
+  elementAffinity: 1
   species: 2
   perks: []
   movable: 1
