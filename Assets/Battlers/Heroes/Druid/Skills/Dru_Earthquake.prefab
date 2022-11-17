@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: An earthquake shakes the ground
+  description: Summon an earthquake
   displayName: Earthquake
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 70

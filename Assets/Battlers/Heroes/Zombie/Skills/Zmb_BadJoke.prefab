@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24e31892fbd6554faae569304a4c8ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Tell a bad joke to forget your pain!
+  description: Tell a bad joke to forget your pain
   displayName: Heal
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
   speed: 100
