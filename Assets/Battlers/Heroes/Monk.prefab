@@ -172,7 +172,7 @@ MonoBehaviour:
   - {fileID: 114836736652321672, guid: 1607c4dcca53ec24caa629db61a33ab4, type: 3}
   - {fileID: 114014343126834788, guid: ee63e8ebc28331d41b2d65d900b02462, type: 3}
   - {fileID: 1867817904593747501, guid: d5e3574b933716d41a1e2bcde3ddbbf1, type: 3}
-  - {fileID: 114755667126410738, guid: 8a009165ece2f734fbca280b0320631b, type: 3}
+  - {fileID: 114238026829365552, guid: 77bdf6fb29bacdd449c5ee70ac369e98, type: 3}
   - {fileID: 114238026829365552, guid: b7fb899621233f34bb9b37511e1235bc, type: 3}
   playerCharacter: {fileID: 0}
   UIPrefab: {fileID: 1471432516914874, guid: 6d7246f85c87e4d46a42adc34314bac8, type: 3}
