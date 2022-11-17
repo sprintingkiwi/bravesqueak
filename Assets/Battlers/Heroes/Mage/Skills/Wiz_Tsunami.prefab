@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114238026829365552}
-  - component: {fileID: 212295707000658394}
+  - component: {fileID: 114836736652321672}
+  - component: {fileID: 212461386023369356}
   m_Layer: 0
-  m_Name: Wiz_Water Splash
+  m_Name: Wiz_Tsunami
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114238026829365552
+--- !u!114 &114836736652321672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,37 +45,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Splash water on a target
-  displayName: Water Splash
+  description: Summon a Tsunami
+  displayName: Tsunami
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 100
-  accuracy: 80
+  speed: 70
+  accuracy: 75
   powerRoll:
     dices:
-    - faces: 8
-    - faces: 8
+    - faces: 20
   buffs: []
   statusChances: []
-  scope: 2
+  scope: 5
   targetsNumber: 1
   duration: 0
   active: 1
   inBattle: 1
   inField: 0
   element: 2
-  requiredSP: 3
+  requiredSP: 5
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: ice_bullets
+  userAnimation: wave
   alternativeUserAnims: []
   targetAnimation: hit
-  areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114946632963968454, guid: e965e01949920ad44a557b56193550c0,
+  areaEffect: {fileID: 114946632963968454, guid: efa5c8246d0466241878a04e2239da42,
+    type: 3}
+  targetEffect: {fileID: 114946632963968454, guid: faee7d332c23ab94d8ce38514bc848ac,
     type: 3}
   moveToTarget: 0
   cameraFocus: 0
-  cameraShake: 0
+  cameraShake: 1
   user: {fileID: 0}
   targets: []
   targetedArea: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
     value: 0
   - name: DMG
     value: 0
---- !u!212 &212295707000658394
+--- !u!212 &212461386023369356
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 4e9e7ece51a1f36408a3b6dff43b180c, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 4e9e7ece51a1f36408a3b6dff43b180c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
