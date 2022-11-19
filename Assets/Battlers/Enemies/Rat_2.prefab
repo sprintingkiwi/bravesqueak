@@ -145,7 +145,7 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Rat Assassin
   size: 0
-  elementAffinity: 7
+  elementAffinity: 8
   species: 2
   perks: []
   movable: 1

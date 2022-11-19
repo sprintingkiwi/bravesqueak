@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4511683294616398}
   m_RootOrder: 0
@@ -56,6 +57,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.38, y: -3.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4511683294616398}
   m_RootOrder: 1
@@ -89,6 +91,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.41, y: -7.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4843676354557362}
   - {fileID: 4202745155139392}
@@ -166,18 +169,18 @@ MonoBehaviour:
   hud: {fileID: 0}
   job: 7
   skills:
-  - {fileID: 114836736652321672, guid: 963bec0a47f6cc94790f7ed74493b782, type: 3}
+  - {fileID: 7603070426540615120, guid: 963bec0a47f6cc94790f7ed74493b782, type: 3}
   - {fileID: 114836736652321672, guid: a1d5de150b0b50e4a89ebf5630e1c1e5, type: 3}
   - {fileID: 114448939315776632, guid: 373e9ec0f61a126499ef15270e990b0d, type: 3}
   - {fileID: 114238026829365552, guid: 82523abc0a0f9a4458420bf78a6e86be, type: 3}
-  - {fileID: 114058463478330858, guid: 9916d7eecc2371240996692895cd010b, type: 3}
+  - {fileID: 1452611191229840366, guid: 9916d7eecc2371240996692895cd010b, type: 3}
   playerCharacter: {fileID: 0}
   UIPrefab: {fileID: 1471432516914874, guid: 6d7246f85c87e4d46a42adc34314bac8, type: 3}
   DescriptionBG: {fileID: 2800000, guid: aa3a9375d4bbc4d4798a37f371a69a24, type: 3}
   correctHeroPosition: {x: 0, y: 0, z: 0}
 --- !u!95 &95451199811738538
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -190,6 +193,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -205,10 +209,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

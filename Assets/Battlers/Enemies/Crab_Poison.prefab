@@ -125,7 +125,7 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Swamp Crab
   size: 0
-  elementAffinity: 1
+  elementAffinity: 2
   species: 2
   perks: []
   movable: 1

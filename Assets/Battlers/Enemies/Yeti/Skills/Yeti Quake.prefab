@@ -48,13 +48,11 @@ MonoBehaviour:
   description: Shake the earth
   displayName: Earthquake
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 50
-  accuracy: 100
+  speed: 70
+  accuracy: 75
   powerRoll:
     dices:
-    - faces: 4
-    - faces: 4
-    - faces: 12
+    - faces: 20
   buffs: []
   statusChances: []
   scope: 5

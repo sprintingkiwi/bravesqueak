@@ -608,23 +608,23 @@ public class BattleMenu : MonoBehaviour
                 while (!InputManager.Instance.ButtonADown())
                 {
                     // Switching Area with the arrows
-                    if (InputManager.Instance.RightArrowDown() || InputManager.Instance.LeftArrowDown())
-                    {
-                        // Invert Area Selection
-                        if (selectedFaction == Battler.Faction.Enemies)
-                            selectedFaction = Battler.Faction.Heroes;
-                        else
-                            selectedFaction = Battler.Faction.Enemies;
+                    //if (InputManager.Instance.RightArrowDown() || InputManager.Instance.LeftArrowDown())
+                    //{
+                    //    // Invert Area Selection
+                    //    if (selectedFaction == Battler.Faction.Enemies)
+                    //        selectedFaction = Battler.Faction.Heroes;
+                    //    else
+                    //        selectedFaction = Battler.Faction.Enemies;
 
-                        // Move Area Selection sprite to the new Area
-                        yield return StartCoroutine(MoveAreaSelection(selectedFaction));
-                        //Vector3 targetAreaPos = new Vector3(-areaSelection.transform.position.x, areaSelection.transform.position.y, areaSelection.transform.position.z);
-                        //while (areaSelection.transform.position != targetAreaPos)
-                        //{
-                        //    areaSelection.transform.position = Vector3.MoveTowards(areaSelection.transform.position, targetAreaPos, 50f * Time.deltaTime);
-                        //    yield return null;
-                        //}
-                    }
+                    //    // Move Area Selection sprite to the new Area
+                    //    yield return StartCoroutine(MoveAreaSelection(selectedFaction));
+                    //    //Vector3 targetAreaPos = new Vector3(-areaSelection.transform.position.x, areaSelection.transform.position.y, areaSelection.transform.position.z);
+                    //    //while (areaSelection.transform.position != targetAreaPos)
+                    //    //{
+                    //    //    areaSelection.transform.position = Vector3.MoveTowards(areaSelection.transform.position, targetAreaPos, 50f * Time.deltaTime);
+                    //    //    yield return null;
+                    //    //}
+                    //}
 
                     // Button B
                     if (InputManager.Instance.ButtonBDown())

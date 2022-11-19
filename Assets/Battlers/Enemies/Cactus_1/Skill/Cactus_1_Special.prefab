@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114836736652321672}
-  - component: {fileID: 212461386023369356}
+  - component: {fileID: 114487366432352720}
+  - component: {fileID: 212258056524800154}
   m_Layer: 0
-  m_Name: Zmb_Confusion
+  m_Name: Cactus_1_Special
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,11 +28,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114836736652321672
+--- !u!114 &114487366432352720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,40 +42,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1650370697774398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
+  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Confuse your enemies
-  displayName: Confusion
-  displayNameColor: {r: 1, g: 1, b: 1, a: 1}
-  speed: 50
-  accuracy: 100
+  description: A powerful strike
+  displayName: Bash
+  displayNameColor: {r: 0, g: 0, b: 0, a: 255}
+  speed: 100
+  accuracy: 80
   powerRoll:
-    dices: []
+    dices:
+    - faces: 8
+    - faces: 8
   buffs: []
-  statusChances:
-  - status: {fileID: 114414827486457196, guid: f089c7a92c8ed6c4e9e45b82aa1206d5, type: 3}
-    chance: 80
+  statusChances: []
   scope: 2
   targetsNumber: 1
   duration: 0
   active: 1
   inBattle: 1
   inField: 0
-  element: 8
-  requiredSP: 1
+  element: 1
+  requiredSP: 3
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: special
-  alternativeUserAnims: []
+  userAnimation: attack
+  alternativeUserAnims:
+  - octopus_attack_2
+  - 
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114847223870776074, guid: 692c469f234525146bfaf432bf3346dc,
+  targetEffect: {fileID: 114946632963968454, guid: 296d46d3cbc48094ea4cc87558873697,
     type: 3}
-  moveToTarget: 0
+  moveToTarget: 1
   cameraFocus: 0
-  cameraShake: 1
+  cameraShake: 0
   user: {fileID: 0}
   targets: []
   targetedArea: 0
@@ -96,7 +99,7 @@ MonoBehaviour:
     value: 0
   - name: DMG
     value: 0
---- !u!212 &212461386023369356
+--- !u!212 &212258056524800154
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,10 +110,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -135,12 +140,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300008, guid: 2e737bb7e9fe12d42b9117ac944fd0f6, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 3d7395ab1feb8914ca1a036ecdbd8743, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.8933333, y: 1.8933333}
+  m_Size: {x: 1.8933333, y: 1.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

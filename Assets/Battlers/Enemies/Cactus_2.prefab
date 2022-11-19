@@ -125,7 +125,7 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Round Cactus
   size: 6
-  elementAffinity: 2
+  elementAffinity: 7
   species: 3
   perks: []
   movable: 1

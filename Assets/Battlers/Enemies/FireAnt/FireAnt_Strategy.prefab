@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.9160004, y: -0.83732224, z: 2.0654287}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,12 +52,9 @@ MonoBehaviour:
     conditions: []
   conditionCheck: 0
   actions:
-  - skill: {fileID: 114238026829365552, guid: 9b9eb11db93e47e4f964065e87eddd31, type: 3}
+  - skill: {fileID: 114238026829365552, guid: dbeb96bb8ae3bc54a8e0e3ce96a80d8f, type: 3}
     weight: 5
     conditions: []
   - skill: {fileID: 114255436312251458, guid: a6b736f0297a30a448075c26725b67ce, type: 3}
     weight: 3
-    conditions: []
-  - skill: {fileID: 114755667126410738, guid: 473d80457dfa80d42bd99b313e832baf, type: 3}
-    weight: 2
     conditions: []

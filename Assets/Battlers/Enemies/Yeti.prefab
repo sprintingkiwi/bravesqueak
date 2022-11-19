@@ -125,7 +125,7 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Pirate Green Lizard
   size: 0
-  elementAffinity: 1
+  elementAffinity: 6
   species: 5
   perks: []
   movable: 1

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 212018761748290012}
-  - component: {fileID: 114338331553455674}
+  - component: {fileID: 114238026829365552}
+  - component: {fileID: 212295707000658394}
   m_Layer: 0
-  m_Name: Mush Poison
+  m_Name: Mnk_Prayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,11 +28,77 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &212018761748290012
+--- !u!114 &114238026829365552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650370697774398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Pray to purge the enemies
+  displayName: Prayer
+  displayNameColor: {r: 0, g: 0, b: 0, a: 255}
+  speed: 70
+  accuracy: 75
+  powerRoll:
+    dices:
+    - faces: 20
+  buffs: []
+  statusChances:
+  - status: {fileID: 114414827486457196, guid: f089c7a92c8ed6c4e9e45b82aa1206d5, type: 3}
+    chance: 30
+  scope: 5
+  targetsNumber: 1
+  duration: 0
+  active: 1
+  inBattle: 1
+  inField: 0
+  element: 7
+  requiredSP: 3
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
+  userAnimation: special
+  alternativeUserAnims: []
+  targetAnimation: hit
+  areaEffect: {fileID: 0}
+  targetEffect: {fileID: 114946632963968454, guid: 8482e84cbc1894d45a86fd7ab64b633c,
+    type: 3}
+  moveToTarget: 0
+  cameraFocus: 0
+  cameraShake: 0
+  user: {fileID: 0}
+  targets: []
+  targetedArea: 0
+  effectStillActive: 0
+  bc: {fileID: 0}
+  userMovementSpeed: 0
+  mods:
+  - name: ATK
+    value: 0
+  - name: SAT
+    value: 0
+  - name: DEF
+    value: 0
+  - name: SDF
+    value: 0
+  - name: EVA
+    value: 0
+  - name: CRT
+    value: 0
+  - name: DMG
+    value: 0
+--- !u!212 &212295707000658394
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,10 +109,12 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -71,7 +139,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 7a5287de20f026b4ab09be7f9fca8adb, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 73304821dffd39a4e96ac06f0e53d822, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,71 +150,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114338331553455674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650370697774398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: 
-  displayName: 
-  displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 100
-  accuracy: 100
-  powerRoll:
-    dices:
-    - faces: 3
-  buffs: []
-  statusChances:
-  - status: {fileID: 114537509661692964, guid: 7a135abb400d7834285b40f2beef954e, type: 3}
-    chance: 50
-  - status: {fileID: 114414827486457196, guid: f089c7a92c8ed6c4e9e45b82aa1206d5, type: 3}
-    chance: 50
-  scope: 5
-  targetsNumber: 1
-  duration: 0
-  active: 1
-  inBattle: 1
-  inField: 0
-  element: 4
-  requiredSP: 2
-  baseSkill: 0
-  epicSkillOf: {fileID: 0}
-  userBeginEffect: {fileID: 0}
-  userAnimation: special
-  alternativeUserAnims: []
-  targetAnimation: hit
-  areaEffect: {fileID: 114847223870776074, guid: 19f359dbed1398f4c8850e7c18a953c0,
-    type: 3}
-  targetEffect: {fileID: 114696480298692704, guid: 205823002e85dfd44bd367d1ec3bbe2f,
-    type: 3}
-  moveToTarget: 0
-  cameraFocus: 0
-  cameraShake: 1
-  user: {fileID: 0}
-  targets: []
-  targetedArea: 0
-  effectStillActive: 0
-  bc: {fileID: 0}
-  userMovementSpeed: 0
-  mods:
-  - name: ATK
-    value: 0
-  - name: SAT
-    value: 0
-  - name: DEF
-    value: 0
-  - name: SDF
-    value: 0
-  - name: EVA
-    value: 0
-  - name: CRT
-    value: 0
-  - name: DMG
-    value: 0
