@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95285714855686256}
   - component: {fileID: 114415952478058760}
   m_Layer: 0
-  m_Name: Missile
+  m_Name: Fast Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: 1
-  speed: 30
+  speed: 60
   AfterEffect: {fileID: 114280663374910852, guid: e9b19b6920789ab4fadb2fa9ebb334cd,
     type: 3}
   waitComplete: 0

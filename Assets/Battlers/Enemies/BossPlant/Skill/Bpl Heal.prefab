@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 114115067928026556}
   - component: {fileID: 212225656126719098}
   m_Layer: 0
-  m_Name: Pal_Heal
+  m_Name: Bpl Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,22 +52,21 @@ MonoBehaviour:
   accuracy: 100
   powerRoll:
     dices:
-    - faces: 12
-    - faces: 12
+    - faces: 8
   buffs: []
   statusChances: []
-  scope: 3
+  scope: 4
   targetsNumber: 1
   duration: 0
   active: 1
   inBattle: 1
   inField: 0
   element: 7
-  requiredSP: 2
+  requiredSP: -2
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: heal
+  userAnimation: bossplant_cure
   alternativeUserAnims: []
   targetAnimation: idle
   areaEffect: {fileID: 0}

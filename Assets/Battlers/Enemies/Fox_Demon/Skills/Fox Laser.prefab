@@ -55,7 +55,7 @@ MonoBehaviour:
     - faces: 20
   buffs: []
   statusChances: []
-  scope: 2
+  scope: 5
   targetsNumber: 1
   duration: 0
   active: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
   alternativeUserAnims: []
   targetAnimation: hit
   areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114415952478058760, guid: afcf704e6cb15604689a2d152c16b631,
+  targetEffect: {fileID: 114415952478058760, guid: 06ea808c5da095e4cb3bdb5922f86cac,
     type: 3}
   moveToTarget: 0
   cameraFocus: 0
@@ -137,7 +137,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 4e9e7ece51a1f36408a3b6dff43b180c, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 11423091f4edfd74ca1f6c6cd9795cb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

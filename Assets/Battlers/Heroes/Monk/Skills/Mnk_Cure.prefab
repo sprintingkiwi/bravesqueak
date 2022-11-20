@@ -100,8 +100,8 @@ MonoBehaviour:
   description: Restore hit points
   displayName: Heal
   displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 7
-  accuracy: 0
+  speed: 100
+  accuracy: 100
   powerRoll:
     dices:
     - faces: 12
