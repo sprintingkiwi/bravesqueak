@@ -78,8 +78,8 @@ public class Skill : Item
     //public string targetEndAnimation;
     //public Effect targetEndEffect;
     public bool moveToTarget;
-    public bool cameraFocus;
-    public bool cameraShake;
+    //public bool cameraFocus;
+    //public bool cameraShake;
 
     // Other
     [Header("System")]
@@ -178,8 +178,8 @@ public class Skill : Item
         if (moveToTarget && user.movable)
             yield return StartCoroutine(MoveToTarget(targets[0]));
 
-        if (cameraFocus)
-            bc.cameraCoroutines.Add(StartCoroutine(bc.battleCamera.Focus(targets[UnityEngine.Random.Range(0, targets.Count - 1)])));
+        //if (cameraFocus)
+        //    bc.cameraCoroutines.Add(StartCoroutine(bc.battleCamera.Focus(targets[UnityEngine.Random.Range(0, targets.Count - 1)])));
 
         yield return StartCoroutine(Fighting());
 
