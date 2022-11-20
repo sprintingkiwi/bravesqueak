@@ -453,7 +453,7 @@ public class Skill : Item
             {
                 Jrpg.Log(target.name + " is evolving into " + target.evolution.name, "Visible");
 
-                Battler evo = Instantiate(target.evolution, target.transform.position, Quaternion.identity);
+                Battler evo = Instantiate(target.evolution, target.transform.position, Quaternion.identity, GameController.Instance.battleStuffInstance.transform);
                 evo.Setup();
 
                 // Initialize evolution
