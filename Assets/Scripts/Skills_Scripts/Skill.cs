@@ -46,14 +46,14 @@ public class Skill : Item
     // Elements multipliers dictionary  
     public static Dictionary<Element, Dictionary<Element, float>> elementsMultipliers = new Dictionary<Element, Dictionary<Element, float>>()
     {
-        {Element.Fire, new Dictionary<Element, float>() {{ Element.Water, 2f }, { Element.Earth, 0.5f }, { Element.Ice, 0.5f }, { Element.Fire, 0.5f } }},
-        {Element.Water, new Dictionary<Element, float>() {{ Element.Thunder, 2f }, { Element.Fire, 0.5f }, { Element.Water, 0.5f } }},
-        {Element.Wind, new Dictionary<Element, float>() {{ Element.Earth, 0.1f }, { Element.Thunder, 2f }, { Element.Ice, 2f }, { Element.Water, 0.5f }, { Element.Wind, 0.5f } }},
-        {Element.Earth, new Dictionary<Element, float>() {{ Element.Fire, 2f }, { Element.Thunder, 0.1f }, { Element.Water, 0.5f }, { Element.Wind, 2f }, { Element.Ice, 2f } }},
-        {Element.Thunder, new Dictionary<Element, float>() {{ Element.Earth, 2f }, { Element.Thunder, 0.5f } }},
-        {Element.Ice, new Dictionary<Element, float>() {{ Element.Fire, 2f }, { Element.Water, 0.5f } }},
-        {Element.Light, new Dictionary<Element, float>() {{ Element.Darkness, 2.5f }, { Element.Light, 0.5f } }},
-        {Element.Darkness, new Dictionary<Element, float>() {{ Element.Light, 2.5f }, { Element.Darkness, 0.5f } }}
+        {Element.Fire, new Dictionary<Element, float>() {{ Element.Water, 2f }, { Element.Wind, 2f }, { Element.Earth, 0.5f }, { Element.Ice, 0.5f }, { Element.Fire, 0.5f } }},
+        {Element.Water, new Dictionary<Element, float>() {{ Element.Earth, 2f }, { Element.Thunder, 2f }, { Element.Fire, 0.5f }, { Element.Ice, 0.5f }, { Element.Water, 0.5f } }},
+        {Element.Wind, new Dictionary<Element, float>() {{ Element.Thunder, 2f }, { Element.Ice, 2f }, { Element.Fire, 0.5f }, { Element.Earth, 0.5f }, { Element.Wind, 0.5f } }},
+        {Element.Earth, new Dictionary<Element, float>() {{ Element.Fire, 2f }, { Element.Wind, 2f }, { Element.Thunder, 0.5f }, { Element.Water, 0.5f }, { Element.Earth, 0.5f } }},
+        {Element.Thunder, new Dictionary<Element, float>() {{ Element.Earth, 2f }, { Element.Ice, 2f }, { Element.Wind, 0.5f }, { Element.Water, 0.5f }, { Element.Thunder, 0.5f } }},
+        {Element.Ice, new Dictionary<Element, float>() {{ Element.Fire, 2f }, { Element.Water, 2f }, { Element.Wind, 0.5f }, { Element.Thunder, 0.5f }, { Element.Ice, 0.5f }}},
+        {Element.Light, new Dictionary<Element, float>() {{ Element.Darkness, 2f }, { Element.Light, 0.5f } }},
+        {Element.Darkness, new Dictionary<Element, float>() {{ Element.Light, 2f }, { Element.Darkness, 0.5f } }}
     };
     //public Sprite storeNameImg;
 
