@@ -23,9 +23,9 @@ public class Battler : MonoBehaviour
     // Dictionary reference for string stats ID
     public Dictionary<string, Stat> stats = new Dictionary<string, Stat>();
     // Delta values for stats
-    public Dictionary<string, int> deltaStats = new Dictionary<string, int>();
+    //public Dictionary<string, int> deltaStats = new Dictionary<string, int>();
     // Original values for stats
-    public Dictionary<string, int> originalStats = new Dictionary<string, int>();
+    //public Dictionary<string, int> originalStats = new Dictionary<string, int>();
     
 
     // Other stats
@@ -42,7 +42,7 @@ public class Battler : MonoBehaviour
     public Skill.Element elementAffinity;
     public enum Species { Slime, Undead, Beast, Plant, Insect, Dragon };
     public Species species;
-    public Perk[] perks = new Perk[2];
+    //public Perk[] perks = new Perk[2];
     public bool movable = true;
     public Battler evolution;
     public List<string> tags = new List<string>();
@@ -116,10 +116,10 @@ public class Battler : MonoBehaviour
         stats.Add(maxHP.ID, maxHP);
 
         // Populate delta stats dictionary
-        foreach (KeyValuePair<string, Stat> s in stats)
-        {
-            deltaStats.Add(s.Value.ID, 0);
-        }
+        //foreach (KeyValuePair<string, Stat> s in stats)
+        //{
+        //    deltaStats.Add(s.Value.ID, 0);
+        //}
 
         // Test
         //deltaStats["DEX"] += 5;
@@ -181,8 +181,8 @@ public class Battler : MonoBehaviour
         skillPoints = Random.Range(3, 8);
 
         // Stats
-        SaveOriginalStats();
-        UpdateStats();
+        //SaveOriginalStats();
+        //UpdateStats();
 
         // Sprite stuff
         //SetupCollider();
@@ -202,21 +202,21 @@ public class Battler : MonoBehaviour
 
     }
 
-    public virtual void SaveOriginalStats()
-    {
-        foreach (KeyValuePair<string, Stat> s in stats)
-        {
-            originalStats.Add(s.Value.ID, s.Value.value);
-        }
-    }
+    //public virtual void SaveOriginalStats()
+    //{
+    //    foreach (KeyValuePair<string, Stat> s in stats)
+    //    {
+    //        originalStats.Add(s.Value.ID, s.Value.value);
+    //    }
+    //}
 
-    public virtual void UpdateStats()
-    {
-        foreach (KeyValuePair<string, int> s in deltaStats)
-        {
-            stats[s.Key].value = originalStats[s.Key] + s.Value;
-        }
-    }
+    //public virtual void UpdateStats()
+    //{
+    //    foreach (KeyValuePair<string, int> s in deltaStats)
+    //    {
+    //        stats[s.Key].value = originalStats[s.Key] + s.Value;
+    //    }
+    //}
 
     // Called by the battle controller while executing actions during the turn battle
     public virtual Coroutine UseSkill(Skill skill, List<Battler> targets)
@@ -385,13 +385,13 @@ public class Battler : MonoBehaviour
     {
         new GameObject("PERKS").transform.parent = transform;
 
-        foreach (Perk p in perks)
-        {
-            if (p != null)
-            {
-                Instantiate(p, transform.Find("PERKS")).Setup(this);
-            }
-        }
+        //foreach (Perk p in perks)
+        //{
+        //    if (p != null)
+        //    {
+        //        Instantiate(p, transform.Find("PERKS")).Setup(this);
+        //    }
+        //}
     }
 
     public bool HasPerk(Perk perkToCheck)

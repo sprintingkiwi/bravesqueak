@@ -18,8 +18,8 @@ public class Skill : Item
     //public bool weaponDamage;
     //public Roll roll;
     public Roll powerRoll;
-    public Buff[] buffs;
-    public StatusChance[] statusChances;
+    //public Buff[] buffs;
+    //public StatusChance[] statusChances;
     public enum Scope { All, Others, Enemies, Friends, Self, Area };
     public Scope scope;
     public int targetsNumber = 1;
@@ -373,8 +373,8 @@ public class Skill : Item
     {
         Jrpg.Log("Processing " + gameObject.name + " skill effect");
 
-        if (buffs.Length > 0)
-            Buff(target);
+        //if (buffs.Length > 0)
+        //    Buff(target);
 
         yield return null;
     }
@@ -476,24 +476,24 @@ public class Skill : Item
     }
 
     // Buffs management
-    public virtual void Buff(Battler target)
-    {
-        foreach (Buff buff in buffs)
-        {
-            buff.rollResult = buff.roll.Execute();
-            target.deltaStats[buff.ID] += buff.rollResult;
-        }
-        target.UpdateStats();
-    }
+    //public virtual void Buff(Battler target)
+    //{
+    //    foreach (Buff buff in buffs)
+    //    {
+    //        buff.rollResult = buff.roll.Execute();
+    //        target.deltaStats[buff.ID] += buff.rollResult;
+    //    }
+    //    target.UpdateStats();
+    //}
     // This must be called in post effect
-    public virtual void Debuff(Battler target)
-    {
-        foreach (Buff buff in buffs)
-        {
-            target.deltaStats[buff.ID] -= buff.rollResult;
-        }
-        target.UpdateStats();
-    }
+    //public virtual void Debuff(Battler target)
+    //{
+    //    foreach (Buff buff in buffs)
+    //    {
+    //        target.deltaStats[buff.ID] -= buff.rollResult;
+    //    }
+    //    target.UpdateStats();
+    //}
 
     // Ongoing effect will be called at the beginning of every turn
     // in which the skill is still active
@@ -512,7 +512,7 @@ public class Skill : Item
         if (Debug.isDebugBuild)
             Debug.Log("Processing " + gameObject.name + " post effect");
 
-        Debuff(target);
+        //Debuff(target);
     }
 
     public virtual bool ProcessRequirements(Battler user)

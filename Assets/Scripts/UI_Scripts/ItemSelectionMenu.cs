@@ -52,18 +52,18 @@ public class ItemSelectionMenu : Menu
                     }
 
                 // Removing Perks held by other heroes
-                foreach (HeroBattler hb in GameController.Instance.heroes)
-                    foreach (Item av in availableItems.ToArray())
-                        if (hb.perks.Contains(av))
-                            availableItems.Remove(av);                
+                //foreach (HeroBattler hb in GameController.Instance.heroes)
+                //    foreach (Item av in availableItems.ToArray())
+                //        if (hb.perks.Contains(av))
+                //            availableItems.Remove(av);                
 
                 // Logging names
                 Jrpg.Log("Available Perks: ");
                 foreach (Item av in availableItems)
                     Jrpg.Log(av.name);
 
-                Jrpg.Log("Selected Perk: " + hero.perks[itemSlot].name);
-                availableItems.Insert(0, hero.perks[itemSlot]);
+                //Jrpg.Log("Selected Perk: " + hero.perks[itemSlot].name);
+                //availableItems.Insert(0, hero.perks[itemSlot]);
 
                 break;
         }
@@ -142,10 +142,10 @@ public class ItemSelectionMenu : Menu
                     GameController.Instance.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].skills[itemSlot] = (Skill)activeItem;
                     break;
 
-                case "Perk":
-                    Jrpg.Log(activeItem.name + " perk selected at slot " + itemSlot, "Visible");
-                    GameController.Instance.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].perks[itemSlot] = (Perk)activeItem;
-                    break;
+                //case "Perk":
+                //    Jrpg.Log(activeItem.name + " perk selected at slot " + itemSlot, "Visible");
+                //    GameController.Instance.unlockedHeroes[father.GetComponent<HeroMenu>().heroIndex].perks[itemSlot] = (Perk)activeItem;
+                //    break;
             }
             father.gameObject.SetActive(true);
             father.Setup();

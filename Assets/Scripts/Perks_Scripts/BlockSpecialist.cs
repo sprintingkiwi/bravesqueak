@@ -9,7 +9,7 @@ public class BlockSpecialist : Perk
     {
         base.Setup(holder);
 
-        holder.deltaStats["SDF"] += (holder.defense.value / 2);
+        //holder.deltaStats["SDF"] += (holder.defense.value / 2);
     }
 
 }

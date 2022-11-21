@@ -54,14 +54,14 @@ public class HeroMenu : Menu
                 skillItem.GetComponent<SpriteRenderer>().sprite = GameController.Instance.unlockedHeroes[heroIndex].skills[skillItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
             }            
         }
-        foreach (Transform perkItem in transform.Find("Perks"))
-        {
-            if (GameController.Instance.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()] != null)
-            {
-                Jrpg.Log("Assigning sprite to perk " + perkItem.name);
-                perkItem.GetComponent<SpriteRenderer>().sprite = GameController.Instance.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
-            }            
-        }
+        //foreach (Transform perkItem in transform.Find("Perks"))
+        //{
+        //    if (GameController.Instance.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()] != null)
+        //    {
+        //        Jrpg.Log("Assigning sprite to perk " + perkItem.name);
+        //        perkItem.GetComponent<SpriteRenderer>().sprite = GameController.Instance.unlockedHeroes[heroIndex].perks[perkItem.GetSiblingIndex()].GetComponent<SpriteRenderer>().sprite;
+        //    }            
+        //}
     }
 
     public void ShowItemSelection(ItemSelector selector, string pool)

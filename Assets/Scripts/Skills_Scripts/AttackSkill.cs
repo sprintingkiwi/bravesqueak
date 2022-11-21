@@ -260,15 +260,15 @@ public class AttackSkill : Skill
                 Jrpg.Damage(target, damageOutcomes[target], element);
 
                 // Status chance
-                foreach (StatusChance sc in statusChances)
-                {
-                    if (target.transform.Find("STATUS").Find(sc.status.name) != null)
-                        continue;
+                //foreach (StatusChance sc in statusChances)
+                //{
+                //    if (target.transform.Find("STATUS").Find(sc.status.name) != null)
+                //        continue;
 
-                    int chance = UnityEngine.Random.Range(1, 100);
-                    if (chance <= sc.chance)
-                        yield return StartCoroutine(target.AddStatus(sc.status));
-                }
+                //    int chance = UnityEngine.Random.Range(1, 100);
+                //    if (chance <= sc.chance)
+                //        yield return StartCoroutine(target.AddStatus(sc.status));
+                //}
 
                 break;
 

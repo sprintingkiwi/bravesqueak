@@ -37,10 +37,10 @@ public class Weapon : Jrpg
 	}
 
     // Apply permanent equip modifiers
-    public virtual void ApplyModifiers(Battler user)
-    {
-        user.deltaStats[user.speed.ID] += speedModifier;
-    }
+    //public virtual void ApplyModifiers(Battler user)
+    //{
+    //    user.deltaStats[user.speed.ID] += speedModifier;
+    //}
 
     public virtual void Effect()
     {

@@ -356,7 +356,7 @@ public class BattleController : MonoBehaviour
                     
                     // Update battlers stats adding delta stats
                     Debug.Log("Updating battlers STATS");
-                    actionsQueue[i].user.UpdateStats();
+                    //actionsQueue[i].user.UpdateStats();
                     // Warmups and Cooldowns
                     //actionQueue[i].user.ProcessWarmupsAndCooldowns();
 

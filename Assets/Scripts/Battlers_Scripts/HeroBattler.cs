@@ -54,7 +54,7 @@ public class HeroBattler : Battler
         //UpdateSortingOrder();
 
         // Another update for delta stats because of perks effects and maybe other hero-specific stuff
-        UpdateStats();
+        //UpdateStats();
 
         // PERKS        
         SetupPerks();
