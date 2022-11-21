@@ -813,6 +813,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 81310702407153724, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: partyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 114253743136115620, guid: 54e5d2f2fb4d0674492c18ed539645fa,
+        type: 3}
+    - target: {fileID: 81310702407153724, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: partyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 114120886363940634, guid: ae7d15ce42a50c14da9e6820b70b5f56,
+        type: 3}
+    - target: {fileID: 81310702407153724, guid: 266dafa3ac699814fa0170494574260c,
+        type: 3}
+      propertyPath: partyPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 114120886363940634, guid: ccf6e07eddf6d6d47b3660df1e189f8b,
+        type: 3}
     - target: {fileID: 81310702407153726, guid: 266dafa3ac699814fa0170494574260c,
         type: 3}
       propertyPath: m_Name
@@ -822,7 +840,7 @@ PrefabInstance:
         type: 3}
       propertyPath: testEncounters.Array.data[0]
       value: 
-      objectReference: {fileID: 114182225423817548, guid: 561f44b030876d9428c727565bd6bed8,
+      objectReference: {fileID: 114158055192404530, guid: 3cdc2105dcf688144b2b1f549d9a66b2,
         type: 3}
     - target: {fileID: 1341260877364519449, guid: 266dafa3ac699814fa0170494574260c,
         type: 3}

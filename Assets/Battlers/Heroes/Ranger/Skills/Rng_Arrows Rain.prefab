@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4457589023571354}
-  - component: {fileID: 114791456912984680}
   - component: {fileID: 212244746370017988}
+  - component: {fileID: -6952350006642508542}
   m_Layer: 0
   m_Name: Rng_Arrows Rain
   m_TagString: Untagged
@@ -33,70 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114791456912984680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650370697774398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66727931a9f760748a0694fad1d48ca1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: Summon a rain of arrows
-  displayName: Arrows Rain
-  displayNameColor: {r: 0, g: 0, b: 0, a: 255}
-  speed: 70
-  accuracy: 75
-  powerRoll:
-    dices:
-    - faces: 20
-  buffs: []
-  statusChances: []
-  scope: 5
-  targetsNumber: 1
-  duration: 1
-  active: 1
-  inBattle: 1
-  inField: 0
-  element: 2
-  requiredSP: 5
-  baseSkill: 0
-  epicSkillOf: {fileID: 114253743136115620, guid: 54e5d2f2fb4d0674492c18ed539645fa,
-    type: 3}
-  userBeginEffect: {fileID: 0}
-  userAnimation: special
-  alternativeUserAnims: []
-  targetAnimation: hit
-  areaEffect: {fileID: 0}
-  targetEffect: {fileID: 114614065750280804, guid: c856dd539ffed004095cc0ccb20b7522,
-    type: 3}
-  moveToTarget: 0
-  cameraFocus: 0
-  cameraShake: 1
-  user: {fileID: 0}
-  targets: []
-  targetedArea: 0
-  effectStillActive: 0
-  bc: {fileID: 0}
-  userMovementSpeed: 0
-  mods:
-  - name: ATK
-    value: 0
-  - name: SAT
-    value: 0
-  - name: DEF
-    value: 0
-  - name: SDF
-    value: 0
-  - name: EVA
-    value: 0
-  - name: CRT
-    value: 0
-  - name: DMG
-    value: 0
 --- !u!212 &212244746370017988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -149,3 +85,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6952350006642508542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650370697774398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30724a90b4a4aaf43b56c037a18b1244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: Summon a rain of arrows
+  displayName: Arrows Rain
+  displayNameColor: {r: 0, g: 0, b: 0, a: 255}
+  speed: 70
+  accuracy: 75
+  powerRoll:
+    dices:
+    - faces: 20
+  buffs: []
+  statusChances: []
+  scope: 5
+  targetsNumber: 1
+  duration: 0
+  active: 1
+  inBattle: 1
+  inField: 0
+  element: 2
+  requiredSP: 5
+  baseSkill: 0
+  epicSkillOf: {fileID: 0}
+  userBeginEffect: {fileID: 0}
+  userAnimation: wave
+  alternativeUserAnims: []
+  targetAnimation: hit
+  areaEffect: {fileID: 114946632963968454, guid: efa5c8246d0466241878a04e2239da42,
+    type: 3}
+  targetEffect: {fileID: 114946632963968454, guid: faee7d332c23ab94d8ce38514bc848ac,
+    type: 3}
+  moveToTarget: 0
+  user: {fileID: 0}
+  targets: []
+  targetedArea: 0
+  effectStillActive: 0
+  bc: {fileID: 0}
+  userMovementSpeed: 0
+  mods:
+  - name: ATK
+    value: 0
+  - name: SAT
+    value: 0
+  - name: DEF
+    value: 0
+  - name: SDF
+    value: 0
+  - name: EVA
+    value: 0
+  - name: CRT
+    value: 0
+  - name: DMG
+    value: 0
