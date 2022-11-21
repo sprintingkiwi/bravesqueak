@@ -125,11 +125,12 @@ MonoBehaviour:
   skillPoints: 0
   characterName: Pirate Green Lizard
   size: 4
-  elementAffinity: 1
+  elementAffinity: 6
   species: 5
   perks: []
   movable: 1
   evolution: {fileID: 0}
+  tags: []
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: c118d1cdc5f634c28bfb87ef52703522, type: 3}
   dodgeSound: {fileID: 0}

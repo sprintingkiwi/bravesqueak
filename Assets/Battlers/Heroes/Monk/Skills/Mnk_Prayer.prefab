@@ -54,9 +54,7 @@ MonoBehaviour:
     dices:
     - faces: 20
   buffs: []
-  statusChances:
-  - status: {fileID: 114414827486457196, guid: f089c7a92c8ed6c4e9e45b82aa1206d5, type: 3}
-    chance: 30
+  statusChances: []
   scope: 5
   targetsNumber: 1
   duration: 0
@@ -71,12 +69,11 @@ MonoBehaviour:
   userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit
-  areaEffect: {fileID: 0}
+  areaEffect: {fileID: 114946632963968454, guid: f75cd5174a5b90349bbf12222bbbaa5f,
+    type: 3}
   targetEffect: {fileID: 114946632963968454, guid: 8482e84cbc1894d45a86fd7ab64b633c,
     type: 3}
   moveToTarget: 0
-  cameraFocus: 0
-  cameraShake: 0
   user: {fileID: 0}
   targets: []
   targetedArea: 0

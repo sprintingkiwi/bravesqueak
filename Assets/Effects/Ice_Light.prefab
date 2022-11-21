@@ -218,7 +218,7 @@ MonoBehaviour:
   projectile: 0
   speed: 0
   AfterEffect: {fileID: 0}
-  waitComplete: 0
+  waitComplete: 1
   customLayer: 0
   loop: 0
   fade: 0

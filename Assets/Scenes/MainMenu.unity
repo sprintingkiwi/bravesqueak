@@ -823,7 +823,7 @@ PrefabInstance:
         type: 3}
       propertyPath: partyPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 114120886363940634, guid: ae7d15ce42a50c14da9e6820b70b5f56,
+      objectReference: {fileID: 114120886363940634, guid: af3429c4043c12048a5b607ee902027c,
         type: 3}
     - target: {fileID: 81310702407153724, guid: 266dafa3ac699814fa0170494574260c,
         type: 3}
@@ -858,7 +858,7 @@ PrefabInstance:
         type: 3}
       propertyPath: testEncounters.Array.data[3]
       value: 
-      objectReference: {fileID: 114780441065387980, guid: ebf28d6e9d9fccf4faa0fb7c18c069d1,
+      objectReference: {fileID: 114809916583162938, guid: 2306f6037989d9440a825c4fb86fef4d,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 266dafa3ac699814fa0170494574260c, type: 3}
