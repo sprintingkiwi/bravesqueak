@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 114255436312251458}
   - component: {fileID: 212789383041383176}
   m_Layer: 0
-  m_Name: Missiles
+  m_Name: Head Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 4
-  requiredSP: 2
+  requiredSP: 0
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
