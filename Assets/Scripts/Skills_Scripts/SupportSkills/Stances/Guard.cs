@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guard : StanceSkill
+public class Guard : SupportSkill
 {
     public override IEnumerator Effect(Battler target)
     {

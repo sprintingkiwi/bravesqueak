@@ -305,7 +305,7 @@ public class BattleController : MonoBehaviour
                 // Process skills Ongoing-Effects and Post-Effects
                 yield return new WaitForSeconds(0.1f);
                 s.effectStillActive = true;
-                if (s.duration >= 1)
+                if (s.duration > 1)
                 {
                     yield return StartCoroutine(s.OngoingFlow());
                     //while (!actualActionEnded)
