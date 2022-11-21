@@ -131,18 +131,16 @@ MonoBehaviour:
     value: 70
   maxHP:
     ID: maxHP
-    value: 140
+    value: 250
   hitPoints: 0
   skillPoints: 0
   characterName: 
   size: 5
   elementAffinity: 3
   species: 2
-  perks:
-  - {fileID: 0}
-  - {fileID: 0}
   movable: 1
   evolution: {fileID: 0}
+  tags: []
   effectsDelay:
   - animation: attack
     lenghtPercentage: 0.5

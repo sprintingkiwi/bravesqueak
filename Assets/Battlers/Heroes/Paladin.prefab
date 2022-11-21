@@ -131,18 +131,16 @@ MonoBehaviour:
     value: 30
   maxHP:
     ID: maxHP
-    value: 250
+    value: 300
   hitPoints: 0
   skillPoints: 0
   characterName: 
   size: 5
   elementAffinity: 7
   species: 2
-  perks:
-  - {fileID: 0}
-  - {fileID: 0}
   movable: 1
   evolution: {fileID: 0}
+  tags: []
   effectsDelay: []
   hitSound: {fileID: 8300000, guid: 128fbe42ec1ccbd448040e5e133fa1ad, type: 3}
   dodgeSound: {fileID: 0}

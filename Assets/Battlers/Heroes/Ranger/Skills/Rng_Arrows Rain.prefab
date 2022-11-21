@@ -105,8 +105,6 @@ MonoBehaviour:
   powerRoll:
     dices:
     - faces: 20
-  buffs: []
-  statusChances: []
   scope: 5
   targetsNumber: 1
   duration: 0
@@ -118,10 +116,10 @@ MonoBehaviour:
   baseSkill: 0
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
-  userAnimation: wave
+  userAnimation: special
   alternativeUserAnims: []
   targetAnimation: hit
-  areaEffect: {fileID: 114946632963968454, guid: efa5c8246d0466241878a04e2239da42,
+  areaEffect: {fileID: 114946632963968454, guid: 2b73abbd4d5350c448346c3c9130bb59,
     type: 3}
   targetEffect: {fileID: 114946632963968454, guid: faee7d332c23ab94d8ce38514bc848ac,
     type: 3}
