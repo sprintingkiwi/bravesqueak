@@ -221,6 +221,12 @@ public class AttackSkill : Skill
         switch (fightOutcomes[target])
         {
             case "Success":
+                // Check if target is under a "Guard" Effect
+                if (target.tags.Contains("Guard"))
+                {
+                    goto case "Parry"; //AUTO Parry
+                }
+
                 // Shake Camera (if super-effective)
                 if (elementsMultipliers.ContainsKey(target.elementAffinity) && elementsMultipliers[target.elementAffinity].ContainsKey(element))
                 {

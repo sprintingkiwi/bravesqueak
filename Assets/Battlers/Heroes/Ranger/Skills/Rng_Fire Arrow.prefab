@@ -55,9 +55,7 @@ MonoBehaviour:
     - faces: 8
     - faces: 8
   buffs: []
-  statusChances:
-  - status: {fileID: 114537509661692964, guid: 87146e5644e94d349aa91d8c6188d45a, type: 3}
-    chance: 100
+  statusChances: []
   scope: 2
   targetsNumber: 1
   duration: 0
@@ -76,8 +74,6 @@ MonoBehaviour:
   targetEffect: {fileID: 114280663374910852, guid: e9b19b6920789ab4fadb2fa9ebb334cd,
     type: 3}
   moveToTarget: 0
-  cameraFocus: 0
-  cameraShake: 1
   user: {fileID: 0}
   targets: []
   targetedArea: 0

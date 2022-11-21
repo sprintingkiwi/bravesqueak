@@ -45,6 +45,7 @@ public class Battler : MonoBehaviour
     public Perk[] perks = new Perk[2];
     public bool movable = true;
     public Battler evolution;
+    public List<string> tags = new List<string>();
 
     [System.Serializable]
     public class EffectDelay
