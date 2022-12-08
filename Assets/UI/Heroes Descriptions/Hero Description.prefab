@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -69.890015, y: 159.21002}
-  m_SizeDelta: {x: 349.41003, y: 151.97998}
+  m_AnchoredPosition: {x: 120.78636, y: 159.21002}
+  m_SizeDelta: {x: 730.7628, y: 151.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222307024185281680
 CanvasRenderer:
@@ -72,7 +72,7 @@ MonoBehaviour:
     m_FontSize: 64
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 64
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -358,13 +358,13 @@ MonoBehaviour:
     m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
 --- !u!114 &6427332017768573474
@@ -451,13 +451,13 @@ MonoBehaviour:
     m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
 --- !u!114 &1522541273530704694
@@ -803,13 +803,13 @@ MonoBehaviour:
     m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
 --- !u!114 &9120049698336612139
@@ -973,13 +973,13 @@ MonoBehaviour:
     m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
 --- !u!114 &1445263943329853799
@@ -1335,13 +1335,13 @@ MonoBehaviour:
     m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: IMPROVE PARRY FOR ONE TURN
 --- !u!114 &213761687222945047
