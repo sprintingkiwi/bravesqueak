@@ -53,9 +53,6 @@ MonoBehaviour:
   powerRoll:
     dices:
     - faces: 8
-    - faces: 8
-  buffs: []
-  statusChances: []
   scope: 2
   targetsNumber: 1
   duration: 0
@@ -63,7 +60,7 @@ MonoBehaviour:
   inBattle: 1
   inField: 0
   element: 3
-  requiredSP: 3
+  requiredSP: -1
   baseSkill: 1
   epicSkillOf: {fileID: 0}
   userBeginEffect: {fileID: 0}
@@ -74,8 +71,6 @@ MonoBehaviour:
   targetEffect: {fileID: 114979775389643346, guid: b7d3c157b7a60bc4aa477c12df5c82bb,
     type: 3}
   moveToTarget: 1
-  cameraFocus: 0
-  cameraShake: 0
   user: {fileID: 0}
   targets: []
   targetedArea: 0
