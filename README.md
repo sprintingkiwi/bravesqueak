@@ -4,62 +4,7 @@
 
 
 # Credits #
-
-## Sounds ##
-
-Weapons/Armors clashing sound Effects by Claudio Marchi
-
-Short jingles AND Digital SFX by Kenney Vleugels (www.kenney.nl)
-LICENSE: CC0 1.0 Universal (CC0 1.0)Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/
-
-Fantasy SFX by Little Robot Sound Factory
-https://assetstore.unity.com/packages/audio/sound-fx/fantasy-sfx-32833
-https://assetstore.unity.com/publishers/5673
-
-Pterodactyl Screech, recorded by Mike Koenig
-http://soundbible.com/1860-Pterodactyl-Screech.html
-Uploaded: 06.24.11
-LICENSE: Attribution 3.0
-
-Fireball:
-Julien Matthey on https://freesound.org/people/Julien%20Matthey/sounds/105016/
-LICENSE: https://creativecommons.org/publicdomain/zero/1.0/
-
-
-## Textures ##
-
-
-https://unsplash.com
-http://www.wildtextures.com
-https://www.pexels.com
-https://www.freecreatives.com
-https://jooinn.com/s/license.html
-http://www.freepik.com Designed by rawpixel.com/Freepik
-
-
-Wood Texture by Simon Stankowski
-https://unsplash.com/photos/jVVgYBLKZ5s
-LICENSE: https://unsplash.com/license
-
-
-Old Grunge Paper Texture
-http://www.wildtextures.com/free-textures/old-grunge-paper-texture/
-LICENSE: http://www.wildtextures.com/terms-of-use/
-
-
-Background Brown Paper Texture
-https://www.pexels.com/photo/background-brown-paper-texture-268372/
-LICENSE: https://www.pexels.com/photo-license/
-
-
-Ice Texture
-https://www.freecreatives.com/textures/ice-texture.html
-https://www.freecreatives.com/about-us
-
-
-ChalkBoard Texture
-https://mattiamc.deviantart.com/art/ChalkBoard-Texture-MC2015-506107812
-LICENSE: CC 4.0 Attribution
+A detailed list of credits can be found here: https://github.com/sprintingkiwi/bravesqueak/blob/master/Assets/CREDITS/Credits_Text.txt
 
 
 # Notes #
